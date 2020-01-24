@@ -1,0 +1,1320 @@
+PLC Project (1): kfe_motion
+===========================
+
+    Project root: /home/travis/build/pcdshub/lcls-plc-kfe-motion/plc-kfe-motion
+    Project path: kfe_motion/kfe_motion.plcproj
+    TMC path:     kfe_motion/kfe_motion.tmc
+    AMS ID:       
+    IP Address:    (* based on AMS ID)
+    Port:         851
+
+    Source files:
+        1.) kfe_motion/GVLs/Main.TcGVL
+        2.) kfe_motion/GVLs/PMPS.TcGVL
+        3.) kfe_motion/PlcTask.TcTTO
+        4.) kfe_motion/POUs/PRG_1_PlcTask.TcPOU
+        5.) kfe_motion/POUs/PRG_2_PMPS_PRE.TcPOU
+        6.) kfe_motion/POUs/PRG_3_PMPS_POST.TcPOU
+        7.) kfe_motion/POUs/PRG_IM1K0_XTES.TcPOU
+        8.) kfe_motion/POUs/PRG_IM1K3_PPM.TcPOU
+        9.) kfe_motion/POUs/PRG_IM2K0_XTES.TcPOU
+        10.) kfe_motion/POUs/PRG_PF1K0_WFS.TcPOU
+        11.) kfe_motion/POUs/PRG_RTDSK0.TcPOU
+        12.) kfe_motion/POUs/PRG_SL1K0_POWER.TcPOU
+        13.) kfe_motion/POUs/PRG_SL2K0_POWER.TcPOU
+        14.) kfe_motion/Temp/FB_Arbiter.TcPOU
+        15.) kfe_motion/Temp/FB_HardwareFFOutput.TcPOU
+
+    POUs:
+        1.) PRG_1_PlcTask
+        2.) PRG_2_PMPS_PRE
+        3.) PRG_3_PMPS_POST
+        4.) PRG_IM1K0_XTES
+        5.) PRG_IM1K3_PPM
+        6.) PRG_IM2K0_XTES
+        7.) PRG_PF1K0_WFS
+        8.) PRG_RTDSK0
+        9.) PRG_SL1K0_POWER
+        10.) PRG_SL2K0_POWER
+
+    GVLs:
+        1.) Main
+        2.) PMPS
+
+GVLs/Main.TcGVL (TcPlcObject)
+-----------------------------
+
+### Main: Declaration
+
+```vhdl
+{attribute 'qualified_only'}
+VAR_GLOBAL
+(*
+	Only includes motor definitions for the IOC
+	These are hard-coded to be Main.M#,
+	but are very convenient to store in a GVL,
+	hence the confusing namespace here
+	
+	This should be refactored once the IOC
+	supports arbitrary ads paths for motors
+*)
+	// IM1K0-XTES: 3 Axes
+	M1: DUT_MotionStage;
+	M2: DUT_MotionStage;
+	M3: DUT_MotionStage;
+	
+	// IM1K3-PPM: 1 Axis
+	M4: DUT_MotionStage;
+	
+	// IM2K0-XTES: 3 Axes
+	M5: DUT_MotionStage;
+	M6: DUT_MotionStage;
+	M7: DUT_MotionStage;
+	
+	// PF1K0-WFS: 2 Axes
+	M8: DUT_MotionStage;
+	M9: DUT_MotionStage;
+	
+	// RTDSK0: 8 Axes
+	M10: DUT_MotionStage;
+	M11: DUT_MotionStage;
+	M12: DUT_MotionStage;
+	M13: DUT_MotionStage;
+	M14: DUT_MotionStage;
+	M15: DUT_MotionStage;
+	M16: DUT_MotionStage;
+	M17: DUT_MotionStage;
+	
+	// SL1K0-POWER: 4 Axes
+	M18: DUT_MotionStage;
+	M19: DUT_MotionStage;
+	M20: DUT_MotionStage;
+	M21: DUT_MotionStage;
+	
+	// SL2K0-POWER: 4 Axes
+	M22: DUT_MotionStage;
+	M23: DUT_MotionStage;
+	M24: DUT_MotionStage;
+	M25: DUT_MotionStage;
+END_VAR
+```
+
+
+GVLs/PMPS.TcGVL (TcPlcObject)
+-----------------------------
+
+### PMPS: Declaration
+
+```vhdl
+{attribute 'qualified_only'}
+VAR_GLOBAL
+	fbArbiter: FB_Arbiter;
+	fbFastFaultOutput1: FB_HardwareFFOutput;
+	fbFastFaultOutput2: FB_HardwareFFOutput;
+END_VAR
+```
+
+
+PlcTask.TcTTO (TcPlcObject)
+---------------------------
+
+
+POUs/PRG_1_PlcTask.TcPOU (TcPlcObject)
+--------------------------------------
+
+### PRG_1_PlcTask: Declaration
+
+```vhdl
+PROGRAM PRG_1_PlcTask
+VAR
+END_VAR
+```
+
+### PRG_1_PlcTask: ST
+
+```vhdl
+PRG_2_PMPS_PRE();
+
+PRG_IM1K0_XTES();
+PRG_IM1K3_PPM();
+PRG_IM2K0_XTES();
+PRG_PF1K0_WFS();
+PRG_RTDSK0();
+PRG_SL1K0_POWER();
+PRG_SL2K0_POWER();
+
+PRG_3_PMPS_POST();
+```
+
+
+POUs/PRG_2_PMPS_PRE.TcPOU (TcPlcObject)
+---------------------------------------
+
+### PRG_2_PMPS_PRE: Declaration
+
+```vhdl
+PROGRAM PRG_2_PMPS_PRE
+VAR
+END_VAR
+```
+
+
+POUs/PRG_3_PMPS_POST.TcPOU (TcPlcObject)
+----------------------------------------
+
+### PRG_3_PMPS_POST: Declaration
+
+```vhdl
+PROGRAM PRG_3_PMPS_POST
+VAR
+END_VAR
+```
+
+
+POUs/PRG_IM1K0_XTES.TcPOU (TcPlcObject)
+---------------------------------------
+
+### PRG_IM1K0_XTES: Declaration
+
+```vhdl
+PROGRAM PRG_IM1K0_XTES
+VAR
+	fbMotion1: FB_MotionStageSim;
+	fbMotion2: FB_MotionStageSim;
+	fbMotion3: FB_MotionStageSim;
+END_VAR
+```
+
+### PRG_IM1K0_XTES: ST
+
+```vhdl
+// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M1);
+fbMotion2(stMotionStage := Main.M2);
+fbMotion3(stMotionStage := Main.M3);
+```
+
+
+POUs/PRG_IM1K3_PPM.TcPOU (TcPlcObject)
+--------------------------------------
+
+### PRG_IM1K3_PPM: Declaration
+
+```vhdl
+PROGRAM PRG_IM1K3_PPM
+VAR
+	fbMotion1: FB_MotionStageSim;
+END_VAR
+```
+
+### PRG_IM1K3_PPM: ST
+
+```vhdl
+// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M4);
+```
+
+
+POUs/PRG_IM2K0_XTES.TcPOU (TcPlcObject)
+---------------------------------------
+
+### PRG_IM2K0_XTES: Declaration
+
+```vhdl
+PROGRAM PRG_IM2K0_XTES
+VAR
+	fbMotion1: FB_MotionStageSim;
+	fbMotion2: FB_MotionStageSim;
+	fbMotion3: FB_MotionStageSim;
+END_VAR
+```
+
+### PRG_IM2K0_XTES: ST
+
+```vhdl
+// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M5);
+fbMotion2(stMotionStage := Main.M6);
+fbMotion3(stMotionStage := Main.M7);
+```
+
+
+POUs/PRG_PF1K0_WFS.TcPOU (TcPlcObject)
+--------------------------------------
+
+### PRG_PF1K0_WFS: Declaration
+
+```vhdl
+PROGRAM PRG_PF1K0_WFS
+VAR
+	fbMotion1: FB_MotionStageSim;
+	fbMotion2: FB_MotionStageSim;
+END_VAR
+```
+
+### PRG_PF1K0_WFS: ST
+
+```vhdl
+// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M8);
+fbMotion2(stMotionStage := Main.M9);
+```
+
+
+POUs/PRG_RTDSK0.TcPOU (TcPlcObject)
+-----------------------------------
+
+### PRG_RTDSK0: Declaration
+
+```vhdl
+PROGRAM PRG_RTDSK0
+VAR
+	fbMotion1: FB_MotionStageSim;
+	fbMotion2: FB_MotionStageSim;
+	fbMotion3: FB_MotionStageSim;
+	fbMotion4: FB_MotionStageSim;
+	fbMotion5: FB_MotionStageSim;
+	fbMotion6: FB_MotionStageSim;
+	fbMotion7: FB_MotionStageSim;
+	fbMotion8: FB_MotionStageSim;
+END_VAR
+```
+
+### PRG_RTDSK0: ST
+
+```vhdl
+// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M10);
+fbMotion2(stMotionStage := Main.M11);
+fbMotion3(stMotionStage := Main.M12);
+fbMotion4(stMotionStage := Main.M13);
+fbMotion5(stMotionStage := Main.M14);
+fbMotion6(stMotionStage := Main.M15);
+fbMotion7(stMotionStage := Main.M16);
+fbMotion8(stMotionStage := Main.M17);
+```
+
+
+POUs/PRG_SL1K0_POWER.TcPOU (TcPlcObject)
+----------------------------------------
+
+### PRG_SL1K0_POWER: Declaration
+
+```vhdl
+PROGRAM PRG_SL1K0_POWER
+VAR
+	fbMotion1: FB_MotionStageSim;
+	fbMotion2: FB_MotionStageSim;
+	fbMotion3: FB_MotionStageSim;
+	fbMotion4: FB_MotionStageSim;
+END_VAR
+```
+
+### PRG_SL1K0_POWER: ST
+
+```vhdl
+// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M18);
+fbMotion2(stMotionStage := Main.M19);
+fbMotion3(stMotionStage := Main.M20);
+fbMotion4(stMotionStage := Main.M21);
+```
+
+
+POUs/PRG_SL2K0_POWER.TcPOU (TcPlcObject)
+----------------------------------------
+
+### PRG_SL2K0_POWER: Declaration
+
+```vhdl
+PROGRAM PRG_SL2K0_POWER
+VAR
+	fbMotion1: FB_MotionStageSim;
+	fbMotion2: FB_MotionStageSim;
+	fbMotion3: FB_MotionStageSim;
+	fbMotion4: FB_MotionStageSim;
+END_VAR
+```
+
+### PRG_SL2K0_POWER: ST
+
+```vhdl
+// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M22);
+fbMotion2(stMotionStage := Main.M23);
+fbMotion3(stMotionStage := Main.M24);
+fbMotion4(stMotionStage := Main.M25);
+```
+
+
+Temp/FB_Arbiter.TcPOU (TcPlcObject)
+-----------------------------------
+
+### FB_Arbiter: Declaration
+
+```vhdl
+FUNCTION_BLOCK FB_Arbiter
+VAR
+END_VAR
+```
+
+
+Temp/FB_HardwareFFOutput.TcPOU (TcPlcObject)
+--------------------------------------------
+
+### FB_HardwareFFOutput: Declaration
+
+```vhdl
+FUNCTION_BLOCK FB_HardwareFFOutput
+VAR
+END_VAR
+```
+
+
+Symbols
+-------
+
+    Constants.CompilerVersion : VERSION (8875904 64)
+    Constants.CompilerVersionNumeric : DWORD (8876000 32)
+    Constants.RuntimeVersion : VERSION (8875840 64)
+    Constants.RuntimeVersionNumeric : DWORD (8875968 32)
+    Constants.bFPUSupport : BOOL (4313904 8)
+    Constants.bLittleEndian : BOOL (4306336 8)
+    Constants.bSimulationMode : BOOL (4306344 8)
+    Constants.nPackMode : UINT (4313888 16)
+    Constants.nRegisterSize : WORD (4306352 16)
+    Global_Variables.ADSIGRP_DEVICE_DATA : UDINT (4097664 32)
+    Global_Variables.ADSIGRP_IOIMAGE_CLEARI : UDINT (4097568 32)
+    Global_Variables.ADSIGRP_IOIMAGE_CLEARO : UDINT (4097600 32)
+    Global_Variables.ADSIGRP_IOIMAGE_RISIZE : UDINT (4097440 32)
+    Global_Variables.ADSIGRP_IOIMAGE_ROSIZE : UDINT (4097536 32)
+    Global_Variables.ADSIGRP_IOIMAGE_RWIB : UDINT (4097376 32)
+    Global_Variables.ADSIGRP_IOIMAGE_RWIOB : UDINT (4097632 32)
+    Global_Variables.ADSIGRP_IOIMAGE_RWIX : UDINT (4097408 32)
+    Global_Variables.ADSIGRP_IOIMAGE_RWOB : UDINT (4097472 32)
+    Global_Variables.ADSIGRP_IOIMAGE_RWOX : UDINT (4097504 32)
+    Global_Variables.ADSIGRP_SYMNAME : UDINT (4096960 32)
+    Global_Variables.ADSIGRP_SYMNOTE : UDINT (4097344 32)
+    Global_Variables.ADSIGRP_SYMTAB : UDINT (4096928 32)
+    Global_Variables.ADSIGRP_SYMVAL : UDINT (4096992 32)
+    Global_Variables.ADSIGRP_SYM_DOWNLOAD : UDINT (4097248 32)
+    Global_Variables.ADSIGRP_SYM_HNDBYNAME : UDINT (4097024 32)
+    Global_Variables.ADSIGRP_SYM_INFOBYNAME : UDINT (4097152 32)
+    Global_Variables.ADSIGRP_SYM_INFOBYNAMEEX : UDINT (4097216 32)
+    Global_Variables.ADSIGRP_SYM_RELEASEHND : UDINT (4097120 32)
+    Global_Variables.ADSIGRP_SYM_UPLOAD : UDINT (4097280 32)
+    Global_Variables.ADSIGRP_SYM_UPLOADINFO : UDINT (4097312 32)
+    Global_Variables.ADSIGRP_SYM_VALBYHND : UDINT (4097088 32)
+    Global_Variables.ADSIGRP_SYM_VALBYNAME : UDINT (4097056 32)
+    Global_Variables.ADSIGRP_SYM_VERSION : UDINT (4097184 32)
+    Global_Variables.ADSIOFFS_DEVDATA_ADSSTATE : UDINT (4097696 32)
+    Global_Variables.ADSIOFFS_DEVDATA_DEVSTATE : UDINT (4097728 32)
+    Global_Variables.ADSLOG_MSGTYPE_ERROR : DWORD (4098784 32)
+    Global_Variables.ADSLOG_MSGTYPE_HINT : DWORD (4098720 32)
+    Global_Variables.ADSLOG_MSGTYPE_LOG : DWORD (4098816 32)
+    Global_Variables.ADSLOG_MSGTYPE_MSGBOX : DWORD (4098848 32)
+    Global_Variables.ADSLOG_MSGTYPE_RESOURCE : DWORD (4098880 32)
+    Global_Variables.ADSLOG_MSGTYPE_STRING : DWORD (4098912 32)
+    Global_Variables.ADSLOG_MSGTYPE_WARN : DWORD (4098752 32)
+    Global_Variables.ADSSTATE_CONFIG : UINT (4096832 16)
+    Global_Variables.ADSSTATE_ERROR : UINT (4096768 16)
+    Global_Variables.ADSSTATE_EXCEPTION : UINT (4096896 16)
+    Global_Variables.ADSSTATE_IDLE : UINT (4096608 16)
+    Global_Variables.ADSSTATE_INCOMPATIBLE : UINT (4096880 16)
+    Global_Variables.ADSSTATE_INIT : UINT (4096640 16)
+    Global_Variables.ADSSTATE_INVALID : UINT (4096592 16)
+    Global_Variables.ADSSTATE_LOADCFG : UINT (4096720 16)
+    Global_Variables.ADSSTATE_MAXSTATES : UINT (4096912 16)
+    Global_Variables.ADSSTATE_POWERFAILURE : UINT (4096736 16)
+    Global_Variables.ADSSTATE_POWERGOOD : UINT (4096752 16)
+    Global_Variables.ADSSTATE_RECONFIG : UINT (4096848 16)
+    Global_Variables.ADSSTATE_RESET : UINT (4096624 16)
+    Global_Variables.ADSSTATE_RESUME : UINT (4096816 16)
+    Global_Variables.ADSSTATE_RUN : UINT (4096672 16)
+    Global_Variables.ADSSTATE_SAVECFG : UINT (4096704 16)
+    Global_Variables.ADSSTATE_SHUTDOWN : UINT (4096784 16)
+    Global_Variables.ADSSTATE_START : UINT (4096656 16)
+    Global_Variables.ADSSTATE_STOP : UINT (4096688 16)
+    Global_Variables.ADSSTATE_STOPPING : UINT (4096864 16)
+    Global_Variables.ADSSTATE_SUSPEND : UINT (4096800 16)
+    Global_Variables.AMSLOGGER_IGR_GENERAL : UDINT (4164544 32)
+    Global_Variables.AMSLOGGER_IOF_MODE : UDINT (4164576 32)
+    Global_Variables.AMSPORT_AMSLOGGER : UINT (4163280 16)
+    Global_Variables.AMSPORT_EVENTLOG : UINT (4096304 16)
+    Global_Variables.AMSPORT_LOGGER : UINT (4096288 16)
+    Global_Variables.AMSPORT_R0_CAM : UINT (4096528 16)
+    Global_Variables.AMSPORT_R0_CAMTOOL : UINT (4096544 16)
+    Global_Variables.AMSPORT_R0_CNC : UINT (4096416 16)
+    Global_Variables.AMSPORT_R0_IO : UINT (4096336 16)
+    Global_Variables.AMSPORT_R0_ISG : UINT (4096400 16)
+    Global_Variables.AMSPORT_R0_LINE : UINT (4096432 16)
+    Global_Variables.AMSPORT_R0_NC : UINT (4096352 16)
+    Global_Variables.AMSPORT_R0_NCSAF : UINT (4096368 16)
+    Global_Variables.AMSPORT_R0_NCSVB : UINT (4096384 16)
+    Global_Variables.AMSPORT_R0_PLC : UINT (4096448 16)
+    Global_Variables.AMSPORT_R0_PLC_RTS1 : UINT (4096464 16)
+    Global_Variables.AMSPORT_R0_PLC_RTS2 : UINT (4096480 16)
+    Global_Variables.AMSPORT_R0_PLC_RTS3 : UINT (4096496 16)
+    Global_Variables.AMSPORT_R0_PLC_RTS4 : UINT (4096512 16)
+    Global_Variables.AMSPORT_R0_RTIME : UINT (4096320 16)
+    Global_Variables.AMSPORT_R3_SCOPESERVER : UINT (4096576 16)
+    Global_Variables.AMSPORT_R3_SYSSERV : UINT (4096560 16)
+    Global_Variables.BOOTDATAFLAGS_PERSISTENT_INVALID : BYTE (4098976 8)
+    Global_Variables.BOOTDATAFLAGS_PERSISTENT_LOADED : BYTE (4098968 8)
+    Global_Variables.BOOTDATAFLAGS_RETAIN_INVALID : BYTE (4098952 8)
+    Global_Variables.BOOTDATAFLAGS_RETAIN_LOADED : BYTE (4098944 8)
+    Global_Variables.BOOTDATAFLAGS_RETAIN_REQUESTED : BYTE (4098960 8)
+    Global_Variables.DATE_AND_TIME_SECPERDAY : DWORD (4177536 32)
+    Global_Variables.DATE_AND_TIME_SECPERWEEK : DWORD (4177568 32)
+    Global_Variables.DBG_OUTPUT_FILE : DWORD (4183840 32)
+    Global_Variables.DBG_OUTPUT_LOG : DWORD (4183808 32)
+    Global_Variables.DBG_OUTPUT_NONE : DWORD (4183776 32)
+    Global_Variables.DBG_OUTPUT_VISU : DWORD (4183872 32)
+    Global_Variables.DEFAULT_ADS_TIMEOUT : TIME (4099712 32)
+    Global_Variables.DEFAULT_BACKLASHVALUE : LREAL (4313536 64)
+    Global_Variables.DEFAULT_CSV_FIELD_DOUBLE_QUOTE : BYTE (4303568 8)
+    Global_Variables.DEFAULT_CSV_FIELD_SEP : BYTE (4101272 8)
+    Global_Variables.DEFAULT_CSV_RECORD_SEP_CR : BYTE (4303576 8)
+    Global_Variables.DEFAULT_CSV_RECORD_SEP_LF : BYTE (4303584 8)
+    Global_Variables.DEFAULT_HOME_POSITION : LREAL (4313472 64)
+    Global_Variables.EMPTY_ARG_VALUE : lcls2_cc_lib.Tc2_Utilities.T_Arg (4165184 128)
+    Global_Variables.EMPTY_GUID_REGSTRING : STRING(38) (4305736 312)
+    Global_Variables.EMPTY_GUID_STRING : STRING(36) (4305440 296)
+    Global_Variables.EMPTY_GUID_STRUCT : GUID (4305312 128)
+    Global_Variables.EMPTY_ROUTE_ENTRY : lcls2_cc_lib.Tc2_Utilities.ST_AmsRouteEntry (4163296 1184)
+    Global_Variables.FLOATREC_EXP_IS_INF : INT (4164640 16)
+    Global_Variables.FLOATREC_EXP_IS_NAN : INT (4164624 16)
+    Global_Variables.FLOATREC_MAX_DIGITS : INT (4164656 16)
+    Global_Variables.FLOATREC_MAX_PRECISION : INT (4164672 16)
+    Global_Variables.FLOATREC_MIN_PRECISION : INT (4164688 16)
+    Global_Variables.FMTERR_ARGTYPEINVALID : DWORD (4164992 32)
+    Global_Variables.FMTERR_ASTERISKPOSITION : DWORD (4164768 32)
+    Global_Variables.FMTERR_DESTBUFFOVERFLOW : DWORD (4165088 32)
+    Global_Variables.FMTERR_FLAGPOSITION : DWORD (4164864 32)
+    Global_Variables.FMTERR_INSUFFICIENTARGS : DWORD (4165056 32)
+    Global_Variables.FMTERR_INVALIDPOINTERINPUT : DWORD (4165120 32)
+    Global_Variables.FMTERR_NOERROR : DWORD (4164704 32)
+    Global_Variables.FMTERR_PERCENTSIGNPOSITION : DWORD (4164736 32)
+    Global_Variables.FMTERR_PRECISIONDOTPOSITION : DWORD (4164928 32)
+    Global_Variables.FMTERR_PRECISIONVALUE : DWORD (4164832 32)
+    Global_Variables.FMTERR_TYPEFIELDVALUE : DWORD (4164960 32)
+    Global_Variables.FMTERR_UNACCEPTEDPARAMETER : DWORD (4165024 32)
+    Global_Variables.FMTERR_WIDTHPRECISIONVALPOS : DWORD (4164896 32)
+    Global_Variables.FMTERR_WIDTHVALUE : DWORD (4164800 32)
+    Global_Variables.FOPEN_MODEAPPEND : DWORD (4099072 32)
+    Global_Variables.FOPEN_MODEBINARY : DWORD (4099136 32)
+    Global_Variables.FOPEN_MODEPLUS : DWORD (4099104 32)
+    Global_Variables.FOPEN_MODEREAD : DWORD (4099008 32)
+    Global_Variables.FOPEN_MODETEXT : DWORD (4099168 32)
+    Global_Variables.FOPEN_MODEWRITE : DWORD (4099040 32)
+    Global_Variables.FORMAT_DECASC_CODES : BYTE (4165568 80)
+    Global_Variables.FORMAT_HEXASC_CODES : BYTE (4165312 256)
+    Global_Variables.FORMAT_MAX_ARGS : INT (4164608 16)
+    Global_Variables.GLOBAL_DCF77_PULSE_SPLIT : TIME (4101280 32)
+    Global_Variables.GLOBAL_DCF77_SEQUENCE_CHECK : BOOL (4101264 8)
+    Global_Variables.GLOBAL_FORMAT_HASH_PREFIX_TYPE : lcls2_cc_lib.Tc2_Utilities.E_HashPrefixTypes (4101232 16)
+    Global_Variables.GLOBAL_SBCS_TABLE : lcls2_cc_lib.Tc2_Utilities.E_SBCSType (4101248 16)
+    Global_Variables.HKEY_MAX_BINARY_DATA_SIZE : UDINT (4164512 32)
+    Global_Variables.IPHELPERAPI_ADAPTERSINFO : UDINT (4162944 32)
+    Global_Variables.IPHELPERAPI_IPADDRBYHOSTNAME : UDINT (4162976 32)
+    Global_Variables.MAX_ADAPTER_ADDRESS_LENGTH : UDINT (4162848 32)
+    Global_Variables.MAX_ADAPTER_DESCRIPTION_LENGTH : UDINT (4162816 32)
+    Global_Variables.MAX_ADAPTER_NAME_LENGTH : UDINT (4162784 32)
+    Global_Variables.MAX_AVERAGE_MEASURES : INT (4101216 16)
+    Global_Variables.MAX_LOCAL_ADAPTERS : UDINT (4163008 32)
+    Global_Variables.MAX_REMOTE_PCS : INT (4163136 16)
+    Global_Variables.MAX_ROUTE_ADDR_LEN : BYTE (4163160 8)
+    Global_Variables.MAX_ROUTE_NAME_LEN : BYTE (4163152 8)
+    Global_Variables.MAX_ROUTE_TRANSPORT : BYTE (4163272 8)
+    Global_Variables.MAX_STRING_LENGTH : UDINT (4099744 32)
+    Global_Variables.MIN_ROUTE_TRANSPORT : BYTE (4163264 8)
+    Global_Variables.PI : LREAL (4099648 64)
+    Global_Variables.ROUTE_FLAG_DYNAMIC : DWORD (4163200 32)
+    Global_Variables.ROUTE_FLAG_NOOVERRIDE : DWORD (4163232 32)
+    Global_Variables.ROUTE_FLAG_TEMPORARY : DWORD (4163168 32)
+    Global_Variables.SYSTEMSERVICE_ADDREMOTE : UDINT (4163040 32)
+    Global_Variables.SYSTEMSERVICE_CHANGENETID : UDINT (4098528 32)
+    Global_Variables.SYSTEMSERVICE_CLOSEHANDLE : UDINT (4097888 32)
+    Global_Variables.SYSTEMSERVICE_CREATEFILE : UDINT (4097856 32)
+    Global_Variables.SYSTEMSERVICE_DELREMOTE : UDINT (4163072 32)
+    Global_Variables.SYSTEMSERVICE_ENUMREMOTE : UDINT (4163104 32)
+    Global_Variables.SYSTEMSERVICE_FCLOSE : UDINT (4097952 32)
+    Global_Variables.SYSTEMSERVICE_FDELETE : UDINT (4098272 32)
+    Global_Variables.SYSTEMSERVICE_FEOF : UDINT (4098240 32)
+    Global_Variables.SYSTEMSERVICE_FFILEFIND : UDINT (4164480 32)
+    Global_Variables.SYSTEMSERVICE_FGETS : UDINT (4098112 32)
+    Global_Variables.SYSTEMSERVICE_FOPEN : UDINT (4097920 32)
+    Global_Variables.SYSTEMSERVICE_FPRINTF : UDINT (4098208 32)
+    Global_Variables.SYSTEMSERVICE_FPUTS : UDINT (4098144 32)
+    Global_Variables.SYSTEMSERVICE_FREAD : UDINT (4097984 32)
+    Global_Variables.SYSTEMSERVICE_FRENAME : UDINT (4098304 32)
+    Global_Variables.SYSTEMSERVICE_FSCANF : UDINT (4098176 32)
+    Global_Variables.SYSTEMSERVICE_FSEEK : UDINT (4098048 32)
+    Global_Variables.SYSTEMSERVICE_FTELL : UDINT (4098080 32)
+    Global_Variables.SYSTEMSERVICE_FWRITE : UDINT (4098016 32)
+    Global_Variables.SYSTEMSERVICE_IPHELPERAPI : UDINT (4162880 32)
+    Global_Variables.SYSTEMSERVICE_IPHOSTNAME : UDINT (4162912 32)
+    Global_Variables.SYSTEMSERVICE_MKDIR : UDINT (4098336 32)
+    Global_Variables.SYSTEMSERVICE_OPENCREATE : UDINT (4097760 32)
+    Global_Variables.SYSTEMSERVICE_OPENREAD : UDINT (4097792 32)
+    Global_Variables.SYSTEMSERVICE_OPENWRITE : UDINT (4097824 32)
+    Global_Variables.SYSTEMSERVICE_REG_HKEYLOCALMACHINE : UDINT (4098400 32)
+    Global_Variables.SYSTEMSERVICE_RMDIR : UDINT (4098368 32)
+    Global_Variables.SYSTEMSERVICE_SENDEMAIL : UDINT (4098432 32)
+    Global_Variables.SYSTEMSERVICE_STARTPROCESS : UDINT (4098496 32)
+    Global_Variables.SYSTEMSERVICE_TIMESERVICES : UDINT (4098464 32)
+    Global_Variables.SYSTEMSTATEFLAGS_BSOD : BYTE (4098984 8)
+    Global_Variables.SYSTEMSTATEFLAGS_RTVIOLATION : BYTE (4098992 8)
+    Global_Variables.SYSTEMTIME_DATEDELTA_OFFSET : DWORD (4165152 32)
+    Global_Variables.SYSTEMTIME_DATE_AND_TIME_MAX : lcls2_cc_lib.Tc2_Utilities.T_ULARGE_INTEGER (4172160 64)
+    Global_Variables.SYSTEMTIME_DATE_AND_TIME_MAX64 : ULINT (4172480 64)
+    Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN : lcls2_cc_lib.Tc2_Utilities.T_ULARGE_INTEGER (4172096 64)
+    Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN64 : ULINT (4172416 64)
+    Global_Variables.SYSTEMTIME_MAX_MONTHDAYS : WORD (4171056 384)
+    Global_Variables.SYSTEMTIME_MAX_YEARSDAY : WORD (4171440 448)
+    Global_Variables.SYSTEMTIME_TICKSPERDAY : lcls2_cc_lib.Tc2_Utilities.T_ULARGE_INTEGER (4172032 64)
+    Global_Variables.SYSTEMTIME_TICKSPERDAY64 : ULINT (4172352 64)
+    Global_Variables.SYSTEMTIME_TICKSPERMSEC : lcls2_cc_lib.Tc2_Utilities.T_ULARGE_INTEGER (4171904 64)
+    Global_Variables.SYSTEMTIME_TICKSPERMSEC64 : ULINT (4172224 64)
+    Global_Variables.SYSTEMTIME_TICKSPERSEC : lcls2_cc_lib.Tc2_Utilities.T_ULARGE_INTEGER (4171968 64)
+    Global_Variables.SYSTEMTIME_TICKSPERSEC64 : ULINT (4172288 64)
+    Global_Variables.TCEVENTFLAG_AUTOFMTALL : WORD (4099504 16)
+    Global_Variables.TCEVENTFLAG_FMTSELF : WORD (4099440 16)
+    Global_Variables.TCEVENTFLAG_LOG : WORD (4099456 16)
+    Global_Variables.TCEVENTFLAG_MSGBOX : WORD (4099472 16)
+    Global_Variables.TCEVENTFLAG_PRIOCLASS : WORD (4099424 16)
+    Global_Variables.TCEVENTFLAG_SRCID : WORD (4099488 16)
+    Global_Variables.TCEVENTSTATE_CONFIRMED : WORD (4099568 16)
+    Global_Variables.TCEVENTSTATE_INVALID : WORD (4099520 16)
+    Global_Variables.TCEVENTSTATE_RESET : WORD (4099552 16)
+    Global_Variables.TCEVENTSTATE_RESETCON : WORD (4099584 16)
+    Global_Variables.TCEVENTSTATE_SIGNALED : WORD (4099536 16)
+    Global_Variables.TCEVENT_FMTPRGSIZE : INT (4099616 16)
+    Global_Variables.TCEVENT_SRCNAMESIZE : INT (4099600 16)
+    Global_Variables.TIMESERVICE_ADJUSTTIMETORTC : UDINT (4098656 32)
+    Global_Variables.TIMESERVICE_DATEANDTIME : UDINT (4098560 32)
+    Global_Variables.TIMESERVICE_RTCTIMEDIFF : UDINT (4098624 32)
+    Global_Variables.TIMESERVICE_SYSTEMTIMES : UDINT (4098592 32)
+    Global_Variables.TIMESERVICE_TIMEZONINFORMATION : UDINT (4098688 32)
+    Global_Variables.TcMcGlobal : lcls2_cc_lib.lcls_twincat_motion.Tc2_MC2._TCMCGLOBAL (4306368 7104)
+    Global_Variables.WEST_EUROPE_TZI : lcls2_cc_lib.Tc2_Utilities.ST_TimeZoneInformation (4172544 864)
+    Global_Variables.eWatchdogConfig : Tc2_System.E_WATCHDOG_TIME_CONFIG (4099632 16)
+    Global_Variables.nWatchdogTime : BYTE (4099000 8)
+    Global_Version.stLibVersion_Tc2_MC2 : ST_LibVersion (4306048 288)
+    Global_Version.stLibVersion_Tc2_Math : ST_LibVersion (4313600 288)
+    Global_Version.stLibVersion_Tc2_System : ST_LibVersion (4096000 288)
+    Global_Version.stLibVersion_Tc2_Utilities : ST_LibVersion (4100928 288)
+    Global_Version.stLibVersion_Tc3_Module : ST_LibVersion (4100288 288)
+    Main.M1 : lcls_twincat_motion.DUT_MotionStage (8594048 11264)
+    Main.M1.Axis.NcToPlc : NCTOPLC_AXIS_REF (8595136 2048)
+    Main.M1.Axis.PlcToNc : PLCTONC_AXIS_REF (8594112 1024)
+    Main.M1.bBrakeRelease : BOOL (8603096 8)
+    Main.M1.bHardwareEnable : BOOL (8603104 8)
+    Main.M1.bHome : BOOL (8603088 8)
+    Main.M1.bLimitBackwardEnable : BOOL (8603080 8)
+    Main.M1.bLimitForwardEnable : BOOL (8603072 8)
+    Main.M10 : lcls_twincat_motion.DUT_MotionStage (8695424 11264)
+    Main.M10.Axis.NcToPlc : NCTOPLC_AXIS_REF (8696512 2048)
+    Main.M10.Axis.PlcToNc : PLCTONC_AXIS_REF (8695488 1024)
+    Main.M10.bBrakeRelease : BOOL (8704472 8)
+    Main.M10.bHardwareEnable : BOOL (8704480 8)
+    Main.M10.bHome : BOOL (8704464 8)
+    Main.M10.bLimitBackwardEnable : BOOL (8704456 8)
+    Main.M10.bLimitForwardEnable : BOOL (8704448 8)
+    Main.M11 : lcls_twincat_motion.DUT_MotionStage (8706688 11264)
+    Main.M11.Axis.NcToPlc : NCTOPLC_AXIS_REF (8707776 2048)
+    Main.M11.Axis.PlcToNc : PLCTONC_AXIS_REF (8706752 1024)
+    Main.M11.bBrakeRelease : BOOL (8715736 8)
+    Main.M11.bHardwareEnable : BOOL (8715744 8)
+    Main.M11.bHome : BOOL (8715728 8)
+    Main.M11.bLimitBackwardEnable : BOOL (8715720 8)
+    Main.M11.bLimitForwardEnable : BOOL (8715712 8)
+    Main.M12 : lcls_twincat_motion.DUT_MotionStage (8717952 11264)
+    Main.M12.Axis.NcToPlc : NCTOPLC_AXIS_REF (8719040 2048)
+    Main.M12.Axis.PlcToNc : PLCTONC_AXIS_REF (8718016 1024)
+    Main.M12.bBrakeRelease : BOOL (8727000 8)
+    Main.M12.bHardwareEnable : BOOL (8727008 8)
+    Main.M12.bHome : BOOL (8726992 8)
+    Main.M12.bLimitBackwardEnable : BOOL (8726984 8)
+    Main.M12.bLimitForwardEnable : BOOL (8726976 8)
+    Main.M13 : lcls_twincat_motion.DUT_MotionStage (8729216 11264)
+    Main.M13.Axis.NcToPlc : NCTOPLC_AXIS_REF (8730304 2048)
+    Main.M13.Axis.PlcToNc : PLCTONC_AXIS_REF (8729280 1024)
+    Main.M13.bBrakeRelease : BOOL (8738264 8)
+    Main.M13.bHardwareEnable : BOOL (8738272 8)
+    Main.M13.bHome : BOOL (8738256 8)
+    Main.M13.bLimitBackwardEnable : BOOL (8738248 8)
+    Main.M13.bLimitForwardEnable : BOOL (8738240 8)
+    Main.M14 : lcls_twincat_motion.DUT_MotionStage (8740480 11264)
+    Main.M14.Axis.NcToPlc : NCTOPLC_AXIS_REF (8741568 2048)
+    Main.M14.Axis.PlcToNc : PLCTONC_AXIS_REF (8740544 1024)
+    Main.M14.bBrakeRelease : BOOL (8749528 8)
+    Main.M14.bHardwareEnable : BOOL (8749536 8)
+    Main.M14.bHome : BOOL (8749520 8)
+    Main.M14.bLimitBackwardEnable : BOOL (8749512 8)
+    Main.M14.bLimitForwardEnable : BOOL (8749504 8)
+    Main.M15 : lcls_twincat_motion.DUT_MotionStage (8751744 11264)
+    Main.M15.Axis.NcToPlc : NCTOPLC_AXIS_REF (8752832 2048)
+    Main.M15.Axis.PlcToNc : PLCTONC_AXIS_REF (8751808 1024)
+    Main.M15.bBrakeRelease : BOOL (8760792 8)
+    Main.M15.bHardwareEnable : BOOL (8760800 8)
+    Main.M15.bHome : BOOL (8760784 8)
+    Main.M15.bLimitBackwardEnable : BOOL (8760776 8)
+    Main.M15.bLimitForwardEnable : BOOL (8760768 8)
+    Main.M16 : lcls_twincat_motion.DUT_MotionStage (8763008 11264)
+    Main.M16.Axis.NcToPlc : NCTOPLC_AXIS_REF (8764096 2048)
+    Main.M16.Axis.PlcToNc : PLCTONC_AXIS_REF (8763072 1024)
+    Main.M16.bBrakeRelease : BOOL (8772056 8)
+    Main.M16.bHardwareEnable : BOOL (8772064 8)
+    Main.M16.bHome : BOOL (8772048 8)
+    Main.M16.bLimitBackwardEnable : BOOL (8772040 8)
+    Main.M16.bLimitForwardEnable : BOOL (8772032 8)
+    Main.M17 : lcls_twincat_motion.DUT_MotionStage (8774272 11264)
+    Main.M17.Axis.NcToPlc : NCTOPLC_AXIS_REF (8775360 2048)
+    Main.M17.Axis.PlcToNc : PLCTONC_AXIS_REF (8774336 1024)
+    Main.M17.bBrakeRelease : BOOL (8783320 8)
+    Main.M17.bHardwareEnable : BOOL (8783328 8)
+    Main.M17.bHome : BOOL (8783312 8)
+    Main.M17.bLimitBackwardEnable : BOOL (8783304 8)
+    Main.M17.bLimitForwardEnable : BOOL (8783296 8)
+    Main.M18 : lcls_twincat_motion.DUT_MotionStage (8785536 11264)
+    Main.M18.Axis.NcToPlc : NCTOPLC_AXIS_REF (8786624 2048)
+    Main.M18.Axis.PlcToNc : PLCTONC_AXIS_REF (8785600 1024)
+    Main.M18.bBrakeRelease : BOOL (8794584 8)
+    Main.M18.bHardwareEnable : BOOL (8794592 8)
+    Main.M18.bHome : BOOL (8794576 8)
+    Main.M18.bLimitBackwardEnable : BOOL (8794568 8)
+    Main.M18.bLimitForwardEnable : BOOL (8794560 8)
+    Main.M19 : lcls_twincat_motion.DUT_MotionStage (8796800 11264)
+    Main.M19.Axis.NcToPlc : NCTOPLC_AXIS_REF (8797888 2048)
+    Main.M19.Axis.PlcToNc : PLCTONC_AXIS_REF (8796864 1024)
+    Main.M19.bBrakeRelease : BOOL (8805848 8)
+    Main.M19.bHardwareEnable : BOOL (8805856 8)
+    Main.M19.bHome : BOOL (8805840 8)
+    Main.M19.bLimitBackwardEnable : BOOL (8805832 8)
+    Main.M19.bLimitForwardEnable : BOOL (8805824 8)
+    Main.M2 : lcls_twincat_motion.DUT_MotionStage (8605312 11264)
+    Main.M2.Axis.NcToPlc : NCTOPLC_AXIS_REF (8606400 2048)
+    Main.M2.Axis.PlcToNc : PLCTONC_AXIS_REF (8605376 1024)
+    Main.M2.bBrakeRelease : BOOL (8614360 8)
+    Main.M2.bHardwareEnable : BOOL (8614368 8)
+    Main.M2.bHome : BOOL (8614352 8)
+    Main.M2.bLimitBackwardEnable : BOOL (8614344 8)
+    Main.M2.bLimitForwardEnable : BOOL (8614336 8)
+    Main.M20 : lcls_twincat_motion.DUT_MotionStage (8808064 11264)
+    Main.M20.Axis.NcToPlc : NCTOPLC_AXIS_REF (8809152 2048)
+    Main.M20.Axis.PlcToNc : PLCTONC_AXIS_REF (8808128 1024)
+    Main.M20.bBrakeRelease : BOOL (8817112 8)
+    Main.M20.bHardwareEnable : BOOL (8817120 8)
+    Main.M20.bHome : BOOL (8817104 8)
+    Main.M20.bLimitBackwardEnable : BOOL (8817096 8)
+    Main.M20.bLimitForwardEnable : BOOL (8817088 8)
+    Main.M21 : lcls_twincat_motion.DUT_MotionStage (8819328 11264)
+    Main.M21.Axis.NcToPlc : NCTOPLC_AXIS_REF (8820416 2048)
+    Main.M21.Axis.PlcToNc : PLCTONC_AXIS_REF (8819392 1024)
+    Main.M21.bBrakeRelease : BOOL (8828376 8)
+    Main.M21.bHardwareEnable : BOOL (8828384 8)
+    Main.M21.bHome : BOOL (8828368 8)
+    Main.M21.bLimitBackwardEnable : BOOL (8828360 8)
+    Main.M21.bLimitForwardEnable : BOOL (8828352 8)
+    Main.M22 : lcls_twincat_motion.DUT_MotionStage (8830592 11264)
+    Main.M22.Axis.NcToPlc : NCTOPLC_AXIS_REF (8831680 2048)
+    Main.M22.Axis.PlcToNc : PLCTONC_AXIS_REF (8830656 1024)
+    Main.M22.bBrakeRelease : BOOL (8839640 8)
+    Main.M22.bHardwareEnable : BOOL (8839648 8)
+    Main.M22.bHome : BOOL (8839632 8)
+    Main.M22.bLimitBackwardEnable : BOOL (8839624 8)
+    Main.M22.bLimitForwardEnable : BOOL (8839616 8)
+    Main.M23 : lcls_twincat_motion.DUT_MotionStage (8841856 11264)
+    Main.M23.Axis.NcToPlc : NCTOPLC_AXIS_REF (8842944 2048)
+    Main.M23.Axis.PlcToNc : PLCTONC_AXIS_REF (8841920 1024)
+    Main.M23.bBrakeRelease : BOOL (8850904 8)
+    Main.M23.bHardwareEnable : BOOL (8850912 8)
+    Main.M23.bHome : BOOL (8850896 8)
+    Main.M23.bLimitBackwardEnable : BOOL (8850888 8)
+    Main.M23.bLimitForwardEnable : BOOL (8850880 8)
+    Main.M24 : lcls_twincat_motion.DUT_MotionStage (8853120 11264)
+    Main.M24.Axis.NcToPlc : NCTOPLC_AXIS_REF (8854208 2048)
+    Main.M24.Axis.PlcToNc : PLCTONC_AXIS_REF (8853184 1024)
+    Main.M24.bBrakeRelease : BOOL (8862168 8)
+    Main.M24.bHardwareEnable : BOOL (8862176 8)
+    Main.M24.bHome : BOOL (8862160 8)
+    Main.M24.bLimitBackwardEnable : BOOL (8862152 8)
+    Main.M24.bLimitForwardEnable : BOOL (8862144 8)
+    Main.M25 : lcls_twincat_motion.DUT_MotionStage (8864384 11264)
+    Main.M25.Axis.NcToPlc : NCTOPLC_AXIS_REF (8865472 2048)
+    Main.M25.Axis.PlcToNc : PLCTONC_AXIS_REF (8864448 1024)
+    Main.M25.bBrakeRelease : BOOL (8873432 8)
+    Main.M25.bHardwareEnable : BOOL (8873440 8)
+    Main.M25.bHome : BOOL (8873424 8)
+    Main.M25.bLimitBackwardEnable : BOOL (8873416 8)
+    Main.M25.bLimitForwardEnable : BOOL (8873408 8)
+    Main.M3 : lcls_twincat_motion.DUT_MotionStage (8616576 11264)
+    Main.M3.Axis.NcToPlc : NCTOPLC_AXIS_REF (8617664 2048)
+    Main.M3.Axis.PlcToNc : PLCTONC_AXIS_REF (8616640 1024)
+    Main.M3.bBrakeRelease : BOOL (8625624 8)
+    Main.M3.bHardwareEnable : BOOL (8625632 8)
+    Main.M3.bHome : BOOL (8625616 8)
+    Main.M3.bLimitBackwardEnable : BOOL (8625608 8)
+    Main.M3.bLimitForwardEnable : BOOL (8625600 8)
+    Main.M4 : lcls_twincat_motion.DUT_MotionStage (8627840 11264)
+    Main.M4.Axis.NcToPlc : NCTOPLC_AXIS_REF (8628928 2048)
+    Main.M4.Axis.PlcToNc : PLCTONC_AXIS_REF (8627904 1024)
+    Main.M4.bBrakeRelease : BOOL (8636888 8)
+    Main.M4.bHardwareEnable : BOOL (8636896 8)
+    Main.M4.bHome : BOOL (8636880 8)
+    Main.M4.bLimitBackwardEnable : BOOL (8636872 8)
+    Main.M4.bLimitForwardEnable : BOOL (8636864 8)
+    Main.M5 : lcls_twincat_motion.DUT_MotionStage (8639104 11264)
+    Main.M5.Axis.NcToPlc : NCTOPLC_AXIS_REF (8640192 2048)
+    Main.M5.Axis.PlcToNc : PLCTONC_AXIS_REF (8639168 1024)
+    Main.M5.bBrakeRelease : BOOL (8648152 8)
+    Main.M5.bHardwareEnable : BOOL (8648160 8)
+    Main.M5.bHome : BOOL (8648144 8)
+    Main.M5.bLimitBackwardEnable : BOOL (8648136 8)
+    Main.M5.bLimitForwardEnable : BOOL (8648128 8)
+    Main.M6 : lcls_twincat_motion.DUT_MotionStage (8650368 11264)
+    Main.M6.Axis.NcToPlc : NCTOPLC_AXIS_REF (8651456 2048)
+    Main.M6.Axis.PlcToNc : PLCTONC_AXIS_REF (8650432 1024)
+    Main.M6.bBrakeRelease : BOOL (8659416 8)
+    Main.M6.bHardwareEnable : BOOL (8659424 8)
+    Main.M6.bHome : BOOL (8659408 8)
+    Main.M6.bLimitBackwardEnable : BOOL (8659400 8)
+    Main.M6.bLimitForwardEnable : BOOL (8659392 8)
+    Main.M7 : lcls_twincat_motion.DUT_MotionStage (8661632 11264)
+    Main.M7.Axis.NcToPlc : NCTOPLC_AXIS_REF (8662720 2048)
+    Main.M7.Axis.PlcToNc : PLCTONC_AXIS_REF (8661696 1024)
+    Main.M7.bBrakeRelease : BOOL (8670680 8)
+    Main.M7.bHardwareEnable : BOOL (8670688 8)
+    Main.M7.bHome : BOOL (8670672 8)
+    Main.M7.bLimitBackwardEnable : BOOL (8670664 8)
+    Main.M7.bLimitForwardEnable : BOOL (8670656 8)
+    Main.M8 : lcls_twincat_motion.DUT_MotionStage (8672896 11264)
+    Main.M8.Axis.NcToPlc : NCTOPLC_AXIS_REF (8673984 2048)
+    Main.M8.Axis.PlcToNc : PLCTONC_AXIS_REF (8672960 1024)
+    Main.M8.bBrakeRelease : BOOL (8681944 8)
+    Main.M8.bHardwareEnable : BOOL (8681952 8)
+    Main.M8.bHome : BOOL (8681936 8)
+    Main.M8.bLimitBackwardEnable : BOOL (8681928 8)
+    Main.M8.bLimitForwardEnable : BOOL (8681920 8)
+    Main.M9 : lcls_twincat_motion.DUT_MotionStage (8684160 11264)
+    Main.M9.Axis.NcToPlc : NCTOPLC_AXIS_REF (8685248 2048)
+    Main.M9.Axis.PlcToNc : PLCTONC_AXIS_REF (8684224 1024)
+    Main.M9.bBrakeRelease : BOOL (8693208 8)
+    Main.M9.bHardwareEnable : BOOL (8693216 8)
+    Main.M9.bHome : BOOL (8693200 8)
+    Main.M9.bLimitBackwardEnable : BOOL (8693192 8)
+    Main.M9.bLimitForwardEnable : BOOL (8693184 8)
+    PMPS.fbArbiter : FB_Arbiter (8875648 64)
+    PMPS.fbFastFaultOutput1 : FB_HardwareFFOutput (8875712 64)
+    PMPS.fbFastFaultOutput2 : FB_HardwareFFOutput (8875776 64)
+    PRG_IM1K0_XTES.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (4336320 170112)
+    PRG_IM1K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4339072 2048)
+    PRG_IM1K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4338048 1024)
+    PRG_IM1K0_XTES.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (4506432 170112)
+    PRG_IM1K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4509184 2048)
+    PRG_IM1K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4508160 1024)
+    PRG_IM1K0_XTES.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (4676544 170112)
+    PRG_IM1K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4679296 2048)
+    PRG_IM1K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4678272 1024)
+    PRG_IM1K3_PPM.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (4846656 170112)
+    PRG_IM1K3_PPM.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4849408 2048)
+    PRG_IM1K3_PPM.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4848384 1024)
+    PRG_IM2K0_XTES.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (5016768 170112)
+    PRG_IM2K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5019520 2048)
+    PRG_IM2K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5018496 1024)
+    PRG_IM2K0_XTES.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (5186880 170112)
+    PRG_IM2K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5189632 2048)
+    PRG_IM2K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5188608 1024)
+    PRG_IM2K0_XTES.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (5356992 170112)
+    PRG_IM2K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5359744 2048)
+    PRG_IM2K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5358720 1024)
+    PRG_PF1K0_WFS.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (5527104 170112)
+    PRG_PF1K0_WFS.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5529856 2048)
+    PRG_PF1K0_WFS.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5528832 1024)
+    PRG_PF1K0_WFS.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (5697216 170112)
+    PRG_PF1K0_WFS.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5699968 2048)
+    PRG_PF1K0_WFS.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5698944 1024)
+    PRG_RTDSK0.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (5867328 170112)
+    PRG_RTDSK0.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5870080 2048)
+    PRG_RTDSK0.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5869056 1024)
+    PRG_RTDSK0.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (6037440 170112)
+    PRG_RTDSK0.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6040192 2048)
+    PRG_RTDSK0.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6039168 1024)
+    PRG_RTDSK0.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (6207552 170112)
+    PRG_RTDSK0.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6210304 2048)
+    PRG_RTDSK0.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6209280 1024)
+    PRG_RTDSK0.fbMotion4 : lcls_twincat_motion.FB_MotionStageSim (6377664 170112)
+    PRG_RTDSK0.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6380416 2048)
+    PRG_RTDSK0.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6379392 1024)
+    PRG_RTDSK0.fbMotion5 : lcls_twincat_motion.FB_MotionStageSim (6547776 170112)
+    PRG_RTDSK0.fbMotion5.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6550528 2048)
+    PRG_RTDSK0.fbMotion5.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6549504 1024)
+    PRG_RTDSK0.fbMotion6 : lcls_twincat_motion.FB_MotionStageSim (6717888 170112)
+    PRG_RTDSK0.fbMotion6.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6720640 2048)
+    PRG_RTDSK0.fbMotion6.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6719616 1024)
+    PRG_RTDSK0.fbMotion7 : lcls_twincat_motion.FB_MotionStageSim (6888000 170112)
+    PRG_RTDSK0.fbMotion7.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6890752 2048)
+    PRG_RTDSK0.fbMotion7.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6889728 1024)
+    PRG_RTDSK0.fbMotion8 : lcls_twincat_motion.FB_MotionStageSim (7058112 170112)
+    PRG_RTDSK0.fbMotion8.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7060864 2048)
+    PRG_RTDSK0.fbMotion8.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7059840 1024)
+    PRG_SL1K0_POWER.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (7228224 170112)
+    PRG_SL1K0_POWER.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7230976 2048)
+    PRG_SL1K0_POWER.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7229952 1024)
+    PRG_SL1K0_POWER.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (7398336 170112)
+    PRG_SL1K0_POWER.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7401088 2048)
+    PRG_SL1K0_POWER.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7400064 1024)
+    PRG_SL1K0_POWER.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (7568448 170112)
+    PRG_SL1K0_POWER.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7571200 2048)
+    PRG_SL1K0_POWER.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7570176 1024)
+    PRG_SL1K0_POWER.fbMotion4 : lcls_twincat_motion.FB_MotionStageSim (7738560 170112)
+    PRG_SL1K0_POWER.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7741312 2048)
+    PRG_SL1K0_POWER.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7740288 1024)
+    PRG_SL2K0_POWER.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (7908672 170112)
+    PRG_SL2K0_POWER.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7911424 2048)
+    PRG_SL2K0_POWER.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7910400 1024)
+    PRG_SL2K0_POWER.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (8078784 170112)
+    PRG_SL2K0_POWER.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (8081536 2048)
+    PRG_SL2K0_POWER.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (8080512 1024)
+    PRG_SL2K0_POWER.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (8248896 170112)
+    PRG_SL2K0_POWER.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (8251648 2048)
+    PRG_SL2K0_POWER.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (8250624 1024)
+    PRG_SL2K0_POWER.fbMotion4 : lcls_twincat_motion.FB_MotionStageSim (8419008 170112)
+    PRG_SL2K0_POWER.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (8421760 2048)
+    PRG_SL2K0_POWER.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (8420736 1024)
+    TwinCAT_LicenseInfoVarList._LicenseInfo : PlcLicenseInfo (8876032 1024)
+    TwinCAT_SystemInfoVarList._AppInfo : PlcAppSystemInfo (8877056 2048)
+    TwinCAT_SystemInfoVarList._TaskInfo : PlcTaskSystemInfo (8879104 1024)
+    TwinCAT_SystemInfoVarList._TaskOid_PlcTask : OTCID (8880160 32)
+    TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask : OTCID (8880128 32)
+    TwinCAT_SystemInfoVarList.__PlcTask : _Implicit_Task_Info (8880192 896)
+
+Boxes
+-----
+
+    1.) Power (EK1200)
+    2.) PMPS FFO (EL2202)
+    3.) PMPS_Bridge (EL6695)
+    4.) PLC Junction 1 (EK1122)
+    5.) PLC Junction 2 (EK1122)
+    6.) PLC End Cap (EL9011)
+    7.) License (EL6070)
+    8.) X1 RTDSK0 (EK1100)
+    9.) X2 IM1K0-XTES (EK1100)
+    10.) X1 SL1K0-POWER (EK1100)
+    11.) X2 SXR EC1 (EK1100)
+    12.) X2 SL2K0-POWER (EK1100)
+    13.) X1 PF1K0-WFS (EK1100)
+    14.) SL1K0-EL7041-01
+    15.) EC1 E1 (EK1122)
+    16.) EC1 E2 (EK1122)
+    17.) SL1K0-EL5042-01
+    18.) SL1K0-EL7041-02
+    19.) SL1K0-EL2004
+    20.) SL1K0-EL7041-03
+    21.) SL1K0-EL5042-02
+    22.) SL1K0-EL7041-04
+    23.) SL1K0-EL3202-01
+    24.) X2 IM1K3-PPM (EK1100)
+    25.) X1 IM2K0-XTES (EK1100)
+    26.) IM1K0-EL7041
+    27.) IM1K0-EL2004
+    28.) IM1K0-EL5101-01
+    29.) IM1K0-EL5101-02
+    30.) IM1K0-EL1088
+    31.) IM1K0-EL7342
+    32.) IM1K0-EL3054
+    33.) IM1K0-EL6021
+    34.) IM1K0-EL6002
+    35.) IM1K0-EL9011
+    36.) SL1K0-EL3202-02
+    37.) SL1K0-EL3202-03
+    38.) SL1K0-EL3202-04
+    39.) SL1K0-EL1004
+    40.) SL1K0-EL9011
+    41.) SL2K0-EL7041-01
+    42.) SL2K0-EL5042-01
+    43.) IM2K0-EL7041
+    44.) IM2K0-EL2004
+    45.) IM2K0-EL5042
+    46.) IM2K0-EL7342
+    47.) IM2K0-EL1088
+    48.) IM2K0-EL6002
+    49.) IM2K0-EL9011
+    50.) SL2K0-EL7041-02
+    51.) SL2K0-EL2004
+    52.) SL2K0-EL7041-03
+    53.) SL2K0-EL5042-02
+    54.) SL2K0-EL7041-04
+    55.) SL2K0-EL3202-01
+    56.) SL2K0-EL3202-02
+    57.) SL2K0-EL3202-03
+    58.) IM1K3-EL7041
+    59.) IM1K3-EL5042
+    60.) IM1K3-EL2004
+    61.) IM1K3-EL3314
+    62.) IM1K3-EL3052
+    63.) IM1K3-EL3062
+    64.) IM1K3-EL4004
+    65.) IM1K3-EL9011
+    66.) PF1K0-EL7041-01
+    67.) PF1K0-EL7041-02
+    68.) PF1K0-EL5042
+    69.) PF1K0-EL2004
+    70.) PF1K0-EL3314
+    71.) PF1K0-EL9011
+    72.) RTDSK0-EL7041-01
+    73.) RTDSK0-EL7041-02
+    74.) RTDSK0-EL7041-03
+    75.) RTDSK0-EL7041-04
+    76.) RTDSK0-EL7041-05
+    77.) SL2K0-EL3202-04
+    78.) SL2K0-EL1004
+    79.) SL2K0-EL9011
+    80.) RTDSK0-EL3054
+    81.) RTDSK0-EL6021
+    82.) RTDSK0-EL2008
+    83.) RTDSK0-EL1008
+    84.) RTDSK0-EL9410
+    85.) RTDSK0-EL3062
+    86.) RTDSK0-EL1002-01
+    87.) RTDSK0-EL1002-02
+    88.) RTDSK0-EL2004
+    89.) RTDSK0-EL1002-03
+    90.) RTDSK0-EL1004-01
+    91.) RTDSK0-EL1004-02
+    92.) RTDSK0-EL2624
+    93.) RTDSK0-EL9515-01
+    94.) RTDSK0-EL9515-02
+    97.) RTDSK0-EL9011
+    131.) RTDSK0-EL7041-06
+    132.) RTDSK0-EL7041-07
+    133.) RTDSK0-EL7041-08
+NC axes
+-------
+
+    1.) 'Axis 1':
+        Id = 1
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'IM1K0-XTES'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    2.) 'Axis 2':
+        Id = 2
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'IM1K0-XTES'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    3.) 'Axis 3':
+        Id = 3
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'IM1K0-XTES'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    4.) 'Axis 4':
+        Id = 4
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'IM1K3-PPM'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    5.) 'Axis 5':
+        Id = 5
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'IM2K0-XTES'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    6.) 'Axis 6':
+        Id = 6
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'IM2K0-XTES'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    7.) 'Axis 7':
+        Id = 7
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'IM2K0-XTES'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    8.) 'Axis 8':
+        Id = 8
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'PF1K0-WFS'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    9.) 'Axis 9':
+        Id = 9
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'PF1K0-WFS'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    10.) 'Axis 10':
+        Id = 10
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'RTDSK0'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    11.) 'Axis 11':
+        Id = 11
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'RTDSK0'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    12.) 'Axis 12':
+        Id = 12
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'RTDSK0'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    13.) 'Axis 13':
+        Id = 13
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'RTDSK0'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    14.) 'Axis 14':
+        Id = 14
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'RTDSK0'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    15.) 'Axis 15':
+        Id = 15
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'RTDSK0'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    16.) 'Axis 16':
+        Id = 16
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'RTDSK0'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    17.) 'Axis 17':
+        Id = 17
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'RTDSK0'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    18.) 'Axis 18':
+        Id = 18
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'SL1K0-POWER'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    19.) 'Axis 19':
+        Id = 19
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'SL1K0-POWER'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    20.) 'Axis 20':
+        Id = 20
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'SL1K0-POWER'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    21.) 'Axis 21':
+        Id = 21
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'SL1K0-POWER'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    22.) 'Axis 22':
+        Id = 22
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'SL2K0-POWER'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    23.) 'Axis 23':
+        Id = 23
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'SL2K0-POWER'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    24.) 'Axis 24':
+        Id = 24
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'SL2K0-POWER'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+    25.) 'Axis 25':
+        Id = 25
+        CreateSymbols = 'true'
+        AxisType = 1
+        AxisFolder = 'SL2K0-POWER'
+        OtherSettings:AllowMotionCmdToSlave = 'true'
+        Enc:EncType = 1
+
+Links
+-----
+
+    1.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M1.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 1', 'Outputs^ToPlc')
+    2.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M1.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 1', 'Inputs^FromPlc')
+    3.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M10.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 10', 'Outputs^ToPlc')
+    4.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M10.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 10', 'Inputs^FromPlc')
+    5.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M11.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 11', 'Outputs^ToPlc')
+    6.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M11.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 11', 'Inputs^FromPlc')
+    7.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M12.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 12', 'Outputs^ToPlc')
+    8.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M12.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 12', 'Inputs^FromPlc')
+    9.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M13.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 13', 'Outputs^ToPlc')
+    10.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M13.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 13', 'Inputs^FromPlc')
+    11.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M14.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 14', 'Outputs^ToPlc')
+    12.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M14.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 14', 'Inputs^FromPlc')
+    13.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M15.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 15', 'Outputs^ToPlc')
+    14.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M15.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 15', 'Inputs^FromPlc')
+    15.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M16.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 16', 'Outputs^ToPlc')
+    16.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M16.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 16', 'Inputs^FromPlc')
+    17.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M17.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 17', 'Outputs^ToPlc')
+    18.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M17.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 17', 'Inputs^FromPlc')
+    19.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M18.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 18', 'Outputs^ToPlc')
+    20.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M18.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 18', 'Inputs^FromPlc')
+    21.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M19.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 19', 'Outputs^ToPlc')
+    22.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M19.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 19', 'Inputs^FromPlc')
+    23.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M2.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 2', 'Outputs^ToPlc')
+    24.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M2.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 2', 'Inputs^FromPlc')
+    25.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M20.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 20', 'Outputs^ToPlc')
+    26.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M20.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 20', 'Inputs^FromPlc')
+    27.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M21.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 21', 'Outputs^ToPlc')
+    28.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M21.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 21', 'Inputs^FromPlc')
+    29.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M22.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 22', 'Outputs^ToPlc')
+    30.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M22.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 22', 'Inputs^FromPlc')
+    31.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M23.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 23', 'Outputs^ToPlc')
+    32.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M23.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 23', 'Inputs^FromPlc')
+    33.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M24.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 24', 'Outputs^ToPlc')
+    34.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M24.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 24', 'Inputs^FromPlc')
+    35.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M25.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 25', 'Outputs^ToPlc')
+    36.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M25.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 25', 'Inputs^FromPlc')
+    37.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M3.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 3', 'Outputs^ToPlc')
+    38.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M3.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 3', 'Inputs^FromPlc')
+    39.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M4.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 4', 'Outputs^ToPlc')
+    40.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M4.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 4', 'Inputs^FromPlc')
+    41.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M5.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 5', 'Outputs^ToPlc')
+    42.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M5.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 5', 'Inputs^FromPlc')
+    43.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M6.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 6', 'Outputs^ToPlc')
+    44.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M6.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 6', 'Inputs^FromPlc')
+    45.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M7.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 7', 'Outputs^ToPlc')
+    46.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M7.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 7', 'Inputs^FromPlc')
+    47.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M8.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 8', 'Outputs^ToPlc')
+    48.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M8.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 8', 'Inputs^FromPlc')
+    49.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M9.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 9', 'Outputs^ToPlc')
+    50.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M9.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^Axis 9', 'Inputs^FromPlc')
+
+Pragma lint results
+-------------------
+```
+INFO:pytmc.bin.pragmalint:Total pragmas found: 2 Total linter errors: 0
+PLC Project (1): kfe_motion
+===========================
+
+
+GVLs/Main.TcGVL (TcPlcObject)
+-----------------------------
+
+    - Main: Declaration - 1 pragmas
+
+
+GVLs/PMPS.TcGVL (TcPlcObject)
+-----------------------------
+
+    - PMPS: Declaration - 1 pragmas
+
+```
