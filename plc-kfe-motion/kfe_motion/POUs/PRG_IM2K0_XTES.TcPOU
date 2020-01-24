@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_IM2K0_XTES" Id="{424da978-a5ca-4969-834d-244f71fa24fe}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_IM2K0_XTES
+VAR
+	fbMotion1: FB_MotionStageSim;
+	fbMotion2: FB_MotionStageSim;
+	fbMotion3: FB_MotionStageSim;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M5);
+fbMotion2(stMotionStage := Main.M6);
+fbMotion3(stMotionStage := Main.M7);]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_IM2K0_XTES">
+      <LineId Id="3" Count="2" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_SL2K0_POWER" Id="{c8e49e09-7b9e-4d82-ac5a-e310bf9e41e1}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_SL2K0_POWER
+VAR
+	fbMotion1: FB_MotionStageSim;
+	fbMotion2: FB_MotionStageSim;
+	fbMotion3: FB_MotionStageSim;
+	fbMotion4: FB_MotionStageSim;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M22);
+fbMotion2(stMotionStage := Main.M23);
+fbMotion3(stMotionStage := Main.M24);
+fbMotion4(stMotionStage := Main.M25);
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_SL2K0_POWER">
+      <LineId Id="3" Count="4" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

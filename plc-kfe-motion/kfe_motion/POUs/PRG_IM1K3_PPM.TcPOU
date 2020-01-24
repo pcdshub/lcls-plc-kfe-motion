@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_IM1K3_PPM" Id="{50f223f3-f492-4ba9-a2f4-a4a386a50420}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_IM1K3_PPM
+VAR
+	fbMotion1: FB_MotionStageSim;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Placeholder, standard simulated motion for all axes
+fbMotion1(stMotionStage := Main.M4);]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_IM1K3_PPM">
+      <LineId Id="3" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
