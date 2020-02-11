@@ -4,9 +4,25 @@ kfe_motion.tmc
 Records
 -------
 ```
+ "PLC:KFE:MOTION:PLACEHOLDER" (longout)
+ "PLC:KFE:MOTION:PLACEHOLDER_RBV" (longin)
 ```
 
 EPICS database
 --------------
 ```
-```
+record(longin, "PLC:KFE:MOTION:PLACEHOLDER_RBV") {
+  field(DESC, "ads:PRG_1_PlcTask.nPlaceholder")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_1_PlcTask.nPlaceholder?")
+}
+
+record(longout, "PLC:KFE:MOTION:PLACEHOLDER") {
+  field(DESC, "ads:PRG_1_PlcTask.nPlaceholder")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_1_PlcTask.nPlaceholder=")
+  info(autosave_pass0, "VAL")
+}```
