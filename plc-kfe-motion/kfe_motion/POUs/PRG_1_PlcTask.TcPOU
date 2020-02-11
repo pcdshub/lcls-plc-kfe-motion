@@ -3,6 +3,12 @@
   <POU Name="PRG_1_PlcTask" Id="{b12fe210-df04-4a98-819b-8df554fce2a7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_1_PlcTask
 VAR
+	// Include one PV temporarily to test pytmc build
+	{attribute 'pytmc' := '
+		pv: PLC:KFE:MOTION:PLACEHOLDER
+		io: io
+	'}
+	nPlaceholder: INT;
 END_VAR
 
     ]]></Declaration>
@@ -19,9 +25,5 @@ PRG_SL2K0_POWER();
 
 PRG_3_PMPS_POST();]]></ST>
     </Implementation>
-    <LineIds Name="PRG_1_PlcTask">
-      <LineId Id="3" Count="9" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
