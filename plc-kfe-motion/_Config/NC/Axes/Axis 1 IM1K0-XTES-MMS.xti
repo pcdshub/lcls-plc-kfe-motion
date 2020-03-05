@@ -1324,15 +1324,18 @@ External Setpoint Generation:
 	<Axis Id="1" CreateSymbols="true" AxisType="1" AxisFolder="IM1K0-XTES">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
+			<Dynamic AccelerationMaximum="100" DecelerationMaximum="100" Acceleration="100" Deceleration="100"/>
 			<Velo Maximum="10"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
+			<ParameterChanged>257</ParameterChanged>
+			<ParameterChanged>242</ParameterChanged>
+			<ParameterChanged>258</ParameterChanged>
+			<ParameterChanged>241</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="7">
-			<EncPara ScaleFactorNumerator="0.002777099609" MaxCount="#x0000ffff" ReferenceSystem="1">
+			<EncPara ScaleFactorNumerator="0.002777099609" Offset="-91" MaxCount="#x0000ffff" ReferenceSystem="1">
 				<SoftEndMinControl Range="-89"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
-				<ParameterChanged>8</ParameterChanged>
-				<ParameterChanged>35</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
