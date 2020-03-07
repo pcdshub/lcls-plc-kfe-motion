@@ -24,27 +24,31 @@ PLC Project (1): kfe_motion
         13.) kfe_motion/POUs/PRG_SL2K0_POWER.TcPOU
         14.) kfe_motion/Temp/FB_Arbiter.TcPOU
         15.) kfe_motion/Temp/FB_HardwareFFOutput.TcPOU
+        16.) kfe_motion/Temp/FB_SLITS_POWER.TcPOU
 
     POUs:
-        1.) PRG_1_PlcTask
-        2.) PRG_2_PMPS_PRE
-        3.) PRG_3_PMPS_POST
-        4.) PRG_IM1K0_XTES
-        5.) PRG_IM1K3_PPM
-        6.) PRG_IM2K0_XTES
-        7.) PRG_PF1K0_WFS
-        8.) PRG_RTDSK0
-        9.) PRG_SL1K0_POWER
-        10.) PRG_SL2K0_POWER
+        1.) FB_Arbiter
+        2.) FB_HardwareFFOutput
+        3.) FB_SLITS_POWER
+        4.) PRG_1_PlcTask
+        5.) PRG_2_PMPS_PRE
+        6.) PRG_3_PMPS_POST
+        7.) PRG_IM1K0_XTES
+        8.) PRG_IM1K3_PPM
+        9.) PRG_IM2K0_XTES
+        10.) PRG_PF1K0_WFS
+        11.) PRG_RTDSK0
+        12.) PRG_SL1K0_POWER
+        13.) PRG_SL2K0_POWER
 
     GVLs:
         1.) Main
         2.) PMPS
 
-GVLs/Main.TcGVL (TcPlcObject)
------------------------------
+GVL: Main
+---------
 
-### Main: Declaration
+File: kfe_motion/GVLs/Main.TcGVL
 
 ```vhdl
 {attribute 'qualified_only'}
@@ -86,24 +90,49 @@ VAR_GLOBAL
 	M17: DUT_MotionStage;
 	
 	// SL1K0-POWER: 4 Axes
+	{attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:SOUTH'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E1]^STM Status^Status^Digital input 2;
+	                          .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E1]^STM Status^Status^Digital input 1'}
+	
 	M18: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:TOP'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E2]^STM Status^Status^Digital input 2;
+	                          .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E2]^STM Status^Status^Digital input 1'}
 	M19: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:NORTH'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E4]^STM Status^Status^Digital input 2;
+	                          .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E4]^STM Status^Status^Digital input 1'}
 	M20: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:BOTTOM'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E5]^STM Status^Status^Digital input 2;
+	                          .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E5]^STM Status^Status^Digital input 1'}
 	M21: DUT_MotionStage;
 	
 	// SL2K0-POWER: 4 Axes
+	{attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:SOUTH'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E1]^STM Status^Status^Digital input 2;
+	                          .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E1]^STM Status^Status^Digital input 1'}
 	M22: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:TOP'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E3]^STM Status^Status^Digital input 2;
+	                          .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E3]^STM Status^Status^Digital input 1'}
 	M23: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:NORTH'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E5]^STM Status^Status^Digital input 2;
+	                          .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E5]^STM Status^Status^Digital input 1'}
 	M24: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:BOTTOM'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E7]^STM Status^Status^Digital input 2;
+	                          .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E7]^STM Status^Status^Digital input 1'}
 	M25: DUT_MotionStage;
 END_VAR
 ```
 
 
-GVLs/PMPS.TcGVL (TcPlcObject)
------------------------------
+GVL: PMPS
+---------
 
-### PMPS: Declaration
+File: kfe_motion/GVLs/PMPS.TcGVL
 
 ```vhdl
 {attribute 'qualified_only'}
@@ -115,14 +144,217 @@ END_VAR
 ```
 
 
-PlcTask.TcTTO (TcPlcObject)
----------------------------
+POU: FB_Arbiter
+---------------
+
+File: kfe_motion/Temp/FB_Arbiter.TcPOU
+
+```vhdl
+FUNCTION_BLOCK FB_Arbiter
+VAR
+END_VAR
 
 
-POUs/PRG_1_PlcTask.TcPOU (TcPlcObject)
---------------------------------------
+END_FUNCTION_BLOCK
+```
 
-### PRG_1_PlcTask: Declaration
+
+POU: FB_HardwareFFOutput
+------------------------
+
+File: kfe_motion/Temp/FB_HardwareFFOutput.TcPOU
+
+```vhdl
+FUNCTION_BLOCK FB_HardwareFFOutput
+VAR
+END_VAR
+
+
+END_FUNCTION_BLOCK
+```
+
+
+POU: FB_SLITS_POWER
+-------------------
+
+File: kfe_motion/Temp/FB_SLITS_POWER.TcPOU
+
+```vhdl
+FUNCTION_BLOCK FB_SLITS_POWER
+VAR_IN_OUT
+	stTopBlade: DUT_MotionStage;
+	stBottomBlade: DUT_MotionStage;
+	stNorthBlade: DUT_MotionStage;
+	stSouthBlade: DUT_MotionStage;
+END_VAR
+VAR_INPUT
+	fPosTopBlade: LREAL;
+	fPosBottomBlade: LREAL;
+	fPosNorthBlade: LREAL;
+	fPosSouthBlade: LREAL;
+	bExecuteMotion:bool ;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	fbTopBlade: FB_MotionStage;
+	fbBottomBlade: FB_MotionStage;
+	fbNorthBlade: FB_MotionStage;
+	fbSouthBlade: FB_MotionStage;
+	
+	{attribute 'pytmc' := '
+		pv: FSW
+	'}
+	fbFlowSwitch: FB_XTES_Flowswitch;
+	
+	
+	//RTDs
+	{attribute 'pytmc' := '
+		pv: TOP:RTD:01
+	'}
+	RTD_TOP_1: FB_ThermoCouple;
+	{attribute 'pytmc' := '
+		pv: TOP:RTD:02
+	'}
+	RTD_TOP_2: FB_ThermoCouple;
+	{attribute 'pytmc' := '
+		pv: BOTTOM:RTD:01
+	'}
+	RTD_Bottom_1: FB_ThermoCouple;
+	{attribute 'pytmc' := '
+		pv: BOTTOM:RTD:02
+	'}
+	RTD_Bottom_2: FB_ThermoCouple;
+	
+	{attribute 'pytmc' := '
+		pv: NORTH:RTD:01
+	'}
+	RTD_North_1: FB_ThermoCouple;
+	{attribute 'pytmc' := '
+		pv: NORTH:RTD:02
+	'}
+	RTD_North_2: FB_ThermoCouple;
+	{attribute 'pytmc' := '
+		pv: SOUTH:RTD:01
+	'}
+	RTD_South_1: FB_ThermoCouple;
+	{attribute 'pytmc' := '
+		pv: SOUTH:RTD:02
+	'}
+	RTD_South_2: FB_ThermoCouple;
+	
+	fSmallDelta: LREAL := 0.01;
+	fBigDelta: LREAL := 10;
+	fMaxVelocity: LREAL := 0.33;
+	fHighAccel: LREAL := 0.8;
+	fLowAccel: LREAL := 0.1;
+	
+	stTop: DUT_PositionState;
+	stBOTTOM: DUT_PositionState;
+	stNorth: DUT_PositionState;
+	stSouth: DUT_PositionState;
+
+	{attribute 'pytmc' := 'pv: TOP'}
+	fbTop: FB_StatePTPMove;
+	{attribute 'pytmc' := 'pv: BOTTOM'}
+	fbBottom: FB_StatePTPMove;
+	{attribute 'pytmc' := 'pv: NORTH'}
+	fbNorth: FB_StatePTPMove;
+	{attribute 'pytmc' := 'pv: SOUTH'}
+	fbSouth: FB_StatePTPMove;
+	
+
+END_VAR
+// Instantiate Function block for all the blades
+fbTopBlade(stMotionStage:=stTopBlade);
+fbBottomBlade(stMotionStage:=stBottomBlade);
+fbNorthBlade(stMotionStage:=stNorthBlade);
+fbSouthBlade(stMotionStage:=stSouthBlade);
+
+//  no STO
+stTopBlade.bHardwareEnable := TRUE;
+stBottomBlade.bHardwareEnable := TRUE;
+stNorthBlade.bHardwareEnable := TRUE;
+stSouthBlade.bHardwareEnable := TRUE;
+stTopBlade.bPowerSelf :=TRUE;
+stBottomBlade.bPowerSelf :=TRUE;
+stNorthBlade.bPowerSelf :=TRUE;
+stSouthBlade.bPowerSelf :=TRUE;
+
+//RTDs
+RTD_TOP_1();
+RTD_TOP_2();
+RTD_Bottom_1();
+RTD_Bottom_2();
+RTD_North_1();
+RTD_North_2();
+RTD_South_1();
+RTD_South_2();
+
+//Flow Switch
+fbFlowSwitch();
+
+
+// PTP Motion for each blade
+
+stTop.sName := 'Top';
+stTop.fPosition := fPosTopBlade;
+stTop.fDelta := fSmallDelta;
+stTop.fVelocity := fMaxVelocity;
+stTop.fAccel := fHighAccel;
+stTop.fDecel := fHighAccel;
+
+stBOTTOM.sName := 'Bottom';
+stBOTTOM.fPosition := fPosBottomBlade;
+stBOTTOM.fDelta := fSmallDelta;
+stBOTTOM.fVelocity := fMaxVelocity;
+stBOTTOM.fAccel := fHighAccel;
+stBOTTOM.fDecel := fHighAccel;
+
+stNorth.sName := 'North';
+stNorth.fPosition := fPosNorthBlade;
+stNorth.fDelta := fSmallDelta;
+stNorth.fVelocity := fMaxVelocity;
+stNorth.fAccel := fHighAccel;
+stNorth.fDecel := fHighAccel;
+
+stSouth.sName := 'South';
+stSouth.fPosition := fPosSouthBlade;
+stSouth.fDelta := fSmallDelta;
+stSouth.fVelocity := fMaxVelocity;
+stSouth.fAccel := fHighAccel;
+stSouth.fDecel := fHighAccel;
+
+//fbTop.bExecute := fbBottom.bExecute :=fbNorth.bExecute := fbSouth.bExecute := bExecuteMotion;
+
+fbTop(
+	stPositionState:=stTop,
+	bMoveOk:=TRUE,
+	stMotionStage:=stTopBlade);
+	
+fbBottom(
+	stPositionState:=stBOTTOM,
+	bMoveOk:=TRUE,
+	stMotionStage:=stBottomBlade);
+	
+fbNorth(
+	stPositionState:=stNorth,
+	bMoveOk:=TRUE,
+	stMotionStage:=stNorthBlade);
+	
+fbSouth(
+	stPositionState:=stSouth,
+	bMoveOk:=TRUE,
+	stMotionStage:=stSouthBlade);
+
+END_FUNCTION_BLOCK
+```
+
+
+POU: PRG_1_PlcTask
+------------------
+
+File: kfe_motion/POUs/PRG_1_PlcTask.TcPOU
 
 ```vhdl
 PROGRAM PRG_1_PlcTask
@@ -134,11 +366,6 @@ VAR
 	'}
 	nPlaceholder: INT;
 END_VAR
-```
-
-### PRG_1_PlcTask: ST
-
-```vhdl
 PRG_2_PMPS_PRE();
 
 PRG_IM1K0_XTES();
@@ -150,37 +377,45 @@ PRG_SL1K0_POWER();
 PRG_SL2K0_POWER();
 
 PRG_3_PMPS_POST();
+
+END_PROGRAM
 ```
 
 
-POUs/PRG_2_PMPS_PRE.TcPOU (TcPlcObject)
----------------------------------------
+POU: PRG_2_PMPS_PRE
+-------------------
 
-### PRG_2_PMPS_PRE: Declaration
+File: kfe_motion/POUs/PRG_2_PMPS_PRE.TcPOU
 
 ```vhdl
 PROGRAM PRG_2_PMPS_PRE
 VAR
 END_VAR
+
+
+END_PROGRAM
 ```
 
 
-POUs/PRG_3_PMPS_POST.TcPOU (TcPlcObject)
-----------------------------------------
+POU: PRG_3_PMPS_POST
+--------------------
 
-### PRG_3_PMPS_POST: Declaration
+File: kfe_motion/POUs/PRG_3_PMPS_POST.TcPOU
 
 ```vhdl
 PROGRAM PRG_3_PMPS_POST
 VAR
 END_VAR
+
+
+END_PROGRAM
 ```
 
 
-POUs/PRG_IM1K0_XTES.TcPOU (TcPlcObject)
----------------------------------------
+POU: PRG_IM1K0_XTES
+-------------------
 
-### PRG_IM1K0_XTES: Declaration
+File: kfe_motion/POUs/PRG_IM1K0_XTES.TcPOU
 
 ```vhdl
 PROGRAM PRG_IM1K0_XTES
@@ -189,42 +424,36 @@ VAR
 	fbMotion2: FB_MotionStageSim;
 	fbMotion3: FB_MotionStageSim;
 END_VAR
-```
-
-### PRG_IM1K0_XTES: ST
-
-```vhdl
 // Placeholder, standard simulated motion for all axes
 fbMotion1(stMotionStage := Main.M1);
 fbMotion2(stMotionStage := Main.M2);
 fbMotion3(stMotionStage := Main.M3);
+
+END_PROGRAM
 ```
 
 
-POUs/PRG_IM1K3_PPM.TcPOU (TcPlcObject)
---------------------------------------
+POU: PRG_IM1K3_PPM
+------------------
 
-### PRG_IM1K3_PPM: Declaration
+File: kfe_motion/POUs/PRG_IM1K3_PPM.TcPOU
 
 ```vhdl
 PROGRAM PRG_IM1K3_PPM
 VAR
 	fbMotion1: FB_MotionStageSim;
 END_VAR
-```
-
-### PRG_IM1K3_PPM: ST
-
-```vhdl
 // Placeholder, standard simulated motion for all axes
 fbMotion1(stMotionStage := Main.M4);
+
+END_PROGRAM
 ```
 
 
-POUs/PRG_IM2K0_XTES.TcPOU (TcPlcObject)
----------------------------------------
+POU: PRG_IM2K0_XTES
+-------------------
 
-### PRG_IM2K0_XTES: Declaration
+File: kfe_motion/POUs/PRG_IM2K0_XTES.TcPOU
 
 ```vhdl
 PROGRAM PRG_IM2K0_XTES
@@ -233,22 +462,19 @@ VAR
 	fbMotion2: FB_MotionStageSim;
 	fbMotion3: FB_MotionStageSim;
 END_VAR
-```
-
-### PRG_IM2K0_XTES: ST
-
-```vhdl
 // Placeholder, standard simulated motion for all axes
 fbMotion1(stMotionStage := Main.M5);
 fbMotion2(stMotionStage := Main.M6);
 fbMotion3(stMotionStage := Main.M7);
+
+END_PROGRAM
 ```
 
 
-POUs/PRG_PF1K0_WFS.TcPOU (TcPlcObject)
---------------------------------------
+POU: PRG_PF1K0_WFS
+------------------
 
-### PRG_PF1K0_WFS: Declaration
+File: kfe_motion/POUs/PRG_PF1K0_WFS.TcPOU
 
 ```vhdl
 PROGRAM PRG_PF1K0_WFS
@@ -256,21 +482,18 @@ VAR
 	fbMotion1: FB_MotionStageSim;
 	fbMotion2: FB_MotionStageSim;
 END_VAR
-```
-
-### PRG_PF1K0_WFS: ST
-
-```vhdl
 // Placeholder, standard simulated motion for all axes
 fbMotion1(stMotionStage := Main.M8);
 fbMotion2(stMotionStage := Main.M9);
+
+END_PROGRAM
 ```
 
 
-POUs/PRG_RTDSK0.TcPOU (TcPlcObject)
------------------------------------
+POU: PRG_RTDSK0
+---------------
 
-### PRG_RTDSK0: Declaration
+File: kfe_motion/POUs/PRG_RTDSK0.TcPOU
 
 ```vhdl
 PROGRAM PRG_RTDSK0
@@ -284,11 +507,6 @@ VAR
 	fbMotion7: FB_MotionStageSim;
 	fbMotion8: FB_MotionStageSim;
 END_VAR
-```
-
-### PRG_RTDSK0: ST
-
-```vhdl
 // Placeholder, standard simulated motion for all axes
 fbMotion1(stMotionStage := Main.M10);
 fbMotion2(stMotionStage := Main.M11);
@@ -298,97 +516,406 @@ fbMotion5(stMotionStage := Main.M14);
 fbMotion6(stMotionStage := Main.M15);
 fbMotion7(stMotionStage := Main.M16);
 fbMotion8(stMotionStage := Main.M17);
+
+END_PROGRAM
 ```
 
 
-POUs/PRG_SL1K0_POWER.TcPOU (TcPlcObject)
-----------------------------------------
+POU: PRG_SL1K0_POWER
+--------------------
 
-### PRG_SL1K0_POWER: Declaration
+File: kfe_motion/POUs/PRG_SL1K0_POWER.TcPOU
 
 ```vhdl
 PROGRAM PRG_SL1K0_POWER
 VAR
-	fbMotion1: FB_MotionStageSim;
+	{attribute 'pytmc' := '
+		pv: SL1K0:POWER
+		io: io
+	'}
+	{attribute 'TcLinkTo' := '.RTD_South_1.iRaw := TIIB[SL1K0-EL3202-E8]^RTD Inputs Channel 1^Value;
+							  .RTD_South_1.bError := TIIB[SL1K0-EL3202-E8]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_South_1.bUnderrange := TIIB[SL1K0-EL3202-E8]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_South_1.bOverrange := TIIB[SL1K0-EL3202-E8]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_South_2.iRaw := TIIB[SL1K0-EL3202-E8]^RTD Inputs Channel 2^Value;
+							  .RTD_South_2.bError := TIIB[SL1K0-EL3202-E8]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_South_2.bUnderrange := TIIB[SL1K0-EL3202-E8]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_South_2.bOverrange := TIIB[SL1K0-EL3202-E8]^RTD Inputs Channel 2^Status^Overrange;
+							  .RTD_TOP_1.iRaw := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 1^Value;
+							  .RTD_TOP_1.bError := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_TOP_1.bUnderrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_TOP_1.bOverrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_TOP_2.iRaw := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Value;
+							  .RTD_TOP_2.bError := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_TOP_2.bUnderrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_TOP_2.bOverrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Overrange;
+							  .RTD_North_1.iRaw := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 1^Value;
+							  .RTD_North_1.bError := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_North_1.bUnderrange := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_North_1.bOverrange := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_North_2.iRaw := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 2^Value;
+							  .RTD_North_2.bError := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_North_2.bUnderrange := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_North_2.bOverrange := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 2^Status^Overrange;
+							  .RTD_Bottom_1.iRaw := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 1^Value;
+							  .RTD_Bottom_1.bError := TIIB[SL1K0-EL3202-E10]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_Bottom_1.bUnderrange := TIIB[SL1K0-EL3202-E11]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_Bottom_1.bOverrange := TIIB[SL1K0-EL3202-E11]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_Bottom_2.iRaw := TIIB[SL1K0-EL3202-E11]^RTD Inputs Channel 2^Value;
+							  .RTD_Bottom_2.bError := TIIB[SL1K0-EL3202-E11]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_Bottom_2.bUnderrange := TIIB[SL1K0-EL3202-E11]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_Bottom_2.bOverrange := TIIB[SL1K0-EL3202-E11]^RTD Inputs Channel 2^Status^Overrange'}
+	fbSL1K0: FB_SLITS_POWER;
+	(*T. MATRIX (North-x1,South-x2,Top-y1,Bottom-y2.. appSize-gapX,gapY, Cx, Cy) *)
+	aTMatrix: ARRAY [1..4,1..4] of REAL;
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:GO;
+	io: io;
+    '}
+	bExecuteMotion:bool ;
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:XWID_REQ;
+	io: io;
+    '}
+	rReqApertureSizeX : REAL;
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:YWID_REQ;
+	io: io;
+    '}
+	rReqApertureSizeY : REAL;
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:XCEN_REQ;
+	io: io;
+    '}
+	rReqCenterX: REAL;
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:YCEN_REQ;
+	io: io;
+    '}
+	rReqCenterY: REAL;
+	
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:ACTUAL_XWIDTH;
+	io: io;
+    '}
+	rActApertureSizeX : REAL;
+	
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:ACTUAL_YWIDTH;
+	io: io;
+    '}
+	rActApertureSizeY : REAL;
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:ACTUAL_XCENTER;
+	io: io;
+    '}
+	rActCenterX: REAL;
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:ACTUAL_YCENTER;
+	io: io;
+    '}
+	rActCenterY: REAL;
+	
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:XCEN_SETZERO;
+	io: io;
+    '}
+	rSetCenterX: REAL;
+	{attribute 'pytmc' := '
+    pv: SL1K0:POWER:YCEN_SETZERO;
+	io: io;
+    '}
+	rSetCenterY: REAL;
+	
+	bInit:BOOL :=true;
+	
+
+	rMaxX:REAL:=28;
+	rMaxY:REAL:=28;
+	rMaxCx:REAL:=14;
+	rMaxCy:REAL:=14;
+
+
+
+
+	(*fbMotion1: FB_MotionStageSim;
 	fbMotion2: FB_MotionStageSim;
 	fbMotion3: FB_MotionStageSim;
-	fbMotion4: FB_MotionStageSim;
+	fbMotion4: FB_MotionStageSim;*)
+	
+	//for testing purposes only. comment-out/delete once done.	
+	mcPower : ARRAY [1..4] OF MC_POWER;
 END_VAR
-```
-
-### PRG_SL1K0_POWER: ST
-
-```vhdl
 // Placeholder, standard simulated motion for all axes
-fbMotion1(stMotionStage := Main.M18);
+(*fbMotion1(stMotionStage := Main.M18);
 fbMotion2(stMotionStage := Main.M19);
 fbMotion3(stMotionStage := Main.M20);
-fbMotion4(stMotionStage := Main.M21);
+fbMotion4(stMotionStage := Main.M21);*)
+
+
+if (bInit) THEN
+	(*Gap*)
+	aTMatrix[1,1]:= 0.5;
+	aTMatrix[2,1]:= -0.5;
+	aTMatrix[3,1]:= 0;
+	aTMatrix[4,1]:= 0;
+	(*GAP Y*)
+	aTMatrix[1,2]:= 0;
+	aTMatrix[2,2]:= 0;
+	aTMatrix[3,2]:= 0.5;
+	aTMatrix[4,2]:= -0.5;
+	(*Center X*)
+	aTMatrix[1,3]:= 1;
+	aTMatrix[2,3]:= 1;
+	aTMatrix[3,3]:= 0;
+	aTMatrix[4,3]:= 0;
+	(*Center Y*)
+	aTMatrix[1,4]:= 0;
+	aTMatrix[2,4]:= 0;
+	aTMatrix[3,4]:= 1;
+	aTMatrix[4,4]:= 1;
+	
+	bInit :=false;
+END_IF
+
+//verify requested gap and center are within range
+// Needs to be better, limits are calculated based on the requested center and travel range
+rReqApertureSizeX := LIMIT(0,rReqApertureSizeX, rMaxX);
+rReqApertureSizeY := LIMIT(0,rReqApertureSizeY, rMaxY);
+rReqCenterX := LIMIT(0,rReqCenterX, rMaxCx);
+rReqCenterY := LIMIT(0,rReqCenterY, rMaxCy);
+
+// Calculate the position of every blade based on the transformation Matrix
+
+fbSL1K0.fPosNorthBlade := (aTMatrix[1,1] * rReqApertureSizeX) + (aTMatrix[1,3]*rReqCenterX);
+fbSL1K0.fPosSouthBlade:= (aTMatrix[2,1] * rReqApertureSizeX) + (aTMatrix[2,3]*rReqCenterX);
+
+fbSL1K0.fPosTopBlade := (aTMatrix[3,2] * rReqApertureSizeY) +(aTMatrix[3,4]*rReqCenterY);
+fbSL1K0.fPosBottomBlade :=(aTMatrix[4,2] * rReqApertureSizeY) + (aTMatrix[4,4]*rReqCenterY);
+
+
+
+(*fbSL1K0(stTopBlade:=  Main.M18,
+		stBottomBlade:= Main.M19, 
+		stNorthBlade:=  Main.M20, 
+		stSouthBlade:=  Main.M21);*)
+
+
+
+
+
+//for testing purposes only. comment-out/delete once done.	
+mcPower[1](axis:=Main.M18.Axis, Enable:=TRUE, enable_positive:=Main.M18.bLimitForwardEnable, enable_negative:=Main.M18.bLimitBackwardEnable);
+mcPower[2](axis:=Main.M19.Axis, Enable:=TRUE, enable_positive:=Main.M19.bLimitForwardEnable, enable_negative:=Main.M19.bLimitBackwardEnable);
+mcPower[3](axis:=Main.M20.Axis, Enable:=TRUE, enable_positive:=Main.M20.bLimitForwardEnable, enable_negative:=Main.M20.bLimitBackwardEnable);
+mcPower[4](axis:=Main.M21.Axis, Enable:=TRUE, enable_positive:=Main.M21.bLimitForwardEnable, enable_negative:=Main.M21.bLimitBackwardEnable);
+
+END_PROGRAM
 ```
 
 
-POUs/PRG_SL2K0_POWER.TcPOU (TcPlcObject)
-----------------------------------------
+POU: PRG_SL2K0_POWER
+--------------------
 
-### PRG_SL2K0_POWER: Declaration
+File: kfe_motion/POUs/PRG_SL2K0_POWER.TcPOU
 
 ```vhdl
 PROGRAM PRG_SL2K0_POWER
 VAR
-	fbMotion1: FB_MotionStageSim;
+	{attribute 'pytmc' := '
+		pv: SL2K0:POWER
+		io: io
+	'}
+	{attribute 'TcLinkTo' := '.RTD_South_1.iRaw := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 1^Value;
+							  .RTD_South_1.bError := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_South_1.bUnderrange := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_South_1.bOverrange := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_South_2.iRaw := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 2^Value;
+							  .RTD_South_2.bError := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_South_2.bUnderrange := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_South_2.bOverrange := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 2^Status^Overrange;
+							  .RTD_TOP_1.iRaw := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 1^Value;
+							  .RTD_TOP_1.bError := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_TOP_1.bUnderrange := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_TOP_1.bOverrange := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_TOP_2.iRaw := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 2^Value;
+							  .RTD_TOP_2.bError := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_TOP_2.bUnderrange := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_TOP_2.bOverrange := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 2^Status^Overrange;
+							  .RTD_North_1.iRaw := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Value;
+							  .RTD_North_1.bError := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_North_1.bUnderrange := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_North_1.bOverrange := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_North_2.iRaw := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 2^Value;
+							  .RTD_North_2.bError := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_North_2.bUnderrange := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_North_2.bOverrange := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 2^Status^Overrange;
+							  .RTD_Bottom_1.iRaw := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Value;
+							  .RTD_Bottom_1.bError := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_Bottom_1.bUnderrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_Bottom_1.bOverrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_Bottom_2.iRaw := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Value;
+							  .RTD_Bottom_2.bError := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_Bottom_2.bUnderrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_Bottom_2.bOverrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Overrange'}
+	fbSL2K0: FB_SLITS_POWER;
+	(*T. MATRIX (North-x1,South-x2,Top-y1,Bottom-y2.. appSize-gapX,gapY, Cx, Cy) *)
+	aTMatrix: ARRAY [1..4,1..4] of REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:GO;
+	io: io;
+    '}
+	bExecuteMotion:bool ;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:XWID_REQ;
+	io: io;
+    '}
+	rReqApertureSizeX : REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:YWID_REQ;
+	io: io;
+    '}
+	rReqApertureSizeY : REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:XCEN_REQ;
+	io: io;
+    '}
+	rReqCenterX: REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:YCEN_REQ;
+	io: io;
+    '}
+	rReqCenterY: REAL;
+	
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:ACTUAL_XWIDTH;
+	io: io;
+    '}
+	rActApertureSizeX : REAL;
+	
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:ACTUAL_YWIDTH;
+	io: io;
+    '}
+	rActApertureSizeY : REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:ACTUAL_XCENTER;
+	io: io;
+    '}
+	rActCenterX: REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:ACTUAL_YCENTER;
+	io: io;
+    '}
+	rActCenterY: REAL;
+	
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:XCEN_SETZERO;
+	io: io;
+    '}
+	rSetCenterX: REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:YCEN_SETZERO;
+	io: io;
+    '}
+	rSetCenterY: REAL;
+	
+	bInit:BOOL :=true;
+	
+
+	rMaxX:REAL:=28;
+	rMaxY:REAL:=28;
+	rMaxCx:REAL:=14;
+	rMaxCy:REAL:=14;
+
+(*	fbMotion1: FB_MotionStageSim;
 	fbMotion2: FB_MotionStageSim;
 	fbMotion3: FB_MotionStageSim;
-	fbMotion4: FB_MotionStageSim;
+	fbMotion4: FB_MotionStageSim;*)
+	
+	
+	//for testing purposes only. comment-out/delete once done.	
+	mcPower : ARRAY [1..4] OF MC_POWER;
 END_VAR
-```
-
-### PRG_SL2K0_POWER: ST
-
-```vhdl
 // Placeholder, standard simulated motion for all axes
-fbMotion1(stMotionStage := Main.M22);
+(*fbMotion1(stMotionStage := Main.M22);
 fbMotion2(stMotionStage := Main.M23);
 fbMotion3(stMotionStage := Main.M24);
-fbMotion4(stMotionStage := Main.M25);
-```
+fbMotion4(stMotionStage := Main.M25);*)
 
 
-Temp/FB_Arbiter.TcPOU (TcPlcObject)
------------------------------------
-
-### FB_Arbiter: Declaration
-
-```vhdl
-FUNCTION_BLOCK FB_Arbiter
-VAR
-END_VAR
-```
 
 
-Temp/FB_HardwareFFOutput.TcPOU (TcPlcObject)
---------------------------------------------
+if (bInit) THEN
+	(*Gap*)
+	aTMatrix[1,1]:= 0.5;
+	aTMatrix[2,1]:= -0.5;
+	aTMatrix[3,1]:= 0;
+	aTMatrix[4,1]:= 0;
+	(*GAP Y*)
+	aTMatrix[1,2]:= 0;
+	aTMatrix[2,2]:= 0;
+	aTMatrix[3,2]:= 0.5;
+	aTMatrix[4,2]:= -0.5;
+	(*Center X*)
+	aTMatrix[1,3]:= 1;
+	aTMatrix[2,3]:= 1;
+	aTMatrix[3,3]:= 0;
+	aTMatrix[4,3]:= 0;
+	(*Center Y*)
+	aTMatrix[1,4]:= 0;
+	aTMatrix[2,4]:= 0;
+	aTMatrix[3,4]:= 1;
+	aTMatrix[4,4]:= 1;
+	
+	bInit :=false;
+END_IF
 
-### FB_HardwareFFOutput: Declaration
+//verigy requested gap and center are within range
+// Needs to be better, limits are calculated based on the requested center and travel range
+rReqApertureSizeX := LIMIT(0,rReqApertureSizeX, rMaxX);
+rReqApertureSizeY := LIMIT(0,rReqApertureSizeY, rMaxY);
+rReqCenterX := LIMIT(0,rReqCenterX, rMaxCx);
+rReqCenterY := LIMIT(0,rReqCenterY, rMaxCy);
 
-```vhdl
-FUNCTION_BLOCK FB_HardwareFFOutput
-VAR
-END_VAR
+// Calculate the position of every blade based on the transformation Matrix
+
+fbSL2K0.fPosNorthBlade := (aTMatrix[1,1] * rReqApertureSizeX) + (aTMatrix[1,3]*rReqCenterX);
+fbSL2K0.fPosSouthBlade:= (aTMatrix[2,1] * rReqApertureSizeX) + (aTMatrix[2,3]*rReqCenterX);
+
+fbSL2K0.fPosTopBlade := (aTMatrix[3,2] * rReqApertureSizeY) +(aTMatrix[3,4]*rReqCenterY);
+fbSL2K0.fPosBottomBlade :=(aTMatrix[4,2] * rReqApertureSizeY) + (aTMatrix[4,4]*rReqCenterY);
+
+
+
+fbSL2K0(stTopBlade:=  Main.M22,
+		stBottomBlade:= Main.M23, 
+		stNorthBlade:=  Main.M24, 
+		stSouthBlade:=  Main.M25);
+
+
+//for testing purposes only. comment-out/delete once done.	
+(*mcPower[1](axis:=Main.M22.Axis, Enable:=TRUE, enable_positive:=Main.M22.bLimitForwardEnable, enable_negative:=Main.M22.bLimitBackwardEnable);
+mcPower[2](axis:=Main.M23.Axis, Enable:=TRUE, enable_positive:=Main.M23.bLimitForwardEnable, enable_negative:=Main.M23.bLimitBackwardEnable);
+mcPower[3](axis:=Main.M24.Axis, Enable:=TRUE, enable_positive:=Main.M24.bLimitForwardEnable, enable_negative:=Main.M24.bLimitBackwardEnable);
+mcPower[4](axis:=Main.M25.Axis, Enable:=TRUE, enable_positive:=Main.M25.bLimitForwardEnable, enable_negative:=Main.M25.bLimitBackwardEnable);*)
+
+END_PROGRAM
 ```
 
 
 Symbols
 -------
 
-    Constants.CompilerVersion : VERSION (8418272 64)
-    Constants.CompilerVersionNumeric : DWORD (8418432 32)
-    Constants.RuntimeVersion : VERSION (8418208 64)
-    Constants.RuntimeVersionNumeric : DWORD (8418400 32)
-    Constants.bFPUSupport : BOOL (8418368 8)
-    Constants.bLittleEndian : BOOL (4302736 8)
-    Constants.bSimulationMode : BOOL (4302744 8)
-    Constants.nPackMode : UINT (8418352 16)
-    Constants.nRegisterSize : WORD (8418336 16)
+    Constants.CompilerVersion : VERSION (7801648 64)
+    Constants.CompilerVersionNumeric : DWORD (7801792 32)
+    Constants.RuntimeVersion : VERSION (7801584 64)
+    Constants.RuntimeVersionNumeric : DWORD (7801760 32)
+    Constants.bFPUSupport : BOOL (7801744 8)
+    Constants.bLittleEndian : BOOL (7801568 8)
+    Constants.bSimulationMode : BOOL (7801576 8)
+    Constants.nPackMode : UINT (7801728 16)
+    Constants.nRegisterSize : WORD (7801712 16)
     Global_Variables.ADSIGRP_DEVICE_DATA : UDINT (4097664 32)
     Global_Variables.ADSIGRP_IOIMAGE_CLEARI : UDINT (4097568 32)
     Global_Variables.ADSIGRP_IOIMAGE_CLEARO : UDINT (4097600 32)
@@ -513,8 +1040,8 @@ Symbols
     Global_Variables.FOPEN_MODEREAD : DWORD (4099008 32)
     Global_Variables.FOPEN_MODETEXT : DWORD (4099168 32)
     Global_Variables.FOPEN_MODEWRITE : DWORD (4099040 32)
-    Global_Variables.FORMAT_DECASC_CODES : BYTE (4165472 80)
-    Global_Variables.FORMAT_HEXASC_CODES : BYTE (4165216 256)
+    Global_Variables.FORMAT_DECASC_CODES : ARRAY[0..9] OF BYTE (4165472 80)
+    Global_Variables.FORMAT_HEXASC_CODES : ARRAY[0..1] OF BYTE (4165216 256)
     Global_Variables.FORMAT_MAX_ARGS : INT (4164576 16)
     Global_Variables.GLOBAL_DCF77_PULSE_SPLIT : TIME (4101248 32)
     Global_Variables.GLOBAL_DCF77_SEQUENCE_CHECK : BOOL (4101232 8)
@@ -576,8 +1103,8 @@ Symbols
     Global_Variables.SYSTEMTIME_DATE_AND_TIME_MAX64 : ULINT (4172416 64)
     Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN : lcls2_cc_lib.Tc2_Utilities.T_ULARGE_INTEGER (4172032 64)
     Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN64 : ULINT (4172352 64)
-    Global_Variables.SYSTEMTIME_MAX_MONTHDAYS : WORD (4170960 384)
-    Global_Variables.SYSTEMTIME_MAX_YEARSDAY : WORD (4171344 448)
+    Global_Variables.SYSTEMTIME_MAX_MONTHDAYS : ARRAY[0..1] OF WORD (4170960 384)
+    Global_Variables.SYSTEMTIME_MAX_YEARSDAY : ARRAY[0..1] OF WORD (4171344 448)
     Global_Variables.SYSTEMTIME_TICKSPERDAY : lcls2_cc_lib.Tc2_Utilities.T_ULARGE_INTEGER (4171968 64)
     Global_Variables.SYSTEMTIME_TICKSPERDAY64 : ULINT (4172288 64)
     Global_Variables.SYSTEMTIME_TICKSPERMSEC : lcls2_cc_lib.Tc2_Utilities.T_ULARGE_INTEGER (4171840 64)
@@ -602,7 +1129,7 @@ Symbols
     Global_Variables.TIMESERVICE_RTCTIMEDIFF : UDINT (4098624 32)
     Global_Variables.TIMESERVICE_SYSTEMTIMES : UDINT (4098592 32)
     Global_Variables.TIMESERVICE_TIMEZONINFORMATION : UDINT (4098688 32)
-    Global_Variables.TcMcGlobal : lcls2_cc_lib.lcls_twincat_motion.Tc2_MC2._TCMCGLOBAL (4303776 6976)
+    Global_Variables.TcMcGlobal : Tc2_MC2._TCMCGLOBAL (4303776 6976)
     Global_Variables.WEST_EUROPE_TZI : lcls2_cc_lib.Tc2_Utilities.ST_TimeZoneInformation (4172480 864)
     Global_Variables.eWatchdogConfig : Tc2_System.E_WATCHDOG_TIME_CONFIG (4099632 16)
     Global_Variables.nWatchdogTime : BYTE (4099000 8)
@@ -611,291 +1138,328 @@ Symbols
     Global_Version.stLibVersion_Tc2_System : ST_LibVersion (4096000 288)
     Global_Version.stLibVersion_Tc2_Utilities : ST_LibVersion (4100896 288)
     Global_Version.stLibVersion_Tc3_Module : ST_LibVersion (4100288 288)
-    Main.M1 : lcls_twincat_motion.DUT_MotionStage (8136576 11264)
-    Main.M1.Axis.NcToPlc : NCTOPLC_AXIS_REF (8137664 2048)
-    Main.M1.Axis.PlcToNc : PLCTONC_AXIS_REF (8136640 1024)
-    Main.M1.bBrakeRelease : BOOL (8145624 8)
-    Main.M1.bHardwareEnable : BOOL (8145632 8)
-    Main.M1.bHome : BOOL (8145616 8)
-    Main.M1.bLimitBackwardEnable : BOOL (8145608 8)
-    Main.M1.bLimitForwardEnable : BOOL (8145600 8)
-    Main.M10 : lcls_twincat_motion.DUT_MotionStage (8237952 11264)
-    Main.M10.Axis.NcToPlc : NCTOPLC_AXIS_REF (8239040 2048)
-    Main.M10.Axis.PlcToNc : PLCTONC_AXIS_REF (8238016 1024)
-    Main.M10.bBrakeRelease : BOOL (8247000 8)
-    Main.M10.bHardwareEnable : BOOL (8247008 8)
-    Main.M10.bHome : BOOL (8246992 8)
-    Main.M10.bLimitBackwardEnable : BOOL (8246984 8)
-    Main.M10.bLimitForwardEnable : BOOL (8246976 8)
-    Main.M11 : lcls_twincat_motion.DUT_MotionStage (8249216 11264)
-    Main.M11.Axis.NcToPlc : NCTOPLC_AXIS_REF (8250304 2048)
-    Main.M11.Axis.PlcToNc : PLCTONC_AXIS_REF (8249280 1024)
-    Main.M11.bBrakeRelease : BOOL (8258264 8)
-    Main.M11.bHardwareEnable : BOOL (8258272 8)
-    Main.M11.bHome : BOOL (8258256 8)
-    Main.M11.bLimitBackwardEnable : BOOL (8258248 8)
-    Main.M11.bLimitForwardEnable : BOOL (8258240 8)
-    Main.M12 : lcls_twincat_motion.DUT_MotionStage (8260480 11264)
-    Main.M12.Axis.NcToPlc : NCTOPLC_AXIS_REF (8261568 2048)
-    Main.M12.Axis.PlcToNc : PLCTONC_AXIS_REF (8260544 1024)
-    Main.M12.bBrakeRelease : BOOL (8269528 8)
-    Main.M12.bHardwareEnable : BOOL (8269536 8)
-    Main.M12.bHome : BOOL (8269520 8)
-    Main.M12.bLimitBackwardEnable : BOOL (8269512 8)
-    Main.M12.bLimitForwardEnable : BOOL (8269504 8)
-    Main.M13 : lcls_twincat_motion.DUT_MotionStage (8271744 11264)
-    Main.M13.Axis.NcToPlc : NCTOPLC_AXIS_REF (8272832 2048)
-    Main.M13.Axis.PlcToNc : PLCTONC_AXIS_REF (8271808 1024)
-    Main.M13.bBrakeRelease : BOOL (8280792 8)
-    Main.M13.bHardwareEnable : BOOL (8280800 8)
-    Main.M13.bHome : BOOL (8280784 8)
-    Main.M13.bLimitBackwardEnable : BOOL (8280776 8)
-    Main.M13.bLimitForwardEnable : BOOL (8280768 8)
-    Main.M14 : lcls_twincat_motion.DUT_MotionStage (8283008 11264)
-    Main.M14.Axis.NcToPlc : NCTOPLC_AXIS_REF (8284096 2048)
-    Main.M14.Axis.PlcToNc : PLCTONC_AXIS_REF (8283072 1024)
-    Main.M14.bBrakeRelease : BOOL (8292056 8)
-    Main.M14.bHardwareEnable : BOOL (8292064 8)
-    Main.M14.bHome : BOOL (8292048 8)
-    Main.M14.bLimitBackwardEnable : BOOL (8292040 8)
-    Main.M14.bLimitForwardEnable : BOOL (8292032 8)
-    Main.M15 : lcls_twincat_motion.DUT_MotionStage (8294272 11264)
-    Main.M15.Axis.NcToPlc : NCTOPLC_AXIS_REF (8295360 2048)
-    Main.M15.Axis.PlcToNc : PLCTONC_AXIS_REF (8294336 1024)
-    Main.M15.bBrakeRelease : BOOL (8303320 8)
-    Main.M15.bHardwareEnable : BOOL (8303328 8)
-    Main.M15.bHome : BOOL (8303312 8)
-    Main.M15.bLimitBackwardEnable : BOOL (8303304 8)
-    Main.M15.bLimitForwardEnable : BOOL (8303296 8)
-    Main.M16 : lcls_twincat_motion.DUT_MotionStage (8305536 11264)
-    Main.M16.Axis.NcToPlc : NCTOPLC_AXIS_REF (8306624 2048)
-    Main.M16.Axis.PlcToNc : PLCTONC_AXIS_REF (8305600 1024)
-    Main.M16.bBrakeRelease : BOOL (8314584 8)
-    Main.M16.bHardwareEnable : BOOL (8314592 8)
-    Main.M16.bHome : BOOL (8314576 8)
-    Main.M16.bLimitBackwardEnable : BOOL (8314568 8)
-    Main.M16.bLimitForwardEnable : BOOL (8314560 8)
-    Main.M17 : lcls_twincat_motion.DUT_MotionStage (8316800 11264)
-    Main.M17.Axis.NcToPlc : NCTOPLC_AXIS_REF (8317888 2048)
-    Main.M17.Axis.PlcToNc : PLCTONC_AXIS_REF (8316864 1024)
-    Main.M17.bBrakeRelease : BOOL (8325848 8)
-    Main.M17.bHardwareEnable : BOOL (8325856 8)
-    Main.M17.bHome : BOOL (8325840 8)
-    Main.M17.bLimitBackwardEnable : BOOL (8325832 8)
-    Main.M17.bLimitForwardEnable : BOOL (8325824 8)
-    Main.M18 : lcls_twincat_motion.DUT_MotionStage (8328064 11264)
-    Main.M18.Axis.NcToPlc : NCTOPLC_AXIS_REF (8329152 2048)
-    Main.M18.Axis.PlcToNc : PLCTONC_AXIS_REF (8328128 1024)
-    Main.M18.bBrakeRelease : BOOL (8337112 8)
-    Main.M18.bHardwareEnable : BOOL (8337120 8)
-    Main.M18.bHome : BOOL (8337104 8)
-    Main.M18.bLimitBackwardEnable : BOOL (8337096 8)
-    Main.M18.bLimitForwardEnable : BOOL (8337088 8)
-    Main.M19 : lcls_twincat_motion.DUT_MotionStage (8339328 11264)
-    Main.M19.Axis.NcToPlc : NCTOPLC_AXIS_REF (8340416 2048)
-    Main.M19.Axis.PlcToNc : PLCTONC_AXIS_REF (8339392 1024)
-    Main.M19.bBrakeRelease : BOOL (8348376 8)
-    Main.M19.bHardwareEnable : BOOL (8348384 8)
-    Main.M19.bHome : BOOL (8348368 8)
-    Main.M19.bLimitBackwardEnable : BOOL (8348360 8)
-    Main.M19.bLimitForwardEnable : BOOL (8348352 8)
-    Main.M2 : lcls_twincat_motion.DUT_MotionStage (8147840 11264)
-    Main.M2.Axis.NcToPlc : NCTOPLC_AXIS_REF (8148928 2048)
-    Main.M2.Axis.PlcToNc : PLCTONC_AXIS_REF (8147904 1024)
-    Main.M2.bBrakeRelease : BOOL (8156888 8)
-    Main.M2.bHardwareEnable : BOOL (8156896 8)
-    Main.M2.bHome : BOOL (8156880 8)
-    Main.M2.bLimitBackwardEnable : BOOL (8156872 8)
-    Main.M2.bLimitForwardEnable : BOOL (8156864 8)
-    Main.M20 : lcls_twincat_motion.DUT_MotionStage (8350592 11264)
-    Main.M20.Axis.NcToPlc : NCTOPLC_AXIS_REF (8351680 2048)
-    Main.M20.Axis.PlcToNc : PLCTONC_AXIS_REF (8350656 1024)
-    Main.M20.bBrakeRelease : BOOL (8359640 8)
-    Main.M20.bHardwareEnable : BOOL (8359648 8)
-    Main.M20.bHome : BOOL (8359632 8)
-    Main.M20.bLimitBackwardEnable : BOOL (8359624 8)
-    Main.M20.bLimitForwardEnable : BOOL (8359616 8)
-    Main.M21 : lcls_twincat_motion.DUT_MotionStage (8361856 11264)
-    Main.M21.Axis.NcToPlc : NCTOPLC_AXIS_REF (8362944 2048)
-    Main.M21.Axis.PlcToNc : PLCTONC_AXIS_REF (8361920 1024)
-    Main.M21.bBrakeRelease : BOOL (8370904 8)
-    Main.M21.bHardwareEnable : BOOL (8370912 8)
-    Main.M21.bHome : BOOL (8370896 8)
-    Main.M21.bLimitBackwardEnable : BOOL (8370888 8)
-    Main.M21.bLimitForwardEnable : BOOL (8370880 8)
-    Main.M22 : lcls_twincat_motion.DUT_MotionStage (8373120 11264)
-    Main.M22.Axis.NcToPlc : NCTOPLC_AXIS_REF (8374208 2048)
-    Main.M22.Axis.PlcToNc : PLCTONC_AXIS_REF (8373184 1024)
-    Main.M22.bBrakeRelease : BOOL (8382168 8)
-    Main.M22.bHardwareEnable : BOOL (8382176 8)
-    Main.M22.bHome : BOOL (8382160 8)
-    Main.M22.bLimitBackwardEnable : BOOL (8382152 8)
-    Main.M22.bLimitForwardEnable : BOOL (8382144 8)
-    Main.M23 : lcls_twincat_motion.DUT_MotionStage (8384384 11264)
-    Main.M23.Axis.NcToPlc : NCTOPLC_AXIS_REF (8385472 2048)
-    Main.M23.Axis.PlcToNc : PLCTONC_AXIS_REF (8384448 1024)
-    Main.M23.bBrakeRelease : BOOL (8393432 8)
-    Main.M23.bHardwareEnable : BOOL (8393440 8)
-    Main.M23.bHome : BOOL (8393424 8)
-    Main.M23.bLimitBackwardEnable : BOOL (8393416 8)
-    Main.M23.bLimitForwardEnable : BOOL (8393408 8)
-    Main.M24 : lcls_twincat_motion.DUT_MotionStage (8395648 11264)
-    Main.M24.Axis.NcToPlc : NCTOPLC_AXIS_REF (8396736 2048)
-    Main.M24.Axis.PlcToNc : PLCTONC_AXIS_REF (8395712 1024)
-    Main.M24.bBrakeRelease : BOOL (8404696 8)
-    Main.M24.bHardwareEnable : BOOL (8404704 8)
-    Main.M24.bHome : BOOL (8404688 8)
-    Main.M24.bLimitBackwardEnable : BOOL (8404680 8)
-    Main.M24.bLimitForwardEnable : BOOL (8404672 8)
-    Main.M25 : lcls_twincat_motion.DUT_MotionStage (8406912 11264)
-    Main.M25.Axis.NcToPlc : NCTOPLC_AXIS_REF (8408000 2048)
-    Main.M25.Axis.PlcToNc : PLCTONC_AXIS_REF (8406976 1024)
-    Main.M25.bBrakeRelease : BOOL (8415960 8)
-    Main.M25.bHardwareEnable : BOOL (8415968 8)
-    Main.M25.bHome : BOOL (8415952 8)
-    Main.M25.bLimitBackwardEnable : BOOL (8415944 8)
-    Main.M25.bLimitForwardEnable : BOOL (8415936 8)
-    Main.M3 : lcls_twincat_motion.DUT_MotionStage (8159104 11264)
-    Main.M3.Axis.NcToPlc : NCTOPLC_AXIS_REF (8160192 2048)
-    Main.M3.Axis.PlcToNc : PLCTONC_AXIS_REF (8159168 1024)
-    Main.M3.bBrakeRelease : BOOL (8168152 8)
-    Main.M3.bHardwareEnable : BOOL (8168160 8)
-    Main.M3.bHome : BOOL (8168144 8)
-    Main.M3.bLimitBackwardEnable : BOOL (8168136 8)
-    Main.M3.bLimitForwardEnable : BOOL (8168128 8)
-    Main.M4 : lcls_twincat_motion.DUT_MotionStage (8170368 11264)
-    Main.M4.Axis.NcToPlc : NCTOPLC_AXIS_REF (8171456 2048)
-    Main.M4.Axis.PlcToNc : PLCTONC_AXIS_REF (8170432 1024)
-    Main.M4.bBrakeRelease : BOOL (8179416 8)
-    Main.M4.bHardwareEnable : BOOL (8179424 8)
-    Main.M4.bHome : BOOL (8179408 8)
-    Main.M4.bLimitBackwardEnable : BOOL (8179400 8)
-    Main.M4.bLimitForwardEnable : BOOL (8179392 8)
-    Main.M5 : lcls_twincat_motion.DUT_MotionStage (8181632 11264)
-    Main.M5.Axis.NcToPlc : NCTOPLC_AXIS_REF (8182720 2048)
-    Main.M5.Axis.PlcToNc : PLCTONC_AXIS_REF (8181696 1024)
-    Main.M5.bBrakeRelease : BOOL (8190680 8)
-    Main.M5.bHardwareEnable : BOOL (8190688 8)
-    Main.M5.bHome : BOOL (8190672 8)
-    Main.M5.bLimitBackwardEnable : BOOL (8190664 8)
-    Main.M5.bLimitForwardEnable : BOOL (8190656 8)
-    Main.M6 : lcls_twincat_motion.DUT_MotionStage (8192896 11264)
-    Main.M6.Axis.NcToPlc : NCTOPLC_AXIS_REF (8193984 2048)
-    Main.M6.Axis.PlcToNc : PLCTONC_AXIS_REF (8192960 1024)
-    Main.M6.bBrakeRelease : BOOL (8201944 8)
-    Main.M6.bHardwareEnable : BOOL (8201952 8)
-    Main.M6.bHome : BOOL (8201936 8)
-    Main.M6.bLimitBackwardEnable : BOOL (8201928 8)
-    Main.M6.bLimitForwardEnable : BOOL (8201920 8)
-    Main.M7 : lcls_twincat_motion.DUT_MotionStage (8204160 11264)
-    Main.M7.Axis.NcToPlc : NCTOPLC_AXIS_REF (8205248 2048)
-    Main.M7.Axis.PlcToNc : PLCTONC_AXIS_REF (8204224 1024)
-    Main.M7.bBrakeRelease : BOOL (8213208 8)
-    Main.M7.bHardwareEnable : BOOL (8213216 8)
-    Main.M7.bHome : BOOL (8213200 8)
-    Main.M7.bLimitBackwardEnable : BOOL (8213192 8)
-    Main.M7.bLimitForwardEnable : BOOL (8213184 8)
-    Main.M8 : lcls_twincat_motion.DUT_MotionStage (8215424 11264)
-    Main.M8.Axis.NcToPlc : NCTOPLC_AXIS_REF (8216512 2048)
-    Main.M8.Axis.PlcToNc : PLCTONC_AXIS_REF (8215488 1024)
-    Main.M8.bBrakeRelease : BOOL (8224472 8)
-    Main.M8.bHardwareEnable : BOOL (8224480 8)
-    Main.M8.bHome : BOOL (8224464 8)
-    Main.M8.bLimitBackwardEnable : BOOL (8224456 8)
-    Main.M8.bLimitForwardEnable : BOOL (8224448 8)
-    Main.M9 : lcls_twincat_motion.DUT_MotionStage (8226688 11264)
-    Main.M9.Axis.NcToPlc : NCTOPLC_AXIS_REF (8227776 2048)
-    Main.M9.Axis.PlcToNc : PLCTONC_AXIS_REF (8226752 1024)
-    Main.M9.bBrakeRelease : BOOL (8235736 8)
-    Main.M9.bHardwareEnable : BOOL (8235744 8)
-    Main.M9.bHome : BOOL (8235728 8)
-    Main.M9.bLimitBackwardEnable : BOOL (8235720 8)
-    Main.M9.bLimitForwardEnable : BOOL (8235712 8)
-    PMPS.fbArbiter : FB_Arbiter (4310752 32)
-    PMPS.fbFastFaultOutput1 : FB_HardwareFFOutput (8136544 32)
-    PMPS.fbFastFaultOutput2 : FB_HardwareFFOutput (8418176 32)
+    Main.M1 : lcls_twincat_motion.DUT_MotionStage (7519936 11264)
+    Main.M1.Axis.NcToPlc : NCTOPLC_AXIS_REF (7521024 2048)
+    Main.M1.Axis.PlcToNc : PLCTONC_AXIS_REF (7520000 1024)
+    Main.M1.bBrakeRelease : BOOL (7528984 8)
+    Main.M1.bHardwareEnable : BOOL (7528992 8)
+    Main.M1.bHome : BOOL (7528976 8)
+    Main.M1.bLimitBackwardEnable : BOOL (7528968 8)
+    Main.M1.bLimitForwardEnable : BOOL (7528960 8)
+    Main.M10 : lcls_twincat_motion.DUT_MotionStage (7621312 11264)
+    Main.M10.Axis.NcToPlc : NCTOPLC_AXIS_REF (7622400 2048)
+    Main.M10.Axis.PlcToNc : PLCTONC_AXIS_REF (7621376 1024)
+    Main.M10.bBrakeRelease : BOOL (7630360 8)
+    Main.M10.bHardwareEnable : BOOL (7630368 8)
+    Main.M10.bHome : BOOL (7630352 8)
+    Main.M10.bLimitBackwardEnable : BOOL (7630344 8)
+    Main.M10.bLimitForwardEnable : BOOL (7630336 8)
+    Main.M11 : lcls_twincat_motion.DUT_MotionStage (7632576 11264)
+    Main.M11.Axis.NcToPlc : NCTOPLC_AXIS_REF (7633664 2048)
+    Main.M11.Axis.PlcToNc : PLCTONC_AXIS_REF (7632640 1024)
+    Main.M11.bBrakeRelease : BOOL (7641624 8)
+    Main.M11.bHardwareEnable : BOOL (7641632 8)
+    Main.M11.bHome : BOOL (7641616 8)
+    Main.M11.bLimitBackwardEnable : BOOL (7641608 8)
+    Main.M11.bLimitForwardEnable : BOOL (7641600 8)
+    Main.M12 : lcls_twincat_motion.DUT_MotionStage (7643840 11264)
+    Main.M12.Axis.NcToPlc : NCTOPLC_AXIS_REF (7644928 2048)
+    Main.M12.Axis.PlcToNc : PLCTONC_AXIS_REF (7643904 1024)
+    Main.M12.bBrakeRelease : BOOL (7652888 8)
+    Main.M12.bHardwareEnable : BOOL (7652896 8)
+    Main.M12.bHome : BOOL (7652880 8)
+    Main.M12.bLimitBackwardEnable : BOOL (7652872 8)
+    Main.M12.bLimitForwardEnable : BOOL (7652864 8)
+    Main.M13 : lcls_twincat_motion.DUT_MotionStage (7655104 11264)
+    Main.M13.Axis.NcToPlc : NCTOPLC_AXIS_REF (7656192 2048)
+    Main.M13.Axis.PlcToNc : PLCTONC_AXIS_REF (7655168 1024)
+    Main.M13.bBrakeRelease : BOOL (7664152 8)
+    Main.M13.bHardwareEnable : BOOL (7664160 8)
+    Main.M13.bHome : BOOL (7664144 8)
+    Main.M13.bLimitBackwardEnable : BOOL (7664136 8)
+    Main.M13.bLimitForwardEnable : BOOL (7664128 8)
+    Main.M14 : lcls_twincat_motion.DUT_MotionStage (7666368 11264)
+    Main.M14.Axis.NcToPlc : NCTOPLC_AXIS_REF (7667456 2048)
+    Main.M14.Axis.PlcToNc : PLCTONC_AXIS_REF (7666432 1024)
+    Main.M14.bBrakeRelease : BOOL (7675416 8)
+    Main.M14.bHardwareEnable : BOOL (7675424 8)
+    Main.M14.bHome : BOOL (7675408 8)
+    Main.M14.bLimitBackwardEnable : BOOL (7675400 8)
+    Main.M14.bLimitForwardEnable : BOOL (7675392 8)
+    Main.M15 : lcls_twincat_motion.DUT_MotionStage (7677632 11264)
+    Main.M15.Axis.NcToPlc : NCTOPLC_AXIS_REF (7678720 2048)
+    Main.M15.Axis.PlcToNc : PLCTONC_AXIS_REF (7677696 1024)
+    Main.M15.bBrakeRelease : BOOL (7686680 8)
+    Main.M15.bHardwareEnable : BOOL (7686688 8)
+    Main.M15.bHome : BOOL (7686672 8)
+    Main.M15.bLimitBackwardEnable : BOOL (7686664 8)
+    Main.M15.bLimitForwardEnable : BOOL (7686656 8)
+    Main.M16 : lcls_twincat_motion.DUT_MotionStage (7688896 11264)
+    Main.M16.Axis.NcToPlc : NCTOPLC_AXIS_REF (7689984 2048)
+    Main.M16.Axis.PlcToNc : PLCTONC_AXIS_REF (7688960 1024)
+    Main.M16.bBrakeRelease : BOOL (7697944 8)
+    Main.M16.bHardwareEnable : BOOL (7697952 8)
+    Main.M16.bHome : BOOL (7697936 8)
+    Main.M16.bLimitBackwardEnable : BOOL (7697928 8)
+    Main.M16.bLimitForwardEnable : BOOL (7697920 8)
+    Main.M17 : lcls_twincat_motion.DUT_MotionStage (7700160 11264)
+    Main.M17.Axis.NcToPlc : NCTOPLC_AXIS_REF (7701248 2048)
+    Main.M17.Axis.PlcToNc : PLCTONC_AXIS_REF (7700224 1024)
+    Main.M17.bBrakeRelease : BOOL (7709208 8)
+    Main.M17.bHardwareEnable : BOOL (7709216 8)
+    Main.M17.bHome : BOOL (7709200 8)
+    Main.M17.bLimitBackwardEnable : BOOL (7709192 8)
+    Main.M17.bLimitForwardEnable : BOOL (7709184 8)
+    Main.M18 : lcls_twincat_motion.DUT_MotionStage (7711424 11264)
+    Main.M18.Axis.NcToPlc : NCTOPLC_AXIS_REF (7712512 2048)
+    Main.M18.Axis.PlcToNc : PLCTONC_AXIS_REF (7711488 1024)
+    Main.M18.bBrakeRelease : BOOL (7720472 8)
+    Main.M18.bHardwareEnable : BOOL (7720480 8)
+    Main.M18.bHome : BOOL (7720464 8)
+    Main.M18.bLimitBackwardEnable : BOOL (7720456 8)
+    Main.M18.bLimitForwardEnable : BOOL (7720448 8)
+    Main.M19 : lcls_twincat_motion.DUT_MotionStage (7722688 11264)
+    Main.M19.Axis.NcToPlc : NCTOPLC_AXIS_REF (7723776 2048)
+    Main.M19.Axis.PlcToNc : PLCTONC_AXIS_REF (7722752 1024)
+    Main.M19.bBrakeRelease : BOOL (7731736 8)
+    Main.M19.bHardwareEnable : BOOL (7731744 8)
+    Main.M19.bHome : BOOL (7731728 8)
+    Main.M19.bLimitBackwardEnable : BOOL (7731720 8)
+    Main.M19.bLimitForwardEnable : BOOL (7731712 8)
+    Main.M2 : lcls_twincat_motion.DUT_MotionStage (7531200 11264)
+    Main.M2.Axis.NcToPlc : NCTOPLC_AXIS_REF (7532288 2048)
+    Main.M2.Axis.PlcToNc : PLCTONC_AXIS_REF (7531264 1024)
+    Main.M2.bBrakeRelease : BOOL (7540248 8)
+    Main.M2.bHardwareEnable : BOOL (7540256 8)
+    Main.M2.bHome : BOOL (7540240 8)
+    Main.M2.bLimitBackwardEnable : BOOL (7540232 8)
+    Main.M2.bLimitForwardEnable : BOOL (7540224 8)
+    Main.M20 : lcls_twincat_motion.DUT_MotionStage (7733952 11264)
+    Main.M20.Axis.NcToPlc : NCTOPLC_AXIS_REF (7735040 2048)
+    Main.M20.Axis.PlcToNc : PLCTONC_AXIS_REF (7734016 1024)
+    Main.M20.bBrakeRelease : BOOL (7743000 8)
+    Main.M20.bHardwareEnable : BOOL (7743008 8)
+    Main.M20.bHome : BOOL (7742992 8)
+    Main.M20.bLimitBackwardEnable : BOOL (7742984 8)
+    Main.M20.bLimitForwardEnable : BOOL (7742976 8)
+    Main.M21 : lcls_twincat_motion.DUT_MotionStage (7745216 11264)
+    Main.M21.Axis.NcToPlc : NCTOPLC_AXIS_REF (7746304 2048)
+    Main.M21.Axis.PlcToNc : PLCTONC_AXIS_REF (7745280 1024)
+    Main.M21.bBrakeRelease : BOOL (7754264 8)
+    Main.M21.bHardwareEnable : BOOL (7754272 8)
+    Main.M21.bHome : BOOL (7754256 8)
+    Main.M21.bLimitBackwardEnable : BOOL (7754248 8)
+    Main.M21.bLimitForwardEnable : BOOL (7754240 8)
+    Main.M22 : lcls_twincat_motion.DUT_MotionStage (7756480 11264)
+    Main.M22.Axis.NcToPlc : NCTOPLC_AXIS_REF (7757568 2048)
+    Main.M22.Axis.PlcToNc : PLCTONC_AXIS_REF (7756544 1024)
+    Main.M22.bBrakeRelease : BOOL (7765528 8)
+    Main.M22.bHardwareEnable : BOOL (7765536 8)
+    Main.M22.bHome : BOOL (7765520 8)
+    Main.M22.bLimitBackwardEnable : BOOL (7765512 8)
+    Main.M22.bLimitForwardEnable : BOOL (7765504 8)
+    Main.M23 : lcls_twincat_motion.DUT_MotionStage (7767744 11264)
+    Main.M23.Axis.NcToPlc : NCTOPLC_AXIS_REF (7768832 2048)
+    Main.M23.Axis.PlcToNc : PLCTONC_AXIS_REF (7767808 1024)
+    Main.M23.bBrakeRelease : BOOL (7776792 8)
+    Main.M23.bHardwareEnable : BOOL (7776800 8)
+    Main.M23.bHome : BOOL (7776784 8)
+    Main.M23.bLimitBackwardEnable : BOOL (7776776 8)
+    Main.M23.bLimitForwardEnable : BOOL (7776768 8)
+    Main.M24 : lcls_twincat_motion.DUT_MotionStage (7779008 11264)
+    Main.M24.Axis.NcToPlc : NCTOPLC_AXIS_REF (7780096 2048)
+    Main.M24.Axis.PlcToNc : PLCTONC_AXIS_REF (7779072 1024)
+    Main.M24.bBrakeRelease : BOOL (7788056 8)
+    Main.M24.bHardwareEnable : BOOL (7788064 8)
+    Main.M24.bHome : BOOL (7788048 8)
+    Main.M24.bLimitBackwardEnable : BOOL (7788040 8)
+    Main.M24.bLimitForwardEnable : BOOL (7788032 8)
+    Main.M25 : lcls_twincat_motion.DUT_MotionStage (7790272 11264)
+    Main.M25.Axis.NcToPlc : NCTOPLC_AXIS_REF (7791360 2048)
+    Main.M25.Axis.PlcToNc : PLCTONC_AXIS_REF (7790336 1024)
+    Main.M25.bBrakeRelease : BOOL (7799320 8)
+    Main.M25.bHardwareEnable : BOOL (7799328 8)
+    Main.M25.bHome : BOOL (7799312 8)
+    Main.M25.bLimitBackwardEnable : BOOL (7799304 8)
+    Main.M25.bLimitForwardEnable : BOOL (7799296 8)
+    Main.M3 : lcls_twincat_motion.DUT_MotionStage (7542464 11264)
+    Main.M3.Axis.NcToPlc : NCTOPLC_AXIS_REF (7543552 2048)
+    Main.M3.Axis.PlcToNc : PLCTONC_AXIS_REF (7542528 1024)
+    Main.M3.bBrakeRelease : BOOL (7551512 8)
+    Main.M3.bHardwareEnable : BOOL (7551520 8)
+    Main.M3.bHome : BOOL (7551504 8)
+    Main.M3.bLimitBackwardEnable : BOOL (7551496 8)
+    Main.M3.bLimitForwardEnable : BOOL (7551488 8)
+    Main.M4 : lcls_twincat_motion.DUT_MotionStage (7553728 11264)
+    Main.M4.Axis.NcToPlc : NCTOPLC_AXIS_REF (7554816 2048)
+    Main.M4.Axis.PlcToNc : PLCTONC_AXIS_REF (7553792 1024)
+    Main.M4.bBrakeRelease : BOOL (7562776 8)
+    Main.M4.bHardwareEnable : BOOL (7562784 8)
+    Main.M4.bHome : BOOL (7562768 8)
+    Main.M4.bLimitBackwardEnable : BOOL (7562760 8)
+    Main.M4.bLimitForwardEnable : BOOL (7562752 8)
+    Main.M5 : lcls_twincat_motion.DUT_MotionStage (7564992 11264)
+    Main.M5.Axis.NcToPlc : NCTOPLC_AXIS_REF (7566080 2048)
+    Main.M5.Axis.PlcToNc : PLCTONC_AXIS_REF (7565056 1024)
+    Main.M5.bBrakeRelease : BOOL (7574040 8)
+    Main.M5.bHardwareEnable : BOOL (7574048 8)
+    Main.M5.bHome : BOOL (7574032 8)
+    Main.M5.bLimitBackwardEnable : BOOL (7574024 8)
+    Main.M5.bLimitForwardEnable : BOOL (7574016 8)
+    Main.M6 : lcls_twincat_motion.DUT_MotionStage (7576256 11264)
+    Main.M6.Axis.NcToPlc : NCTOPLC_AXIS_REF (7577344 2048)
+    Main.M6.Axis.PlcToNc : PLCTONC_AXIS_REF (7576320 1024)
+    Main.M6.bBrakeRelease : BOOL (7585304 8)
+    Main.M6.bHardwareEnable : BOOL (7585312 8)
+    Main.M6.bHome : BOOL (7585296 8)
+    Main.M6.bLimitBackwardEnable : BOOL (7585288 8)
+    Main.M6.bLimitForwardEnable : BOOL (7585280 8)
+    Main.M7 : lcls_twincat_motion.DUT_MotionStage (7587520 11264)
+    Main.M7.Axis.NcToPlc : NCTOPLC_AXIS_REF (7588608 2048)
+    Main.M7.Axis.PlcToNc : PLCTONC_AXIS_REF (7587584 1024)
+    Main.M7.bBrakeRelease : BOOL (7596568 8)
+    Main.M7.bHardwareEnable : BOOL (7596576 8)
+    Main.M7.bHome : BOOL (7596560 8)
+    Main.M7.bLimitBackwardEnable : BOOL (7596552 8)
+    Main.M7.bLimitForwardEnable : BOOL (7596544 8)
+    Main.M8 : lcls_twincat_motion.DUT_MotionStage (7598784 11264)
+    Main.M8.Axis.NcToPlc : NCTOPLC_AXIS_REF (7599872 2048)
+    Main.M8.Axis.PlcToNc : PLCTONC_AXIS_REF (7598848 1024)
+    Main.M8.bBrakeRelease : BOOL (7607832 8)
+    Main.M8.bHardwareEnable : BOOL (7607840 8)
+    Main.M8.bHome : BOOL (7607824 8)
+    Main.M8.bLimitBackwardEnable : BOOL (7607816 8)
+    Main.M8.bLimitForwardEnable : BOOL (7607808 8)
+    Main.M9 : lcls_twincat_motion.DUT_MotionStage (7610048 11264)
+    Main.M9.Axis.NcToPlc : NCTOPLC_AXIS_REF (7611136 2048)
+    Main.M9.Axis.PlcToNc : PLCTONC_AXIS_REF (7610112 1024)
+    Main.M9.bBrakeRelease : BOOL (7619096 8)
+    Main.M9.bHardwareEnable : BOOL (7619104 8)
+    Main.M9.bHome : BOOL (7619088 8)
+    Main.M9.bLimitBackwardEnable : BOOL (7619080 8)
+    Main.M9.bLimitForwardEnable : BOOL (7619072 8)
+    PMPS.fbArbiter : FB_Arbiter (7514336 32)
+    PMPS.fbFastFaultOutput1 : FB_HardwareFFOutput (7519904 32)
+    PMPS.fbFastFaultOutput2 : FB_HardwareFFOutput (7801536 32)
     PRG_1_PlcTask.nPlaceholder : INT (4301040 16)
-    PRG_IM1K0_XTES.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (4322880 152448)
+    PRG_IM1K0_XTES.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (4322880 151040)
     PRG_IM1K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4325440 2048)
     PRG_IM1K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4324416 1024)
-    PRG_IM1K0_XTES.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (4475328 152448)
-    PRG_IM1K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4477888 2048)
-    PRG_IM1K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4476864 1024)
-    PRG_IM1K0_XTES.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (4627776 152448)
-    PRG_IM1K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4630336 2048)
-    PRG_IM1K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4629312 1024)
-    PRG_IM1K3_PPM.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (4780224 152448)
-    PRG_IM1K3_PPM.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4782784 2048)
-    PRG_IM1K3_PPM.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4781760 1024)
-    PRG_IM2K0_XTES.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (4932672 152448)
-    PRG_IM2K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4935232 2048)
-    PRG_IM2K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4934208 1024)
-    PRG_IM2K0_XTES.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (5085120 152448)
-    PRG_IM2K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5087680 2048)
-    PRG_IM2K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5086656 1024)
-    PRG_IM2K0_XTES.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (5237568 152448)
-    PRG_IM2K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5240128 2048)
-    PRG_IM2K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5239104 1024)
-    PRG_PF1K0_WFS.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (5390016 152448)
-    PRG_PF1K0_WFS.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5392576 2048)
-    PRG_PF1K0_WFS.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5391552 1024)
-    PRG_PF1K0_WFS.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (5542464 152448)
-    PRG_PF1K0_WFS.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5545024 2048)
-    PRG_PF1K0_WFS.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5544000 1024)
-    PRG_RTDSK0.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (5694912 152448)
-    PRG_RTDSK0.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5697472 2048)
-    PRG_RTDSK0.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5696448 1024)
-    PRG_RTDSK0.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (5847360 152448)
-    PRG_RTDSK0.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5849920 2048)
-    PRG_RTDSK0.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5848896 1024)
-    PRG_RTDSK0.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (5999808 152448)
-    PRG_RTDSK0.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6002368 2048)
-    PRG_RTDSK0.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6001344 1024)
-    PRG_RTDSK0.fbMotion4 : lcls_twincat_motion.FB_MotionStageSim (6152256 152448)
-    PRG_RTDSK0.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6154816 2048)
-    PRG_RTDSK0.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6153792 1024)
-    PRG_RTDSK0.fbMotion5 : lcls_twincat_motion.FB_MotionStageSim (6304704 152448)
-    PRG_RTDSK0.fbMotion5.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6307264 2048)
-    PRG_RTDSK0.fbMotion5.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6306240 1024)
-    PRG_RTDSK0.fbMotion6 : lcls_twincat_motion.FB_MotionStageSim (6457152 152448)
-    PRG_RTDSK0.fbMotion6.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6459712 2048)
-    PRG_RTDSK0.fbMotion6.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6458688 1024)
-    PRG_RTDSK0.fbMotion7 : lcls_twincat_motion.FB_MotionStageSim (6609600 152448)
-    PRG_RTDSK0.fbMotion7.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6612160 2048)
-    PRG_RTDSK0.fbMotion7.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6611136 1024)
-    PRG_RTDSK0.fbMotion8 : lcls_twincat_motion.FB_MotionStageSim (6762048 152448)
-    PRG_RTDSK0.fbMotion8.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6764608 2048)
-    PRG_RTDSK0.fbMotion8.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6763584 1024)
-    PRG_SL1K0_POWER.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (6914496 152448)
-    PRG_SL1K0_POWER.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6917056 2048)
-    PRG_SL1K0_POWER.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6916032 1024)
-    PRG_SL1K0_POWER.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (7066944 152448)
-    PRG_SL1K0_POWER.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7069504 2048)
-    PRG_SL1K0_POWER.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7068480 1024)
-    PRG_SL1K0_POWER.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (7219392 152448)
-    PRG_SL1K0_POWER.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7221952 2048)
-    PRG_SL1K0_POWER.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7220928 1024)
-    PRG_SL1K0_POWER.fbMotion4 : lcls_twincat_motion.FB_MotionStageSim (7371840 152448)
-    PRG_SL1K0_POWER.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7374400 2048)
-    PRG_SL1K0_POWER.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7373376 1024)
-    PRG_SL2K0_POWER.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (7524288 152448)
-    PRG_SL2K0_POWER.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7526848 2048)
-    PRG_SL2K0_POWER.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7525824 1024)
-    PRG_SL2K0_POWER.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (7676736 152448)
-    PRG_SL2K0_POWER.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7679296 2048)
-    PRG_SL2K0_POWER.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7678272 1024)
-    PRG_SL2K0_POWER.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (7829184 152448)
-    PRG_SL2K0_POWER.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7831744 2048)
-    PRG_SL2K0_POWER.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7830720 1024)
-    PRG_SL2K0_POWER.fbMotion4 : lcls_twincat_motion.FB_MotionStageSim (7981632 152448)
-    PRG_SL2K0_POWER.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7984192 2048)
-    PRG_SL2K0_POWER.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7983168 1024)
-    TwinCAT_LicenseInfoVarList._LicenseInfo : PlcLicenseInfo (8418464 1024)
-    TwinCAT_SystemInfoVarList._AppInfo : PlcAppSystemInfo (8419488 2048)
-    TwinCAT_SystemInfoVarList._TaskInfo : PlcTaskSystemInfo (8421568 1024)
-    TwinCAT_SystemInfoVarList._TaskOid_PlcTask : OTCID (8422592 32)
-    TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask : OTCID (8421536 32)
-    TwinCAT_SystemInfoVarList.__PlcTask : _Implicit_Task_Info (8422624 704)
+    PRG_IM1K0_XTES.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (4473920 151040)
+    PRG_IM1K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4476480 2048)
+    PRG_IM1K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4475456 1024)
+    PRG_IM1K0_XTES.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (4624960 151040)
+    PRG_IM1K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4627520 2048)
+    PRG_IM1K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4626496 1024)
+    PRG_IM1K3_PPM.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (4776000 151040)
+    PRG_IM1K3_PPM.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4778560 2048)
+    PRG_IM1K3_PPM.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4777536 1024)
+    PRG_IM2K0_XTES.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (4927040 151040)
+    PRG_IM2K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (4929600 2048)
+    PRG_IM2K0_XTES.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (4928576 1024)
+    PRG_IM2K0_XTES.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (5078080 151040)
+    PRG_IM2K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5080640 2048)
+    PRG_IM2K0_XTES.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5079616 1024)
+    PRG_IM2K0_XTES.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (5229120 151040)
+    PRG_IM2K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5231680 2048)
+    PRG_IM2K0_XTES.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5230656 1024)
+    PRG_PF1K0_WFS.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (5380160 151040)
+    PRG_PF1K0_WFS.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5382720 2048)
+    PRG_PF1K0_WFS.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5381696 1024)
+    PRG_PF1K0_WFS.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (5531200 151040)
+    PRG_PF1K0_WFS.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5533760 2048)
+    PRG_PF1K0_WFS.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5532736 1024)
+    PRG_RTDSK0.fbMotion1 : lcls_twincat_motion.FB_MotionStageSim (5682240 151040)
+    PRG_RTDSK0.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5684800 2048)
+    PRG_RTDSK0.fbMotion1.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5683776 1024)
+    PRG_RTDSK0.fbMotion2 : lcls_twincat_motion.FB_MotionStageSim (5833280 151040)
+    PRG_RTDSK0.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5835840 2048)
+    PRG_RTDSK0.fbMotion2.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5834816 1024)
+    PRG_RTDSK0.fbMotion3 : lcls_twincat_motion.FB_MotionStageSim (5984320 151040)
+    PRG_RTDSK0.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (5986880 2048)
+    PRG_RTDSK0.fbMotion3.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (5985856 1024)
+    PRG_RTDSK0.fbMotion4 : lcls_twincat_motion.FB_MotionStageSim (6135360 151040)
+    PRG_RTDSK0.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6137920 2048)
+    PRG_RTDSK0.fbMotion4.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6136896 1024)
+    PRG_RTDSK0.fbMotion5 : lcls_twincat_motion.FB_MotionStageSim (6286400 151040)
+    PRG_RTDSK0.fbMotion5.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6288960 2048)
+    PRG_RTDSK0.fbMotion5.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6287936 1024)
+    PRG_RTDSK0.fbMotion6 : lcls_twincat_motion.FB_MotionStageSim (6437440 151040)
+    PRG_RTDSK0.fbMotion6.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6440000 2048)
+    PRG_RTDSK0.fbMotion6.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6438976 1024)
+    PRG_RTDSK0.fbMotion7 : lcls_twincat_motion.FB_MotionStageSim (6588480 151040)
+    PRG_RTDSK0.fbMotion7.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6591040 2048)
+    PRG_RTDSK0.fbMotion7.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6590016 1024)
+    PRG_RTDSK0.fbMotion8 : lcls_twincat_motion.FB_MotionStageSim (6739520 151040)
+    PRG_RTDSK0.fbMotion8.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6742080 2048)
+    PRG_RTDSK0.fbMotion8.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6741056 1024)
+    PRG_SL1K0_POWER.mcPower : ARRAY[1..4] OF Tc2_MC2.MC_Power (6890560 3072)
+    PRG_SL2K0_POWER.aTMatrix : ARRAY[1..4] OF REAL (7513408 512)
+    PRG_SL2K0_POWER.bExecuteMotion : BOOL (4301032 8)
+    PRG_SL2K0_POWER.bInit : BOOL (4302736 8)
+    PRG_SL2K0_POWER.fbSL2K0 : FB_SLITS_POWER (6894272 619136)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bError : BOOL (7499272 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bOverrange : BOOL (7499288 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bUnderrange : BOOL (7499280 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.iRaw : INT (7499296 16)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bError : BOOL (7499464 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bOverrange : BOOL (7499480 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bUnderrange : BOOL (7499472 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.iRaw : INT (7499488 16)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bError : BOOL (7499656 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bOverrange : BOOL (7499672 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bUnderrange : BOOL (7499664 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.iRaw : INT (7499680 16)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bError : BOOL (7499848 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bOverrange : BOOL (7499864 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bUnderrange : BOOL (7499856 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.iRaw : INT (7499872 16)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bError : BOOL (7500040 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bOverrange : BOOL (7500056 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bUnderrange : BOOL (7500048 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.iRaw : INT (7500064 16)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bError : BOOL (7500232 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bOverrange : BOOL (7500248 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bUnderrange : BOOL (7500240 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.iRaw : INT (7500256 16)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bError : BOOL (7498888 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bOverrange : BOOL (7498904 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bUnderrange : BOOL (7498896 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.iRaw : INT (7498912 16)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bError : BOOL (7499080 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bOverrange : BOOL (7499096 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bUnderrange : BOOL (7499088 8)
+    PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.iRaw : INT (7499104 16)
+    PRG_SL2K0_POWER.fbSL2K0.fbBottomBlade.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7048256 2048)
+    PRG_SL2K0_POWER.fbSL2K0.fbBottomBlade.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7047232 1024)
+    PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk : BOOL (7498720 8)
+    PRG_SL2K0_POWER.fbSL2K0.fbNorthBlade.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7199232 2048)
+    PRG_SL2K0_POWER.fbSL2K0.fbNorthBlade.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7198208 1024)
+    PRG_SL2K0_POWER.fbSL2K0.fbSouthBlade.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (7350208 2048)
+    PRG_SL2K0_POWER.fbSL2K0.fbSouthBlade.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (7349184 1024)
+    PRG_SL2K0_POWER.fbSL2K0.fbTopBlade.fbDriveVirtual.MasterAxis.NcToPlc : NCTOPLC_AXIS_REF (6897280 2048)
+    PRG_SL2K0_POWER.fbSL2K0.fbTopBlade.fbDriveVirtual.MasterAxis.PlcToNc : PLCTONC_AXIS_REF (6896256 1024)
+    PRG_SL2K0_POWER.mcPower : ARRAY[1..4] OF Tc2_MC2.MC_Power (7514368 3072)
+    PRG_SL2K0_POWER.rActApertureSizeX : REAL (7514016 32)
+    PRG_SL2K0_POWER.rActApertureSizeY : REAL (7514048 32)
+    PRG_SL2K0_POWER.rActCenterX : REAL (7514080 32)
+    PRG_SL2K0_POWER.rActCenterY : REAL (7514112 32)
+    PRG_SL2K0_POWER.rMaxCx : REAL (7514272 32)
+    PRG_SL2K0_POWER.rMaxCy : REAL (7514304 32)
+    PRG_SL2K0_POWER.rMaxX : REAL (7514208 32)
+    PRG_SL2K0_POWER.rMaxY : REAL (7514240 32)
+    PRG_SL2K0_POWER.rReqApertureSizeX : REAL (4310752 32)
+    PRG_SL2K0_POWER.rReqApertureSizeY : REAL (7513920 32)
+    PRG_SL2K0_POWER.rReqCenterX : REAL (7513952 32)
+    PRG_SL2K0_POWER.rReqCenterY : REAL (7513984 32)
+    PRG_SL2K0_POWER.rSetCenterX : REAL (7514144 32)
+    PRG_SL2K0_POWER.rSetCenterY : REAL (7514176 32)
+    TwinCAT_LicenseInfoVarList._LicenseInfo : ARRAY[1..1] OF PlcLicenseInfo (7801824 1024)
+    TwinCAT_SystemInfoVarList._AppInfo : PlcAppSystemInfo (7802848 2048)
+    TwinCAT_SystemInfoVarList._TaskInfo : ARRAY[1..1] OF PlcTaskSystemInfo (7804928 1024)
+    TwinCAT_SystemInfoVarList._TaskOid_PlcTask : OTCID (7805952 32)
+    TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask : OTCID (7804896 32)
+    TwinCAT_SystemInfoVarList.__PlcTask : _Implicit_Task_Info (7805984 704)
 
 Boxes
 -----
@@ -913,7 +1477,7 @@ Boxes
     11.) X2 SXR EC1 (EK1100)
     12.) X2 SL2K0-POWER (EK1100)
     13.) X1 PF1K0-WFS (EK1100)
-    14.) SL1K0-EL7041-01
+    14.) SL1K0-EL7041-E0
     15.) EC1 E1 (EK1122)
     16.) EC1 E2 (EK1122)
     17.) SL1K0-EL5042-01
@@ -940,8 +1504,8 @@ Boxes
     38.) SL1K0-EL3202-04
     39.) SL1K0-EL1004
     40.) SL1K0-EL9011
-    41.) SL2K0-EL7041-01
-    42.) SL2K0-EL5042-01
+    41.) SL2K0-EL7041-E7
+    42.) SL2K0-EL9011
     43.) IM2K0-EL7041
     44.) IM2K0-EL2004
     45.) IM2K0-EL5042
@@ -949,14 +1513,9 @@ Boxes
     47.) IM2K0-EL1088
     48.) IM2K0-EL6002
     49.) IM2K0-EL9011
-    50.) SL2K0-EL7041-02
-    51.) SL2K0-EL2004
-    52.) SL2K0-EL7041-03
-    53.) SL2K0-EL5042-02
-    54.) SL2K0-EL7041-04
-    55.) SL2K0-EL3202-01
-    56.) SL2K0-EL3202-02
-    57.) SL2K0-EL3202-03
+    55.) SL2K0-EL3202-E8
+    56.) SL2K0-EL3202-E9
+    57.) SL2K0-EL3202-E10
     58.) IM1K3-EL7041
     59.) IM1K3-EL5042
     60.) IM1K3-EL2004
@@ -976,9 +1535,8 @@ Boxes
     74.) RTDSK0-EL7041-03
     75.) RTDSK0-EL7041-04
     76.) RTDSK0-EL7041-05
-    77.) SL2K0-EL3202-04
-    78.) SL2K0-EL1004
-    79.) SL2K0-EL9011
+    77.) SL2K0-EL3202-E11
+    78.) SL2K0-EL1004-E12
     80.) RTDSK0-EL3054
     81.) RTDSK0-EL6021
     82.) RTDSK0-EL2008
@@ -994,7 +1552,13 @@ Boxes
     92.) RTDSK0-EL2624
     93.) RTDSK0-EL9515-01
     94.) RTDSK0-EL9515-02
+    95.) SL2K0-EL7041-E1
+    96.) SL2K0-EL5042-E2
     97.) RTDSK0-EL9011
+    98.) SL2K0-EL7041-E3
+    99.) SL2K0-EL2004-E4
+    100.) SL2K0-EL7041-E5
+    101.) SL2K0-EL5042-E6
     131.) RTDSK0-EL7041-06
     132.) RTDSK0-EL7041-07
     133.) RTDSK0-EL7041-08
@@ -1169,146 +1733,454 @@ NC axes
         OtherSettings:AllowMotionCmdToSlave = 'true'
         Enc:EncType = 1
 
-    22.) 'Axis 22':
+    22.) 'SL2K0-SOUTH-M22':
         Id = 22
         CreateSymbols = 'true'
         AxisType = 1
         AxisFolder = 'SL2K0-POWER'
+        Velo:Maximum = 0.8
         OtherSettings:AllowMotionCmdToSlave = 'true'
-        Enc:EncType = 1
+        Enc:EncType = 29
+        Enc:ScaleFactorNumerator = 5e-05
+        Enc:MaxCount = '#xffffffff'
+        Enc:Inc:RefSoftSyncMask = '#x0000ffff'
 
-    23.) 'Axis 23':
+    23.) 'SL2K0-TOP-M23':
         Id = 23
         CreateSymbols = 'true'
         AxisType = 1
         AxisFolder = 'SL2K0-POWER'
+        Velo:Maximum = 0.8
         OtherSettings:AllowMotionCmdToSlave = 'true'
-        Enc:EncType = 1
+        Enc:EncType = 29
+        Enc:ScaleFactorNumerator = 5e-05
+        Enc:MaxCount = '#xffffffff'
+        Enc:Inc:RefSoftSyncMask = '#x0000ffff'
 
-    24.) 'Axis 24':
+    24.) 'SL2K0-NORTH-M24':
         Id = 24
         CreateSymbols = 'true'
         AxisType = 1
         AxisFolder = 'SL2K0-POWER'
+        Velo:Maximum = 0.8
         OtherSettings:AllowMotionCmdToSlave = 'true'
-        Enc:EncType = 1
+        Enc:EncType = 29
+        Enc:ScaleFactorNumerator = 5e-05
+        Enc:MaxCount = '#xffffffff'
+        Enc:Inc:RefSoftSyncMask = '#x0000ffff'
 
-    25.) 'Axis 25':
+    25.) 'SL2K0-BOTTOM-M25':
         Id = 25
         CreateSymbols = 'true'
         AxisType = 1
         AxisFolder = 'SL2K0-POWER'
+        Velo:Maximum = 0.8
         OtherSettings:AllowMotionCmdToSlave = 'true'
-        Enc:EncType = 1
+        Enc:EncType = 29
+        Enc:ScaleFactorNumerator = 5e-05
+        Enc:MaxCount = '#xffffffff'
+        Enc:Inc:RefSoftSyncMask = '#x0000ffff'
 
 Links
 -----
 
-    1.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M1.Axis.NcToPlc')
+    1.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'WcState^InputToggle')
+    2.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'WcState^WcState')
+    3.) A (None, 'Enc^Inputs^In^nComState')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'WcState^InputToggle')
+    4.) A (None, 'Enc^Inputs^In^nComState')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'WcState^WcState')
+    5.) A (None, 'Enc^Inputs^In^nDataIn1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 1^Position')
+    6.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 1^Status^Diag')
+    7.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 1^Status^Error')
+    8.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 1^Status^Input cycle counter')
+    9.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 1^Status^Ready')
+    10.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 1^Status^TxPDO State')
+    11.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 1^Status^Warning')
+    12.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Error')
+    13.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Moving negative')
+    14.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Moving positive')
+    15.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Ready')
+    16.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Ready to enable')
+    17.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Torque reduced')
+    18.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Warning')
+    19.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Digital input 1')
+    20.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Digital input 2')
+    21.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Sync error')
+    22.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^TxPDO Toggle')
+    23.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'WcState^InputToggle')
+    24.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'WcState^WcState')
+    25.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Control^Control^Enable')
+    26.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Control^Control^Reduce torque')
+    27.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Control^Control^Reset')
+    28.) A (None, 'Drive^Outputs^Out^nDataOut2[0]')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Velocity^Velocity')
+    29.) A (None, 'Enc^Inputs^In^nComState')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'WcState^InputToggle')
+    30.) A (None, 'Enc^Inputs^In^nComState')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'WcState^WcState')
+    31.) A (None, 'Enc^Inputs^In^nDataIn1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 2^Position')
+    32.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 2^Status^Diag')
+    33.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 2^Status^Error')
+    34.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 2^Status^Input cycle counter')
+    35.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 2^Status^Ready')
+    36.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 2^Status^TxPDO State')
+    37.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E2', 'FB Inputs Channel 2^Status^Warning')
+    38.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Error')
+    39.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Moving negative')
+    40.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Moving positive')
+    41.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Ready')
+    42.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Ready to enable')
+    43.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Torque reduced')
+    44.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Warning')
+    45.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Digital input 1')
+    46.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Digital input 2')
+    47.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Sync error')
+    48.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^TxPDO Toggle')
+    49.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'WcState^InputToggle')
+    50.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'WcState^WcState')
+    51.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Control^Control^Enable')
+    52.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Control^Control^Reduce torque')
+    53.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Control^Control^Reset')
+    54.) A (None, 'Drive^Outputs^Out^nDataOut2[0]')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Velocity^Velocity')
+    55.) A (None, 'Enc^Inputs^In^nComState')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'WcState^InputToggle')
+    56.) A (None, 'Enc^Inputs^In^nComState')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'WcState^WcState')
+    57.) A (None, 'Enc^Inputs^In^nDataIn1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 1^Position')
+    58.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 1^Status^Diag')
+    59.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 1^Status^Error')
+    60.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 1^Status^Input cycle counter')
+    61.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 1^Status^Ready')
+    62.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 1^Status^TxPDO State')
+    63.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 1^Status^Warning')
+    64.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Error')
+    65.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Moving negative')
+    66.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Moving positive')
+    67.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Ready')
+    68.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Ready to enable')
+    69.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Torque reduced')
+    70.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Warning')
+    71.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Digital input 1')
+    72.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Digital input 2')
+    73.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Sync error')
+    74.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^TxPDO Toggle')
+    75.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'WcState^InputToggle')
+    76.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'WcState^WcState')
+    77.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Control^Control^Enable')
+    78.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Control^Control^Reduce torque')
+    79.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Control^Control^Reset')
+    80.) A (None, 'Drive^Outputs^Out^nDataOut2[0]')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Velocity^Velocity')
+    81.) A (None, 'Enc^Inputs^In^nComState')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'WcState^InputToggle')
+    82.) A (None, 'Enc^Inputs^In^nComState')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'WcState^WcState')
+    83.) A (None, 'Enc^Inputs^In^nDataIn1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 2^Position')
+    84.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 2^Status^Diag')
+    85.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 2^Status^Error')
+    86.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 2^Status^Input cycle counter')
+    87.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 2^Status^Ready')
+    88.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 2^Status^TxPDO State')
+    89.) A (None, 'Enc^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL5042-E6', 'FB Inputs Channel 2^Status^Warning')
+    90.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Error')
+    91.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Moving negative')
+    92.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Moving positive')
+    93.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Ready')
+    94.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Ready to enable')
+    95.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Torque reduced')
+    96.) A (None, 'Drive^Inputs^In^nState1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Warning')
+    97.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Digital input 1')
+    98.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Digital input 2')
+    99.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Sync error')
+    100.) A (None, 'Drive^Inputs^In^nState2')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^TxPDO Toggle')
+    101.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'WcState^InputToggle')
+    102.) A (None, 'Drive^Inputs^In^nState4')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'WcState^WcState')
+    103.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Control^Control^Enable')
+    104.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Control^Control^Reduce torque')
+    105.) A (None, 'Drive^Outputs^Out^nCtrl1')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Control^Control^Reset')
+    106.) A (None, 'Drive^Outputs^Out^nDataOut2[0]')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Velocity^Velocity')
+    107.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bError')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 1^Status^Error')
+    108.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.iRaw')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 1^Value')
+    109.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bError')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 1^Status^Error')
+    110.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bOverrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 1^Status^Overrange')
+    111.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bUnderrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 1^Status^Underrange')
+    112.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.iRaw')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 1^Value')
+    113.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bError')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 2^Status^Error')
+    114.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bOverrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 2^Status^Overrange')
+    115.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bUnderrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 2^Status^Underrange')
+    116.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.iRaw')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10', 'RTD Inputs Channel 2^Value')
+    117.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bOverrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E11', 'RTD Inputs Channel 1^Status^Overrange')
+    118.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bUnderrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E11', 'RTD Inputs Channel 1^Status^Underrange')
+    119.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bError')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E11', 'RTD Inputs Channel 2^Status^Error')
+    120.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bOverrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E11', 'RTD Inputs Channel 2^Status^Overrange')
+    121.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bUnderrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E11', 'RTD Inputs Channel 2^Status^Underrange')
+    122.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.iRaw')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E11', 'RTD Inputs Channel 2^Value')
+    123.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bError')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E8', 'RTD Inputs Channel 1^Status^Error')
+    124.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bOverrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E8', 'RTD Inputs Channel 1^Status^Overrange')
+    125.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bUnderrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E8', 'RTD Inputs Channel 1^Status^Underrange')
+    126.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.iRaw')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E8', 'RTD Inputs Channel 1^Value')
+    127.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bError')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E8', 'RTD Inputs Channel 2^Status^Error')
+    128.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bOverrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E8', 'RTD Inputs Channel 2^Status^Overrange')
+    129.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bUnderrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E8', 'RTD Inputs Channel 2^Status^Underrange')
+    130.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.iRaw')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E8', 'RTD Inputs Channel 2^Value')
+    131.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bError')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E9', 'RTD Inputs Channel 1^Status^Error')
+    132.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bOverrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E9', 'RTD Inputs Channel 1^Status^Overrange')
+    133.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bUnderrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E9', 'RTD Inputs Channel 1^Status^Underrange')
+    134.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.iRaw')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E9', 'RTD Inputs Channel 1^Value')
+    135.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bError')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E9', 'RTD Inputs Channel 2^Status^Error')
+    136.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bOverrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E9', 'RTD Inputs Channel 2^Status^Overrange')
+    137.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bUnderrange')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E9', 'RTD Inputs Channel 2^Status^Underrange')
+    138.) A ('kfe_motion Instance', 'PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.iRaw')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E9', 'RTD Inputs Channel 2^Value')
+    139.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M22.bLimitBackwardEnable')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Digital input 1')
+    140.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M22.bLimitForwardEnable')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E1', 'STM Status^Status^Digital input 2')
+    141.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M23.bLimitBackwardEnable')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Digital input 1')
+    142.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M23.bLimitForwardEnable')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E3', 'STM Status^Status^Digital input 2')
+    143.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M24.bLimitBackwardEnable')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Digital input 1')
+    144.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M24.bLimitForwardEnable')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E5', 'STM Status^Status^Digital input 2')
+    145.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M25.bLimitBackwardEnable')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Digital input 1')
+    146.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M25.bLimitForwardEnable')
+          B ('TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL7041-E7', 'STM Status^Status^Digital input 2')
+    147.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M1.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 1', 'Outputs^ToPlc')
-    2.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M1.Axis.PlcToNc')
+    148.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M1.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 1', 'Inputs^FromPlc')
-    3.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M10.Axis.NcToPlc')
+    149.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M10.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 10', 'Outputs^ToPlc')
-    4.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M10.Axis.PlcToNc')
+    150.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M10.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 10', 'Inputs^FromPlc')
-    5.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M11.Axis.NcToPlc')
+    151.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M11.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 11', 'Outputs^ToPlc')
-    6.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M11.Axis.PlcToNc')
+    152.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M11.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 11', 'Inputs^FromPlc')
-    7.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M12.Axis.NcToPlc')
+    153.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M12.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 12', 'Outputs^ToPlc')
-    8.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M12.Axis.PlcToNc')
+    154.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M12.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 12', 'Inputs^FromPlc')
-    9.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M13.Axis.NcToPlc')
+    155.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M13.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 13', 'Outputs^ToPlc')
-    10.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M13.Axis.PlcToNc')
+    156.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M13.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 13', 'Inputs^FromPlc')
-    11.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M14.Axis.NcToPlc')
+    157.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M14.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 14', 'Outputs^ToPlc')
-    12.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M14.Axis.PlcToNc')
+    158.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M14.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 14', 'Inputs^FromPlc')
-    13.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M15.Axis.NcToPlc')
+    159.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M15.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 15', 'Outputs^ToPlc')
-    14.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M15.Axis.PlcToNc')
+    160.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M15.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 15', 'Inputs^FromPlc')
-    15.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M16.Axis.NcToPlc')
+    161.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M16.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 16', 'Outputs^ToPlc')
-    16.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M16.Axis.PlcToNc')
+    162.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M16.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 16', 'Inputs^FromPlc')
-    17.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M17.Axis.NcToPlc')
+    163.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M17.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 17', 'Outputs^ToPlc')
-    18.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M17.Axis.PlcToNc')
+    164.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M17.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 17', 'Inputs^FromPlc')
-    19.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M18.Axis.NcToPlc')
+    165.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M18.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 18', 'Outputs^ToPlc')
-    20.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M18.Axis.PlcToNc')
+    166.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M18.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 18', 'Inputs^FromPlc')
-    21.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M19.Axis.NcToPlc')
+    167.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M19.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 19', 'Outputs^ToPlc')
-    22.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M19.Axis.PlcToNc')
+    168.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M19.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 19', 'Inputs^FromPlc')
-    23.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M2.Axis.NcToPlc')
+    169.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M2.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 2', 'Outputs^ToPlc')
-    24.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M2.Axis.PlcToNc')
+    170.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M2.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 2', 'Inputs^FromPlc')
-    25.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M20.Axis.NcToPlc')
+    171.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M20.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 20', 'Outputs^ToPlc')
-    26.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M20.Axis.PlcToNc')
+    172.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M20.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 20', 'Inputs^FromPlc')
-    27.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M21.Axis.NcToPlc')
+    173.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M21.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 21', 'Outputs^ToPlc')
-    28.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M21.Axis.PlcToNc')
+    174.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M21.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 21', 'Inputs^FromPlc')
-    29.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M22.Axis.NcToPlc')
-          B ('TINC^NC-Task 1 SAF^Axes^Axis 22', 'Outputs^ToPlc')
-    30.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M22.Axis.PlcToNc')
-          B ('TINC^NC-Task 1 SAF^Axes^Axis 22', 'Inputs^FromPlc')
-    31.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M23.Axis.NcToPlc')
-          B ('TINC^NC-Task 1 SAF^Axes^Axis 23', 'Outputs^ToPlc')
-    32.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M23.Axis.PlcToNc')
-          B ('TINC^NC-Task 1 SAF^Axes^Axis 23', 'Inputs^FromPlc')
-    33.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M24.Axis.NcToPlc')
-          B ('TINC^NC-Task 1 SAF^Axes^Axis 24', 'Outputs^ToPlc')
-    34.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M24.Axis.PlcToNc')
-          B ('TINC^NC-Task 1 SAF^Axes^Axis 24', 'Inputs^FromPlc')
-    35.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M25.Axis.NcToPlc')
-          B ('TINC^NC-Task 1 SAF^Axes^Axis 25', 'Outputs^ToPlc')
-    36.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M25.Axis.PlcToNc')
-          B ('TINC^NC-Task 1 SAF^Axes^Axis 25', 'Inputs^FromPlc')
-    37.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M3.Axis.NcToPlc')
+    175.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M3.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 3', 'Outputs^ToPlc')
-    38.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M3.Axis.PlcToNc')
+    176.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M3.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 3', 'Inputs^FromPlc')
-    39.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M4.Axis.NcToPlc')
+    177.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M4.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 4', 'Outputs^ToPlc')
-    40.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M4.Axis.PlcToNc')
+    178.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M4.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 4', 'Inputs^FromPlc')
-    41.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M5.Axis.NcToPlc')
+    179.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M5.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 5', 'Outputs^ToPlc')
-    42.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M5.Axis.PlcToNc')
+    180.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M5.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 5', 'Inputs^FromPlc')
-    43.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M6.Axis.NcToPlc')
+    181.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M6.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 6', 'Outputs^ToPlc')
-    44.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M6.Axis.PlcToNc')
+    182.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M6.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 6', 'Inputs^FromPlc')
-    45.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M7.Axis.NcToPlc')
+    183.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M7.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 7', 'Outputs^ToPlc')
-    46.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M7.Axis.PlcToNc')
+    184.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M7.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 7', 'Inputs^FromPlc')
-    47.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M8.Axis.NcToPlc')
+    185.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M8.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 8', 'Outputs^ToPlc')
-    48.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M8.Axis.PlcToNc')
+    186.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M8.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 8', 'Inputs^FromPlc')
-    49.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M9.Axis.NcToPlc')
+    187.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M9.Axis.NcToPlc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 9', 'Outputs^ToPlc')
-    50.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M9.Axis.PlcToNc')
+    188.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M9.Axis.PlcToNc')
           B ('TINC^NC-Task 1 SAF^Axes^Axis 9', 'Inputs^FromPlc')
+    189.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M25.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^SL2K0-BOTTOM-M25', 'Outputs^ToPlc')
+    190.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M25.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^SL2K0-BOTTOM-M25', 'Inputs^FromPlc')
+    191.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M24.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^SL2K0-NORTH-M24', 'Outputs^ToPlc')
+    192.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M24.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^SL2K0-NORTH-M24', 'Inputs^FromPlc')
+    193.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M22.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^SL2K0-SOUTH-M22', 'Outputs^ToPlc')
+    194.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M22.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^SL2K0-SOUTH-M22', 'Inputs^FromPlc')
+    195.) A ('kfe_motion Instance', 'PlcTask Inputs^Main.M23.Axis.NcToPlc')
+          B ('TINC^NC-Task 1 SAF^Axes^SL2K0-TOP-M23', 'Outputs^ToPlc')
+    196.) A ('kfe_motion Instance', 'PlcTask Outputs^Main.M23.Axis.PlcToNc')
+          B ('TINC^NC-Task 1 SAF^Axes^SL2K0-TOP-M23', 'Inputs^FromPlc')
 
 Pragma lint results
 -------------------
 ```
-INFO:pytmc.bin.pragmalint:Total pragmas found: 3 Total linter errors: 0
+INFO:pytmc.bin.pragmalint:Total pragmas found: 58 Total linter errors: 0
 PLC Project (1): kfe_motion
 ===========================
 
@@ -1316,7 +2188,7 @@ PLC Project (1): kfe_motion
 GVLs/Main.TcGVL (TcPlcObject)
 -----------------------------
 
-    - Main: Declaration - 1 pragmas
+    - Main: Declaration - 17 pragmas
 
 
 GVLs/PMPS.TcGVL (TcPlcObject)
@@ -1329,5 +2201,23 @@ POUs/PRG_1_PlcTask.TcPOU (TcPlcObject)
 --------------------------------------
 
     - PRG_1_PlcTask: Declaration - 1 pragmas
+
+
+POUs/PRG_SL1K0_POWER.TcPOU (TcPlcObject)
+----------------------------------------
+
+    - PRG_SL1K0_POWER: Declaration - 13 pragmas
+
+
+POUs/PRG_SL2K0_POWER.TcPOU (TcPlcObject)
+----------------------------------------
+
+    - PRG_SL2K0_POWER: Declaration - 13 pragmas
+
+
+Temp/FB_SLITS_POWER.TcPOU (TcPlcObject)
+---------------------------------------
+
+    - FB_SLITS_POWER: Declaration - 13 pragmas
 
 ```
