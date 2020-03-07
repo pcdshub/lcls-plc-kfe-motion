@@ -3,22 +3,197 @@
   <POU Name="PRG_SL2K0_POWER" Id="{c8e49e09-7b9e-4d82-ac5a-e310bf9e41e1}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_SL2K0_POWER
 VAR
-	fbMotion1: FB_MotionStageSim;
+	{attribute 'pytmc' := '
+		pv: SL2K0:POWER
+		io: io
+	'}
+	{attribute 'TcLinkTo' := '.RTD_South_1.iRaw := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 1^Value;
+							  .RTD_South_1.bError := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_South_1.bUnderrange := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_South_1.bOverrange := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_South_2.iRaw := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 2^Value;
+							  .RTD_South_2.bError := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_South_2.bUnderrange := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_South_2.bOverrange := TIIB[SL2K0-EL3202-E8]^RTD Inputs Channel 2^Status^Overrange;
+							  .RTD_TOP_1.iRaw := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 1^Value;
+							  .RTD_TOP_1.bError := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_TOP_1.bUnderrange := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_TOP_1.bOverrange := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_TOP_2.iRaw := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 2^Value;
+							  .RTD_TOP_2.bError := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_TOP_2.bUnderrange := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_TOP_2.bOverrange := TIIB[SL2K0-EL3202-E9]^RTD Inputs Channel 2^Status^Overrange;
+							  .RTD_North_1.iRaw := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Value;
+							  .RTD_North_1.bError := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_North_1.bUnderrange := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_North_1.bOverrange := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_North_2.iRaw := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 2^Value;
+							  .RTD_North_2.bError := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_North_2.bUnderrange := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_North_2.bOverrange := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 2^Status^Overrange;
+							  .RTD_Bottom_1.iRaw := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Value;
+							  .RTD_Bottom_1.bError := TIIB[SL2K0-EL3202-E10]^RTD Inputs Channel 1^Status^Error;
+							  .RTD_Bottom_1.bUnderrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 1^Status^Underrange;
+							  .RTD_Bottom_1.bOverrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 1^Status^Overrange;
+							  .RTD_Bottom_2.iRaw := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Value;
+							  .RTD_Bottom_2.bError := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Error;
+							  .RTD_Bottom_2.bUnderrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Underrange;
+							  .RTD_Bottom_2.bOverrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Overrange'}
+	fbSL2K0: FB_SLITS_POWER;
+	(*T. MATRIX (North-x1,South-x2,Top-y1,Bottom-y2.. appSize-gapX,gapY, Cx, Cy) *)
+	aTMatrix: ARRAY [1..4,1..4] of REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:GO;
+	io: io;
+    '}
+	bExecuteMotion:bool ;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:XWID_REQ;
+	io: io;
+    '}
+	rReqApertureSizeX : REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:YWID_REQ;
+	io: io;
+    '}
+	rReqApertureSizeY : REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:XCEN_REQ;
+	io: io;
+    '}
+	rReqCenterX: REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:YCEN_REQ;
+	io: io;
+    '}
+	rReqCenterY: REAL;
+	
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:ACTUAL_XWIDTH;
+	io: io;
+    '}
+	rActApertureSizeX : REAL;
+	
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:ACTUAL_YWIDTH;
+	io: io;
+    '}
+	rActApertureSizeY : REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:ACTUAL_XCENTER;
+	io: io;
+    '}
+	rActCenterX: REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:ACTUAL_YCENTER;
+	io: io;
+    '}
+	rActCenterY: REAL;
+	
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:XCEN_SETZERO;
+	io: io;
+    '}
+	rSetCenterX: REAL;
+	{attribute 'pytmc' := '
+    pv: SL2K0:POWER:YCEN_SETZERO;
+	io: io;
+    '}
+	rSetCenterY: REAL;
+	
+	bInit:BOOL :=true;
+	
+
+	rMaxX:REAL:=28;
+	rMaxY:REAL:=28;
+	rMaxCx:REAL:=14;
+	rMaxCy:REAL:=14;
+
+(*	fbMotion1: FB_MotionStageSim;
 	fbMotion2: FB_MotionStageSim;
 	fbMotion3: FB_MotionStageSim;
-	fbMotion4: FB_MotionStageSim;
+	fbMotion4: FB_MotionStageSim;*)
+	
+	
+	//for testing purposes only. comment-out/delete once done.	
+	mcPower : ARRAY [1..4] OF MC_POWER;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Placeholder, standard simulated motion for all axes
-fbMotion1(stMotionStage := Main.M22);
+(*fbMotion1(stMotionStage := Main.M22);
 fbMotion2(stMotionStage := Main.M23);
 fbMotion3(stMotionStage := Main.M24);
-fbMotion4(stMotionStage := Main.M25);
+fbMotion4(stMotionStage := Main.M25);*)
+
+
+
+
+if (bInit) THEN
+	(*Gap*)
+	aTMatrix[1,1]:= 0.5;
+	aTMatrix[2,1]:= -0.5;
+	aTMatrix[3,1]:= 0;
+	aTMatrix[4,1]:= 0;
+	(*GAP Y*)
+	aTMatrix[1,2]:= 0;
+	aTMatrix[2,2]:= 0;
+	aTMatrix[3,2]:= 0.5;
+	aTMatrix[4,2]:= -0.5;
+	(*Center X*)
+	aTMatrix[1,3]:= 1;
+	aTMatrix[2,3]:= 1;
+	aTMatrix[3,3]:= 0;
+	aTMatrix[4,3]:= 0;
+	(*Center Y*)
+	aTMatrix[1,4]:= 0;
+	aTMatrix[2,4]:= 0;
+	aTMatrix[3,4]:= 1;
+	aTMatrix[4,4]:= 1;
+	
+	bInit :=false;
+END_IF
+
+//verigy requested gap and center are within range
+// Needs to be better, limits are calculated based on the requested center and travel range
+rReqApertureSizeX := LIMIT(0,rReqApertureSizeX, rMaxX);
+rReqApertureSizeY := LIMIT(0,rReqApertureSizeY, rMaxY);
+rReqCenterX := LIMIT(0,rReqCenterX, rMaxCx);
+rReqCenterY := LIMIT(0,rReqCenterY, rMaxCy);
+
+// Calculate the position of every blade based on the transformation Matrix
+
+fbSL2K0.fPosNorthBlade := (aTMatrix[1,1] * rReqApertureSizeX) + (aTMatrix[1,3]*rReqCenterX);
+fbSL2K0.fPosSouthBlade:= (aTMatrix[2,1] * rReqApertureSizeX) + (aTMatrix[2,3]*rReqCenterX);
+
+fbSL2K0.fPosTopBlade := (aTMatrix[3,2] * rReqApertureSizeY) +(aTMatrix[3,4]*rReqCenterY);
+fbSL2K0.fPosBottomBlade :=(aTMatrix[4,2] * rReqApertureSizeY) + (aTMatrix[4,4]*rReqCenterY);
+
+
+
+fbSL2K0(stTopBlade:=  Main.M22,
+		stBottomBlade:= Main.M23, 
+		stNorthBlade:=  Main.M24, 
+		stSouthBlade:=  Main.M25);
+
+
+//for testing purposes only. comment-out/delete once done.	
+(*mcPower[1](axis:=Main.M22.Axis, Enable:=TRUE, enable_positive:=Main.M22.bLimitForwardEnable, enable_negative:=Main.M22.bLimitBackwardEnable);
+mcPower[2](axis:=Main.M23.Axis, Enable:=TRUE, enable_positive:=Main.M23.bLimitForwardEnable, enable_negative:=Main.M23.bLimitBackwardEnable);
+mcPower[3](axis:=Main.M24.Axis, Enable:=TRUE, enable_positive:=Main.M24.bLimitForwardEnable, enable_negative:=Main.M24.bLimitBackwardEnable);
+mcPower[4](axis:=Main.M25.Axis, Enable:=TRUE, enable_positive:=Main.M25.bLimitForwardEnable, enable_negative:=Main.M25.bLimitBackwardEnable);*)
+
+
 ]]></ST>
     </Implementation>
     <LineIds Name="PRG_SL2K0_POWER">
       <LineId Id="3" Count="4" />
+      <LineId Id="134" Count="1" />
+      <LineId Id="138" Count="40" />
+      <LineId Id="136" Count="0" />
+      <LineId Id="179" Count="4" />
+      <LineId Id="137" Count="0" />
+      <LineId Id="19" Count="8" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
