@@ -7,44 +7,47 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044c2c52" RevisionNo="#x00120000" PortPhys="305" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1100 EtherCAT Coupler (2A E-Bus)" Desc="EK1100"/>
-		<Box File="SL1K0-EL7041-E0.xti" Id="14">
+		<Box File="SL1K0-EL7041-E1.xti" Id="14">
 			<EtherCAT PortABoxInfo="#x0100000a"/>
 		</Box>
-		<Box File="SL1K0-EL5042-01.xti" Id="17">
+		<Box File="SL1K0-EL7041-E2.xti" Id="18">
 			<EtherCAT PortABoxInfo="#x0100000e"/>
 		</Box>
-		<Box File="SL1K0-EL7041-02.xti" Id="18">
-			<EtherCAT PortABoxInfo="#x01000011"/>
-		</Box>
-		<Box File="SL1K0-EL2004.xti" Id="19">
+		<Box File="SL1K0-EL2004-E3.xti" Id="19">
 			<EtherCAT PortABoxInfo="#x01000012"/>
 		</Box>
-		<Box File="SL1K0-EL7041-03.xti" Id="20">
+		<Box File="SL1K0-EL7041-E4.xti" Id="20">
 			<EtherCAT PortABoxInfo="#x01000013"/>
 		</Box>
-		<Box File="SL1K0-EL5042-02.xti" Id="21">
+		<Box File="SL1K0-EL7041-E5.xti" Id="22">
 			<EtherCAT PortABoxInfo="#x01000014"/>
 		</Box>
-		<Box File="SL1K0-EL7041-04.xti" Id="22">
-			<EtherCAT PortABoxInfo="#x01000015"/>
-		</Box>
-		<Box File="SL1K0-EL3202-01.xti" Id="23">
+		<Box File="SL1K0-EL3202-E6.xti" Id="23">
 			<EtherCAT PortABoxInfo="#x01000016"/>
 		</Box>
-		<Box File="SL1K0-EL3202-02.xti" Id="36">
+		<Box File="SL1K0-EL3202-E7.xti" Id="36">
 			<EtherCAT PortABoxInfo="#x01000017"/>
 		</Box>
-		<Box File="SL1K0-EL3202-03.xti" Id="37">
+		<Box File="SL1K0-EL3202-E8.xti" Id="37">
 			<EtherCAT PortABoxInfo="#x01000024"/>
 		</Box>
-		<Box File="SL1K0-EL3202-04.xti" Id="38">
+		<Box File="SL1K0-EL3202-E9.xti" Id="38">
 			<EtherCAT PortABoxInfo="#x01000025"/>
 		</Box>
-		<Box File="SL1K0-EL1004.xti" Id="39">
+		<Box File="SL1K0-EL3314-E10.xti" Id="17">
 			<EtherCAT PortABoxInfo="#x01000026"/>
 		</Box>
-		<Box File="SL1K0-EL9011.xti" Id="40">
+		<Box File="SL1K0-EL9184-E11.xti" Id="21">
+			<EtherCAT PortABoxInfo="#x01000011"/>
+		</Box>
+		<Box File="SL1K0-EL3054-E12.xti" Id="39">
+			<EtherCAT PortABoxInfo="#x01000011"/>
+		</Box>
+		<Box File="SL1K0-EL6021-E13.xti" Id="50">
 			<EtherCAT PortABoxInfo="#x01000027"/>
+		</Box>
+		<Box File="SL1K0-EL9011.xti" Id="40">
+			<EtherCAT PortABoxInfo="#x01000032"/>
 		</Box>
 	</Box>
 </TcSmItem>
