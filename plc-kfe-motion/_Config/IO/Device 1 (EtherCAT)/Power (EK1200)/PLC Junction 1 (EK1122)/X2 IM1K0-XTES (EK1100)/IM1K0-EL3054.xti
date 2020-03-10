@@ -37,7 +37,7 @@
 			<SuName>IM1K0</SuName>
 			<Pdo Name="AI Standard Channel 1" Index="#x1a00" Flags="#x0010" SyncMan="3">
 				<ExcludePdo>#x1a01</ExcludePdo>
-				<Entry Name="Status__Underrange" Index="#x6000" Sub="#x01">
+				<Entry Name="Status__Underrange" Index="#x6000" Sub="#x01" Flags="#x00008020">
 					<Type>BIT</Type>
 					<Comment>
 						<![CDATA[Underrange event active]]>

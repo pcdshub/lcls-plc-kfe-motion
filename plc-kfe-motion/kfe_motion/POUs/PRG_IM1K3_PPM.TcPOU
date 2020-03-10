@@ -3,16 +3,31 @@
   <POU Name="PRG_IM1K3_PPM" Id="{50f223f3-f492-4ba9-a2f4-a4a386a50420}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM1K3_PPM
 VAR
-	fbMotion1: FB_MotionStageSim;
+    {attribute 'pytmc' := '
+        pv: IM1K3:PPM
+        io: io
+    '}
+    {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K3-EL4004]^AO Outputs Channel 1^Analog output;
+                              .fbGige.bGigePower := TIIB[IM1K3-EL2004]^Channel 2^Output;
+                              .fbPowerMeter.iVoltageINT := TIIB[IM1K3-EL3062]^AI Standard Channel 1^Value;
+                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM1K3-EL3314]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM1K3-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM1K3-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM1K3-EL3314]^TC Inputs Channel 1^Value;
+                              .fbYagThermoCouple.bError := TIIB[IM1K3-EL3314]^TC Inputs Channel 2^Status^Error;
+                              .fbYagThermoCouple.bUnderrange := TIIB[IM1K3-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagThermoCouple.bOverrange := TIIB[IM1K3-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagThermoCouple.iRaw := TIIB[IM1K3-EL3314]^TC Inputs Channel 2^Value'}
+    fbIM1K3: FB_PPM;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Placeholder, standard simulated motion for all axes
-fbMotion1(stMotionStage := Main.M4);]]></ST>
+      <ST><![CDATA[fbIM1K3(
+    stYStage := Main.M4,
+    fPolished := -50,
+    fFrosted := -60,
+    fPower := -70,
+    fOut := 0);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_IM1K3_PPM">
-      <LineId Id="3" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

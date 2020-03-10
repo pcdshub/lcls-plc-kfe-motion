@@ -3,20 +3,77 @@
   <POU Name="PRG_IM2K0_XTES" Id="{424da978-a5ca-4969-834d-244f71fa24fe}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM2K0_XTES
 VAR
-	fbMotion1: FB_MotionStageSim;
-	fbMotion2: FB_MotionStageSim;
-	fbMotion3: FB_MotionStageSim;
+    {attribute 'pytmc' := '
+        pv: IM2K0:XTES
+        io: io
+    '}
+    {attribute 'TcLinkTo' := '.bZoomEndFwd := TIIB[IM2K0-EL1088]^Channel 1^Input;
+                              .bZoomEndBwd := TIIB[IM2K0-EL1088]^Channel 2^Input;
+                              .bFocusEndFwd := TIIB[IM2K0-EL1088]^Channel 3^Input;
+                              .bFocusEndBwd := TIIB[IM2K0-EL1088]^Channel 4^Input;
+                              .fbOpal.bOpalPower := TIIB[IM2K0-EL2004]^Channel 2^Output'}
+    fbIM2K0: FB_XPIM;
+    {attribute 'TcLinkTo' := '.Status := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Status;
+                              .D[0] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+                              .D[1] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+                              .D[2] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+                              .D[3] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+                              .D[4] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+                              .D[5] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+                              .D[6] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+                              .D[7] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+                              .D[8] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+                              .D[9] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+                              .D[10] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+                              .D[11] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+                              .D[12] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+                              .D[13] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+                              .D[14] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+                              .D[15] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+                              .D[16] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+                              .D[17] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+                              .D[18] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+                              .D[19] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+                              .D[20] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+                              .D[21] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 21'}
+    stEL6In AT %I*: EL6InData22b;
+    {attribute 'TcLinkTo' := '.Ctrl := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                              .D[0] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+                              .D[1] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+                              .D[2] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+                              .D[3] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+                              .D[4] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+                              .D[5] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+                              .D[6] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+                              .D[7] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+                              .D[8] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+                              .D[9] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+                              .D[10] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+                              .D[11] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+                              .D[12] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+                              .D[13] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+                              .D[14] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+                              .D[15] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+                              .D[16] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+                              .D[17] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+                              .D[18] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+                              .D[19] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+                              .D[20] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+                              .D[21] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 21'}
+    stEL6Out AT %Q*: EL6OutData22b;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Placeholder, standard simulated motion for all axes
-fbMotion1(stMotionStage := Main.M5);
-fbMotion2(stMotionStage := Main.M6);
-fbMotion3(stMotionStage := Main.M7);]]></ST>
+      <ST><![CDATA[fbIM2K0(
+    stYStage := Main.M5,
+    stZoomStage := Main.M6,
+    stFocusStage := Main.M7,
+    stEl6In := stEL6In,
+    stEl6Out := stEl6Out,
+    fYag := -87.65,
+    fDiamond := -57.65,
+    fReticle := -27.65,
+    fOut := 0);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_IM2K0_XTES">
-      <LineId Id="3" Count="2" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
