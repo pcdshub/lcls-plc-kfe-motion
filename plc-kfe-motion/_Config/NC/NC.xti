@@ -40,10 +40,10 @@
 		<Axis File="Axis 15.xti" Id="15"/>
 		<Axis File="Axis 16.xti" Id="16"/>
 		<Axis File="Axis 17.xti" Id="17"/>
-		<Axis File="Axis 18.xti" Id="18"/>
-		<Axis File="Axis 19.xti" Id="19"/>
-		<Axis File="Axis 20.xti" Id="20"/>
-		<Axis File="Axis 21.xti" Id="21"/>
+		<Axis File="SL1K0-SOUTH-M18.xti" Id="18"/>
+		<Axis File="SL1K0-TOP-M19.xti" Id="19"/>
+		<Axis File="SL1K0-NORTH-M20.xti" Id="20"/>
+		<Axis File="SL1K0-BOTTOM-M21.xti" Id="21"/>
 		<Axis File="SL2K0-SOUTH-M22.xti" Id="22"/>
 		<Axis File="SL2K0-TOP-M23.xti" Id="23"/>
 		<Axis File="SL2K0-NORTH-M24.xti" Id="24"/>
