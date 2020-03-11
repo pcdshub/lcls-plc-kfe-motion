@@ -13,16 +13,34 @@ VAR_GLOBAL
 	supports arbitrary ads paths for motors
 *)
 	// IM1K0-XTES: 3 Axes
+	{attribute 'pytmc' := 'pv: IM1K0:XTES:MMS'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K0-EL7041]^STM Status^Status^Digital input 1;
+	                          .bBrakeRelease        := TIIB[IM1K0-EL2004]^Channel 1^Output'}
 	M1: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: IM1K0:XTES:CLZ'}
+	{attribute 'TcLinkTo' := '.bHome := TIIB[IM1K0-EL1088]^Channel 2^Input'}
 	M2: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: IM1K0:XTES:CLF'}
+	{attribute 'TcLinkTo' := '.bHome := TIIB[IM1K0-EL1088]^Channel 4^Input'}
 	M3: DUT_MotionStage;
 	
 	// IM1K3-PPM: 1 Axis
+	{attribute 'pytmc' := 'pv: IM1K3:PPM:MMS'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K3-EL7041]^STM Status^Status^Digital input 1;
+	                          .bLimitBackwardEnable := TIIB[IM1K3-EL7041]^STM Status^Status^Digital input 2;
+	                          .bBrakeRelease        := TIIB[IM1K3-EL2004]^Channel 1^Output'}
 	M4: DUT_MotionStage;
 	
 	// IM2K0-XTES: 3 Axes
+	{attribute 'pytmc' := 'pv: IM2K0:XTES:MMS'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM2K0-EL7041]^STM Status^Status^Digital input 1;
+	                          .bBrakeRelease        := TIIB[IM2K0-EL2004]^Channel 1^Output'}
 	M5: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: IM2K0:XTES:CLZ'}
+	{attribute 'TcLinkTo' := '.bHome := TIIB[IM2K0-EL1088]^Channel 2^Input'}
 	M6: DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: IM2K0:XTES:CLF'}
+	{attribute 'TcLinkTo' := '.bHome := TIIB[IM2K0-EL1088]^Channel 4^Input'}
 	M7: DUT_MotionStage;
 	
 	// PF1K0-WFS: 2 Axes
