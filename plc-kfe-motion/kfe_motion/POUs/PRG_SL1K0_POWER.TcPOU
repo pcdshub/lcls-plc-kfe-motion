@@ -109,27 +109,12 @@ VAR
 	rMaxCx:REAL:=14;
 	rMaxCy:REAL:=14;
 
-
-
-
-	(*fbMotion1: FB_MotionStageSim;
-	fbMotion2: FB_MotionStageSim;
-	fbMotion3: FB_MotionStageSim;
-	fbMotion4: FB_MotionStageSim;*)
-	
 	//for testing purposes only. comment-out/delete once done.	
 	mcPower : ARRAY [1..4] OF MC_POWER;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Placeholder, standard simulated motion for all axes
-(*fbMotion1(stMotionStage := Main.M18);
-fbMotion2(stMotionStage := Main.M19);
-fbMotion3(stMotionStage := Main.M20);
-fbMotion4(stMotionStage := Main.M21);*)
-
-
-if (bInit) THEN
+      <ST><![CDATA[if (bInit) THEN
 	(*Gap*)
 	aTMatrix[1,1]:= 0.5;
 	aTMatrix[2,1]:= -0.5;
@@ -187,15 +172,5 @@ mcPower[3](axis:=Main.M20.Axis, Enable:=TRUE, enable_positive:=Main.M20.bLimitFo
 mcPower[4](axis:=Main.M21.Axis, Enable:=TRUE, enable_positive:=Main.M21.bLimitForwardEnable, enable_negative:=Main.M21.bLimitBackwardEnable);
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_SL1K0_POWER">
-      <LineId Id="3" Count="3" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="135" Count="0" />
-      <LineId Id="140" Count="44" />
-      <LineId Id="136" Count="3" />
-      <LineId Id="16" Count="6" />
-      <LineId Id="14" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
