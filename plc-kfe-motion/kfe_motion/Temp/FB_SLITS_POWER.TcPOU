@@ -66,7 +66,7 @@ VAR
 	
 	fSmallDelta: LREAL := 0.01;
 	fBigDelta: LREAL := 10;
-	fMaxVelocity: LREAL := 0.33;
+	fMaxVelocity: LREAL := 0.2;
 	fHighAccel: LREAL := 0.8;
 	fLowAccel: LREAL := 0.1;
 	
@@ -170,5 +170,9 @@ fbSouth(
 	bMoveOk:=TRUE,
 	stMotionStage:=stSouthBlade);]]></ST>
     </Implementation>
+    <LineIds Name="FB_SLITS_POWER">
+      <LineId Id="3" Count="79" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
