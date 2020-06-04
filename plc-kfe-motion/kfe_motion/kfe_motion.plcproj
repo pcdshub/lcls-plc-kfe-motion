@@ -62,7 +62,19 @@
     <Compile Include="Temp\FB_HardwareFFOutput.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Temp\FB_SLITS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Temp\FB_SLITS_1.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Temp\FB_SLITS_POWER.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Temp\FB_SLITS_POWER_1.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Temp\FB_SLITS_POWER_2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -109,13 +121,13 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, * (SLAC)</Resolution>
+      <Resolution>LCLS General, 2.3.2 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, * (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls2-cc-lib">
-      <Resolution>lcls2-cc-lib, * (SLAC)</Resolution>
+      <Resolution>lcls2-cc-lib, 0.2.2 (SLAC)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>

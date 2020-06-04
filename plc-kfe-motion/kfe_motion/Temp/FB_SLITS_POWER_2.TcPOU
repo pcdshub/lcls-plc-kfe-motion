@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="FB_SLITS_POWER" Id="{d889b456-91f0-0980-2255-32e7e69e3656}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_SLITS_POWER EXTENDS FB_SLITS
+  <POU Name="FB_SLITS_POWER_2" Id="{363ba446-8811-4aca-bf8e-704e5173137d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SLITS_POWER_2 EXTENDS FB_SLITS
 VAR_INPUT
 END_VAR
 VAR
@@ -62,7 +62,7 @@ ACT_Zero();
 ACT_RTDs();
 ]]></ST>
     </Implementation>
-    <Action Name="ACT_RTDs" Id="{2824f268-7671-0ba5-2fec-76114d5b195e}">
+    <Action Name="ACT_RTDs" Id="{5d941f34-74f9-4f66-bac5-e4859787d148}">
       <Implementation>
         <ST><![CDATA[////RTDs
 RTD_TOP_1();
