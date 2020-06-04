@@ -54,25 +54,48 @@ VAR
 	
 	//for testing purposes only. comment-out/delete once done.	
 	mcPower : ARRAY [1..4] OF MC_POWER;
+	bTest:BOOL:=FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 fbSL1K0.bMoveOk := bMoveOk;
 
+
+
+
+//for testing purposes only. comment-out/delete once done.
+If bTest THEN
+	mcPower[1](axis:=Main.M18.Axis, Enable:=TRUE, enable_positive:=Main.M18.bLimitForwardEnable, enable_negative:=Main.M18.bLimitBackwardEnable);
+mcPower[2](axis:=Main.M19.Axis, Enable:=TRUE, enable_positive:=Main.M19.bLimitForwardEnable, enable_negative:=Main.M19.bLimitBackwardEnable);
+mcPower[3](axis:=Main.M20.Axis, Enable:=TRUE, enable_positive:=Main.M20.bLimitForwardEnable, enable_negative:=Main.M20.bLimitBackwardEnable);
+mcPower[4](axis:=Main.M21.Axis, Enable:=TRUE, enable_positive:=Main.M21.bLimitForwardEnable, enable_negative:=Main.M21.bLimitBackwardEnable);
+
+else
+	
 fbSL1K0(stTopBlade:=  Main.M18,
 		stBottomBlade:= Main.M19, 
 		stNorthBlade:=  Main.M20, 
 		stSouthBlade:=  Main.M21,
 		bExecuteMotion:=bExecuteMotion);
 
-
-//for testing purposes only. comment-out/delete once done.	
-(*mcPower[1](axis:=Main.M18.Axis, Enable:=TRUE, enable_positive:=Main.M18.bLimitForwardEnable, enable_negative:=Main.M18.bLimitBackwardEnable);
-mcPower[2](axis:=Main.M19.Axis, Enable:=TRUE, enable_positive:=Main.M19.bLimitForwardEnable, enable_negative:=Main.M19.bLimitBackwardEnable);
-mcPower[3](axis:=Main.M20.Axis, Enable:=TRUE, enable_positive:=Main.M20.bLimitForwardEnable, enable_negative:=Main.M20.bLimitBackwardEnable);
-mcPower[4](axis:=Main.M21.Axis, Enable:=TRUE, enable_positive:=Main.M21.bLimitForwardEnable, enable_negative:=Main.M21.bLimitBackwardEnable);*)
+END_IF
+	
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_SL1K0_POWER">
+      <LineId Id="3" Count="2" />
+      <LineId Id="10" Count="3" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="77" Count="4" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="85" Count="3" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

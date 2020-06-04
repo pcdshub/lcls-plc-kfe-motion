@@ -121,6 +121,11 @@
       <Resolution>lcls2-cc-lib, 0.2.2 (SLAC)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="kfe_motion.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>

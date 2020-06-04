@@ -1324,15 +1324,14 @@ External Setpoint Generation:
 	<Axis Id="21" CreateSymbols="true" AxisType="1" AxisFolder="SL1K0-POWER">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
+			<Dynamic DelayTime="0.008"/>
 			<Velo Maximum="0.8"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 			<ParameterChanged>39</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="7">
-			<EncPara ScaleFactorNumerator="0.0008267211914" Inverse="true" MaxCount="#x0000ffff" ReferenceSystem="1">
+			<EncPara ScaleFactorNumerator="0.0008302003481" Inverse="true" MaxCount="#x0000ffff" ReferenceSystem="1">
 				<Inc RefSoftSyncMask="#x0000ffff"/>
-				<ParameterChanged>8</ParameterChanged>
-				<ParameterChanged>35</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1493,6 +1492,7 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
+				<PosDiffControl Range="1"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
