@@ -4917,6 +4917,7 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X2 IM1K0-XTES (EK1100)^IM1K0-EL2004">
 				<Link VarA="PlcTask Outputs^Main.M1.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PRG_IM1K0_XTES.fbIM1K0.fbOpal.bLedPower" VarB="Channel 3^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_IM1K0_XTES.fbIM1K0.fbOpal.bOpalPower" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X2 IM1K0-XTES (EK1100)^IM1K0-EL6002">
@@ -5029,13 +5030,13 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X1 IM2K0-XTES (EK1100)^IM2K0-EL1088">
 				<Link VarA="PlcTask Inputs^Main.M6.bHome" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M7.bHome" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_IM2K0_XTES.fbIM2K0.bFocusEndBwd" VarB="Channel 4^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_IM2K0_XTES.fbIM2K0.bFocusEndFwd" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_IM2K0_XTES.fbIM2K0.bZoomEndBwd" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_IM2K0_XTES.fbIM2K0.bZoomEndFwd" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X1 IM2K0-XTES (EK1100)^IM2K0-EL2004">
 				<Link VarA="PlcTask Outputs^Main.M5.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PRG_IM2K0_XTES.fbIM2K0.fbOpal.bLedPower" VarB="Channel 3^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_IM2K0_XTES.fbIM2K0.fbOpal.bOpalPower" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X1 IM2K0-XTES (EK1100)^IM2K0-EL6002">
