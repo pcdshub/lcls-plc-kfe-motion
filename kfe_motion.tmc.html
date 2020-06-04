@@ -1719,46 +1719,6 @@ record(longout, &quot;PLC:KFE:MOTION:PLACEHOLDER&quot;) {
   info(autosaveFields_pass0, &quot;VAL&quot;)
 }
 
-record(bi, &quot;SL1K0:POWER:GO_RBV&quot;) {
-  field(DESC, &quot;ads:PRG_SL1K0_POWER.bExecuteMotion&quot;)
-  field(SCAN, &quot;I/O Intr&quot;)
-  field(PINI, &quot;1&quot;)
-  field(TSE, &quot;-2&quot;)
-  field(DTYP, &quot;asynInt32&quot;)
-  field(INP, &quot;@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.bExecuteMotion?&quot;)
-  field(ZNAM, &quot;Zero&quot;)
-  field(ONAM, &quot;One&quot;)
-}
-
-record(bo, &quot;SL1K0:POWER:GO&quot;) {
-  field(DESC, &quot;ads:PRG_SL1K0_POWER.bExecuteMotion&quot;)
-  field(DTYP, &quot;asynInt32&quot;)
-  field(OUT, &quot;@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.bExecuteMotion=&quot;)
-  field(ZNAM, &quot;Zero&quot;)
-  field(ONAM, &quot;One&quot;)
-  info(autosaveFields_pass0, &quot;VAL&quot;)
-}
-
-record(bi, &quot;SL2K0:POWER:GO_RBV&quot;) {
-  field(DESC, &quot;ads:PRG_SL2K0_POWER.bExecuteMotion&quot;)
-  field(SCAN, &quot;I/O Intr&quot;)
-  field(PINI, &quot;1&quot;)
-  field(TSE, &quot;-2&quot;)
-  field(DTYP, &quot;asynInt32&quot;)
-  field(INP, &quot;@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?&quot;)
-  field(ZNAM, &quot;Zero&quot;)
-  field(ONAM, &quot;One&quot;)
-}
-
-record(bo, &quot;SL2K0:POWER:GO&quot;) {
-  field(DESC, &quot;ads:PRG_SL2K0_POWER.bExecuteMotion&quot;)
-  field(DTYP, &quot;asynInt32&quot;)
-  field(OUT, &quot;@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=&quot;)
-  field(ZNAM, &quot;Zero&quot;)
-  field(ONAM, &quot;One&quot;)
-  info(autosaveFields_pass0, &quot;VAL&quot;)
-}
-
 record(mbbi, &quot;IM1K0:XTES:MMS:STATE:SET_RBV&quot;) {
   field(DESC, &quot;ads:PRG_IM1K0_XTES.f....fbStates.enumSet&quot;)
   field(SCAN, &quot;I/O Intr&quot;)
@@ -9422,23 +9382,44 @@ record(bo, &quot;IM2K0:XTES:SFW:FLOW&quot;) {
   info(autosaveFields_pass0, &quot;VAL&quot;)
 }
 
-record(ai, &quot;SL1K0:POWER:XWID_REQ_RBV&quot;) {
-  field(DESC, &quot;ads:PRG_SL1K0_POWER.rReqApertureSizeX&quot;)
+record(bi, &quot;SL1K0:POWER:GO_RBV&quot;) {
+  field(DESC, &quot;ads:PRG_SL1K0_POWER.bExecuteMotion&quot;)
   field(SCAN, &quot;I/O Intr&quot;)
   field(PINI, &quot;1&quot;)
   field(TSE, &quot;-2&quot;)
-  field(DTYP, &quot;asynFloat64&quot;)
-  field(INP, &quot;@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rReqApertureSizeX?&quot;)
-  field(PREC, &quot;3&quot;)
-  info(autosaveFields_pass0, &quot;PREC&quot;)
+  field(DTYP, &quot;asynInt32&quot;)
+  field(INP, &quot;@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.bExecuteMotion?&quot;)
+  field(ZNAM, &quot;Zero&quot;)
+  field(ONAM, &quot;One&quot;)
 }
 
-record(ao, &quot;SL1K0:POWER:XWID_REQ&quot;) {
-  field(DESC, &quot;ads:PRG_SL1K0_POWER.rReqApertureSizeX&quot;)
-  field(DTYP, &quot;asynFloat64&quot;)
-  field(OUT, &quot;@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rReqApertureSizeX=&quot;)
-  field(PREC, &quot;3&quot;)
-  info(autosaveFields_pass0, &quot;PREC VAL&quot;)
+record(bo, &quot;SL1K0:POWER:GO&quot;) {
+  field(DESC, &quot;ads:PRG_SL1K0_POWER.bExecuteMotion&quot;)
+  field(DTYP, &quot;asynInt32&quot;)
+  field(OUT, &quot;@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.bExecuteMotion=&quot;)
+  field(ZNAM, &quot;Zero&quot;)
+  field(ONAM, &quot;One&quot;)
+  info(autosaveFields_pass0, &quot;VAL&quot;)
+}
+
+record(bi, &quot;SL2K0:POWER:GO_RBV&quot;) {
+  field(DESC, &quot;ads:PRG_SL2K0_POWER.bExecuteMotion&quot;)
+  field(SCAN, &quot;I/O Intr&quot;)
+  field(PINI, &quot;1&quot;)
+  field(TSE, &quot;-2&quot;)
+  field(DTYP, &quot;asynInt32&quot;)
+  field(INP, &quot;@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?&quot;)
+  field(ZNAM, &quot;Zero&quot;)
+  field(ONAM, &quot;One&quot;)
+}
+
+record(bo, &quot;SL2K0:POWER:GO&quot;) {
+  field(DESC, &quot;ads:PRG_SL2K0_POWER.bExecuteMotion&quot;)
+  field(DTYP, &quot;asynInt32&quot;)
+  field(OUT, &quot;@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=&quot;)
+  field(ZNAM, &quot;Zero&quot;)
+  field(ONAM, &quot;One&quot;)
+  info(autosaveFields_pass0, &quot;VAL&quot;)
 }
 
 record(bi, &quot;SL1K0:POWER:FSW:FLOW_RBV&quot;) {
@@ -10589,6 +10570,25 @@ record(waveform, &quot;SL1K0:POWER:SOUTH:ERRMSG_RBV&quot;) {
   field(NELM, &quot;80&quot;)
 }
 
+record(ai, &quot;SL1K0:POWER:XWID_REQ_RBV&quot;) {
+  field(DESC, &quot;ads:PRG_SL1K0_POWER.rReqApertureSizeX&quot;)
+  field(SCAN, &quot;I/O Intr&quot;)
+  field(PINI, &quot;1&quot;)
+  field(TSE, &quot;-2&quot;)
+  field(DTYP, &quot;asynFloat64&quot;)
+  field(INP, &quot;@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rReqApertureSizeX?&quot;)
+  field(PREC, &quot;3&quot;)
+  info(autosaveFields_pass0, &quot;PREC&quot;)
+}
+
+record(ao, &quot;SL1K0:POWER:XWID_REQ&quot;) {
+  field(DESC, &quot;ads:PRG_SL1K0_POWER.rReqApertureSizeX&quot;)
+  field(DTYP, &quot;asynFloat64&quot;)
+  field(OUT, &quot;@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rReqApertureSizeX=&quot;)
+  field(PREC, &quot;3&quot;)
+  info(autosaveFields_pass0, &quot;PREC VAL&quot;)
+}
+
 record(ai, &quot;SL1K0:POWER:YWID_REQ_RBV&quot;) {
   field(DESC, &quot;ads:PRG_SL1K0_POWER.rReqApertureSizeY&quot;)
   field(SCAN, &quot;I/O Intr&quot;)
@@ -10756,25 +10756,6 @@ record(ao, &quot;SL1K0:POWER:YCEN_SETZERO&quot;) {
   field(DESC, &quot;ads:PRG_SL1K0_POWER.rSetCenterY&quot;)
   field(DTYP, &quot;asynFloat64&quot;)
   field(OUT, &quot;@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rSetCenterY=&quot;)
-  field(PREC, &quot;3&quot;)
-  info(autosaveFields_pass0, &quot;PREC VAL&quot;)
-}
-
-record(ai, &quot;SL2K0:POWER:XWID_REQ_RBV&quot;) {
-  field(DESC, &quot;ads:PRG_SL2K0_POWER.rReqApertureSizeX&quot;)
-  field(SCAN, &quot;I/O Intr&quot;)
-  field(PINI, &quot;1&quot;)
-  field(TSE, &quot;-2&quot;)
-  field(DTYP, &quot;asynFloat64&quot;)
-  field(INP, &quot;@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rReqApertureSizeX?&quot;)
-  field(PREC, &quot;3&quot;)
-  info(autosaveFields_pass0, &quot;PREC&quot;)
-}
-
-record(ao, &quot;SL2K0:POWER:XWID_REQ&quot;) {
-  field(DESC, &quot;ads:PRG_SL2K0_POWER.rReqApertureSizeX&quot;)
-  field(DTYP, &quot;asynFloat64&quot;)
-  field(OUT, &quot;@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rReqApertureSizeX=&quot;)
   field(PREC, &quot;3&quot;)
   info(autosaveFields_pass0, &quot;PREC VAL&quot;)
 }
@@ -11925,6 +11906,25 @@ record(waveform, &quot;SL2K0:POWER:SOUTH:ERRMSG_RBV&quot;) {
   field(INP, &quot;@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.sError?&quot;)
   field(FTVL, &quot;CHAR&quot;)
   field(NELM, &quot;80&quot;)
+}
+
+record(ai, &quot;SL2K0:POWER:XWID_REQ_RBV&quot;) {
+  field(DESC, &quot;ads:PRG_SL2K0_POWER.rReqApertureSizeX&quot;)
+  field(SCAN, &quot;I/O Intr&quot;)
+  field(PINI, &quot;1&quot;)
+  field(TSE, &quot;-2&quot;)
+  field(DTYP, &quot;asynFloat64&quot;)
+  field(INP, &quot;@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rReqApertureSizeX?&quot;)
+  field(PREC, &quot;3&quot;)
+  info(autosaveFields_pass0, &quot;PREC&quot;)
+}
+
+record(ao, &quot;SL2K0:POWER:XWID_REQ&quot;) {
+  field(DESC, &quot;ads:PRG_SL2K0_POWER.rReqApertureSizeX&quot;)
+  field(DTYP, &quot;asynFloat64&quot;)
+  field(OUT, &quot;@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rReqApertureSizeX=&quot;)
+  field(PREC, &quot;3&quot;)
+  info(autosaveFields_pass0, &quot;PREC VAL&quot;)
 }
 
 record(ai, &quot;SL2K0:POWER:YWID_REQ_RBV&quot;) {
