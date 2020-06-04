@@ -24,10 +24,10 @@ END_VAR
     <Implementation>
       <ST><![CDATA[fbIM1K3(
     stYStage := Main.M4,
-    fPolished := -50,
-    fFrosted := -60,
-    fPower := -70,
-    fOut := 0);]]></ST>
+    fPolished := -72.2,
+    fFrosted := -98.21,
+    fPower := -48.2,
+    fOut := -9.1);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
