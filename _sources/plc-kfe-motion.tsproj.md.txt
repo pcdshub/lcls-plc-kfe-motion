@@ -1854,7 +1854,7 @@ NC axes
         Enc:MaxCount = '#x0000ffff'
         Enc:ReferenceSystem = 1
         Enc:SoftEndMinControl:Enable = 'true'
-        Enc:SoftEndMinControl:Range = -89
+        Enc:SoftEndMinControl:Range = -90
         Enc:SoftEndMaxControl:Enable = 'true'
         Enc:Inc:RefSoftSyncMask = '#x0000ffff'
 
