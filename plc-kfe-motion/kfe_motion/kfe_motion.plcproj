@@ -65,16 +65,7 @@
     <Compile Include="Temp\FB_SLITS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Temp\FB_SLITS_1.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Temp\FB_SLITS_POWER.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Temp\FB_SLITS_POWER_1.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Temp\FB_SLITS_POWER_2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
