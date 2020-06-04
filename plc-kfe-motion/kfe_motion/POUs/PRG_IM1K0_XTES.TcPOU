@@ -11,7 +11,8 @@ VAR
                               .bZoomEndBwd := TIIB[IM1K0-EL1088]^Channel 2^Input;
                               .bFocusEndFwd := TIIB[IM1K0-EL1088]^Channel 3^Input;
                               .bFocusEndBwd := TIIB[IM1K0-EL1088]^Channel 4^Input;
-                              .fbOpal.bOpalPower := TIIB[IM1K0-EL2004]^Channel 2^Output'}
+                              .fbOpal.bOpalPower := TIIB[IM1K0-EL2004]^Channel 2^Output;
+                              .fbOpal.bLedPower := TIIB[IM1K0-EL2004]^Channel 3^Output'}
     fbIM1K0: FB_XPIM;
     {attribute 'TcLinkTo' := '.Status := TIIB[IM1K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Status;
                               .D[0] := TIIB[IM1K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
@@ -70,9 +71,9 @@ END_VAR
     stFocusStage := Main.M3,
     stEl6In := stEL6In,
     stEl6Out := stEl6Out,
-    fYag := -87.65,
+    fYag := -27.65,
     fDiamond := -57.65,
-    fReticle := -27.65,
+    fReticle := -87.65,
     fOut := 0);]]></ST>
     </Implementation>
   </POU>

@@ -10,8 +10,8 @@ VAR
     {attribute 'TcLinkTo' := '.bZoomEndFwd := TIIB[IM2K0-EL1088]^Channel 1^Input;
                               .bZoomEndBwd := TIIB[IM2K0-EL1088]^Channel 2^Input;
                               .bFocusEndFwd := TIIB[IM2K0-EL1088]^Channel 3^Input;
-                              .bFocusEndBwd := TIIB[IM2K0-EL1088]^Channel 4^Input;
-                              .fbOpal.bOpalPower := TIIB[IM2K0-EL2004]^Channel 2^Output'}
+                              .fbOpal.bOpalPower := TIIB[IM2K0-EL2004]^Channel 2^Output;
+                              .fbOpal.bLedPower := TIIB[IM2K0-EL2004]^Channel 3^Output'}
     fbIM2K0: FB_XPIM;
     {attribute 'TcLinkTo' := '.Status := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Status;
                               .D[0] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
