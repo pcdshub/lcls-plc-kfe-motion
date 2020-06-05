@@ -56,22 +56,24 @@
     <span class="mf">13.</span><span class="p">)</span> <span class="n">kfe_motion</span><span class="o">/</span><span class="n">POUs</span><span class="o">/</span><span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">TcPOU</span>
     <span class="mf">14.</span><span class="p">)</span> <span class="n">kfe_motion</span><span class="o">/</span><span class="n">Temp</span><span class="o">/</span><span class="n">FB_Arbiter</span><span class="o">.</span><span class="n">TcPOU</span>
     <span class="mf">15.</span><span class="p">)</span> <span class="n">kfe_motion</span><span class="o">/</span><span class="n">Temp</span><span class="o">/</span><span class="n">FB_HardwareFFOutput</span><span class="o">.</span><span class="n">TcPOU</span>
-    <span class="mf">16.</span><span class="p">)</span> <span class="n">kfe_motion</span><span class="o">/</span><span class="n">Temp</span><span class="o">/</span><span class="n">FB_SLITS_POWER</span><span class="o">.</span><span class="n">TcPOU</span>
+    <span class="mf">16.</span><span class="p">)</span> <span class="n">kfe_motion</span><span class="o">/</span><span class="n">Temp</span><span class="o">/</span><span class="n">FB_SLITS</span><span class="o">.</span><span class="n">TcPOU</span>
+    <span class="mf">17.</span><span class="p">)</span> <span class="n">kfe_motion</span><span class="o">/</span><span class="n">Temp</span><span class="o">/</span><span class="n">FB_SLITS_POWER</span><span class="o">.</span><span class="n">TcPOU</span>
 
 <span class="n">POUs</span><span class="p">:</span>
     <span class="mf">1.</span><span class="p">)</span> <span class="n">FB_Arbiter</span>
     <span class="mf">2.</span><span class="p">)</span> <span class="n">FB_HardwareFFOutput</span>
-    <span class="mf">3.</span><span class="p">)</span> <span class="n">FB_SLITS_POWER</span>
-    <span class="mf">4.</span><span class="p">)</span> <span class="n">PRG_1_PlcTask</span>
-    <span class="mf">5.</span><span class="p">)</span> <span class="n">PRG_2_PMPS_PRE</span>
-    <span class="mf">6.</span><span class="p">)</span> <span class="n">PRG_3_PMPS_POST</span>
-    <span class="mf">7.</span><span class="p">)</span> <span class="n">PRG_IM1K0_XTES</span>
-    <span class="mf">8.</span><span class="p">)</span> <span class="n">PRG_IM1K3_PPM</span>
-    <span class="mf">9.</span><span class="p">)</span> <span class="n">PRG_IM2K0_XTES</span>
-    <span class="mf">10.</span><span class="p">)</span> <span class="n">PRG_PF1K0_WFS</span>
-    <span class="mf">11.</span><span class="p">)</span> <span class="n">PRG_RTDSK0</span>
-    <span class="mf">12.</span><span class="p">)</span> <span class="n">PRG_SL1K0_POWER</span>
-    <span class="mf">13.</span><span class="p">)</span> <span class="n">PRG_SL2K0_POWER</span>
+    <span class="mf">3.</span><span class="p">)</span> <span class="n">FB_SLITS</span>
+    <span class="mf">4.</span><span class="p">)</span> <span class="n">FB_SLITS_POWER</span>
+    <span class="mf">5.</span><span class="p">)</span> <span class="n">PRG_1_PlcTask</span>
+    <span class="mf">6.</span><span class="p">)</span> <span class="n">PRG_2_PMPS_PRE</span>
+    <span class="mf">7.</span><span class="p">)</span> <span class="n">PRG_3_PMPS_POST</span>
+    <span class="mf">8.</span><span class="p">)</span> <span class="n">PRG_IM1K0_XTES</span>
+    <span class="mf">9.</span><span class="p">)</span> <span class="n">PRG_IM1K3_PPM</span>
+    <span class="mf">10.</span><span class="p">)</span> <span class="n">PRG_IM2K0_XTES</span>
+    <span class="mf">11.</span><span class="p">)</span> <span class="n">PRG_PF1K0_WFS</span>
+    <span class="mf">12.</span><span class="p">)</span> <span class="n">PRG_RTDSK0</span>
+    <span class="mf">13.</span><span class="p">)</span> <span class="n">PRG_SL1K0_POWER</span>
+    <span class="mf">14.</span><span class="p">)</span> <span class="n">PRG_SL2K0_POWER</span>
 
 <span class="n">GVLs</span><span class="p">:</span>
     <span class="mf">1.</span><span class="p">)</span> <span class="n">Main</span>
@@ -213,126 +215,235 @@ END_VAR
 </pre></div>
 </div>
 </div>
-<div class="section" id="pou-fb-slits-power">
-<h2>POU: FB_SLITS_POWER<a class="headerlink" href="#pou-fb-slits-power" title="Permalink to this headline">¶</a></h2>
-<p>File: kfe_motion/Temp/FB_SLITS_POWER.TcPOU</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_SLITS_POWER
+<div class="section" id="pou-fb-slits">
+<h2>POU: FB_SLITS<a class="headerlink" href="#pou-fb-slits" title="Permalink to this headline">¶</a></h2>
+<p>File: kfe_motion/Temp/FB_SLITS.TcPOU</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_SLITS
 VAR_IN_OUT
-	stTopBlade: DUT_MotionStage;
-	stBottomBlade: DUT_MotionStage;
-	stNorthBlade: DUT_MotionStage;
-	stSouthBlade: DUT_MotionStage;
+    stTopBlade: DUT_MotionStage;
+    stBottomBlade: DUT_MotionStage;
+    stNorthBlade: DUT_MotionStage;
+    stSouthBlade: DUT_MotionStage;
+    bExecuteMotion:BOOL ;
 END_VAR
+
 VAR_INPUT
-	fPosTopBlade: LREAL;
-	fPosBottomBlade: LREAL;
-	fPosNorthBlade: LREAL;
-	fPosSouthBlade: LREAL;
-	bExecuteMotion:bool ;
+  
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: PMPS_OK;
+    io: i;
+    field: ZNAM False
+    field: ONAM True
+    &#39;}
+    bMoveOk:BOOL;
 END_VAR
-VAR_OUTPUT
-END_VAR
+
 VAR
-	fbTopBlade: FB_MotionStage;
-	fbBottomBlade: FB_MotionStage;
-	fbNorthBlade: FB_MotionStage;
-	fbSouthBlade: FB_MotionStage;
-	
-	{attribute &#39;pytmc&#39; := &#39;
-		pv: FSW
-	&#39;}
-	fbFlowSwitch: FB_XTES_Flowswitch;
-	
-	
-	//RTDs
-	{attribute &#39;pytmc&#39; := &#39;
-		pv: TOP:RTD:01
-	&#39;}
-	RTD_TOP_1: FB_ThermoCouple;
-	{attribute &#39;pytmc&#39; := &#39;
-		pv: TOP:RTD:02
-	&#39;}
-	RTD_TOP_2: FB_ThermoCouple;
-	{attribute &#39;pytmc&#39; := &#39;
-		pv: BOTTOM:RTD:01
-	&#39;}
-	RTD_Bottom_1: FB_ThermoCouple;
-	{attribute &#39;pytmc&#39; := &#39;
-		pv: BOTTOM:RTD:02
-	&#39;}
-	RTD_Bottom_2: FB_ThermoCouple;
-	
-	{attribute &#39;pytmc&#39; := &#39;
-		pv: NORTH:RTD:01
-	&#39;}
-	RTD_North_1: FB_ThermoCouple;
-	{attribute &#39;pytmc&#39; := &#39;
-		pv: NORTH:RTD:02
-	&#39;}
-	RTD_North_2: FB_ThermoCouple;
-	{attribute &#39;pytmc&#39; := &#39;
-		pv: SOUTH:RTD:01
-	&#39;}
-	RTD_South_1: FB_ThermoCouple;
-	{attribute &#39;pytmc&#39; := &#39;
-		pv: SOUTH:RTD:02
-	&#39;}
-	RTD_South_2: FB_ThermoCouple;
-	
-	fSmallDelta: LREAL := 0.01;
-	fBigDelta: LREAL := 10;
-	fMaxVelocity: LREAL := 0.2;
-	fHighAccel: LREAL := 0.8;
-	fLowAccel: LREAL := 0.1;
-	
-	stTop: DUT_PositionState;
-	stBOTTOM: DUT_PositionState;
-	stNorth: DUT_PositionState;
-	stSouth: DUT_PositionState;
+    fbTopBlade: FB_MotionStage;
+    fbBottomBlade: FB_MotionStage;
+    fbNorthBlade: FB_MotionStage;
+    fbSouthBlade: FB_MotionStage;
+    fPosTopBlade: LREAL;
+    fPosBottomBlade: LREAL;
+    fPosNorthBlade: LREAL;
+    fPosSouthBlade: LREAL;
 
-	{attribute &#39;pytmc&#39; := &#39;pv: TOP&#39;}
-	fbTop: FB_StatePTPMove;
-	{attribute &#39;pytmc&#39; := &#39;pv: BOTTOM&#39;}
-	fbBottom: FB_StatePTPMove;
-	{attribute &#39;pytmc&#39; := &#39;pv: NORTH&#39;}
-	fbNorth: FB_StatePTPMove;
-	{attribute &#39;pytmc&#39; := &#39;pv: SOUTH&#39;}
-	fbSouth: FB_StatePTPMove;
-	
+    (*Motion Parameters*)
+    fSmallDelta: LREAL := 0.01;
+    fBigDelta: LREAL := 10;
+    fMaxVelocity: LREAL := 0.2;
+    fHighAccel: LREAL := 0.8;
+    fLowAccel: LREAL := 0.1;
+
+    stTop: DUT_PositionState;
+    stBOTTOM: DUT_PositionState;
+    stNorth: DUT_PositionState;
+    stSouth: DUT_PositionState;
+
+    {attribute &#39;pytmc&#39; := &#39;pv: TOP&#39;}
+    fbTop: FB_StatePTPMove;
+    {attribute &#39;pytmc&#39; := &#39;pv: BOTTOM&#39;}
+    fbBottom: FB_StatePTPMove;
+    {attribute &#39;pytmc&#39; := &#39;pv: NORTH&#39;}
+    fbNorth: FB_StatePTPMove;
+    {attribute &#39;pytmc&#39; := &#39;pv: SOUTH&#39;}
+    fbSouth: FB_StatePTPMove;
+
+    (*EPICS pvs*)
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: XWID_REQ;
+    io: io;
+    &#39;}
+    rReqApertureSizeX : REAL;
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: YWID_REQ;
+    io: io;
+    &#39;}
+    rReqApertureSizeY : REAL;
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: XCEN_REQ;
+    io: io;
+    &#39;}
+    rReqCenterX: REAL;
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: YCEN_REQ;
+    io: io;
+    &#39;}
+    rReqCenterY: REAL;
+
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: ACTUAL_XWIDTH;
+    io: io;
+    &#39;}
+    rActApertureSizeX : REAL;
+
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: ACTUAL_YWIDTH;
+    io: io;
+    &#39;}
+    rActApertureSizeY : REAL;
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: ACTUAL_XCENTER;
+    io: io;
+    &#39;}
+    rActCenterX: REAL;
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: ACTUAL_YCENTER;
+    io: io;
+    &#39;}
+    rActCenterY: REAL;
+
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: XCEN_SETZERO;
+    io: io;
+    &#39;}
+    rSetCenterX: BOOL;
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: YCEN_SETZERO;
+    io: io;
+    &#39;}
+    rSetCenterY: BOOL;
+
+
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: OPEN;
+    io: io;
+    field: ZNAM False
+    field: ONAM True
+    &#39;}
+    bOpen: BOOL;
+
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: CLOSE;
+    io: io;
+    field: ZNAM False
+    field: ONAM True
+    &#39;}
+    bClose: BOOL;
+
+    {attribute &#39;pytmc&#39; := &#39;
+    pv: BLOCK;
+    io: io;
+    field: ZNAM False
+    field: ONAM True
+    &#39;}
+    bBlock: BOOL;
+
+
+   
+        //Local variables
+    bInit: BOOL :=true;
+    rTrig_Block: R_TRIG;
+    rTrig_Open: R_TRIG;
+    rTrig_Close: R_TRIG;
+
+    fPosBlock: LREAL;
+    fPosClose: LREAL;
+    fPosOpen: LREAL;
+
+	stSetPositionOptions:ST_SetPositionOptions;
+	fbSetPosition_TOP: MC_SetPosition;
+	fbSetPosition_Bottom: MC_SetPosition;
+	fbSetPosition_North: MC_SetPosition;
+	fbSetPosition_South: MC_SetPosition;
 
 END_VAR
+
+
+END_FUNCTION_BLOCK
+ACTION ACT_BLOCK:
+rTrig_Block (CLK:= bBlock);
+rTrig_Open (CLK:= bOpen);
+rTrig_Close (CLK:= bClose);
+
+if (rTrig_Block.Q) THEN
+    //BLOCK
+
+    bBlock := false;
+END_IF
+
+if (rTrig_Open.Q) THEN
+
+
+    bOpen := false;
+END_IF
+
+if (rTrig_Close.Q) THEN
+
+
+    bClose := false;
+END_IF
+END_ACTION
+ACTION ACT_CalculatePositions:
+//Calculate requested Positions
+
+
+fPosTopBlade := (rReqApertureSizeY/2) + rReqCenterY;
+fPosBottomBlade := (-1*rReqApertureSizeY/2) + rReqCenterY;
+
+fPosNorthBlade := (rReqApertureSizeX/2) + rReqCenterX;
+fPosSouthBlade := (-1*rReqApertureSizeX/2) + rReqCenterX;
+
+
+//Calculate Actual Positions
+
+
+rActApertureSizeX := ABS(stNorthBlade.stAxisStatus.fActPosition - stSouthBlade.stAxisStatus.fActPosition);
+
+rActApertureSizeY := ABS(stTopBlade.stAxisStatus.fActPosition - stBottomBlade.stAxisStatus.fActPosition);
+
+rActCenterX := ((stNorthBlade.stAxisStatus.fActPosition + stSouthBlade.stAxisStatus.fActPosition)/2);
+
+rActCenterY := ((stTopBlade.stAxisStatus.fActPosition + stBottomBlade.stAxisStatus.fActPosition)/2);
+END_ACTION
+ACTION ACT_Home:
+
+END_ACTION
+ACTION ACT_Init:
+//  init the motion stages parameters
+IF ( bInit) THEN
+    stTopBlade.bHardwareEnable := TRUE;
+    stBottomBlade.bHardwareEnable := TRUE;
+    stNorthBlade.bHardwareEnable := TRUE;
+    stSouthBlade.bHardwareEnable := TRUE;
+    stTopBlade.bPowerSelf :=TRUE;
+    stBottomBlade.bPowerSelf :=TRUE;
+    stNorthBlade.bPowerSelf :=TRUE;
+    stSouthBlade.bPowerSelf :=TRUE;
+    stTopBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    stBottomBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    stNorthBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    stSouthBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+END_IF
+END_ACTION
+ACTION ACT_Motion:
 // Instantiate Function block for all the blades
 fbTopBlade(stMotionStage:=stTopBlade);
 fbBottomBlade(stMotionStage:=stBottomBlade);
 fbNorthBlade(stMotionStage:=stNorthBlade);
 fbSouthBlade(stMotionStage:=stSouthBlade);
 
-//  no STO
-stTopBlade.bHardwareEnable := TRUE;
-stBottomBlade.bHardwareEnable := TRUE;
-stNorthBlade.bHardwareEnable := TRUE;
-stSouthBlade.bHardwareEnable := TRUE;
-stTopBlade.bPowerSelf :=TRUE;
-stBottomBlade.bPowerSelf :=TRUE;
-stNorthBlade.bPowerSelf :=TRUE;
-stSouthBlade.bPowerSelf :=TRUE;
-
-//RTDs
-RTD_TOP_1();
-RTD_TOP_2();
-RTD_Bottom_1();
-RTD_Bottom_2();
-RTD_North_1();
-RTD_North_2();
-RTD_South_1();
-RTD_South_2();
-
-//Flow Switch
-fbFlowSwitch();
-
-
 // PTP Motion for each blade
-
 stTop.sName := &#39;Top&#39;;
 stTop.fPosition := fPosTopBlade;
 stTop.fDelta := fSmallDelta;
@@ -361,29 +472,194 @@ stSouth.fVelocity := fMaxVelocity;
 stSouth.fAccel := fHighAccel;
 stSouth.fDecel := fHighAccel;
 
-//fbTop.bExecute := fbBottom.bExecute :=fbNorth.bExecute := fbSouth.bExecute := bExecuteMotion;
+if (bExecuteMotion) THEN
+	fbTop.bExecute := fbBottom.bExecute :=fbNorth.bExecute := fbSouth.bExecute := bExecuteMotion;
+	bExecuteMotion:= FALSE;
+END_IF
+
 
 fbTop(
-	stPositionState:=stTop,
-	bMoveOk:=TRUE,
-	stMotionStage:=stTopBlade);
-	
+    stPositionState:=stTop,
+    bMoveOk:=bMoveOk,
+    stMotionStage:=stTopBlade);
+
 fbBottom(
-	stPositionState:=stBOTTOM,
-	bMoveOk:=TRUE,
-	stMotionStage:=stBottomBlade);
-	
+    stPositionState:=stBOTTOM,
+    bMoveOk:=bMoveOk,
+    stMotionStage:=stBottomBlade);
+
 fbNorth(
-	stPositionState:=stNorth,
-	bMoveOk:=TRUE,
-	stMotionStage:=stNorthBlade);
-	
+    stPositionState:=stNorth,
+    bMoveOk:=bMoveOk,
+    stMotionStage:=stNorthBlade);
+
 fbSouth(
-	stPositionState:=stSouth,
-	bMoveOk:=TRUE,
-	stMotionStage:=stSouthBlade);
+    stPositionState:=stSouth,
+    bMoveOk:=bMoveOk,
+    stMotionStage:=stSouthBlade);
+END_ACTION
+ACTION ACT_Zero:
+//ZERO BIAS
+
+// Set Y center to zero
+
+// Set X center to zero
+
+if (rSetCenterY)THEN 
+		rSetCenterY := false;
+		// Set Current Position
+		fbSetPosition_TOP.Position :=  stTopBlade.stAxisStatus.fActPosition - rActCenterY ; 
+		fbSetPosition_TOP.Execute := TRUE;
+		fbSetPosition_Bottom.Position := stBottomBlade.stAxisStatus.fActPosition - rActCenterY; 
+		fbSetPosition_Bottom.Execute := TRUE;
+END_IF
+
+if (rSetCenterX)THEN 
+		rSetCenterX := false;
+		// Set Current Position
+		fbSetPosition_North.Position := stNorthBlade.stAxisStatus.fActPosition - rActCenterX ; 
+		fbSetPosition_North.Execute := TRUE;
+		fbSetPosition_South.Position := stSouthBlade.stAxisStatus.fActPosition - rActCenterX ; ; 
+		fbSetPosition_South.Execute := TRUE;
+END_IF
+		
+	
+//Reset
+if (fbSetPosition_TOP.Done ) THEN
+	fbSetPosition_TOP.Execute := FALSE;	
+END_IF
+if (fbSetPosition_Bottom.Done ) THEN
+	fbSetPosition_Bottom.Execute := FALSE;	
+END_IF
+if (fbSetPosition_North.Done ) THEN
+	fbSetPosition_North.Execute := FALSE;	
+END_IF
+if (fbSetPosition_South.Done ) THEN
+	fbSetPosition_South.Execute := FALSE;	
+END_IF
+
+// Set Encoder Position
+//Clear position lag error
+stSetPositionOptions.ClearPositionLag := TRUE;
+fbSetPosition_TOP(
+	Axis:=  stTopBlade.Axis , 
+	Execute:= , 
+	Position:= 0 , 
+	Mode:= FALSE, 
+	Options:= stSetPositionOptions, 
+	Done=&gt; , 
+	Busy=&gt; , 
+	Error=&gt; , 
+	ErrorID=&gt; );
+fbSetPosition_Bottom(
+	Axis:= stBottomBlade.Axis , 
+	Execute:= , 
+	Position:= 0 , 
+	Mode:= FALSE, 
+	Options:= stSetPositionOptions, 
+	Done=&gt; , 
+	Busy=&gt; , 
+	Error=&gt; , 
+	ErrorID=&gt; );
+fbSetPosition_North(
+	Axis:= stNorthBlade.Axis , 
+	Execute:= , 
+	Position:= 0 , 
+	Mode:= FALSE, 
+	Options:= stSetPositionOptions, 
+	Done=&gt; , 
+	Busy=&gt; , 
+	Error=&gt; , 
+	ErrorID=&gt; );
+fbSetPosition_South(
+	Axis:= stSouthBlade.Axis , 
+	Execute:= , 
+	Position:= 0 , 
+	Mode:= FALSE, 
+	Options:= stSetPositionOptions, 
+	Done=&gt; , 
+	Busy=&gt; , 
+	Error=&gt; , 
+	ErrorID=&gt; );
+END_ACTION
+</pre></div>
+</div>
+</div>
+<div class="section" id="pou-fb-slits-power">
+<h2>POU: FB_SLITS_POWER<a class="headerlink" href="#pou-fb-slits-power" title="Permalink to this headline">¶</a></h2>
+<p>File: kfe_motion/Temp/FB_SLITS_POWER.TcPOU</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_SLITS_POWER EXTENDS FB_SLITS
+VAR_INPUT
+END_VAR
+VAR
+	 {attribute &#39;pytmc&#39; := &#39;
+        pv: FSW
+    &#39;}
+    fbFlowSwitch: FB_XTES_Flowswitch;
+
+
+    //RTDs
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: TOP:RTD:01
+    &#39;}
+    RTD_TOP_1: FB_TempSensor;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: TOP:RTD:02
+    &#39;}
+    RTD_TOP_2: FB_TempSensor;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: BOTTOM:RTD:01
+    &#39;}
+    RTD_Bottom_1: FB_TempSensor;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: BOTTOM:RTD:02
+    &#39;}
+    RTD_Bottom_2: FB_TempSensor;
+
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: NORTH:RTD:01
+    &#39;}
+    RTD_North_1: FB_TempSensor;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: NORTH:RTD:02
+    &#39;}
+    RTD_North_2: FB_TempSensor;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: SOUTH:RTD:01
+    &#39;}
+    RTD_South_1: FB_TempSensor;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: SOUTH:RTD:02
+    &#39;}
+    RTD_South_2: FB_TempSensor;
+
+
+END_VAR
+ACT_init();
+
+// Instantiate Function block for all the blades
+ACT_Motion();
+//SET and GET the requested and Actual values
+ACT_CalculatePositions();
+ACT_Zero();
+//ACT_BLOCK();
+ACT_RTDs();
 
 END_FUNCTION_BLOCK
+ACTION ACT_RTDs:
+////RTDs
+RTD_TOP_1();
+RTD_TOP_2();
+RTD_Bottom_1();
+RTD_Bottom_2();
+RTD_North_1();
+RTD_North_2();
+RTD_South_1();
+RTD_South_2();
+
+//Flow Switch
+fbFlowSwitch();
+END_ACTION
 </pre></div>
 </div>
 </div>
@@ -717,134 +993,43 @@ VAR
 							  .RTD_Bottom_2.bUnderrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Underrange;
 							  .RTD_Bottom_2.bOverrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Overrange&#39;}
 	fbSL1K0: FB_SLITS_POWER;
-	(*T. MATRIX (North-x1,South-x2,Top-y1,Bottom-y2.. appSize-gapX,gapY, Cx, Cy) *)
-	aTMatrix: ARRAY [1..4,1..4] of REAL;
+
 	{attribute &#39;pytmc&#39; := &#39;
     pv: SL1K0:POWER:GO;
-	io: io;
+    io: io;
+    field: ZNAM False;
+    field: ONAM True;
     &#39;}
-	bExecuteMotion:bool ;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:XWID_REQ;
-	io: io;
-    &#39;}
-	rReqApertureSizeX : REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:YWID_REQ;
-	io: io;
-    &#39;}
-	rReqApertureSizeY : REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:XCEN_REQ;
-	io: io;
-    &#39;}
-	rReqCenterX: REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:YCEN_REQ;
-	io: io;
-    &#39;}
-	rReqCenterY: REAL;
+    bExecuteMotion:BOOL ;
+	//GET PMPS Move Ok bit
+	// Default True until it is properly linked to PMPS bit
+	bMoveOk:BOOL :=TRUE;
 	
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:ACTUAL_XWIDTH;
-	io: io;
-    &#39;}
-	rActApertureSizeX : REAL;
-	
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:ACTUAL_YWIDTH;
-	io: io;
-    &#39;}
-	rActApertureSizeY : REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:ACTUAL_XCENTER;
-	io: io;
-    &#39;}
-	rActCenterX: REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:ACTUAL_YCENTER;
-	io: io;
-    &#39;}
-	rActCenterY: REAL;
-	
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:XCEN_SETZERO;
-	io: io;
-    &#39;}
-	rSetCenterX: REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL1K0:POWER:YCEN_SETZERO;
-	io: io;
-    &#39;}
-	rSetCenterY: REAL;
-	
-	bInit:BOOL :=true;
-	
-
-	rMaxX:REAL:=28;
-	rMaxY:REAL:=28;
-	rMaxCx:REAL:=14;
-	rMaxCy:REAL:=14;
-
 	//for testing purposes only. comment-out/delete once done.	
 	mcPower : ARRAY [1..4] OF MC_POWER;
+	bTest:BOOL:=FALSE;
 END_VAR
-if (bInit) THEN
-	(*Gap*)
-	aTMatrix[1,1]:= 0.5;
-	aTMatrix[2,1]:= -0.5;
-	aTMatrix[3,1]:= 0;
-	aTMatrix[4,1]:= 0;
-	(*GAP Y*)
-	aTMatrix[1,2]:= 0;
-	aTMatrix[2,2]:= 0;
-	aTMatrix[3,2]:= 0.5;
-	aTMatrix[4,2]:= -0.5;
-	(*Center X*)
-	aTMatrix[1,3]:= 1;
-	aTMatrix[2,3]:= 1;
-	aTMatrix[3,3]:= 0;
-	aTMatrix[4,3]:= 0;
-	(*Center Y*)
-	aTMatrix[1,4]:= 0;
-	aTMatrix[2,4]:= 0;
-	aTMatrix[3,4]:= 1;
-	aTMatrix[4,4]:= 1;
-	
-	bInit :=false;
-END_IF
-
-//verify requested gap and center are within range
-// Needs to be better, limits are calculated based on the requested center and travel range
-rReqApertureSizeX := LIMIT(0,rReqApertureSizeX, rMaxX);
-rReqApertureSizeY := LIMIT(0,rReqApertureSizeY, rMaxY);
-rReqCenterX := LIMIT(0,rReqCenterX, rMaxCx);
-rReqCenterY := LIMIT(0,rReqCenterY, rMaxCy);
-
-// Calculate the position of every blade based on the transformation Matrix
-
-fbSL1K0.fPosNorthBlade := (aTMatrix[1,1] * rReqApertureSizeX) + (aTMatrix[1,3]*rReqCenterX);
-fbSL1K0.fPosSouthBlade:= (aTMatrix[2,1] * rReqApertureSizeX) + (aTMatrix[2,3]*rReqCenterX);
-
-fbSL1K0.fPosTopBlade := (aTMatrix[3,2] * rReqApertureSizeY) +(aTMatrix[3,4]*rReqCenterY);
-fbSL1K0.fPosBottomBlade :=(aTMatrix[4,2] * rReqApertureSizeY) + (aTMatrix[4,4]*rReqCenterY);
-
-
-
-(*fbSL1K0(stTopBlade:=  Main.M18,
-		stBottomBlade:= Main.M19, 
-		stNorthBlade:=  Main.M20, 
-		stSouthBlade:=  Main.M21);*)
+fbSL1K0.bMoveOk := bMoveOk;
 
 
 
 
-
-//for testing purposes only. comment-out/delete once done.	
-mcPower[1](axis:=Main.M18.Axis, Enable:=TRUE, enable_positive:=Main.M18.bLimitForwardEnable, enable_negative:=Main.M18.bLimitBackwardEnable);
+//for testing purposes only. comment-out/delete once done.
+If bTest THEN
+	mcPower[1](axis:=Main.M18.Axis, Enable:=TRUE, enable_positive:=Main.M18.bLimitForwardEnable, enable_negative:=Main.M18.bLimitBackwardEnable);
 mcPower[2](axis:=Main.M19.Axis, Enable:=TRUE, enable_positive:=Main.M19.bLimitForwardEnable, enable_negative:=Main.M19.bLimitBackwardEnable);
 mcPower[3](axis:=Main.M20.Axis, Enable:=TRUE, enable_positive:=Main.M20.bLimitForwardEnable, enable_negative:=Main.M20.bLimitBackwardEnable);
 mcPower[4](axis:=Main.M21.Axis, Enable:=TRUE, enable_positive:=Main.M21.bLimitForwardEnable, enable_negative:=Main.M21.bLimitBackwardEnable);
+
+else
+	
+fbSL1K0(stTopBlade:=  Main.M18,
+		stBottomBlade:= Main.M19, 
+		stNorthBlade:=  Main.M20, 
+		stSouthBlade:=  Main.M21,
+		bExecuteMotion:=bExecuteMotion);
+
+END_IF
 
 END_PROGRAM
 </pre></div>
@@ -892,124 +1077,26 @@ VAR
 							  .RTD_Bottom_2.bUnderrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Underrange;
 							  .RTD_Bottom_2.bOverrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Overrange&#39;}
 	fbSL2K0: FB_SLITS_POWER;
-	(*T. MATRIX (North-x1,South-x2,Top-y1,Bottom-y2.. appSize-gapX,gapY, Cx, Cy) *)
-	aTMatrix: ARRAY [1..4,1..4] of REAL;
+//GET PMP Move Ok bit
+// Default True until it is properly linked to PMPS bit
+	bMoveOk:BOOL :=TRUE;
 	{attribute &#39;pytmc&#39; := &#39;
     pv: SL2K0:POWER:GO;
-	io: io;
+    io: io;
+    field: ZNAM False;
+    field: ONAM True;
     &#39;}
-	bExecuteMotion:bool ;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:XWID_REQ;
-	io: io;
-    &#39;}
-	rReqApertureSizeX : REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:YWID_REQ;
-	io: io;
-    &#39;}
-	rReqApertureSizeY : REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:XCEN_REQ;
-	io: io;
-    &#39;}
-	rReqCenterX: REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:YCEN_REQ;
-	io: io;
-    &#39;}
-	rReqCenterY: REAL;
-	
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:ACTUAL_XWIDTH;
-	io: io;
-    &#39;}
-	rActApertureSizeX : REAL;
-	
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:ACTUAL_YWIDTH;
-	io: io;
-    &#39;}
-	rActApertureSizeY : REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:ACTUAL_XCENTER;
-	io: io;
-    &#39;}
-	rActCenterX: REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:ACTUAL_YCENTER;
-	io: io;
-    &#39;}
-	rActCenterY: REAL;
-	
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:XCEN_SETZERO;
-	io: io;
-    &#39;}
-	rSetCenterX: REAL;
-	{attribute &#39;pytmc&#39; := &#39;
-    pv: SL2K0:POWER:YCEN_SETZERO;
-	io: io;
-    &#39;}
-	rSetCenterY: REAL;
-	
-	bInit:BOOL :=true;
-	
-
-	rMaxX:REAL:=28;
-	rMaxY:REAL:=28;
-	rMaxCx:REAL:=14;
-	rMaxCy:REAL:=14;
-	
+    bExecuteMotion:BOOL ;
 	//for testing purposes only. comment-out/delete once done.	
 	mcPower : ARRAY [1..4] OF MC_POWER;
 END_VAR
-if (bInit) THEN
-	(*Gap*)
-	aTMatrix[1,1]:= 0.5;
-	aTMatrix[2,1]:= -0.5;
-	aTMatrix[3,1]:= 0;
-	aTMatrix[4,1]:= 0;
-	(*GAP Y*)
-	aTMatrix[1,2]:= 0;
-	aTMatrix[2,2]:= 0;
-	aTMatrix[3,2]:= 0.5;
-	aTMatrix[4,2]:= -0.5;
-	(*Center X*)
-	aTMatrix[1,3]:= 1;
-	aTMatrix[2,3]:= 1;
-	aTMatrix[3,3]:= 0;
-	aTMatrix[4,3]:= 0;
-	(*Center Y*)
-	aTMatrix[1,4]:= 0;
-	aTMatrix[2,4]:= 0;
-	aTMatrix[3,4]:= 1;
-	aTMatrix[4,4]:= 1;
-	
-	bInit :=false;
-END_IF
-
-//verigy requested gap and center are within range
-// Needs to be better, limits are calculated based on the requested center and travel range
-rReqApertureSizeX := LIMIT(0,rReqApertureSizeX, rMaxX);
-rReqApertureSizeY := LIMIT(0,rReqApertureSizeY, rMaxY);
-rReqCenterX := LIMIT(0,rReqCenterX, rMaxCx);
-rReqCenterY := LIMIT(0,rReqCenterY, rMaxCy);
-
-// Calculate the position of every blade based on the transformation Matrix
-
-fbSL2K0.fPosNorthBlade := (aTMatrix[1,1] * rReqApertureSizeX) + (aTMatrix[1,3]*rReqCenterX);
-fbSL2K0.fPosSouthBlade:= (aTMatrix[2,1] * rReqApertureSizeX) + (aTMatrix[2,3]*rReqCenterX);
-
-fbSL2K0.fPosTopBlade := (aTMatrix[3,2] * rReqApertureSizeY) +(aTMatrix[3,4]*rReqCenterY);
-fbSL2K0.fPosBottomBlade :=(aTMatrix[4,2] * rReqApertureSizeY) + (aTMatrix[4,4]*rReqCenterY);
-
-
+fbSL2K0.bMoveOk := bMoveOk;
 
 fbSL2K0(stTopBlade:=  Main.M22,
 		stBottomBlade:= Main.M23, 
 		stNorthBlade:=  Main.M24, 
-		stSouthBlade:=  Main.M25);
+		stSouthBlade:=  Main.M25,
+		bExecuteMotion:=bExecuteMotion);
 
 
 //for testing purposes only. comment-out/delete once done.	
@@ -1591,126 +1678,97 @@ END_PROGRAM
 <span class="n">PRG_RTDSK0</span><span class="o">.</span><span class="n">fbMotion8</span> <span class="p">:</span> <span class="n">lcls_twincat_motion</span><span class="o">.</span><span class="n">FB_MotionStageSim</span> <span class="p">(</span><span class="mi">7619456</span> <span class="mi">152704</span><span class="p">)</span>
 <span class="n">PRG_RTDSK0</span><span class="o">.</span><span class="n">fbMotion8</span><span class="o">.</span><span class="n">fbMotionStage</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">7622016</span> <span class="mi">2048</span><span class="p">)</span>
 <span class="n">PRG_RTDSK0</span><span class="o">.</span><span class="n">fbMotion8</span><span class="o">.</span><span class="n">fbMotionStage</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">7620992</span> <span class="mi">1024</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">aTMatrix</span> <span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">4</span><span class="p">]</span> <span class="n">OF</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8398528</span> <span class="mi">512</span><span class="p">)</span>
 <span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">bExecuteMotion</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">6245088</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">bInit</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">6245096</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span> <span class="p">:</span> <span class="n">FB_SLITS_POWER</span> <span class="p">(</span><span class="mi">7772480</span> <span class="mi">626048</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383880</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383896</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383888</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">8383904</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384072</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384088</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384080</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">8384096</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384264</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384280</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384272</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">8384288</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384456</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384472</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384464</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">8384480</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384648</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384664</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384656</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">8384672</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384840</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384856</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8384848</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">8384864</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383496</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383512</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383504</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">8383520</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383688</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383704</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383696</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">8383712</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbBottomBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">7928064</span> <span class="mi">2048</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbBottomBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">7927040</span> <span class="mi">1024</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">8383328</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbNorthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">8080640</span> <span class="mi">2048</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbNorthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">8079616</span> <span class="mi">1024</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbSouthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">8233216</span> <span class="mi">2048</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbSouthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">8232192</span> <span class="mi">1024</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbTopBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">7775488</span> <span class="mi">2048</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbTopBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">7774464</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">bMoveOk</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9368656</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">bTest</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">6245096</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span> <span class="p">:</span> <span class="n">FB_SLITS_POWER</span> <span class="p">(</span><span class="mi">11955392</span> <span class="mi">635264</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589320</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589336</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589328</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">12589344</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589576</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589592</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589584</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">12589600</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589832</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589848</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589840</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">12589856</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12590088</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12590104</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12590096</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">12590112</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12590344</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12590360</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12590352</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">12590368</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12590600</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12590616</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12590608</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">12590624</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12588808</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12588824</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12588816</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">12588832</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589064</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589080</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12589072</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">12589088</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbBottomBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">12110720</span> <span class="mi">2048</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbBottomBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">12109696</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">12588576</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbNorthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">12263296</span> <span class="mi">2048</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbNorthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">12262272</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbSouthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">12415872</span> <span class="mi">2048</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbSouthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">12414848</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbTopBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">11958144</span> <span class="mi">2048</span><span class="p">)</span>
+<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">fbSL1K0</span><span class="o">.</span><span class="n">fbTopBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">11957120</span> <span class="mi">1024</span><span class="p">)</span>
 <span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">mcPower</span> <span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">4</span><span class="p">]</span> <span class="n">OF</span> <span class="n">Tc2_MC2</span><span class="o">.</span><span class="n">MC_Power</span> <span class="p">(</span><span class="mi">8399488</span> <span class="mi">3072</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rActApertureSizeX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399168</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rActApertureSizeY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399200</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rActCenterX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399232</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rActCenterY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399264</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rMaxCx</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399424</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rMaxCy</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399456</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rMaxX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399360</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rMaxY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399392</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rReqApertureSizeX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399040</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rReqApertureSizeY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399072</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rReqCenterX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399104</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rReqCenterY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399136</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rSetCenterX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399296</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">rSetCenterY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">8399328</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">aTMatrix</span> <span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">4</span><span class="p">]</span> <span class="n">OF</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9028608</span> <span class="mi">512</span><span class="p">)</span>
 <span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">bExecuteMotion</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">6245104</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">bInit</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">6245112</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span> <span class="p">:</span> <span class="n">FB_SLITS_POWER</span> <span class="p">(</span><span class="mi">8402560</span> <span class="mi">626048</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013960</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013976</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013968</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">9013984</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014152</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014168</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014160</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">9014176</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014344</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014360</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014352</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">9014368</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014536</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014552</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014544</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">9014560</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014728</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014744</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014736</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">9014752</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014920</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014936</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9014928</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">9014944</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013576</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013592</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013584</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">9013600</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013768</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013784</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013776</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">9013792</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbBottomBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">8558144</span> <span class="mi">2048</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbBottomBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">8557120</span> <span class="mi">1024</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9013408</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbNorthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">8710720</span> <span class="mi">2048</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbNorthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">8709696</span> <span class="mi">1024</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbSouthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">8863296</span> <span class="mi">2048</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbSouthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">8862272</span> <span class="mi">1024</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbTopBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">8405568</span> <span class="mi">2048</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbTopBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">8404544</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">bMoveOk</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">9368664</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span> <span class="p">:</span> <span class="n">FB_SLITS_POWER</span> <span class="p">(</span><span class="mi">12590656</span> <span class="mi">635264</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224584</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224600</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224592</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">13224608</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224840</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224856</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224848</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">13224864</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225096</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225112</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225104</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">13225120</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225352</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225368</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225360</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_North_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">13225376</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225608</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225624</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225616</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">13225632</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225864</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225880</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13225872</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_South_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">13225888</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224072</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224088</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224080</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">13224096</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bError</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224328</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224344</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13224336</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">RTD_TOP_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="p">:</span> <span class="n">INT</span> <span class="p">(</span><span class="mi">13224352</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbBottomBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">12745984</span> <span class="mi">2048</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbBottomBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">12744960</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="p">(</span><span class="mi">13223840</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbNorthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">12898560</span> <span class="mi">2048</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbNorthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">12897536</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbSouthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">13051136</span> <span class="mi">2048</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbSouthBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">13050112</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbTopBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">NcToPlc</span> <span class="p">:</span> <span class="n">NCTOPLC_AXIS_REF</span> <span class="p">(</span><span class="mi">12593408</span> <span class="mi">2048</span><span class="p">)</span>
+<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">fbSL2K0</span><span class="o">.</span><span class="n">fbTopBlade</span><span class="o">.</span><span class="n">fbDriveVirtual</span><span class="o">.</span><span class="n">MasterAxis</span><span class="o">.</span><span class="n">PlcToNc</span> <span class="p">:</span> <span class="n">PLCTONC_AXIS_REF</span> <span class="p">(</span><span class="mi">12592384</span> <span class="mi">1024</span><span class="p">)</span>
 <span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">mcPower</span> <span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">4</span><span class="p">]</span> <span class="n">OF</span> <span class="n">Tc2_MC2</span><span class="o">.</span><span class="n">MC_Power</span> <span class="p">(</span><span class="mi">9029568</span> <span class="mi">3072</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rActApertureSizeX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029248</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rActApertureSizeY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029280</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rActCenterX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029312</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rActCenterY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029344</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rMaxCx</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029504</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rMaxCy</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029536</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rMaxX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029440</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rMaxY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029472</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rReqApertureSizeX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029120</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rReqApertureSizeY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029152</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rReqCenterX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029184</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rReqCenterY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029216</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rSetCenterX</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029376</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">rSetCenterY</span> <span class="p">:</span> <span class="n">REAL</span> <span class="p">(</span><span class="mi">9029408</span> <span class="mi">32</span><span class="p">)</span>
 <span class="n">ParameterList</span><span class="o">.</span><span class="n">cSourceNameSize</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="p">(</span><span class="mi">4386496</span> <span class="mi">32</span><span class="p">)</span>
 <span class="n">TC_EVENTS</span><span class="o">.</span><span class="n">LCLSGeneralEventClass</span> <span class="p">:</span> <span class="n">ST_LCLSGeneralEventClass</span> <span class="p">(</span><span class="mi">9363360</span> <span class="mi">960</span><span class="p">)</span>
 <span class="n">TwinCAT_LicenseInfoVarList</span><span class="o">.</span><span class="n">_LicenseInfo</span> <span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">1</span><span class="p">]</span> <span class="n">OF</span> <span class="n">PlcLicenseInfo</span> <span class="p">(</span><span class="mi">9315104</span> <span class="mi">1024</span><span class="p">)</span>
@@ -2088,10 +2146,11 @@ END_PROGRAM
     <span class="n">CreateSymbols</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
     <span class="n">AxisType</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">AxisFolder</span> <span class="o">=</span> <span class="s1">&#39;SL1K0-POWER&#39;</span>
+    <span class="n">Dynamic</span><span class="p">:</span><span class="n">DelayTime</span> <span class="o">=</span> <span class="mf">0.008</span>
     <span class="n">Velo</span><span class="p">:</span><span class="n">Maximum</span> <span class="o">=</span> <span class="mf">0.8</span>
     <span class="n">OtherSettings</span><span class="p">:</span><span class="n">AllowMotionCmdToSlave</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">EncType</span> <span class="o">=</span> <span class="mi">7</span>
-    <span class="n">Enc</span><span class="p">:</span><span class="n">ScaleFactorNumerator</span> <span class="o">=</span> <span class="mf">0.0008267211914</span>
+    <span class="n">Enc</span><span class="p">:</span><span class="n">ScaleFactorNumerator</span> <span class="o">=</span> <span class="mf">0.0008302003481</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">Inverse</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">MaxCount</span> <span class="o">=</span> <span class="s1">&#39;#x0000ffff&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">ReferenceSystem</span> <span class="o">=</span> <span class="mi">1</span>
@@ -2106,6 +2165,7 @@ END_PROGRAM
     <span class="n">OtherSettings</span><span class="p">:</span><span class="n">AllowMotionCmdToSlave</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">EncType</span> <span class="o">=</span> <span class="mi">29</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">ScaleFactorNumerator</span> <span class="o">=</span> <span class="mf">5e-05</span>
+    <span class="n">Enc</span><span class="p">:</span><span class="n">Offset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">38.304</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">MaxCount</span> <span class="o">=</span> <span class="s1">&#39;#xffffffff&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">Inc</span><span class="p">:</span><span class="n">RefSoftSyncMask</span> <span class="o">=</span> <span class="s1">&#39;#x0000ffff&#39;</span>
 
@@ -2118,6 +2178,7 @@ END_PROGRAM
     <span class="n">OtherSettings</span><span class="p">:</span><span class="n">AllowMotionCmdToSlave</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">EncType</span> <span class="o">=</span> <span class="mi">29</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">ScaleFactorNumerator</span> <span class="o">=</span> <span class="mf">5e-05</span>
+    <span class="n">Enc</span><span class="p">:</span><span class="n">Offset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">19.2703</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">MaxCount</span> <span class="o">=</span> <span class="s1">&#39;#xffffffff&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">Inc</span><span class="p">:</span><span class="n">RefSoftSyncMask</span> <span class="o">=</span> <span class="s1">&#39;#x0000ffff&#39;</span>
 
@@ -2130,6 +2191,7 @@ END_PROGRAM
     <span class="n">OtherSettings</span><span class="p">:</span><span class="n">AllowMotionCmdToSlave</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">EncType</span> <span class="o">=</span> <span class="mi">29</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">ScaleFactorNumerator</span> <span class="o">=</span> <span class="mf">5e-05</span>
+    <span class="n">Enc</span><span class="p">:</span><span class="n">Offset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">14.9995</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">MaxCount</span> <span class="o">=</span> <span class="s1">&#39;#xffffffff&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">Inc</span><span class="p">:</span><span class="n">RefSoftSyncMask</span> <span class="o">=</span> <span class="s1">&#39;#x0000ffff&#39;</span>
 
@@ -2142,6 +2204,7 @@ END_PROGRAM
     <span class="n">OtherSettings</span><span class="p">:</span><span class="n">AllowMotionCmdToSlave</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">EncType</span> <span class="o">=</span> <span class="mi">29</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">ScaleFactorNumerator</span> <span class="o">=</span> <span class="mf">5e-05</span>
+    <span class="n">Enc</span><span class="p">:</span><span class="n">Offset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">43.9987</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">MaxCount</span> <span class="o">=</span> <span class="s1">&#39;#xffffffff&#39;</span>
     <span class="n">Enc</span><span class="p">:</span><span class="n">Inc</span><span class="p">:</span><span class="n">RefSoftSyncMask</span> <span class="o">=</span> <span class="s1">&#39;#x0000ffff&#39;</span>
 </pre></div>
@@ -3492,7 +3555,7 @@ END_PROGRAM
 </div>
 <div class="section" id="pragma-lint-results">
 <h2>Pragma lint results<a class="headerlink" href="#pragma-lint-results" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span><span class="n">pytmc</span><span class="o">.</span><span class="n">bin</span><span class="o">.</span><span class="n">pragmalint</span><span class="p">:</span><span class="n">Total</span> <span class="n">pragmas</span> <span class="n">found</span><span class="p">:</span> <span class="mi">82</span> <span class="n">Total</span> <span class="n">linter</span> <span class="n">errors</span><span class="p">:</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span><span class="n">pytmc</span><span class="o">.</span><span class="n">bin</span><span class="o">.</span><span class="n">pragmalint</span><span class="p">:</span><span class="n">Total</span> <span class="n">pragmas</span> <span class="n">found</span><span class="p">:</span> <span class="mi">76</span> <span class="n">Total</span> <span class="n">linter</span> <span class="n">errors</span><span class="p">:</span> <span class="mi">0</span>
 <span class="n">PLC</span> <span class="n">Project</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">kfe_motion</span>
 <span class="o">===========================</span>
 
@@ -3536,19 +3599,25 @@ END_PROGRAM
 <span class="n">POUs</span><span class="o">/</span><span class="n">PRG_SL1K0_POWER</span><span class="o">.</span><span class="n">TcPOU</span> <span class="p">(</span><span class="n">TcPlcObject</span><span class="p">)</span>
 <span class="o">----------------------------------------</span>
 
-    <span class="o">-</span> <span class="n">PRG_SL1K0_POWER</span><span class="p">:</span> <span class="n">Declaration</span> <span class="o">-</span> <span class="mi">13</span> <span class="n">pragmas</span>
+    <span class="o">-</span> <span class="n">PRG_SL1K0_POWER</span><span class="p">:</span> <span class="n">Declaration</span> <span class="o">-</span> <span class="mi">3</span> <span class="n">pragmas</span>
 
 
 <span class="n">POUs</span><span class="o">/</span><span class="n">PRG_SL2K0_POWER</span><span class="o">.</span><span class="n">TcPOU</span> <span class="p">(</span><span class="n">TcPlcObject</span><span class="p">)</span>
 <span class="o">----------------------------------------</span>
 
-    <span class="o">-</span> <span class="n">PRG_SL2K0_POWER</span><span class="p">:</span> <span class="n">Declaration</span> <span class="o">-</span> <span class="mi">13</span> <span class="n">pragmas</span>
+    <span class="o">-</span> <span class="n">PRG_SL2K0_POWER</span><span class="p">:</span> <span class="n">Declaration</span> <span class="o">-</span> <span class="mi">3</span> <span class="n">pragmas</span>
+
+
+<span class="n">Temp</span><span class="o">/</span><span class="n">FB_SLITS</span><span class="o">.</span><span class="n">TcPOU</span> <span class="p">(</span><span class="n">TcPlcObject</span><span class="p">)</span>
+<span class="o">---------------------------------</span>
+
+    <span class="o">-</span> <span class="n">FB_SLITS</span><span class="p">:</span> <span class="n">Declaration</span> <span class="o">-</span> <span class="mi">18</span> <span class="n">pragmas</span>
 
 
 <span class="n">Temp</span><span class="o">/</span><span class="n">FB_SLITS_POWER</span><span class="o">.</span><span class="n">TcPOU</span> <span class="p">(</span><span class="n">TcPlcObject</span><span class="p">)</span>
 <span class="o">---------------------------------------</span>
 
-    <span class="o">-</span> <span class="n">FB_SLITS_POWER</span><span class="p">:</span> <span class="n">Declaration</span> <span class="o">-</span> <span class="mi">13</span> <span class="n">pragmas</span>
+    <span class="o">-</span> <span class="n">FB_SLITS_POWER</span><span class="p">:</span> <span class="n">Declaration</span> <span class="o">-</span> <span class="mi">9</span> <span class="n">pragmas</span>
 </pre></div>
 </div>
 </div>
@@ -3579,6 +3648,7 @@ END_PROGRAM
 <li class="toctree-l2"><a class="reference internal" href="#gvl-pmps">GVL: PMPS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pou-fb-arbiter">POU: FB_Arbiter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pou-fb-hardwareffoutput">POU: FB_HardwareFFOutput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pou-fb-slits">POU: FB_SLITS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pou-fb-slits-power">POU: FB_SLITS_POWER</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pou-prg-1-plctask">POU: PRG_1_PlcTask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pou-prg-2-pmps-pre">POU: PRG_2_PMPS_PRE</a></li>

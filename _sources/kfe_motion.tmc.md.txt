@@ -1038,6 +1038,8 @@ Records
  "SL1K0:POWER:ACTUAL_YCENTER_RBV" (ai)
  "SL1K0:POWER:ACTUAL_YWIDTH" (ao)
  "SL1K0:POWER:ACTUAL_YWIDTH_RBV" (ai)
+ "SL1K0:POWER:BLOCK" (bo)
+ "SL1K0:POWER:BLOCK_RBV" (bi)
  "SL1K0:POWER:BOTTOM:ACCL" (ao)
  "SL1K0:POWER:BOTTOM:ACCL_RBV" (ai)
  "SL1K0:POWER:BOTTOM:AT_STATE_RBV" (bi)
@@ -1054,17 +1056,19 @@ Records
  "SL1K0:POWER:BOTTOM:LOCKED_RBV" (bi)
  "SL1K0:POWER:BOTTOM:MOVE_OK_RBV" (bi)
  "SL1K0:POWER:BOTTOM:NAME_RBV" (waveform)
- "SL1K0:POWER:BOTTOM:RTD:01:STC:CONN_RBV" (bi)
- "SL1K0:POWER:BOTTOM:RTD:01:STC:ERR_RBV" (bi)
- "SL1K0:POWER:BOTTOM:RTD:01:STC:TEMP_RBV" (ai)
- "SL1K0:POWER:BOTTOM:RTD:02:STC:CONN_RBV" (bi)
- "SL1K0:POWER:BOTTOM:RTD:02:STC:ERR_RBV" (bi)
- "SL1K0:POWER:BOTTOM:RTD:02:STC:TEMP_RBV" (ai)
+ "SL1K0:POWER:BOTTOM:RTD:01:CONN_RBV" (bi)
+ "SL1K0:POWER:BOTTOM:RTD:01:ERR_RBV" (bi)
+ "SL1K0:POWER:BOTTOM:RTD:01:TEMP_RBV" (ai)
+ "SL1K0:POWER:BOTTOM:RTD:02:CONN_RBV" (bi)
+ "SL1K0:POWER:BOTTOM:RTD:02:ERR_RBV" (bi)
+ "SL1K0:POWER:BOTTOM:RTD:02:TEMP_RBV" (ai)
  "SL1K0:POWER:BOTTOM:SETPOINT" (ao)
  "SL1K0:POWER:BOTTOM:SETPOINT_RBV" (ai)
  "SL1K0:POWER:BOTTOM:VALID_RBV" (bi)
  "SL1K0:POWER:BOTTOM:VELO" (ao)
  "SL1K0:POWER:BOTTOM:VELO_RBV" (ai)
+ "SL1K0:POWER:CLOSE" (bo)
+ "SL1K0:POWER:CLOSE_RBV" (bi)
  "SL1K0:POWER:FSW:FLOW" (bo)
  "SL1K0:POWER:FSW:FLOW_RBV" (bi)
  "SL1K0:POWER:GO" (bo)
@@ -1253,17 +1257,20 @@ Records
  "SL1K0:POWER:NORTH:LOCKED_RBV" (bi)
  "SL1K0:POWER:NORTH:MOVE_OK_RBV" (bi)
  "SL1K0:POWER:NORTH:NAME_RBV" (waveform)
- "SL1K0:POWER:NORTH:RTD:01:STC:CONN_RBV" (bi)
- "SL1K0:POWER:NORTH:RTD:01:STC:ERR_RBV" (bi)
- "SL1K0:POWER:NORTH:RTD:01:STC:TEMP_RBV" (ai)
- "SL1K0:POWER:NORTH:RTD:02:STC:CONN_RBV" (bi)
- "SL1K0:POWER:NORTH:RTD:02:STC:ERR_RBV" (bi)
- "SL1K0:POWER:NORTH:RTD:02:STC:TEMP_RBV" (ai)
+ "SL1K0:POWER:NORTH:RTD:01:CONN_RBV" (bi)
+ "SL1K0:POWER:NORTH:RTD:01:ERR_RBV" (bi)
+ "SL1K0:POWER:NORTH:RTD:01:TEMP_RBV" (ai)
+ "SL1K0:POWER:NORTH:RTD:02:CONN_RBV" (bi)
+ "SL1K0:POWER:NORTH:RTD:02:ERR_RBV" (bi)
+ "SL1K0:POWER:NORTH:RTD:02:TEMP_RBV" (ai)
  "SL1K0:POWER:NORTH:SETPOINT" (ao)
  "SL1K0:POWER:NORTH:SETPOINT_RBV" (ai)
  "SL1K0:POWER:NORTH:VALID_RBV" (bi)
  "SL1K0:POWER:NORTH:VELO" (ao)
  "SL1K0:POWER:NORTH:VELO_RBV" (ai)
+ "SL1K0:POWER:OPEN" (bo)
+ "SL1K0:POWER:OPEN_RBV" (bi)
+ "SL1K0:POWER:PMPS_OK_RBV" (bi)
  "SL1K0:POWER:SOUTH:ACCL" (ao)
  "SL1K0:POWER:SOUTH:ACCL_RBV" (ai)
  "SL1K0:POWER:SOUTH:AT_STATE_RBV" (bi)
@@ -1280,12 +1287,12 @@ Records
  "SL1K0:POWER:SOUTH:LOCKED_RBV" (bi)
  "SL1K0:POWER:SOUTH:MOVE_OK_RBV" (bi)
  "SL1K0:POWER:SOUTH:NAME_RBV" (waveform)
- "SL1K0:POWER:SOUTH:RTD:01:STC:CONN_RBV" (bi)
- "SL1K0:POWER:SOUTH:RTD:01:STC:ERR_RBV" (bi)
- "SL1K0:POWER:SOUTH:RTD:01:STC:TEMP_RBV" (ai)
- "SL1K0:POWER:SOUTH:RTD:02:STC:CONN_RBV" (bi)
- "SL1K0:POWER:SOUTH:RTD:02:STC:ERR_RBV" (bi)
- "SL1K0:POWER:SOUTH:RTD:02:STC:TEMP_RBV" (ai)
+ "SL1K0:POWER:SOUTH:RTD:01:CONN_RBV" (bi)
+ "SL1K0:POWER:SOUTH:RTD:01:ERR_RBV" (bi)
+ "SL1K0:POWER:SOUTH:RTD:01:TEMP_RBV" (ai)
+ "SL1K0:POWER:SOUTH:RTD:02:CONN_RBV" (bi)
+ "SL1K0:POWER:SOUTH:RTD:02:ERR_RBV" (bi)
+ "SL1K0:POWER:SOUTH:RTD:02:TEMP_RBV" (ai)
  "SL1K0:POWER:SOUTH:SETPOINT" (ao)
  "SL1K0:POWER:SOUTH:SETPOINT_RBV" (ai)
  "SL1K0:POWER:SOUTH:VALID_RBV" (bi)
@@ -1307,12 +1314,12 @@ Records
  "SL1K0:POWER:TOP:LOCKED_RBV" (bi)
  "SL1K0:POWER:TOP:MOVE_OK_RBV" (bi)
  "SL1K0:POWER:TOP:NAME_RBV" (waveform)
- "SL1K0:POWER:TOP:RTD:01:STC:CONN_RBV" (bi)
- "SL1K0:POWER:TOP:RTD:01:STC:ERR_RBV" (bi)
- "SL1K0:POWER:TOP:RTD:01:STC:TEMP_RBV" (ai)
- "SL1K0:POWER:TOP:RTD:02:STC:CONN_RBV" (bi)
- "SL1K0:POWER:TOP:RTD:02:STC:ERR_RBV" (bi)
- "SL1K0:POWER:TOP:RTD:02:STC:TEMP_RBV" (ai)
+ "SL1K0:POWER:TOP:RTD:01:CONN_RBV" (bi)
+ "SL1K0:POWER:TOP:RTD:01:ERR_RBV" (bi)
+ "SL1K0:POWER:TOP:RTD:01:TEMP_RBV" (ai)
+ "SL1K0:POWER:TOP:RTD:02:CONN_RBV" (bi)
+ "SL1K0:POWER:TOP:RTD:02:ERR_RBV" (bi)
+ "SL1K0:POWER:TOP:RTD:02:TEMP_RBV" (ai)
  "SL1K0:POWER:TOP:SETPOINT" (ao)
  "SL1K0:POWER:TOP:SETPOINT_RBV" (ai)
  "SL1K0:POWER:TOP:VALID_RBV" (bi)
@@ -1320,14 +1327,14 @@ Records
  "SL1K0:POWER:TOP:VELO_RBV" (ai)
  "SL1K0:POWER:XCEN_REQ" (ao)
  "SL1K0:POWER:XCEN_REQ_RBV" (ai)
- "SL1K0:POWER:XCEN_SETZERO" (ao)
- "SL1K0:POWER:XCEN_SETZERO_RBV" (ai)
+ "SL1K0:POWER:XCEN_SETZERO" (bo)
+ "SL1K0:POWER:XCEN_SETZERO_RBV" (bi)
  "SL1K0:POWER:XWID_REQ" (ao)
  "SL1K0:POWER:XWID_REQ_RBV" (ai)
  "SL1K0:POWER:YCEN_REQ" (ao)
  "SL1K0:POWER:YCEN_REQ_RBV" (ai)
- "SL1K0:POWER:YCEN_SETZERO" (ao)
- "SL1K0:POWER:YCEN_SETZERO_RBV" (ai)
+ "SL1K0:POWER:YCEN_SETZERO" (bo)
+ "SL1K0:POWER:YCEN_SETZERO_RBV" (bi)
  "SL1K0:POWER:YWID_REQ" (ao)
  "SL1K0:POWER:YWID_REQ_RBV" (ai)
  "SL2K0:POWER:ACTUAL_XCENTER" (ao)
@@ -1338,6 +1345,8 @@ Records
  "SL2K0:POWER:ACTUAL_YCENTER_RBV" (ai)
  "SL2K0:POWER:ACTUAL_YWIDTH" (ao)
  "SL2K0:POWER:ACTUAL_YWIDTH_RBV" (ai)
+ "SL2K0:POWER:BLOCK" (bo)
+ "SL2K0:POWER:BLOCK_RBV" (bi)
  "SL2K0:POWER:BOTTOM:ACCL" (ao)
  "SL2K0:POWER:BOTTOM:ACCL_RBV" (ai)
  "SL2K0:POWER:BOTTOM:AT_STATE_RBV" (bi)
@@ -1354,17 +1363,19 @@ Records
  "SL2K0:POWER:BOTTOM:LOCKED_RBV" (bi)
  "SL2K0:POWER:BOTTOM:MOVE_OK_RBV" (bi)
  "SL2K0:POWER:BOTTOM:NAME_RBV" (waveform)
- "SL2K0:POWER:BOTTOM:RTD:01:STC:CONN_RBV" (bi)
- "SL2K0:POWER:BOTTOM:RTD:01:STC:ERR_RBV" (bi)
- "SL2K0:POWER:BOTTOM:RTD:01:STC:TEMP_RBV" (ai)
- "SL2K0:POWER:BOTTOM:RTD:02:STC:CONN_RBV" (bi)
- "SL2K0:POWER:BOTTOM:RTD:02:STC:ERR_RBV" (bi)
- "SL2K0:POWER:BOTTOM:RTD:02:STC:TEMP_RBV" (ai)
+ "SL2K0:POWER:BOTTOM:RTD:01:CONN_RBV" (bi)
+ "SL2K0:POWER:BOTTOM:RTD:01:ERR_RBV" (bi)
+ "SL2K0:POWER:BOTTOM:RTD:01:TEMP_RBV" (ai)
+ "SL2K0:POWER:BOTTOM:RTD:02:CONN_RBV" (bi)
+ "SL2K0:POWER:BOTTOM:RTD:02:ERR_RBV" (bi)
+ "SL2K0:POWER:BOTTOM:RTD:02:TEMP_RBV" (ai)
  "SL2K0:POWER:BOTTOM:SETPOINT" (ao)
  "SL2K0:POWER:BOTTOM:SETPOINT_RBV" (ai)
  "SL2K0:POWER:BOTTOM:VALID_RBV" (bi)
  "SL2K0:POWER:BOTTOM:VELO" (ao)
  "SL2K0:POWER:BOTTOM:VELO_RBV" (ai)
+ "SL2K0:POWER:CLOSE" (bo)
+ "SL2K0:POWER:CLOSE_RBV" (bi)
  "SL2K0:POWER:FSW:FLOW" (bo)
  "SL2K0:POWER:FSW:FLOW_RBV" (bi)
  "SL2K0:POWER:GO" (bo)
@@ -1553,17 +1564,20 @@ Records
  "SL2K0:POWER:NORTH:LOCKED_RBV" (bi)
  "SL2K0:POWER:NORTH:MOVE_OK_RBV" (bi)
  "SL2K0:POWER:NORTH:NAME_RBV" (waveform)
- "SL2K0:POWER:NORTH:RTD:01:STC:CONN_RBV" (bi)
- "SL2K0:POWER:NORTH:RTD:01:STC:ERR_RBV" (bi)
- "SL2K0:POWER:NORTH:RTD:01:STC:TEMP_RBV" (ai)
- "SL2K0:POWER:NORTH:RTD:02:STC:CONN_RBV" (bi)
- "SL2K0:POWER:NORTH:RTD:02:STC:ERR_RBV" (bi)
- "SL2K0:POWER:NORTH:RTD:02:STC:TEMP_RBV" (ai)
+ "SL2K0:POWER:NORTH:RTD:01:CONN_RBV" (bi)
+ "SL2K0:POWER:NORTH:RTD:01:ERR_RBV" (bi)
+ "SL2K0:POWER:NORTH:RTD:01:TEMP_RBV" (ai)
+ "SL2K0:POWER:NORTH:RTD:02:CONN_RBV" (bi)
+ "SL2K0:POWER:NORTH:RTD:02:ERR_RBV" (bi)
+ "SL2K0:POWER:NORTH:RTD:02:TEMP_RBV" (ai)
  "SL2K0:POWER:NORTH:SETPOINT" (ao)
  "SL2K0:POWER:NORTH:SETPOINT_RBV" (ai)
  "SL2K0:POWER:NORTH:VALID_RBV" (bi)
  "SL2K0:POWER:NORTH:VELO" (ao)
  "SL2K0:POWER:NORTH:VELO_RBV" (ai)
+ "SL2K0:POWER:OPEN" (bo)
+ "SL2K0:POWER:OPEN_RBV" (bi)
+ "SL2K0:POWER:PMPS_OK_RBV" (bi)
  "SL2K0:POWER:SOUTH:ACCL" (ao)
  "SL2K0:POWER:SOUTH:ACCL_RBV" (ai)
  "SL2K0:POWER:SOUTH:AT_STATE_RBV" (bi)
@@ -1580,12 +1594,12 @@ Records
  "SL2K0:POWER:SOUTH:LOCKED_RBV" (bi)
  "SL2K0:POWER:SOUTH:MOVE_OK_RBV" (bi)
  "SL2K0:POWER:SOUTH:NAME_RBV" (waveform)
- "SL2K0:POWER:SOUTH:RTD:01:STC:CONN_RBV" (bi)
- "SL2K0:POWER:SOUTH:RTD:01:STC:ERR_RBV" (bi)
- "SL2K0:POWER:SOUTH:RTD:01:STC:TEMP_RBV" (ai)
- "SL2K0:POWER:SOUTH:RTD:02:STC:CONN_RBV" (bi)
- "SL2K0:POWER:SOUTH:RTD:02:STC:ERR_RBV" (bi)
- "SL2K0:POWER:SOUTH:RTD:02:STC:TEMP_RBV" (ai)
+ "SL2K0:POWER:SOUTH:RTD:01:CONN_RBV" (bi)
+ "SL2K0:POWER:SOUTH:RTD:01:ERR_RBV" (bi)
+ "SL2K0:POWER:SOUTH:RTD:01:TEMP_RBV" (ai)
+ "SL2K0:POWER:SOUTH:RTD:02:CONN_RBV" (bi)
+ "SL2K0:POWER:SOUTH:RTD:02:ERR_RBV" (bi)
+ "SL2K0:POWER:SOUTH:RTD:02:TEMP_RBV" (ai)
  "SL2K0:POWER:SOUTH:SETPOINT" (ao)
  "SL2K0:POWER:SOUTH:SETPOINT_RBV" (ai)
  "SL2K0:POWER:SOUTH:VALID_RBV" (bi)
@@ -1607,12 +1621,12 @@ Records
  "SL2K0:POWER:TOP:LOCKED_RBV" (bi)
  "SL2K0:POWER:TOP:MOVE_OK_RBV" (bi)
  "SL2K0:POWER:TOP:NAME_RBV" (waveform)
- "SL2K0:POWER:TOP:RTD:01:STC:CONN_RBV" (bi)
- "SL2K0:POWER:TOP:RTD:01:STC:ERR_RBV" (bi)
- "SL2K0:POWER:TOP:RTD:01:STC:TEMP_RBV" (ai)
- "SL2K0:POWER:TOP:RTD:02:STC:CONN_RBV" (bi)
- "SL2K0:POWER:TOP:RTD:02:STC:ERR_RBV" (bi)
- "SL2K0:POWER:TOP:RTD:02:STC:TEMP_RBV" (ai)
+ "SL2K0:POWER:TOP:RTD:01:CONN_RBV" (bi)
+ "SL2K0:POWER:TOP:RTD:01:ERR_RBV" (bi)
+ "SL2K0:POWER:TOP:RTD:01:TEMP_RBV" (ai)
+ "SL2K0:POWER:TOP:RTD:02:CONN_RBV" (bi)
+ "SL2K0:POWER:TOP:RTD:02:ERR_RBV" (bi)
+ "SL2K0:POWER:TOP:RTD:02:TEMP_RBV" (ai)
  "SL2K0:POWER:TOP:SETPOINT" (ao)
  "SL2K0:POWER:TOP:SETPOINT_RBV" (ai)
  "SL2K0:POWER:TOP:VALID_RBV" (bi)
@@ -1620,14 +1634,14 @@ Records
  "SL2K0:POWER:TOP:VELO_RBV" (ai)
  "SL2K0:POWER:XCEN_REQ" (ao)
  "SL2K0:POWER:XCEN_REQ_RBV" (ai)
- "SL2K0:POWER:XCEN_SETZERO" (ao)
- "SL2K0:POWER:XCEN_SETZERO_RBV" (ai)
+ "SL2K0:POWER:XCEN_SETZERO" (bo)
+ "SL2K0:POWER:XCEN_SETZERO_RBV" (bi)
  "SL2K0:POWER:XWID_REQ" (ao)
  "SL2K0:POWER:XWID_REQ_RBV" (ai)
  "SL2K0:POWER:YCEN_REQ" (ao)
  "SL2K0:POWER:YCEN_REQ_RBV" (ai)
- "SL2K0:POWER:YCEN_SETZERO" (ao)
- "SL2K0:POWER:YCEN_SETZERO_RBV" (ai)
+ "SL2K0:POWER:YCEN_SETZERO" (bo)
+ "SL2K0:POWER:YCEN_SETZERO_RBV" (bi)
  "SL2K0:POWER:YWID_REQ" (ao)
  "SL2K0:POWER:YWID_REQ_RBV" (ai)
 ```
@@ -9357,16 +9371,16 @@ record(bi, "SL1K0:POWER:GO_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.bExecuteMotion?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
+  field(ZNAM, "False")
+  field(ONAM, "True")
 }
 
 record(bo, "SL1K0:POWER:GO") {
   field(DESC, "ads:PRG_SL1K0_POWER.bExecuteMotion")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.bExecuteMotion=")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
+  field(ZNAM, "False")
+  field(ONAM, "True")
   info(autosaveFields_pass0, "VAL")
 }
 
@@ -9377,2693 +9391,17 @@ record(bi, "SL2K0:POWER:GO_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
+  field(ZNAM, "False")
+  field(ONAM, "True")
 }
 
 record(bo, "SL2K0:POWER:GO") {
   field(DESC, "ads:PRG_SL2K0_POWER.bExecuteMotion")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(bi, "SL1K0:POWER:FSW:FLOW_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....lowSwitch.bFlowOk")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbFlowSwitch.bFlowOk?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(bo, "SL1K0:POWER:FSW:FLOW") {
-  field(DESC, "ads:PRG_SL1K0_POWER....lowSwitch.bFlowOk")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbFlowSwitch.bFlowOk=")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(ai, "SL1K0:POWER:TOP:RTD:01:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....0.RTD_TOP_1.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_1.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL1K0:POWER:TOP:RTD:01:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER...._TOP_1.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_1.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL1K0:POWER:TOP:RTD:01:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.....RTD_TOP_1.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_1.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL1K0:POWER:TOP:RTD:02:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....0.RTD_TOP_2.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_2.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL1K0:POWER:TOP:RTD:02:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER...._TOP_2.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_2.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL1K0:POWER:TOP:RTD:02:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.....RTD_TOP_2.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_2.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL1K0:POWER:BOTTOM:RTD:01:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....TD_Bottom_1.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_1.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:RTD:01:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....ttom_1.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_1.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:RTD:01:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....D_Bottom_1.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_1.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL1K0:POWER:BOTTOM:RTD:02:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....TD_Bottom_2.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_2.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:RTD:02:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....ttom_2.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_2.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:RTD:02:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....D_Bottom_2.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_2.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL1K0:POWER:NORTH:RTD:01:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....RTD_North_1.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_1.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL1K0:POWER:NORTH:RTD:01:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....orth_1.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_1.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL1K0:POWER:NORTH:RTD:01:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....TD_North_1.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_1.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL1K0:POWER:NORTH:RTD:02:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....RTD_North_2.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_2.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL1K0:POWER:NORTH:RTD:02:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....orth_2.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_2.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL1K0:POWER:NORTH:RTD:02:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....TD_North_2.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_2.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL1K0:POWER:SOUTH:RTD:01:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....RTD_South_1.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_1.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:RTD:01:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....outh_1.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_1.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:RTD:01:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....TD_South_1.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_1.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL1K0:POWER:SOUTH:RTD:02:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....RTD_South_2.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_2.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:RTD:02:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....outh_2.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_2.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:RTD:02:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....TD_South_2.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_2.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(waveform, "SL1K0:POWER:TOP:NAME_RBV") {
-  field(DESC, "Name of this position state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.sName?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL1K0:POWER:TOP:SETPOINT_RBV") {
-  field(DESC, "Axis position associated with this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fPosition?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:TOP:SETPOINT") {
-  field(DESC, "Axis position associated with this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fPosition=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:TOP:DELTA_RBV") {
-  field(DESC, "Max deviation from position at this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fDelta?")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:TOP:DELTA") {
-  field(DESC, "Max deviation from position at this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fDelta=")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:TOP:VELO_RBV") {
-  field(DESC, "Speed at which to move to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fVelocity?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:TOP:VELO") {
-  field(DESC, "Speed at which to move to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fVelocity=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:TOP:ACCL_RBV") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fAccel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:TOP:ACCL") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fAccel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:TOP:DCCL_RBV") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fDecel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:TOP:DCCL") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fDecel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(bi, "SL1K0:POWER:TOP:MOVE_OK_RBV") {
-  field(DESC, "TRUE if the move would be safe")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.bMoveOk?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:TOP:LOCKED_RBV") {
-  field(DESC, "TRUE if state is immutable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.bLocked?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:TOP:VALID_RBV") {
-  field(DESC, "TRUE if this is a real state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.bValid?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:TOP:GO_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbTop.bExecute")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bExecute?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bo, "SL1K0:POWER:TOP:GO") {
-  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbTop.bExecute")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.bExecute=")
   field(ZNAM, "False")
   field(ONAM, "True")
   info(autosaveFields_pass0, "VAL")
-}
-
-record(bi, "SL1K0:POWER:TOP:AT_STATE_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbTop.bAtState")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bAtState?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:TOP:DMOV_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.fbTop.bDone")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bDone?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:TOP:BUSY_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.fbTop.bBusy")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bBusy?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:TOP:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.fbTop.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bError?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(waveform, "SL1K0:POWER:TOP:ERRMSG_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.fbTop.sError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.sError?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(waveform, "SL1K0:POWER:BOTTOM:NAME_RBV") {
-  field(DESC, "Name of this position state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.sName?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL1K0:POWER:BOTTOM:SETPOINT_RBV") {
-  field(DESC, "Axis position associated with this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fPosition?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:BOTTOM:SETPOINT") {
-  field(DESC, "Axis position associated with this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fPosition=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:BOTTOM:DELTA_RBV") {
-  field(DESC, "Max deviation from position at this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fDelta?")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:BOTTOM:DELTA") {
-  field(DESC, "Max deviation from position at this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fDelta=")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:BOTTOM:VELO_RBV") {
-  field(DESC, "Speed at which to move to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fVelocity?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:BOTTOM:VELO") {
-  field(DESC, "Speed at which to move to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fVelocity=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:BOTTOM:ACCL_RBV") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fAccel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:BOTTOM:ACCL") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fAccel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:BOTTOM:DCCL_RBV") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fDecel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:BOTTOM:DCCL") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fDecel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:MOVE_OK_RBV") {
-  field(DESC, "TRUE if the move would be safe")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.bMoveOk?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:LOCKED_RBV") {
-  field(DESC, "TRUE if state is immutable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.bLocked?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:VALID_RBV") {
-  field(DESC, "TRUE if this is a real state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.bValid?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:GO_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....fbBottom.bExecute")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bExecute?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bo, "SL1K0:POWER:BOTTOM:GO") {
-  field(DESC, "ads:PRG_SL1K0_POWER....fbBottom.bExecute")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bExecute=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:AT_STATE_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....fbBottom.bAtState")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bAtState?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:DMOV_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbBottom.bDone")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bDone?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:BUSY_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbBottom.bBusy")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bBusy?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:BOTTOM:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....0.fbBottom.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bError?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(waveform, "SL1K0:POWER:BOTTOM:ERRMSG_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....0.fbBottom.sError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.sError?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(waveform, "SL1K0:POWER:NORTH:NAME_RBV") {
-  field(DESC, "Name of this position state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.sName?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL1K0:POWER:NORTH:SETPOINT_RBV") {
-  field(DESC, "Axis position associated with this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fPosition?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:NORTH:SETPOINT") {
-  field(DESC, "Axis position associated with this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fPosition=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:NORTH:DELTA_RBV") {
-  field(DESC, "Max deviation from position at this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fDelta?")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:NORTH:DELTA") {
-  field(DESC, "Max deviation from position at this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fDelta=")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:NORTH:VELO_RBV") {
-  field(DESC, "Speed at which to move to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fVelocity?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:NORTH:VELO") {
-  field(DESC, "Speed at which to move to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fVelocity=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:NORTH:ACCL_RBV") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fAccel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:NORTH:ACCL") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fAccel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:NORTH:DCCL_RBV") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fDecel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:NORTH:DCCL") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fDecel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(bi, "SL1K0:POWER:NORTH:MOVE_OK_RBV") {
-  field(DESC, "TRUE if the move would be safe")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.bMoveOk?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:NORTH:LOCKED_RBV") {
-  field(DESC, "TRUE if state is immutable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.bLocked?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:NORTH:VALID_RBV") {
-  field(DESC, "TRUE if this is a real state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.bValid?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:NORTH:GO_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.....fbNorth.bExecute")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bExecute?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bo, "SL1K0:POWER:NORTH:GO") {
-  field(DESC, "ads:PRG_SL1K0_POWER.....fbNorth.bExecute")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bExecute=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(bi, "SL1K0:POWER:NORTH:AT_STATE_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.....fbNorth.bAtState")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bAtState?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:NORTH:DMOV_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....1K0.fbNorth.bDone")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bDone?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:NORTH:BUSY_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....1K0.fbNorth.bBusy")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bBusy?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:NORTH:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbNorth.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bError?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(waveform, "SL1K0:POWER:NORTH:ERRMSG_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbNorth.sError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.sError?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(waveform, "SL1K0:POWER:SOUTH:NAME_RBV") {
-  field(DESC, "Name of this position state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.sName?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL1K0:POWER:SOUTH:SETPOINT_RBV") {
-  field(DESC, "Axis position associated with this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fPosition?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:SOUTH:SETPOINT") {
-  field(DESC, "Axis position associated with this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fPosition=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:SOUTH:DELTA_RBV") {
-  field(DESC, "Max deviation from position at this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fDelta?")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:SOUTH:DELTA") {
-  field(DESC, "Max deviation from position at this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fDelta=")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:SOUTH:VELO_RBV") {
-  field(DESC, "Speed at which to move to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fVelocity?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:SOUTH:VELO") {
-  field(DESC, "Speed at which to move to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fVelocity=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:SOUTH:ACCL_RBV") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fAccel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:SOUTH:ACCL") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fAccel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:SOUTH:DCCL_RBV") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fDecel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:SOUTH:DCCL") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fDecel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:MOVE_OK_RBV") {
-  field(DESC, "TRUE if the move would be safe")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.bMoveOk?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:LOCKED_RBV") {
-  field(DESC, "TRUE if state is immutable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.bLocked?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:VALID_RBV") {
-  field(DESC, "TRUE if this is a real state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.bValid?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:GO_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.....fbSouth.bExecute")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bExecute?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bo, "SL1K0:POWER:SOUTH:GO") {
-  field(DESC, "ads:PRG_SL1K0_POWER.....fbSouth.bExecute")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bExecute=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:AT_STATE_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.....fbSouth.bAtState")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bAtState?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:DMOV_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....1K0.fbSouth.bDone")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bDone?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:BUSY_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....1K0.fbSouth.bBusy")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bBusy?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL1K0:POWER:SOUTH:ERR_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbSouth.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bError?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(waveform, "SL1K0:POWER:SOUTH:ERRMSG_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbSouth.sError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.sError?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL1K0:POWER:XWID_REQ_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rReqApertureSizeX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rReqApertureSizeX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:XWID_REQ") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rReqApertureSizeX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rReqApertureSizeX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:YWID_REQ_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rReqApertureSizeY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rReqApertureSizeY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:YWID_REQ") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rReqApertureSizeY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rReqApertureSizeY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:XCEN_REQ_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rReqCenterX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rReqCenterX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:XCEN_REQ") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rReqCenterX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rReqCenterX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:YCEN_REQ_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rReqCenterY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rReqCenterY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:YCEN_REQ") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rReqCenterY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rReqCenterY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:ACTUAL_XWIDTH_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rActApertureSizeX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rActApertureSizeX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:ACTUAL_XWIDTH") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rActApertureSizeX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rActApertureSizeX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:ACTUAL_YWIDTH_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rActApertureSizeY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rActApertureSizeY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:ACTUAL_YWIDTH") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rActApertureSizeY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rActApertureSizeY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:ACTUAL_XCENTER_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rActCenterX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rActCenterX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:ACTUAL_XCENTER") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rActCenterX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rActCenterX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:ACTUAL_YCENTER_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rActCenterY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rActCenterY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:ACTUAL_YCENTER") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rActCenterY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rActCenterY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:XCEN_SETZERO_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rSetCenterX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rSetCenterX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:XCEN_SETZERO") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rSetCenterX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rSetCenterX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL1K0:POWER:YCEN_SETZERO_RBV") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rSetCenterY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.rSetCenterY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL1K0:POWER:YCEN_SETZERO") {
-  field(DESC, "ads:PRG_SL1K0_POWER.rSetCenterY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.rSetCenterY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(bi, "SL2K0:POWER:FSW:FLOW_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....lowSwitch.bFlowOk")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(bo, "SL2K0:POWER:FSW:FLOW") {
-  field(DESC, "ads:PRG_SL2K0_POWER....lowSwitch.bFlowOk")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk=")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(ai, "SL2K0:POWER:TOP:RTD:01:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....0.RTD_TOP_1.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL2K0:POWER:TOP:RTD:01:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER...._TOP_1.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL2K0:POWER:TOP:RTD:01:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.....RTD_TOP_1.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL2K0:POWER:TOP:RTD:02:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....0.RTD_TOP_2.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL2K0:POWER:TOP:RTD:02:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER...._TOP_2.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL2K0:POWER:TOP:RTD:02:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.....RTD_TOP_2.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL2K0:POWER:BOTTOM:RTD:01:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....TD_Bottom_1.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:RTD:01:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....ttom_1.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:RTD:01:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....D_Bottom_1.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL2K0:POWER:BOTTOM:RTD:02:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....TD_Bottom_2.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:RTD:02:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....ttom_2.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:RTD:02:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....D_Bottom_2.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL2K0:POWER:NORTH:RTD:01:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....RTD_North_1.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL2K0:POWER:NORTH:RTD:01:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....orth_1.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL2K0:POWER:NORTH:RTD:01:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....TD_North_1.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL2K0:POWER:NORTH:RTD:02:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....RTD_North_2.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL2K0:POWER:NORTH:RTD:02:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....orth_2.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL2K0:POWER:NORTH:RTD:02:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....TD_North_2.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL2K0:POWER:SOUTH:RTD:01:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....RTD_South_1.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:RTD:01:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....outh_1.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:RTD:01:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....TD_South_1.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(ai, "SL2K0:POWER:SOUTH:RTD:02:STC:TEMP_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....RTD_South_2.fTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.fTemp?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:RTD:02:STC:CONN_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....outh_2.bConnected")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bConnected?")
-  field(ZNAM, "Disconnected")
-  field(ONAM, "Connected")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:RTD:02:STC:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....TD_South_2.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bError?")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-}
-
-record(waveform, "SL2K0:POWER:TOP:NAME_RBV") {
-  field(DESC, "Name of this position state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.sName?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL2K0:POWER:TOP:SETPOINT_RBV") {
-  field(DESC, "Axis position associated with this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fPosition?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:TOP:SETPOINT") {
-  field(DESC, "Axis position associated with this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fPosition=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:TOP:DELTA_RBV") {
-  field(DESC, "Max deviation from position at this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fDelta?")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:TOP:DELTA") {
-  field(DESC, "Max deviation from position at this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fDelta=")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:TOP:VELO_RBV") {
-  field(DESC, "Speed at which to move to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fVelocity?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:TOP:VELO") {
-  field(DESC, "Speed at which to move to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fVelocity=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:TOP:ACCL_RBV") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fAccel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:TOP:ACCL") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fAccel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:TOP:DCCL_RBV") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fDecel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:TOP:DCCL") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fDecel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(bi, "SL2K0:POWER:TOP:MOVE_OK_RBV") {
-  field(DESC, "TRUE if the move would be safe")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.bMoveOk?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:TOP:LOCKED_RBV") {
-  field(DESC, "TRUE if state is immutable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.bLocked?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:TOP:VALID_RBV") {
-  field(DESC, "TRUE if this is a real state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.bValid?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:TOP:GO_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbTop.bExecute")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bExecute?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bo, "SL2K0:POWER:TOP:GO") {
-  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbTop.bExecute")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.bExecute=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(bi, "SL2K0:POWER:TOP:AT_STATE_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbTop.bAtState")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bAtState?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:TOP:DMOV_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.fbTop.bDone")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bDone?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:TOP:BUSY_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.fbTop.bBusy")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bBusy?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:TOP:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.fbTop.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bError?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(waveform, "SL2K0:POWER:TOP:ERRMSG_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.fbTop.sError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.sError?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(waveform, "SL2K0:POWER:BOTTOM:NAME_RBV") {
-  field(DESC, "Name of this position state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.sName?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL2K0:POWER:BOTTOM:SETPOINT_RBV") {
-  field(DESC, "Axis position associated with this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fPosition?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:BOTTOM:SETPOINT") {
-  field(DESC, "Axis position associated with this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fPosition=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:BOTTOM:DELTA_RBV") {
-  field(DESC, "Max deviation from position at this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fDelta?")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:BOTTOM:DELTA") {
-  field(DESC, "Max deviation from position at this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fDelta=")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:BOTTOM:VELO_RBV") {
-  field(DESC, "Speed at which to move to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fVelocity?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:BOTTOM:VELO") {
-  field(DESC, "Speed at which to move to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fVelocity=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:BOTTOM:ACCL_RBV") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fAccel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:BOTTOM:ACCL") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fAccel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:BOTTOM:DCCL_RBV") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fDecel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:BOTTOM:DCCL") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fDecel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:MOVE_OK_RBV") {
-  field(DESC, "TRUE if the move would be safe")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.bMoveOk?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:LOCKED_RBV") {
-  field(DESC, "TRUE if state is immutable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.bLocked?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:VALID_RBV") {
-  field(DESC, "TRUE if this is a real state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.bValid?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:GO_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....fbBottom.bExecute")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bExecute?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bo, "SL2K0:POWER:BOTTOM:GO") {
-  field(DESC, "ads:PRG_SL2K0_POWER....fbBottom.bExecute")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bExecute=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:AT_STATE_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....fbBottom.bAtState")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bAtState?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:DMOV_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbBottom.bDone")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bDone?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:BUSY_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbBottom.bBusy")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bBusy?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:BOTTOM:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....0.fbBottom.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bError?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(waveform, "SL2K0:POWER:BOTTOM:ERRMSG_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....0.fbBottom.sError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.sError?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(waveform, "SL2K0:POWER:NORTH:NAME_RBV") {
-  field(DESC, "Name of this position state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.sName?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL2K0:POWER:NORTH:SETPOINT_RBV") {
-  field(DESC, "Axis position associated with this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fPosition?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:NORTH:SETPOINT") {
-  field(DESC, "Axis position associated with this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fPosition=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:NORTH:DELTA_RBV") {
-  field(DESC, "Max deviation from position at this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fDelta?")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:NORTH:DELTA") {
-  field(DESC, "Max deviation from position at this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fDelta=")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:NORTH:VELO_RBV") {
-  field(DESC, "Speed at which to move to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fVelocity?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:NORTH:VELO") {
-  field(DESC, "Speed at which to move to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fVelocity=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:NORTH:ACCL_RBV") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fAccel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:NORTH:ACCL") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fAccel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:NORTH:DCCL_RBV") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fDecel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:NORTH:DCCL") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fDecel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(bi, "SL2K0:POWER:NORTH:MOVE_OK_RBV") {
-  field(DESC, "TRUE if the move would be safe")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.bMoveOk?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:NORTH:LOCKED_RBV") {
-  field(DESC, "TRUE if state is immutable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.bLocked?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:NORTH:VALID_RBV") {
-  field(DESC, "TRUE if this is a real state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.bValid?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:NORTH:GO_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.....fbNorth.bExecute")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bExecute?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bo, "SL2K0:POWER:NORTH:GO") {
-  field(DESC, "ads:PRG_SL2K0_POWER.....fbNorth.bExecute")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bExecute=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(bi, "SL2K0:POWER:NORTH:AT_STATE_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.....fbNorth.bAtState")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bAtState?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:NORTH:DMOV_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....2K0.fbNorth.bDone")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bDone?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:NORTH:BUSY_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....2K0.fbNorth.bBusy")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bBusy?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:NORTH:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbNorth.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bError?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(waveform, "SL2K0:POWER:NORTH:ERRMSG_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbNorth.sError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.sError?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(waveform, "SL2K0:POWER:SOUTH:NAME_RBV") {
-  field(DESC, "Name of this position state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.sName?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL2K0:POWER:SOUTH:SETPOINT_RBV") {
-  field(DESC, "Axis position associated with this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fPosition?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:SOUTH:SETPOINT") {
-  field(DESC, "Axis position associated with this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fPosition=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:SOUTH:DELTA_RBV") {
-  field(DESC, "Max deviation from position at this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fDelta?")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:SOUTH:DELTA") {
-  field(DESC, "Max deviation from position at this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fDelta=")
-  field(PREC, "3")
-  field(DRVL, "0.0")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:SOUTH:VELO_RBV") {
-  field(DESC, "Speed at which to move to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fVelocity?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:SOUTH:VELO") {
-  field(DESC, "Speed at which to move to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fVelocity=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:SOUTH:ACCL_RBV") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fAccel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:SOUTH:ACCL") {
-  field(DESC, "Acceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fAccel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:SOUTH:DCCL_RBV") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fDecel?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:SOUTH:DCCL") {
-  field(DESC, "Deceleration to use for moves to this state")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fDecel=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:MOVE_OK_RBV") {
-  field(DESC, "TRUE if the move would be safe")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.bMoveOk?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:LOCKED_RBV") {
-  field(DESC, "TRUE if state is immutable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.bLocked?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:VALID_RBV") {
-  field(DESC, "TRUE if this is a real state")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.bValid?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:GO_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.....fbSouth.bExecute")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bExecute?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bo, "SL2K0:POWER:SOUTH:GO") {
-  field(DESC, "ads:PRG_SL2K0_POWER.....fbSouth.bExecute")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bExecute=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(autosaveFields_pass0, "VAL")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:AT_STATE_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.....fbSouth.bAtState")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bAtState?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:DMOV_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....2K0.fbSouth.bDone")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bDone?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:BUSY_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....2K0.fbSouth.bBusy")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bBusy?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(bi, "SL2K0:POWER:SOUTH:ERR_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbSouth.bError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bError?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-}
-
-record(waveform, "SL2K0:POWER:SOUTH:ERRMSG_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbSouth.sError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.sError?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-}
-
-record(ai, "SL2K0:POWER:XWID_REQ_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rReqApertureSizeX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rReqApertureSizeX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:XWID_REQ") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rReqApertureSizeX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rReqApertureSizeX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:YWID_REQ_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rReqApertureSizeY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rReqApertureSizeY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:YWID_REQ") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rReqApertureSizeY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rReqApertureSizeY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:XCEN_REQ_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rReqCenterX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rReqCenterX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:XCEN_REQ") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rReqCenterX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rReqCenterX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:YCEN_REQ_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rReqCenterY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rReqCenterY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:YCEN_REQ") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rReqCenterY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rReqCenterY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:ACTUAL_XWIDTH_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rActApertureSizeX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rActApertureSizeX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:ACTUAL_XWIDTH") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rActApertureSizeX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rActApertureSizeX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:ACTUAL_YWIDTH_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rActApertureSizeY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rActApertureSizeY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:ACTUAL_YWIDTH") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rActApertureSizeY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rActApertureSizeY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:ACTUAL_XCENTER_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rActCenterX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rActCenterX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:ACTUAL_XCENTER") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rActCenterX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rActCenterX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:ACTUAL_YCENTER_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rActCenterY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rActCenterY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:ACTUAL_YCENTER") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rActCenterY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rActCenterY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:XCEN_SETZERO_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rSetCenterX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rSetCenterX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:XCEN_SETZERO") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rSetCenterX")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rSetCenterX=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-}
-
-record(ai, "SL2K0:POWER:YCEN_SETZERO_RBV") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rSetCenterY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.rSetCenterY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-}
-
-record(ao, "SL2K0:POWER:YCEN_SETZERO") {
-  field(DESC, "ads:PRG_SL2K0_POWER.rSetCenterY")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.rSetCenterY=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(bi, "IM1K0:XTES:MMS:PLC:bLimitForwardEnable_RBV") {
@@ -18709,4 +16047,2842 @@ record(waveform, "SL2K0:POWER:MMS:BOTTOM:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M25.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+}
+
+record(bi, "SL1K0:POWER:PMPS_OK_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.bMoveOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.bMoveOk?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL1K0:POWER:TOP:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL1K0:POWER:TOP:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:TOP:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:TOP:DELTA_RBV") {
+  field(DESC, "Max deviation from position at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fDelta?")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:TOP:DELTA") {
+  field(DESC, "Max deviation from position at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:TOP:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:TOP:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:TOP:ACCL_RBV") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:TOP:ACCL") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:TOP:DCCL_RBV") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:TOP:DCCL") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL1K0:POWER:TOP:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:TOP:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:TOP:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:TOP:GO_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbTop.bExecute")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bExecute?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL1K0:POWER:TOP:GO") {
+  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbTop.bExecute")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbTop.bExecute=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL1K0:POWER:TOP:AT_STATE_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbTop.bAtState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bAtState?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:TOP:DMOV_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.fbTop.bDone")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bDone?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:TOP:BUSY_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.fbTop.bBusy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bBusy?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:TOP:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.fbTop.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL1K0:POWER:TOP:ERRMSG_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.fbTop.sError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.sError?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(waveform, "SL1K0:POWER:BOTTOM:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL1K0:POWER:BOTTOM:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:BOTTOM:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:BOTTOM:DELTA_RBV") {
+  field(DESC, "Max deviation from position at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fDelta?")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:BOTTOM:DELTA") {
+  field(DESC, "Max deviation from position at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:BOTTOM:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:BOTTOM:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:BOTTOM:ACCL_RBV") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:BOTTOM:ACCL") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:BOTTOM:DCCL_RBV") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:BOTTOM:DCCL") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:GO_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....fbBottom.bExecute")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bExecute?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL1K0:POWER:BOTTOM:GO") {
+  field(DESC, "ads:PRG_SL1K0_POWER....fbBottom.bExecute")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bExecute=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:AT_STATE_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....fbBottom.bAtState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bAtState?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:DMOV_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbBottom.bDone")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bDone?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:BUSY_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbBottom.bBusy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bBusy?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....0.fbBottom.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL1K0:POWER:BOTTOM:ERRMSG_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....0.fbBottom.sError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.sError?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(waveform, "SL1K0:POWER:NORTH:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL1K0:POWER:NORTH:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:NORTH:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:NORTH:DELTA_RBV") {
+  field(DESC, "Max deviation from position at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fDelta?")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:NORTH:DELTA") {
+  field(DESC, "Max deviation from position at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:NORTH:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:NORTH:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:NORTH:ACCL_RBV") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:NORTH:ACCL") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:NORTH:DCCL_RBV") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:NORTH:DCCL") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL1K0:POWER:NORTH:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:NORTH:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:NORTH:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:NORTH:GO_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.....fbNorth.bExecute")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bExecute?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL1K0:POWER:NORTH:GO") {
+  field(DESC, "ads:PRG_SL1K0_POWER.....fbNorth.bExecute")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bExecute=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL1K0:POWER:NORTH:AT_STATE_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.....fbNorth.bAtState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bAtState?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:NORTH:DMOV_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....1K0.fbNorth.bDone")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bDone?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:NORTH:BUSY_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....1K0.fbNorth.bBusy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bBusy?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:NORTH:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbNorth.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL1K0:POWER:NORTH:ERRMSG_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbNorth.sError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.sError?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(waveform, "SL1K0:POWER:SOUTH:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL1K0:POWER:SOUTH:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:SOUTH:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:SOUTH:DELTA_RBV") {
+  field(DESC, "Max deviation from position at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fDelta?")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:SOUTH:DELTA") {
+  field(DESC, "Max deviation from position at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:SOUTH:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:SOUTH:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:SOUTH:ACCL_RBV") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:SOUTH:ACCL") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:SOUTH:DCCL_RBV") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:SOUTH:DCCL") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:GO_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.....fbSouth.bExecute")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bExecute?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL1K0:POWER:SOUTH:GO") {
+  field(DESC, "ads:PRG_SL1K0_POWER.....fbSouth.bExecute")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bExecute=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:AT_STATE_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.....fbSouth.bAtState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bAtState?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:DMOV_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....1K0.fbSouth.bDone")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bDone?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:BUSY_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....1K0.fbSouth.bBusy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bBusy?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbSouth.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL1K0:POWER:SOUTH:ERRMSG_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....K0.fbSouth.sError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.sError?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL1K0:POWER:XWID_REQ_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....rReqApertureSizeX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rReqApertureSizeX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:XWID_REQ") {
+  field(DESC, "ads:PRG_SL1K0_POWER....rReqApertureSizeX")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rReqApertureSizeX=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:YWID_REQ_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....rReqApertureSizeY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rReqApertureSizeY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:YWID_REQ") {
+  field(DESC, "ads:PRG_SL1K0_POWER....rReqApertureSizeY")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rReqApertureSizeY=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:XCEN_REQ_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rReqCenterX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rReqCenterX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:XCEN_REQ") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rReqCenterX")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rReqCenterX=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:YCEN_REQ_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rReqCenterY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rReqCenterY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:YCEN_REQ") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rReqCenterY")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rReqCenterY=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:ACTUAL_XWIDTH_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....rActApertureSizeX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rActApertureSizeX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:ACTUAL_XWIDTH") {
+  field(DESC, "ads:PRG_SL1K0_POWER....rActApertureSizeX")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rActApertureSizeX=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:ACTUAL_YWIDTH_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....rActApertureSizeY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rActApertureSizeY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:ACTUAL_YWIDTH") {
+  field(DESC, "ads:PRG_SL1K0_POWER....rActApertureSizeY")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rActApertureSizeY=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:ACTUAL_XCENTER_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rActCenterX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rActCenterX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:ACTUAL_XCENTER") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rActCenterX")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rActCenterX=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL1K0:POWER:ACTUAL_YCENTER_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rActCenterY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rActCenterY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL1K0:POWER:ACTUAL_YCENTER") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rActCenterY")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rActCenterY=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL1K0:POWER:XCEN_SETZERO_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rSetCenterX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rSetCenterX?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "SL1K0:POWER:XCEN_SETZERO") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rSetCenterX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rSetCenterX=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL1K0:POWER:YCEN_SETZERO_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rSetCenterY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rSetCenterY?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "SL1K0:POWER:YCEN_SETZERO") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.rSetCenterY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rSetCenterY=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL1K0:POWER:OPEN_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.bOpen")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.bOpen?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL1K0:POWER:OPEN") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.bOpen")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.bOpen=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL1K0:POWER:CLOSE_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.bClose")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.bClose?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL1K0:POWER:CLOSE") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.bClose")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.bClose=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL1K0:POWER:BLOCK_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.bBlock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.bBlock?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL1K0:POWER:BLOCK") {
+  field(DESC, "ads:PRG_SL1K0_POWER.fbSL1K0.bBlock")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.bBlock=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL1K0:POWER:FSW:FLOW_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....lowSwitch.bFlowOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbFlowSwitch.bFlowOk?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "SL1K0:POWER:FSW:FLOW") {
+  field(DESC, "ads:PRG_SL1K0_POWER....lowSwitch.bFlowOk")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.fbFlowSwitch.bFlowOk=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "SL1K0:POWER:TOP:RTD:01:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....0.RTD_TOP_1.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_1.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL1K0:POWER:TOP:RTD:01:CONN_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER...._TOP_1.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_1.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL1K0:POWER:TOP:RTD:01:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.....RTD_TOP_1.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_1.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL1K0:POWER:TOP:RTD:02:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....0.RTD_TOP_2.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_2.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL1K0:POWER:TOP:RTD:02:CONN_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER...._TOP_2.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_2.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL1K0:POWER:TOP:RTD:02:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER.....RTD_TOP_2.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_TOP_2.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL1K0:POWER:BOTTOM:RTD:01:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....TD_Bottom_1.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_1.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:RTD:01:CONN_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....ttom_1.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_1.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:RTD:01:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....D_Bottom_1.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_1.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL1K0:POWER:BOTTOM:RTD:02:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....TD_Bottom_2.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_2.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:RTD:02:CONN_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....ttom_2.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_2.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL1K0:POWER:BOTTOM:RTD:02:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....D_Bottom_2.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_Bottom_2.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL1K0:POWER:NORTH:RTD:01:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....RTD_North_1.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_1.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL1K0:POWER:NORTH:RTD:01:CONN_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....orth_1.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_1.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL1K0:POWER:NORTH:RTD:01:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....TD_North_1.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_1.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL1K0:POWER:NORTH:RTD:02:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....RTD_North_2.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_2.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL1K0:POWER:NORTH:RTD:02:CONN_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....orth_2.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_2.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL1K0:POWER:NORTH:RTD:02:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....TD_North_2.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_North_2.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL1K0:POWER:SOUTH:RTD:01:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....RTD_South_1.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_1.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:RTD:01:CONN_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....outh_1.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_1.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:RTD:01:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....TD_South_1.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_1.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL1K0:POWER:SOUTH:RTD:02:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....RTD_South_2.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_2.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:RTD:02:CONN_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....outh_2.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_2.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL1K0:POWER:SOUTH:RTD:02:ERR_RBV") {
+  field(DESC, "ads:PRG_SL1K0_POWER....TD_South_2.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.RTD_South_2.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:PMPS_OK_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.bMoveOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.bMoveOk?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL2K0:POWER:TOP:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL2K0:POWER:TOP:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:TOP:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:TOP:DELTA_RBV") {
+  field(DESC, "Max deviation from position at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fDelta?")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:TOP:DELTA") {
+  field(DESC, "Max deviation from position at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:TOP:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:TOP:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:TOP:ACCL_RBV") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:TOP:ACCL") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:TOP:DCCL_RBV") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:TOP:DCCL") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL2K0:POWER:TOP:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:TOP:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:TOP:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:TOP:GO_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbTop.bExecute")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bExecute?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL2K0:POWER:TOP:GO") {
+  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbTop.bExecute")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbTop.bExecute=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL2K0:POWER:TOP:AT_STATE_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbTop.bAtState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bAtState?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:TOP:DMOV_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.fbTop.bDone")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bDone?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:TOP:BUSY_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.fbTop.bBusy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bBusy?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:TOP:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.fbTop.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL2K0:POWER:TOP:ERRMSG_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.fbTop.sError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.sError?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(waveform, "SL2K0:POWER:BOTTOM:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL2K0:POWER:BOTTOM:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:BOTTOM:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:BOTTOM:DELTA_RBV") {
+  field(DESC, "Max deviation from position at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fDelta?")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:BOTTOM:DELTA") {
+  field(DESC, "Max deviation from position at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:BOTTOM:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:BOTTOM:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:BOTTOM:ACCL_RBV") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:BOTTOM:ACCL") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:BOTTOM:DCCL_RBV") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:BOTTOM:DCCL") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:GO_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....fbBottom.bExecute")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bExecute?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL2K0:POWER:BOTTOM:GO") {
+  field(DESC, "ads:PRG_SL2K0_POWER....fbBottom.bExecute")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bExecute=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:AT_STATE_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....fbBottom.bAtState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bAtState?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:DMOV_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbBottom.bDone")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bDone?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:BUSY_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbBottom.bBusy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bBusy?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....0.fbBottom.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL2K0:POWER:BOTTOM:ERRMSG_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....0.fbBottom.sError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.sError?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(waveform, "SL2K0:POWER:NORTH:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL2K0:POWER:NORTH:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:NORTH:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:NORTH:DELTA_RBV") {
+  field(DESC, "Max deviation from position at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fDelta?")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:NORTH:DELTA") {
+  field(DESC, "Max deviation from position at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:NORTH:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:NORTH:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:NORTH:ACCL_RBV") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:NORTH:ACCL") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:NORTH:DCCL_RBV") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:NORTH:DCCL") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL2K0:POWER:NORTH:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:NORTH:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:NORTH:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:NORTH:GO_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.....fbNorth.bExecute")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bExecute?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL2K0:POWER:NORTH:GO") {
+  field(DESC, "ads:PRG_SL2K0_POWER.....fbNorth.bExecute")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bExecute=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL2K0:POWER:NORTH:AT_STATE_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.....fbNorth.bAtState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bAtState?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:NORTH:DMOV_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....2K0.fbNorth.bDone")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bDone?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:NORTH:BUSY_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....2K0.fbNorth.bBusy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bBusy?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:NORTH:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbNorth.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL2K0:POWER:NORTH:ERRMSG_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbNorth.sError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.sError?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(waveform, "SL2K0:POWER:SOUTH:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL2K0:POWER:SOUTH:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:SOUTH:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:SOUTH:DELTA_RBV") {
+  field(DESC, "Max deviation from position at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fDelta?")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:SOUTH:DELTA") {
+  field(DESC, "Max deviation from position at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:SOUTH:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:SOUTH:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:SOUTH:ACCL_RBV") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:SOUTH:ACCL") {
+  field(DESC, "Acceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:SOUTH:DCCL_RBV") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:SOUTH:DCCL") {
+  field(DESC, "Deceleration to use for moves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:GO_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.....fbSouth.bExecute")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bExecute?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL2K0:POWER:SOUTH:GO") {
+  field(DESC, "ads:PRG_SL2K0_POWER.....fbSouth.bExecute")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bExecute=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:AT_STATE_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.....fbSouth.bAtState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bAtState?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:DMOV_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....2K0.fbSouth.bDone")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bDone?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:BUSY_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....2K0.fbSouth.bBusy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bBusy?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbSouth.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(waveform, "SL2K0:POWER:SOUTH:ERRMSG_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....K0.fbSouth.sError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.sError?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(ai, "SL2K0:POWER:XWID_REQ_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....rReqApertureSizeX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rReqApertureSizeX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:XWID_REQ") {
+  field(DESC, "ads:PRG_SL2K0_POWER....rReqApertureSizeX")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rReqApertureSizeX=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:YWID_REQ_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....rReqApertureSizeY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rReqApertureSizeY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:YWID_REQ") {
+  field(DESC, "ads:PRG_SL2K0_POWER....rReqApertureSizeY")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rReqApertureSizeY=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:XCEN_REQ_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rReqCenterX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rReqCenterX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:XCEN_REQ") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rReqCenterX")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rReqCenterX=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:YCEN_REQ_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rReqCenterY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rReqCenterY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:YCEN_REQ") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rReqCenterY")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rReqCenterY=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:ACTUAL_XWIDTH_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....rActApertureSizeX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rActApertureSizeX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:ACTUAL_XWIDTH") {
+  field(DESC, "ads:PRG_SL2K0_POWER....rActApertureSizeX")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rActApertureSizeX=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:ACTUAL_YWIDTH_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....rActApertureSizeY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rActApertureSizeY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:ACTUAL_YWIDTH") {
+  field(DESC, "ads:PRG_SL2K0_POWER....rActApertureSizeY")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rActApertureSizeY=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:ACTUAL_XCENTER_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rActCenterX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rActCenterX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:ACTUAL_XCENTER") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rActCenterX")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rActCenterX=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "SL2K0:POWER:ACTUAL_YCENTER_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rActCenterY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rActCenterY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "SL2K0:POWER:ACTUAL_YCENTER") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rActCenterY")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rActCenterY=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(bi, "SL2K0:POWER:XCEN_SETZERO_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rSetCenterX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rSetCenterX?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "SL2K0:POWER:XCEN_SETZERO") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rSetCenterX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rSetCenterX=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL2K0:POWER:YCEN_SETZERO_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rSetCenterY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rSetCenterY?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "SL2K0:POWER:YCEN_SETZERO") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.rSetCenterY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rSetCenterY=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL2K0:POWER:OPEN_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.bOpen")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.bOpen?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL2K0:POWER:OPEN") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.bOpen")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.bOpen=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL2K0:POWER:CLOSE_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.bClose")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.bClose?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL2K0:POWER:CLOSE") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.bClose")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.bClose=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL2K0:POWER:BLOCK_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.bBlock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.bBlock?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bo, "SL2K0:POWER:BLOCK") {
+  field(DESC, "ads:PRG_SL2K0_POWER.fbSL2K0.bBlock")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.bBlock=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "SL2K0:POWER:FSW:FLOW_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....lowSwitch.bFlowOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "SL2K0:POWER:FSW:FLOW") {
+  field(DESC, "ads:PRG_SL2K0_POWER....lowSwitch.bFlowOk")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "SL2K0:POWER:TOP:RTD:01:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....0.RTD_TOP_1.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL2K0:POWER:TOP:RTD:01:CONN_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER...._TOP_1.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL2K0:POWER:TOP:RTD:01:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.....RTD_TOP_1.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_1.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL2K0:POWER:TOP:RTD:02:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....0.RTD_TOP_2.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL2K0:POWER:TOP:RTD:02:CONN_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER...._TOP_2.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL2K0:POWER:TOP:RTD:02:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER.....RTD_TOP_2.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL2K0:POWER:BOTTOM:RTD:01:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....TD_Bottom_1.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:RTD:01:CONN_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....ttom_1.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:RTD:01:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....D_Bottom_1.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL2K0:POWER:BOTTOM:RTD:02:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....TD_Bottom_2.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:RTD:02:CONN_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....ttom_2.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL2K0:POWER:BOTTOM:RTD:02:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....D_Bottom_2.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_2.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL2K0:POWER:NORTH:RTD:01:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....RTD_North_1.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL2K0:POWER:NORTH:RTD:01:CONN_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....orth_1.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL2K0:POWER:NORTH:RTD:01:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....TD_North_1.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_1.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL2K0:POWER:NORTH:RTD:02:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....RTD_North_2.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL2K0:POWER:NORTH:RTD:02:CONN_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....orth_2.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL2K0:POWER:NORTH:RTD:02:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....TD_North_2.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_North_2.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL2K0:POWER:SOUTH:RTD:01:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....RTD_South_1.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:RTD:01:CONN_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....outh_1.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:RTD:01:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....TD_South_1.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_1.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(ai, "SL2K0:POWER:SOUTH:RTD:02:TEMP_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....RTD_South_2.fTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.fTemp?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:RTD:02:CONN_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....outh_2.bConnected")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bConnected?")
+  field(ZNAM, "Disconnected")
+  field(ONAM, "Connected")
+}
+
+record(bi, "SL2K0:POWER:SOUTH:RTD:02:ERR_RBV") {
+  field(DESC, "ads:PRG_SL2K0_POWER....TD_South_2.bError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bError?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
 }```
