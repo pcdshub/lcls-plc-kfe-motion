@@ -62,6 +62,9 @@
     <Compile Include="Temp\FB_HardwareFFOutput.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Temp\FB_SLITS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Temp\FB_SLITS_POWER.TcPOU">
       <SubType>Code</SubType>
     </Compile>
