@@ -3,14 +3,14 @@
   <POU Name="PRG_RTDSK0" Id="{2448ff63-669b-47ca-a22b-bc6b1d1306d5}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_RTDSK0
 VAR
-	fbMotion1: FB_MotionStageSim;
-	fbMotion2: FB_MotionStageSim;
-	fbMotion3: FB_MotionStageSim;
-	fbMotion4: FB_MotionStageSim;
-	fbMotion5: FB_MotionStageSim;
-	fbMotion6: FB_MotionStageSim;
-	fbMotion7: FB_MotionStageSim;
-	fbMotion8: FB_MotionStageSim;
+    fbMotion1: FB_MotionStageSim;
+    fbMotion2: FB_MotionStageSim;
+    fbMotion3: FB_MotionStageSim;
+    fbMotion4: FB_MotionStageSim;
+    fbMotion5: FB_MotionStageSim;
+    fbMotion6: FB_MotionStageSim;
+    fbMotion7: FB_MotionStageSim;
+    fbMotion8: FB_MotionStageSim;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -24,9 +24,5 @@ fbMotion6(stMotionStage := Main.M15);
 fbMotion7(stMotionStage := Main.M16);
 fbMotion8(stMotionStage := Main.M17);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_RTDSK0">
-      <LineId Id="3" Count="7" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
