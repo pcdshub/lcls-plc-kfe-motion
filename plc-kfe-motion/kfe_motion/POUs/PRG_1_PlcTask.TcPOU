@@ -3,12 +3,12 @@
   <POU Name="PRG_1_PlcTask" Id="{b12fe210-df04-4a98-819b-8df554fce2a7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_1_PlcTask
 VAR
-	// Include one PV temporarily to test pytmc build
-	{attribute 'pytmc' := '
-		pv: PLC:KFE:MOTION:PLACEHOLDER
-		io: io
-	'}
-	nPlaceholder: INT;
+    // Include one PV temporarily to test pytmc build
+    {attribute 'pytmc' := '
+        pv: PLC:KFE:MOTION:PLACEHOLDER
+        io: io
+    '}
+    nPlaceholder: INT;
 END_VAR
 
     ]]></Declaration>
