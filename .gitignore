@@ -17,3 +17,6 @@ TrialLicense.tclrs
 
 # Vim ignores
 *.swp
+
+# Epics ignores
+autosave
