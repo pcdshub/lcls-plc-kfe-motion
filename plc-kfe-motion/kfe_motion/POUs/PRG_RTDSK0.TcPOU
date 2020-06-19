@@ -7,7 +7,7 @@ VAR
    {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 1^Input;
 							 .i_xRetractedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 2^Input;
 							 .q_xInsert_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 1^Output;
-							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 2^Output;
+							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 2^Output
 	'}
 
  	{attribute 'pytmc' :=' pv: RTDSK0:MPA:01 '}
@@ -16,7 +16,7 @@ VAR
    {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 3^Input;
 							 .i_xRetractedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 4^Input;
 							 .q_xInsert_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 3^Output;
-							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 4^Output;
+							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 4^Output
 	'}	
 	
 	
@@ -26,7 +26,7 @@ VAR
 	   {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 5^Input;
 							 .i_xRetractedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 6^Input;
 							 .q_xInsert_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 5^Output;
-							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 6^Output;
+							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 6^Output
 	'}
 	
 	{attribute 'pytmc' :=' pv: RTDSK0:MPA:03 '}
@@ -35,7 +35,7 @@ VAR
 	   {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 7^Input;
 							 .i_xRetractedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 8^Input;
 							 .q_xInsert_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 7^Output;
-							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 8^Output;
+							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 8^Output
 	'}
 	{attribute 'pytmc' :=' pv: RTDSK0:MPA:04 '}
 	RTDSK0_MPA_04: FB_MPA;
