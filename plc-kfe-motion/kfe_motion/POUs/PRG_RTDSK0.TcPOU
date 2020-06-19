@@ -7,7 +7,7 @@ VAR
    {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 1^Input;
 							 .i_xRetractedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 2^Input;
 							 .q_xInsert_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 1^Output;
-							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 2^Output;
+							 .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 2^Output
 	'}
 
  	{attribute 'pytmc' :=' pv: RTDSK0:MPA:01 '}
