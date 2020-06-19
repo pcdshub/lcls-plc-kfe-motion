@@ -15,6 +15,12 @@
     <LibraryReferences>{0bacb3aa-6d25-457c-b8c7-d270333ea0d7}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\E_PositionState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_MPA.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\Main.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -60,6 +66,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Temp\FB_HardwareFFOutput.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Temp\FB_MPA.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Temp\FB_SLITS.TcPOU">

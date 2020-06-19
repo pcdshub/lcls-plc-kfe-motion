@@ -48,5 +48,12 @@
 		<Axis File="SL2K0-TOP-M23.xti" Id="23"/>
 		<Axis File="SL2K0-NORTH-M24.xti" Id="24"/>
 		<Axis File="SL2K0-BOTTOM-M25.xti" Id="25"/>
+		<Axis File="Axis 26.xti" Id="26"/>
+		<Axis File="Axis 27.xti" Id="27"/>
+		<Axis File="Axis 28.xti" Id="28"/>
+		<Axis File="Axis 29.xti" Id="29"/>
+		<Axis File="Axis 30.xti" Id="30"/>
+		<Axis File="Axis 31.xti" Id="31"/>
+		<Axis File="Axis 32.xti" Id="32"/>
 	</NC>
 </TcSmItem>
