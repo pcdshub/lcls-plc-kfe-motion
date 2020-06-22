@@ -7,8 +7,8 @@ VAR_GLOBAL
     fbFastFaultOutput1: FB_HardwareFFOutput;
     fbFastFaultOutput2: FB_HardwareFFOutput;
 
-// MPS fault reset, add temporarily to use FB_MPA 	
-	 xFastFaultReset :   BOOL; 
+// MPS fault reset, add temporarily to use FB_MPA
+     xFastFaultReset :   BOOL;
 
 END_VAR]]></Declaration>
   </GVL>
