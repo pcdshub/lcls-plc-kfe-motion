@@ -1787,6 +1787,28 @@ record(longout, "PLC:KFE:MOTION:PLACEHOLDER") {
   info(archive, "VAL")
 }
 
+record(bi, "SL1K0:POWER:GO_RBV") {
+  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.bExecuteMotion?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(archive, "VAL")
+}
+
+record(bo, "SL1K0:POWER:GO") {
+  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.bExecuteMotion=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(mbbi, "IM1K0:XTES:MMS:STATE:SET_RBV") {
   field(DESC, "PRG_IM1K0_XTES.fbIM1K0.fbStates.enumSet")
   field(SCAN, "I/O Intr")
@@ -10837,22 +10859,22 @@ record(bo, "IM2K0:XTES:SFW:FLOW") {
   info(archive, "VAL")
 }
 
-record(bi, "SL1K0:POWER:GO_RBV") {
-  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+record(bi, "SL2K0:POWER:GO_RBV") {
+  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.bExecuteMotion?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?")
   field(ZNAM, "False")
   field(ONAM, "True")
   info(archive, "VAL")
 }
 
-record(bo, "SL1K0:POWER:GO") {
-  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+record(bo, "SL2K0:POWER:GO") {
+  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.bExecuteMotion=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=")
   field(ZNAM, "False")
   field(ONAM, "True")
   info(autosaveFields_pass0, "VAL")
@@ -11835,28 +11857,6 @@ record(bo, "RTDSK0:MPA:04:MOT_DONE") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_RTDSK0.RTDSK0_MPA_04.xDone=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "SL2K0:POWER:GO_RBV") {
-  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(archive, "VAL")
-}
-
-record(bo, "SL2K0:POWER:GO") {
-  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
