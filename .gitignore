@@ -14,9 +14,14 @@ TrialLicense.tclrs
 *.library
 *.tmcRefac
 .pytmc_build
+*.tclrq
+*.TCLRS
+
+# An extra
+UpgradeLog.htm
 
 # Vim ignores
 *.swp
 
-# Epics ignores
+# EPICS ignores
 autosave
