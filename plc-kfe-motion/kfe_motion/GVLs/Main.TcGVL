@@ -15,32 +15,39 @@ VAR_GLOBAL
     // IM1K0-XTES: 3 Axes
     {attribute 'pytmc' := 'pv: IM1K0:XTES:MMS'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K0-EL7041]^STM Status^Status^Digital input 1;
-                              .bBrakeRelease        := TIIB[IM1K0-EL2004]^Channel 1^Output'}
+                              .bBrakeRelease        := TIIB[IM1K0-EL2004]^Channel 1^Output;
+                              .nRawEncoderINT       := TIIB[IM1K0-EL3054]^AI Standard Channel 1^Value'}
     M1: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: IM1K0:XTES:CLZ'}
-    {attribute 'TcLinkTo' := '.bHome := TIIB[IM1K0-EL1088]^Channel 2^Input'}
+    {attribute 'TcLinkTo' := '.bHome                := TIIB[IM1K0-EL1088]^Channel 2^Input;
+                              .nRawEncoderUINT      := TIIB[IM1K0-EL5101-01]^ENC Status compact^Counter value'}
     M2: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: IM1K0:XTES:CLF'}
-    {attribute 'TcLinkTo' := '.bHome := TIIB[IM1K0-EL1088]^Channel 4^Input'}
+    {attribute 'TcLinkTo' := '.bHome                := TIIB[IM1K0-EL1088]^Channel 4^Input;
+                              .nRawEncoderUINT      := TIIB[IM1K0-EL5101-01]^ENC Status compact^Counter value'}
     M3: DUT_MotionStage;
 
     // IM1K3-PPM: 1 Axis
     {attribute 'pytmc' := 'pv: IM1K3:PPM:MMS'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K3-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[IM1K3-EL7041]^STM Status^Status^Digital input 2;
-                              .bBrakeRelease        := TIIB[IM1K3-EL2004]^Channel 1^Output'}
+                              .bBrakeRelease        := TIIB[IM1K3-EL2004]^Channel 1^Output;
+                              .nRawEncoderULINT     := TIIB[IM1K3-EL5042]^FB Inputs Channel 1^Position'}
     M4: DUT_MotionStage;
 
     // IM2K0-XTES: 3 Axes
     {attribute 'pytmc' := 'pv: IM2K0:XTES:MMS'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM2K0-EL7041]^STM Status^Status^Digital input 1;
-                              .bBrakeRelease        := TIIB[IM2K0-EL2004]^Channel 1^Output'}
+                              .bBrakeRelease        := TIIB[IM2K0-EL2004]^Channel 1^Output;
+                              .nRawEncoderULINT     := TIIB[IM2K0-EL5042]^FB Inputs Channel 1^Position'}
     M5: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: IM2K0:XTES:CLZ'}
-    {attribute 'TcLinkTo' := '.bHome := TIIB[IM2K0-EL1088]^Channel 2^Input'}
+    {attribute 'TcLinkTo' := '.bHome                := TIIB[IM2K0-EL1088]^Channel 2^Input;
+                              .nRawEncoderUINT      := TIIB[IM2K0-EL7342]^ENC Status compact Channel 1^Counter value'}
     M6: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: IM2K0:XTES:CLF'}
-    {attribute 'TcLinkTo' := '.bHome := TIIB[IM2K0-EL1088]^Channel 4^Input'}
+    {attribute 'TcLinkTo' := '.bHome                := TIIB[IM2K0-EL1088]^Channel 4^Input;
+                              .nRawEncoderUINT      := TIIB[IM2K0-EL7342]^ENC Status compact Channel 2^Counter value'}
     M7: DUT_MotionStage;
 
     // PF1K0-WFS: 2 Axes
@@ -60,38 +67,46 @@ VAR_GLOBAL
     // SL1K0-POWER: 4 Axes
     {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:SOUTH'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E1]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E1]^STM Status^Status^Digital input 1'}
+                              .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E1]^STM Status^Status^Digital input 1;
+                              .nRawEncoderINT       := TIIB[SL1K0-EL3054-E12]^AI Standard Channel 1^Value'}
 
     M18: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:TOP'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E2]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E2]^STM Status^Status^Digital input 1'}
+                              .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E2]^STM Status^Status^Digital input 1;
+                              .nRawEncoderINT       := TIIB[SL1K0-EL3054-E12]^AI Standard Channel 2^Value'}
     M19: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:NORTH'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E4]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E4]^STM Status^Status^Digital input 1'}
+                              .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E4]^STM Status^Status^Digital input 1;
+                              .nRawEncoderINT       := TIIB[SL1K0-EL3054-E12]^AI Standard Channel 3^Value'}
     M20: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:BOTTOM'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E5]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E5]^STM Status^Status^Digital input 1'}
+                              .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E5]^STM Status^Status^Digital input 1;
+                              .nRawEncoderINT       := TIIB[SL1K0-EL3054-E12]^AI Standard Channel 4^Value'}
     M21: DUT_MotionStage;
 
     // SL2K0-POWER: 4 Axes
     {attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:SOUTH'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E1]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E1]^STM Status^Status^Digital input 1'}
+                              .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E1]^STM Status^Status^Digital input 1;
+                              .nRawEncoderUINT      := TIIB[SL2K0-EL5042-E2]^FB Inputs Channel 1^Position'}
     M22: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:TOP'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E3]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E3]^STM Status^Status^Digital input 1'}
+                              .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E3]^STM Status^Status^Digital input 1;
+                              .nRawEncoderUINT      := TIIB[SL2K0-EL5042-E2]^FB Inputs Channel 2^Position'}
     M23: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:NORTH'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E5]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E5]^STM Status^Status^Digital input 1'}
+                              .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E5]^STM Status^Status^Digital input 1;
+                              .nRawEncoderUINT      := TIIB[SL2K0-EL5042-E6]^FB Inputs Channel 1^Position'}
     M24: DUT_MotionStage;
     {attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:BOTTOM'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E7]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E7]^STM Status^Status^Digital input 1'}
+                              .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E7]^STM Status^Status^Digital input 1;
+                              .nRawEncoderUINT      := TIIB[SL2K0-EL5042-E6]^FB Inputs Channel 2^Position'}
     M25: DUT_MotionStage;
 END_VAR]]></Declaration>
   </GVL>
