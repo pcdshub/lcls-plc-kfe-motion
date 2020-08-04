@@ -11,7 +11,7 @@ VAR
     '}
 
      {attribute 'pytmc' :=' pv: RTDSK0:MPA:01 '}
-    RTDSK0_MPA_01: FB_MPA;
+    RTDSK0_MPA_01: FB_MPA := (sName := 'RTDSK0:MPA:01');
 
    {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 3^Input;
                              .i_xRetractedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 4^Input;
@@ -21,7 +21,7 @@ VAR
 
 
     {attribute 'pytmc' :=' pv: RTDSK0:MPA:02 '}
-    RTDSK0_MPA_02: FB_MPA;
+    RTDSK0_MPA_02: FB_MPA := (sName := 'RTDSK0:MPA:02');
 
        {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 5^Input;
                              .i_xRetractedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 6^Input;
@@ -30,7 +30,7 @@ VAR
     '}
 
     {attribute 'pytmc' :=' pv: RTDSK0:MPA:03 '}
-    RTDSK0_MPA_03: FB_MPA;
+    RTDSK0_MPA_03: FB_MPA := (sName := 'RTDSK0:MPA:03');
 
        {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 7^Input;
                              .i_xRetractedLS := TIIB[RTDSK0-MPA-EL1008]^Channel 8^Input;
@@ -38,7 +38,7 @@ VAR
                              .q_xRetract_DO :=  TIIB[RTDSK0-MPA-EL2008]^Channel 8^Output
     '}
     {attribute 'pytmc' :=' pv: RTDSK0:MPA:04 '}
-    RTDSK0_MPA_04: FB_MPA;
+    RTDSK0_MPA_04: FB_MPA := (sName := 'RTDSK0:MPA:04');
 
 
 
@@ -56,8 +56,8 @@ RTDSK0_MPA_01(
     q_stAct=> ,
     xMPS_OK=> ,
     xDone=> ,
-    i_xReset := PMPS.xFastFaultReset,
-    io_fbFFHWO := PMPS.fbFastFaultOutput1,
+    i_xReset := ,
+    io_fbFFHWO := GVL.fbFastFaultOutput1,
 );
 
 RTDSK0_MPA_02(
@@ -68,9 +68,12 @@ RTDSK0_MPA_02(
     q_stAct=> ,
     xMPS_OK=> ,
     xDone=> ,
-    i_xReset := PMPS.xFastFaultReset,
-    io_fbFFHWO := PMPS.fbFastFaultOutput1,
+    i_xReset := ,
+    io_fbFFHWO := GVL.fbFastFaultOutput1,
 );
+
+(*
+Disable MPA_03 and MPA_04, no actuator installed
 
 RTDSK0_MPA_03(
     ibInsertOK:= TRUE,
@@ -80,8 +83,8 @@ RTDSK0_MPA_03(
     q_stAct=> ,
     xMPS_OK=> ,
     xDone=> ,
-    i_xReset := PMPS.xFastFaultReset,
-    io_fbFFHWO := PMPS.fbFastFaultOutput1,
+    i_xReset := ,
+    io_fbFFHWO := GVL.fbFastFaultOutput1,
 );
 
 RTDSK0_MPA_04(
@@ -92,10 +95,10 @@ RTDSK0_MPA_04(
     q_stAct=> ,
     xMPS_OK=> ,
     xDone=> ,
-    i_xReset := PMPS.xFastFaultReset,
-    io_fbFFHWO := PMPS.fbFastFaultOutput1,
+    i_xReset := ,
+    io_fbFFHWO := GVL.fbFastFaultOutput1,
 );
-]]></ST>
+*)]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
