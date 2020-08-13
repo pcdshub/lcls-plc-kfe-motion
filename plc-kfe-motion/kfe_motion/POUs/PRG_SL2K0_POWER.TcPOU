@@ -52,11 +52,22 @@ VAR
     bExecuteMotion:BOOL ;
     //for testing purposes only. comment-out/delete once done.
     mcPower : ARRAY [1..4] OF MC_POWER;
+		(*Offsets*)
+	(* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
+	rEncoderOffsetTop: REAL := 0;
+	rEncoderOffsetBottom: REAL := 0;
+	rEncoderOffsetNorth: REAL := 0;
+	rEncoderOffsetSouth: REAL := 0;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 fbSL2K0.bMoveOk := bMoveOk;
+
+fbSL2K0.rEncoderOffsetTop := rEncoderOffsetTop;
+fbSL2K0.rEncoderOffsetBottom := rEncoderOffsetBottom;
+fbSL2K0.rEncoderOffsetNorth := rEncoderOffsetNorth;
+fbSL2K0.rEncoderOffsetSouth := rEncoderOffsetSouth;
 
 fbSL2K0(stTopBlade:=  Main.M22,
         stBottomBlade:= Main.M23,
@@ -74,5 +85,12 @@ mcPower[4](axis:=Main.M25.Axis, Enable:=TRUE, enable_positive:=Main.M25.bLimitFo
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_SL2K0_POWER">
+      <LineId Id="3" Count="1" />
+      <LineId Id="85" Count="3" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="5" Count="14" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

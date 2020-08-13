@@ -46,7 +46,7 @@ VAR
     '}
     RTD_South_2: FB_TempSensor;
 
-
+	
 END_VAR
 
    ]]></Declaration>
@@ -57,7 +57,6 @@ END_VAR
 ACT_Motion();
 //SET and GET the requested and Actual values
 ACT_CalculatePositions();
-ACT_Zero();
 //ACT_BLOCK();
 ACT_RTDs();
 ]]></ST>
@@ -78,5 +77,14 @@ RTD_South_2();
 fbFlowSwitch();]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="FB_SLITS_POWER">
+      <LineId Id="3" Count="5" />
+      <LineId Id="10" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SLITS_POWER.ACT_RTDs">
+      <LineId Id="2" Count="10" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

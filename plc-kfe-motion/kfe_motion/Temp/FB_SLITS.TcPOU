@@ -19,6 +19,28 @@ VAR_INPUT
     field: ONAM True
     '}
     bMoveOk:BOOL;
+	
+		(*Offsets*)
+	{attribute 'pytmc' := '
+    pv: Offset_Top;
+    io: io;
+    '}
+	rEncoderOffsetTop: REAL;
+	{attribute 'pytmc' := '
+    pv: ZeroOffset_Bottom;
+    io: io;
+    '}
+	rEncoderOffsetBottom: REAL;
+	{attribute 'pytmc' := '
+    pv: ZeroOffset_North;
+    io: io;
+    '}
+	rEncoderOffsetNorth: REAL;
+	{attribute 'pytmc' := '
+    pv: ZeroOffset_South;
+    io: io;
+    '}
+	rEncoderOffsetSouth: REAL;
 END_VAR
 
 VAR
@@ -140,6 +162,16 @@ VAR
     rTrig_Open: R_TRIG;
     rTrig_Close: R_TRIG;
 
+	//old values
+    rOldReqApertureSizeX : REAL;
+    rOldReqApertureSizeY : REAL;
+    rOldReqCenterX: REAL;
+    rOldReqCenterY: REAL;
+	
+	bExecuteMotionX: BOOL;
+	bExecuteMotionY: BOOL;
+	
+	
     fPosBlock: LREAL;
     fPosClose: LREAL;
     fPosOpen: LREAL;
@@ -149,6 +181,12 @@ VAR
     fbSetPosition_Bottom: MC_SetPosition;
     fbSetPosition_North: MC_SetPosition;
     fbSetPosition_South: MC_SetPosition;
+	
+	// For logging
+    fbLogger : FB_LogMessage := (eSubsystem:=E_SubSystem.MOTION);
+    tErrorPresent : R_TRIG;
+    tAction : R_TRIG;
+    tOverrideActivated : R_TRIG;
 
 END_VAR
 
@@ -184,28 +222,53 @@ END_IF]]></ST>
     </Action>
     <Action Name="ACT_CalculatePositions" Id="{213af7c8-f6e0-07f8-143d-8f2da7508ac0}">
       <Implementation>
-        <ST><![CDATA[
-//Calculate requested Positions
+        <ST><![CDATA[//check if requested center or gap has changed
+//check that the requested values are within acceptable motion range
+IF (rOldReqApertureSizeX <> rReqApertureSizeX) THEN
+	rOldReqApertureSizeX := rReqApertureSizeX;
+	bExecuteMotionX := TRUE;
+	fbLogger(sMsg:='Requested new X gap.', eSevr:=TcEventSeverity.Verbose);
+END_IF
+
+IF (rOldReqCenterX <> rReqCenterX) THEN
+	rOldReqCenterX := rReqCenterX;
+	bExecuteMotionX := TRUE;
+	fbLogger(sMsg:='Requested new X center', eSevr:=TcEventSeverity.Verbose);
+END_IF
+
+IF (rOldReqApertureSizeY <> rReqApertureSizeY) THEN
+	rOldReqApertureSizeY := rReqApertureSizeY;
+	bExecuteMotionY := TRUE;
+	fbLogger(sMsg:='Requested new Y gap.', eSevr:=TcEventSeverity.Verbose);
+END_IF
+
+IF (rOldReqCenterY <> rReqCenterY) THEN
+	rOldReqCenterY := rReqCenterY;
+	bExecuteMotionY := TRUE;
+	fbLogger(sMsg:='Requested new Y center.', eSevr:=TcEventSeverity.Verbose);
+END_IF
 
 
-fPosTopBlade := (rReqApertureSizeY/2) + rReqCenterY;
-fPosBottomBlade := (-1*rReqApertureSizeY/2) + rReqCenterY;
+//Calculate requested target positions from requested gap and center
+fPosTopBlade := (rReqApertureSizeY/2) + (rReqCenterY + rEncoderOffsetTop) ;
+fPosBottomBlade := (-1*rReqApertureSizeY/2) + (rReqCenterY+rEncoderOffsetBottom);
 
-fPosNorthBlade := (rReqApertureSizeX/2) + rReqCenterX;
-fPosSouthBlade := (-1*rReqApertureSizeX/2) + rReqCenterX;
-
-
-//Calculate Actual Positions
+fPosNorthBlade := (rReqApertureSizeX/2) + (rReqCenterX + rEncoderOffsetNorth);
+fPosSouthBlade := (-1*rReqApertureSizeX/2) + (rReqCenterX + rEncoderOffsetSouth);
 
 
-rActApertureSizeX := ABS(stNorthBlade.stAxisStatus.fActPosition - stSouthBlade.stAxisStatus.fActPosition);
+//Calculate actual gap and center from actual stages positions
+rActApertureSizeX := LREAL_TO_REAL((stNorthBlade.stAxisStatus.fActPosition - stSouthBlade.stAxisStatus.fActPosition));
 
-rActApertureSizeY := ABS(stTopBlade.stAxisStatus.fActPosition - stBottomBlade.stAxisStatus.fActPosition);
+rActApertureSizeY := LREAL_TO_REAL((stTopBlade.stAxisStatus.fActPosition - stBottomBlade.stAxisStatus.fActPosition));
 
-rActCenterX := ((stNorthBlade.stAxisStatus.fActPosition + stSouthBlade.stAxisStatus.fActPosition)/2);
+rActCenterX := LREAL_TO_REAL((((stNorthBlade.stAxisStatus.fActPosition - rEncoderOffsetNorth)  + (stSouthBlade.stAxisStatus.fActPosition - rEncoderOffsetSouth ))/2));
 
-rActCenterY := ((stTopBlade.stAxisStatus.fActPosition + stBottomBlade.stAxisStatus.fActPosition)/2);
+rActCenterY := LREAL_TO_REAL((((stTopBlade.stAxisStatus.fActPosition - rEncoderOffsetTop) + (stBottomBlade.stAxisStatus.fActPosition - rEncoderOffsetBottom))/2));
 
+
+
+//Update PMPS Arbiter with the Actual Size and Center of the Aperture
 
 
 ]]></ST>
@@ -308,7 +371,7 @@ fbSouth(
 // Set Y center to zero
 
 // Set X center to zero
-
+(*
 if (rSetCenterY)THEN
         rSetCenterY := false;
         // Set Current Position
@@ -384,8 +447,37 @@ fbSetPosition_South(
     Done=> ,
     Busy=> ,
     Error=> ,
-    ErrorID=> );]]></ST>
+    ErrorID=> );
+	
+	*)]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="FB_SLITS">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SLITS.ACT_BLOCK">
+      <LineId Id="2" Count="19" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SLITS.ACT_CalculatePositions">
+      <LineId Id="26" Count="48" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SLITS.ACT_Home">
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SLITS.ACT_Init">
+      <LineId Id="2" Count="14" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SLITS.ACT_Motion">
+      <LineId Id="2" Count="59" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SLITS.ACT_Zero">
+      <LineId Id="2" Count="80" />
+      <LineId Id="1" Count="0" />
+      <LineId Id="83" Count="1" />
+    </LineIds>
   </POU>
 </TcPlcObject>
