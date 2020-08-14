@@ -284,6 +284,15 @@
 				<Hide GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}"/>
 			</Hides>
 		</DataType>
+		<DataType>
+			<Name GUID="{1C5B6FFE-5600-8C40-85B0-B61070AA3AFB}" AutoDeleteType="true">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Name>
+			<BitSize>384</BitSize>
+			<BaseType GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
 	</DataTypes>
 	<ImageDatas>
 		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000120b0000120b0000100000001000000000000000000080000080000000808000800000008000800080800000c0c0c000808080000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff00dddddd88888888dddddddd77777778dddddddd77888778dddddddd77888778dddddddd77888778dddddddd77777778dddddddd77888778dd9b9b9b77888778ddb9b9b977888778dd9b9b9b77777778ddb9b9b9777a7778dd9b9b9b777a7778ddb9b9b9777a7778dd9b9b9b77777778dd</ImageData>
@@ -294,7 +303,7 @@
 		<EtherCAT SlaveType="3" AdsServerAddress="ac155c3a0204eb03" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" EoeType="1" FoeType="1" VendorId="#x00000002" ProductCode="#x1a273052" RevisionNo="#x00050000" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" CheckRevisionNoType="3" PortPhys="51" DcTimeLoopControlOnly="true" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6695 EtherCAT Bridge terminal (Primary)" Desc="EL6695">
 			<SyncMan>0010000426000100010000008000da050004001026010000</SyncMan>
 			<SyncMan>0016000422000100020000008000da050004001622010000</SyncMan>
-			<SyncMan>001c98006400010003000000000000000000001c64010000</SyncMan>
+			<SyncMan>001cc8006400010003000000000000000000001c64010000</SyncMan>
 			<SyncMan>008e9a002000010004000000000000000200008e20010000</SyncMan>
 			<Fmmu>0000000000000000001c00020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000008e00010100000002000000000000000000000000000000</Fmmu>
@@ -446,6 +455,9 @@
 			<Pdo Name="IO Outputs" Index="#x1608" InOut="1" Flags="#x0020" SyncMan="2">
 				<Entry Name="RequestedBP" Index="#x7000" Sub="#x01">
 					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
+				</Entry>
+				<Entry Name="AptArrayStatus" Index="#x7000" Sub="#x02">
+					<Type GUID="{1C5B6FFE-5600-8C40-85B0-B61070AA3AFB}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
 				</Entry>
 			</Pdo>
 			<CoeProfile ProfileNo="5001"/>

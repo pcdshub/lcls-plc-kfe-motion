@@ -38,9 +38,10 @@ VAR
                               .RTD_Bottom_2.iRaw := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Value;
                               .RTD_Bottom_2.bError := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Error;
                               .RTD_Bottom_2.bUnderrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Underrange;
-                              .RTD_Bottom_2.bOverrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Overrange'}
+                              .RTD_Bottom_2.bOverrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Overrange;
+							  .AptArrayStatus := 'TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus[1] '}
     fbSL1K0: FB_SLITS_POWER;
-
+//{attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus'}
     {attribute 'pytmc' := '
     pv: SL1K0:POWER:GO;
     io: io;
@@ -89,7 +90,11 @@ fbSL1K0(stTopBlade:=  Main.M18,
         stBottomBlade:= Main.M19,
         stNorthBlade:=  Main.M20,
         stSouthBlade:=  Main.M21,
-        bExecuteMotion:=bExecuteMotion);
+        bExecuteMotion:=bExecuteMotion,
+		io_fbFFHWO := GVL.fbFastFaultOutput1,
+		fbArbiter := GVL.fbArbiter);
+
+fbSL1K0.M_UpdatePMPS(1);
 
 END_IF
 
@@ -100,7 +105,11 @@ END_IF
       <LineId Id="88" Count="0" />
       <LineId Id="92" Count="2" />
       <LineId Id="90" Count="0" />
-      <LineId Id="17" Count="8" />
+      <LineId Id="17" Count="5" />
+      <LineId Id="159" Count="1" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="23" Count="2" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
