@@ -7,6 +7,14 @@ VAR
         pv: PF1K0:WFS
         io: io
     '}
+    {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Error;
+                              .fbThermoCouple1.bUnderrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                              .fbThermoCouple1.bOverrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                              .fbThermoCouple1.iRaw := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Value;
+                              .fbThermoCouple2.bError := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Status^Error;
+                              .fbThermoCouple2.bUnderrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                              .fbThermoCouple2.bOverrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                              .fbThermoCouple2.iRaw := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Value'}
     fbPF1K0: FB_WFS;
 END_VAR
 ]]></Declaration>
