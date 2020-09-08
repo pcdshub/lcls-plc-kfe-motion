@@ -3,14 +3,53 @@
   <POU Name="PRG_PF1K0_WFS" Id="{55cdfddd-07ab-43e7-a2b9-23f598a27404}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PF1K0_WFS
 VAR
-    fbMotion1: FB_MotionStageSim;
-    fbMotion2: FB_MotionStageSim;
+    {attribute 'pytmc' := '
+        pv: PF1K0:WFS
+        io: io
+    '}
+    fbPF1K0: FB_WFS;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Placeholder, standard simulated motion for all axes
-fbMotion1(stMotionStage := Main.M8);
-fbMotion2(stMotionStage := Main.M9);]]></ST>
+      <ST><![CDATA[fbPF1K0.nTransitionAssertionID := 3100;
+fbPF1K0.nUnknownAssertionID := 3109;
+
+fbPF1K0.stOut.fPosition := 0;
+fbPF1K0.stOut.bUseRawCounts := FALSE;
+fbPF1K0.stOut.nRequestAssertionID := 3101;
+fbPF1K0.stOut.stBeamParams := PMPS_GVL.cstSafeBeam;
+fbPF1K0.stOut.bValid := TRUE;
+
+fbPF1K0.stTarget1.fPosition := -1;
+fbPF1K0.stTarget1.bUseRawCounts := FALSE;
+fbPF1K0.stTarget1.nRequestAssertionID := 3102;
+fbPF1K0.stTarget1.stBeamParams := PMPS_GVL.cstSafeBeam;
+fbPF1K0.stTarget1.bValid := TRUE;
+
+fbPF1K0.stTarget2.fPosition := -2;
+fbPF1K0.stTarget2.bUseRawCounts := FALSE;
+fbPF1K0.stTarget2.nRequestAssertionID := 3103;
+fbPF1K0.stTarget2.stBeamParams := PMPS_GVL.cstSafeBeam;
+fbPF1K0.stTarget2.bValid := TRUE;
+
+fbPF1K0.stTarget3.fPosition := -3;
+fbPF1K0.stTarget3.bUseRawCounts := FALSE;
+fbPF1K0.stTarget3.nRequestAssertionID := 3104;
+fbPF1K0.stTarget3.stBeamParams := PMPS_GVL.cstSafeBeam;
+fbPF1K0.stTarget3.bValid := TRUE;
+
+fbPF1K0.stTarget4.fPosition := -4;
+fbPF1K0.stTarget4.bUseRawCounts := FALSE;
+fbPF1K0.stTarget4.nRequestAssertionID := 3105;
+fbPF1K0.stTarget4.stBeamParams := PMPS_GVL.cstSafeBeam;
+fbPF1K0.stTarget4.bValid := TRUE;
+
+fbPF1K0(
+    fbArbiter := GVL.fbArbiter,
+    fbFFHWO := GVL.fbFastFaultOutput1,
+    stYStage := Main.M8,
+    stZStage := Main.M9);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

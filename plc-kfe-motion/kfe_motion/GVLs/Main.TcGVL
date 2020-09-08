@@ -51,7 +51,9 @@ VAR_GLOBAL
     M7: DUT_MotionStage := (sName := 'IM2K0:XTES:CLF');
 
     // PF1K0-WFS: 2 Axes
+    {attribute 'pytmc' := 'pv: PF1K0:WFS:MMS:Y'}
     M8: DUT_MotionStage;
+    {attribute 'pytmc' := 'pv: PF1K0:WFS:MMS:Z'}
     M9: DUT_MotionStage;
 
     // RTDSK0: 8 Axes
