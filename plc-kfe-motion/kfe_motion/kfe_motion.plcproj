@@ -13,6 +13,7 @@
     <Implicit_KindOfTask>{7a59f6f7-ec70-41df-a668-a801c2355587}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{e8afe551-3bab-47d9-abf5-3522cd96aaf7}</Implicit_Jitter_Distribution>
     <LibraryReferences>{0bacb3aa-6d25-457c-b8c7-d270333ea0d7}</LibraryReferences>
+    <CompilerDefines>K</CompilerDefines>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\E_PositionState.TcDUT">
