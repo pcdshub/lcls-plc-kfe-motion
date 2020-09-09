@@ -268,9 +268,9 @@ fPosSouthBlade := (-1*rReqApertureSizeX/2) + (rReqCenterX + rEncoderOffsetSouth)
 
 
 //Calculate actual gap and center from actual stages positions
-rActApertureSizeX := LREAL_TO_REAL((stNorthBlade.stAxisStatus.fActPosition - stSouthBlade.stAxisStatus.fActPosition));
+rActApertureSizeX := LREAL_TO_REAL((stNorthBlade.stAxisStatus.fActPosition - rEncoderOffsetNorth) - (stSouthBlade.stAxisStatus.fActPosition- rEncoderOffsetSouth));
 
-rActApertureSizeY := LREAL_TO_REAL((stTopBlade.stAxisStatus.fActPosition - stBottomBlade.stAxisStatus.fActPosition));
+rActApertureSizeY := LREAL_TO_REAL((stTopBlade.stAxisStatus.fActPosition - rEncoderOffsetTop) - (stBottomBlade.stAxisStatus.fActPosition - rEncoderOffsetBottom));
 
 rActCenterX := LREAL_TO_REAL((((stNorthBlade.stAxisStatus.fActPosition - rEncoderOffsetNorth)  + (stSouthBlade.stAxisStatus.fActPosition - rEncoderOffsetSouth ))/2));
 
@@ -279,6 +279,7 @@ rActCenterY := LREAL_TO_REAL((((stTopBlade.stAxisStatus.fActPosition - rEncoderO
 
 
 //Update PMPS Arbiter with the Actual Size and Center of the Aperture
+
 
 
 ]]></ST>
@@ -478,7 +479,8 @@ END_VAR
         <ST><![CDATA[//Keep updating the status of the apertures PMPS 
 This^.AptArrayStatus.Height := This^.rActApertureSizeY;
 This^.AptArrayStatus.Width := This^.rActApertureSizeX;
-This^.AptArrayStatus.xOK := NOT (This^.stTopBlade.bError) AND  NOT (This^.stBottomBlade.bError) AND NOT (This^.stNorthBlade.bError) AND NOT (This^.stNorthBlade.bError);
+This^.AptArrayStatus.xOK := NOT (This^.stTopBlade.bError) AND NOT (This^.stBottomBlade.bError)
+								 AND NOT (This^.stNorthBlade.bError) AND NOT (This^.stNorthBlade.bError);
 
 //Evaluate that the current center on the X and the y direction didn't exceed limits
 //Fast fault when it does.
@@ -504,7 +506,9 @@ FFO(i_xOK := ,
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_SLITS.ACT_CalculatePositions">
-      <LineId Id="26" Count="48" />
+      <LineId Id="26" Count="46" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="73" Count="1" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_SLITS.ACT_Home">
@@ -530,6 +534,7 @@ FFO(i_xOK := ,
       <LineId Id="5" Count="0" />
       <LineId Id="7" Count="0" />
       <LineId Id="9" Count="0" />
+      <LineId Id="33" Count="0" />
       <LineId Id="27" Count="0" />
       <LineId Id="19" Count="0" />
       <LineId Id="28" Count="0" />
