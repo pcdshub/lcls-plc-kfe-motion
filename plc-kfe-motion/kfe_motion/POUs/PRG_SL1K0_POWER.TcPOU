@@ -39,8 +39,8 @@ VAR
                               .RTD_Bottom_2.bError := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Error;
                               .RTD_Bottom_2.bUnderrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Underrange;
                               .RTD_Bottom_2.bOverrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Overrange;
-							  .AptArrayStatus := 'TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus^AptArrayStatus[1];
-							  .AptArrayReq := 'TIIB[PMPS_PRE]^IO Inputs^AptArrayReq^AptArrayReq[1]'}
+                              .AptArrayStatus := 'TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus^AptArrayStatus[1];
+                              .AptArrayReq := 'TIIB[PMPS_PRE]^IO Inputs^AptArrayReq^AptArrayReq[1]'}
     fbSL1K0: FB_SLITS_POWER;
 //{attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus'}
     {attribute 'pytmc' := '
@@ -57,13 +57,13 @@ VAR
     //for testing purposes only. comment-out/delete once done.
     mcPower : ARRAY [1..4] OF MC_POWER;
     bTest:BOOL:=FALSE;
-	
-	(*Offsets*)
-	(* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-	rEncoderOffsetTop: REAL := -15; (* 0+(-15)*)
-	rEncoderOffsetBottom: REAL := -15; (* 0+(-15)*)
-	rEncoderOffsetNorth: REAL := -15;(* 0+(-15)*)
-	rEncoderOffsetSouth: REAL := -15;(* 0+(-15)*)
+
+    (*Offsets*)
+    (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
+    rEncoderOffsetTop: REAL := -15; (* 0+(-15)*)
+    rEncoderOffsetBottom: REAL := -15; (* 0+(-15)*)
+    rEncoderOffsetNorth: REAL := -15;(* 0+(-15)*)
+    rEncoderOffsetSouth: REAL := -15;(* 0+(-15)*)
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -81,7 +81,7 @@ mcPower[3](axis:=Main.M20.Axis, Enable:=TRUE, enable_positive:=Main.M20.bLimitFo
 mcPower[4](axis:=Main.M21.Axis, Enable:=TRUE, enable_positive:=Main.M21.bLimitForwardEnable, enable_negative:=Main.M21.bLimitBackwardEnable);
 
 else
-	
+
 fbSL1K0.rEncoderOffsetTop := rEncoderOffsetTop;
 fbSL1K0.rEncoderOffsetBottom := rEncoderOffsetBottom;
 fbSL1K0.rEncoderOffsetNorth := rEncoderOffsetNorth;
@@ -92,8 +92,8 @@ fbSL1K0(stTopBlade:=  Main.M19,
         stNorthBlade:=  Main.M20,
         stSouthBlade:=  Main.M18,
         bExecuteMotion:=bExecuteMotion,
-		io_fbFFHWO := GVL.fbFastFaultOutput1,
-		fbArbiter := GVL.fbArbiter);
+        io_fbFFHWO := GVL.fbFastFaultOutput1,
+        fbArbiter := GVL.fbArbiter);
 
 fbSL1K0.M_UpdatePMPS(1);
 
@@ -101,17 +101,5 @@ END_IF
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_SL1K0_POWER">
-      <LineId Id="3" Count="13" />
-      <LineId Id="88" Count="0" />
-      <LineId Id="92" Count="2" />
-      <LineId Id="90" Count="0" />
-      <LineId Id="17" Count="5" />
-      <LineId Id="159" Count="1" />
-      <LineId Id="96" Count="0" />
-      <LineId Id="95" Count="0" />
-      <LineId Id="23" Count="2" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

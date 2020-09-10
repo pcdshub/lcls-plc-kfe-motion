@@ -51,7 +51,14 @@ VAR_GLOBAL
     M7: DUT_MotionStage := (sName := 'IM2K0:XTES:CLF');
 
     // PF1K0-WFS: 2 Axes
+    {attribute 'pytmc' := 'pv: PF1K0:WFS:MMS:Y'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PF1K0-EL7041-01]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[PF1K0-EL7041-01]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[PF1K0-EL2004]^Channel 1^Output;
+                              .nRawEncoderULINT     := TIIB[PF1K0-EL5042]^FB Inputs Channel 2^Position'}
     M8: DUT_MotionStage;
+    {attribute 'pytmc' := 'pv: PF1K0:WFS:MMS:Z'}
+    {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[PF1K0-EL5042]^FB Inputs Channel 1^Position'}
     M9: DUT_MotionStage;
 
     // RTDSK0: 8 Axes

@@ -8,8 +8,8 @@ VAR_IN_OUT
     stNorthBlade: DUT_MotionStage;
     stSouthBlade: DUT_MotionStage;
     bExecuteMotion:BOOL ;
-	io_fbFFHWO    :    FB_HardwareFFOutput;
-	fbArbiter: FB_Arbiter();
+    io_fbFFHWO    :    FB_HardwareFFOutput;
+    fbArbiter: FB_Arbiter();
 END_VAR
 
 VAR_INPUT
@@ -21,29 +21,29 @@ VAR_INPUT
     field: ONAM True
     '}
     bMoveOk:BOOL;
-	
-		(*Offsets*)
-	{attribute 'pytmc' := '
+
+        (*Offsets*)
+    {attribute 'pytmc' := '
     pv: Offset_Top;
     io: io;
     '}
-	rEncoderOffsetTop: REAL;
-	{attribute 'pytmc' := '
+    rEncoderOffsetTop: REAL;
+    {attribute 'pytmc' := '
     pv: ZeroOffset_Bottom;
     io: io;
     '}
-	rEncoderOffsetBottom: REAL;
-	{attribute 'pytmc' := '
+    rEncoderOffsetBottom: REAL;
+    {attribute 'pytmc' := '
     pv: ZeroOffset_North;
     io: io;
     '}
-	rEncoderOffsetNorth: REAL;
-	{attribute 'pytmc' := '
+    rEncoderOffsetNorth: REAL;
+    {attribute 'pytmc' := '
     pv: ZeroOffset_South;
     io: io;
     '}
-	rEncoderOffsetSouth: REAL;
-	i_DevName : STRING; //device name for FFO and PMPS diagnostics
+    rEncoderOffsetSouth: REAL;
+    i_DevName : STRING; //device name for FFO and PMPS diagnostics
 END_VAR
 
 VAR
@@ -165,16 +165,16 @@ VAR
     rTrig_Open: R_TRIG;
     rTrig_Close: R_TRIG;
 
-	//old values
+    //old values
     rOldReqApertureSizeX : REAL;
     rOldReqApertureSizeY : REAL;
     rOldReqCenterX: REAL;
     rOldReqCenterY: REAL;
-	
-	bExecuteMotionX: BOOL;
-	bExecuteMotionY: BOOL;
-	
-	
+
+    bExecuteMotionX: BOOL;
+    bExecuteMotionY: BOOL;
+
+
     fPosBlock: LREAL;
     fPosClose: LREAL;
     fPosOpen: LREAL;
@@ -184,22 +184,22 @@ VAR
     fbSetPosition_Bottom: MC_SetPosition;
     fbSetPosition_North: MC_SetPosition;
     fbSetPosition_South: MC_SetPosition;
-	
-	// For logging
+
+    // For logging
     fbLogger : FB_LogMessage := (eSubsystem:=E_SubSystem.MOTION);
     tErrorPresent : R_TRIG;
     tAction : R_TRIG;
     tOverrideActivated : R_TRIG;
-	
-	FFO    :    FB_FastFault :=(
+
+    FFO    :    FB_FastFault :=(
         i_DevName := 'Slits',
         i_Desc := 'Fault occurs when center is greated than that requested',
         i_TypeCode := 16#1010);
-	
+
     AptArrayStatus AT %Q* : ST_PMPS_Aperture_IO;
-	AptArrayReq AT %I* : ST_PMPS_Aperture_IO;
-	
-	bTest: BOOL;
+    AptArrayReq AT %I* : ST_PMPS_Aperture_IO;
+
+    bTest: BOOL;
 
 END_VAR
 
@@ -238,35 +238,35 @@ END_IF]]></ST>
         <ST><![CDATA[//check if requested center or gap has changed
 //check that the requested values are within acceptable motion range
 IF (rOldReqApertureSizeX <> rReqApertureSizeX) THEN
-	IF (rReqApertureSizeX <= AptArrayReq.Width)  THEN
-		rOldReqApertureSizeX := rReqApertureSizeX;
-		bExecuteMotionX := TRUE;
-		fbLogger(sMsg:='Requested new X gap.', eSevr:=TcEventSeverity.Verbose);
-	ELSE
-		fbLogger(sMsg:='Requested new X gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
-	END_IF
+    IF (rReqApertureSizeX <= AptArrayReq.Width)  THEN
+        rOldReqApertureSizeX := rReqApertureSizeX;
+        bExecuteMotionX := TRUE;
+        fbLogger(sMsg:='Requested new X gap.', eSevr:=TcEventSeverity.Verbose);
+    ELSE
+        fbLogger(sMsg:='Requested new X gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
+    END_IF
 END_IF
 
 IF (rOldReqCenterX <> rReqCenterX) THEN
-	rOldReqCenterX := rReqCenterX;
-	bExecuteMotionX := TRUE;
-	fbLogger(sMsg:='Requested new X center', eSevr:=TcEventSeverity.Verbose);
+    rOldReqCenterX := rReqCenterX;
+    bExecuteMotionX := TRUE;
+    fbLogger(sMsg:='Requested new X center', eSevr:=TcEventSeverity.Verbose);
 END_IF
 
 IF (rOldReqApertureSizeY <> rReqApertureSizeY) THEN
-	IF rReqApertureSizeY <= AptArrayReq.Height THEN
-		rOldReqApertureSizeY := rReqApertureSizeY;
-		bExecuteMotionY := TRUE;
-		fbLogger(sMsg:='Requested new Y gap.', eSevr:=TcEventSeverity.Verbose);
-	ELSE 
-		fbLogger(sMsg:='Requested new Y gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
-	END_IF
+    IF rReqApertureSizeY <= AptArrayReq.Height THEN
+        rOldReqApertureSizeY := rReqApertureSizeY;
+        bExecuteMotionY := TRUE;
+        fbLogger(sMsg:='Requested new Y gap.', eSevr:=TcEventSeverity.Verbose);
+    ELSE
+        fbLogger(sMsg:='Requested new Y gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
+    END_IF
 END_IF
 
 IF (rOldReqCenterY <> rReqCenterY) THEN
-	rOldReqCenterY := rReqCenterY;
-	bExecuteMotionY := TRUE;
-	fbLogger(sMsg:='Requested new Y center.', eSevr:=TcEventSeverity.Verbose);
+    rOldReqCenterY := rReqCenterY;
+    bExecuteMotionY := TRUE;
+    fbLogger(sMsg:='Requested new Y center.', eSevr:=TcEventSeverity.Verbose);
 END_IF
 
 
@@ -318,7 +318,7 @@ IF ( bInit) THEN
     stBottomBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
     stNorthBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
     stSouthBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-	FFO.i_DevName := i_DevName;
+    FFO.i_DevName := i_DevName;
 END_IF]]></ST>
       </Implementation>
     </Action>
@@ -476,112 +476,50 @@ fbSetPosition_South(
     Busy=> ,
     Error=> ,
     ErrorID=> );
-	
-	*)]]></ST>
+
+    *)]]></ST>
       </Implementation>
     </Action>
     <Method Name="M_UpdatePMPS" Id="{01fb8a68-875e-498e-8761-a7079873ebc2}">
       <Declaration><![CDATA[METHOD M_UpdatePMPS : BOOL
 VAR_INPUT
-	index: int;
+    index: int;
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[//Keep updating the status of the apertures PMPS 
+        <ST><![CDATA[//Keep updating the status of the apertures PMPS
 This^.AptArrayStatus.Height := This^.rActApertureSizeY;
 This^.AptArrayStatus.Width := This^.rActApertureSizeX;
 This^.AptArrayStatus.xOK := NOT (This^.stTopBlade.bError) AND NOT (This^.stBottomBlade.bError)
-								 AND NOT (This^.stNorthBlade.bError) AND NOT (This^.stNorthBlade.bError);
+                                 AND NOT (This^.stNorthBlade.bError) AND NOT (This^.stNorthBlade.bError);
 
 //Evaluate that the current center on the X and the y direction didn't exceed limits
 //Fast fault when it does.
-IF(rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2)) 
-	OR (rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2)) THEN
-		FFO.i_xOK := FALSE;
-	ELSE
-		FFO.i_xOK := TRUE;
+IF(rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
+    OR (rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2)) THEN
+        FFO.i_xOK := FALSE;
+    ELSE
+        FFO.i_xOK := TRUE;
 END_IF
 
 //Evaluate that the requested gaps on the X and the y direction is not larger than the current gap
 // narrow  the gap if the requested is larger
 IF(bTest) THEN
-	IF (This^.rActApertureSizeX > AptArrayReq.Width) THEN
-		rReqApertureSizeX := AptArrayReq.Width;
-	END_IF
-	IF (This^.rActApertureSizeY > AptArrayReq.Height) THEN
-		 rReqApertureSizeY := AptArrayReq.Height;
-	END_IF
+    IF (This^.rActApertureSizeX > AptArrayReq.Width) THEN
+        rReqApertureSizeX := AptArrayReq.Width;
+    END_IF
+    IF (This^.rActApertureSizeY > AptArrayReq.Height) THEN
+         rReqApertureSizeY := AptArrayReq.Height;
+    END_IF
 END_IF
 
 
 (*FAST FAULT*)
 FFO(i_xOK := ,
     i_xReset := ,
-	i_xAutoReset :=TRUE,
+    i_xAutoReset :=TRUE,
     io_fbFFHWO := io_fbFFHWO);]]></ST>
       </Implementation>
     </Method>
-    <LineIds Name="FB_SLITS">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SLITS.ACT_BLOCK">
-      <LineId Id="2" Count="19" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SLITS.ACT_CalculatePositions">
-      <LineId Id="26" Count="3" />
-      <LineId Id="76" Count="0" />
-      <LineId Id="30" Count="1" />
-      <LineId Id="77" Count="2" />
-      <LineId Id="32" Count="8" />
-      <LineId Id="80" Count="0" />
-      <LineId Id="41" Count="2" />
-      <LineId Id="81" Count="2" />
-      <LineId Id="44" Count="28" />
-      <LineId Id="75" Count="0" />
-      <LineId Id="73" Count="1" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SLITS.ACT_Home">
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SLITS.ACT_Init">
-      <LineId Id="2" Count="15" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SLITS.ACT_Motion">
-      <LineId Id="2" Count="38" />
-      <LineId Id="62" Count="4" />
-      <LineId Id="41" Count="20" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SLITS.ACT_Zero">
-      <LineId Id="2" Count="80" />
-      <LineId Id="1" Count="0" />
-      <LineId Id="83" Count="1" />
-    </LineIds>
-    <LineIds Name="FB_SLITS.M_UpdatePMPS">
-      <LineId Id="26" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="33" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="20" Count="1" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="22" Count="2" />
-      <LineId Id="40" Count="0" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="41" Count="0" />
-      <LineId Id="48" Count="0" />
-      <LineId Id="43" Count="4" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="49" Count="0" />
-      <LineId Id="39" Count="0" />
-      <LineId Id="14" Count="4" />
-      <LineId Id="8" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
