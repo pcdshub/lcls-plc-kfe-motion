@@ -197,6 +197,9 @@ VAR
         i_TypeCode := 16#1010);
 	
     AptArrayStatus AT %Q* : ST_PMPS_Aperture_IO;
+	AptArrayReq AT %I* : ST_PMPS_Aperture_IO;
+	
+	bTest: BOOL;
 
 END_VAR
 
@@ -235,9 +238,13 @@ END_IF]]></ST>
         <ST><![CDATA[//check if requested center or gap has changed
 //check that the requested values are within acceptable motion range
 IF (rOldReqApertureSizeX <> rReqApertureSizeX) THEN
-	rOldReqApertureSizeX := rReqApertureSizeX;
-	bExecuteMotionX := TRUE;
-	fbLogger(sMsg:='Requested new X gap.', eSevr:=TcEventSeverity.Verbose);
+	IF (rReqApertureSizeX <= AptArrayReq.Width)  THEN
+		rOldReqApertureSizeX := rReqApertureSizeX;
+		bExecuteMotionX := TRUE;
+		fbLogger(sMsg:='Requested new X gap.', eSevr:=TcEventSeverity.Verbose);
+	ELSE
+		fbLogger(sMsg:='Requested new X gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
+	END_IF
 END_IF
 
 IF (rOldReqCenterX <> rReqCenterX) THEN
@@ -247,9 +254,13 @@ IF (rOldReqCenterX <> rReqCenterX) THEN
 END_IF
 
 IF (rOldReqApertureSizeY <> rReqApertureSizeY) THEN
-	rOldReqApertureSizeY := rReqApertureSizeY;
-	bExecuteMotionY := TRUE;
-	fbLogger(sMsg:='Requested new Y gap.', eSevr:=TcEventSeverity.Verbose);
+	IF rReqApertureSizeY <= AptArrayReq.Height THEN
+		rOldReqApertureSizeY := rReqApertureSizeY;
+		bExecuteMotionY := TRUE;
+		fbLogger(sMsg:='Requested new Y gap.', eSevr:=TcEventSeverity.Verbose);
+	ELSE 
+		fbLogger(sMsg:='Requested new Y gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
+	END_IF
 END_IF
 
 IF (rOldReqCenterY <> rReqCenterY) THEN
@@ -489,7 +500,19 @@ IF(rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
 		FFO.i_xOK := FALSE;
 	ELSE
 		FFO.i_xOK := TRUE;
+END_IF
+
+//Evaluate that the requested gaps on the X and the y direction is not larger than the current gap
+// narrow  the gap if the requested is larger
+IF(bTest) THEN
+	IF (This^.rActApertureSizeX > AptArrayReq.Width) THEN
+		rReqApertureSizeX := AptArrayReq.Width;
 	END_IF
+	IF (This^.rActApertureSizeY > AptArrayReq.Height) THEN
+		 rReqApertureSizeY := AptArrayReq.Height;
+	END_IF
+END_IF
+
 
 (*FAST FAULT*)
 FFO(i_xOK := ,
@@ -506,7 +529,15 @@ FFO(i_xOK := ,
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_SLITS.ACT_CalculatePositions">
-      <LineId Id="26" Count="46" />
+      <LineId Id="26" Count="3" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="30" Count="1" />
+      <LineId Id="77" Count="2" />
+      <LineId Id="32" Count="8" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="41" Count="2" />
+      <LineId Id="81" Count="2" />
+      <LineId Id="44" Count="28" />
       <LineId Id="75" Count="0" />
       <LineId Id="73" Count="1" />
       <LineId Id="1" Count="0" />
@@ -541,6 +572,14 @@ FFO(i_xOK := ,
       <LineId Id="20" Count="1" />
       <LineId Id="25" Count="0" />
       <LineId Id="22" Count="2" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="43" Count="4" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="39" Count="0" />
       <LineId Id="14" Count="4" />
       <LineId Id="8" Count="0" />
     </LineIds>
