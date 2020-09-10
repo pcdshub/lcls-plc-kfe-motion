@@ -3,6 +3,7 @@
   <GVL Name="GVL" Id="{53ff6662-fc6b-4a00-9f46-186d8230905b}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
+    {attribute 'pytmc' := 'pv: PLC:LFE:MOTION:ARB'}
     fbArbiter: FB_Arbiter(0);
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:FFO:01'}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
