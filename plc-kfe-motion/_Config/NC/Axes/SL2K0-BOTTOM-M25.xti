@@ -1326,6 +1326,7 @@ External Setpoint Generation:
 		<AxisPara>
 			<Velo Maximum="0.8"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
+			<ParameterChanged>18</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara ScaleFactorNumerator="5e-05" Offset="-43.9987" MaxCount="#xffffffff">
@@ -1462,6 +1463,7 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
+				<PosDiffControl Range="0.1"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
