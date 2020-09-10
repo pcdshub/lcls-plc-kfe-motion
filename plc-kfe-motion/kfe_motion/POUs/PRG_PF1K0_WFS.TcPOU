@@ -18,6 +18,7 @@ VAR
     fbPF1K0: FB_WFS;
 
     stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+    stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -32,6 +33,9 @@ END_VAR
 stSiBP.neVRange := 2#1111_1111_1000_0011;
 // Drop transmission to 20%
 stSiBP.nTran := 20;
+
+// Drop transmission to 10%
+stFoilBP.nTran := 10;
 
 fbPF1K0.nTransitionAssertionID := 3100;
 fbPF1K0.nUnknownAssertionID := 3109;
@@ -57,19 +61,19 @@ fbPF1K0.stTarget2.bValid := TRUE;
 fbPF1K0.stTarget3.fPosition := -67.874;
 fbPF1K0.stTarget3.bUseRawCounts := FALSE;
 fbPF1K0.stTarget3.nRequestAssertionID := 3104;
-fbPF1K0.stTarget3.stBeamParams := stSiBP;
+fbPF1K0.stTarget3.stBeamParams := stFoilBP;
 fbPF1K0.stTarget3.bValid := TRUE;
 
 fbPF1K0.stTarget4.fPosition := -82.25;
 fbPF1K0.stTarget4.bUseRawCounts := FALSE;
 fbPF1K0.stTarget4.nRequestAssertionID := 3105;
-fbPF1K0.stTarget4.stBeamParams := stSiBP;
+fbPF1K0.stTarget4.stBeamParams := stFoilBP;
 fbPF1K0.stTarget4.bValid := TRUE;
 
 fbPF1K0.stTarget5.fPosition := -96.623;
 fbPF1K0.stTarget5.bUseRawCounts := FALSE;
 fbPF1K0.stTarget5.nRequestAssertionID := 3106;
-fbPF1K0.stTarget5.stBeamParams := stSiBP;
+fbPF1K0.stTarget5.stBeamParams := stFoilBP;
 fbPF1K0.stTarget5.bValid := TRUE;
 
 fbPF1K0(
