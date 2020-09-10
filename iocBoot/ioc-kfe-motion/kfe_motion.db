@@ -20213,7 +20213,7 @@ record(waveform, "SL2K0:POWER:MMS:BOTTOM:PLC:sErrorMessage_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:001:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20224,7 +20224,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:002:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20235,7 +20235,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:003:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20246,7 +20246,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:004:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20257,7 +20257,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:005:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20268,7 +20268,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:006:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20279,7 +20279,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:007:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20290,7 +20290,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:008:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20301,7 +20301,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:009:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20312,7 +20312,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:010:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20323,7 +20323,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:011:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20334,7 +20334,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:012:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20345,7 +20345,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:013:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20356,7 +20356,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:014:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20367,7 +20367,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:015:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20378,7 +20378,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:016:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20389,7 +20389,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:017:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20400,7 +20400,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:018:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20411,7 +20411,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:019:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20422,7 +20422,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:020:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20433,7 +20433,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:001:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20444,7 +20444,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:002:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20455,7 +20455,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:003:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20466,7 +20466,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:004:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20477,7 +20477,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:005:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20488,7 +20488,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:006:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20499,7 +20499,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:007:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20510,7 +20510,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:008:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20521,7 +20521,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:009:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20532,7 +20532,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:010:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20543,7 +20543,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:011:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20554,7 +20554,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:012:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20565,7 +20565,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:013:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20576,7 +20576,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:014:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20587,7 +20587,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:015:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20598,7 +20598,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:016:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20609,7 +20609,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:017:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20620,7 +20620,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:018:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20631,7 +20631,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:019:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20642,7 +20642,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:020:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20653,7 +20653,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:001:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:001:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20666,7 +20666,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:001:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:002:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:002:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20679,7 +20679,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:002:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:003:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:003:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20692,7 +20692,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:003:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:004:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:004:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20705,7 +20705,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:004:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:005:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:005:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20718,7 +20718,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:005:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:006:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:006:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20731,7 +20731,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:006:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:007:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:007:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20744,7 +20744,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:007:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:008:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:008:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20757,7 +20757,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:008:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:009:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:009:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20770,7 +20770,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:009:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:010:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:010:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20783,7 +20783,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:010:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:011:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:011:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20796,7 +20796,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:011:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:012:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:012:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20809,7 +20809,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:012:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:013:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:013:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20822,7 +20822,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:013:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:014:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:014:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20835,7 +20835,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:014:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:015:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:015:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20848,7 +20848,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:015:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:016:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:016:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20861,7 +20861,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:016:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:017:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:017:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20874,7 +20874,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:017:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:018:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:018:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20887,7 +20887,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:018:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:019:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:019:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20900,7 +20900,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:019:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:020:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:AP:Entry:020:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20913,7 +20913,7 @@ record(ai, "PLC:LFE:MOTION:ARB:AP:Entry:020:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:001:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20924,7 +20924,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:002:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20935,7 +20935,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:003:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20946,7 +20946,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:004:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20957,7 +20957,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:005:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20968,7 +20968,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:006:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20979,7 +20979,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:007:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -20990,7 +20990,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:008:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21001,7 +21001,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:009:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21012,7 +21012,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:010:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21023,7 +21023,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:011:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21034,7 +21034,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:012:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21045,7 +21045,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:013:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21056,7 +21056,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:014:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21067,7 +21067,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:015:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21078,7 +21078,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:016:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21089,7 +21089,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:017:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21100,7 +21100,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:018:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21111,7 +21111,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:019:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21122,7 +21122,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:020:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21133,7 +21133,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:001:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:001:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21145,7 +21145,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:001:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:002:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:002:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21157,7 +21157,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:002:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:003:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:003:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21169,7 +21169,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:003:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:004:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:004:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21181,7 +21181,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:004:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:005:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:005:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21193,7 +21193,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:005:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:006:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:006:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21205,7 +21205,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:006:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:007:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:007:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21217,7 +21217,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:007:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:008:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:008:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21229,7 +21229,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:008:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:009:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:009:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21241,7 +21241,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:009:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:010:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:010:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21253,7 +21253,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:010:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:011:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:011:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21265,7 +21265,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:011:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:012:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:012:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21277,7 +21277,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:012:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:013:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:013:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21289,7 +21289,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:013:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:014:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:014:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21301,7 +21301,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:014:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:015:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:015:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21313,7 +21313,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:015:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:016:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:016:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21325,7 +21325,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:016:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:017:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:017:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21337,7 +21337,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:017:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:018:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:018:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21349,7 +21349,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:018:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:019:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:019:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21361,7 +21361,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:019:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:020:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:020:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21373,7 +21373,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:AP:Entry:020:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:001:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:001:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21385,7 +21385,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:001:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:002:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:002:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21397,7 +21397,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:002:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:003:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:003:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21409,7 +21409,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:003:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:004:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:004:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21421,7 +21421,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:004:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:005:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:005:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21433,7 +21433,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:005:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:006:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:006:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21445,7 +21445,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:006:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:007:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:007:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21457,7 +21457,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:007:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:008:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:008:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21469,7 +21469,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:008:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:009:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:009:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21481,7 +21481,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:009:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:010:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:010:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21493,7 +21493,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:010:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:011:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:011:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21505,7 +21505,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:011:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:012:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:012:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21517,7 +21517,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:012:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:013:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:013:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21529,7 +21529,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:013:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:014:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:014:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21541,7 +21541,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:014:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:015:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:015:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21553,7 +21553,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:015:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:016:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:016:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21565,7 +21565,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:016:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:017:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:017:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21577,7 +21577,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:017:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:018:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:018:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21589,7 +21589,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:018:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:019:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:019:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21601,7 +21601,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:019:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:020:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:020:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21613,7 +21613,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:020:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:001:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21623,7 +21623,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:002:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21633,7 +21633,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:003:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21643,7 +21643,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:004:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21653,7 +21653,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:005:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21663,7 +21663,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:006:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21673,7 +21673,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:007:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21683,7 +21683,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:008:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21693,7 +21693,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:009:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21703,7 +21703,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:010:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21713,7 +21713,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:011:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21723,7 +21723,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:012:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21733,7 +21733,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:013:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21743,7 +21743,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:014:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21753,7 +21753,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:015:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21763,7 +21763,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:016:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21773,7 +21773,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:017:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21783,7 +21783,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:018:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21793,7 +21793,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:019:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21803,7 +21803,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:020:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21813,7 +21813,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:001:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21823,7 +21823,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:001:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:002:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21833,7 +21833,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:002:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:003:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21843,7 +21843,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:003:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:004:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21853,7 +21853,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:004:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:005:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21863,7 +21863,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:005:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:006:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21873,7 +21873,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:006:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:007:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21883,7 +21883,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:007:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:008:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21893,7 +21893,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:008:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:009:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21903,7 +21903,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:009:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:010:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21913,7 +21913,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:010:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:011:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21923,7 +21923,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:011:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:012:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21933,7 +21933,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:012:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:013:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21943,7 +21943,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:013:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:014:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21953,7 +21953,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:014:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:015:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21963,7 +21963,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:015:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:016:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21973,7 +21973,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:016:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:017:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21983,7 +21983,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:017:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:018:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -21993,7 +21993,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:018:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:019:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22003,7 +22003,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:019:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:ID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:AP:Entry:020:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22013,7 +22013,7 @@ record(longin, "PLC:LFE:MOTION:ARB:AP:Entry:020:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:001:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:001:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22025,7 +22025,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:001:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:002:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:002:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22037,7 +22037,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:002:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:003:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:003:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22049,7 +22049,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:003:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:004:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:004:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22061,7 +22061,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:004:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:005:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:005:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22073,7 +22073,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:005:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:006:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:006:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22085,7 +22085,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:006:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:007:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:007:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22097,7 +22097,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:007:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:008:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:008:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22109,7 +22109,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:008:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:009:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:009:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22121,7 +22121,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:009:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:010:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:010:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22133,7 +22133,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:010:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:011:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:011:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22145,7 +22145,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:011:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:012:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:012:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22157,7 +22157,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:012:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:013:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:013:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22169,7 +22169,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:013:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:014:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:014:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22181,7 +22181,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:014:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:015:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:015:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22193,7 +22193,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:015:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:016:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:016:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22205,7 +22205,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:016:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:017:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:017:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22217,7 +22217,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:017:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:018:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:018:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22229,7 +22229,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:018:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:019:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:019:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22241,7 +22241,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:019:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:020:Live_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:AP:Entry:020:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22253,7 +22253,7 @@ record(bi, "PLC:LFE:MOTION:ARB:AP:Entry:020:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:ArbiterID_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:ArbiterID_RBV") {
   field(DESC, "Arbiter ID for elev. req.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22263,7 +22263,7 @@ record(longin, "PLC:LFE:MOTION:ARB:ArbiterID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:CohortCounter_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:CohortCounter_RBV") {
   field(DESC, "Intrnl cohort counter")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22273,7 +22273,7 @@ record(longin, "PLC:LFE:MOTION:ARB:CohortCounter_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:ActiveInArbitration_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:ActiveInArbitration_RBV") {
   field(DESC, "True if this arbiter")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22285,7 +22285,7 @@ record(bi, "PLC:LFE:MOTION:ARB:ActiveInArbitration_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:ArbitratedBP:Transmission_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:ArbitratedBP:Transmission_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22296,7 +22296,7 @@ record(longin, "PLC:LFE:MOTION:ARB:ArbitratedBP:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:ArbitratedBP:Rate_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:ArbitratedBP:Rate_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22307,7 +22307,7 @@ record(longin, "PLC:LFE:MOTION:ARB:ArbitratedBP:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:MOTION:ARB:ArbitratedBP:PulseEnergy_RBV") {
+record(ai, "PLC:KFE:MOTION:ARB:ArbitratedBP:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22320,7 +22320,7 @@ record(ai, "PLC:LFE:MOTION:ARB:ArbitratedBP:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:ArbitratedBP:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:ArbitratedBP:PhotonEnergyRanges_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22331,7 +22331,7 @@ record(longin, "PLC:LFE:MOTION:ARB:ArbitratedBP:PhotonEnergyRanges_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:MOTION:ARB:ArbitratedBP:ST_RBV") {
+record(waveform, "PLC:KFE:MOTION:ARB:ArbitratedBP:ST_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22343,7 +22343,7 @@ record(waveform, "PLC:LFE:MOTION:ARB:ArbitratedBP:ST_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:MOTION:ARB:ArbitratedBP:Valid_RBV") {
+record(bi, "PLC:KFE:MOTION:ARB:ArbitratedBP:Valid_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -22355,7 +22355,7 @@ record(bi, "PLC:LFE:MOTION:ARB:ArbitratedBP:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:MOTION:ARB:ArbitratedBP:Cohort_RBV") {
+record(longin, "PLC:KFE:MOTION:ARB:ArbitratedBP:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
