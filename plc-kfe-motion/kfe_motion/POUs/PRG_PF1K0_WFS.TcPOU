@@ -66,13 +66,11 @@ fbPF1K0.stTarget4.nRequestAssertionID := 3105;
 fbPF1K0.stTarget4.stBeamParams := stSiBP;
 fbPF1K0.stTarget4.bValid := TRUE;
 
-(*
 fbPF1K0.stTarget5.fPosition := -96.623;
 fbPF1K0.stTarget5.bUseRawCounts := FALSE;
 fbPF1K0.stTarget5.nRequestAssertionID := 3106;
 fbPF1K0.stTarget5.stBeamParams := stSiBP;
 fbPF1K0.stTarget5.bValid := TRUE;
-*)
 
 fbPF1K0(
     fbArbiter := GVL.fbArbiter,
