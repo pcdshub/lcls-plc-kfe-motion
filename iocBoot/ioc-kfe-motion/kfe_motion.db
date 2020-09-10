@@ -418,19 +418,6 @@ record(longin, "$(PREFIX)L:UND:LastSegment_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "$(PREFIX)eVRangeHyst_RBV") {
-  field(DESC, "eV Range hystersis")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.reVHyst?")
-  field(PREC, "3")
-  field(EGU, "eV")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "monitor 1: VAL")
-}
-
 record(ai, "Period_RBV") {
   field(DESC, "PMPS_GVL.fPeriod_mm_LUnd")
   field(SCAN, "I/O Intr")
@@ -466,6 +453,19 @@ record(ai, "$(PREFIX)L:UND:HiK_RBV") {
   field(PREC, "3")
   info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
+}
+
+record(ai, "$(PREFIX)eVRangeHyst_RBV") {
+  field(DESC, "eV Range hystersis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.reVHyst?")
+  field(PREC, "3")
+  field(EGU, "eV")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "monitor 1: VAL")
 }
 
 record(waveform, "$(PREFIX)L:eVRangeCnst_RBV") {
@@ -530,28 +530,6 @@ record(longout, "PLC:KFE:MOTION:PLACEHOLDER") {
   field(DESC, "PRG_1_PlcTask.nPlaceholder")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_1_PlcTask.nPlaceholder=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "SL2K0:POWER:GO_RBV") {
-  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(archive, "VAL")
-}
-
-record(bo, "SL2K0:POWER:GO") {
-  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -741,6 +719,18 @@ record(waveform, "IM1K0:XTES:MMS:STATE:05:NAME_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "IM1K0:XTES:MMS:STATE:06:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(ai, "IM1K0:XTES:MMS:STATE:01:SETPOINT_RBV") {
   field(DESC, "Axis position associated with this state")
   field(SCAN, "I/O Intr")
@@ -846,6 +836,27 @@ record(ao, "IM1K0:XTES:MMS:STATE:05:SETPOINT") {
   info(archive, "VAL")
 }
 
+record(ai, "IM1K0:XTES:MMS:STATE:06:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K0:XTES:MMS:STATE:06:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K0:XTES:MMS:STATE:01:ENCODER_RBV") {
   field(DESC, "Encoder count associated with this state")
   field(SCAN, "I/O Intr")
@@ -893,6 +904,16 @@ record(longin, "IM1K0:XTES:MMS:STATE:05:ENCODER_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[5].nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K0:XTES:MMS:STATE:06:ENCODER_RBV") {
+  field(DESC, "Encoder count associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].nEncoderCount?")
   info(archive, "VAL")
 }
 
@@ -1016,6 +1037,30 @@ record(ao, "IM1K0:XTES:MMS:STATE:05:DELTA") {
   info(archive, "VAL")
 }
 
+record(ai, "IM1K0:XTES:MMS:STATE:06:DELTA_RBV") {
+  # Max deviation from position at this state
+  field(DESC, "Max deviation from p...ion at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fDelta?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K0:XTES:MMS:STATE:06:DELTA") {
+  # Max deviation from position at this state
+  field(DESC, "Max deviation from p...ion at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "IM1K0:XTES:MMS:STATE:01:VELO_RBV") {
   field(DESC, "Speed at which to move to this state")
   field(SCAN, "I/O Intr")
@@ -1116,6 +1161,27 @@ record(ao, "IM1K0:XTES:MMS:STATE:05:VELO") {
   field(DESC, "Speed at which to move to this state")
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[5].fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "IM1K0:XTES:MMS:STATE:06:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K0:XTES:MMS:STATE:06:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fVelocity=")
   field(PREC, "3")
   info(autosaveFields_pass0, "PREC VAL")
   info(archive, "VAL")
@@ -1236,6 +1302,29 @@ record(ao, "IM1K0:XTES:MMS:STATE:05:ACCL") {
   info(archive, "VAL")
 }
 
+record(ai, "IM1K0:XTES:MMS:STATE:06:ACCL_RBV") {
+  # Acceleration to use for moves to this state
+  field(DESC, "Acceleration to use ...ves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K0:XTES:MMS:STATE:06:ACCL") {
+  # Acceleration to use for moves to this state
+  field(DESC, "Acceleration to use ...ves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "IM1K0:XTES:MMS:STATE:01:DCCL_RBV") {
   # Deceleration to use for moves to this state
   field(DESC, "Deceleration to use ...ves to this state")
@@ -1351,6 +1440,29 @@ record(ao, "IM1K0:XTES:MMS:STATE:05:DCCL") {
   info(archive, "VAL")
 }
 
+record(ai, "IM1K0:XTES:MMS:STATE:06:DCCL_RBV") {
+  # Deceleration to use for moves to this state
+  field(DESC, "Deceleration to use ...ves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K0:XTES:MMS:STATE:06:DCCL") {
+  # Deceleration to use for moves to this state
+  field(DESC, "Deceleration to use ...ves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K0:XTES:MMS:STATE:01:MOVE_OK_RBV") {
   field(DESC, "TRUE if the move would be safe")
   field(SCAN, "I/O Intr")
@@ -1406,6 +1518,18 @@ record(bi, "IM1K0:XTES:MMS:STATE:05:MOVE_OK_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[5].bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "IM1K0:XTES:MMS:STATE:06:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].bMoveOk?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -1471,6 +1595,18 @@ record(bi, "IM1K0:XTES:MMS:STATE:05:LOCKED_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K0:XTES:MMS:STATE:06:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K0:XTES:MMS:STATE:01:VALID_RBV") {
   field(DESC, "TRUE if this is a real state")
   field(SCAN, "I/O Intr")
@@ -1526,6 +1662,18 @@ record(bi, "IM1K0:XTES:MMS:STATE:05:VALID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[5].bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "IM1K0:XTES:MMS:STATE:06:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].bValid?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -2040,6 +2188,28 @@ record(bo, "IM1K0:XTES:SFW:FLOW") {
   info(archive, "VAL")
 }
 
+record(bi, "SL2K0:POWER:GO_RBV") {
+  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(archive, "VAL")
+}
+
+record(bo, "SL2K0:POWER:GO") {
+  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K3:PPM:MMS:STATE:RESET_RBV") {
   field(DESC, "PRG_IM1K3_PPM.fbIM1K3.fbStates.bReset")
   field(SCAN, "I/O Intr")
@@ -2181,6 +2351,18 @@ record(waveform, "IM1K3:PPM:MMS:STATE:05:NAME_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "IM1K3:PPM:MMS:STATE:06:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(ai, "IM1K3:PPM:MMS:STATE:01:SETPOINT_RBV") {
   field(DESC, "Axis position associated with this state")
   field(SCAN, "I/O Intr")
@@ -2286,6 +2468,27 @@ record(ao, "IM1K3:PPM:MMS:STATE:05:SETPOINT") {
   info(archive, "VAL")
 }
 
+record(ai, "IM1K3:PPM:MMS:STATE:06:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K3:PPM:MMS:STATE:06:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K3:PPM:MMS:STATE:01:ENCODER_RBV") {
   field(DESC, "Encoder count associated with this state")
   field(SCAN, "I/O Intr")
@@ -2333,6 +2536,16 @@ record(longin, "IM1K3:PPM:MMS:STATE:05:ENCODER_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[5].nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K3:PPM:MMS:STATE:06:ENCODER_RBV") {
+  field(DESC, "Encoder count associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].nEncoderCount?")
   info(archive, "VAL")
 }
 
@@ -2456,6 +2669,30 @@ record(ao, "IM1K3:PPM:MMS:STATE:05:DELTA") {
   info(archive, "VAL")
 }
 
+record(ai, "IM1K3:PPM:MMS:STATE:06:DELTA_RBV") {
+  # Max deviation from position at this state
+  field(DESC, "Max deviation from p...ion at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fDelta?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K3:PPM:MMS:STATE:06:DELTA") {
+  # Max deviation from position at this state
+  field(DESC, "Max deviation from p...ion at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "IM1K3:PPM:MMS:STATE:01:VELO_RBV") {
   field(DESC, "Speed at which to move to this state")
   field(SCAN, "I/O Intr")
@@ -2556,6 +2793,27 @@ record(ao, "IM1K3:PPM:MMS:STATE:05:VELO") {
   field(DESC, "Speed at which to move to this state")
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[5].fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "IM1K3:PPM:MMS:STATE:06:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K3:PPM:MMS:STATE:06:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fVelocity=")
   field(PREC, "3")
   info(autosaveFields_pass0, "PREC VAL")
   info(archive, "VAL")
@@ -2676,6 +2934,29 @@ record(ao, "IM1K3:PPM:MMS:STATE:05:ACCL") {
   info(archive, "VAL")
 }
 
+record(ai, "IM1K3:PPM:MMS:STATE:06:ACCL_RBV") {
+  # Acceleration to use for moves to this state
+  field(DESC, "Acceleration to use ...ves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K3:PPM:MMS:STATE:06:ACCL") {
+  # Acceleration to use for moves to this state
+  field(DESC, "Acceleration to use ...ves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "IM1K3:PPM:MMS:STATE:01:DCCL_RBV") {
   # Deceleration to use for moves to this state
   field(DESC, "Deceleration to use ...ves to this state")
@@ -2791,6 +3072,29 @@ record(ao, "IM1K3:PPM:MMS:STATE:05:DCCL") {
   info(archive, "VAL")
 }
 
+record(ai, "IM1K3:PPM:MMS:STATE:06:DCCL_RBV") {
+  # Deceleration to use for moves to this state
+  field(DESC, "Deceleration to use ...ves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM1K3:PPM:MMS:STATE:06:DCCL") {
+  # Deceleration to use for moves to this state
+  field(DESC, "Deceleration to use ...ves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K3:PPM:MMS:STATE:01:MOVE_OK_RBV") {
   field(DESC, "TRUE if the move would be safe")
   field(SCAN, "I/O Intr")
@@ -2846,6 +3150,18 @@ record(bi, "IM1K3:PPM:MMS:STATE:05:MOVE_OK_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[5].bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "IM1K3:PPM:MMS:STATE:06:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].bMoveOk?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -2911,6 +3227,18 @@ record(bi, "IM1K3:PPM:MMS:STATE:05:LOCKED_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K3:PPM:MMS:STATE:06:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K3:PPM:MMS:STATE:01:VALID_RBV") {
   field(DESC, "TRUE if this is a real state")
   field(SCAN, "I/O Intr")
@@ -2966,6 +3294,18 @@ record(bi, "IM1K3:PPM:MMS:STATE:05:VALID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[5].bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "IM1K3:PPM:MMS:STATE:06:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].bValid?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -3511,6 +3851,18 @@ record(waveform, "IM2K0:XTES:MMS:STATE:05:NAME_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "IM2K0:XTES:MMS:STATE:06:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(ai, "IM2K0:XTES:MMS:STATE:01:SETPOINT_RBV") {
   field(DESC, "Axis position associated with this state")
   field(SCAN, "I/O Intr")
@@ -3616,6 +3968,27 @@ record(ao, "IM2K0:XTES:MMS:STATE:05:SETPOINT") {
   info(archive, "VAL")
 }
 
+record(ai, "IM2K0:XTES:MMS:STATE:06:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM2K0:XTES:MMS:STATE:06:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(longin, "IM2K0:XTES:MMS:STATE:01:ENCODER_RBV") {
   field(DESC, "Encoder count associated with this state")
   field(SCAN, "I/O Intr")
@@ -3663,6 +4036,16 @@ record(longin, "IM2K0:XTES:MMS:STATE:05:ENCODER_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[5].nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(longin, "IM2K0:XTES:MMS:STATE:06:ENCODER_RBV") {
+  field(DESC, "Encoder count associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].nEncoderCount?")
   info(archive, "VAL")
 }
 
@@ -3786,6 +4169,30 @@ record(ao, "IM2K0:XTES:MMS:STATE:05:DELTA") {
   info(archive, "VAL")
 }
 
+record(ai, "IM2K0:XTES:MMS:STATE:06:DELTA_RBV") {
+  # Max deviation from position at this state
+  field(DESC, "Max deviation from p...ion at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fDelta?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM2K0:XTES:MMS:STATE:06:DELTA") {
+  # Max deviation from position at this state
+  field(DESC, "Max deviation from p...ion at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "IM2K0:XTES:MMS:STATE:01:VELO_RBV") {
   field(DESC, "Speed at which to move to this state")
   field(SCAN, "I/O Intr")
@@ -3886,6 +4293,27 @@ record(ao, "IM2K0:XTES:MMS:STATE:05:VELO") {
   field(DESC, "Speed at which to move to this state")
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[5].fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "IM2K0:XTES:MMS:STATE:06:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM2K0:XTES:MMS:STATE:06:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fVelocity=")
   field(PREC, "3")
   info(autosaveFields_pass0, "PREC VAL")
   info(archive, "VAL")
@@ -4006,6 +4434,29 @@ record(ao, "IM2K0:XTES:MMS:STATE:05:ACCL") {
   info(archive, "VAL")
 }
 
+record(ai, "IM2K0:XTES:MMS:STATE:06:ACCL_RBV") {
+  # Acceleration to use for moves to this state
+  field(DESC, "Acceleration to use ...ves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM2K0:XTES:MMS:STATE:06:ACCL") {
+  # Acceleration to use for moves to this state
+  field(DESC, "Acceleration to use ...ves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "IM2K0:XTES:MMS:STATE:01:DCCL_RBV") {
   # Deceleration to use for moves to this state
   field(DESC, "Deceleration to use ...ves to this state")
@@ -4121,6 +4572,29 @@ record(ao, "IM2K0:XTES:MMS:STATE:05:DCCL") {
   info(archive, "VAL")
 }
 
+record(ai, "IM2K0:XTES:MMS:STATE:06:DCCL_RBV") {
+  # Deceleration to use for moves to this state
+  field(DESC, "Deceleration to use ...ves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM2K0:XTES:MMS:STATE:06:DCCL") {
+  # Deceleration to use for moves to this state
+  field(DESC, "Deceleration to use ...ves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM2K0:XTES:MMS:STATE:01:MOVE_OK_RBV") {
   field(DESC, "TRUE if the move would be safe")
   field(SCAN, "I/O Intr")
@@ -4176,6 +4650,18 @@ record(bi, "IM2K0:XTES:MMS:STATE:05:MOVE_OK_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[5].bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "IM2K0:XTES:MMS:STATE:06:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].bMoveOk?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -4241,6 +4727,18 @@ record(bi, "IM2K0:XTES:MMS:STATE:05:LOCKED_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "IM2K0:XTES:MMS:STATE:06:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
 record(bi, "IM2K0:XTES:MMS:STATE:01:VALID_RBV") {
   field(DESC, "TRUE if this is a real state")
   field(SCAN, "I/O Intr")
@@ -4296,6 +4794,18 @@ record(bi, "IM2K0:XTES:MMS:STATE:05:VALID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[5].bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "IM2K0:XTES:MMS:STATE:06:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].bValid?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -4951,6 +5461,18 @@ record(waveform, "PF1K0:WFS:MMS:STATE:05:NAME_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "PF1K0:WFS:MMS:STATE:06:NAME_RBV") {
+  field(DESC, "Name of this position state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(ai, "PF1K0:WFS:MMS:STATE:01:SETPOINT_RBV") {
   field(DESC, "Axis position associated with this state")
   field(SCAN, "I/O Intr")
@@ -5056,6 +5578,27 @@ record(ao, "PF1K0:WFS:MMS:STATE:05:SETPOINT") {
   info(archive, "VAL")
 }
 
+record(ai, "PF1K0:WFS:MMS:STATE:06:SETPOINT_RBV") {
+  field(DESC, "Axis position associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "PF1K0:WFS:MMS:STATE:06:SETPOINT") {
+  field(DESC, "Axis position associated with this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(longin, "PF1K0:WFS:MMS:STATE:01:ENCODER_RBV") {
   field(DESC, "Encoder count associated with this state")
   field(SCAN, "I/O Intr")
@@ -5103,6 +5646,16 @@ record(longin, "PF1K0:WFS:MMS:STATE:05:ENCODER_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[5].nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(longin, "PF1K0:WFS:MMS:STATE:06:ENCODER_RBV") {
+  field(DESC, "Encoder count associated with this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].nEncoderCount?")
   info(archive, "VAL")
 }
 
@@ -5226,6 +5779,30 @@ record(ao, "PF1K0:WFS:MMS:STATE:05:DELTA") {
   info(archive, "VAL")
 }
 
+record(ai, "PF1K0:WFS:MMS:STATE:06:DELTA_RBV") {
+  # Max deviation from position at this state
+  field(DESC, "Max deviation from p...ion at this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fDelta?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "PF1K0:WFS:MMS:STATE:06:DELTA") {
+  # Max deviation from position at this state
+  field(DESC, "Max deviation from p...ion at this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fDelta=")
+  field(PREC, "3")
+  field(DRVL, "0.0")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "PF1K0:WFS:MMS:STATE:01:VELO_RBV") {
   field(DESC, "Speed at which to move to this state")
   field(SCAN, "I/O Intr")
@@ -5326,6 +5903,27 @@ record(ao, "PF1K0:WFS:MMS:STATE:05:VELO") {
   field(DESC, "Speed at which to move to this state")
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[5].fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "PF1K0:WFS:MMS:STATE:06:VELO_RBV") {
+  field(DESC, "Speed at which to move to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "PF1K0:WFS:MMS:STATE:06:VELO") {
+  field(DESC, "Speed at which to move to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fVelocity=")
   field(PREC, "3")
   info(autosaveFields_pass0, "PREC VAL")
   info(archive, "VAL")
@@ -5446,6 +6044,29 @@ record(ao, "PF1K0:WFS:MMS:STATE:05:ACCL") {
   info(archive, "VAL")
 }
 
+record(ai, "PF1K0:WFS:MMS:STATE:06:ACCL_RBV") {
+  # Acceleration to use for moves to this state
+  field(DESC, "Acceleration to use ...ves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fAccel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "PF1K0:WFS:MMS:STATE:06:ACCL") {
+  # Acceleration to use for moves to this state
+  field(DESC, "Acceleration to use ...ves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fAccel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "PF1K0:WFS:MMS:STATE:01:DCCL_RBV") {
   # Deceleration to use for moves to this state
   field(DESC, "Deceleration to use ...ves to this state")
@@ -5561,6 +6182,29 @@ record(ao, "PF1K0:WFS:MMS:STATE:05:DCCL") {
   info(archive, "VAL")
 }
 
+record(ai, "PF1K0:WFS:MMS:STATE:06:DCCL_RBV") {
+  # Deceleration to use for moves to this state
+  field(DESC, "Deceleration to use ...ves to this state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fDecel?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "PF1K0:WFS:MMS:STATE:06:DCCL") {
+  # Deceleration to use for moves to this state
+  field(DESC, "Deceleration to use ...ves to this state")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].fDecel=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "PF1K0:WFS:MMS:STATE:01:MOVE_OK_RBV") {
   field(DESC, "TRUE if the move would be safe")
   field(SCAN, "I/O Intr")
@@ -5616,6 +6260,18 @@ record(bi, "PF1K0:WFS:MMS:STATE:05:MOVE_OK_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[5].bMoveOk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "PF1K0:WFS:MMS:STATE:06:MOVE_OK_RBV") {
+  field(DESC, "TRUE if the move would be safe")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].bMoveOk?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -5681,6 +6337,18 @@ record(bi, "PF1K0:WFS:MMS:STATE:05:LOCKED_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "PF1K0:WFS:MMS:STATE:06:LOCKED_RBV") {
+  field(DESC, "TRUE if state is immutable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].bLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
 record(bi, "PF1K0:WFS:MMS:STATE:01:VALID_RBV") {
   field(DESC, "TRUE if this is a real state")
   field(SCAN, "I/O Intr")
@@ -5741,6 +6409,18 @@ record(bi, "PF1K0:WFS:MMS:STATE:05:VALID_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "PF1K0:WFS:MMS:STATE:06:VALID_RBV") {
+  field(DESC, "TRUE if this is a real state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].bValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
 record(mbbi, "PF1K0:WFS:MMS:STATE:SET_RBV") {
   field(DESC, "PRG_PF1K0_WFS.fbPF1K0.fbStates.enumSet")
   field(SCAN, "I/O Intr")
@@ -5754,12 +6434,14 @@ record(mbbi, "PF1K0:WFS:MMS:STATE:SET_RBV") {
   field(THVL, "3")
   field(FRVL, "4")
   field(FVVL, "5")
+  field(SXVL, "6")
   field(ZRST, "Unknown")
   field(ONST, "OUT")
   field(TWST, "TARGET1")
   field(THST, "TARGET2")
   field(FRST, "TARGET3")
   field(FVST, "TARGET4")
+  field(SXST, "TARGET5")
   info(archive, "VAL")
 }
 
@@ -5772,12 +6454,14 @@ record(mbbo, "PF1K0:WFS:MMS:STATE:SET") {
   field(THVL, "3")
   field(FRVL, "4")
   field(FVVL, "5")
+  field(SXVL, "6")
   field(ZRST, "Unknown")
   field(ONST, "OUT")
   field(TWST, "TARGET1")
   field(THST, "TARGET2")
   field(FRST, "TARGET3")
   field(FVST, "TARGET4")
+  field(SXST, "TARGET5")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_PF1K0_WFS.fbPF1K0.fbStates.enumSet=")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
@@ -5796,12 +6480,14 @@ record(mbbi, "PF1K0:WFS:MMS:STATE:GET_RBV") {
   field(THVL, "3")
   field(FRVL, "4")
   field(FVVL, "5")
+  field(SXVL, "6")
   field(ZRST, "Unknown")
   field(ONST, "OUT")
   field(TWST, "TARGET1")
   field(THST, "TARGET2")
   field(FRST, "TARGET3")
   field(FVST, "TARGET4")
+  field(SXST, "TARGET5")
   info(archive, "VAL")
 }
 
@@ -6874,6 +7560,98 @@ record(bi, "SL1K0:POWER:PMPS_OK_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.bMoveOk?")
   field(ZNAM, "False")
   field(ONAM, "True")
+  info(archive, "VAL")
+}
+
+record(ai, "SL1K0:POWER:Offset_Top_RBV") {
+  # PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetTop
+  field(DESC, "PRG_SL1K0_POWER.fbSL...rEncoderOffsetTop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetTop?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "SL1K0:POWER:Offset_Top") {
+  # PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetTop
+  field(DESC, "PRG_SL1K0_POWER.fbSL...rEncoderOffsetTop")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetTop=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "SL1K0:POWER:ZeroOffset_Bottom_RBV") {
+  # PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetBottom
+  field(DESC, "PRG_SL1K0_POWER.fbSL...coderOffsetBottom")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetBottom?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "SL1K0:POWER:ZeroOffset_Bottom") {
+  # PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetBottom
+  field(DESC, "PRG_SL1K0_POWER.fbSL...coderOffsetBottom")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetBottom=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "SL1K0:POWER:ZeroOffset_North_RBV") {
+  # PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetNorth
+  field(DESC, "PRG_SL1K0_POWER.fbSL...ncoderOffsetNorth")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetNorth?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "SL1K0:POWER:ZeroOffset_North") {
+  # PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetNorth
+  field(DESC, "PRG_SL1K0_POWER.fbSL...ncoderOffsetNorth")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetNorth=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "SL1K0:POWER:ZeroOffset_South_RBV") {
+  # PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetSouth
+  field(DESC, "PRG_SL1K0_POWER.fbSL...ncoderOffsetSouth")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetSouth?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "SL1K0:POWER:ZeroOffset_South") {
+  # PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetSouth
+  field(DESC, "PRG_SL1K0_POWER.fbSL...ncoderOffsetSouth")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.rEncoderOffsetSouth=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
   info(archive, "VAL")
 }
 
@@ -8523,6 +9301,98 @@ record(bi, "SL2K0:POWER:PMPS_OK_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.bMoveOk?")
   field(ZNAM, "False")
   field(ONAM, "True")
+  info(archive, "VAL")
+}
+
+record(ai, "SL2K0:POWER:Offset_Top_RBV") {
+  # PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetTop
+  field(DESC, "PRG_SL2K0_POWER.fbSL...rEncoderOffsetTop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetTop?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "SL2K0:POWER:Offset_Top") {
+  # PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetTop
+  field(DESC, "PRG_SL2K0_POWER.fbSL...rEncoderOffsetTop")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetTop=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "SL2K0:POWER:ZeroOffset_Bottom_RBV") {
+  # PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetBottom
+  field(DESC, "PRG_SL2K0_POWER.fbSL...coderOffsetBottom")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetBottom?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "SL2K0:POWER:ZeroOffset_Bottom") {
+  # PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetBottom
+  field(DESC, "PRG_SL2K0_POWER.fbSL...coderOffsetBottom")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetBottom=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "SL2K0:POWER:ZeroOffset_North_RBV") {
+  # PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetNorth
+  field(DESC, "PRG_SL2K0_POWER.fbSL...ncoderOffsetNorth")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetNorth?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "SL2K0:POWER:ZeroOffset_North") {
+  # PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetNorth
+  field(DESC, "PRG_SL2K0_POWER.fbSL...ncoderOffsetNorth")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetNorth=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "SL2K0:POWER:ZeroOffset_South_RBV") {
+  # PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetSouth
+  field(DESC, "PRG_SL2K0_POWER.fbSL...ncoderOffsetSouth")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetSouth?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "SL2K0:POWER:ZeroOffset_South") {
+  # PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetSouth
+  field(DESC, "PRG_SL2K0_POWER.fbSL...ncoderOffsetSouth")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetSouth=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
   info(archive, "VAL")
 }
 
