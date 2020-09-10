@@ -1324,15 +1324,15 @@ External Setpoint Generation:
 	<Axis Id="18" CreateSymbols="true" AxisType="1" AxisFolder="SL1K0-POWER">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
+			<Dynamic AccelerationMaximum="0.8" DecelerationMaximum="0.8"/>
 			<Velo Maximum="0.8"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
-			<ParameterChanged>39</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="7">
 			<EncPara ScaleFactorNumerator="0.000830497543" Inverse="true" MaxCount="#x0000ffff" ReferenceSystem="1">
+				<SoftEndMinControl Enable="true" Range="-27.213"/>
+				<SoftEndMaxControl Enable="true"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
-				<ParameterChanged>8</ParameterChanged>
-				<ParameterChanged>35</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1403,8 +1403,6 @@ External Setpoint Generation:
 			<DrvPara Inverse="true">
 				<Analog VeloReferenz="0.833333333" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
-				<ParameterChanged>257</ParameterChanged>
-				<ParameterChanged>6</ParameterChanged>
 			</DrvPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1493,6 +1491,7 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
+				<PosDiffControl Range="0.1"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
