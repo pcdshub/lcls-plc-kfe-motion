@@ -56,10 +56,10 @@ VAR
     mcPower : ARRAY [1..4] OF MC_POWER;
         (*Offsets*)
     (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-    rEncoderOffsetTop: REAL := 0;
-    rEncoderOffsetBottom: REAL := 0;
-    rEncoderOffsetNorth: REAL := 0;
-    rEncoderOffsetSouth: REAL := 0;
+    rEncoderOffsetTop: REAL := 15.1;
+    rEncoderOffsetBottom: REAL := -12.2;
+    rEncoderOffsetNorth: REAL := 15.4;
+    rEncoderOffsetSouth: REAL := -13.4;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -91,5 +91,9 @@ mcPower[4](axis:=Main.M25.Axis, Enable:=TRUE, enable_positive:=Main.M25.bLimitFo
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_SL2K0_POWER">
+      <LineId Id="3" Count="25" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
