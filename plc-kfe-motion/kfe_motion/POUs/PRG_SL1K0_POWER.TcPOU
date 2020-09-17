@@ -60,10 +60,10 @@ VAR
 
     (*Offsets*)
     (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-    rEncoderOffsetTop: REAL := -15; (* 0+(-15)*)
-    rEncoderOffsetBottom: REAL := -15; (* 0+(-15)*)
-    rEncoderOffsetNorth: REAL := -15;(* 0+(-15)*)
-    rEncoderOffsetSouth: REAL := -15;(* 0+(-15)*)
+    rEncoderOffsetTop: REAL := -11; (* 0+(-15)*)
+    rEncoderOffsetBottom: REAL := -13.5; (* 0+(-15)*)
+    rEncoderOffsetNorth: REAL := -5;(* 0+(-15)*)
+    rEncoderOffsetSouth: REAL := -13;(* 0+(-15)*)
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -101,5 +101,9 @@ END_IF
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_SL1K0_POWER">
+      <LineId Id="3" Count="31" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
