@@ -721,12 +721,16 @@ IF (rOldReqApertureSizeX <> rReqApertureSizeX) THEN
     ELSE
         fbLogger(sMsg:='Requested new X gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
     END_IF
+	ELSE
+		rReqApertureSizeX := rActApertureSizeX;
 END_IF
 
 IF (rOldReqCenterX <> rReqCenterX) THEN
     rOldReqCenterX := rReqCenterX;
     bExecuteMotionX := TRUE;
     fbLogger(sMsg:='Requested new X center', eSevr:=TcEventSeverity.Verbose);
+	ELSE
+		rReqCenterX := rActCenterX;
 END_IF
 
 IF (rOldReqApertureSizeY <> rReqApertureSizeY) THEN
@@ -737,12 +741,16 @@ IF (rOldReqApertureSizeY <> rReqApertureSizeY) THEN
     ELSE
         fbLogger(sMsg:='Requested new Y gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
     END_IF
+	ELSE
+		rReqApertureSizeY := rActApertureSizeY;
 END_IF
 
 IF (rOldReqCenterY <> rReqCenterY) THEN
     rOldReqCenterY := rReqCenterY;
     bExecuteMotionY := TRUE;
     fbLogger(sMsg:='Requested new Y center.', eSevr:=TcEventSeverity.Verbose);
+	ELSE
+		rReqCenterY := rActCenterY;
 END_IF
 
 
@@ -1645,10 +1653,10 @@ VAR
 
     (*Offsets*)
     (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-    rEncoderOffsetTop: REAL := -15; (* 0+(-15)*)
-    rEncoderOffsetBottom: REAL := -15; (* 0+(-15)*)
-    rEncoderOffsetNorth: REAL := -15;(* 0+(-15)*)
-    rEncoderOffsetSouth: REAL := -15;(* 0+(-15)*)
+    rEncoderOffsetTop: REAL := -11; (* 0+(-15)*)
+    rEncoderOffsetBottom: REAL := -13.5; (* 0+(-15)*)
+    rEncoderOffsetNorth: REAL := -5;(* 0+(-15)*)
+    rEncoderOffsetSouth: REAL := -13;(* 0+(-15)*)
 END_VAR
 fbSL1K0.bMoveOk := bMoveOk;
 
@@ -1746,10 +1754,10 @@ VAR
     mcPower : ARRAY [1..4] OF MC_POWER;
         (*Offsets*)
     (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-    rEncoderOffsetTop: REAL := 0;
-    rEncoderOffsetBottom: REAL := 0;
-    rEncoderOffsetNorth: REAL := 0;
-    rEncoderOffsetSouth: REAL := 0;
+    rEncoderOffsetTop: REAL := 15.1;
+    rEncoderOffsetBottom: REAL := -12.2;
+    rEncoderOffsetNorth: REAL := 15.4;
+    rEncoderOffsetSouth: REAL := -13.4;
 END_VAR
 fbSL2K0.bMoveOk := bMoveOk;
 
