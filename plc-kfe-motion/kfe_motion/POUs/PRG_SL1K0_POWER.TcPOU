@@ -101,9 +101,5 @@ END_IF
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_SL1K0_POWER">
-      <LineId Id="3" Count="31" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

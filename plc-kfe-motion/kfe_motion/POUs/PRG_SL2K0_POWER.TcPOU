@@ -91,9 +91,5 @@ mcPower[4](axis:=Main.M25.Axis, Enable:=TRUE, enable_positive:=Main.M25.bLimitFo
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_SL2K0_POWER">
-      <LineId Id="3" Count="25" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
