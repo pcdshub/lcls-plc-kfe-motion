@@ -245,16 +245,16 @@ IF (rOldReqApertureSizeX <> rReqApertureSizeX) THEN
     ELSE
         fbLogger(sMsg:='Requested new X gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
     END_IF
-    ELSE
-        rReqApertureSizeX := rActApertureSizeX;
+  //  ELSE
+    //    rReqApertureSizeX := rActApertureSizeX;
 END_IF
 
 IF (rOldReqCenterX <> rReqCenterX) THEN
     rOldReqCenterX := rReqCenterX;
     bExecuteMotionX := TRUE;
     fbLogger(sMsg:='Requested new X center', eSevr:=TcEventSeverity.Verbose);
-    ELSE
-        rReqCenterX := rActCenterX;
+   // ELSE
+      //  rReqCenterX := rActCenterX;
 END_IF
 
 IF (rOldReqApertureSizeY <> rReqApertureSizeY) THEN
@@ -265,16 +265,16 @@ IF (rOldReqApertureSizeY <> rReqApertureSizeY) THEN
     ELSE
         fbLogger(sMsg:='Requested new Y gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
     END_IF
-    ELSE
-        rReqApertureSizeY := rActApertureSizeY;
+   // ELSE
+       // rReqApertureSizeY := rActApertureSizeY;
 END_IF
 
 IF (rOldReqCenterY <> rReqCenterY) THEN
     rOldReqCenterY := rReqCenterY;
     bExecuteMotionY := TRUE;
     fbLogger(sMsg:='Requested new Y center.', eSevr:=TcEventSeverity.Verbose);
-    ELSE
-        rReqCenterY := rActCenterY;
+   // ELSE
+      //  rReqCenterY := rActCenterY;
 END_IF
 
 
