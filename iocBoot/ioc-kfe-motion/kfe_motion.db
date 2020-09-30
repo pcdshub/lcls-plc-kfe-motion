@@ -318,6 +318,86 @@ record(longin, "$(PREFIX)FullBeamCnst:Cohort_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
+record(longin, "$(PREFIX)0RateBeamCnst:Transmission_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nTran?")
+  field(EGU, "%")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:Rate_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nRate?")
+  field(EGU, "Hz")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:PulseEnergy_RBV") {
+  field(DESC, "This beam parameter is non-op for now.")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.fPP_mJ?")
+  field(PREC, "3")
+  field(EGU, "mJ")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:PhotonEnergyRanges_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.neVRange?")
+  field(EGU, "eV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)0RateBeamCnst:ST_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.aStoppers?")
+  field(FTVL, "CHAR")
+  field(NELM, "16")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)0RateBeamCnst:Valid_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.xValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:Cohort_RBV") {
+  field(DESC, "Cohort inc on each arb cycle")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nCohortInt?")
+  info(archive, "monitor 1: VAL")
+}
+
 record(longin, "$(PREFIX)SafeBeamCnst:Transmission_RBV") {
   field(DESC, "Safe beam constant")
   field(SCAN, "I/O Intr")
@@ -398,63 +478,6 @@ record(longin, "$(PREFIX)SafeBeamCnst:Cohort_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
-record(longin, "$(PREFIX)L:UND:FirstSegment_RBV") {
-  field(DESC, "PMPS_GVL.iLowBound_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.iLowBound_LUnd?")
-  info(archive, "VAL")
-}
-
-record(longin, "$(PREFIX)L:UND:LastSegment_RBV") {
-  field(DESC, "PMPS_GVL.iHighBound_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.iHighBound_LUnd?")
-  info(archive, "VAL")
-}
-
-record(ai, "Period_RBV") {
-  field(DESC, "PMPS_GVL.fPeriod_mm_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.fPeriod_mm_LUnd?")
-  field(PREC, "3")
-  field(EGU, "mm")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(PREFIX)L:UND:LowK_RBV") {
-  field(DESC, "PMPS_GVL.fLowK_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.fLowK_LUnd?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(PREFIX)L:UND:HiK_RBV") {
-  field(DESC, "PMPS_GVL.fHiK_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.fHiK_LUnd?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
 record(ai, "$(PREFIX)eVRangeHyst_RBV") {
   field(DESC, "eV Range hystersis")
   field(SCAN, "I/O Intr")
@@ -508,6 +531,28 @@ record(longout, "PLC:KFE:MOTION:PLACEHOLDER") {
   field(DESC, "PRG_1_PlcTask.nPlaceholder")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_1_PlcTask.nPlaceholder=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "SL1K0:POWER:GO_RBV") {
+  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.bExecuteMotion?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(archive, "VAL")
+}
+
+record(bo, "SL1K0:POWER:GO") {
+  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.bExecuteMotion=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -1657,6 +1702,54 @@ record(bi, "IM1K0:XTES:MMS:STATE:06:VALID_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K0:XTES:MMS:STATE:PMPS:ARB:ENABLE_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bArbiterEnabled
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...S.bArbiterEnabled")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bArbiterEnabled?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K0:XTES:MMS:STATE:PMPS:ARB:ENABLE") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bArbiterEnabled
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...S.bArbiterEnabled")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bArbiterEnabled=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "IM1K0:XTES:MMS:STATE:PMPS:MAINT_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bMaintMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...tePMPS.bMaintMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bMaintMode?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K0:XTES:MMS:STATE:PMPS:MAINT") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bMaintMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...tePMPS.bMaintMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bMaintMode=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(mbbi, "IM1K0:XTES:MMS:STATE:SET_RBV") {
   field(DESC, "PRG_IM1K0_XTES.fbIM1K0.fbStates.enumSet")
   field(SCAN, "I/O Intr")
@@ -2166,22 +2259,22 @@ record(bo, "IM1K0:XTES:SFW:FLOW") {
   info(archive, "VAL")
 }
 
-record(bi, "SL1K0:POWER:GO_RBV") {
-  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+record(bi, "SL2K0:POWER:GO_RBV") {
+  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.bExecuteMotion?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?")
   field(ZNAM, "False")
   field(ONAM, "True")
   info(archive, "VAL")
 }
 
-record(bo, "SL1K0:POWER:GO") {
-  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+record(bo, "SL2K0:POWER:GO") {
+  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.bExecuteMotion=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=")
   field(ZNAM, "False")
   field(ONAM, "True")
   info(autosaveFields_pass0, "VAL")
@@ -3286,6 +3379,54 @@ record(bi, "IM1K3:PPM:MMS:STATE:06:VALID_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].bValid?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "IM1K3:PPM:MMS:STATE:PMPS:ARB:ENABLE_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bArbiterEnabled
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...S.bArbiterEnabled")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bArbiterEnabled?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K3:PPM:MMS:STATE:PMPS:ARB:ENABLE") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bArbiterEnabled
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...S.bArbiterEnabled")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bArbiterEnabled=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "IM1K3:PPM:MMS:STATE:PMPS:MAINT_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bMaintMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...tePMPS.bMaintMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bMaintMode?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K3:PPM:MMS:STATE:PMPS:MAINT") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bMaintMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...tePMPS.bMaintMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bMaintMode=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
 
@@ -4786,6 +4927,54 @@ record(bi, "IM2K0:XTES:MMS:STATE:06:VALID_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[6].bValid?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "IM2K0:XTES:MMS:STATE:PMPS:ARB:ENABLE_RBV") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bArbiterEnabled
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...S.bArbiterEnabled")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bArbiterEnabled?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM2K0:XTES:MMS:STATE:PMPS:ARB:ENABLE") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bArbiterEnabled
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...S.bArbiterEnabled")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bArbiterEnabled=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "IM2K0:XTES:MMS:STATE:PMPS:MAINT_RBV") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bMaintMode
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...tePMPS.bMaintMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bMaintMode?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM2K0:XTES:MMS:STATE:PMPS:MAINT") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bMaintMode
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...tePMPS.bMaintMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bMaintMode=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
 
@@ -6396,6 +6585,54 @@ record(bi, "PF1K0:WFS:MMS:STATE:06:VALID_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].bValid?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "PF1K0:WFS:MMS:STATE:PMPS:ARB:ENABLE_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bArbiterEnabled
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...S.bArbiterEnabled")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bArbiterEnabled?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "PF1K0:WFS:MMS:STATE:PMPS:ARB:ENABLE") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bArbiterEnabled
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...S.bArbiterEnabled")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bArbiterEnabled=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "PF1K0:WFS:MMS:STATE:PMPS:MAINT_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bMaintMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...tePMPS.bMaintMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bMaintMode?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "PF1K0:WFS:MMS:STATE:PMPS:MAINT") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bMaintMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...tePMPS.bMaintMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bMaintMode=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
 
@@ -11008,28 +11245,6 @@ record(bi, "SL2K0:POWER:SOUTH:RTD:02:ERR_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.RTD_South_2.bError?")
   field(ZNAM, "False")
   field(ONAM, "True")
-  info(archive, "VAL")
-}
-
-record(bi, "SL2K0:POWER:GO_RBV") {
-  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(archive, "VAL")
-}
-
-record(bo, "SL2K0:POWER:GO") {
-  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
 
