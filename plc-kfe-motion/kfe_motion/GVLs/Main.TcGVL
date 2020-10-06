@@ -115,6 +115,35 @@ VAR_GLOBAL
                               .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E7]^STM Status^Status^Digital input 1;
                               .nRawEncoderUINT      := TIIB[SL2K0-EL5042-E6]^FB Inputs Channel 2^Position'}
     M25: DUT_MotionStage := (sName := 'SL2K0:POWER:MMS:BOTTOM');
+    
+    // AT1K4-SOLID: 4 Axes
+    M26: DUT_MotionStage;
+    M27: DUT_MotionStage;
+    M28: DUT_MotionStage;
+    M29: DUT_MotionStage;
+    
+    // IM1K4-XTES: 3 Axes
+    {attribute 'pytmc' := 'pv: IM1K4:XTES:MMS'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K4-EL7041-E1]^STM Status^Status^Digital input 1;
+                              .bBrakeRelease        := TIIB[IM1K4-EL2004-E2]^Channel 1^Output;
+                              .nRawEncoderULINT     := TIIB[IM1K4-EL5042-E3]^FB Inputs Channel 1^Position'}
+    M30: DUT_MotionStage := (sName := 'IM1K4:XTES:MMS');
+    {attribute 'pytmc' := 'pv: IM1K4:XTES:CLZ'}
+    {attribute 'TcLinkTo' := '.bHome                := TIIB[IM1K4-EL1088-E5]^Channel 2^Input;
+                              .nRawEncoderUINT     := TIIB[IM1K4-EL7342-E4]^ENC Status compact Channel 1^Counter value'}
+    M31: DUT_MotionStage := (sName := 'IM1K4:XTES:CLZ');
+    {attribute 'pytmc' := 'pv: IM1K4:XTES:CLF'}
+    {attribute 'TcLinkTo' := '.bHome := TIIB[IM1K4-EL1088-E5]^Channel 4^Input;
+                              .nRawEncoderUINT     := TIIB[IM1K4-EL5042-E3]^ENC Status compact Channel 2^Counter value'}
+    M32: DUT_MotionStage := (sName := 'IM1K4:XTES:CLF');
+    
+    // ST1K4-TEST: 1 Axis
+    {attribute 'pytmc' := 'pv: ST1K4:TEST:MMS:01'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[ST1K4-EL7041-E4]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[ST1K4-EL7041-E4]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[ST1K4-EL2202-E3]^Channel 1^Output;
+                              .nRawEncoderUINT      := TIIB[ST1K4-EL7041-E4]^ENC Status compact^Counter value'}
+    M33: DUT_MotionStage := (sName := 'ST1K4:TEST:MMS:01');
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

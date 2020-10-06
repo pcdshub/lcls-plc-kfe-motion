@@ -45,10 +45,16 @@
     <Compile Include="POUs\PRG_4_LOG.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_AT1K4_SOLID.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_IM1K0_XTES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_IM1K3_PPM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_IM1K4_XTES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_IM2K0_XTES.TcPOU">
@@ -64,6 +70,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_SL2K0_POWER.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_ST1K4_TEST.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Temp\FB_MPA.TcPOU">

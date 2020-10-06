@@ -22,8 +22,11 @@
 		<Box File="PLC Junction 2 (EK1122).xti" Id="5">
 			<EtherCAT PortABoxInfo="#x02000004"/>
 		</Box>
-		<Box File="PLC End Cap (EL9011).xti" Id="6">
+		<Box File="PLC Junction 3 (EK1122).xti" Id="79">
 			<EtherCAT PortABoxInfo="#x02000005"/>
+		</Box>
+		<Box File="PLC End Cap (EL9011).xti" Id="6">
+			<EtherCAT PortABoxInfo="#x0200004f"/>
 		</Box>
 	</Box>
 </TcSmItem>

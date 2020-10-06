@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.29" ClassName="CNcSafTaskDef" SubType="0">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNcSafTaskDef" SubType="0">
 	<NC>
 		<SafTask Priority="4" CycleTime="10000" AmsPort="501" IoAtBegin="true">
 			<Name>NC-Task 1 SAF</Name>
@@ -23,6 +23,9 @@
 		<AxisFolder Name="RTDSK0"/>
 		<AxisFolder Name="SL1K0-POWER"/>
 		<AxisFolder Name="SL2K0-POWER"/>
+		<AxisFolder Name="AT1K4-SOLID"/>
+		<AxisFolder Name="IM1K4-XTES"/>
+		<AxisFolder Name="ST1K4-TEST"/>
 		<Axis File="Axis 1 IM1K0-XTES-MMS.xti" Id="1"/>
 		<Axis File="Axis 2 IM1K0-XTES-CLZ.xti" Id="2"/>
 		<Axis File="Axis 3 IM1K0-XTES-CLF.xti" Id="3"/>
@@ -48,5 +51,13 @@
 		<Axis File="SL2K0-TOP-M23.xti" Id="23"/>
 		<Axis File="SL2K0-NORTH-M24.xti" Id="24"/>
 		<Axis File="SL2K0-BOTTOM-M25.xti" Id="25"/>
+		<Axis File="Axis 26.xti" Id="26"/>
+		<Axis File="Axis 27.xti" Id="27"/>
+		<Axis File="Axis 28.xti" Id="28"/>
+		<Axis File="Axis 29.xti" Id="29"/>
+		<Axis File="Axis 30 IM1K4-XTES-MMS.xti" Id="30"/>
+		<Axis File="Axis 31 IM1K4-XTES-CLZ.xti" Id="31"/>
+		<Axis File="Axis 32 IM1K4-XTES-CLF.xti" Id="32"/>
+		<Axis File="ST1K4-TEST.xti" Id="33"/>
 	</NC>
 </TcSmItem>
