@@ -1,0 +1,29 @@
+lcls-plc-kfe-motion
+-------------------
+
+.. toctree::
+    :maxdepth: 2
+    :caption: plc-kfe-motion
+
+    plc-kfe-motion_pragmas
+    plc-kfe-motion_nc
+    plc-kfe-motion_boxes
+    plc-kfe-motion_links
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: kfe_motion
+
+    plc-kfe-motion_kfe_motion_summary
+    plc-kfe-motion_kfe_motion_epics
+    plc-kfe-motion_kfe_motion_source
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
