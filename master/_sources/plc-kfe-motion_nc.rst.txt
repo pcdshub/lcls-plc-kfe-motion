@@ -31,6 +31,14 @@ NC Settings
         23, SL2K0-TOP-M23
         24, SL2K0-NORTH-M24
         25, SL2K0-BOTTOM-M25
+        26, Axis 26
+        27, Axis 27
+        28, Axis 28
+        29, Axis 29
+        30, Axis 30 IM1K4-XTES-MMS
+        31, Axis 31 IM1K4-XTES-CLZ
+        32, Axis 32 IM1K4-XTES-CLF
+        33, ST1K4-TEST
 
 
 
@@ -656,5 +664,185 @@ Axis 25: SL2K0-BOTTOM-M25
     Id, 25
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 0.8
+
+
+
+Axis 26: Axis 26
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 26
+    Name, Axis 26
+    AxisFolder, AT1K4-SOLID
+    AxisType, 1
+    CreateSymbols, true
+    Enc:EncType, 1
+    Id, 26
+    OtherSettings:AllowMotionCmdToSlave, true
+
+
+
+Axis 27: Axis 27
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 27
+    Name, Axis 27
+    AxisFolder, AT1K4-SOLID
+    AxisType, 1
+    CreateSymbols, true
+    Enc:EncType, 1
+    Id, 27
+    OtherSettings:AllowMotionCmdToSlave, true
+
+
+
+Axis 28: Axis 28
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 28
+    Name, Axis 28
+    AxisFolder, AT1K4-SOLID
+    AxisType, 1
+    CreateSymbols, true
+    Enc:EncType, 1
+    Id, 28
+    OtherSettings:AllowMotionCmdToSlave, true
+
+
+
+Axis 29: Axis 29
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 29
+    Name, Axis 29
+    AxisFolder, AT1K4-SOLID
+    AxisType, 1
+    CreateSymbols, true
+    Enc:EncType, 1
+    Id, 29
+    OtherSettings:AllowMotionCmdToSlave, true
+
+
+
+Axis 30: Axis 30 IM1K4-XTES-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 30
+    Name, Axis 30 IM1K4-XTES-MMS
+    AxisFolder, IM1K4-XTES
+    AxisType, 1
+    CreateSymbols, true
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x00000000
+    Enc:MaxCount, #x00400000
+    Enc:Offset, -398.1892
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -90
+    Id, 30
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 10
+
+
+
+Axis 31: Axis 31 IM1K4-XTES-CLZ
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 31
+    Name, Axis 31 IM1K4-XTES-CLZ
+    AxisFolder, IM1K4-XTES
+    AxisType, 1
+    CreateSymbols, true
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 0.003
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 100
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -100
+    General:UnitName, %
+    Id, 31
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 10
+
+
+
+Axis 32: Axis 32 IM1K4-XTES-CLF
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 32
+    Name, Axis 32 IM1K4-XTES-CLF
+    AxisFolder, IM1K4-XTES
+    AxisType, 1
+    CreateSymbols, true
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 0.008
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 100
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -100
+    General:UnitName, %
+    Id, 32
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 10
+
+
+
+Axis 33: ST1K4-TEST
+^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 33
+    Name, ST1K4-TEST
+    AxisFolder, ST1K4-TEST
+    AxisType, 1
+    CreateSymbols, true
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:Inverse, true
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 0.000390625
+    Id, 33
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:FastManual, 5
+    Velo:Maximum, 50
+    Velo:RefSearch, 5
+    Velo:RefSync, 5
+    Velo:SlowManual, 1
 
 

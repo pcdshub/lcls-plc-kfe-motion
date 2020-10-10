@@ -23378,6 +23378,1936 @@ Database Records
       - | io: input
 
 
+    * - IM1K4:XTES:CAM:PWR
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.fbOpal.bOpalPower
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM1K4:XTES:CAM:PWR_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbOpal.bOpalPower
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM1K4:XTES:CIL:AUTO
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.fbLED.bLEDAuto
+      - | io: output
+
+
+    * - IM1K4:XTES:CIL:AUTO_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbLED.bLEDAuto
+      - | io: output
+
+
+    * - IM1K4:XTES:CIL:CLK:REMAINING
+      - ao
+      - PRG_IM1K4_XTES.fbIM1K4.fbLED.fLEDRemaining
+      - | field: EGU min
+        | io: output
+
+
+    * - IM1K4:XTES:CIL:CLK:REMAINING_RBV
+      - ai
+      - PRG_IM1K4_XTES.fbIM1K4.fbLED.fLEDRemaining
+      - | field: EGU min
+        | io: output
+
+
+    * - IM1K4:XTES:CIL:CLK:TIMEOUT
+      - ao
+      - PRG_IM1K4_XTES.fbIM1K4.fbLED.fLEDTimeOut
+      - | field: EGU min
+        | io: output
+
+
+    * - IM1K4:XTES:CIL:CLK:TIMEOUT_RBV
+      - ai
+      - PRG_IM1K4_XTES.fbIM1K4.fbLED.fLEDTimeOut
+      - | field: EGU min
+        | io: output
+
+
+    * - IM1K4:XTES:CIL:PWR
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.fbLED.bLEDPower
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM1K4:XTES:CIL:PWR_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbLED.bLEDPower
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM1K4:XTES:CLF:LOCK
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.bFocusLock
+      - | field: ONAM Locked
+        | field: ZNAM Unlocked
+        | io: output
+
+
+    * - IM1K4:XTES:CLF:LOCK_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.bFocusLock
+      - | field: ONAM Locked
+        | field: ZNAM Unlocked
+        | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:bAllBackwardEnable_RBV
+      - bi
+      - Summary of axis permission to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bAllEnable_RBV
+      - bi
+      - Summary of axis permission to have power
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bAllForwardEnable_RBV
+      - bi
+      - Summary of axis permission to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bBrakeRelease_RBV
+      - bi
+      - TRUE if brake released
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bBusy_RBV
+      - bi
+      - TRUE if in the middle of a command
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bDone_RBV
+      - bi
+      - TRUE if command finished successfully
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bEnable
+      - bo
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:bEnable_RBV
+      - bi
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:bEnableDone_RBV
+      - bi
+      - TRUE if done enabling
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bError_RBV
+      - bi
+      - TRUE if we
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bExecute
+      - bo
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:bExecute_RBV
+      - bi
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:bGantryAxis_RBV
+      - bi
+      - TRUE if gantry EPS active
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bGantryBackwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bGantryForwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bHome_RBV
+      - bi
+      - TRUE if at homing switch
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bLimitBackwardEnable_RBV
+      - bi
+      - FALSE if reverse limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bLimitForwardEnable_RBV
+      - bi
+      - FALSE if forward limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bPowerSelf_RBV
+      - bi
+      - FALSE if axis is in PMPS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:bSafetyReady_RBV
+      - bi
+      - TRUE if safe to start a move
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:fAcceleration
+      - ao
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:fAcceleration_RBV
+      - ai
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:fDeceleration
+      - ao
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:fDeceleration_RBV
+      - ai
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:fPosition
+      - ao
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:fPosition_RBV
+      - ai
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:fVelocity
+      - ao
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:fVelocity_RBV
+      - ai
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:nBrakeMode_RBV
+      - mbbi
+      - Describes when the brake will be released
+      - | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:nCmdData
+      - longout
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:nCmdData_RBV
+      - longin
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:nCommand
+      - longout
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:nCommand_RBV
+      - longin
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - IM1K4:XTES:CLF:PLC:nEnableMode_RBV
+      - mbbi
+      - Describes when the axis will automatically get power
+      - | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:nHomingMode_RBV
+      - mbbi
+      - Describes our homing strategy
+      - | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:nMotionAxisID_RBV
+      - longin
+      - Unique ID assigned to each axis in the NC
+      - | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+
+
+    * - IM1K4:XTES:CLF:PLC:sName_RBV
+      - waveform
+      - PLC program name
+      - | io: input
+
+
+    * - IM1K4:XTES:CLZ:LOCK
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.bZoomLock
+      - | field: ONAM Locked
+        | field: ZNAM Unlocked
+        | io: output
+
+
+    * - IM1K4:XTES:CLZ:LOCK_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.bZoomLock
+      - | field: ONAM Locked
+        | field: ZNAM Unlocked
+        | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:bAllBackwardEnable_RBV
+      - bi
+      - Summary of axis permission to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bAllEnable_RBV
+      - bi
+      - Summary of axis permission to have power
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bAllForwardEnable_RBV
+      - bi
+      - Summary of axis permission to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bBrakeRelease_RBV
+      - bi
+      - TRUE if brake released
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bBusy_RBV
+      - bi
+      - TRUE if in the middle of a command
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bDone_RBV
+      - bi
+      - TRUE if command finished successfully
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bEnable
+      - bo
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:bEnable_RBV
+      - bi
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:bEnableDone_RBV
+      - bi
+      - TRUE if done enabling
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bError_RBV
+      - bi
+      - TRUE if we
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bExecute
+      - bo
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:bExecute_RBV
+      - bi
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:bGantryAxis_RBV
+      - bi
+      - TRUE if gantry EPS active
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bGantryBackwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bGantryForwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bHome_RBV
+      - bi
+      - TRUE if at homing switch
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bLimitBackwardEnable_RBV
+      - bi
+      - FALSE if reverse limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bLimitForwardEnable_RBV
+      - bi
+      - FALSE if forward limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bPowerSelf_RBV
+      - bi
+      - FALSE if axis is in PMPS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:bSafetyReady_RBV
+      - bi
+      - TRUE if safe to start a move
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:fAcceleration
+      - ao
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:fAcceleration_RBV
+      - ai
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:fDeceleration
+      - ao
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:fDeceleration_RBV
+      - ai
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:fPosition
+      - ao
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:fPosition_RBV
+      - ai
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:fVelocity
+      - ao
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:fVelocity_RBV
+      - ai
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:nBrakeMode_RBV
+      - mbbi
+      - Describes when the brake will be released
+      - | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:nCmdData
+      - longout
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:nCmdData_RBV
+      - longin
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:nCommand
+      - longout
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:nCommand_RBV
+      - longin
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - IM1K4:XTES:CLZ:PLC:nEnableMode_RBV
+      - mbbi
+      - Describes when the axis will automatically get power
+      - | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:nHomingMode_RBV
+      - mbbi
+      - Describes our homing strategy
+      - | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:nMotionAxisID_RBV
+      - longin
+      - Unique ID assigned to each axis in the NC
+      - | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+
+
+    * - IM1K4:XTES:CLZ:PLC:sName_RBV
+      - waveform
+      - PLC program name
+      - | io: input
+
+
+    * - IM1K4:XTES:MFW:ERR:MSG_RBV
+      - waveform
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.sLastError
+      - | io: input
+
+
+    * - IM1K4:XTES:MFW:ERR:RESET
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.bResetError
+      - | io: output
+
+
+    * - IM1K4:XTES:MFW:ERR:RESET_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.bResetError
+      - | io: output
+
+
+    * - IM1K4:XTES:MFW:GET_RBV
+      - mbbi
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.nGetPos
+      - | io: input
+
+
+    * - IM1K4:XTES:MFW:RAW:CMD
+      - waveform
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.fbCom.sCmd
+      - | io: output
+
+
+    * - IM1K4:XTES:MFW:RAW:CMD_RBV
+      - waveform
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.fbCom.sCmd
+      - | io: output
+
+
+    * - IM1K4:XTES:MFW:RAW:DONE_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.fbCom.bDone
+      - | io: input
+
+
+    * - IM1K4:XTES:MFW:RAW:ERR:RECV_RBV
+      - mbbi
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.fbCom.eRecvErrorID
+      - | io: input
+
+
+    * - IM1K4:XTES:MFW:RAW:ERR:SEND_RBV
+      - mbbi
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.fbCom.eSendErrorID
+      - | io: input
+
+
+    * - IM1K4:XTES:MFW:RAW:ERR:SER_RBV
+      - mbbi
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.fbCom.eSerialLineErrorID
+      - | io: input
+
+
+    * - IM1K4:XTES:MFW:RAW:RESP_RBV
+      - waveform
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.fbCom.sResponse
+      - | io: input
+
+
+    * - IM1K4:XTES:MFW:RAW:SEND
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.fbCom.bSend
+      - | io: output
+
+
+    * - IM1K4:XTES:MFW:RAW:SEND_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.fbCom.bSend
+      - | io: output
+
+
+    * - IM1K4:XTES:MFW:SET
+      - mbbo
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.nSetPos
+      - | io: output
+
+
+    * - IM1K4:XTES:MFW:SET_RBV
+      - mbbi
+      - PRG_IM1K4_XTES.fbIM1K4.fbFilterWheel.nSetPos
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:bAllBackwardEnable_RBV
+      - bi
+      - Summary of axis permission to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bAllEnable_RBV
+      - bi
+      - Summary of axis permission to have power
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bAllForwardEnable_RBV
+      - bi
+      - Summary of axis permission to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bBrakeRelease_RBV
+      - bi
+      - TRUE if brake released
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bBusy_RBV
+      - bi
+      - TRUE if in the middle of a command
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bDone_RBV
+      - bi
+      - TRUE if command finished successfully
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bEnable
+      - bo
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:bEnable_RBV
+      - bi
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:bEnableDone_RBV
+      - bi
+      - TRUE if done enabling
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bError_RBV
+      - bi
+      - TRUE if we
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bExecute
+      - bo
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:bExecute_RBV
+      - bi
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:bGantryAxis_RBV
+      - bi
+      - TRUE if gantry EPS active
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bGantryBackwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bGantryForwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bHome_RBV
+      - bi
+      - TRUE if at homing switch
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bLimitBackwardEnable_RBV
+      - bi
+      - FALSE if reverse limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bLimitForwardEnable_RBV
+      - bi
+      - FALSE if forward limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bPowerSelf_RBV
+      - bi
+      - FALSE if axis is in PMPS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:bSafetyReady_RBV
+      - bi
+      - TRUE if safe to start a move
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:fAcceleration
+      - ao
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:fAcceleration_RBV
+      - ai
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:fDeceleration
+      - ao
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:fDeceleration_RBV
+      - ai
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:fPosition
+      - ao
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:fPosition_RBV
+      - ai
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:fVelocity
+      - ao
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:fVelocity_RBV
+      - ai
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:nBrakeMode_RBV
+      - mbbi
+      - Describes when the brake will be released
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:nCmdData
+      - longout
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:nCmdData_RBV
+      - longin
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:nCommand
+      - longout
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:nCommand_RBV
+      - longin
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:PLC:nEnableMode_RBV
+      - mbbi
+      - Describes when the axis will automatically get power
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:nHomingMode_RBV
+      - mbbi
+      - Describes our homing strategy
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:nMotionAxisID_RBV
+      - longin
+      - Unique ID assigned to each axis in the NC
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:PLC:sName_RBV
+      - waveform
+      - PLC program name
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:01:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:01:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:01:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:01:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:01:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:01:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:01:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:01:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:02:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:03:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:04:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:05:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:06:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:BUSY_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.bBusy
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:DONE_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.bDone
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:ERR_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:ERRID_RBV
+      - longin
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.nErrorId
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:ERRMSG_RBV
+      - waveform
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.sErrorMessage
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:GET_RBV
+      - mbbi
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.enumGet
+      - | io: input
+
+
+    * - IM1K4:XTES:MMS:STATE:PMPS:ARB:ENABLE
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.fbStatePMPS.bArbiterEnabled
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:PMPS:ARB:ENABLE_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.fbStatePMPS.bArbiterEnabled
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:PMPS:MAINT
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:PMPS:MAINT_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:RESET
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:RESET_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:SET
+      - mbbo
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.enumSet
+      - | io: output
+
+
+    * - IM1K4:XTES:MMS:STATE:SET_RBV
+      - mbbi
+      - PRG_IM1K4_XTES.fbIM1K4.fbStates.enumSet
+      - | io: output
+
+
+    * - IM1K4:XTES:SFW:FLOW
+      - bo
+      - PRG_IM1K4_XTES.fbIM1K4.fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - IM1K4:XTES:SFW:FLOW_RBV
+      - bi
+      - PRG_IM1K4_XTES.fbIM1K4.fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
     * - IM2K0:XTES:CAM:PWR
       - bo
       - PRG_IM2K0_XTES.fbIM2K0.fbOpal.bOpalPower
@@ -39480,18 +41410,6 @@ Database Records
       - | io: output
 
 
-    * - PLC:KFE:MOTION:PLACEHOLDER
-      - longout
-      - PRG_1_PlcTask.nPlaceholder
-      - | io: output
-
-
-    * - PLC:KFE:MOTION:PLACEHOLDER_RBV
-      - longin
-      - PRG_1_PlcTask.nPlaceholder
-      - | io: output
-
-
     * - RTDSK0:MPA:01:ERROR
       - bo
       - PRG_RTDSK0.RTDSK0_MPA_01.q_stAct.bErrorPresent
@@ -44630,6 +46548,322 @@ Database Records
       - ai
       - PRG_SL2K0_POWER.fbSL2K0.rEncoderOffsetSouth
       - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bAllBackwardEnable_RBV
+      - bi
+      - Summary of axis permission to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bAllEnable_RBV
+      - bi
+      - Summary of axis permission to have power
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bAllForwardEnable_RBV
+      - bi
+      - Summary of axis permission to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bBrakeRelease_RBV
+      - bi
+      - TRUE if brake released
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bBusy_RBV
+      - bi
+      - TRUE if in the middle of a command
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bDone_RBV
+      - bi
+      - TRUE if command finished successfully
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bEnable
+      - bo
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bEnable_RBV
+      - bi
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bEnableDone_RBV
+      - bi
+      - TRUE if done enabling
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bError_RBV
+      - bi
+      - TRUE if we
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bExecute
+      - bo
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bExecute_RBV
+      - bi
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bGantryAxis_RBV
+      - bi
+      - TRUE if gantry EPS active
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bGantryBackwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bGantryForwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bHome_RBV
+      - bi
+      - TRUE if at homing switch
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bLimitBackwardEnable_RBV
+      - bi
+      - FALSE if reverse limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bLimitForwardEnable_RBV
+      - bi
+      - FALSE if forward limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bPowerSelf_RBV
+      - bi
+      - FALSE if axis is in PMPS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:bSafetyReady_RBV
+      - bi
+      - TRUE if safe to start a move
+      - | field: ONAM FALSE
+        | field: ZNAM TRUE
+        | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fAcceleration
+      - ao
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fAcceleration_RBV
+      - ai
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fDeceleration
+      - ao
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fDeceleration_RBV
+      - ai
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fPosition
+      - ao
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fPosition_RBV
+      - ai
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fVelocity
+      - ao
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:fVelocity_RBV
+      - ai
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nBrakeMode_RBV
+      - mbbi
+      - Describes when the brake will be released
+      - | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nCmdData
+      - longout
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nCmdData_RBV
+      - longin
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nCommand
+      - longout
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nCommand_RBV
+      - longin
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nEnableMode_RBV
+      - mbbi
+      - Describes when the axis will automatically get power
+      - | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nHomingMode_RBV
+      - mbbi
+      - Describes our homing strategy
+      - | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:nMotionAxisID_RBV
+      - longin
+      - Unique ID assigned to each axis in the NC
+      - | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+
+
+    * - ST1K4:TEST:MMS:01:PLC:sName_RBV
+      - waveform
+      - PLC program name
+      - | io: input
 
 
 
