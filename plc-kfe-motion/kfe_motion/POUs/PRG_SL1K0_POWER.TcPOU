@@ -60,10 +60,10 @@ VAR
 
     (*Offsets*)
     (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-    rEncoderOffsetTop: REAL := -11; (* 0+(-15)*)
+    rEncoderOffsetTop: REAL := -11.2; (* 0+(-15)*)
     rEncoderOffsetBottom: REAL := -11.9; (* 0+(-15)*)
-    rEncoderOffsetNorth: REAL := -5;(* 0+(-15)*)
-    rEncoderOffsetSouth: REAL := -12.9;(* 0+(-15)*)
+    rEncoderOffsetNorth: REAL := -4.6;(* 0+(-15)*)
+    rEncoderOffsetSouth: REAL := -13;(* 0+(-15)*)
 END_VAR
 ]]></Declaration>
     <Implementation>
