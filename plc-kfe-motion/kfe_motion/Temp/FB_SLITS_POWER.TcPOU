@@ -5,6 +5,12 @@
 VAR_INPUT
 END_VAR
 VAR
+	 {attribute 'pytmc' := '
+        pv: AutoNarrow
+    '}
+    bAutoNarrow:BOOL :=false;
+	
+
      {attribute 'pytmc' := '
         pv: FSW
     '}
@@ -77,5 +83,48 @@ RTD_South_2();
 fbFlowSwitch();]]></ST>
       </Implementation>
     </Action>
+    <Method Name="M_UpdatePMPS" Id="{01fb8a68-875e-498e-8761-a7079873ebc2}">
+      <Declaration><![CDATA[METHOD M_UpdatePMPS : BOOL
+VAR_INPUT
+    index: int;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//Keep updating the status of the apertures PMPS
+This^.AptArrayStatus.Height := This^.rActApertureSizeY;
+This^.AptArrayStatus.Width := This^.rActApertureSizeX;
+This^.AptArrayStatus.xOK := NOT (This^.stTopBlade.bError) AND NOT (This^.stBottomBlade.bError)
+                                 AND NOT (This^.stNorthBlade.bError) AND NOT (This^.stNorthBlade.bError);
+
+//Evaluate that the current center on the X and the y direction didn't exceed limits
+//Fast fault when it does.
+IF((rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
+	AND (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width >0 ))
+    OR ((rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2)) 
+		AND(PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height>0 )) THEN
+        FFO.i_xOK := FALSE;
+    ELSE
+        FFO.i_xOK := TRUE;
+END_IF
+
+//Evaluate that the requested gaps on the X and the y direction is not larger than the current gap
+// narrow  the gap if the requested is larger
+IF(bAutoNarrow) THEN
+    IF (This^.rActApertureSizeX > AptArrayReq.Width) THEN
+        rReqApertureSizeX := AptArrayReq.Width;
+    END_IF
+    IF (This^.rActApertureSizeY > AptArrayReq.Height) THEN
+         rReqApertureSizeY := AptArrayReq.Height;
+    END_IF
+END_IF
+
+
+(*FAST FAULT*)
+FFO(i_xOK := ,
+    i_xReset := ,
+    i_xAutoReset :=TRUE,
+    io_fbFFHWO := io_fbFFHWO);]]></ST>
+      </Implementation>
+    </Method>
   </POU>
 </TcPlcObject>
