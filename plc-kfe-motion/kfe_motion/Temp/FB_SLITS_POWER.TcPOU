@@ -5,11 +5,11 @@
 VAR_INPUT
 END_VAR
 VAR
-	 {attribute 'pytmc' := '
+     {attribute 'pytmc' := '
         pv: AutoNarrow
     '}
     bAutoNarrow:BOOL :=false;
-	
+
 
      {attribute 'pytmc' := '
         pv: FSW
@@ -99,9 +99,9 @@ This^.AptArrayStatus.xOK := NOT (This^.stTopBlade.bError) AND NOT (This^.stBotto
 //Evaluate that the current center on the X and the y direction didn't exceed limits
 //Fast fault when it does.
 IF((rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
-	AND (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width >0 ))
-    OR ((rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2)) 
-		AND(PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height>0 )) THEN
+    AND (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width >0 ))
+    OR ((rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2))
+        AND(PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height>0 )) THEN
         FFO.i_xOK := FALSE;
     ELSE
         FFO.i_xOK := TRUE;
