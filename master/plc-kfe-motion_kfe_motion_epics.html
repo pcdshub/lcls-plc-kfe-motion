@@ -1580,6 +1580,22 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>$(PREFIX):AutoNarrow</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).bAutoNarrow</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):AutoNarrow_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bAutoNarrow</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>$(PREFIX):BLOCK</p></td>
 <td><p>bo</p></td>
 <td><p>$(SYMBOL).bBlock</p></td>
@@ -3862,7 +3878,7 @@
 </tr>
 <tr class="row-even"><td><p>$(PREFIX):MMS:STATE:PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>$(SYMBOL).fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -3870,7 +3886,7 @@
 </tr>
 <tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>$(SYMBOL).fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -5234,7 +5250,7 @@
 </tr>
 <tr class="row-even"><td><p>$(PREFIX):PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>$(SYMBOL).fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -5242,7 +5258,7 @@
 </tr>
 <tr class="row-odd"><td><p>$(PREFIX):PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>$(SYMBOL).fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -6234,7 +6250,7 @@
 </tr>
 <tr class="row-even"><td><p>$(PREFIX):MMS:STATE:PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>$(SYMBOL).fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -6242,7 +6258,7 @@
 </tr>
 <tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>$(SYMBOL).fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -7294,7 +7310,7 @@
 </tr>
 <tr class="row-even"><td><p>$(PREFIX):PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>$(SYMBOL).fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -7302,7 +7318,7 @@
 </tr>
 <tr class="row-odd"><td><p>$(PREFIX):PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>$(SYMBOL).fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -8546,7 +8562,7 @@
 </tr>
 <tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>$(SYMBOL).fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -8554,7 +8570,7 @@
 </tr>
 <tr class="row-even"><td><p>$(PREFIX):MMS:STATE:PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>$(SYMBOL).fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -9838,7 +9854,7 @@
 </tr>
 <tr class="row-even"><td><p>$(PREFIX):PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>$(SYMBOL).fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -9846,7 +9862,7 @@
 </tr>
 <tr class="row-odd"><td><p>$(PREFIX):PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>$(SYMBOL).fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -13800,7 +13816,7 @@
 </tr>
 <tr class="row-odd"><td><p>$(PREFIX):PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>$(SYMBOL).fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -13808,7 +13824,7 @@
 </tr>
 <tr class="row-even"><td><p>$(PREFIX):PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>$(SYMBOL).fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -14114,22 +14130,6 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>$(PREFIX):ARB:ENABLE</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).bArbiterEnabled</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):ARB:ENABLE_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).bArbiterEnabled</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
 <tr class="row-even"><td><p>$(PREFIX):MAINT</p></td>
 <td><p>bo</p></td>
 <td><p>$(SYMBOL).bMaintMode</p></td>
@@ -14166,22 +14166,6 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>$(PREFIX):ARB:ENABLE</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).bArbiterEnabled</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):ARB:ENABLE_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).bArbiterEnabled</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
 <tr class="row-even"><td><p>$(PREFIX):MAINT</p></td>
 <td><p>bo</p></td>
 <td><p>$(SYMBOL).bMaintMode</p></td>
@@ -29087,7 +29071,7 @@
 </tr>
 <tr class="row-odd"><td><p>IM1K0:XTES:MMS:STATE:PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_IM1K0_XTES.fbIM1K0.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -29095,7 +29079,7 @@
 </tr>
 <tr class="row-even"><td><p>IM1K0:XTES:MMS:STATE:PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>PRG_IM1K0_XTES.fbIM1K0.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_IM1K0_XTES.fbIM1K0.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -30531,7 +30515,7 @@
 </tr>
 <tr class="row-even"><td><p>IM1K3:PPM:MMS:STATE:PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_IM1K3_PPM.fbIM1K3.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -30539,7 +30523,7 @@
 </tr>
 <tr class="row-odd"><td><p>IM1K3:PPM:MMS:STATE:PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>PRG_IM1K3_PPM.fbIM1K3.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_IM1K3_PPM.fbIM1K3.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -33149,7 +33133,7 @@
 </tr>
 <tr class="row-even"><td><p>IM1K4:XTES:MMS:STATE:PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>PRG_IM1K4_XTES.fbIM1K4.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_IM1K4_XTES.fbIM1K4.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -33157,7 +33141,7 @@
 </tr>
 <tr class="row-odd"><td><p>IM1K4:XTES:MMS:STATE:PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>PRG_IM1K4_XTES.fbIM1K4.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_IM1K4_XTES.fbIM1K4.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -35619,7 +35603,7 @@
 </tr>
 <tr class="row-even"><td><p>IM2K0:XTES:MMS:STATE:PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_IM2K0_XTES.fbIM2K0.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -35627,7 +35611,7 @@
 </tr>
 <tr class="row-odd"><td><p>IM2K0:XTES:MMS:STATE:PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>PRG_IM2K0_XTES.fbIM2K0.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_IM2K0_XTES.fbIM2K0.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -36619,7 +36603,7 @@
 </tr>
 <tr class="row-even"><td><p>PF1K0:WFS:MMS:STATE:PMPS:ARB:ENABLE</p></td>
 <td><p>bo</p></td>
-<td><p>PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_PF1K0_WFS.fbPF1K0.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -36627,7 +36611,7 @@
 </tr>
 <tr class="row-odd"><td><p>PF1K0:WFS:MMS:STATE:PMPS:ARB:ENABLE_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>PRG_PF1K0_WFS.fbPF1K0.fbStates.fbStatePMPS.bArbiterEnabled</p></td>
+<td><p>PRG_PF1K0_WFS.fbPF1K0.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -55213,6 +55197,22 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>SL1K0:POWER:AutoNarrow</p></td>
+<td><p>bo</p></td>
+<td><p>PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SL1K0:POWER:AutoNarrow_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>SL1K0:POWER:BLOCK</p></td>
 <td><p>bo</p></td>
 <td><p>PRG_SL1K0_POWER.fbSL1K0.bBlock</p></td>
@@ -58190,6 +58190,22 @@
 <tr class="row-even"><td><p>SL2K0:POWER:ACTUAL_YWIDTH_RBV</p></td>
 <td><p>ai</p></td>
 <td><p>PRG_SL2K0_POWER.fbSL2K0.rActApertureSizeY</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SL2K0:POWER:AutoNarrow</p></td>
+<td><p>bo</p></td>
+<td><p>PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>SL2K0:POWER:AutoNarrow_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>

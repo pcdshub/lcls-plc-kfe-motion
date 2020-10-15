@@ -831,7 +831,7 @@
 
     <span class="n">FFO</span>    <span class="p">:</span>    <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
         <span class="n">i_DevName</span> <span class="o">:=</span> <span class="s1">&#39;Slits&#39;</span><span class="p">,</span>
-        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault occurs when center is greated than that requested&#39;</span><span class="p">,</span>
+        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault occurs when gap and or center  are greater than that requested&#39;</span><span class="p">,</span>
         <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#1010);</span>
 
     <span class="n">AptArrayStatus</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">ST_PMPS_Aperture_IO</span><span class="p">;</span>
@@ -1114,6 +1114,12 @@
 <span class="n">VAR_INPUT</span>
 <span class="n">END_VAR</span>
 <span class="n">VAR</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">AutoNarrow</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bAutoNarrow</span><span class="p">:</span><span class="n">BOOL</span> <span class="o">:=</span><span class="n">false</span><span class="p">;</span>
+
+
      <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">FSW</span>
     <span class="s1">&#39;}</span>
@@ -1655,14 +1661,14 @@
     <span class="n">stFoilBP</span><span class="p">:</span> <span class="n">ST_BeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 <span class="p">(</span><span class="o">*</span>
-   <span class="n">Avoid</span> <span class="n">damage</span> <span class="n">peak</span> <span class="n">between</span> <span class="mf">1.6</span> <span class="n">keV</span> <span class="ow">and</span> <span class="mf">3.2</span> <span class="n">keV</span>
+   <span class="n">Avoid</span> <span class="n">damage</span> <span class="n">peak</span> <span class="n">between</span> <span class="mf">3.2</span> <span class="n">keV</span> <span class="ow">and</span> <span class="mf">1.6</span> <span class="n">keV</span>
    <span class="n">Boundaries</span> <span class="n">are</span> <span class="n">upper</span> <span class="n">boundary</span> <span class="n">of</span> <span class="n">eV</span> <span class="nb">range</span>
-   <span class="mi">250</span><span class="p">,</span>    <span class="mi">270</span><span class="p">,</span>    <span class="mi">400</span><span class="p">,</span>    <span class="mi">540</span><span class="p">,</span>    <span class="mi">850</span><span class="p">,</span>   <span class="mf">1.15E3</span><span class="p">,</span> <span class="mf">1.25E3</span><span class="p">,</span> <span class="mf">1.45E3</span><span class="p">,</span>
-   <span class="mf">1.55E3</span><span class="p">,</span> <span class="mf">1.65E3</span><span class="p">,</span> <span class="mf">1.75E3</span><span class="p">,</span> <span class="mf">1.82E3</span><span class="p">,</span> <span class="mf">2.0E3</span><span class="p">,</span> <span class="mf">3.2E3</span><span class="p">,</span>  <span class="mf">5.0E3</span><span class="p">,</span>  <span class="mf">7.1E3</span>
-   <span class="mi">1</span>       <span class="mi">1</span>       <span class="mi">1</span>       <span class="mi">1</span>       <span class="mi">1</span>      <span class="mi">1</span>       <span class="mi">1</span>       <span class="mi">1</span>
-   <span class="mi">1</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>      <span class="mi">0</span>       <span class="mi">1</span>       <span class="mi">1</span>
+   <span class="mf">7.1E3</span><span class="p">,</span>  <span class="mf">5.0E3</span><span class="p">,</span>  <span class="mf">3.2E3</span><span class="p">,</span>  <span class="mf">2.0E3</span><span class="p">,</span> <span class="mf">1.82E3</span><span class="p">,</span> <span class="mf">1.75E3</span><span class="p">,</span> <span class="mf">1.65E3</span><span class="p">,</span> <span class="mf">1.55E3</span><span class="p">,</span>
+   <span class="mf">1.45E3</span><span class="p">,</span> <span class="mf">1.25E3</span><span class="p">,</span> <span class="mf">1.15E3</span><span class="p">,</span> <span class="mi">850</span><span class="p">,</span>   <span class="mi">540</span><span class="p">,</span>    <span class="mi">400</span><span class="p">,</span>    <span class="mi">270</span><span class="p">,</span>   <span class="mi">250</span><span class="p">,</span>
+   <span class="mi">1</span>       <span class="mi">1</span>       <span class="mi">0</span>       <span class="mi">0</span>      <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">1</span>
+   <span class="mi">1</span>       <span class="mi">1</span>       <span class="mi">1</span>       <span class="mi">1</span>      <span class="mi">1</span>       <span class="mi">1</span>       <span class="mi">1</span>       <span class="mi">1</span>
 <span class="o">*</span><span class="p">)</span>
-<span class="n">stSiBP</span><span class="o">.</span><span class="n">neVRange</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1111_1000_0011;</span>
+<span class="n">stSiBP</span><span class="o">.</span><span class="n">neVRange</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#1100_0001_1111_1111;</span>
 <span class="o">//</span> <span class="n">Drop</span> <span class="n">transmission</span> <span class="n">to</span> <span class="mi">20</span><span class="o">%</span>
 <span class="n">stSiBP</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="mi">20</span><span class="p">;</span>
 
@@ -1881,10 +1887,10 @@
 
     <span class="p">(</span><span class="o">*</span><span class="n">Offsets</span><span class="o">*</span><span class="p">)</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">Absolute</span> <span class="n">encoder</span> <span class="n">value</span> <span class="n">at</span> <span class="n">the</span> <span class="n">HLS</span> <span class="o">+</span> <span class="n">Absolure</span> <span class="n">eoncoder</span> <span class="n">value</span> <span class="n">at</span> <span class="n">the</span> <span class="n">centered</span> <span class="n">beam</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">11</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.2</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
     <span class="n">rEncoderOffsetBottom</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.9</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
-    <span class="n">rEncoderOffsetNorth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
-    <span class="n">rEncoderOffsetSouth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">12.9</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetNorth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">4.6</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetSouth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">13</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
 <span class="n">END_VAR</span>
 <span class="n">fbSL1K0</span><span class="o">.</span><span class="n">bMoveOk</span> <span class="o">:=</span> <span class="n">bMoveOk</span><span class="p">;</span>
 

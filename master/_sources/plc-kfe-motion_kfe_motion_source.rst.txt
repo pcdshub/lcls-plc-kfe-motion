@@ -656,7 +656,7 @@ FB_SLITS
 
         FFO    :    FB_FastFault :=(
             i_DevName := 'Slits',
-            i_Desc := 'Fault occurs when center is greated than that requested',
+            i_Desc := 'Fault occurs when gap and or center  are greater than that requested',
             i_TypeCode := 16#1010);
 
         AptArrayStatus AT %Q* : ST_PMPS_Aperture_IO;
@@ -941,6 +941,12 @@ FB_SLITS_POWER
     VAR_INPUT
     END_VAR
     VAR
+         {attribute 'pytmc' := '
+            pv: AutoNarrow
+        '}
+        bAutoNarrow:BOOL :=false;
+
+
          {attribute 'pytmc' := '
             pv: FSW
         '}
@@ -1502,14 +1508,14 @@ PRG_PF1K0_WFS
         stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
     END_VAR
     (*
-       Avoid damage peak between 1.6 keV and 3.2 keV
+       Avoid damage peak between 3.2 keV and 1.6 keV
        Boundaries are upper boundary of eV range
-       250,    270,    400,    540,    850,   1.15E3, 1.25E3, 1.45E3,
-       1.55E3, 1.65E3, 1.75E3, 1.82E3, 2.0E3, 3.2E3,  5.0E3,  7.1E3
-       1       1       1       1       1      1       1       1
-       1       0       0       0       0      0       1       1
+       7.1E3,  5.0E3,  3.2E3,  2.0E3, 1.82E3, 1.75E3, 1.65E3, 1.55E3,
+       1.45E3, 1.25E3, 1.15E3, 850,   540,    400,    270,   250,
+       1       1       0       0      0       0       0       1
+       1       1       1       1      1       1       1       1
     *)
-    stSiBP.neVRange := 2#1111_1111_1000_0011;
+    stSiBP.neVRange := 2#1100_0001_1111_1111;
     // Drop transmission to 20%
     stSiBP.nTran := 20;
 
@@ -1732,10 +1738,10 @@ PRG_SL1K0_POWER
 
         (*Offsets*)
         (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-        rEncoderOffsetTop: REAL := -11; (* 0+(-15)*)
+        rEncoderOffsetTop: REAL := -11.2; (* 0+(-15)*)
         rEncoderOffsetBottom: REAL := -11.9; (* 0+(-15)*)
-        rEncoderOffsetNorth: REAL := -5;(* 0+(-15)*)
-        rEncoderOffsetSouth: REAL := -12.9;(* 0+(-15)*)
+        rEncoderOffsetNorth: REAL := -4.6;(* 0+(-15)*)
+        rEncoderOffsetSouth: REAL := -13;(* 0+(-15)*)
     END_VAR
     fbSL1K0.bMoveOk := bMoveOk;
 
