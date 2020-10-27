@@ -193,8 +193,8 @@ VAR
 
     FFO    :    FB_FastFault :=(
         i_DevName := 'Slits',
-        i_Desc := 'Fault occurs when gap and or center  are greater than that requested',
-        i_TypeCode := 16#1010);
+        i_Desc := 'Fault occurs when gaps and/or centers are not within safe margins, or PMPS mode is switched OFF',
+        i_TypeCode := 16#FAA);
 
     AptArrayStatus AT %Q* : ST_PMPS_Aperture_IO;
     AptArrayReq AT %I* : ST_PMPS_Aperture_IO;
