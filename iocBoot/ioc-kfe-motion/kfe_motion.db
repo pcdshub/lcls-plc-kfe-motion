@@ -117,6 +117,8 @@ record(waveform, "$(PREFIX)RequestedBP:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -200,6 +202,8 @@ record(waveform, "$(PREFIX)CurrentBP:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -235,6 +239,8 @@ record(waveform, "$(PREFIX)eVRangeCnst_RBV") {
   field(FTVL, "FLOAT")
   field(EGU, "eV")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -293,6 +299,8 @@ record(waveform, "$(PREFIX)FullBeamCnst:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -373,6 +381,8 @@ record(waveform, "$(PREFIX)0RateBeamCnst:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -453,6 +463,8 @@ record(waveform, "$(PREFIX)SafeBeamCnst:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstSafeBeam.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -501,6 +513,8 @@ record(waveform, "$(PREFIX)L:eVRangeCnst_RBV") {
   field(FTVL, "FLOAT")
   field(EGU, "eV")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -514,6 +528,8 @@ record(waveform, "$(PREFIX)K:eVRangeCnst_RBV") {
   field(FTVL, "FLOAT")
   field(EGU, "eV")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -3473,7 +3489,8 @@ record(waveform, "IM1K3:PPM:SPM:VOLT_BUFFER_RBV") {
   field(FTVL, "DOUBLE")
   field(EGU, "mV")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(ai, "IM1K3:PPM:SPM:CALIB_RBV") {
@@ -3499,7 +3516,8 @@ record(waveform, "IM1K3:PPM:SPM:CALIB_BUFFER_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbPowerMeter.fCalibBaseBuffer?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(ai, "IM1K3:PPM:SPM:MJ_RBV") {
@@ -3527,7 +3545,8 @@ record(waveform, "IM1K3:PPM:SPM:MJ_BUFFER_RBV") {
   field(FTVL, "DOUBLE")
   field(EGU, "mJ")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(ai, "IM1K3:PPM:SPM:STC:TEMP_RBV") {
@@ -9127,24 +9146,24 @@ record(bo, "SL1K0:POWER:BLOCK") {
   info(archive, "VAL")
 }
 
-record(bi, "SL1K0:POWER:AutoNarrow_RBV") {
-  field(DESC, "PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow")
+record(bi, "SL1K0:POWER:MODE_RBV") {
+  field(DESC, "PRG_SL1K0_POWER.fbSL1K0.xPMPSMode")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.xPMPSMode?")
+  field(ZNAM, "Local")
+  field(ONAM, "PMPS")
   info(archive, "VAL")
 }
 
-record(bo, "SL1K0:POWER:AutoNarrow") {
-  field(DESC, "PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow")
+record(bo, "SL1K0:POWER:MODE") {
+  field(DESC, "PRG_SL1K0_POWER.fbSL1K0.xPMPSMode")
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.fbSL1K0.xPMPSMode=")
+  field(ZNAM, "Local")
+  field(ONAM, "PMPS")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -10890,24 +10909,24 @@ record(bo, "SL2K0:POWER:BLOCK") {
   info(archive, "VAL")
 }
 
-record(bi, "SL2K0:POWER:AutoNarrow_RBV") {
-  field(DESC, "PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow")
+record(bi, "SL2K0:POWER:MODE_RBV") {
+  field(DESC, "PRG_SL2K0_POWER.fbSL2K0.xPMPSMode")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.xPMPSMode?")
+  field(ZNAM, "Local")
+  field(ONAM, "PMPS")
   info(archive, "VAL")
 }
 
-record(bo, "SL2K0:POWER:AutoNarrow") {
-  field(DESC, "PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow")
+record(bo, "SL2K0:POWER:MODE") {
+  field(DESC, "PRG_SL2K0_POWER.fbSL2K0.xPMPSMode")
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.fbSL2K0.xPMPSMode=")
+  field(ZNAM, "Local")
+  field(ONAM, "PMPS")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -25245,6 +25264,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:001:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[1].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25257,6 +25278,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:002:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[2].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25269,6 +25292,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:003:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[3].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25281,6 +25306,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:004:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[4].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25293,6 +25320,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:005:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[5].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25305,6 +25334,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:006:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[6].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25317,6 +25348,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:007:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[7].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25329,6 +25362,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:008:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[8].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25341,6 +25376,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:009:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[9].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25353,6 +25390,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:010:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[10].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25365,6 +25404,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:011:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[11].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25377,6 +25418,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:012:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[12].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25389,6 +25432,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:013:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[13].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25401,6 +25446,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:014:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[14].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25413,6 +25460,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:015:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[15].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25425,6 +25474,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:016:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[16].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25437,6 +25488,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:017:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[17].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25449,6 +25502,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:018:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[18].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25461,6 +25516,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:019:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[19].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -25473,6 +25530,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:AP:Entry:020:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[20].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26443,6 +26502,8 @@ record(waveform, "PLC:KFE:MOTION:ARB:ArbitratedBP:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.q_stBeamParams.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 

@@ -6,12 +6,12 @@ VAR_INPUT
 END_VAR
 VAR
     {attribute 'pytmc' := '
-	pv: MODE ;
- 	field: ZNAM Local; 
-	field: ONAM PMPS; 
-	 io: io;
-	'}
-	xPMPSMode	:BOOL :=TRUE; 
+    pv: MODE ;
+     field: ZNAM Local;
+    field: ONAM PMPS;
+     io: io;
+    '}
+    xPMPSMode	:BOOL :=TRUE;
 
 
      {attribute 'pytmc' := '
@@ -106,7 +106,7 @@ IF(This^.rActApertureSizeX > (PMPS_GVL.stCurrentBeamParameters.astApertures[inde
 //(rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
     AND (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width >0 ))
     OR (This^.rActApertureSizeY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height - (2*ABS(rActCenterY)))
-	//((rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2))
+    //((rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2))
         AND(PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height>0 )) THEN
         FFO.i_xOK := FALSE;
     ELSE
@@ -122,8 +122,8 @@ IF(xPMPSMode) THEN
     IF (This^.rActApertureSizeY > AptArrayReq.Height) THEN
          rReqApertureSizeY := AptArrayReq.Height;
     END_IF
-	ELSE
-	 FFO.i_xOK := FALSE;
+    ELSE
+     FFO.i_xOK := FALSE;
 END_IF
 
 
