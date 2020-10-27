@@ -5,10 +5,13 @@
 VAR_INPUT
 END_VAR
 VAR
-     {attribute 'pytmc' := '
-        pv: AutoNarrow
-    '}
-    bAutoNarrow:BOOL :=false;
+    {attribute 'pytmc' := '
+	pv: MODE ;
+ 	field: ZNAM Local; 
+	field: ONAM PMPS; 
+	 io: io;
+	'}
+	xPMPSMode	:BOOL :=TRUE; 
 
 
      {attribute 'pytmc' := '
@@ -96,11 +99,14 @@ This^.AptArrayStatus.Width := This^.rActApertureSizeX;
 This^.AptArrayStatus.xOK := NOT (This^.stTopBlade.bError) AND NOT (This^.stBottomBlade.bError)
                                  AND NOT (This^.stNorthBlade.bError) AND NOT (This^.stNorthBlade.bError);
 
-//Evaluate that the current center on the X and the y direction didn't exceed limits
+//Evaluate that the current center on the X and the y direction didn't exceed limits,
+// Gap should be reduced when center is moved, gap < Maximum permessible gap - 2|Center deviation from nominal|
 //Fast fault when it does.
-IF((rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
+IF(This^.rActApertureSizeX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width - (2*ABS(rActCenterX)))
+//(rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
     AND (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width >0 ))
-    OR ((rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2))
+    OR (This^.rActApertureSizeY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height - (2*ABS(rActCenterY)))
+	//((rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2))
         AND(PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height>0 )) THEN
         FFO.i_xOK := FALSE;
     ELSE
@@ -109,13 +115,15 @@ END_IF
 
 //Evaluate that the requested gaps on the X and the y direction is not larger than the current gap
 // narrow  the gap if the requested is larger
-IF(bAutoNarrow) THEN
+IF(xPMPSMode) THEN
     IF (This^.rActApertureSizeX > AptArrayReq.Width) THEN
         rReqApertureSizeX := AptArrayReq.Width;
     END_IF
     IF (This^.rActApertureSizeY > AptArrayReq.Height) THEN
          rReqApertureSizeY := AptArrayReq.Height;
     END_IF
+	ELSE
+	 FFO.i_xOK := FALSE;
 END_IF
 
 
