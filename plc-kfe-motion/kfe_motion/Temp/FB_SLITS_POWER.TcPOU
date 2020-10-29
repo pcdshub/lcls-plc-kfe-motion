@@ -102,10 +102,10 @@ This^.AptArrayStatus.xOK := NOT (This^.stTopBlade.bError) AND NOT (This^.stBotto
 //Evaluate that the current center on the X and the y direction didn't exceed limits,
 // Gap should be reduced when center is moved, gap < Maximum permessible gap - 2|Center deviation from nominal|
 //Fast fault when it does.
-IF(This^.rActApertureSizeX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width - (2*ABS(rActCenterX)))
+IF(This^.rActApertureSizeX > (AptArrayReq.Width - (2*ABS(rActCenterX)))
 //(rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
     AND (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width >0 ))
-    OR (This^.rActApertureSizeY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height - (2*ABS(rActCenterY)))
+    OR (This^.rActApertureSizeY > (AptArrayReq.Height - (2*ABS(rActCenterY)))
     //((rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2))
         AND(PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height>0 )) THEN
         FFO.i_xOK := FALSE;
