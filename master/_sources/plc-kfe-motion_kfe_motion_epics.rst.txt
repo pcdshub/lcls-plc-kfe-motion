@@ -1044,18 +1044,6 @@ FB_SLITS_POWER
       - | io: output
 
 
-    * - $(PREFIX):AutoNarrow
-      - bo
-      - $(SYMBOL).bAutoNarrow
-      - | io: output
-
-
-    * - $(PREFIX):AutoNarrow_RBV
-      - bi
-      - $(SYMBOL).bAutoNarrow
-      - | io: output
-
-
     * - $(PREFIX):BLOCK
       - bo
       - $(SYMBOL).bBlock
@@ -1301,6 +1289,22 @@ FB_SLITS_POWER
       - $(SYMBOL).fbFlowSwitch.bFlowOk
       - | field: ONAM OK
         | field: ZNAM LOW
+        | io: output
+
+
+    * - $(PREFIX):MODE
+      - bo
+      - $(SYMBOL).xPMPSMode
+      - | field: ONAM PMPS
+        | field: ZNAM Local
+        | io: output
+
+
+    * - $(PREFIX):MODE_RBV
+      - bi
+      - $(SYMBOL).xPMPSMode
+      - | field: ONAM PMPS
+        | field: ZNAM Local
         | io: output
 
 
@@ -41946,18 +41950,6 @@ Database Records
       - | io: output
 
 
-    * - SL1K0:POWER:AutoNarrow
-      - bo
-      - PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow
-      - | io: output
-
-
-    * - SL1K0:POWER:AutoNarrow_RBV
-      - bi
-      - PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow
-      - | io: output
-
-
     * - SL1K0:POWER:BLOCK
       - bo
       - PRG_SL1K0_POWER.fbSL1K0.bBlock
@@ -43486,6 +43478,22 @@ Database Records
       - | io: input
 
 
+    * - SL1K0:POWER:MODE
+      - bo
+      - PRG_SL1K0_POWER.fbSL1K0.xPMPSMode
+      - | field: ONAM PMPS
+        | field: ZNAM Local
+        | io: output
+
+
+    * - SL1K0:POWER:MODE_RBV
+      - bi
+      - PRG_SL1K0_POWER.fbSL1K0.xPMPSMode
+      - | field: ONAM PMPS
+        | field: ZNAM Local
+        | io: output
+
+
     * - SL1K0:POWER:NORTH:ACCL
       - ao
       - Acceleration to use for moves to this state
@@ -44275,18 +44283,6 @@ Database Records
     * - SL2K0:POWER:ACTUAL_YWIDTH_RBV
       - ai
       - PRG_SL2K0_POWER.fbSL2K0.rActApertureSizeY
-      - | io: output
-
-
-    * - SL2K0:POWER:AutoNarrow
-      - bo
-      - PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow
-      - | io: output
-
-
-    * - SL2K0:POWER:AutoNarrow_RBV
-      - bi
-      - PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow
       - | io: output
 
 
@@ -45816,6 +45812,22 @@ Database Records
       - waveform
       - PLC program name
       - | io: input
+
+
+    * - SL2K0:POWER:MODE
+      - bo
+      - PRG_SL2K0_POWER.fbSL2K0.xPMPSMode
+      - | field: ONAM PMPS
+        | field: ZNAM Local
+        | io: output
+
+
+    * - SL2K0:POWER:MODE_RBV
+      - bi
+      - PRG_SL2K0_POWER.fbSL2K0.xPMPSMode
+      - | field: ONAM PMPS
+        | field: ZNAM Local
+        | io: output
 
 
     * - SL2K0:POWER:NORTH:ACCL

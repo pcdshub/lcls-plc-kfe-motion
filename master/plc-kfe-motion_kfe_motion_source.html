@@ -831,8 +831,8 @@
 
     <span class="n">FFO</span>    <span class="p">:</span>    <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
         <span class="n">i_DevName</span> <span class="o">:=</span> <span class="s1">&#39;Slits&#39;</span><span class="p">,</span>
-        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault occurs when gap and or center  are greater than that requested&#39;</span><span class="p">,</span>
-        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#1010);</span>
+        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault occurs when gaps and/or centers are not within safe margins, or PMPS mode is switched OFF&#39;</span><span class="p">,</span>
+        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#FAA);</span>
 
     <span class="n">AptArrayStatus</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">ST_PMPS_Aperture_IO</span><span class="p">;</span>
     <span class="n">AptArrayReq</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">ST_PMPS_Aperture_IO</span><span class="p">;</span>
@@ -1114,10 +1114,13 @@
 <span class="n">VAR_INPUT</span>
 <span class="n">END_VAR</span>
 <span class="n">VAR</span>
-     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">AutoNarrow</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">MODE</span> <span class="p">;</span>
+     <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">Local</span><span class="p">;</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">PMPS</span><span class="p">;</span>
+     <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
     <span class="s1">&#39;}</span>
-    <span class="n">bAutoNarrow</span><span class="p">:</span><span class="n">BOOL</span> <span class="o">:=</span><span class="n">false</span><span class="p">;</span>
+    <span class="n">xPMPSMode</span>       <span class="p">:</span><span class="n">BOOL</span> <span class="o">:=</span><span class="n">TRUE</span><span class="p">;</span>
 
 
      <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>

@@ -1580,22 +1580,6 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>$(PREFIX):AutoNarrow</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).bAutoNarrow</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):AutoNarrow_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).bAutoNarrow</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
 <tr class="row-even"><td><p>$(PREFIX):BLOCK</p></td>
 <td><p>bo</p></td>
 <td><p>$(SYMBOL).bBlock</p></td>
@@ -1908,6 +1892,26 @@
 <td><div class="line-block">
 <div class="line">field: ONAM OK</div>
 <div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MODE</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).xPMPSMode</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM PMPS</div>
+<div class="line">field: ZNAM Local</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MODE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xPMPSMode</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM PMPS</div>
+<div class="line">field: ZNAM Local</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -55197,22 +55201,6 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>SL1K0:POWER:AutoNarrow</p></td>
-<td><p>bo</p></td>
-<td><p>PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>SL1K0:POWER:AutoNarrow_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>PRG_SL1K0_POWER.fbSL1K0.bAutoNarrow</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
 <tr class="row-even"><td><p>SL1K0:POWER:BLOCK</p></td>
 <td><p>bo</p></td>
 <td><p>PRG_SL1K0_POWER.fbSL1K0.bBlock</p></td>
@@ -57173,6 +57161,26 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>SL1K0:POWER:MODE</p></td>
+<td><p>bo</p></td>
+<td><p>PRG_SL1K0_POWER.fbSL1K0.xPMPSMode</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM PMPS</div>
+<div class="line">field: ZNAM Local</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SL1K0:POWER:MODE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>PRG_SL1K0_POWER.fbSL1K0.xPMPSMode</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM PMPS</div>
+<div class="line">field: ZNAM Local</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>SL1K0:POWER:NORTH:ACCL</p></td>
 <td><p>ao</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
@@ -58190,22 +58198,6 @@
 <tr class="row-even"><td><p>SL2K0:POWER:ACTUAL_YWIDTH_RBV</p></td>
 <td><p>ai</p></td>
 <td><p>PRG_SL2K0_POWER.fbSL2K0.rActApertureSizeY</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>SL2K0:POWER:AutoNarrow</p></td>
-<td><p>bo</p></td>
-<td><p>PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>SL2K0:POWER:AutoNarrow_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>PRG_SL2K0_POWER.fbSL2K0.bAutoNarrow</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -60168,6 +60160,26 @@
 <td><p>PLC program name</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SL2K0:POWER:MODE</p></td>
+<td><p>bo</p></td>
+<td><p>PRG_SL2K0_POWER.fbSL2K0.xPMPSMode</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM PMPS</div>
+<div class="line">field: ZNAM Local</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>SL2K0:POWER:MODE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>PRG_SL2K0_POWER.fbSL2K0.xPMPSMode</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM PMPS</div>
+<div class="line">field: ZNAM Local</div>
+<div class="line">io: output</div>
 </div>
 </td>
 </tr>
