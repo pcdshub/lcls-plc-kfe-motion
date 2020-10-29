@@ -117,10 +117,10 @@ END_IF
 // narrow  the gap if the requested is larger
 IF(xPMPSMode) THEN
     IF (This^.rActApertureSizeX > AptArrayReq.Width) THEN
-        rReqApertureSizeX := AptArrayReq.Width;
+        rReqApertureSizeX := AptArrayReq.Width - 0.01;
     END_IF
     IF (This^.rActApertureSizeY > AptArrayReq.Height) THEN
-         rReqApertureSizeY := AptArrayReq.Height;
+         rReqApertureSizeY := AptArrayReq.Height - 0.01;
     END_IF
     ELSE
      FFO.i_xOK := FALSE;
