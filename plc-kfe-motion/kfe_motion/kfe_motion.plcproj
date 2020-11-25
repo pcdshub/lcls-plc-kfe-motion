@@ -16,6 +16,9 @@
     <CompilerDefines>K</CompilerDefines>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\ENUM_SXR_SATT_Position.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\E_PositionState.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,12 @@
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\AT1K4\FB_SXR_SATT_PositionState.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\AT1K4\FB_SXR_SATT_Stage.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_1_PlcTask.TcPOU">
@@ -88,6 +97,7 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\AT1K4" />
     <Folder Include="Temp" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

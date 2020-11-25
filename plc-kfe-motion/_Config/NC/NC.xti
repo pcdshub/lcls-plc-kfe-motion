@@ -51,10 +51,10 @@
 		<Axis File="SL2K0-TOP-M23.xti" Id="23"/>
 		<Axis File="SL2K0-NORTH-M24.xti" Id="24"/>
 		<Axis File="SL2K0-BOTTOM-M25.xti" Id="25"/>
-		<Axis File="Axis 26.xti" Id="26"/>
-		<Axis File="Axis 27.xti" Id="27"/>
-		<Axis File="Axis 28.xti" Id="28"/>
-		<Axis File="Axis 29.xti" Id="29"/>
+		<Axis File="Axis 26 AT1K4-SOLID-01 MMS-01.xti" Id="26"/>
+		<Axis File="Axis 27 AT1K4-SOLID-02 MMS-02.xti" Id="27"/>
+		<Axis File="Axis 28 AT1K4-SOLID-03 MMS-03.xti" Id="28"/>
+		<Axis File="Axis 29 AT1K4-SOLID-04 MMS-04.xti" Id="29"/>
 		<Axis File="Axis 30 IM1K4-XTES-MMS.xti" Id="30"/>
 		<Axis File="Axis 31 IM1K4-XTES-CLZ.xti" Id="31"/>
 		<Axis File="Axis 32 IM1K4-XTES-CLF.xti" Id="32"/>
