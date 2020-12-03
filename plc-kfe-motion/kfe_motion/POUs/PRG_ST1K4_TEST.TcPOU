@@ -12,7 +12,7 @@ Main.M33.nEnableMode	:= ENUM_StageEnableMode.DURING_MOTION;
 Main.M33.bHardwareEnable:= TRUE;
 Main.M33.bPowerSelf := TRUE;
 Main.M33.nBrakeMode := ENUM_StageBrakeMode.IF_ENABLED;
-fbMotion1(stMotionStage:=Main.M14);]]></ST>
+fbMotion1(stMotionStage:=Main.M33);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
