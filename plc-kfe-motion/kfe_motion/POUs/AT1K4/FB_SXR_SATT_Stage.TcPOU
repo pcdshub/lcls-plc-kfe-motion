@@ -4,6 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SXR_SATT_Stage
 VAR_IN_OUT
     stAxis : DUT_MotionStage;
+    fbFFHWO: FB_HardwareFFOutput;
 END_VAR
 VAR_INPUT
     nEnableMode : ENUM_StageEnableMode;
@@ -22,6 +23,7 @@ VAR_OUTPUT
     // stExtra : DUT_MotionStage_Extras;
     fTemp1 : LREAL;
     fTemp2 : LREAL;
+    bIsStationary : BOOL;
 END_VAR
 VAR
     fbMotion: FB_MotionStage;
@@ -39,6 +41,9 @@ VAR
     {attribute 'pytmc' := 'pv: RTD:2'}
     fbRTD_2: FB_TempSensor := ( fResolution:=0.01 );
 
+    fbFF: FB_FastFault := (i_Desc := 'Device is moving',
+                           i_TypeCode := 16#2100,
+                           i_xAutoReset := TRUE);
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -80,6 +85,13 @@ fbState(
     stFilter6:=stFilter6,
     stFilter7:=stFilter7,
     stFilter8:=stFilter8
+);
+
+bIsStationary := NOT stAxis.Axis.Status.Moving;
+fbFF(
+    i_DevName:=stAxis.sName,
+    i_xOK:=bIsStationary AND fbState.enumGet <> ENUM_SXR_SATT_Position.UNKNOWN,
+    io_fbFFHWO := fbFFHWO
 );
 
 // stExtra.bVisuHighLim := NOT stAxis.bAllForwardEnable;
