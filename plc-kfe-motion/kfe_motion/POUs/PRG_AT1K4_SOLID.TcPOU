@@ -113,7 +113,7 @@ END_IF
 fbStage1.stOut.sName         := 'Out';
 fbStage1.stOut.fPosition     := 22.70; (* TRAVELER AXIS 4 *)
 fbStage1.stOut.fDelta        := 140;
-fbStage1.stOut.fVelocity     := 10;
+fbStage1.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage1.stOut.bValid        := TRUE;
 fbStage1.stOut.bMoveOk       := TRUE;
 
@@ -181,7 +181,7 @@ fbStage1(stAxis:=Main.M1, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutp
 fbStage2.stOut.sName         := 'Out';
 fbStage2.stOut.fPosition     := 24.00;  (* TRAVELER AXIS 3 *)
 fbStage2.stOut.fDelta        := 140;
-fbStage2.stOut.fVelocity     := 10;
+fbStage2.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage2.stOut.bValid        := TRUE;
 fbStage2.stOut.bMoveOk       := TRUE;
 
@@ -249,7 +249,7 @@ fbStage2(stAxis:=Main.M2, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutp
 fbStage3.stOut.sName         := 'Out';
 fbStage3.stOut.fPosition     := 23.24;  (* TRAVELER AXIS 2 *)
 fbStage3.stOut.fDelta        := 140;
-fbStage3.stOut.fVelocity     := 10;
+fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage3.stOut.bValid        := TRUE;
 fbStage3.stOut.bMoveOk       := TRUE;
 
@@ -317,7 +317,7 @@ fbStage3(stAxis:=Main.M3, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutp
 fbStage4.stOut.sName         := 'Out';
 fbStage4.stOut.fPosition     := 23.44;  (* TRAVELER AXIS 1 *)
 fbStage4.stOut.fDelta        := 140;
-fbStage4.stOut.fVelocity     := 10;
+fbStage4.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage4.stOut.bValid        := TRUE;
 fbStage4.stOut.bMoveOk       := TRUE;
 
