@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{CA173061-03F8-6CB8-BF4E-7118CE1487EC}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{C9E46D71-628D-77CF-D846-BCB3D67C622D}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
@@ -209,31 +209,31 @@
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>3187076</GetCodeOffs>
+        <GetCodeOffs>3187056</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>3187108</GetCodeOffs>
+        <GetCodeOffs>3187088</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>3187116</GetCodeOffs>
+        <GetCodeOffs>3187096</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>3187100</GetCodeOffs>
+        <GetCodeOffs>3187080</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sResult</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>3187112</GetCodeOffs>
+        <GetCodeOffs>3187092</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -1426,15 +1426,15 @@
         <Name>nId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>3187020</GetCodeOffs>
-        <SetCodeOffs>3187044</SetCodeOffs>
+        <GetCodeOffs>3187000</GetCodeOffs>
+        <SetCodeOffs>3187024</SetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>3187056</GetCodeOffs>
-        <SetCodeOffs>3187068</SetCodeOffs>
+        <GetCodeOffs>3187036</GetCodeOffs>
+        <SetCodeOffs>3187048</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="9">__setbCutInstancePathByLastInst</Name>
@@ -1702,31 +1702,31 @@
         <Name>eSeverity</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <GetCodeOffs>3187164</GetCodeOffs>
+        <GetCodeOffs>3187144</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>ipSourceInfo</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>3187144</GetCodeOffs>
+        <GetCodeOffs>3187124</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nEventId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>3187232</GetCodeOffs>
+        <GetCodeOffs>3187212</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventClassName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>3187192</GetCodeOffs>
+        <GetCodeOffs>3187172</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>3187236</GetCodeOffs>
+        <GetCodeOffs>3187216</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>EqualsToEventClass</Name>
@@ -2299,7 +2299,7 @@
         <Name>nTimeSent</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>3187260</GetCodeOffs>
+        <GetCodeOffs>3187240</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>SetJsonAttribute</Name>
@@ -6275,6 +6275,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_BOOL</Name>
@@ -6407,6 +6412,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -6566,6 +6576,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>GetNumberOfSuccessfulTests</Name>
@@ -6672,6 +6687,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -6805,6 +6825,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -7285,6 +7310,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8053,6 +8083,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_TIME</Name>
@@ -8444,6 +8479,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_INT</Name>
@@ -8535,6 +8575,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8662,6 +8707,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LWORD</Name>
@@ -8763,6 +8813,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9079,6 +9134,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AreAllTestsFinished</Name>
@@ -9243,6 +9303,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9427,6 +9492,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LREAL</Name>
@@ -9524,6 +9594,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -17493,13 +17568,33 @@ These features efficiently address the addition, removal, and verification of be
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>nArbiterCohort</Name>
+        <Name>nNextCohort</Name>
         <Type>UDINT</Type>
-        <Comment> The cohort index keeps track of which beam parameter requests have been included in higher-level arbitrations</Comment>
+        <Comment> The cohort ID any new requests will adopt, will become ReqInProgCohort at the start of the next acknowledgement cycle</Comment>
         <BitSize>32</BitSize>
         <BitOffs>114496</BitOffs>
         <Default>
           <Value>1</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>nAckInProgCohort</Name>
+        <Type>UDINT</Type>
+        <Comment> The cohort ID currently being acknowledged, will become nActiveCohort after acknowledgement from HA</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>114528</BitOffs>
+        <Default>
+          <Value>0</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>nActiveCohort</Name>
+        <Type>UDINT</Type>
+        <Comment> Requests with cohorts &lt;= to this value will be considered active in CheckRequest</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>114560</BitOffs>
+        <Default>
+          <Value>0</Value>
         </Default>
         <Properties>
           <Property>
@@ -17513,26 +17608,18 @@ These features efficiently address the addition, removal, and verification of be
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>xActiveInArbitration</Name>
+        <Name>bStartNewAckRequest</Name>
         <Type>BOOL</Type>
-        <Comment> True when this arbiter's request is included in all higher-level arbitrations</Comment>
+        <Comment> Set by an add or remove method call, triggers an ack cycle</Comment>
         <BitSize>8</BitSize>
-        <BitOffs>114528</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: ActiveInArbitration
-        io: i
-        field: DESC True if this arbiter</Value>
-          </Property>
-        </Properties>
+        <BitOffs>114592</BitOffs>
       </SubItem>
       <SubItem>
-        <Name>rtActiveInArbitration</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>114560</BitOffs>
+        <Name>bAckInProgress</Name>
+        <Type>BOOL</Type>
+        <Comment> Set by ElevateReq when there is a new ack request and reset when the ack cycle is complete</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>114600</BitOffs>
       </SubItem>
       <SubItem>
         <Name>idTransmission</Name>
@@ -26373,46 +26460,52 @@ These features efficiently address the addition, removal, and verification of be
         </Default>
       </SubItem>
       <SubItem>
-        <Name>nMoves</Name>
+        <Name>nStateAfterStop</Name>
         <Type>INT</Type>
         <BitSize>16</BitSize>
         <BitOffs>41488</BitOffs>
       </SubItem>
       <SubItem>
-        <Name>bFirstDirection</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
+        <Name>nMoves</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
         <BitOffs>41504</BitOffs>
       </SubItem>
       <SubItem>
-        <Name>bAtHome</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>41512</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bMove</Name>
+        <Name>bFirstDirection</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
         <BitOffs>41520</BitOffs>
       </SubItem>
       <SubItem>
+        <Name>bAtHome</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>41528</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bMove</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>41536</BitOffs>
+      </SubItem>
+      <SubItem>
         <Name>nErrCount</Name>
         <Type>INT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>41536</BitOffs>
+        <BitOffs>41552</BitOffs>
       </SubItem>
       <SubItem>
         <Name>bInterrupted</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <BitOffs>41552</BitOffs>
+        <BitOffs>41568</BitOffs>
       </SubItem>
       <SubItem>
         <Name>IDLE</Name>
         <Type>INT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>41568</BitOffs>
+        <BitOffs>41584</BitOffs>
         <Default>
           <Value>0</Value>
         </Default>
@@ -26421,7 +26514,7 @@ These features efficiently address the addition, removal, and verification of be
         <Name>NEXT_MOVE</Name>
         <Type>INT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>41584</BitOffs>
+        <BitOffs>41600</BitOffs>
         <Default>
           <Value>1</Value>
         </Default>
@@ -26430,7 +26523,7 @@ These features efficiently address the addition, removal, and verification of be
         <Name>CHECK_FWD</Name>
         <Type>INT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>41600</BitOffs>
+        <BitOffs>41616</BitOffs>
         <Default>
           <Value>2</Value>
         </Default>
@@ -26439,7 +26532,7 @@ These features efficiently address the addition, removal, and verification of be
         <Name>CHECK_BWD</Name>
         <Type>INT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>41616</BitOffs>
+        <BitOffs>41632</BitOffs>
         <Default>
           <Value>3</Value>
         </Default>
@@ -26448,7 +26541,7 @@ These features efficiently address the addition, removal, and verification of be
         <Name>FINAL_MOVE</Name>
         <Type>INT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>41632</BitOffs>
+        <BitOffs>41648</BitOffs>
         <Default>
           <Value>4</Value>
         </Default>
@@ -26457,7 +26550,7 @@ These features efficiently address the addition, removal, and verification of be
         <Name>FINAL_SETPOS</Name>
         <Type>INT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>41648</BitOffs>
+        <BitOffs>41664</BitOffs>
         <Default>
           <Value>5</Value>
         </Default>
@@ -26466,9 +26559,18 @@ These features efficiently address the addition, removal, and verification of be
         <Name>ERROR</Name>
         <Type>INT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>41664</BitOffs>
+        <BitOffs>41680</BitOffs>
         <Default>
           <Value>6</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>WAIT_STOP</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>41696</BitOffs>
+        <Default>
+          <Value>7</Value>
         </Default>
       </SubItem>
       <SubItem>
@@ -43160,7 +43262,7 @@ Readbacks</Comment>
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>3866624</ByteSize>
+          <ByteSize>3801088</ByteSize>
           <Symbol>
             <Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
             <Comment> AMS Net ID used for FB_EcatDiag, among others </Comment>
@@ -50469,7 +50571,7 @@ Readbacks</Comment>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>3866624</ByteSize>
+          <ByteSize>3801088</ByteSize>
           <Symbol>
             <Name>PRG_IM1K0_XTES.fbIM1K0.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
             <BitSize>1024</BitSize>
@@ -52391,7 +52493,7 @@ Readbacks</Comment>
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>3866624</ByteSize>
+          <ByteSize>3801088</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -59465,9 +59567,7 @@ Readbacks</Comment>
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>
-		pv: AT1K4:L2SI:MMS:01
-	</Value>
+                <Value>pv: AT1K4:L2SI:MMS:01</Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
@@ -61201,7 +61301,7 @@ Readbacks</Comment>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>3866624</ByteSize>
+          <ByteSize>3801088</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -61270,7 +61370,7 @@ Readbacks</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2020-12-03T16:01:02</Value>
+          <Value>2021-01-13T10:51:59</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
