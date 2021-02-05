@@ -17,6 +17,7 @@
     <CombineIds>false</CombineIds>
     <ProjectVersion>0.0.0</ProjectVersion>
     <Released>true</Released>
+    <Title>kfe_motion</Title>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\ENUM_SXR_SATT_Position.TcDUT">
