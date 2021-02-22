@@ -78,7 +78,7 @@ fbIM2K0.stYag.fPosition := -87.65;
 fbIM2K0.stYag.bUseRawCounts := FALSE;
 fbIM2K0.stYag.nRequestAssertionID := 16#2202;
 fbIM2K0.stYag.stBeamParams := PMPS_GVL.cstFullBeam;
-fbIM2K0.stYag.stBeamParams.nTran := 5;
+fbIM2K0.stYag.stBeamParams.nTran := 20;
 fbIM2K0.stYag.bValid := TRUE;
 
 fbIM2K0.stDiamond.fPosition := -57.65;
