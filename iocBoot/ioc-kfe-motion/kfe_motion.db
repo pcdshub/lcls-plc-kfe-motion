@@ -60,6 +60,28 @@ record(longin, "$(PREFIX)LCLSGeneral:LogMessageCount_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "SL1K0:POWER:GO_RBV") {
+  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.bExecuteMotion?")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(archive, "VAL")
+}
+
+record(bo, "SL1K0:POWER:GO") {
+  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.bExecuteMotion=")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(longin, "$(PREFIX)RequestedBP:Transmission_RBV") {
   field(DESC, "PMPS_GVL.stRequestedBeamParameters.nTran")
   field(SCAN, "I/O Intr")
@@ -533,22 +555,22 @@ record(waveform, "$(PREFIX)K:eVRangeCnst_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
-record(bi, "SL1K0:POWER:GO_RBV") {
-  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+record(bi, "SL2K0:POWER:GO_RBV") {
+  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.bExecuteMotion?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?")
   field(ZNAM, "False")
   field(ONAM, "True")
   info(archive, "VAL")
 }
 
-record(bo, "SL1K0:POWER:GO") {
-  field(DESC, "PRG_SL1K0_POWER.bExecuteMotion")
+record(bo, "SL2K0:POWER:GO") {
+  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL1K0_POWER.bExecuteMotion=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=")
   field(ZNAM, "False")
   field(ONAM, "True")
   info(autosaveFields_pass0, "VAL")
@@ -13311,28 +13333,6 @@ record(bi, "SL2K0:POWER:SOUTH:RTD:02:ERR_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "SL2K0:POWER:GO_RBV") {
-  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.bExecuteMotion?")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(archive, "VAL")
-}
-
-record(bo, "SL2K0:POWER:GO") {
-  field(DESC, "PRG_SL2K0_POWER.bExecuteMotion")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SL2K0_POWER.bExecuteMotion=")
-  field(ZNAM, "False")
-  field(ONAM, "True")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
 record(bi, "AT1K4:L2SI:MMS:01:STATE:RESET_RBV") {
   field(DESC, "PRG_AT1K4_SOLID.fbStage1.fbState.bReset")
   field(SCAN, "I/O Intr")
@@ -22941,6 +22941,30 @@ record(bo, "IM1K0:XTES:MMS:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K0:XTES:MMS:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K0:XTES:MMS:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K0:XTES:MMS:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -23158,8 +23182,8 @@ record(bi, "IM1K0:XTES:MMS:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23170,8 +23194,8 @@ record(bi, "IM1K0:XTES:MMS:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23182,8 +23206,8 @@ record(bi, "IM1K0:XTES:MMS:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23206,8 +23230,8 @@ record(bi, "IM1K0:XTES:MMS:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23218,8 +23242,8 @@ record(bi, "IM1K0:XTES:MMS:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23242,6 +23266,18 @@ record(waveform, "IM1K0:XTES:MMS:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM1K0:XTES:MMS:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -23537,6 +23573,30 @@ record(bo, "IM1K0:XTES:CLZ:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K0:XTES:CLZ:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K0:XTES:CLZ:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K0:XTES:CLZ:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -23754,8 +23814,8 @@ record(bi, "IM1K0:XTES:CLZ:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23766,8 +23826,8 @@ record(bi, "IM1K0:XTES:CLZ:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23778,8 +23838,8 @@ record(bi, "IM1K0:XTES:CLZ:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23802,8 +23862,8 @@ record(bi, "IM1K0:XTES:CLZ:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23814,8 +23874,8 @@ record(bi, "IM1K0:XTES:CLZ:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -23838,6 +23898,18 @@ record(waveform, "IM1K0:XTES:CLZ:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM1K0:XTES:CLZ:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -24133,6 +24205,30 @@ record(bo, "IM1K0:XTES:CLF:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K0:XTES:CLF:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K0:XTES:CLF:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K0:XTES:CLF:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -24350,8 +24446,8 @@ record(bi, "IM1K0:XTES:CLF:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -24362,8 +24458,8 @@ record(bi, "IM1K0:XTES:CLF:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -24374,8 +24470,8 @@ record(bi, "IM1K0:XTES:CLF:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -24398,8 +24494,8 @@ record(bi, "IM1K0:XTES:CLF:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -24410,8 +24506,8 @@ record(bi, "IM1K0:XTES:CLF:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -24434,6 +24530,18 @@ record(waveform, "IM1K0:XTES:CLF:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM1K0:XTES:CLF:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -24729,6 +24837,30 @@ record(bo, "IM1K3:PPM:MMS:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K3:PPM:MMS:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K3:PPM:MMS:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K3:PPM:MMS:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -24946,8 +25078,8 @@ record(bi, "IM1K3:PPM:MMS:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -24958,8 +25090,8 @@ record(bi, "IM1K3:PPM:MMS:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -24970,8 +25102,8 @@ record(bi, "IM1K3:PPM:MMS:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -24994,8 +25126,8 @@ record(bi, "IM1K3:PPM:MMS:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -25006,8 +25138,8 @@ record(bi, "IM1K3:PPM:MMS:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -25030,6 +25162,18 @@ record(waveform, "IM1K3:PPM:MMS:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM1K3:PPM:MMS:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -25325,6 +25469,30 @@ record(bo, "IM2K0:XTES:MMS:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM2K0:XTES:MMS:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM2K0:XTES:MMS:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM2K0:XTES:MMS:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -25542,8 +25710,8 @@ record(bi, "IM2K0:XTES:MMS:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -25554,8 +25722,8 @@ record(bi, "IM2K0:XTES:MMS:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -25566,8 +25734,8 @@ record(bi, "IM2K0:XTES:MMS:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -25590,8 +25758,8 @@ record(bi, "IM2K0:XTES:MMS:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -25602,8 +25770,8 @@ record(bi, "IM2K0:XTES:MMS:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -25626,6 +25794,18 @@ record(waveform, "IM2K0:XTES:MMS:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM2K0:XTES:MMS:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -25921,6 +26101,30 @@ record(bo, "IM2K0:XTES:CLZ:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM2K0:XTES:CLZ:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM2K0:XTES:CLZ:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM2K0:XTES:CLZ:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -26138,8 +26342,8 @@ record(bi, "IM2K0:XTES:CLZ:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26150,8 +26354,8 @@ record(bi, "IM2K0:XTES:CLZ:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26162,8 +26366,8 @@ record(bi, "IM2K0:XTES:CLZ:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26186,8 +26390,8 @@ record(bi, "IM2K0:XTES:CLZ:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26198,8 +26402,8 @@ record(bi, "IM2K0:XTES:CLZ:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26222,6 +26426,18 @@ record(waveform, "IM2K0:XTES:CLZ:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM2K0:XTES:CLZ:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -26517,6 +26733,30 @@ record(bo, "IM2K0:XTES:CLF:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM2K0:XTES:CLF:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM2K0:XTES:CLF:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM2K0:XTES:CLF:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -26734,8 +26974,8 @@ record(bi, "IM2K0:XTES:CLF:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26746,8 +26986,8 @@ record(bi, "IM2K0:XTES:CLF:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26758,8 +26998,8 @@ record(bi, "IM2K0:XTES:CLF:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26782,8 +27022,8 @@ record(bi, "IM2K0:XTES:CLF:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26794,8 +27034,8 @@ record(bi, "IM2K0:XTES:CLF:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -26818,6 +27058,18 @@ record(waveform, "IM2K0:XTES:CLF:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM2K0:XTES:CLF:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -27113,6 +27365,30 @@ record(bo, "PF1K0:WFS:MMS:Y:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "PF1K0:WFS:MMS:Y:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "PF1K0:WFS:MMS:Y:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "PF1K0:WFS:MMS:Y:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -27330,8 +27606,8 @@ record(bi, "PF1K0:WFS:MMS:Y:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -27342,8 +27618,8 @@ record(bi, "PF1K0:WFS:MMS:Y:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -27354,8 +27630,8 @@ record(bi, "PF1K0:WFS:MMS:Y:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -27378,8 +27654,8 @@ record(bi, "PF1K0:WFS:MMS:Y:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -27390,8 +27666,8 @@ record(bi, "PF1K0:WFS:MMS:Y:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -27414,6 +27690,18 @@ record(waveform, "PF1K0:WFS:MMS:Y:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "PF1K0:WFS:MMS:Y:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -27709,6 +27997,30 @@ record(bo, "PF1K0:WFS:MMS:Z:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "PF1K0:WFS:MMS:Z:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "PF1K0:WFS:MMS:Z:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "PF1K0:WFS:MMS:Z:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -27926,8 +28238,8 @@ record(bi, "PF1K0:WFS:MMS:Z:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -27938,8 +28250,8 @@ record(bi, "PF1K0:WFS:MMS:Z:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -27950,8 +28262,8 @@ record(bi, "PF1K0:WFS:MMS:Z:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -27974,8 +28286,8 @@ record(bi, "PF1K0:WFS:MMS:Z:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -27986,8 +28298,8 @@ record(bi, "PF1K0:WFS:MMS:Z:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -28010,6 +28322,18 @@ record(waveform, "PF1K0:WFS:MMS:Z:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "PF1K0:WFS:MMS:Z:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -28305,6 +28629,30 @@ record(bo, "SL1K0:POWER:MMS:SOUTH:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "SL1K0:POWER:MMS:SOUTH:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "SL1K0:POWER:MMS:SOUTH:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M18.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "SL1K0:POWER:MMS:SOUTH:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -28522,8 +28870,8 @@ record(bi, "SL1K0:POWER:MMS:SOUTH:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -28534,8 +28882,8 @@ record(bi, "SL1K0:POWER:MMS:SOUTH:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -28546,8 +28894,8 @@ record(bi, "SL1K0:POWER:MMS:SOUTH:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -28570,8 +28918,8 @@ record(bi, "SL1K0:POWER:MMS:SOUTH:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -28582,8 +28930,8 @@ record(bi, "SL1K0:POWER:MMS:SOUTH:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -28606,6 +28954,18 @@ record(waveform, "SL1K0:POWER:MMS:SOUTH:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "SL1K0:POWER:MMS:SOUTH:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -28901,6 +29261,30 @@ record(bo, "SL1K0:POWER:MMS:TOP:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "SL1K0:POWER:MMS:TOP:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M19.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "SL1K0:POWER:MMS:TOP:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M19.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "SL1K0:POWER:MMS:TOP:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -29118,8 +29502,8 @@ record(bi, "SL1K0:POWER:MMS:TOP:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M19.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29130,8 +29514,8 @@ record(bi, "SL1K0:POWER:MMS:TOP:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M19.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29142,8 +29526,8 @@ record(bi, "SL1K0:POWER:MMS:TOP:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M19.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29166,8 +29550,8 @@ record(bi, "SL1K0:POWER:MMS:TOP:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M19.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29178,8 +29562,8 @@ record(bi, "SL1K0:POWER:MMS:TOP:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M19.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29202,6 +29586,18 @@ record(waveform, "SL1K0:POWER:MMS:TOP:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M19.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "SL1K0:POWER:MMS:TOP:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M19.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -29497,6 +29893,30 @@ record(bo, "SL1K0:POWER:MMS:NORTH:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "SL1K0:POWER:MMS:NORTH:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M20.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "SL1K0:POWER:MMS:NORTH:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M20.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "SL1K0:POWER:MMS:NORTH:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -29714,8 +30134,8 @@ record(bi, "SL1K0:POWER:MMS:NORTH:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M20.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29726,8 +30146,8 @@ record(bi, "SL1K0:POWER:MMS:NORTH:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M20.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29738,8 +30158,8 @@ record(bi, "SL1K0:POWER:MMS:NORTH:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M20.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29762,8 +30182,8 @@ record(bi, "SL1K0:POWER:MMS:NORTH:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M20.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29774,8 +30194,8 @@ record(bi, "SL1K0:POWER:MMS:NORTH:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M20.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -29798,6 +30218,18 @@ record(waveform, "SL1K0:POWER:MMS:NORTH:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M20.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "SL1K0:POWER:MMS:NORTH:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M20.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -30093,6 +30525,30 @@ record(bo, "SL1K0:POWER:MMS:BOTTOM:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "SL1K0:POWER:MMS:BOTTOM:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M21.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "SL1K0:POWER:MMS:BOTTOM:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M21.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "SL1K0:POWER:MMS:BOTTOM:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -30310,8 +30766,8 @@ record(bi, "SL1K0:POWER:MMS:BOTTOM:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M21.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30322,8 +30778,8 @@ record(bi, "SL1K0:POWER:MMS:BOTTOM:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M21.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30334,8 +30790,8 @@ record(bi, "SL1K0:POWER:MMS:BOTTOM:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M21.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30358,8 +30814,8 @@ record(bi, "SL1K0:POWER:MMS:BOTTOM:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M21.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30370,8 +30826,8 @@ record(bi, "SL1K0:POWER:MMS:BOTTOM:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M21.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30394,6 +30850,18 @@ record(waveform, "SL1K0:POWER:MMS:BOTTOM:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M21.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "SL1K0:POWER:MMS:BOTTOM:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M21.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -30689,6 +31157,30 @@ record(bo, "SL2K0:POWER:MMS:SOUTH:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "SL2K0:POWER:MMS:SOUTH:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M22.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "SL2K0:POWER:MMS:SOUTH:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M22.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "SL2K0:POWER:MMS:SOUTH:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -30906,8 +31398,8 @@ record(bi, "SL2K0:POWER:MMS:SOUTH:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M22.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30918,8 +31410,8 @@ record(bi, "SL2K0:POWER:MMS:SOUTH:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M22.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30930,8 +31422,8 @@ record(bi, "SL2K0:POWER:MMS:SOUTH:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M22.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30954,8 +31446,8 @@ record(bi, "SL2K0:POWER:MMS:SOUTH:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M22.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30966,8 +31458,8 @@ record(bi, "SL2K0:POWER:MMS:SOUTH:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M22.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -30990,6 +31482,18 @@ record(waveform, "SL2K0:POWER:MMS:SOUTH:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M22.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "SL2K0:POWER:MMS:SOUTH:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M22.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -31285,6 +31789,30 @@ record(bo, "SL2K0:POWER:MMS:TOP:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "SL2K0:POWER:MMS:TOP:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M23.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "SL2K0:POWER:MMS:TOP:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M23.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "SL2K0:POWER:MMS:TOP:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -31502,8 +32030,8 @@ record(bi, "SL2K0:POWER:MMS:TOP:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M23.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -31514,8 +32042,8 @@ record(bi, "SL2K0:POWER:MMS:TOP:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M23.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -31526,8 +32054,8 @@ record(bi, "SL2K0:POWER:MMS:TOP:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M23.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -31550,8 +32078,8 @@ record(bi, "SL2K0:POWER:MMS:TOP:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M23.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -31562,8 +32090,8 @@ record(bi, "SL2K0:POWER:MMS:TOP:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M23.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -31586,6 +32114,18 @@ record(waveform, "SL2K0:POWER:MMS:TOP:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M23.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "SL2K0:POWER:MMS:TOP:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M23.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -31881,6 +32421,30 @@ record(bo, "SL2K0:POWER:MMS:NORTH:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "SL2K0:POWER:MMS:NORTH:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M24.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "SL2K0:POWER:MMS:NORTH:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M24.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "SL2K0:POWER:MMS:NORTH:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -32098,8 +32662,8 @@ record(bi, "SL2K0:POWER:MMS:NORTH:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M24.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32110,8 +32674,8 @@ record(bi, "SL2K0:POWER:MMS:NORTH:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M24.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32122,8 +32686,8 @@ record(bi, "SL2K0:POWER:MMS:NORTH:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M24.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32146,8 +32710,8 @@ record(bi, "SL2K0:POWER:MMS:NORTH:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M24.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32158,8 +32722,8 @@ record(bi, "SL2K0:POWER:MMS:NORTH:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M24.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32182,6 +32746,18 @@ record(waveform, "SL2K0:POWER:MMS:NORTH:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M24.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "SL2K0:POWER:MMS:NORTH:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M24.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -32477,6 +33053,30 @@ record(bo, "SL2K0:POWER:MMS:BOTTOM:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "SL2K0:POWER:MMS:BOTTOM:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M25.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "SL2K0:POWER:MMS:BOTTOM:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M25.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "SL2K0:POWER:MMS:BOTTOM:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -32694,8 +33294,8 @@ record(bi, "SL2K0:POWER:MMS:BOTTOM:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M25.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32706,8 +33306,8 @@ record(bi, "SL2K0:POWER:MMS:BOTTOM:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M25.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32718,8 +33318,8 @@ record(bi, "SL2K0:POWER:MMS:BOTTOM:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M25.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32742,8 +33342,8 @@ record(bi, "SL2K0:POWER:MMS:BOTTOM:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M25.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32754,8 +33354,8 @@ record(bi, "SL2K0:POWER:MMS:BOTTOM:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M25.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -32778,6 +33378,18 @@ record(waveform, "SL2K0:POWER:MMS:BOTTOM:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M25.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "SL2K0:POWER:MMS:BOTTOM:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M25.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -33073,6 +33685,30 @@ record(bo, "AT1K4:L2SI:MMS:01:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "AT1K4:L2SI:MMS:01:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M26.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "AT1K4:L2SI:MMS:01:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M26.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "AT1K4:L2SI:MMS:01:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -33290,8 +33926,8 @@ record(bi, "AT1K4:L2SI:MMS:01:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M26.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33302,8 +33938,8 @@ record(bi, "AT1K4:L2SI:MMS:01:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M26.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33314,8 +33950,8 @@ record(bi, "AT1K4:L2SI:MMS:01:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M26.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33338,8 +33974,8 @@ record(bi, "AT1K4:L2SI:MMS:01:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M26.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33350,8 +33986,8 @@ record(bi, "AT1K4:L2SI:MMS:01:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M26.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33374,6 +34010,18 @@ record(waveform, "AT1K4:L2SI:MMS:01:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M26.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "AT1K4:L2SI:MMS:01:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M26.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -33669,6 +34317,30 @@ record(bo, "AT1K4:L2SI:MMS:02:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "AT1K4:L2SI:MMS:02:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M27.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "AT1K4:L2SI:MMS:02:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M27.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "AT1K4:L2SI:MMS:02:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -33886,8 +34558,8 @@ record(bi, "AT1K4:L2SI:MMS:02:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M27.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33898,8 +34570,8 @@ record(bi, "AT1K4:L2SI:MMS:02:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M27.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33910,8 +34582,8 @@ record(bi, "AT1K4:L2SI:MMS:02:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M27.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33934,8 +34606,8 @@ record(bi, "AT1K4:L2SI:MMS:02:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M27.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33946,8 +34618,8 @@ record(bi, "AT1K4:L2SI:MMS:02:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M27.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -33970,6 +34642,18 @@ record(waveform, "AT1K4:L2SI:MMS:02:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M27.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "AT1K4:L2SI:MMS:02:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M27.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -34265,6 +34949,30 @@ record(bo, "AT1K4:L2SI:MMS:03:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "AT1K4:L2SI:MMS:03:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M28.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "AT1K4:L2SI:MMS:03:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M28.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "AT1K4:L2SI:MMS:03:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -34482,8 +35190,8 @@ record(bi, "AT1K4:L2SI:MMS:03:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M28.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -34494,8 +35202,8 @@ record(bi, "AT1K4:L2SI:MMS:03:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M28.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -34506,8 +35214,8 @@ record(bi, "AT1K4:L2SI:MMS:03:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M28.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -34530,8 +35238,8 @@ record(bi, "AT1K4:L2SI:MMS:03:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M28.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -34542,8 +35250,8 @@ record(bi, "AT1K4:L2SI:MMS:03:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M28.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -34566,6 +35274,18 @@ record(waveform, "AT1K4:L2SI:MMS:03:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M28.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "AT1K4:L2SI:MMS:03:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M28.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -34861,6 +35581,30 @@ record(bo, "AT1K4:L2SI:MMS:04:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "AT1K4:L2SI:MMS:04:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M29.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "AT1K4:L2SI:MMS:04:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M29.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "AT1K4:L2SI:MMS:04:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -35078,8 +35822,8 @@ record(bi, "AT1K4:L2SI:MMS:04:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M29.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35090,8 +35834,8 @@ record(bi, "AT1K4:L2SI:MMS:04:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M29.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35102,8 +35846,8 @@ record(bi, "AT1K4:L2SI:MMS:04:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M29.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35126,8 +35870,8 @@ record(bi, "AT1K4:L2SI:MMS:04:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M29.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35138,8 +35882,8 @@ record(bi, "AT1K4:L2SI:MMS:04:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M29.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35162,6 +35906,18 @@ record(waveform, "AT1K4:L2SI:MMS:04:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M29.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "AT1K4:L2SI:MMS:04:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M29.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -35457,6 +36213,30 @@ record(bo, "IM1K4:XTES:MMS:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K4:XTES:MMS:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M30.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K4:XTES:MMS:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M30.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K4:XTES:MMS:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -35674,8 +36454,8 @@ record(bi, "IM1K4:XTES:MMS:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M30.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35686,8 +36466,8 @@ record(bi, "IM1K4:XTES:MMS:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M30.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35698,8 +36478,8 @@ record(bi, "IM1K4:XTES:MMS:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M30.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35722,8 +36502,8 @@ record(bi, "IM1K4:XTES:MMS:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M30.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35734,8 +36514,8 @@ record(bi, "IM1K4:XTES:MMS:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M30.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -35758,6 +36538,18 @@ record(waveform, "IM1K4:XTES:MMS:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M30.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM1K4:XTES:MMS:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M30.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -36053,6 +36845,30 @@ record(bo, "IM1K4:XTES:CLZ:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K4:XTES:CLZ:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M31.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K4:XTES:CLZ:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M31.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K4:XTES:CLZ:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -36270,8 +37086,8 @@ record(bi, "IM1K4:XTES:CLZ:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M31.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36282,8 +37098,8 @@ record(bi, "IM1K4:XTES:CLZ:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M31.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36294,8 +37110,8 @@ record(bi, "IM1K4:XTES:CLZ:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M31.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36318,8 +37134,8 @@ record(bi, "IM1K4:XTES:CLZ:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M31.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36330,8 +37146,8 @@ record(bi, "IM1K4:XTES:CLZ:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M31.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36354,6 +37170,18 @@ record(waveform, "IM1K4:XTES:CLZ:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M31.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM1K4:XTES:CLZ:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M31.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -36649,6 +37477,30 @@ record(bo, "IM1K4:XTES:CLF:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "IM1K4:XTES:CLF:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M32.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM1K4:XTES:CLF:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M32.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM1K4:XTES:CLF:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -36866,8 +37718,8 @@ record(bi, "IM1K4:XTES:CLF:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M32.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36878,8 +37730,8 @@ record(bi, "IM1K4:XTES:CLF:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M32.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36890,8 +37742,8 @@ record(bi, "IM1K4:XTES:CLF:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M32.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36914,8 +37766,8 @@ record(bi, "IM1K4:XTES:CLF:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M32.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36926,8 +37778,8 @@ record(bi, "IM1K4:XTES:CLF:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M32.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -36950,6 +37802,18 @@ record(waveform, "IM1K4:XTES:CLF:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M32.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "IM1K4:XTES:CLF:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M32.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -37245,6 +38109,30 @@ record(bo, "ST1K4:TEST:MMS:01:PLC:bExecute") {
   info(archive, "VAL")
 }
 
+record(bi, "ST1K4:TEST:MMS:01:PLC:bUserEnable_RBV") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M33.bUserEnable?")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(archive, "VAL")
+}
+
+record(bo, "ST1K4:TEST:MMS:01:PLC:bUserEnable") {
+  # Used to disable power entirely for an axis
+  field(DESC, "Used to disable powe...irely for an axis")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M33.bUserEnable=")
+  field(ZNAM, "DISABLE")
+  field(ONAM, "ENABLE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "ST1K4:TEST:MMS:01:PLC:bMoveCmd_RBV") {
   field(DESC, "Start a move")
   field(SCAN, "I/O Intr")
@@ -37462,8 +38350,8 @@ record(bi, "ST1K4:TEST:MMS:01:PLC:bEnableDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M33.bEnableDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -37474,8 +38362,8 @@ record(bi, "ST1K4:TEST:MMS:01:PLC:bBusy_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M33.bBusy?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -37486,8 +38374,8 @@ record(bi, "ST1K4:TEST:MMS:01:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M33.bDone?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -37510,8 +38398,8 @@ record(bi, "ST1K4:TEST:MMS:01:PLC:bSafetyReady_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M33.bSafetyReady?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -37522,8 +38410,8 @@ record(bi, "ST1K4:TEST:MMS:01:PLC:bError_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M33.bError?")
-  field(ZNAM, "TRUE")
-  field(ONAM, "FALSE")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -37546,6 +38434,18 @@ record(waveform, "ST1K4:TEST:MMS:01:PLC:sErrorMessage_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M33.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(ai, "ST1K4:TEST:MMS:01:PLC:fPosDiff_RBV") {
+  field(DESC, "Position lag difference")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M33.fPosDiff?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
@@ -39645,19 +40545,7 @@ record(longin, "PLC:KFE:MOTION:ARB:CohortCounter_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.nArbiterCohort?")
-  info(archive, "VAL")
-}
-
-record(bi, "PLC:KFE:MOTION:ARB:ActiveInArbitration_RBV") {
-  field(DESC, "True if this arbiter")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.xActiveInArbitration?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.nActiveCohort?")
   info(archive, "VAL")
 }
 
