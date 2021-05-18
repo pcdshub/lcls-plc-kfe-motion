@@ -145,11 +145,6 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="kfe_motion.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
       <Resolution>LCLS General, 2.4.2 (SLAC)</Resolution>
     </PlaceholderResolution>
@@ -162,6 +157,11 @@
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 2.0.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="kfe_motion.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
