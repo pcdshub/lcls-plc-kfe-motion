@@ -62,7 +62,7 @@ VAR
                               .D[20] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
                               .D[21] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 21'}
     stEL6Out AT %Q*: EL6OutData22b;
-    
+
     {attribute 'pytmc' := '
         pv: IM2K0:XTES:CAM2
         io: io
