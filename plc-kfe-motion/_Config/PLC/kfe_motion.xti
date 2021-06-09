@@ -6452,6 +6452,13 @@ External Setpoint Generation:
 					</Comment>
 					<Type>INT</Type>
 				</Var>
+				<Var>
+					<Name>PRG_IM2K0_XTES.fbIM2K0_GigE.fbGetIllPercent.iRaw</Name>
+					<Comment>
+						<![CDATA[ Connect this input to the terminal]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -7177,6 +7184,21 @@ External Setpoint Generation:
 					<Name>GVL.fbFastFaultOutput2.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>PRG_IM2K0_XTES.fbIM2K0_GigE.iIlluminatorINT</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_IM2K0_XTES.fbIM2K0_GigE.bGigePower</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_IM2K0_XTES.fbIM2K0_GigE.fbSetIllPercent.iRaw</Name>
+					<Comment>
+						<![CDATA[ Connect this output to the terminal]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -7369,6 +7391,10 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^Main.M5.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_IM2K0_XTES.fbIM2K0.fbLED.bLEDPower" VarB="Channel 3^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_IM2K0_XTES.fbIM2K0.fbOpal.bOpalPower" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PRG_IM2K0_XTES.fbIM2K0_GigE.bGigePower" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X1 IM2K0-XTES (EK1100)^IM2K0-EL4004">
+				<Link VarA="PlcTask Outputs^PRG_IM2K0_XTES.fbIM2K0_GigE.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X1 IM2K0-XTES (EK1100)^IM2K0-EL5042">
 				<Link VarA="PlcTask Inputs^Main.M5.nRawEncoderULINT" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
