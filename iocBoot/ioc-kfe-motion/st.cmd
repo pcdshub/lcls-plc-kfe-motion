@@ -1,4 +1,4 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.3.1/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.4.1/bin/rhel7-x86_64/adsIoc
 ###### AUTO-GENERATED DO NOT EDIT ##############
 
 < envPaths
@@ -166,7 +166,7 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 epicsEnvSet("AXIS_NO",         "6")
 epicsEnvSet("MOTOR_PREFIX",    "IM2K0:XTES:")
 epicsEnvSet("MOTOR_NAME",      "CLZ")
-epicsEnvSet("DESC",            "Main.M6 / Axis 6 IM2K0-XTES-CLZ")
+epicsEnvSet("DESC",            "Main.M6 / Axis 6 IM2K0-XTES-CLZ (Removed)")
 epicsEnvSet("EGU",             "%")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
@@ -181,7 +181,7 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 epicsEnvSet("AXIS_NO",         "7")
 epicsEnvSet("MOTOR_PREFIX",    "IM2K0:XTES:")
 epicsEnvSet("MOTOR_NAME",      "CLF")
-epicsEnvSet("DESC",            "Main.M7 / Axis 7 IM2K0-XTES-CLF")
+epicsEnvSet("DESC",            "Main.M7 / Axis 7 IM2K0-XTES-CLF (Removed)")
 epicsEnvSet("EGU",             "%")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
