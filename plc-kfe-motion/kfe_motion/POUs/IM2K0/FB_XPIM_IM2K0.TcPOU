@@ -7,8 +7,6 @@
 *)
 VAR_IN_OUT
     stYStage: DUT_MotionStage;
-    stEl6In: EL6inData22b;
-    stEl6Out: EL6OutData22b;
     fbArbiter: FB_Arbiter;
     fbFFHWO: FB_HardwareFFOutput;
 END_VAR
@@ -30,11 +28,6 @@ VAR
         arrStates.array: 1..4
     '}
     fbStates: FB_XPIM_States;
-
-    {attribute 'pytmc' := '
-        pv: MFW
-    '}
-    fbFilterWheel: FB_XPIM_FilterWheel;
 
     {attribute 'pytmc' := '
         pv: CAM
@@ -65,11 +58,6 @@ fbStates(
     stYag:=stYag,
     stDiamond:=stDiamond,
     stReticle:=stReticle);
-
-fbFilterWheel(
-    bExecute:=TRUE,
-    stIn_El6:=stEl6In,
-    stOut_El6:=stEl6Out);
 
 fbGige();
 fbFlowSwitch();]]></ST>
