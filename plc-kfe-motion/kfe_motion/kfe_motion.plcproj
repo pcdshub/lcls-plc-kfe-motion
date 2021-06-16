@@ -46,6 +46,9 @@
     <Compile Include="POUs\AT1K4\FB_SXR_SATT_Stage.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\IM2K0\FB_XPIM_IM2K0.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_1_PlcTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -102,6 +105,7 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\AT1K4" />
+    <Folder Include="POUs\IM2K0" />
     <Folder Include="Temp" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

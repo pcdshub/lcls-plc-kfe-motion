@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_XPIM_IM2K0" Id="{aa9f645d-c463-4c9e-8962-8aa3b3b2b9c3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_XPIM_IM2K0
+(*
+    IM2K0 has been modified to replace the lens, illuminator, and camera with the PPM versions
+*)
+VAR_IN_OUT
+    stYStage: DUT_MotionStage;
+    stEl6In: EL6inData22b;
+    stEl6Out: EL6OutData22b;
+    fbArbiter: FB_Arbiter;
+    fbFFHWO: FB_HardwareFFOutput;
+END_VAR
+VAR_INPUT
+    stOut: DUT_PositionState;
+    stYag: DUT_PositionState;
+    stDiamond: DUT_PositionState;
+    stReticle: DUT_PositionState;
+
+    nTransitionAssertionID: UDINT;
+    nUnknownAssertionID: UDINT;
+END_VAR
+VAR
+    fbYStage: FB_MotionStage;
+
+    {attribute 'pytmc' := '
+        pv: MMS:STATE
+        io: io
+        arrStates.array: 1..4
+    '}
+    fbStates: FB_XPIM_States;
+
+    {attribute 'pytmc' := '
+        pv: MFW
+    '}
+    fbFilterWheel: FB_XPIM_FilterWheel;
+
+    {attribute 'pytmc' := '
+        pv: CAM
+    '}
+    fbGige: FB_PPM_Gige;
+
+    {attribute 'pytmc' := '
+        pv: SFW
+    '}
+    fbFlowSwitch: FB_XTES_Flowswitch;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbYStage(stMotionStage:=stYStage);
+stYStage.bHardwareEnable := TRUE;
+stYStage.bPowerSelf := FALSE;
+// No limit switch at the bottom
+stYStage.bLimitBackwardEnable := TRUE;
+
+fbStates(
+    fbArbiter:=fbArbiter,
+    fbFFHWO:=fbFFHWO,
+    nTransitionAssertionID:=nTransitionAssertionID,
+    nUnknownAssertionID:=nUnknownAssertionID,
+    stMotionStage:=stYStage,
+    bEnable:=TRUE,
+    stOut:=stOut,
+    stYag:=stYag,
+    stDiamond:=stDiamond,
+    stReticle:=stReticle);
+
+fbFilterWheel(
+    bExecute:=TRUE,
+    stIn_El6:=stEl6In,
+    stOut_El6:=stEl6Out);
+
+fbGige();
+fbFlowSwitch();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

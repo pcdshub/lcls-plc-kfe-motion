@@ -7,13 +7,9 @@ VAR
         pv: IM2K0:XTES
         io: io
     '}
-    {attribute 'TcLinkTo' := '.bZoomEndFwd := TIIB[IM2K0-EL1088]^Channel 1^Input;
-                              .bZoomEndBwd := TIIB[IM2K0-EL1088]^Channel 2^Input;
-                              .bFocusEndFwd := TIIB[IM2K0-EL1088]^Channel 3^Input;
-                              .bFocusEndBwd := TIIB[IM2K0-EL1088]^Channel 4^Input;
-                              .fbOpal.bOpalPower := TIIB[IM2K0-EL2004]^Channel 2^Output;
-                              .fbLED.bLedPower := TIIB[IM2K0-EL2004]^Channel 3^Output'}
-    fbIM2K0: FB_XPIM;
+    {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K0-EL4004]^AO Outputs Channel 1^Analog output;
+                              .fbGige.bGigePower := TIIB[IM2K0-EL2004]^Channel 4^Output'}
+    fbIM2K0: FB_XPIM_IM2K0;
     {attribute 'TcLinkTo' := '.Status := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Status;
                               .D[0] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
                               .D[1] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
@@ -62,14 +58,6 @@ VAR
                               .D[20] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
                               .D[21] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 21'}
     stEL6Out AT %Q*: EL6OutData22b;
-
-    {attribute 'pytmc' := '
-        pv: IM2K0:XTES:CAM2
-        io: io
-    '}
-    {attribute 'TcLinkTo' := '.iIlluminatorINT := TIIB[IM2K0-EL4004]^AO Outputs Channel 1^Analog output;
-                              .bGigePower := TIIB[IM2K0-EL2004]^Channel 4^Output'}
-    fbIM2K0_GigE: FB_PPM_Gige;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -105,12 +93,8 @@ fbIM2K0(
     fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M5,
-    stZoomStage := Main.M6,
-    stFocusStage := Main.M7,
     stEl6In := stEL6In,
-    stEl6Out := stEl6Out);
-
-fbIM2K0_GigE();]]></ST>
+    stEl6Out := stEl6Out);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -31,8 +31,8 @@
 		<Axis File="Axis 3 IM1K0-XTES-CLF.xti" Id="3"/>
 		<Axis File="Axis 4 IM1K3-PPM-MMS.xti" Id="4"/>
 		<Axis File="Axis 5 IM2K0-XTES-MMS.xti" Id="5"/>
-		<Axis File="Axis 6 IM2K0-XTES-CLZ.xti" Id="6"/>
-		<Axis File="Axis 7 IM2K0-XTES-CLF.xti" Id="7"/>
+		<Axis File="Axis 6 IM2K0-XTES-CLZ (Removed).xti" Id="6"/>
+		<Axis File="Axis 7 IM2K0-XTES-CLF (Removed).xti" Id="7"/>
 		<Axis File="Axis 8 PF1K0-WFS-MMS-Y.xti" Id="8"/>
 		<Axis File="Axis 9 PF1K0-WFS-MMS-Z.xti" Id="9"/>
 		<Axis File="Axis 10.xti" Id="10"/>
