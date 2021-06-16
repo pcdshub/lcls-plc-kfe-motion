@@ -5668,6 +5668,98 @@ record(ao, "IM2K0:XTES:CAM:CIL:PCT") {
   info(archive, "VAL")
 }
 
+record(bi, "IM2K0:XTES:CIL:PWR_RBV") {
+  field(DESC, "PRG_IM2K0_XTES.fbIM2K0.fbLED.bLEDPower")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbLED.bLEDPower?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "IM2K0:XTES:CIL:PWR") {
+  field(DESC, "PRG_IM2K0_XTES.fbIM2K0.fbLED.bLEDPower")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbLED.bLEDPower=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "IM2K0:XTES:CIL:AUTO_RBV") {
+  field(DESC, "PRG_IM2K0_XTES.fbIM2K0.fbLED.bLEDAuto")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbLED.bLEDAuto?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "IM2K0:XTES:CIL:AUTO") {
+  field(DESC, "PRG_IM2K0_XTES.fbIM2K0.fbLED.bLEDAuto")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbLED.bLEDAuto=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "IM2K0:XTES:CIL:CLK:TIMEOUT_RBV") {
+  field(DESC, "PRG_IM2K0_XTES.fbIM2K0.fbLED.fLEDTimeOut")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbLED.fLEDTimeOut?")
+  field(PREC, "3")
+  field(EGU, "min")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM2K0:XTES:CIL:CLK:TIMEOUT") {
+  field(DESC, "PRG_IM2K0_XTES.fbIM2K0.fbLED.fLEDTimeOut")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbLED.fLEDTimeOut=")
+  field(PREC, "3")
+  field(EGU, "min")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "IM2K0:XTES:CIL:CLK:REMAINING_RBV") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbLED.fLEDRemaining
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...LED.fLEDRemaining")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbLED.fLEDRemaining?")
+  field(PREC, "3")
+  field(EGU, "min")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "IM2K0:XTES:CIL:CLK:REMAINING") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbLED.fLEDRemaining
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...LED.fLEDRemaining")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_IM2K0_XTES.fbIM2K0.fbLED.fLEDRemaining=")
+  field(PREC, "3")
+  field(EGU, "min")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "IM2K0:XTES:SFW:FLOW_RBV") {
   # PRG_IM2K0_XTES.fbIM2K0.fbFlowSwitch.bFlowOk
   field(DESC, "PRG_IM2K0_XTES.fbIM2...lowSwitch.bFlowOk")
