@@ -35,6 +35,11 @@ VAR
     fbGige: FB_PPM_Gige;
 
     {attribute 'pytmc' := '
+        pv: CIL
+    '}
+    fbLED: FB_XPIM_LED;
+
+    {attribute 'pytmc' := '
         pv: SFW
     '}
     fbFlowSwitch: FB_XTES_Flowswitch;
@@ -60,6 +65,7 @@ fbStates(
     stReticle:=stReticle);
 
 fbGige();
+fbLED(enumXPIM:=fbStates.enumGet);
 fbFlowSwitch();]]></ST>
     </Implementation>
   </POU>

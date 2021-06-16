@@ -7,7 +7,7 @@ VAR
         pv: IM2K0:XTES
         io: io
     '}
-    {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K0-EL4004]^AO Outputs Channel 1^Analog output;
+    {attribute 'TcLinkTo' := '.fbLED.bLedPower := TIIB[IM2K0-EL2004]^Channel 3^Output;
                               .fbGige.bGigePower := TIIB[IM2K0-EL2004]^Channel 4^Output'}
     fbIM2K0: FB_XPIM_IM2K0;
 END_VAR
