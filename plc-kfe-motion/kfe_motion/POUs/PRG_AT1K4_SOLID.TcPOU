@@ -71,6 +71,7 @@ VAR
     '}
     fbStage4: FB_SXR_SATT_Stage;
 
+    DEFAULT_DELTA: LREAL := 0.2;
 END_VAR
 VAR CONSTANT
     DEFAULT_VELOCITY : LREAL := 10;
@@ -100,274 +101,339 @@ END_IF
 
 *)
 
+
 (* State setup - stage 1 *)
 (* Downstream-most MMS:01 - TRAVELER AXIS 4 *)
-fbStage1.stOut.sName         := 'Out';
-fbStage1.stOut.fPosition     := 22.70; (* TRAVELER AXIS 4 *)
-fbStage1.stOut.fDelta        := 0.2;
-fbStage1.stOut.fVelocity     := DEFAULT_VELOCITY;
-fbStage1.stOut.bValid        := TRUE;
-fbStage1.stOut.bMoveOk       := TRUE;
+fbStage1.stOut.sName                       := 'Out';
+fbStage1.stOut.fPosition                   := 22.70;
+fbStage1.stOut.fDelta                      := DEFAULT_DELTA;
+fbStage1.stOut.fVelocity                   := DEFAULT_VELOCITY;
+fbStage1.stOut.bValid                      := TRUE;
+fbStage1.stOut.bMoveOk                     := TRUE;
 
-fbStage1.stFilter1.sName     := 'Filter 1';
-fbStage1.stFilter1.fPosition := 40.5;
-fbStage1.stFilter1.fDelta    := 0.2;
-fbStage1.stFilter1.fVelocity := DEFAULT_VELOCITY;
-fbStage1.stFilter1.bValid    := TRUE;
-fbStage1.stFilter1.bMoveOk   := TRUE;
+fbStage1.stFilter1.sName                   := '(1) 25 um C';
+fbStage1.stFilter1.fPosition               := 40.5;
+fbStage1.stFilter1.fDelta                  := DEFAULT_DELTA;
+fbStage1.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter1.bValid                  := TRUE;
+fbStage1.stFilter1.bMoveOk                 := TRUE;
+fbStage1.arrFilters[1].fFilterThickness_um := 25;
+fbStage1.arrFilters[1].sFilterMaterial     := 'C';
 
-fbStage1.stFilter2.sName     := 'Filter 2';
-fbStage1.stFilter2.fPosition := 56.0;
-fbStage1.stFilter2.fDelta    := 0.2;
-fbStage1.stFilter2.fVelocity := DEFAULT_VELOCITY;
-fbStage1.stFilter2.bValid    := TRUE;
-fbStage1.stFilter2.bMoveOk   := TRUE;
+fbStage1.stFilter2.sName                   := '(2) 50 um C';
+fbStage1.stFilter2.fPosition               := 56.0;
+fbStage1.stFilter2.fDelta                  := DEFAULT_DELTA;
+fbStage1.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter2.bValid                  := TRUE;
+fbStage1.stFilter2.bMoveOk                 := TRUE;
+fbStage1.arrFilters[2].fFilterThickness_um := 50;
+fbStage1.arrFilters[2].sFilterMaterial     := 'C';
 
-fbStage1.stFilter3.sName     := 'Filter 3';
-fbStage1.stFilter3.fPosition := 72.0;
-fbStage1.stFilter3.fDelta    := 0.2;
-fbStage1.stFilter3.fVelocity := DEFAULT_VELOCITY;
-fbStage1.stFilter3.bValid    := TRUE;
-fbStage1.stFilter3.bMoveOk   := TRUE;
+fbStage1.stFilter3.sName                   := '(3) 100 um C';
+fbStage1.stFilter3.fPosition               := 72.0;
+fbStage1.stFilter3.fDelta                  := DEFAULT_DELTA;
+fbStage1.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter3.bValid                  := TRUE;
+fbStage1.stFilter3.bMoveOk                 := TRUE;
+fbStage1.arrFilters[3].fFilterThickness_um := 100;
+fbStage1.arrFilters[3].sFilterMaterial     := 'C';
 
-fbStage1.stFilter4.sName     := 'Filter 4';
-fbStage1.stFilter4.fPosition := 87.5;
-fbStage1.stFilter4.fDelta    := 0.2;
-fbStage1.stFilter4.fVelocity := DEFAULT_VELOCITY;
-fbStage1.stFilter4.bValid    := TRUE;
-fbStage1.stFilter4.bMoveOk   := TRUE;
+fbStage1.stFilter4.sName                   := '(4) 320 um Si';
+fbStage1.stFilter4.fPosition               := 87.5;
+fbStage1.stFilter4.fDelta                  := DEFAULT_DELTA;
+fbStage1.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter4.bValid                  := TRUE;
+fbStage1.stFilter4.bMoveOk                 := TRUE;
+fbStage1.arrFilters[4].fFilterThickness_um := 320;
+fbStage1.arrFilters[4].sFilterMaterial     := 'Si';
 
-fbStage1.stFilter5.sName     := 'Filter 5';
-fbStage1.stFilter5.fPosition := 102.5;
-fbStage1.stFilter5.fDelta    := 0.2;
-fbStage1.stFilter5.fVelocity := DEFAULT_VELOCITY;
-fbStage1.stFilter5.bValid    := TRUE;
-fbStage1.stFilter5.bMoveOk   := TRUE;
+fbStage1.stFilter5.sName                   := '(5) 160 um Si';
+fbStage1.stFilter5.fPosition               := 102.5;
+fbStage1.stFilter5.fDelta                  := DEFAULT_DELTA;
+fbStage1.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter5.bValid                  := TRUE;
+fbStage1.stFilter5.bMoveOk                 := TRUE;
+fbStage1.arrFilters[5].fFilterThickness_um := 160;
+fbStage1.arrFilters[5].sFilterMaterial     := 'Si';
 
-fbStage1.stFilter6.sName     := 'Filter 6';
-fbStage1.stFilter6.fPosition := 117.5;
-fbStage1.stFilter6.fDelta    := 0.2;
-fbStage1.stFilter6.fVelocity := DEFAULT_VELOCITY;
-fbStage1.stFilter6.bValid    := TRUE;
-fbStage1.stFilter6.bMoveOk   := TRUE;
+fbStage1.stFilter6.sName                   := '(6) 80 um Si';
+fbStage1.stFilter6.fPosition               := 117.5;
+fbStage1.stFilter6.fDelta                  := DEFAULT_DELTA;
+fbStage1.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter6.bValid                  := TRUE;
+fbStage1.stFilter6.bMoveOk                 := TRUE;
+fbStage1.arrFilters[6].fFilterThickness_um := 80;
+fbStage1.arrFilters[6].sFilterMaterial     := 'Si';
 
-fbStage1.stFilter7.sName     := 'Filter 7';
-fbStage1.stFilter7.fPosition := 135.5;
-fbStage1.stFilter7.fDelta    := 0.2;
-fbStage1.stFilter7.fVelocity := DEFAULT_VELOCITY;
-fbStage1.stFilter7.bValid    := TRUE;
-fbStage1.stFilter7.bMoveOk   := TRUE;
+fbStage1.stFilter7.sName                   := '(7) 40 um Si';
+fbStage1.stFilter7.fPosition               := 135.5;
+fbStage1.stFilter7.fDelta                  := DEFAULT_DELTA;
+fbStage1.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter7.bValid                  := TRUE;
+fbStage1.stFilter7.bMoveOk                 := TRUE;
+fbStage1.arrFilters[7].fFilterThickness_um := 40;
+fbStage1.arrFilters[7].sFilterMaterial     := 'Si';
 
-fbStage1.stFilter8.sName     := 'Filter 8';
-fbStage1.stFilter8.fPosition := 150.5;
-fbStage1.stFilter8.fDelta    := 0.2;
-fbStage1.stFilter8.fVelocity := DEFAULT_VELOCITY;
-fbStage1.stFilter8.bValid    := TRUE;
-fbStage1.stFilter8.bMoveOk   := TRUE;
+fbStage1.stFilter8.sName                   := '(8) 20 um Si';
+fbStage1.stFilter8.fPosition               := 150.5;
+fbStage1.stFilter8.fDelta                  := DEFAULT_DELTA;
+fbStage1.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter8.bValid                  := TRUE;
+fbStage1.stFilter8.bMoveOk                 := TRUE;
+fbStage1.arrFilters[8].fFilterThickness_um := 20;
+fbStage1.arrFilters[8].sFilterMaterial     := 'Si';
 
 fbStage1(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
 
+
 (* State setup - stage 2 *)
 (* MMS:02 - 2nd downstream-most - TRAVELER AXIS 3 *)
+fbStage2.stOut.sName                       := 'Out';
+fbStage2.stOut.fPosition                   := 24.00;
+fbStage2.stOut.fDelta                      := DEFAULT_DELTA;
+fbStage2.stOut.fVelocity                   := DEFAULT_VELOCITY;
+fbStage2.stOut.bValid                      := TRUE;
+fbStage2.stOut.bMoveOk                     := TRUE;
 
-fbStage2.stOut.sName         := 'Out';
-fbStage2.stOut.fPosition     := 24.00;  (* TRAVELER AXIS 3 *)
-fbStage2.stOut.fDelta        := 0.2;
-fbStage2.stOut.fVelocity     := DEFAULT_VELOCITY;
-fbStage2.stOut.bValid        := TRUE;
-fbStage2.stOut.bMoveOk       := TRUE;
+fbStage2.stFilter1.sName                   := 'Filter 1';
+fbStage2.stFilter1.fPosition               := 500;
+fbStage2.stFilter1.fDelta                  := DEFAULT_DELTA;
+fbStage2.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter1.bValid                  := FALSE;
+fbStage2.stFilter1.bMoveOk                 := FALSE;
+fbStage2.arrFilters[1].fFilterThickness_um := 0;
+fbStage2.arrFilters[1].sFilterMaterial     := '';
 
-fbStage2.stFilter1.sName     := 'Filter 1';
-fbStage2.stFilter1.fPosition := 500;
-fbStage2.stFilter1.fDelta    := 0;
-fbStage2.stFilter1.fVelocity := DEFAULT_VELOCITY;
-fbStage2.stFilter1.bValid    := FALSE;
-fbStage2.stFilter1.bMoveOk   := FALSE;
+fbStage2.stFilter2.sName                   := 'Filter 2';
+fbStage2.stFilter2.fPosition               := 500;
+fbStage2.stFilter2.fDelta                  := DEFAULT_DELTA;
+fbStage2.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter2.bValid                  := FALSE;
+fbStage2.stFilter2.bMoveOk                 := FALSE;
+fbStage2.arrFilters[2].fFilterThickness_um := 0;
+fbStage2.arrFilters[2].sFilterMaterial     := '';
 
-fbStage2.stFilter2.sName     := 'Filter 2';
-fbStage2.stFilter2.fPosition := 500;
-fbStage2.stFilter2.fDelta    := 0;
-fbStage2.stFilter2.fVelocity := DEFAULT_VELOCITY;
-fbStage2.stFilter2.bValid    := FALSE;
-fbStage2.stFilter2.bMoveOk   := FALSE;
+fbStage2.stFilter3.sName                   := 'Filter 3';
+fbStage2.stFilter3.fPosition               := 500;
+fbStage2.stFilter3.fDelta                  := DEFAULT_DELTA;
+fbStage2.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter3.bValid                  := FALSE;
+fbStage2.stFilter3.bMoveOk                 := FALSE;
+fbStage2.arrFilters[3].fFilterThickness_um := 0;
+fbStage2.arrFilters[3].sFilterMaterial     := '';
 
-fbStage2.stFilter3.sName     := 'Filter 3';
-fbStage2.stFilter3.fPosition := 500;
-fbStage2.stFilter3.fDelta    := 0;
-fbStage2.stFilter3.fVelocity := DEFAULT_VELOCITY;
-fbStage2.stFilter3.bValid    := FALSE;
-fbStage2.stFilter3.bMoveOk   := FALSE;
+fbStage2.stFilter4.sName                   := 'Filter 4';
+fbStage2.stFilter4.fPosition               := 500;
+fbStage2.stFilter4.fDelta                  := DEFAULT_DELTA;
+fbStage2.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter4.bValid                  := FALSE;
+fbStage2.stFilter4.bMoveOk                 := FALSE;
+fbStage2.arrFilters[4].fFilterThickness_um := 0;
+fbStage2.arrFilters[4].sFilterMaterial     := '';
 
-fbStage2.stFilter4.sName     := 'Filter 4';
-fbStage2.stFilter4.fPosition := 500;
-fbStage2.stFilter4.fDelta    := 0;
-fbStage2.stFilter4.fVelocity := DEFAULT_VELOCITY;
-fbStage2.stFilter4.bValid    := FALSE;
-fbStage2.stFilter4.bMoveOk   := FALSE;
+fbStage2.stFilter5.sName                   := '(5) 50 um C';
+fbStage2.stFilter5.fPosition               := 103.0;
+fbStage2.stFilter5.fDelta                  := DEFAULT_DELTA;
+fbStage2.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter5.bValid                  := TRUE;
+fbStage2.stFilter5.bMoveOk                 := TRUE;
+fbStage2.arrFilters[5].fFilterThickness_um := 50;
+fbStage2.arrFilters[5].sFilterMaterial     := 'C';
 
-fbStage2.stFilter5.sName     := 'Filter 5';
-fbStage2.stFilter5.fPosition := 103.0;
-fbStage2.stFilter5.fDelta    := 0.2;
-fbStage2.stFilter5.fVelocity := DEFAULT_VELOCITY;
-fbStage2.stFilter5.bValid    := TRUE;
-fbStage2.stFilter5.bMoveOk   := TRUE;
+fbStage2.stFilter6.sName                   := '(6) 25 um C';
+fbStage2.stFilter6.fPosition               := 118.75;
+fbStage2.stFilter6.fDelta                  := DEFAULT_DELTA;
+fbStage2.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter6.bValid                  := TRUE;
+fbStage2.stFilter6.bMoveOk                 := TRUE;
+fbStage2.arrFilters[6].fFilterThickness_um := 25;
+fbStage2.arrFilters[6].sFilterMaterial     := 'C';
 
-fbStage2.stFilter6.sName     := 'Filter 6';
-fbStage2.stFilter6.fPosition := 118.75;
-fbStage2.stFilter6.fDelta    := 0.2;
-fbStage2.stFilter6.fVelocity := DEFAULT_VELOCITY;
-fbStage2.stFilter6.bValid    := TRUE;
-fbStage2.stFilter6.bMoveOk   := TRUE;
+fbStage2.stFilter7.sName                   := '(7) 12 um C';
+fbStage2.stFilter7.fPosition               := 133.0;
+fbStage2.stFilter7.fDelta                  := DEFAULT_DELTA;
+fbStage2.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter7.bValid                  := TRUE;
+fbStage2.stFilter7.bMoveOk                 := TRUE;
+fbStage2.arrFilters[7].fFilterThickness_um := 12;
+fbStage2.arrFilters[7].sFilterMaterial     := 'C';
 
-fbStage2.stFilter7.sName     := 'Filter 7';
-fbStage2.stFilter7.fPosition := 133.0;
-fbStage2.stFilter7.fDelta    := 0.2;
-fbStage2.stFilter7.fVelocity := DEFAULT_VELOCITY;
-fbStage2.stFilter7.bValid    := TRUE;
-fbStage2.stFilter7.bMoveOk   := TRUE;
-
-fbStage2.stFilter8.sName     := 'Filter 8';
-fbStage2.stFilter8.fPosition := 147.0;
-fbStage2.stFilter8.fDelta    := 0.2;
-fbStage2.stFilter8.fVelocity := DEFAULT_VELOCITY;
-fbStage2.stFilter8.bValid    := TRUE;
-fbStage2.stFilter8.bMoveOk   := TRUE;
+fbStage2.stFilter8.sName                   := '(8) 10 um Si';
+fbStage2.stFilter8.fPosition               := 147.0;
+fbStage2.stFilter8.fDelta                  := DEFAULT_DELTA;
+fbStage2.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter8.bValid                  := TRUE;
+fbStage2.stFilter8.bMoveOk                 := TRUE;
+fbStage2.arrFilters[8].fFilterThickness_um := 10;
+fbStage2.arrFilters[8].sFilterMaterial     := 'Si';
 
 fbStage2(stAxis:=Main.M27, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
 
+
 (* State setup - stage 3 *)
 (* MMS:03 - 2nd upstream-most - TRAVELER AXIS 2 *)
+fbStage3.stOut.sName                       := 'Out';
+fbStage3.stOut.fPosition                   := 23.24;
+fbStage3.stOut.fDelta                      := DEFAULT_DELTA;
+fbStage3.stOut.fVelocity                   := DEFAULT_VELOCITY;
+fbStage3.stOut.bValid                      := TRUE;
+fbStage3.stOut.bMoveOk                     := TRUE;
 
-fbStage3.stOut.sName         := 'Out';
-fbStage3.stOut.fPosition     := 23.24;  (* TRAVELER AXIS 2 *)
-fbStage3.stOut.fDelta        := 0.2;
-fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
-fbStage3.stOut.bValid        := TRUE;
-fbStage3.stOut.bMoveOk       := TRUE;
+fbStage3.stFilter1.sName                   := 'Filter 1';
+fbStage3.stFilter1.fPosition               := 500;
+fbStage3.stFilter1.fDelta                  := DEFAULT_DELTA;
+fbStage3.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+fbStage3.stFilter1.bValid                  := FALSE;
+fbStage3.stFilter1.bMoveOk                 := FALSE;
+fbStage3.arrFilters[1].fFilterThickness_um := 0;
+fbStage3.arrFilters[1].sFilterMaterial     := '';
 
-fbStage3.stFilter1.sName     := 'Filter 1';
-fbStage3.stFilter1.fPosition := 500;
-fbStage3.stFilter1.fDelta    := 0;
-fbStage3.stFilter1.fVelocity := DEFAULT_VELOCITY;
-fbStage3.stFilter1.bValid    := FALSE;
-fbStage3.stFilter1.bMoveOk   := FALSE;
+fbStage3.stFilter2.sName                   := 'Filter 2';
+fbStage3.stFilter2.fPosition               := 500;
+fbStage3.stFilter2.fDelta                  := DEFAULT_DELTA;
+fbStage3.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+fbStage3.stFilter2.bValid                  := FALSE;
+fbStage3.stFilter2.bMoveOk                 := FALSE;
+fbStage3.arrFilters[2].fFilterThickness_um := 0;
+fbStage3.arrFilters[2].sFilterMaterial     := '';
 
-fbStage3.stFilter2.sName     := 'Filter 2';
-fbStage3.stFilter2.fPosition := 500;
-fbStage3.stFilter2.fDelta    := 0;
-fbStage3.stFilter2.fVelocity := DEFAULT_VELOCITY;
-fbStage3.stFilter2.bValid    := FALSE;
-fbStage3.stFilter2.bMoveOk   := FALSE;
+fbStage3.stFilter3.sName                   := 'Filter 3';
+fbStage3.stFilter3.fPosition               := 500;
+fbStage3.stFilter3.fDelta                  := DEFAULT_DELTA;
+fbStage3.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+fbStage3.stFilter3.bValid                  := FALSE;
+fbStage3.stFilter3.bMoveOk                 := FALSE;
+fbStage3.arrFilters[3].fFilterThickness_um := 0;
+fbStage3.arrFilters[3].sFilterMaterial     := '';
 
-fbStage3.stFilter3.sName     := 'Filter 3';
-fbStage3.stFilter3.fPosition := 500;
-fbStage3.stFilter3.fDelta    := 0;
-fbStage3.stFilter3.fVelocity := DEFAULT_VELOCITY;
-fbStage3.stFilter3.bValid    := FALSE;
-fbStage3.stFilter3.bMoveOk   := FALSE;
+fbStage3.stFilter4.sName                   := 'Filter 4';
+fbStage3.stFilter4.fPosition               := 500;
+fbStage3.stFilter4.fDelta                  := DEFAULT_DELTA;
+fbStage3.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+fbStage3.stFilter4.bValid                  := FALSE;
+fbStage3.stFilter4.bMoveOk                 := FALSE;
+fbStage3.arrFilters[4].fFilterThickness_um := 0;
+fbStage3.arrFilters[4].sFilterMaterial     := '';
 
-fbStage3.stFilter4.sName     := 'Filter 4';
-fbStage3.stFilter4.fPosition := 500;
-fbStage3.stFilter4.fDelta    := 0;
-fbStage3.stFilter4.fVelocity := DEFAULT_VELOCITY;
-fbStage3.stFilter4.bValid    := FALSE;
-fbStage3.stFilter4.bMoveOk   := FALSE;
+fbStage3.stFilter5.sName                   := 'Filter 5';
+fbStage3.stFilter5.fPosition               := 500;
+fbStage3.stFilter5.fDelta                  := DEFAULT_DELTA;
+fbStage3.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+fbStage3.stFilter5.bValid                  := FALSE;
+fbStage3.stFilter5.bMoveOk                 := FALSE;
+fbStage3.arrFilters[5].fFilterThickness_um := 0;
+fbStage3.arrFilters[5].sFilterMaterial     := '';
 
-fbStage3.stFilter5.sName     := 'Filter 5';
-fbStage3.stFilter5.fPosition := 500;
-fbStage3.stFilter5.fDelta    := 0;
-fbStage3.stFilter5.fVelocity := DEFAULT_VELOCITY;
-fbStage3.stFilter5.bValid    := FALSE;
-fbStage3.stFilter5.bMoveOk   := FALSE;
+fbStage3.stFilter6.sName                   := '(6) 25 um C';
+fbStage3.stFilter6.fPosition               := 119.5;
+fbStage3.stFilter6.fDelta                  := DEFAULT_DELTA;
+fbStage3.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+fbStage3.stFilter6.bValid                  := TRUE;
+fbStage3.stFilter6.bMoveOk                 := TRUE;
+fbStage3.arrFilters[6].fFilterThickness_um := 25;
+fbStage3.arrFilters[6].sFilterMaterial     := 'C';
 
-fbStage3.stFilter6.sName     := 'Filter 6';
-fbStage3.stFilter6.fPosition := 119.5;
-fbStage3.stFilter6.fDelta    := 0.2;
-fbStage3.stFilter6.fVelocity := DEFAULT_VELOCITY;
-fbStage3.stFilter6.bValid    := TRUE;
-fbStage3.stFilter6.bMoveOk   := TRUE;
+fbStage3.stFilter7.sName                   := '(7) 12 um C';
+fbStage3.stFilter7.fPosition               := 135.0;
+fbStage3.stFilter7.fDelta                  := DEFAULT_DELTA;
+fbStage3.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+fbStage3.stFilter7.bValid                  := TRUE;
+fbStage3.stFilter7.bMoveOk                 := TRUE;
+fbStage3.arrFilters[7].fFilterThickness_um := 12;
+fbStage3.arrFilters[7].sFilterMaterial     := 'C';
 
-fbStage3.stFilter7.sName     := 'Filter 7';
-fbStage3.stFilter7.fPosition := 135.0;
-fbStage3.stFilter7.fDelta    := 0.2;
-fbStage3.stFilter7.fVelocity := DEFAULT_VELOCITY;
-fbStage3.stFilter7.bValid    := TRUE;
-fbStage3.stFilter7.bMoveOk   := TRUE;
-
-fbStage3.stFilter8.sName     := 'Filter 8';
-fbStage3.stFilter8.fPosition := 147.5;
-fbStage3.stFilter8.fDelta    := 0.2;
-fbStage3.stFilter8.fVelocity := DEFAULT_VELOCITY;
-fbStage3.stFilter8.bValid    := TRUE;
-fbStage3.stFilter8.bMoveOk   := TRUE;
+fbStage3.stFilter8.sName                   := '(8) 6 um C';
+fbStage3.stFilter8.fPosition               := 147.5;
+fbStage3.stFilter8.fDelta                  := DEFAULT_DELTA;
+fbStage3.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+fbStage3.stFilter8.bValid                  := TRUE;
+fbStage3.stFilter8.bMoveOk                 := TRUE;
+fbStage3.arrFilters[8].fFilterThickness_um := 6;
+fbStage3.arrFilters[8].sFilterMaterial     := 'C';
 
 fbStage3(stAxis:=Main.M28, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
 
+
 (* State setup - stage 4 *)
 (* MMS:04 - upstream-most - TRAVELER AXIS 1 *)
+fbStage4.stOut.sName                       := 'Out';
+fbStage4.stOut.fPosition                   := 23.44;
+fbStage4.stOut.fDelta                      := DEFAULT_DELTA;
+fbStage4.stOut.fVelocity                   := DEFAULT_VELOCITY;
+fbStage4.stOut.bValid                      := TRUE;
+fbStage4.stOut.bMoveOk                     := TRUE;
 
-fbStage4.stOut.sName         := 'Out';
-fbStage4.stOut.fPosition     := 23.44;  (* TRAVELER AXIS 1 *)
-fbStage4.stOut.fDelta        := 0.2;
-fbStage4.stOut.fVelocity     := DEFAULT_VELOCITY;
-fbStage4.stOut.bValid        := TRUE;
-fbStage4.stOut.bMoveOk       := TRUE;
+fbStage4.stFilter1.sName                   := 'Filter 1';
+fbStage4.stFilter1.fPosition               := 500;
+fbStage4.stFilter1.fDelta                  := DEFAULT_DELTA;
+fbStage4.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+fbStage4.stFilter1.bValid                  := FALSE;
+fbStage4.stFilter1.bMoveOk                 := FALSE;
+fbStage4.arrFilters[1].fFilterThickness_um := 0;
+fbStage4.arrFilters[1].sFilterMaterial     := '';
 
-fbStage4.stFilter1.sName     := 'Filter 1';
-fbStage4.stFilter1.fPosition := 500;
-fbStage4.stFilter1.fDelta    := 0;
-fbStage4.stFilter1.fVelocity := DEFAULT_VELOCITY;
-fbStage4.stFilter1.bValid    := FALSE;
-fbStage4.stFilter1.bMoveOk   := FALSE;
+fbStage4.stFilter2.sName                   := 'Filter 2';
+fbStage4.stFilter2.fPosition               := 500;
+fbStage4.stFilter2.fDelta                  := DEFAULT_DELTA;
+fbStage4.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+fbStage4.stFilter2.bValid                  := FALSE;
+fbStage4.stFilter2.bMoveOk                 := FALSE;
+fbStage4.arrFilters[2].fFilterThickness_um := 0;
+fbStage4.arrFilters[2].sFilterMaterial     := '';
 
-fbStage4.stFilter2.sName     := 'Filter 2';
-fbStage4.stFilter2.fPosition := 500;
-fbStage4.stFilter2.fDelta    := 0;
-fbStage4.stFilter2.fVelocity := DEFAULT_VELOCITY;
-fbStage4.stFilter2.bValid    := FALSE;
-fbStage4.stFilter2.bMoveOk   := FALSE;
+fbStage4.stFilter3.sName                   := 'Filter 3';
+fbStage4.stFilter3.fPosition               := 500;
+fbStage4.stFilter3.fDelta                  := DEFAULT_DELTA;
+fbStage4.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+fbStage4.stFilter3.bValid                  := FALSE;
+fbStage4.stFilter3.bMoveOk                 := FALSE;
+fbStage4.arrFilters[3].fFilterThickness_um := 0;
+fbStage4.arrFilters[3].sFilterMaterial     := '';
 
-fbStage4.stFilter3.sName     := 'Filter 3';
-fbStage4.stFilter3.fPosition := 500;
-fbStage4.stFilter3.fDelta    := 0;
-fbStage4.stFilter3.fVelocity := DEFAULT_VELOCITY;
-fbStage4.stFilter3.bValid    := FALSE;
-fbStage4.stFilter3.bMoveOk   := FALSE;
+fbStage4.stFilter4.sName                   := '(4) 12 um C';
+fbStage4.stFilter4.fPosition               := 85.5;
+fbStage4.stFilter4.fDelta                  := DEFAULT_DELTA;
+fbStage4.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+fbStage4.stFilter4.bValid                  := TRUE;
+fbStage4.stFilter4.bMoveOk                 := TRUE;
+fbStage4.arrFilters[4].fFilterThickness_um := 12;
+fbStage4.arrFilters[4].sFilterMaterial     := 'C';
 
-fbStage4.stFilter4.sName     := 'Filter 4';
-fbStage4.stFilter4.fPosition := 85.5;
-fbStage4.stFilter4.fDelta    := 0.2;
-fbStage4.stFilter4.fVelocity := DEFAULT_VELOCITY;
-fbStage4.stFilter4.bValid    := TRUE;
-fbStage4.stFilter4.bMoveOk   := TRUE;
+fbStage4.stFilter5.sName                   := '(5) 6 um C';
+fbStage4.stFilter5.fPosition               := 100.5;
+fbStage4.stFilter5.fDelta                  := DEFAULT_DELTA;
+fbStage4.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+fbStage4.stFilter5.bValid                  := TRUE;
+fbStage4.stFilter5.bMoveOk                 := TRUE;
+fbStage4.arrFilters[5].fFilterThickness_um := 6;
+fbStage4.arrFilters[5].sFilterMaterial     := 'C';
 
-fbStage4.stFilter5.sName     := 'Filter 5';
-fbStage4.stFilter5.fPosition := 100.5;
-fbStage4.stFilter5.fDelta    := 0.2;
-fbStage4.stFilter5.fVelocity := DEFAULT_VELOCITY;
-fbStage4.stFilter5.bValid    := TRUE;
-fbStage4.stFilter5.bMoveOk   := TRUE;
+fbStage4.stFilter6.sName                   := '(6) 3 um C';
+fbStage4.stFilter6.fPosition               := 116.0;
+fbStage4.stFilter6.fDelta                  := DEFAULT_DELTA;
+fbStage4.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+fbStage4.stFilter6.bValid                  := TRUE;
+fbStage4.stFilter6.bMoveOk                 := TRUE;
+fbStage4.arrFilters[6].fFilterThickness_um := 3;
+fbStage4.arrFilters[6].sFilterMaterial     := 'C';
 
-fbStage4.stFilter6.sName     := 'Filter 6';
-fbStage4.stFilter6.fPosition := 116.0;
-fbStage4.stFilter6.fDelta    := 0.2;
-fbStage4.stFilter6.fVelocity := DEFAULT_VELOCITY;
-fbStage4.stFilter6.bValid    := TRUE;
-fbStage4.stFilter6.bMoveOk   := TRUE;
+fbStage4.stFilter7.sName                   := '(7) 3 um C';
+fbStage4.stFilter7.fPosition               := 132.0;
+fbStage4.stFilter7.fDelta                  := DEFAULT_DELTA;
+fbStage4.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+fbStage4.stFilter7.bValid                  := TRUE;
+fbStage4.stFilter7.bMoveOk                 := TRUE;
+fbStage4.arrFilters[7].fFilterThickness_um := 3;
+fbStage4.arrFilters[7].sFilterMaterial     := 'C';
 
-fbStage4.stFilter7.sName     := 'Filter 7';
-fbStage4.stFilter7.fPosition := 132.0;
-fbStage4.stFilter7.fDelta    := 0.2;
-fbStage4.stFilter7.fVelocity := DEFAULT_VELOCITY;
-fbStage4.stFilter7.bValid    := TRUE;
-fbStage4.stFilter7.bMoveOk   := TRUE;
-
-fbStage4.stFilter8.sName     := 'Filter 8';
-fbStage4.stFilter8.fPosition := 147.0;
-fbStage4.stFilter8.fDelta    := 0.2;
-fbStage4.stFilter8.fVelocity := DEFAULT_VELOCITY;
-fbStage4.stFilter8.bValid    := TRUE;
-fbStage4.stFilter8.bMoveOk   := TRUE;
+fbStage4.stFilter8.sName                   := '(8) 0.2 um Al';
+fbStage4.stFilter8.fPosition               := 147.0;
+fbStage4.stFilter8.fDelta                  := DEFAULT_DELTA;
+fbStage4.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+fbStage4.stFilter8.bValid                  := TRUE;
+fbStage4.stFilter8.bMoveOk                 := TRUE;
+fbStage4.arrFilters[8].fFilterThickness_um := 0.2;
+fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
 
 fbStage4(stAxis:=Main.M29, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);]]></ST>
     </Implementation>
