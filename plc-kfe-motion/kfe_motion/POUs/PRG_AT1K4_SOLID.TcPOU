@@ -72,6 +72,7 @@ VAR
     fbStage4: FB_SXR_SATT_Stage;
 
     DEFAULT_DELTA: LREAL := 0.2;
+	
 END_VAR
 VAR CONSTANT
     DEFAULT_VELOCITY : LREAL := 10;
@@ -435,7 +436,15 @@ fbStage4.stFilter8.bMoveOk                 := TRUE;
 fbStage4.arrFilters[8].fFilterThickness_um := 0.2;
 fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage4(stAxis:=Main.M29, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);]]></ST>
+fbStage4(stAxis:=Main.M29, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+
+GVL.rCurTrans[PMPS.K_Attenuators.AT1K4].nTran := LREAL_TO_REAL(
+	fbStage1.fTransmission * 
+	fbStage2.fTransmission * 
+	fbStage3.fTransmission * 
+	fbStage4.fTransmission
+);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
