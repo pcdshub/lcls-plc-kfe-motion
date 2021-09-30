@@ -10,6 +10,9 @@ VAR
     {attribute 'TcLinkTo' := '.fbLED.bLedPower := TIIB[IM2K0-EL2004]^Channel 3^Output;
                               .fbGige.bGigePower := TIIB[IM2K0-EL2004]^Channel 4^Output'}
     fbIM2K0: FB_XPIM_IM2K0;
+
+    {attribute 'TcLinkTo' := 'TIIB[IM2K0-EL7041]^STM Status^Status^Digital input 1'}
+    bDefectiveLimitSwitch AT %I*: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -40,6 +43,8 @@ fbIM2K0.stReticle.bUseRawCounts := FALSE;
 fbIM2K0.stReticle.nRequestAssertionID := 16#2204;
 fbIM2K0.stReticle.stBeamParams := PMPS_GVL.cst0RateBeam;
 fbIM2K0.stReticle.bValid := TRUE;
+
+Main.M5.bLimitForwardEnable := bDefectiveLimitSwitch OR (Main.M5.stAxisStatus.fActPosition < 0);
 
 fbIM2K0(
     fbArbiter := GVL.fbArbiter,
