@@ -37,8 +37,7 @@ VAR_GLOBAL
 
     // IM2K0-XTES: 1 Axis, previously 3 but the zoom/focus have been removed
     {attribute 'pytmc' := 'pv: IM2K0:XTES:MMS'}
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM2K0-EL7041]^STM Status^Status^Digital input 1;
-                              .bBrakeRelease        := TIIB[IM2K0-EL2004]^Channel 1^Output;
+    {attribute 'TcLinkTo' := '.bBrakeRelease        := TIIB[IM2K0-EL2004]^Channel 1^Output;
                               .nRawEncoderULINT     := TIIB[IM2K0-EL5042]^FB Inputs Channel 1^Position'}
     M5: DUT_MotionStage := (sName := 'IM2K0:XTES:MMS');
     {attribute 'pytmc' := 'pv: IM2K0:XTES:CLZ'}
