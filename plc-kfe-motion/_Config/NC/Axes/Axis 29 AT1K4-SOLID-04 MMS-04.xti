@@ -1324,7 +1324,7 @@ External Setpoint Generation:
 	<Axis Id="29" CreateSymbols="true" AxisType="1" AxisFolder="AT1K4-SOLID">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Dynamic AccelerationMaximum="400" DecelerationMaximum="400" Acceleration="160" Deceleration="160" Jerk="80" DelayTime="0.008"/>
+			<Dynamic AccelerationMaximum="400" DecelerationMaximum="400" Acceleration="1" Deceleration="1" Jerk="80" DelayTime="0.008"/>
 			<Velo Maximum="80"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
