@@ -93,8 +93,8 @@ fbIM1K4.stReticle.stBeamParams := PMPS_GVL.cst0RateBeam;
 fbIM1K4.stReticle.bValid := TRUE;
 
 fbIM1K4(
-    fbArbiter := GVL.fbArbiter,
-    fbFFHWO := GVL.fbFastFaultOutput1,
+    fbArbiter := GVL.fbArbiter2,
+    fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M30,
     stZoomStage := Main.M31,
     stFocusStage := Main.M32,
