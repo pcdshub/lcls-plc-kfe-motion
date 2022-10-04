@@ -22,17 +22,20 @@
 		<Box File="IM1K0-EL1088.xti" Id="30">
 			<EtherCAT PortABoxInfo="#x0100001d"/>
 		</Box>
-		<Box File="IM1K0-EL7342.xti" Id="31">
+		<Box File="IM1K0-EL7342.xti" Id="169">
 			<EtherCAT PortABoxInfo="#x0100001e"/>
 		</Box>
 		<Box File="IM1K0-EL3054.xti" Id="32">
-			<EtherCAT PortABoxInfo="#x0100001f"/>
+			<EtherCAT PortABoxInfo="#x010000a9"/>
 		</Box>
 		<Box File="IM1K0-EL6021.xti" Id="33">
 			<EtherCAT PortABoxInfo="#x01000020"/>
 		</Box>
-		<Box File="IM1K0-EL6002.xti" Id="34">
+		<Box File="Term 168 (EL1004).xti" Id="168">
 			<EtherCAT PortABoxInfo="#x01000021"/>
+		</Box>
+		<Box File="IM1K0-EL6002.xti" Id="34">
+			<EtherCAT PortABoxInfo="#x010000a8"/>
 		</Box>
 		<Box File="IM1K0-EL9011.xti" Id="35">
 			<EtherCAT PortABoxInfo="#x01000022"/>
