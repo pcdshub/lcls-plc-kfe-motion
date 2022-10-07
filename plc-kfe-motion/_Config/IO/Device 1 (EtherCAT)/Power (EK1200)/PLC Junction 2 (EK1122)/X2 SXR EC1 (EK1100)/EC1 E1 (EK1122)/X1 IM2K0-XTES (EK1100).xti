@@ -16,11 +16,11 @@
 		<Box File="IM2K0-EL5042.xti" Id="45">
 			<EtherCAT PortABoxInfo="#x0100002c"/>
 		</Box>
-		<Box File="IM2K0-EL7342.xti" Id="46">
+		<Box File="IM2K0-EL7342.xti" Id="193">
 			<EtherCAT PortABoxInfo="#x0100002d"/>
 		</Box>
 		<Box File="IM2K0-EL1088.xti" Id="47">
-			<EtherCAT PortABoxInfo="#x0100002e"/>
+			<EtherCAT PortABoxInfo="#x010000c1"/>
 		</Box>
 		<Box File="IM2K0-EL6002.xti" Id="48">
 			<EtherCAT PortABoxInfo="#x0100002f"/>

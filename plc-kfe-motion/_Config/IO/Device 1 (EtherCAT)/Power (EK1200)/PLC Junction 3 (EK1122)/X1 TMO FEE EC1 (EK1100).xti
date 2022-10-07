@@ -13,8 +13,5 @@
 		<Box File="TMO FEE EC1 E2 (EK1122).xti" Id="119">
 			<EtherCAT PortABoxInfo="#x02000067"/>
 		</Box>
-		<Box File="TMO FEE EC1 End Cap (EL9011).xti" Id="131">
-			<EtherCAT PortABoxInfo="#x02000077"/>
-		</Box>
 	</Box>
 </TcSmItem>
