@@ -10,17 +10,17 @@
 		<Box File="Term 53 (EL7041-1000).xti" Id="53">
 			<EtherCAT PortABoxInfo="#x01000008"/>
 		</Box>
-		<Box File="Term 76 (EL7041-1000).xti" Id="76">
+		<Box File="RTDSK0-M2-EL7041.xti" Id="136">
 			<EtherCAT PortABoxInfo="#x01000035"/>
 		</Box>
-		<Box File="Term 75 (EL7041-1000).xti" Id="75">
-			<EtherCAT PortABoxInfo="#x0100004c"/>
+		<Box File="RTDSK0-M3-EL7041.xti" Id="137">
+			<EtherCAT PortABoxInfo="#x01000088"/>
 		</Box>
-		<Box File="Term 74 (EL7041-1000).xti" Id="74">
-			<EtherCAT PortABoxInfo="#x0100004b"/>
+		<Box File="RTDSK0-M4-EL7041.xti" Id="138">
+			<EtherCAT PortABoxInfo="#x01000089"/>
 		</Box>
 		<Box File="Term 73 (EL7041-1000).xti" Id="73">
-			<EtherCAT PortABoxInfo="#x0100004a"/>
+			<EtherCAT PortABoxInfo="#x0100008a"/>
 		</Box>
 		<Box File="Term 72 (EL7041-1000).xti" Id="72">
 			<EtherCAT PortABoxInfo="#x01000049"/>
