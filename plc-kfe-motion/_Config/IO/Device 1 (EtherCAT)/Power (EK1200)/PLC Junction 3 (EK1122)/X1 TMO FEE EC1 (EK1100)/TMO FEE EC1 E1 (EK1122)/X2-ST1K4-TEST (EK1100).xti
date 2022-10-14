@@ -19,11 +19,11 @@
 		<Box File="ST1K4-EL7041-E4.xti" Id="116">
 			<EtherCAT PortABoxInfo="#x01000073"/>
 		</Box>
-		<Box File="FEE-K-PCW-FSW-EL1004.xti" Id="239">
+		<Box File="FEE-K-PCW-FSW-EL1004.xti" Id="240">
 			<EtherCAT PortABoxInfo="#x01000074"/>
 		</Box>
 		<Box File="ST1K4-EL9505-E5.xti" Id="117">
-			<EtherCAT PortABoxInfo="#x010000ef"/>
+			<EtherCAT PortABoxInfo="#x010000f0"/>
 		</Box>
 		<Box File="ST1K4-EL9011.xti" Id="118">
 			<EtherCAT PortABoxInfo="#x01000075"/>
