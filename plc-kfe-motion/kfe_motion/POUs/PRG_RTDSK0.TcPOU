@@ -117,7 +117,7 @@ RTDSK0_MPA_04(
 *)
 
 //initialize RTDSK0 stages
-    IF ( bInit) THEN
+IF bInit THEN
     Main.M11.bHardwareEnable := TRUE;
     Main.M11.bPowerSelf :=TRUE;
     Main.M11.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;

@@ -69,7 +69,7 @@ VAR_GLOBAL
         {attribute 'pytmc' := 'pv: RTDSK0:SCRP:MMS:X'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[RTDSK0-M3-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[RTDSK0-M3-EL7041]^STM Status^Status^Digital input 2'}
-    M12: DUT_MotionStage:= (sName := 'RTDSK0:SCRP:MM:X');
+    M12: DUT_MotionStage:= (sName := 'RTDSK0:SCRP:MMS:X');
         {attribute 'pytmc' := 'pv: RTDSK0:SCRP:MMS:Y'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[RTDSK0-M4-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[RTDSK0-M4-EL7041]^STM Status^Status^Digital input 2'}
