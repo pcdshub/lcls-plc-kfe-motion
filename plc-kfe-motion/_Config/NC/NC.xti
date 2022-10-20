@@ -37,8 +37,8 @@
 		<Axis File="Axis 9 PF1K0-WFS-MMS-Z.xti" Id="9"/>
 		<Axis File="Axis 10.xti" Id="10"/>
 		<Axis File="Axis 11-SCPR-Z.xti" Id="11"/>
-		<Axis File="Axis 12- SCRP-X.xti" Id="12"/>
-		<Axis File="Axis 13 -SCRP - Y.xti" Id="13"/>
+		<Axis File="Axis 12-SCRP-X.xti" Id="12"/>
+		<Axis File="Axis 13-SCRP-Y.xti" Id="13"/>
 		<Axis File="Axis 14.xti" Id="14"/>
 		<Axis File="Axis 15.xti" Id="15"/>
 		<Axis File="Axis 16.xti" Id="16"/>
