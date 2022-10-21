@@ -7287,7 +7287,7 @@ External Setpoint Generation:
 	<Mappings>
 		<OwnerA Name="kfe_motion Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X1 RTDSK0 (EK1100)^RTDSK0-EL2004">
-				<Link VarA="PlcTask Outputs^PRG_RTDSK0.fbRTDSK0_SCRP_LED_01" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PRG_RTDSK0.fbRTDSK0_SCRP_LED_01" VarB="Channel 3^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X1 RTDSK0 (EK1100)^RTDSK0-M2-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M11.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>

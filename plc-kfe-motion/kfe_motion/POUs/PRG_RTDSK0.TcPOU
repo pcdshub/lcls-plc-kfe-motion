@@ -50,7 +50,7 @@ VAR
         field: ONAM ON
 '}
      
-     {attribute 'TcLinkTo' := 'TIIB[RTDSK0-EL2004]^Channel 2^Output'}
+     {attribute 'TcLinkTo' := 'TIIB[RTDSK0-EL2004]^Channel 3^Output'}
     fbRTDSK0_SCRP_LED_01 AT %Q*: BOOL;;
     
 	FFO : FB_FastFault :=( i_Desc := 'fault occurs when Y motor is not activating upper limit switch', i_TypeCode := 16#FAF, i_DevName := 'RTDSK0:SCRP:MMS:Y');
