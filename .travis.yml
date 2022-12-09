@@ -18,7 +18,8 @@ env:
 #    - name: "Pre-commit Checks"
 
 import:
-  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/standard.yml
+  #- pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/standard.yml
+  - zllentz/pcds-ci-helpers:travis/shared_configs/twincat/standard.yml@maint_pin_packaging
 
 # If not using the standard-python-conda above please uncomment the required
 # (language, os, dist and stages) and optional (import statements) entries from
