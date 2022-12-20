@@ -16,66 +16,47 @@ VAR
                               .fbThermoCouple2.bOverrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Status^Overrange;
                               .fbThermoCouple2.iRaw := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Value'}
     fbPF1K0: FB_WFS;
-
-    stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
-    stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(*
-   Avoid damage peak between 3.2 keV and 1.6 keV
-*)
-stSiBP.neVRange := F_eVExcludeRange(1600, 3200);
-// Drop transmission to 20%
-stSiBP.nTran := 0.2;
-
-// Drop transmission to 10%
-stFoilBP.nTran := 0.1;
-
-fbPF1K0.nTransitionAssertionID := 16#3100;
-fbPF1K0.nUnknownAssertionID := 16#3109;
-
-fbPF1K0.stOut.fPosition := -15;
+      <ST><![CDATA[fbPF1K0.stOut.fPosition := -15;
 fbPF1K0.stOut.bUseRawCounts := FALSE;
-fbPF1K0.stOut.nRequestAssertionID := 16#3101;
-fbPF1K0.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
 fbPF1K0.stOut.bValid := TRUE;
+fbPF1K0.stOut.stPMPS.sPmpsState := 'PF1K0-WFS-OUT';
 
 fbPF1K0.stTarget1.fPosition := -96.623;
 fbPF1K0.stTarget1.bUseRawCounts := FALSE;
-fbPF1K0.stTarget1.nRequestAssertionID := 16#3102;
-fbPF1K0.stTarget1.stBeamParams := stSiBP;
 fbPF1K0.stTarget1.bValid := TRUE;
+fbPF1K0.stTarget1.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET1';
 
 fbPF1K0.stTarget2.fPosition := -82.25;
 fbPF1K0.stTarget2.bUseRawCounts := FALSE;
-fbPF1K0.stTarget2.nRequestAssertionID := 16#3103;
-fbPF1K0.stTarget2.stBeamParams := stSiBP;
 fbPF1K0.stTarget2.bValid := TRUE;
+fbPF1K0.stTarget2.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET2';
 
 fbPF1K0.stTarget3.fPosition := -67.874;
 fbPF1K0.stTarget3.bUseRawCounts := FALSE;
-fbPF1K0.stTarget3.nRequestAssertionID := 16#3104;
-fbPF1K0.stTarget3.stBeamParams := stFoilBP;
 fbPF1K0.stTarget3.bValid := TRUE;
+fbPF1K0.stTarget3.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET3';
 
 fbPF1K0.stTarget4.fPosition := -53.5;
 fbPF1K0.stTarget4.bUseRawCounts := FALSE;
-fbPF1K0.stTarget4.nRequestAssertionID := 16#3105;
-fbPF1K0.stTarget4.stBeamParams := stFoilBP;
 fbPF1K0.stTarget4.bValid := TRUE;
+fbPF1K0.stTarget4.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET4';
 
 fbPF1K0.stTarget5.fPosition := -39.124;
 fbPF1K0.stTarget5.bUseRawCounts := FALSE;
-fbPF1K0.stTarget5.nRequestAssertionID := 16#3106;
-fbPF1K0.stTarget5.stBeamParams := stFoilBP;
 fbPF1K0.stTarget5.bValid := TRUE;
+fbPF1K0.stTarget5.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET5';
 
 fbPF1K0(
     fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M8,
-    stZStage := Main.M9);]]></ST>
+    stZStage := Main.M9,
+    sPmpsDeviceName := 'PF1K0-WFS',
+    sTransitionKey := 'PF1K0-WFS-MOVING',
+);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

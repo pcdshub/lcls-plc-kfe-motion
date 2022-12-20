@@ -65,32 +65,25 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbIM1K0.nTransitionAssertionID := 16#2100;
-fbIM1K0.nUnknownAssertionID := 16#2109;
-
-fbIM1K0.stOut.fPosition := 0;
+      <ST><![CDATA[fbIM1K0.stOut.fPosition := 0;
 fbIM1K0.stOut.bUseRawCounts := FALSE;
-fbIM1K0.stOut.nRequestAssertionID := 16#2101;
-fbIM1K0.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM1K0.stOut.bValid := TRUE;
+fbIM1K0.stOut.stPMPS.sPmpsState := 'IM1K0-XTES-OUT';
 
 fbIM1K0.stYag.fPosition := -27.65;
 fbIM1K0.stYag.bUseRawCounts := FALSE;
-fbIM1K0.stYag.nRequestAssertionID := 16#2102;
-fbIM1K0.stYag.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM1K0.stYag.bValid := TRUE;
+fbIM1K0.stYag.stPMPS.sPmpsState := 'IM1K0-XTES-YAG';
 
 fbIM1K0.stDiamond.fPosition := -57.65;
 fbIM1K0.stDiamond.bUseRawCounts := FALSE;
-fbIM1K0.stDiamond.nRequestAssertionID := 16#2103;
-fbIM1K0.stDiamond.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM1K0.stDiamond.bValid := TRUE;
+fbIM1K0.stDiamond.stPMPS.sPmpsState := 'IM1K0-XTES-DIAMOND';
 
 fbIM1K0.stReticle.fPosition := -87.65;
 fbIM1K0.stReticle.bUseRawCounts := FALSE;
-fbIM1K0.stReticle.nRequestAssertionID := 16#2104;
-fbIM1K0.stReticle.stBeamParams := PMPS_GVL.cst0RateBeam;
 fbIM1K0.stReticle.bValid := TRUE;
+fbIM1K0.stReticle.stPMPS.sPmpsState := 'IM1K0-XTES-RETICLE';
 
 fbIM1K0(
     fbArbiter := GVL.fbArbiter,
@@ -99,7 +92,10 @@ fbIM1K0(
     stZoomStage := Main.M2,
     stFocusStage := Main.M3,
     stEl6In := stEL6In,
-    stEl6Out := stEl6Out);
+    stEl6Out := stEl6Out,
+    sPmpsDeviceName := 'IM1K0-XTES',
+    sTransitionKey := 'IM1K0-XTES-MOVING',
+);
 ]]></ST>
     </Implementation>
   </POU>
