@@ -83,7 +83,7 @@ mcPower[4](axis:=Main.M21.Axis, Enable:=TRUE, enable_positive:=Main.M21.bLimitFo
 else
 
 //force that inner limit switch on south motor is not depressed. need to debug further in winter down.
-Main.M18.bLimitForwardEnable := TRUE;
+//Main.M18.bLimitForwardEnable := TRUE;
 fbSL1K0.rEncoderOffsetTop := rEncoderOffsetTop;
 fbSL1K0.rEncoderOffsetBottom := rEncoderOffsetBottom;
 fbSL1K0.rEncoderOffsetNorth := rEncoderOffsetNorth;
