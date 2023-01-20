@@ -7810,13 +7810,11 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PMPS_PRE">
 				<Link VarA="PlcTask Inputs^GVL.rReqTrans" VarB="IO Inputs^SattArrayReq"/>
-				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_SL1K0_POWER.fbSL1K0.AptArrayReq" VarB="IO Inputs^AptArrayReq[1]"/>
 				<Link VarA="PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.AptArrayReq" VarB="IO Inputs^AptArrayReq[2]"/>
 				<Link VarA="PlcTask Outputs^GVL.rCurTrans" VarB="IO Outputs^SattArrayStatus"/>
-				<Link VarA="PlcTask Outputs^PRG_3_PMPS_POST.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_SL1K0_POWER.fbSL1K0.AptArrayStatus" VarB="IO Outputs^AptArrayStatus[1]"/>
 				<Link VarA="PlcTask Outputs^PRG_SL2K0_POWER.fbSL2K0.AptArrayStatus" VarB="IO Outputs^AptArrayStatus[2]"/>
 			</OwnerB>
