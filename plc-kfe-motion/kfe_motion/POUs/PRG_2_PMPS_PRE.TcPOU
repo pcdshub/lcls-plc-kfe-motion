@@ -9,7 +9,7 @@ END_VAR
       <ST><![CDATA[MOTION_GVL.fbStandardPMPSDB(
     io_fbFFHWO:=GVL.fbFastFaultOutput1,
     bEnable:=TRUE,
-    sPLCName:='kfe-motion',
+    sPLCName:='plc-kfe-motion',
 );]]></ST>
     </Implementation>
   </POU>

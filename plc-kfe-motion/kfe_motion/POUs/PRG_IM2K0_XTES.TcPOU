@@ -19,22 +19,22 @@ END_VAR
       <ST><![CDATA[fbIM2K0.stOut.fPosition := 0;
 fbIM2K0.stOut.bUseRawCounts := FALSE;
 fbIM2K0.stOut.bValid := TRUE;
-fbIM2K0.stOut.stPMPS.sPmpsState := 'IM2K0-XTES-OUT';
+fbIM2K0.stOut.stPMPS.sPmpsState := 'IM2K0:XTES-OUT';
 
 fbIM2K0.stYag.fPosition := -87.65;
 fbIM2K0.stYag.bUseRawCounts := FALSE;
 fbIM2K0.stYag.bValid := TRUE;
-fbIM2K0.stYag.stPMPS.sPmpsState := 'IM2K0-XTES-YAG';
+fbIM2K0.stYag.stPMPS.sPmpsState := 'IM2K0:XTES-YAG';
 
 fbIM2K0.stDiamond.fPosition := -57.65;
 fbIM2K0.stDiamond.bUseRawCounts := FALSE;
 fbIM2K0.stDiamond.bValid := TRUE;
-fbIM2K0.stDiamond.stPMPS.sPmpsState := 'IM2K0-XTES-DIAMOND';
+fbIM2K0.stDiamond.stPMPS.sPmpsState := 'IM2K0:XTES-DIAMOND';
 
 fbIM2K0.stReticle.fPosition := -27.65;
 fbIM2K0.stReticle.bUseRawCounts := FALSE;
 fbIM2K0.stReticle.bValid := TRUE;
-fbIM2K0.stReticle.stPMPS.sPmpsState := 'IM2K0-XTES-RETICLE';
+fbIM2K0.stReticle.stPMPS.sPmpsState := 'IM2K0:XTES-RETICLE';
 
 Main.M5.bLimitForwardEnable := bDefectiveLimitSwitch OR (Main.M5.stAxisStatus.fActPosition < 0);
 
@@ -42,8 +42,8 @@ fbIM2K0(
     fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M5,
-    sPmpsDeviceName := 'IM2K0-XTES',
-    sTransitionKey := 'IM2K0-XTES-MOVING',
+    sPmpsDeviceName := 'IM2K0:XTES',
+    sTransitionKey := 'IM2K0:XTES-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>

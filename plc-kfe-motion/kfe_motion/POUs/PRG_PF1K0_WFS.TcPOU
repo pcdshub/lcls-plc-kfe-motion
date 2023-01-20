@@ -22,40 +22,40 @@ END_VAR
       <ST><![CDATA[fbPF1K0.stOut.fPosition := -15;
 fbPF1K0.stOut.bUseRawCounts := FALSE;
 fbPF1K0.stOut.bValid := TRUE;
-fbPF1K0.stOut.stPMPS.sPmpsState := 'PF1K0-WFS-OUT';
+fbPF1K0.stOut.stPMPS.sPmpsState := 'PF1K0:WFS-OUT';
 
 fbPF1K0.stTarget1.fPosition := -96.623;
 fbPF1K0.stTarget1.bUseRawCounts := FALSE;
 fbPF1K0.stTarget1.bValid := TRUE;
-fbPF1K0.stTarget1.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET1';
+fbPF1K0.stTarget1.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET1';
 
 fbPF1K0.stTarget2.fPosition := -82.25;
 fbPF1K0.stTarget2.bUseRawCounts := FALSE;
 fbPF1K0.stTarget2.bValid := TRUE;
-fbPF1K0.stTarget2.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET2';
+fbPF1K0.stTarget2.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET2';
 
 fbPF1K0.stTarget3.fPosition := -67.874;
 fbPF1K0.stTarget3.bUseRawCounts := FALSE;
 fbPF1K0.stTarget3.bValid := TRUE;
-fbPF1K0.stTarget3.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET3';
+fbPF1K0.stTarget3.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET3';
 
 fbPF1K0.stTarget4.fPosition := -53.5;
 fbPF1K0.stTarget4.bUseRawCounts := FALSE;
 fbPF1K0.stTarget4.bValid := TRUE;
-fbPF1K0.stTarget4.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET4';
+fbPF1K0.stTarget4.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET4';
 
 fbPF1K0.stTarget5.fPosition := -39.124;
 fbPF1K0.stTarget5.bUseRawCounts := FALSE;
 fbPF1K0.stTarget5.bValid := TRUE;
-fbPF1K0.stTarget5.stPMPS.sPmpsState := 'PF1K0-WFS-TARGET5';
+fbPF1K0.stTarget5.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET5';
 
 fbPF1K0(
     fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M8,
     stZStage := Main.M9,
-    sPmpsDeviceName := 'PF1K0-WFS',
-    sTransitionKey := 'PF1K0-WFS-MOVING',
+    sPmpsDeviceName := 'PF1K0:WFS',
+    sTransitionKey := 'PF1K0:WFS-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>

@@ -25,29 +25,29 @@ END_VAR
       <ST><![CDATA[fbIM1K3.stOut.fPosition := -9.1;
 fbIM1K3.stOut.bUseRawCounts := FALSE;
 fbIM1K3.stOut.bValid := TRUE;
-fbIM1K3.stOut.stPMPS.sPmpsState := 'IM1K3-PPM-OUT';
+fbIM1K3.stOut.stPMPS.sPmpsState := 'IM1K3:PPM-OUT';
 
 fbIM1K3.stPower.fPosition := -48.2;
 fbIM1K3.stPower.bUseRawCounts := FALSE;
 fbIM1K3.stPower.bValid := TRUE;
-fbIM1K3.stOut.stPMPS.sPmpsState := 'IM1K3-PPM-POWER';
+fbIM1K3.stOut.stPMPS.sPmpsState := 'IM1K3:PPM-POWERMETER';
 
 fbIM1K3.stYag1.fPosition := -72.2;
 fbIM1K3.stYag1.bUseRawCounts := FALSE;
 fbIM1K3.stYag1.bValid := TRUE;
-fbIM1K3.stOut.stPMPS.sPmpsState := 'IM1K3-PPM-YAG1';
+fbIM1K3.stOut.stPMPS.sPmpsState := 'IM1K3:PPM-YAG1';
 
 fbIM1K3.stYag2.fPosition := -98.21;
 fbIM1K3.stYag2.bUseRawCounts := FALSE;
 fbIM1K3.stYag2.bValid := TRUE;
-fbIM1K3.stOut.stPMPS.sPmpsState := 'IM1K3-PPM-YAG2';
+fbIM1K3.stOut.stPMPS.sPmpsState := 'IM1K3:PPM-YAG2';
 
 fbIM1K3(
     fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M4,
-    sPmpsDeviceName := 'IM1K3-PPM',
-    sTransitionKey := 'IM1K3-PPM-MOVING',
+    sPmpsDeviceName := 'IM1K3:PPM',
+    sTransitionKey := 'IM1K3:PPM-TRANSITION',
 );
 ]]></ST>
     </Implementation>
