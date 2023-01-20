@@ -39,21 +39,21 @@ VAR
     '}
     {attribute 'pytmc' :=' pv: RTDSK0:MPA:04 '}
     RTDSK0_MPA_04: FB_MPA := (sName := 'RTDSK0:MPA:04');
-    
+
     fbRTDSK0_SCRP_MMS_Z: FB_MotionStage;
     fbRTDSK0_SCRP_MMS_X: FB_MotionStage;
     fbRTDSK0_SCRP_MMS_Y: FB_MotionStage;
-    
+
      {attribute 'pytmc' := 'pv: RTDSK0:SCRP:LED:01:PWR
       io: io
         field: ZNAM OFF
         field: ONAM ON
 '}
-     
+
      {attribute 'TcLinkTo' := 'TIIB[RTDSK0-EL2004]^Channel 3^Output'}
     bRTDSK0_SCRP_LED_01 AT %Q*: BOOL;
-    
-	FFO : FB_FastFault :=( i_Desc := 'fault occurs when Y motor is not activating upper limit switch', i_TypeCode := 16#FAF, i_DevName := 'RTDSK0:SCRP:MMS:Y');
+
+    FFO : FB_FastFault :=( i_Desc := 'fault occurs when Y motor is not activating upper limit switch', i_TypeCode := 16#FAF, i_DevName := 'RTDSK0:SCRP:MMS:Y');
     bInit: BOOL := TRUE;
 
 
@@ -123,26 +123,26 @@ IF bInit THEN
     Main.M11.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
     Main.M11.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
     Main.M11.fHomePosition := 0;
-    
+
     Main.M12.bHardwareEnable := TRUE;
     Main.M12.bPowerSelf :=TRUE;
     Main.M12.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
     Main.M12.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
     Main.M12.fHomePosition := 0;
-    
+
     Main.M13.bHardwareEnable := TRUE;
     Main.M13.bPowerSelf :=TRUE;
     Main.M13.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
     Main.M13.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
     Main.M13.fHomePosition := 0;
-	
-	Main.M11.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+
+    Main.M11.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
     Main.M12.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
     Main.M13.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
-    
+
     bInit := FALSE;
 END_IF
-    
+
     fbRTDSK0_SCRP_MMS_Z (stMotionStage := Main.M11);
     fbRTDSK0_SCRP_MMS_X (stMotionStage := Main.M12);
     fbRTDSK0_SCRP_MMS_Y (stMotionStage := Main.M13);

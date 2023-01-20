@@ -4,13 +4,13 @@
     <Declaration><![CDATA[PROGRAM PRG_3_PMPS_POST
 VAR
     fbArbiterIO: FB_SubSysToArbiter_IO;
-	fb_vetoArbiter: FB_VetoArbiter;
-	bM1K1_Veto_IN: BOOL;
+    fb_vetoArbiter: FB_VetoArbiter;
+    bM1K1_Veto_IN: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// create MR1K1 as veto for K4 lines
-bM1K1_Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] 
+bM1K1_Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
                 AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
 //create a preemptive request from Arbiter 2 in Arbiter 1
 fb_vetoArbiter(bVeto:=bM1K1_Veto_IN,
@@ -22,11 +22,11 @@ fb_vetoArbiter(bVeto:=bM1K1_Veto_IN,
 
 GVL.fbFastFaultOutput1.Execute();
 
-GVL.fbFastFaultOutput2.Execute(i_xVeto:=bM1K1_Veto_IN);   
+GVL.fbFastFaultOutput2.Execute(i_xVeto:=bM1K1_Veto_IN);
 fbArbiterIO(
     Arbiter:=GVL.fbArbiter,
     fbFFHWO:=GVL.fbFastFaultOutput1);
-	
+
 ]]></ST>
     </Implementation>
   </POU>

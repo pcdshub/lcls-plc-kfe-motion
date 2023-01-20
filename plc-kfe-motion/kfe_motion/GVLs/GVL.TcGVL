@@ -5,7 +5,7 @@
 VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:ARB:01'}
     fbArbiter: FB_Arbiter(1);
-	{attribute 'pytmc' := 'pv: PLC:KFE:MOTION:ARB:02'}
+    {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:ARB:02'}
     fbArbiter2: FB_Arbiter(2);
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:FFO:01'}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}

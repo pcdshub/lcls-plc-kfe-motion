@@ -62,13 +62,13 @@ VAR
                               .D[20] := TIIB[IM1K4-EL6002-E6]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
                               .D[21] := TIIB[IM1K4-EL6002-E6]^COM RxPDO-Map Outputs Channel 1^Data Out 21'}
     stEL6Out AT %Q*: EL6OutData22b;
-    
+
          {attribute 'pytmc' := 'pv: IM1K4:SCRP:LED:01:PWR
       io: io
         field: ZNAM OFF
         field: ONAM ON
 '}
-     
+
      {attribute 'TcLinkTo' := 'TIIB[IM1K4-EL2004-E2]^Channel 4^Output'}
     bIM1K4_SCRP_LED_01 AT %Q*: BOOL;
 END_VAR
