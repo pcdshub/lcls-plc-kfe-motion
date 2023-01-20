@@ -14,9 +14,6 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
     fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
 
-    (* Photon energy comes from the arbiter (see PMPS_PRE.IO Inputs.rPhotonEnergy!) *)
-    {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:PhotonEnergy'}
-    fPhotonEnergy_eV AT %I* : REAL;
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:PMPS:ReqTrans'}
     rReqTrans AT %I*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:PMPS:CurTrans'}

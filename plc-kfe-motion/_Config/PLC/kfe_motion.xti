@@ -7809,7 +7809,6 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^GVL.fbFastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PMPS_PRE">
-				<Link VarA="PlcTask Inputs^GVL.fPhotonEnergy_eV" VarB="IO Inputs^rPhotonEnergy"/>
 				<Link VarA="PlcTask Inputs^GVL.rReqTrans" VarB="IO Inputs^SattArrayReq"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>

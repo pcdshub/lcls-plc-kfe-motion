@@ -304,7 +304,7 @@
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{63B6CB02-1D33-B57D-1DC8-CC6DA3ED8E9B}" AutoDeleteType="true">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Name>
+			<Name GUID="{63B6CB02-1D33-B57D-1DC8-CC6DA3ED8E9B}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Name>
 			<BitSize>1024</BitSize>
 			<BaseType GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</BaseType>
 			<ArrayInfo>
@@ -1295,7 +1295,7 @@
 			<SyncMan>0010000426000100010000008000da050004001026010000</SyncMan>
 			<SyncMan>0016000422000100020000008000da050004001622010000</SyncMan>
 			<SyncMan>001c84016400010003000000000000000000001c64010000</SyncMan>
-			<SyncMan>008e8a012000010004000000000000000200008e20010000</SyncMan>
+			<SyncMan>008e86012000010004000000000000000200008e20010000</SyncMan>
 			<Fmmu>0000000000000000001c00020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000008e00010100000002000000000000000000000000000000</Fmmu>
 			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
@@ -1439,17 +1439,14 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="IO Inputs" Index="#x1a08" Flags="#x0020" SyncMan="3">
-				<Entry Name="AptArrayReq" BitLen="240" Index="#x6000" Sub="#x01">
+				<Entry Name="AptArrayReq" Index="#x6000" Sub="#x01">
 					<Type GUID="{1C5B6FFE-5600-8C40-85B0-B61070AA3AFB}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
 				</Entry>
-				<Entry Name="CurrentBP" BitLen="240" Index="#x6000" Sub="#x02">
+				<Entry Name="CurrentBP" Index="#x6000" Sub="#x02">
 					<Type GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Type>
 				</Entry>
-				<Entry Name="SattArrayReq" BitLen="240" Index="#x6000" Sub="#x03">
+				<Entry Name="SattArrayReq" Index="#x6000" Sub="#x03">
 					<Type GUID="{63B6CB02-1D33-B57D-1DC8-CC6DA3ED8E9B}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
-				</Entry>
-				<Entry Name="rPhotonEnergy" BitLen="32" Index="#x6000" Sub="#x04">
-					<Type>REAL</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="IO Outputs" Index="#x1608" InOut="1" Flags="#x0020" SyncMan="2">
