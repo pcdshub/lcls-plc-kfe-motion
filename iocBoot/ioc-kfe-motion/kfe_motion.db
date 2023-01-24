@@ -70,6 +70,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:010:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:010:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[10].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:010:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -217,6 +228,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:011:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[11].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:011:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[11].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -372,6 +394,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:012:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:012:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[12].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:012:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -519,6 +552,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:013:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[13].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:013:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[13].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -674,6 +718,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:014:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:014:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[14].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:014:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -821,6 +876,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:015:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[15].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:015:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[15].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -976,6 +1042,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:016:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:016:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[16].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:016:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -1123,6 +1200,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:017:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[17].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:017:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[17].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -1278,6 +1366,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:018:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:018:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[18].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:018:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -1425,6 +1524,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:019:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[19].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:019:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[19].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -1580,6 +1690,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:001:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:001:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[1].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:001:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -1727,6 +1848,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:020:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[20].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:020:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[20].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -1882,6 +2014,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:002:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:002:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[2].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:002:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -2029,6 +2172,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:003:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[3].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:003:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[3].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -2184,6 +2338,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:004:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:004:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[4].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:004:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -2331,6 +2496,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:005:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[5].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:005:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[5].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -2486,6 +2662,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:006:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:006:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[6].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:006:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -2633,6 +2820,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:007:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[7].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:007:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[7].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -2788,6 +2986,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:008:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:008:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[8].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:008:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -2935,6 +3144,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:009:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[9].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:01:AP:Entry:009:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.fbBPAssertionPool.epicsDataPool[9].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -3088,6 +3308,17 @@ record(longin, "PLC:KFE:MOTION:ARB:01:ArbitratedBP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:01:ArbitratedBP:MachineMode_RBV") {
+  field(DESC, "Arbitrated BP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter.q_stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:01:ArbitratedBP:Rate_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
@@ -3220,6 +3451,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:010:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[10].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:010:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[10].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -3375,6 +3617,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:011:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:011:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[11].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:011:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -3522,6 +3775,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:012:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[12].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:012:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[12].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -3677,6 +3941,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:013:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:013:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[13].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:013:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -3824,6 +4099,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:014:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[14].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:014:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[14].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -3979,6 +4265,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:015:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:015:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[15].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:015:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -4126,6 +4423,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:016:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[16].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:016:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[16].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -4281,6 +4589,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:017:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:017:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[17].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:017:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -4428,6 +4747,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:018:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[18].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:018:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[18].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -4583,6 +4913,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:019:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:019:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[19].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:019:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -4730,6 +5071,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:001:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[1].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:001:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[1].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -4885,6 +5237,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:020:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:020:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[20].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:020:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -5032,6 +5395,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:002:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[2].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:002:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[2].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -5187,6 +5561,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:003:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:003:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[3].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:003:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -5334,6 +5719,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:004:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[4].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:004:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[4].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -5489,6 +5885,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:005:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:005:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[5].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:005:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -5636,6 +6043,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:006:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[6].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:006:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[6].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -5791,6 +6209,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:007:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:007:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[7].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:007:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -5938,6 +6367,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:008:ID_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[8].nId?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:008:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[8].nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -6093,6 +6533,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:009:ID_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:009:MachineMode_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.fbBPAssertionPool.epicsDataPool[9].nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:KFE:MOTION:ARB:02:AP:Entry:009:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
@@ -6238,6 +6689,17 @@ record(longin, "PLC:KFE:MOTION:ARB:02:ArbitratedBP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.q_stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:KFE:MOTION:ARB:02:ArbitratedBP:MachineMode_RBV") {
+  field(DESC, "Arbitrated BP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.fbArbiter2.q_stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -55445,20 +55907,6 @@ record(longin, "$(PREFIX)AccumulatedFastFaults_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "$(PREFIX)LCLSMODE_RBV") {
-  field(DESC, "PMPS_GVL.M_Mode")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.M_Mode?")
-  field(ZRST, "NC")
-  field(ONST, "SC")
-  field(TWST, "Misconfigured")
-  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
-  info(archive, "VAL")
-}
-
 record(longin, "$(PREFIX)SuccessfulPreemptions_RBV") {
   field(DESC, "PMPS_GVL.SuccessfulPreemption")
   field(SCAN, "I/O Intr")
@@ -55514,6 +55962,17 @@ record(longin, "$(PREFIX)0RateBeamCnst:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:MachineMode_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "monitor 1: VAL")
 }
@@ -55626,6 +56085,17 @@ record(longin, "$(PREFIX)FullBeamCnst:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)FullBeamCnst:MachineMode_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "monitor 1: VAL")
 }
@@ -55806,6 +56276,18 @@ record(longin, "$(PREFIX)CurrentBP:Cohort_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
+record(longin, "$(PREFIX)CurrentBP:MachineMode_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.nMachineMode
+  field(DESC, "PMPS_GVL.stCurrentBe...ters.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
 record(longin, "$(PREFIX)CurrentBP:Rate_RBV") {
   field(DESC, "PMPS_GVL.stCurrentBeamParameters.nRate")
   field(SCAN, "I/O Intr")
@@ -55918,6 +56400,18 @@ record(longin, "$(PREFIX)RequestedBP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)RequestedBP:MachineMode_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.nMachineMode
+  field(DESC, "PMPS_GVL.stRequested...ters.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "monitor 1: VAL")
 }
@@ -56580,6 +57074,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:10:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:01:STATE:10:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[10].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[10].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:01:STATE:10:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[10].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -56907,6 +57413,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:11:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[11].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:01:STATE:11:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[11].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[11].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -57242,6 +57760,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:12:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:01:STATE:12:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[12].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[12].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:01:STATE:12:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[12].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -57569,6 +58099,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:13:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[13].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:01:STATE:13:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[13].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[13].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -57904,6 +58446,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:14:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:01:STATE:14:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[14].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[14].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:01:STATE:14:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[14].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -58231,6 +58785,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:15:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[15].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:01:STATE:15:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[15].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[15].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -58566,6 +59132,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:01:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:01:STATE:01:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[1].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[1].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:01:STATE:01:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[1].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -58893,6 +59471,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:02:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[2].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:01:STATE:02:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[2].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[2].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -59228,6 +59818,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:03:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:01:STATE:03:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[3].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[3].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:01:STATE:03:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[3].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -59555,6 +60157,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:04:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[4].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:01:STATE:04:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[4].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[4].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -59890,6 +60504,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:05:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:01:STATE:05:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[5].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[5].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:01:STATE:05:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[5].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -60217,6 +60843,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:06:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[6].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:01:STATE:06:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[6].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[6].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -60552,6 +61190,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:07:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:01:STATE:07:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[7].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[7].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:01:STATE:07:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[7].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -60883,6 +61533,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:08:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:01:STATE:08:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[8].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[8].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:01:STATE:08:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[8].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -61210,6 +61872,18 @@ record(longin, "AT1K4:L2SI:MMS:01:STATE:09:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[9].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:01:STATE:09:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[9].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage1.fbState.arrStates[9].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -62073,6 +62747,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:10:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:02:STATE:10:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[10].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[10].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:02:STATE:10:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[10].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -62400,6 +63086,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:11:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[11].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:02:STATE:11:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[11].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[11].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -62735,6 +63433,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:12:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:02:STATE:12:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[12].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[12].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:02:STATE:12:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[12].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -63062,6 +63772,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:13:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[13].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:02:STATE:13:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[13].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[13].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -63397,6 +64119,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:14:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:02:STATE:14:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[14].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[14].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:02:STATE:14:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[14].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -63724,6 +64458,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:15:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[15].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:02:STATE:15:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[15].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[15].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -64059,6 +64805,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:01:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:02:STATE:01:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[1].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[1].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:02:STATE:01:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[1].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -64386,6 +65144,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:02:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[2].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:02:STATE:02:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[2].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[2].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -64721,6 +65491,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:03:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:02:STATE:03:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[3].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[3].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:02:STATE:03:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[3].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -65048,6 +65830,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:04:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[4].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:02:STATE:04:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[4].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[4].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -65383,6 +66177,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:05:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:02:STATE:05:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[5].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[5].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:02:STATE:05:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[5].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -65710,6 +66516,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:06:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[6].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:02:STATE:06:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[6].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[6].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -66045,6 +66863,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:07:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:02:STATE:07:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[7].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[7].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:02:STATE:07:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[7].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -66376,6 +67206,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:08:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:02:STATE:08:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[8].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[8].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:02:STATE:08:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[8].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -66703,6 +67545,18 @@ record(longin, "AT1K4:L2SI:MMS:02:STATE:09:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[9].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:02:STATE:09:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[9].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage2.fbState.arrStates[9].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -67566,6 +68420,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:10:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:03:STATE:10:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[10].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[10].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:03:STATE:10:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[10].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -67893,6 +68759,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:11:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[11].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:03:STATE:11:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[11].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[11].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -68228,6 +69106,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:12:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:03:STATE:12:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[12].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[12].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:03:STATE:12:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[12].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -68555,6 +69445,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:13:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[13].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:03:STATE:13:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[13].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[13].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -68890,6 +69792,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:14:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:03:STATE:14:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[14].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[14].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:03:STATE:14:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[14].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -69217,6 +70131,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:15:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[15].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:03:STATE:15:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[15].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[15].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -69552,6 +70478,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:01:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:03:STATE:01:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[1].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[1].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:03:STATE:01:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[1].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -69879,6 +70817,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:02:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[2].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:03:STATE:02:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[2].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[2].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -70214,6 +71164,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:03:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:03:STATE:03:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[3].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[3].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:03:STATE:03:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[3].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -70541,6 +71503,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:04:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[4].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:03:STATE:04:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[4].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[4].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -70876,6 +71850,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:05:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:03:STATE:05:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[5].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[5].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:03:STATE:05:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[5].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -71203,6 +72189,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:06:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[6].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:03:STATE:06:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[6].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[6].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -71538,6 +72536,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:07:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:03:STATE:07:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[7].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[7].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:03:STATE:07:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[7].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -71869,6 +72879,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:08:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:03:STATE:08:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[8].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[8].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:03:STATE:08:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[8].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -72196,6 +73218,18 @@ record(longin, "AT1K4:L2SI:MMS:03:STATE:09:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[9].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:03:STATE:09:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[9].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage3.fbState.arrStates[9].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -73059,6 +74093,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:10:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:04:STATE:10:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[10].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[10].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:04:STATE:10:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[10].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -73386,6 +74432,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:11:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[11].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:04:STATE:11:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[11].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[11].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -73721,6 +74779,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:12:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:04:STATE:12:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[12].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[12].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:04:STATE:12:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[12].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -74048,6 +75118,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:13:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[13].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:04:STATE:13:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[13].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[13].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -74383,6 +75465,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:14:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:04:STATE:14:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[14].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[14].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:04:STATE:14:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[14].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -74710,6 +75804,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:15:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[15].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:04:STATE:15:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[15].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[15].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -75045,6 +76151,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:01:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:04:STATE:01:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[1].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[1].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:04:STATE:01:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[1].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -75372,6 +76490,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:02:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[2].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:04:STATE:02:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[2].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[2].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -75707,6 +76837,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:03:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:04:STATE:03:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[3].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[3].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:04:STATE:03:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[3].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -76034,6 +77176,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:04:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[4].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:04:STATE:04:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[4].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[4].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -76369,6 +77523,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:05:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:04:STATE:05:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[5].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[5].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:04:STATE:05:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[5].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -76696,6 +77862,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:06:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[6].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:04:STATE:06:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[6].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[6].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -77031,6 +78209,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:07:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:04:STATE:07:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[7].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[7].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:04:STATE:07:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[7].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -77362,6 +78552,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:08:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "AT1K4:L2SI:MMS:04:STATE:08:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[8].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[8].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "AT1K4:L2SI:MMS:04:STATE:08:BP:Rate_RBV") {
   # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[8].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_AT1K4_SOLID.fbSt...tBeamParams.nRate")
@@ -77689,6 +78891,18 @@ record(longin, "AT1K4:L2SI:MMS:04:STATE:09:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[9].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "AT1K4:L2SI:MMS:04:STATE:09:BP:MachineMode_RBV") {
+  # PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[9].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_AT1K4_SOLID.fbSt...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_AT1K4_SOLID.fbStage4.fbState.arrStates[9].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -78754,6 +79968,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:10:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K0:XTES:MMS:STATE:10:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[10].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[10].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K0:XTES:MMS:STATE:10:BP:Rate_RBV") {
   # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[10].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K0_XTES.fbIM1...tBeamParams.nRate")
@@ -79081,6 +80307,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:11:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[11].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K0:XTES:MMS:STATE:11:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[11].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[11].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -79416,6 +80654,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:12:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K0:XTES:MMS:STATE:12:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[12].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[12].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K0:XTES:MMS:STATE:12:BP:Rate_RBV") {
   # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[12].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K0_XTES.fbIM1...tBeamParams.nRate")
@@ -79743,6 +80993,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:13:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[13].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K0:XTES:MMS:STATE:13:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[13].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[13].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -80078,6 +81340,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:14:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K0:XTES:MMS:STATE:14:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[14].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[14].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K0:XTES:MMS:STATE:14:BP:Rate_RBV") {
   # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[14].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K0_XTES.fbIM1...tBeamParams.nRate")
@@ -80405,6 +81679,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:15:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[15].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K0:XTES:MMS:STATE:15:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[15].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[15].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -80740,6 +82026,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:01:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K0:XTES:MMS:STATE:01:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K0:XTES:MMS:STATE:01:BP:Rate_RBV") {
   # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[1].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K0_XTES.fbIM1...tBeamParams.nRate")
@@ -81067,6 +82365,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:02:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[2].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K0:XTES:MMS:STATE:02:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -81402,6 +82712,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:03:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K0:XTES:MMS:STATE:03:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K0:XTES:MMS:STATE:03:BP:Rate_RBV") {
   # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[3].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K0_XTES.fbIM1...tBeamParams.nRate")
@@ -81729,6 +83051,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:04:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[4].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K0:XTES:MMS:STATE:04:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -82064,6 +83398,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:05:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K0:XTES:MMS:STATE:05:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[5].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[5].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K0:XTES:MMS:STATE:05:BP:Rate_RBV") {
   # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[5].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K0_XTES.fbIM1...tBeamParams.nRate")
@@ -82391,6 +83737,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:06:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K0:XTES:MMS:STATE:06:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[6].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -82726,6 +84084,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:07:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K0:XTES:MMS:STATE:07:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[7].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[7].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K0:XTES:MMS:STATE:07:BP:Rate_RBV") {
   # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[7].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K0_XTES.fbIM1...tBeamParams.nRate")
@@ -83057,6 +84427,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:08:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K0:XTES:MMS:STATE:08:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[8].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[8].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K0:XTES:MMS:STATE:08:BP:Rate_RBV") {
   # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[8].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K0_XTES.fbIM1...tBeamParams.nRate")
@@ -83384,6 +84766,18 @@ record(longin, "IM1K0:XTES:MMS:STATE:09:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[9].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K0:XTES:MMS:STATE:09:BP:MachineMode_RBV") {
+  # PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[9].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K0_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K0_XTES.fbIM1K0.fbStates.arrStates[9].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -84195,6 +85589,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:10:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K3:PPM:MMS:STATE:10:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[10].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[10].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K3:PPM:MMS:STATE:10:BP:Rate_RBV") {
   # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[10].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K3_PPM.fbIM1K...tBeamParams.nRate")
@@ -84522,6 +85928,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:11:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[11].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K3:PPM:MMS:STATE:11:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[11].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[11].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -84857,6 +86275,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:12:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K3:PPM:MMS:STATE:12:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[12].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[12].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K3:PPM:MMS:STATE:12:BP:Rate_RBV") {
   # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[12].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K3_PPM.fbIM1K...tBeamParams.nRate")
@@ -85184,6 +86614,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:13:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[13].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K3:PPM:MMS:STATE:13:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[13].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[13].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -85519,6 +86961,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:14:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K3:PPM:MMS:STATE:14:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[14].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[14].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K3:PPM:MMS:STATE:14:BP:Rate_RBV") {
   # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[14].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K3_PPM.fbIM1K...tBeamParams.nRate")
@@ -85846,6 +87300,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:15:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[15].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K3:PPM:MMS:STATE:15:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[15].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[15].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -86181,6 +87647,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:01:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K3:PPM:MMS:STATE:01:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K3:PPM:MMS:STATE:01:BP:Rate_RBV") {
   # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[1].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K3_PPM.fbIM1K...tBeamParams.nRate")
@@ -86508,6 +87986,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:02:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[2].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K3:PPM:MMS:STATE:02:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -86843,6 +88333,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:03:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K3:PPM:MMS:STATE:03:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K3:PPM:MMS:STATE:03:BP:Rate_RBV") {
   # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[3].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K3_PPM.fbIM1K...tBeamParams.nRate")
@@ -87170,6 +88672,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:04:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[4].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K3:PPM:MMS:STATE:04:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -87505,6 +89019,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:05:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K3:PPM:MMS:STATE:05:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[5].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[5].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K3:PPM:MMS:STATE:05:BP:Rate_RBV") {
   # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[5].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K3_PPM.fbIM1K...tBeamParams.nRate")
@@ -87832,6 +89358,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:06:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K3:PPM:MMS:STATE:06:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[6].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -88167,6 +89705,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:07:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K3:PPM:MMS:STATE:07:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[7].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[7].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K3:PPM:MMS:STATE:07:BP:Rate_RBV") {
   # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[7].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K3_PPM.fbIM1K...tBeamParams.nRate")
@@ -88498,6 +90048,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:08:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K3:PPM:MMS:STATE:08:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[8].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[8].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K3:PPM:MMS:STATE:08:BP:Rate_RBV") {
   # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[8].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K3_PPM.fbIM1K...tBeamParams.nRate")
@@ -88825,6 +90387,18 @@ record(longin, "IM1K3:PPM:MMS:STATE:09:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[9].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K3:PPM:MMS:STATE:09:BP:MachineMode_RBV") {
+  # PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[9].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K3_PPM.fbIM1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K3_PPM.fbIM1K3.fbStates.arrStates[9].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -89960,6 +91534,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:10:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K4:XTES:MMS:STATE:10:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[10].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[10].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K4:XTES:MMS:STATE:10:BP:Rate_RBV") {
   # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[10].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K4_XTES.fbIM1...tBeamParams.nRate")
@@ -90287,6 +91873,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:11:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[11].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K4:XTES:MMS:STATE:11:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[11].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[11].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -90622,6 +92220,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:12:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K4:XTES:MMS:STATE:12:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[12].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[12].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K4:XTES:MMS:STATE:12:BP:Rate_RBV") {
   # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[12].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K4_XTES.fbIM1...tBeamParams.nRate")
@@ -90949,6 +92559,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:13:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[13].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K4:XTES:MMS:STATE:13:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[13].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[13].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -91284,6 +92906,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:14:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K4:XTES:MMS:STATE:14:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[14].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[14].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K4:XTES:MMS:STATE:14:BP:Rate_RBV") {
   # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[14].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K4_XTES.fbIM1...tBeamParams.nRate")
@@ -91611,6 +93245,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:15:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[15].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K4:XTES:MMS:STATE:15:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[15].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[15].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -91946,6 +93592,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:01:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K4:XTES:MMS:STATE:01:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K4:XTES:MMS:STATE:01:BP:Rate_RBV") {
   # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[1].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K4_XTES.fbIM1...tBeamParams.nRate")
@@ -92273,6 +93931,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:02:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[2].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K4:XTES:MMS:STATE:02:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -92608,6 +94278,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:03:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K4:XTES:MMS:STATE:03:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K4:XTES:MMS:STATE:03:BP:Rate_RBV") {
   # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[3].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K4_XTES.fbIM1...tBeamParams.nRate")
@@ -92935,6 +94617,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:04:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[4].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K4:XTES:MMS:STATE:04:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -93270,6 +94964,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:05:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K4:XTES:MMS:STATE:05:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[5].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[5].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K4:XTES:MMS:STATE:05:BP:Rate_RBV") {
   # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[5].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K4_XTES.fbIM1...tBeamParams.nRate")
@@ -93597,6 +95303,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:06:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[6].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K4:XTES:MMS:STATE:06:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[6].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[6].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -93932,6 +95650,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:07:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K4:XTES:MMS:STATE:07:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[7].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[7].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K4:XTES:MMS:STATE:07:BP:Rate_RBV") {
   # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[7].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K4_XTES.fbIM1...tBeamParams.nRate")
@@ -94263,6 +95993,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:08:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM1K4:XTES:MMS:STATE:08:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[8].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[8].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM1K4:XTES:MMS:STATE:08:BP:Rate_RBV") {
   # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[8].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM1K4_XTES.fbIM1...tBeamParams.nRate")
@@ -94590,6 +96332,18 @@ record(longin, "IM1K4:XTES:MMS:STATE:09:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[9].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM1K4:XTES:MMS:STATE:09:BP:MachineMode_RBV") {
+  # PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[9].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM1K4_XTES.fbIM1...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM1K4_XTES.fbIM1K4.fbStates.arrStates[9].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -95300,6 +97054,18 @@ record(longin, "IM2K0:XTES:MMS:STATE:01:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM2K0:XTES:MMS:STATE:01:BP:MachineMode_RBV") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM2K0:XTES:MMS:STATE:01:BP:Rate_RBV") {
   # PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[1].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM2K0_XTES.fbIM2...tBeamParams.nRate")
@@ -95627,6 +97393,18 @@ record(longin, "IM2K0:XTES:MMS:STATE:02:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[2].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM2K0:XTES:MMS:STATE:02:BP:MachineMode_RBV") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -95962,6 +97740,18 @@ record(longin, "IM2K0:XTES:MMS:STATE:03:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "IM2K0:XTES:MMS:STATE:03:BP:MachineMode_RBV") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "IM2K0:XTES:MMS:STATE:03:BP:Rate_RBV") {
   # PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[3].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_IM2K0_XTES.fbIM2...tBeamParams.nRate")
@@ -96289,6 +98079,18 @@ record(longin, "IM2K0:XTES:MMS:STATE:04:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[4].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "IM2K0:XTES:MMS:STATE:04:BP:MachineMode_RBV") {
+  # PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_IM2K0_XTES.fbIM2...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_IM2K0_XTES.fbIM2K0.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -96827,6 +98629,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:10:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PF1K0:WFS:MMS:STATE:10:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[10].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[10].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PF1K0:WFS:MMS:STATE:10:BP:Rate_RBV") {
   # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[10].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_PF1K0_WFS.fbPF1K...tBeamParams.nRate")
@@ -97154,6 +98968,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:11:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[11].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PF1K0:WFS:MMS:STATE:11:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[11].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[11].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -97489,6 +99315,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:12:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PF1K0:WFS:MMS:STATE:12:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[12].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[12].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PF1K0:WFS:MMS:STATE:12:BP:Rate_RBV") {
   # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[12].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_PF1K0_WFS.fbPF1K...tBeamParams.nRate")
@@ -97816,6 +99654,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:13:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[13].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PF1K0:WFS:MMS:STATE:13:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[13].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[13].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -98151,6 +100001,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:14:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PF1K0:WFS:MMS:STATE:14:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[14].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[14].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PF1K0:WFS:MMS:STATE:14:BP:Rate_RBV") {
   # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[14].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_PF1K0_WFS.fbPF1K...tBeamParams.nRate")
@@ -98478,6 +100340,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:15:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[15].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PF1K0:WFS:MMS:STATE:15:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[15].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[15].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -98813,6 +100687,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:01:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PF1K0:WFS:MMS:STATE:01:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[1].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PF1K0:WFS:MMS:STATE:01:BP:Rate_RBV") {
   # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[1].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_PF1K0_WFS.fbPF1K...tBeamParams.nRate")
@@ -99140,6 +101026,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:02:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[2].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PF1K0:WFS:MMS:STATE:02:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[2].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -99475,6 +101373,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:03:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PF1K0:WFS:MMS:STATE:03:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[3].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PF1K0:WFS:MMS:STATE:03:BP:Rate_RBV") {
   # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[3].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_PF1K0_WFS.fbPF1K...tBeamParams.nRate")
@@ -99802,6 +101712,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:04:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[4].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PF1K0:WFS:MMS:STATE:04:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[4].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -100137,6 +102059,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:05:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PF1K0:WFS:MMS:STATE:05:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[5].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[5].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PF1K0:WFS:MMS:STATE:05:BP:Rate_RBV") {
   # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[5].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_PF1K0_WFS.fbPF1K...tBeamParams.nRate")
@@ -100464,6 +102398,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:06:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PF1K0:WFS:MMS:STATE:06:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[6].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -100799,6 +102745,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:07:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PF1K0:WFS:MMS:STATE:07:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[7].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[7].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PF1K0:WFS:MMS:STATE:07:BP:Rate_RBV") {
   # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[7].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_PF1K0_WFS.fbPF1K...tBeamParams.nRate")
@@ -101130,6 +103088,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:08:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "PF1K0:WFS:MMS:STATE:08:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[8].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[8].stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "PF1K0:WFS:MMS:STATE:08:BP:Rate_RBV") {
   # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[8].stPMPS.stBeamParams.nRate
   field(DESC, "PRG_PF1K0_WFS.fbPF1K...tBeamParams.nRate")
@@ -101457,6 +103427,18 @@ record(longin, "PF1K0:WFS:MMS:STATE:09:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[9].stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "PF1K0:WFS:MMS:STATE:09:BP:MachineMode_RBV") {
+  # PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[9].stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_PF1K0_WFS.fbPF1K...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_PF1K0_WFS.fbPF1K0.fbStates.arrStates[9].stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -103710,6 +105692,18 @@ record(longin, "SL1K0:POWER:BOTTOM:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "SL1K0:POWER:BOTTOM:BP:MachineMode_RBV") {
+  # PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_SL1K0_POWER.fbSL...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "SL1K0:POWER:BOTTOM:BP:Rate_RBV") {
   # PRG_SL1K0_POWER.fbSL1K0.fbBottom.stPositionState.stPMPS.stBeamParams.nRate
   field(DESC, "PRG_SL1K0_POWER.fbSL...tBeamParams.nRate")
@@ -104158,6 +106152,18 @@ record(longin, "SL1K0:POWER:NORTH:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "SL1K0:POWER:NORTH:BP:MachineMode_RBV") {
+  # PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_SL1K0_POWER.fbSL...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "SL1K0:POWER:NORTH:BP:Rate_RBV") {
   # PRG_SL1K0_POWER.fbSL1K0.fbNorth.stPositionState.stPMPS.stBeamParams.nRate
   field(DESC, "PRG_SL1K0_POWER.fbSL...tBeamParams.nRate")
@@ -104580,6 +106586,18 @@ record(longin, "SL1K0:POWER:SOUTH:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "SL1K0:POWER:SOUTH:BP:MachineMode_RBV") {
+  # PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_SL1K0_POWER.fbSL...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "SL1K0:POWER:SOUTH:BP:Rate_RBV") {
   # PRG_SL1K0_POWER.fbSL1K0.fbSouth.stPositionState.stPMPS.stBeamParams.nRate
   field(DESC, "PRG_SL1K0_POWER.fbSL...tBeamParams.nRate")
@@ -104998,6 +107016,18 @@ record(longin, "SL1K0:POWER:TOP:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "SL1K0:POWER:TOP:BP:MachineMode_RBV") {
+  # PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_SL1K0_POWER.fbSL...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL1K0_POWER.fbSL1K0.fbTop.stPositionState.stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
@@ -106220,6 +108250,18 @@ record(longin, "SL2K0:POWER:BOTTOM:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "SL2K0:POWER:BOTTOM:BP:MachineMode_RBV") {
+  # PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_SL2K0_POWER.fbSL...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "SL2K0:POWER:BOTTOM:BP:Rate_RBV") {
   # PRG_SL2K0_POWER.fbSL2K0.fbBottom.stPositionState.stPMPS.stBeamParams.nRate
   field(DESC, "PRG_SL2K0_POWER.fbSL...tBeamParams.nRate")
@@ -106668,6 +108710,18 @@ record(longin, "SL2K0:POWER:NORTH:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "SL2K0:POWER:NORTH:BP:MachineMode_RBV") {
+  # PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_SL2K0_POWER.fbSL...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "SL2K0:POWER:NORTH:BP:Rate_RBV") {
   # PRG_SL2K0_POWER.fbSL2K0.fbNorth.stPositionState.stPMPS.stBeamParams.nRate
   field(DESC, "PRG_SL2K0_POWER.fbSL...tBeamParams.nRate")
@@ -107090,6 +109144,18 @@ record(longin, "SL2K0:POWER:SOUTH:BP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "SL2K0:POWER:SOUTH:BP:MachineMode_RBV") {
+  # PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_SL2K0_POWER.fbSL...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.stPMPS.stBeamParams.nMachineMode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
 record(longin, "SL2K0:POWER:SOUTH:BP:Rate_RBV") {
   # PRG_SL2K0_POWER.fbSL2K0.fbSouth.stPositionState.stPMPS.stBeamParams.nRate
   field(DESC, "PRG_SL2K0_POWER.fbSL...tBeamParams.nRate")
@@ -107508,6 +109574,18 @@ record(longin, "SL2K0:POWER:TOP:BP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.stPMPS.stBeamParams.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "SL2K0:POWER:TOP:BP:MachineMode_RBV") {
+  # PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.stPMPS.stBeamParams.nMachineMode
+  field(DESC, "PRG_SL2K0_POWER.fbSL...rams.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SL2K0_POWER.fbSL2K0.fbTop.stPositionState.stPMPS.stBeamParams.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
 }
