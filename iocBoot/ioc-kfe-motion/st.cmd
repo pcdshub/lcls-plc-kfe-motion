@@ -4,8 +4,8 @@
 #         Project: plc-kfe-motion.tsproj
 #        PLC name: kfe_motion (kfe_motion Instance)
 # Generated using: pytmc 2.14.1
-# Project version: v3.0.2-30-ge98edb8
-#    Project hash: e98edb87fd1e3bd6aa2de387f7a8ca5614de699a
+# Project version: v3.0.2-33-gcf2e2ed
+#    Project hash: cf2e2edb186d59fe352d4eab085351f9d18f25f2
 #     PLC IP/host: 172.21.92.58
 #      PLC Net ID: 172.21.92.58.1.1
 #  ** Production mode IOC **
@@ -544,7 +544,7 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:KFE:MOTION,IDX=1")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:KFE:MOTION")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:KFE:MOTION,PROJECT=plc-kfe-motion.tsproj,HASH=e98edb8,VERSION=v3.0.2-30-ge98edb8,PYTMC=2.14.1,PLC_HOST=172.21.92.58")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:KFE:MOTION,PROJECT=plc-kfe-motion.tsproj,HASH=cf2e2ed,VERSION=v3.0.2-33-gcf2e2ed,PYTMC=2.14.1,PLC_HOST=172.21.92.58")
 
 #   LCLS General: * -> 2.7.0 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=LCLS_General,VERSION=2.7.0,VENDOR=SLAC")
