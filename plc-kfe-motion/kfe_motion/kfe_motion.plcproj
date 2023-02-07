@@ -163,7 +163,7 @@
       <Resolution>LCLS General, 2.7.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion-zlentz, 0.0.0 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 2.0.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-physics">
       <Resolution>lcls-twincat-physics, 0.0.0 (SLAC)</Resolution>
@@ -172,7 +172,7 @@
       <Resolution>lcls2-cc-lib, 2.0.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 4.0.0 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 3.0.13 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="SysDir">
       <Resolution>SysDir, 3.5.8.0 (System)</Resolution>
