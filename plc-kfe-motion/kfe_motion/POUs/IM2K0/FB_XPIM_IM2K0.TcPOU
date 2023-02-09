@@ -15,9 +15,8 @@ VAR_INPUT
     stYag: DUT_PositionState;
     stDiamond: DUT_PositionState;
     stReticle: DUT_PositionState;
-
-    nTransitionAssertionID: UDINT;
-    nUnknownAssertionID: UDINT;
+    sPmpsDeviceName: STRING;
+    sTransitionKey: STRING;
 END_VAR
 VAR
     fbYStage: FB_MotionStage;
@@ -55,14 +54,15 @@ stYStage.bLimitBackwardEnable := TRUE;
 fbStates(
     fbArbiter:=fbArbiter,
     fbFFHWO:=fbFFHWO,
-    nTransitionAssertionID:=nTransitionAssertionID,
-    nUnknownAssertionID:=nUnknownAssertionID,
     stMotionStage:=stYStage,
     bEnable:=TRUE,
     stOut:=stOut,
     stYag:=stYag,
     stDiamond:=stDiamond,
-    stReticle:=stReticle);
+    stReticle:=stReticle,
+    sPmpsDeviceName:=sPmpsDeviceName,
+    sTransitionKey:=sTransitionKey,
+);
 
 fbGige();
 fbLED(enumXPIM:=fbStates.enumGet);

@@ -1,6 +1,30 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.5.0/bin/rhel7-x86_64/adsIoc
-###### AUTO-GENERATED DO NOT EDIT ##############
-
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.0/bin/rhel7-x86_64/adsIoc
+################### AUTO-GENERATED DO NOT EDIT ###################
+#
+#         Project: plc-kfe-motion.tsproj
+#        PLC name: kfe_motion (kfe_motion Instance)
+# Generated using: pytmc 2.14.1
+# Project version: v3.0.2-36-g39aaf04
+#    Project hash: 39aaf04457e93524c64afbd4b10378d3253ecb59
+#     PLC IP/host: 172.21.92.58
+#      PLC Net ID: 172.21.92.58.1.1
+#  ** Production mode IOC **
+#  Using /cds/data/iocData for autosave and archiver settings.
+#
+# Libraries:
+#
+#   LCLS General: * -> 2.7.0 (SLAC)
+#   lcls-twincat-motion: * -> 2.0.1 (SLAC)
+#   lcls-twincat-physics: * -> 0.0.0 (SLAC)
+#   lcls2-cc-lib: * -> 2.0.0 (SLAC)
+#   PMPS: * -> 3.0.13 (SLAC - LCLS)
+#   Tc2_MC2: * -> 3.3.42.0 (Beckhoff Automation GmbH)
+#   Tc2_SerialCom: * -> 3.3.7.0 (Beckhoff Automation GmbH)
+#   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
+#   Tc2_System: * -> 3.4.24.0 (Beckhoff Automation GmbH)
+#   Tc3_Module: * -> 3.3.21.0 (Beckhoff Automation GmbH)
+#
+################### AUTO-GENERATED DO NOT EDIT ###################
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
@@ -21,11 +45,14 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.92.58")
 epicsEnvSet("AMSID",            "172.21.92.58.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "10000")
+epicsEnvSet("ADS_MAX_PARAMS",   "11942")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
+
+# Add a route to the PLC automatically:
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.92.58 ^172.*")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -223,25 +250,10 @@ dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR
 dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
-epicsEnvSet("AXIS_NO",         "10")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:MOTION:")
-epicsEnvSet("MOTOR_NAME",      "Axis:10")
-epicsEnvSet("DESC",            "Main.M10 / Axis 10")
-epicsEnvSet("EGU",             "mm")
-epicsEnvSet("PREC",            "3")
-epicsEnvSet("AXISCONFIG",      "")
-epicsEnvSet("ECAXISFIELDINIT", "")
-epicsEnvSet("AMPLIFIER_FLAGS", "")
-
-EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
-dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
-dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
-dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
-
 epicsEnvSet("AXIS_NO",         "11")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:MOTION:")
-epicsEnvSet("MOTOR_NAME",      "Axis:11")
-epicsEnvSet("DESC",            "Main.M11 / Axis 11")
+epicsEnvSet("MOTOR_PREFIX",    "RTDSK0:SCRP:MMS:")
+epicsEnvSet("MOTOR_NAME",      "Z")
+epicsEnvSet("DESC",            "Main.M11 / Axis 11-SCPR-Z")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
@@ -254,9 +266,9 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 epicsEnvSet("AXIS_NO",         "12")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:MOTION:")
-epicsEnvSet("MOTOR_NAME",      "Axis:12")
-epicsEnvSet("DESC",            "Main.M12 / Axis 12")
+epicsEnvSet("MOTOR_PREFIX",    "RTDSK0:SCRP:MMS:")
+epicsEnvSet("MOTOR_NAME",      "X")
+epicsEnvSet("DESC",            "Main.M12 / Axis 12-SCRP-X")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
@@ -269,69 +281,9 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 epicsEnvSet("AXIS_NO",         "13")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:MOTION:")
-epicsEnvSet("MOTOR_NAME",      "Axis:13")
-epicsEnvSet("DESC",            "Main.M13 / Axis 13")
-epicsEnvSet("EGU",             "mm")
-epicsEnvSet("PREC",            "3")
-epicsEnvSet("AXISCONFIG",      "")
-epicsEnvSet("ECAXISFIELDINIT", "")
-epicsEnvSet("AMPLIFIER_FLAGS", "")
-
-EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
-dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
-dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
-dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
-
-epicsEnvSet("AXIS_NO",         "14")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:MOTION:")
-epicsEnvSet("MOTOR_NAME",      "Axis:14")
-epicsEnvSet("DESC",            "Main.M14 / Axis 14")
-epicsEnvSet("EGU",             "mm")
-epicsEnvSet("PREC",            "3")
-epicsEnvSet("AXISCONFIG",      "")
-epicsEnvSet("ECAXISFIELDINIT", "")
-epicsEnvSet("AMPLIFIER_FLAGS", "")
-
-EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
-dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
-dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
-dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
-
-epicsEnvSet("AXIS_NO",         "15")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:MOTION:")
-epicsEnvSet("MOTOR_NAME",      "Axis:15")
-epicsEnvSet("DESC",            "Main.M15 / Axis 15")
-epicsEnvSet("EGU",             "mm")
-epicsEnvSet("PREC",            "3")
-epicsEnvSet("AXISCONFIG",      "")
-epicsEnvSet("ECAXISFIELDINIT", "")
-epicsEnvSet("AMPLIFIER_FLAGS", "")
-
-EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
-dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
-dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
-dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
-
-epicsEnvSet("AXIS_NO",         "16")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:MOTION:")
-epicsEnvSet("MOTOR_NAME",      "Axis:16")
-epicsEnvSet("DESC",            "Main.M16 / Axis 16")
-epicsEnvSet("EGU",             "mm")
-epicsEnvSet("PREC",            "3")
-epicsEnvSet("AXISCONFIG",      "")
-epicsEnvSet("ECAXISFIELDINIT", "")
-epicsEnvSet("AMPLIFIER_FLAGS", "")
-
-EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
-dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
-dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
-dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
-
-epicsEnvSet("AXIS_NO",         "17")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:MOTION:")
-epicsEnvSet("MOTOR_NAME",      "Axis:17")
-epicsEnvSet("DESC",            "Main.M17 / Axis 17")
+epicsEnvSet("MOTOR_PREFIX",    "RTDSK0:SCRP:MMS:")
+epicsEnvSet("MOTOR_NAME",      "Y")
+epicsEnvSet("DESC",            "Main.M13 / Axis 13-SCRP-Y")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
@@ -586,34 +538,65 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 
 dbLoadRecords("iocSoft.db", "IOC=PLC:KFE:MOTION")
 dbLoadRecords("save_restoreStatus.db", "P=PLC:KFE:MOTION:")
-dbLoadRecords("caPutLog.db", "IOC=${IOC}")
+dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
-## TwinCat System Databse files ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:KFE:MOTION")
-dbLoadRecords("TwinCAT_AppInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:KFE:MOTION")
+## TwinCAT task, application, and project information databases ##
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:KFE:MOTION,IDX=1")
+dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:KFE:MOTION")
+
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:KFE:MOTION,PROJECT=plc-kfe-motion.tsproj,HASH=39aaf04,VERSION=v3.0.2-36-g39aaf04,PYTMC=2.14.1,PLC_HOST=172.21.92.58")
+
+#   LCLS General: * -> 2.7.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=LCLS_General,VERSION=2.7.0,VENDOR=SLAC")
+#   lcls-twincat-motion: * -> 2.0.1 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=2.0.1,VENDOR=SLAC")
+#   lcls-twincat-physics: * -> 0.0.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-physics,VERSION=0.0.0,VENDOR=SLAC")
+#   lcls2-cc-lib: * -> 2.0.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls2-cc-lib,VERSION=2.0.0,VENDOR=SLAC")
+#   PMPS: * -> 3.0.13 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=PMPS,VERSION=3.0.13,VENDOR=SLAC - LCLS")
+#   Tc2_MC2: * -> 3.3.42.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=Tc2_MC2,VERSION=3.3.42.0,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_SerialCom: * -> 3.3.7.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=Tc2_SerialCom,VERSION=3.3.7.0,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=Tc2_Standard,VERSION=3.3.3.0,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_System: * -> 3.4.24.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=Tc2_System,VERSION=3.4.24.0,VENDOR=Beckhoff Automation GmbH")
+#   Tc3_Module: * -> 3.3.21.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=Tc3_Module,VERSION=3.3.21.0,VENDOR=Beckhoff Automation GmbH")
 
 cd "$(IOC_TOP)"
 
-## Database files ##
-< "$(IOC_TOP)/load_plc_databases.cmd"
+## PLC Project Database files ##
+dbLoadRecords("kfe_motion.db", "PORT=$(ASYN_PORT),PREFIX=PLC:KFE:MOTION:,IOCNAME=$(IOC),IOC=$(IOC)")
 
+# Total records: 10942
+callbackSetQueueSize(23884)
 
-# Setup autosave
-set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
-set_requestfile_path( "$(IOC_TOP)/autosave" )
+# Autosave and archive settings:
+save_restoreSet_status_prefix("PLC:KFE:MOTION:")
+save_restoreSet_IncompleteSetsOk(1)
+save_restoreSet_DatedBackupFiles(1)
+set_pass0_restoreFile("info_positions.sav")
+set_pass1_restoreFile("info_settings.sav")
 
-save_restoreSet_status_prefix( "PLC:KFE:MOTION:" )
-save_restoreSet_IncompleteSetsOk( 1 )
-save_restoreSet_DatedBackupFiles( 1 )
-set_pass0_restoreFile( "info_positions.sav" )
-set_pass1_restoreFile( "info_settings.sav" )
+# ** Production IOC Settings **
+set_savefile_path("$(IOC_DATA)/$(IOC)/autosave")
+set_requestfile_path("$(IOC_DATA)/$(IOC)/autosave")
 
-cd "$(IOC_TOP)/autosave"
+# Production IOC autosave files go in iocData:
+cd "$(IOC_DATA)/$(IOC)/autosave"
+
+# Create info_positions.req and info_settings.req
 makeAutosaveFiles()
-cd "$(IOC_TOP)"
 
-# Create the archiver file
-makeArchiveFromDbInfo("$(IOC_DATA)/$(IOC)/archive/$(IOC).archive", "archive")
+cd "$(IOC_DATA)/$(IOC)/archive"
+
+# Create $(IOC).archive
+makeArchiveFromDbInfo("$(IOC).archive", "archive")
+cd "$(IOC_TOP)"
 
 # Configure access security: this is required for caPutLog.
 asSetFilename("$(ACF_FILE)")
@@ -625,7 +608,7 @@ iocInit()
 iocLogInit()
 
 # Configure and start the caPutLogger after iocInit
-epicsEnvSet(EPICS_AS_PUT_LOG_PV, "${IOC}:caPutLog:Last")
+epicsEnvSet(EPICS_AS_PUT_LOG_PV, "$(IOC):caPutLog:Last")
 
 # caPutLogInit("HOST:PORT", config)
 # config options:
@@ -633,7 +616,7 @@ epicsEnvSet(EPICS_AS_PUT_LOG_PV, "${IOC}:caPutLog:Last")
 #       caPutLogOnChange    0: log only on value change
 #       caPutLogAll         1: log all puts
 #       caPutLogAllNoFilter 2: log all puts no filtering on same PV
-caPutLogInit("${EPICS_CAPUTLOG_HOST}:${EPICS_CAPUTLOG_PORT}", 0)
+caPutLogInit("$(EPICS_CAPUTLOG_HOST):$(EPICS_CAPUTLOG_PORT)", 0)
 
 # Start autosave backups
 create_monitor_set( "info_positions.req", 10, "" )
@@ -641,3 +624,4 @@ create_monitor_set( "info_settings.req", 60, "" )
 
 # All IOCs should dump some common info after initial startup.
 < /reg/d/iocCommon/All/post_linux.cmd
+

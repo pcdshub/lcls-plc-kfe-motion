@@ -6,7 +6,11 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[MOTION_GVL.fbStandardPMPSDB(
+    io_fbFFHWO:=GVL.fbFastFaultOutput1,
+    bEnable:=TRUE,
+    sPLCName:='plc-kfe-motion',
+);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

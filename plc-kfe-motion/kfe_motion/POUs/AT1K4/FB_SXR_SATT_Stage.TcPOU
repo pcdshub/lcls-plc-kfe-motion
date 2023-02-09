@@ -132,7 +132,7 @@ IF iFilterIndex >= 1 AND iFilterIndex <= GVL.iFiltersPerSATTBlade THEN
 
     fAbsorptionConstant := F_CalculateAbsorptionConstant(
         sElement:=sActiveFilterMaterial,
-        fEnergyEV:=GVL.fPhotonEnergy_eV, (* TODO double-check link *)
+        fEnergyEV:=PMPS_GVL.stCurrentBeamParameters.neV,
         fDensity_gm3:=fActiveFilterDensity,
         fAtomicWeight:=fActiveFilterAtomicMass,
         bError=>bError,
