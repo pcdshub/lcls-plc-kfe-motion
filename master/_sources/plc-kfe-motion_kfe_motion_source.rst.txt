@@ -19,6 +19,10 @@ E_PositionState
     END_TYPE
 
 
+Related:
+    * `E_PositionState`_
+
+
 ST_MPA
 ^^^^^^
 
@@ -107,6 +111,10 @@ ST_MPA
     END_TYPE
 
 
+Related:
+    * `E_PositionState`_
+
+
 GVLs
 ----
 
@@ -118,15 +126,30 @@ GVL
 
     {attribute 'qualified_only'}
     VAR_GLOBAL
-        {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:ARB'}
+        {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:ARB:01'}
         fbArbiter: FB_Arbiter(1);
+        {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:ARB:02'}
+        fbArbiter2: FB_Arbiter(2);
         {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:FFO:01'}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
-        fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE);
+        fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
         {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:FFO:02'}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
-        fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE);
+        fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
+
+        {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:PMPS:ReqTrans'}
+        rReqTrans AT %I*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
+        {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:PMPS:CurTrans'}
+        rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
+
+        ePF1K0State: E_WFS_States;
     END_VAR
+
+    VAR_GLOBAL CONSTANT
+        iFiltersPerSATTBlade : INT := 8;
+    END_VAR
+
+
 
 
 Main
@@ -150,15 +173,15 @@ Main
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K0-EL7041]^STM Status^Status^Digital input 1;
                                   .bBrakeRelease        := TIIB[IM1K0-EL2004]^Channel 1^Output;
                                   .nRawEncoderINT       := TIIB[IM1K0-EL3054]^AI Standard Channel 1^Value'}
-        M1: DUT_MotionStage := (sName := 'IM1K0:XTES:MMS');
+        M1: ST_MotionStage := (sName := 'IM1K0:XTES:MMS');
         {attribute 'pytmc' := 'pv: IM1K0:XTES:CLZ'}
         {attribute 'TcLinkTo' := '.bHome                := TIIB[IM1K0-EL1088]^Channel 2^Input;
                                   .nRawEncoderUINT      := TIIB[IM1K0-EL5101-01]^ENC Status compact^Counter value'}
-        M2: DUT_MotionStage := (sName := 'IM1K0:XTES:CLZ');
+        M2: ST_MotionStage := (sName := 'IM1K0:XTES:CLZ');
         {attribute 'pytmc' := 'pv: IM1K0:XTES:CLF'}
         {attribute 'TcLinkTo' := '.bHome                := TIIB[IM1K0-EL1088]^Channel 4^Input;
                                   .nRawEncoderUINT      := TIIB[IM1K0-EL5101-01]^ENC Status compact^Counter value'}
-        M3: DUT_MotionStage := (sName := 'IM1K0:XTES:CLF');
+        M3: ST_MotionStage := (sName := 'IM1K0:XTES:CLF');
 
         // IM1K3-PPM: 1 Axis
         {attribute 'pytmc' := 'pv: IM1K3:PPM:MMS'}
@@ -166,22 +189,21 @@ Main
                                   .bLimitBackwardEnable := TIIB[IM1K3-EL7041]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[IM1K3-EL2004]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[IM1K3-EL5042]^FB Inputs Channel 1^Position'}
-        M4: DUT_MotionStage := (sName := 'IM1K3:PPM:MMS');
+        M4: ST_MotionStage := (sName := 'IM1K3:PPM:MMS');
 
-        // IM2K0-XTES: 3 Axes
+        // IM2K0-XTES: 1 Axis, previously 3 but the zoom/focus have been removed
         {attribute 'pytmc' := 'pv: IM2K0:XTES:MMS'}
-        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM2K0-EL7041]^STM Status^Status^Digital input 1;
-                                  .bBrakeRelease        := TIIB[IM2K0-EL2004]^Channel 1^Output;
+        {attribute 'TcLinkTo' := '.bBrakeRelease        := TIIB[IM2K0-EL2004]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[IM2K0-EL5042]^FB Inputs Channel 1^Position'}
-        M5: DUT_MotionStage := (sName := 'IM2K0:XTES:MMS');
+        M5: ST_MotionStage := (sName := 'IM2K0:XTES:MMS');
         {attribute 'pytmc' := 'pv: IM2K0:XTES:CLZ'}
         {attribute 'TcLinkTo' := '.bHome                := TIIB[IM2K0-EL1088]^Channel 2^Input;
                                   .nRawEncoderUINT      := TIIB[IM2K0-EL7342]^ENC Status compact Channel 1^Counter value'}
-        M6: DUT_MotionStage := (sName := 'IM2K0:XTES:CLZ');
+        M6: ST_MotionStage := (sName := 'IM2K0:XTES:CLZ');
         {attribute 'pytmc' := 'pv: IM2K0:XTES:CLF'}
         {attribute 'TcLinkTo' := '.bHome                := TIIB[IM2K0-EL1088]^Channel 4^Input;
                                   .nRawEncoderUINT      := TIIB[IM2K0-EL7342]^ENC Status compact Channel 2^Counter value'}
-        M7: DUT_MotionStage := (sName := 'IM2K0:XTES:CLF');
+        M7: ST_MotionStage := (sName := 'IM2K0:XTES:CLF');
 
         // PF1K0-WFS: 2 Axes
         {attribute 'pytmc' := 'pv: PF1K0:WFS:MMS:Y'}
@@ -189,20 +211,29 @@ Main
                                   .bLimitBackwardEnable := TIIB[PF1K0-EL7041-01]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[PF1K0-EL2004]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[PF1K0-EL5042]^FB Inputs Channel 2^Position'}
-        M8: DUT_MotionStage := (sName := 'PF1K0:WFS:MMS:Y');
+        M8: ST_MotionStage := (sName := 'PF1K0:WFS:MMS:Y');
         {attribute 'pytmc' := 'pv: PF1K0:WFS:MMS:Z'}
         {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[PF1K0-EL5042]^FB Inputs Channel 1^Position'}
-        M9: DUT_MotionStage := (sName := 'PF1K0:WFS:MMS:Z');
+        M9: ST_MotionStage := (sName := 'PF1K0:WFS:MMS:Z');
 
-        // RTDSK0: 8 Axes
-        M10: DUT_MotionStage;
-        M11: DUT_MotionStage;
-        M12: DUT_MotionStage;
-        M13: DUT_MotionStage;
-        M14: DUT_MotionStage;
-        M15: DUT_MotionStage;
-        M16: DUT_MotionStage;
-        M17: DUT_MotionStage;
+       // RTDSK0: 8 Axes
+        M10: ST_MotionStage;
+        {attribute 'pytmc' := 'pv: RTDSK0:SCRP:MMS:Z'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[RTDSK0-M2-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[RTDSK0-M2-EL7041]^STM Status^Status^Digital input 2'}
+        M11: ST_MotionStage:= (sName := 'RTDSK0:SCRP:MMS:Z');
+            {attribute 'pytmc' := 'pv: RTDSK0:SCRP:MMS:X'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[RTDSK0-M3-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[RTDSK0-M3-EL7041]^STM Status^Status^Digital input 2'}
+        M12: ST_MotionStage:= (sName := 'RTDSK0:SCRP:MMS:X');
+            {attribute 'pytmc' := 'pv: RTDSK0:SCRP:MMS:Y'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[RTDSK0-M4-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[RTDSK0-M4-EL7041]^STM Status^Status^Digital input 2'}
+        M13: ST_MotionStage:= (sName := 'RTDSK0:SCRP:MMS:Y');
+        M14: ST_MotionStage;
+        M15: ST_MotionStage;
+        M16: ST_MotionStage;
+        M17: ST_MotionStage;
 
         // SL1K0-POWER: 4 Axes
         {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:SOUTH'}
@@ -210,74 +241,122 @@ Main
                                   .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E1]^STM Status^Status^Digital input 1;
                                   .nRawEncoderINT       := TIIB[SL1K0-EL3054-E12]^AI Standard Channel 1^Value'}
 
-        M18: DUT_MotionStage := (sName := 'SL1K0:POWER:MMS:SOUTH');
+        M18: ST_MotionStage := (sName := 'SL1K0:POWER:MMS:SOUTH');
         {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:TOP'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E2]^STM Status^Status^Digital input 2;
                                   .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E2]^STM Status^Status^Digital input 1;
                                   .nRawEncoderINT       := TIIB[SL1K0-EL3054-E12]^AI Standard Channel 2^Value'}
-        M19: DUT_MotionStage := (sName := 'SL1K0:POWER:MMS:TOP');
+        M19: ST_MotionStage := (sName := 'SL1K0:POWER:MMS:TOP');
         {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:NORTH'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E4]^STM Status^Status^Digital input 2;
                                   .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E4]^STM Status^Status^Digital input 1;
                                   .nRawEncoderINT       := TIIB[SL1K0-EL3054-E12]^AI Standard Channel 3^Value'}
-        M20: DUT_MotionStage := (sName := 'SL1K0:POWER:MMS:NORTH');
+        M20: ST_MotionStage := (sName := 'SL1K0:POWER:MMS:NORTH');
         {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:BOTTOM'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E5]^STM Status^Status^Digital input 2;
                                   .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E5]^STM Status^Status^Digital input 1;
                                   .nRawEncoderINT       := TIIB[SL1K0-EL3054-E12]^AI Standard Channel 4^Value'}
-        M21: DUT_MotionStage := (sName := 'SL1K0:POWER:MMS:BOTTOM');
+        M21: ST_MotionStage := (sName := 'SL1K0:POWER:MMS:BOTTOM');
 
         // SL2K0-POWER: 4 Axes
         {attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:SOUTH'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E1]^STM Status^Status^Digital input 1;
                                   .nRawEncoderUINT      := TIIB[SL2K0-EL5042-E2]^FB Inputs Channel 1^Position'}
-        M22: DUT_MotionStage := (sName := 'SL2K0:POWER:MMS:SOUTH');
+        M22: ST_MotionStage := (sName := 'SL2K0:POWER:MMS:SOUTH');
         {attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:TOP'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E3]^STM Status^Status^Digital input 2;
                                   .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E3]^STM Status^Status^Digital input 1;
                                   .nRawEncoderUINT      := TIIB[SL2K0-EL5042-E2]^FB Inputs Channel 2^Position'}
-        M23: DUT_MotionStage := (sName := 'SL2K0:POWER:MMS:TOP');
+        M23: ST_MotionStage := (sName := 'SL2K0:POWER:MMS:TOP');
         {attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:NORTH'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E5]^STM Status^Status^Digital input 2;
                                   .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E5]^STM Status^Status^Digital input 1;
                                   .nRawEncoderUINT      := TIIB[SL2K0-EL5042-E6]^FB Inputs Channel 1^Position'}
-        M24: DUT_MotionStage := (sName := 'SL2K0:POWER:MMS:NORTH');
+        M24: ST_MotionStage := (sName := 'SL2K0:POWER:MMS:NORTH');
         {attribute 'pytmc' := 'pv: SL2K0:POWER:MMS:BOTTOM'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL2K0-EL7041-E7]^STM Status^Status^Digital input 2;
                                   .bLimitBackwardEnable := TIIB[SL2K0-EL7041-E7]^STM Status^Status^Digital input 1;
                                   .nRawEncoderUINT      := TIIB[SL2K0-EL5042-E6]^FB Inputs Channel 2^Position'}
-        M25: DUT_MotionStage := (sName := 'SL2K0:POWER:MMS:BOTTOM');
+        M25: ST_MotionStage := (sName := 'SL2K0:POWER:MMS:BOTTOM');
 
-        // AT1K4-SOLID: 4 Axes
-        M26: DUT_MotionStage;
-        M27: DUT_MotionStage;
-        M28: DUT_MotionStage;
-        M29: DUT_MotionStage;
+        // AT1K4-SOLID: 4 axes (Z=748)
+        (* Important note
+
+            AT1K4 axes were mistakenly wired opposite to other solid attenuators.
+            The intended convention is:
+                MMS:01 should be the most upstream blade,
+                MMS:04 should be the most downstream blade.
+
+            The fix applied here is that the NC axes and temperature sensors are *linked* in reverse.
+            In summary:
+
+            Traveler	EPICS	Stage		NC	Location
+            Axis 4		MMS:01	fbStage1	26	Upstream
+            Axis 3		MMS:02	fbStage2	27
+            Axis 2		MMS:03	fbStage3	28
+            Axis 1		MMS:04	fbStage4	29	Downstream
+
+        *)
+        {attribute 'pytmc' := 'pv: AT1K4:L2SI:MMS:01'}
+        {attribute 'TcLinkTo' := '
+            .bLimitForwardEnable  := TIIB[AT1K4-EL7047-04]^STM Status^Status^Digital input 1;
+            .bLimitBackwardEnable := TIIB[AT1K4-EL7047-04]^STM Status^Status^Digital input 2;
+            .nRawEncoderULINT     := TIIB[AT1K4-EL5042-02]^FB Inputs Channel 2^Position;
+        '}
+        M26: ST_MotionStage := (sName := 'AT1K4:L2SI:MMS:01');
+
+        {attribute 'pytmc' := 'pv: AT1K4:L2SI:MMS:02'}
+        {attribute 'TcLinkTo' := '
+            .bLimitForwardEnable  := TIIB[AT1K4-EL7047-03]^STM Status^Status^Digital input 1;
+            .bLimitBackwardEnable := TIIB[AT1K4-EL7047-03]^STM Status^Status^Digital input 2;
+            .nRawEncoderULINT     := TIIB[AT1K4-EL5042-02]^FB Inputs Channel 1^Position;
+        '}
+        M27: ST_MotionStage := (sName := 'AT1K4:L2SI:MMS:02');
+
+        {attribute 'pytmc' := 'pv: AT1K4:L2SI:MMS:03'}
+        {attribute 'TcLinkTo' := '
+            .bLimitForwardEnable  := TIIB[AT1K4-EL7047-02]^STM Status^Status^Digital input 1;
+            .bLimitBackwardEnable := TIIB[AT1K4-EL7047-02]^STM Status^Status^Digital input 2;
+            .nRawEncoderULINT     := TIIB[AT1K4-EL5042-01]^FB Inputs Channel 2^Position;
+        '}
+        M28: ST_MotionStage := (sName := 'AT1K4:L2SI:MMS:03');
+
+        {attribute 'pytmc' := 'pv: AT1K4:L2SI:MMS:04'}
+        {attribute 'TcLinkTo' := '
+            .bLimitForwardEnable  := TIIB[AT1K4-EL7047-01]^STM Status^Status^Digital input 1;
+            .bLimitBackwardEnable := TIIB[AT1K4-EL7047-01]^STM Status^Status^Digital input 2;
+            .nRawEncoderULINT     := TIIB[AT1K4-EL5042-01]^FB Inputs Channel 1^Position;
+        '}
+        M29: ST_MotionStage := (sName := 'AT1K4:L2SI:MMS:04');
 
         // IM1K4-XTES: 3 Axes
         {attribute 'pytmc' := 'pv: IM1K4:XTES:MMS'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K4-EL7041-E1]^STM Status^Status^Digital input 1;
                                   .bBrakeRelease        := TIIB[IM1K4-EL2004-E2]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[IM1K4-EL5042-E3]^FB Inputs Channel 1^Position'}
-        M30: DUT_MotionStage := (sName := 'IM1K4:XTES:MMS');
+        M30: ST_MotionStage := (sName := 'IM1K4:XTES:MMS');
         {attribute 'pytmc' := 'pv: IM1K4:XTES:CLZ'}
         {attribute 'TcLinkTo' := '.bHome                := TIIB[IM1K4-EL1088-E5]^Channel 2^Input;
                                   .nRawEncoderUINT     := TIIB[IM1K4-EL7342-E4]^ENC Status compact Channel 1^Counter value'}
-        M31: DUT_MotionStage := (sName := 'IM1K4:XTES:CLZ');
+        M31: ST_MotionStage := (sName := 'IM1K4:XTES:CLZ');
         {attribute 'pytmc' := 'pv: IM1K4:XTES:CLF'}
         {attribute 'TcLinkTo' := '.bHome := TIIB[IM1K4-EL1088-E5]^Channel 4^Input;
-                                  .nRawEncoderUINT     := TIIB[IM1K4-EL5042-E3]^ENC Status compact Channel 2^Counter value'}
-        M32: DUT_MotionStage := (sName := 'IM1K4:XTES:CLF');
+                                  .nRawEncoderUINT     := TIIB[IM1K4-EL7342-E4]^ENC Status compact Channel 2^Counter value'}
+        M32: ST_MotionStage := (sName := 'IM1K4:XTES:CLF');
 
         // ST1K4-TEST: 1 Axis
         {attribute 'pytmc' := 'pv: ST1K4:TEST:MMS:01'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[ST1K4-EL7041-E4]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable := TIIB[ST1K4-EL7041-E4]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[ST1K4-EL2202-E3]^Channel 1^Output;
-                                  .nRawEncoderUINT      := TIIB[ST1K4-EL7041-E4]^ENC Status compact^Counter value'}
-        M33: DUT_MotionStage := (sName := 'ST1K4:TEST:MMS:01');
+                                  .nRawEncoderULINT      := TIIB[ST1K4-EL5042-E5A]^FB Inputs Channel 1^Position'}
+        M33: ST_MotionStage := (sName := 'ST1K4:TEST:MMS:01');
     END_VAR
+
+
+Related:
+    * `GVL`_
 
 
 POUs
@@ -448,6 +527,7 @@ FB_MPA
     ACT_IO();
 
     END_FUNCTION_BLOCK
+
     ACTION ACT_IO:
     (*Inputs*)
     q_stAct.i_bInLS :=  i_xInsertedLS;
@@ -459,6 +539,10 @@ FB_MPA
     END_ACTION
 
 
+Related:
+    * `ST_MPA`_
+
+
 FB_SLITS
 ^^^^^^^^
 
@@ -466,10 +550,10 @@ FB_SLITS
 
     FUNCTION_BLOCK FB_SLITS
     VAR_IN_OUT
-        stTopBlade: DUT_MotionStage;
-        stBottomBlade: DUT_MotionStage;
-        stNorthBlade: DUT_MotionStage;
-        stSouthBlade: DUT_MotionStage;
+        stTopBlade: ST_MotionStage;
+        stBottomBlade: ST_MotionStage;
+        stNorthBlade: ST_MotionStage;
+        stSouthBlade: ST_MotionStage;
         bExecuteMotion:BOOL ;
         io_fbFFHWO    :    FB_HardwareFFOutput;
         fbArbiter: FB_Arbiter();
@@ -668,6 +752,7 @@ FB_SLITS
 
 
     END_FUNCTION_BLOCK
+
     ACTION ACT_BLOCK:
     rTrig_Block (CLK:= bBlock);
     rTrig_Open (CLK:= bOpen);
@@ -691,6 +776,7 @@ FB_SLITS
         bClose := false;
     END_IF
     END_ACTION
+
     ACTION ACT_CalculatePositions:
     //check if requested center or gap has changed
     //check that the requested values are within acceptable motion range
@@ -756,9 +842,11 @@ FB_SLITS
 
     //Update PMPS Arbiter with the Actual Size and Center of the Aperture
     END_ACTION
+
     ACTION ACT_Home:
 
     END_ACTION
+
     ACTION ACT_Init:
     //  init the motion stages parameters
     IF ( bInit) THEN
@@ -777,6 +865,7 @@ FB_SLITS
         FFO.i_DevName := i_DevName;
     END_IF
     END_ACTION
+
     ACTION ACT_Motion:
     // Instantiate Function block for all the blades
     fbTopBlade(stMotionStage:=stTopBlade);
@@ -844,6 +933,7 @@ FB_SLITS
         bMoveOk:=bMoveOk,
         stMotionStage:=stSouthBlade);
     END_ACTION
+
     ACTION ACT_Zero:
     //ZERO BIAS
 
@@ -932,6 +1022,8 @@ FB_SLITS
     END_ACTION
 
 
+
+
 FB_SLITS_POWER
 ^^^^^^^^^^^^^^
 
@@ -1003,6 +1095,7 @@ FB_SLITS_POWER
     ACT_RTDs();
 
     END_FUNCTION_BLOCK
+
     ACTION ACT_RTDs:
     ////RTDs
     RTD_TOP_1();
@@ -1017,6 +1110,220 @@ FB_SLITS_POWER
     //Flow Switch
     fbFlowSwitch();
     END_ACTION
+
+    METHOD M_UpdatePMPS : BOOL
+    VAR_INPUT
+        index: int;
+    END_VAR
+    //Keep updating the status of the apertures PMPS
+    This^.AptArrayStatus.Height := This^.rActApertureSizeY;
+    This^.AptArrayStatus.Width := This^.rActApertureSizeX;
+    This^.AptArrayStatus.xOK := NOT (This^.stTopBlade.bError) AND NOT (This^.stBottomBlade.bError)
+                                     AND NOT (This^.stNorthBlade.bError) AND NOT (This^.stNorthBlade.bError);
+
+    //Evaluate that the current center on the X and the y direction didn't exceed limits,
+    // Gap should be reduced when center is moved, gap < Maximum permessible gap - 2|Center deviation from nominal|
+    //Fast fault when it does.
+    IF(This^.rActApertureSizeX > (AptArrayReq.Width - (2*ABS(rActCenterX)))
+    //(rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
+        AND (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width >0 ))
+        OR (This^.rActApertureSizeY > (AptArrayReq.Height - (2*ABS(rActCenterY)))
+        //((rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2))
+            AND(PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height>0 )) THEN
+            FFO.i_xOK := FALSE;
+        ELSE
+            FFO.i_xOK := TRUE;
+    END_IF
+
+    //Evaluate that the requested gaps on the X and the y direction is not larger than the current gap
+    // narrow  the gap if the requested is larger
+    IF(xPMPSMode) THEN
+        IF (This^.rActApertureSizeX > AptArrayReq.Width) THEN
+            rReqApertureSizeX := AptArrayReq.Width - 0.01;
+        END_IF
+        IF (This^.rActApertureSizeY > AptArrayReq.Height) THEN
+             rReqApertureSizeY := AptArrayReq.Height - 0.01;
+        END_IF
+        ELSE
+         FFO.i_xOK := FALSE;
+    END_IF
+
+
+    (*FAST FAULT*)
+    FFO(i_xOK := ,
+        i_xReset := ,
+        i_xAutoReset :=TRUE,
+        io_fbFFHWO := io_fbFFHWO);
+    END_METHOD
+
+
+Related:
+    * `FB_SLITS`_
+
+
+FB_XPIM_IM2K0
+^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_XPIM_IM2K0
+    (*
+        Function block for the IM2K0 imager. This used to be a standard XPIM, but
+        IM2K0 has been modified to replace the lens, illuminator, and camera with the PPM versions.
+
+        This function block therefore controls:
+        - Y motion (XPIM style)
+        - Y scintillator states (XPIM style)
+        - camera power (PPM style)
+        - camera illuminator (PPM style but with XPIM style on/off only)
+        - flowswitch (XPIM style, not fully implemented)
+    *)
+    VAR_IN_OUT
+        // Y motor (state select).
+        stYStage: ST_MotionStage;
+        // The fast fault output to fault to.
+        fbFFHWO: FB_HardwareFFOutput;
+        // The arbiter to request beam conditions from.
+        fbArbiter: FB_Arbiter;
+    END_VAR
+    VAR_INPUT
+        // Settings for the OUT state.
+        stOut: DUT_PositionState;
+        // Settings for the YAG state.
+        stYag: DUT_PositionState;
+        // Settings for the DIAMOND state.
+        stDiamond: DUT_PositionState;
+        // Settings for the RETICLE state.
+        stReticle: DUT_PositionState;
+        // Set this to a non-unknown value to request a new move.
+        {attribute 'pytmc' := '
+            pv: MMS:STATE:SET
+            io: io
+        '}
+        eEnumSet: E_XPIM_States;
+        // Set this to TRUE to enable input state moves, or FALSE to disable them.
+        bEnableMotion: BOOL;
+        // Set this to TRUE to enable beam parameter checks, or FALSE to disable them.
+        bEnableBeamParams: BOOL;
+        // Set this to TRUE to enable position limit checks, or FALSE to disable them.
+        bEnablePositionLimits: BOOL;
+        // The name of the device for use in the PMPS DB lookup and diagnostic screens.
+        sDeviceName: STRING;
+        // The name of the transition state in the PMPS database.
+        sTransitionKey: STRING;
+        // Set this to TRUE to re-read the loaded database immediately (useful for debug).
+        bReadDBNow: BOOL;
+    END_VAR
+    VAR_OUTPUT
+        // The current position state as an enum.
+        {attribute 'pytmc' := '
+            pv: MMS:STATE:GET
+            io: i
+        '}
+        eEnumGet: E_XPIM_States;
+        // The PMPS database lookup associated with the current position state.
+        stDbStateParams: ST_DbStateParams;
+    END_VAR
+    VAR
+        bInit: BOOL;
+
+        fbYStage: FB_MotionStage;
+
+        fbStateDefaults: FB_PositionState_Defaults;
+
+        {attribute 'pytmc' := '
+            pv: MMS
+            astPositionState.array: 1..4
+        '}
+        fbStates: FB_PositionStatePMPS1D;
+        astPositionState: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+        fbArrCheckWrite: FB_CheckPositionStateWrite;
+
+        {attribute 'pytmc' := '
+            pv: CAM
+        '}
+        fbGige: FB_PPM_Gige;
+
+        {attribute 'pytmc' := '
+            pv: CIL
+        '}
+        fbLED: FB_XPIM_LED;
+
+        {attribute 'pytmc' := '
+            pv: SFW
+        '}
+        fbFlowSwitch: FB_XTES_Flowswitch;
+    END_VAR
+    VAR CONSTANT
+        // State defaults if not provided
+        fDelta: LREAL := 2;
+        fAccel: LREAL := 200;
+        fOutDecel: LREAL := 25;
+    END_VAR
+    IF NOT bInit THEN
+        bInit := TRUE;
+
+        stYStage.bHardwareEnable := TRUE;
+        stYStage.bPowerSelf := FALSE;
+        // No limit switch at the bottom
+        stYStage.bLimitBackwardEnable := TRUE;
+
+        // Partial backcompat, this used to set fVelocity too but this should be set per install
+        fbStateDefaults(stPositionState:=stOut, sNameDefault:='OUT', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fOutDecel);
+        fbStateDefaults(stPositionState:=stYag, sNameDefault:='YAG', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stDiamond, sNameDefault:='DIAMOND', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stReticle, sNameDefault:='RETICLE', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    END_IF
+
+    fbYStage(stMotionStage:=stYStage);
+
+    // We need to update from PLC or from EPICS, but not both
+    fbArrCheckWrite(
+        astPositionState:=astPositionState,
+        bCheck:=TRUE,
+        bSave:=FALSE,
+    );
+    IF NOT fbArrCheckWrite.bHadWrite THEN
+        astPositionState[E_XPIM_States.OUT] := stOut;
+        astPositionState[E_XPIM_States.YAG] := stYag;
+        astPositionState[E_XPIM_States.DIAMOND] := stDiamond;
+        astPositionState[E_XPIM_States.RETICLE] := stReticle;
+    END_IF
+
+    fbStates(
+        stMotionStage:=stYStage,
+        astPositionState:=astPositionState,
+        eEnumSet:=eEnumSet,
+        eEnumGet:=eEnumGet,
+        fbFFHWO:=fbFFHWO,
+        fbArbiter:=fbArbiter,
+        bEnableMotion:=bEnableMotion,
+        bEnableBeamParams:=bEnableBeamParams,
+        bEnablePositionLimits:=bEnablePositionLimits,
+        sDeviceName:=sDeviceName,
+        sTransitionKey:=sTransitionKey,
+        bReadDBNow:=bReadDBNow,
+        stDbStateParams=>stDbStateParams,
+    );
+
+    fbArrCheckWrite(
+        astPositionState:=astPositionState,
+        bCheck:=FALSE,
+        bSave:=TRUE,
+    );
+
+    stOut := astPositionState[E_XPIM_States.OUT];
+    stYag := astPositionState[E_XPIM_States.YAG];
+    stDiamond := astPositionState[E_XPIM_States.DIAMOND];
+    stReticle := astPositionState[E_XPIM_States.RETICLE];
+
+    fbGige();
+    fbLED(enumXPIM:=eEnumGet);
+    fbFlowSwitch();
+
+    END_FUNCTION_BLOCK
+
+
 
 
 PRG_1_PlcTask
@@ -1047,6 +1354,22 @@ PRG_1_PlcTask
     END_PROGRAM
 
 
+Related:
+    * `PRG_2_PMPS_PRE`_
+    * `PRG_3_PMPS_POST`_
+    * `PRG_4_LOG`_
+    * `PRG_AT1K4_SOLID`_
+    * `PRG_IM1K0_XTES`_
+    * `PRG_IM1K3_PPM`_
+    * `PRG_IM1K4_XTES`_
+    * `PRG_IM2K0_XTES`_
+    * `PRG_PF1K0_WFS`_
+    * `PRG_RTDSK0`_
+    * `PRG_SL1K0_POWER`_
+    * `PRG_SL2K0_POWER`_
+    * `PRG_ST1K4_TEST`_
+
+
 PRG_2_PMPS_PRE
 ^^^^^^^^^^^^^^
 
@@ -1055,9 +1378,17 @@ PRG_2_PMPS_PRE
     PROGRAM PRG_2_PMPS_PRE
     VAR
     END_VAR
-
+    MOTION_GVL.fbStandardPMPSDB(
+        io_fbFFHWO:=GVL.fbFastFaultOutput1,
+        bEnable:=TRUE,
+        sPLCName:='plc-kfe-motion',
+    );
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
 
 
 PRG_3_PMPS_POST
@@ -1068,15 +1399,37 @@ PRG_3_PMPS_POST
     PROGRAM PRG_3_PMPS_POST
     VAR
         fbArbiterIO: FB_SubSysToArbiter_IO;
-    END_VAR
-    GVL.fbFastFaultOutput1.Execute();
-    GVL.fbFastFaultOutput2.Execute();
+        fb_vetoArbiter: FB_VetoArbiter;
+        bM1K1_Veto_IN: BOOL;
 
+    END_VAR
+    // create MR1K1 as veto for K4 lines
+    bM1K1_Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
+                    AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
+
+
+
+
+    //create a preemptive request from Arbiter 2 in Arbiter 1
+    fb_vetoArbiter(bVeto:=bM1K1_Veto_IN,
+                    HigherAuthority := GVL.fbArbiter,
+                    LowerAuthority := GVL.fbArbiter2,
+                    FFO := GVL.fbFastFaultOutput2);
+
+
+
+    GVL.fbFastFaultOutput1.Execute();
+
+    GVL.fbFastFaultOutput2.Execute(i_xVeto:=bM1K1_Veto_IN);
     fbArbiterIO(
         Arbiter:=GVL.fbArbiter,
         fbFFHWO:=GVL.fbFastFaultOutput1);
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
 
 
 PRG_4_LOG
@@ -1093,6 +1446,8 @@ PRG_4_LOG
     END_PROGRAM
 
 
+
+
 PRG_AT1K4_SOLID
 ^^^^^^^^^^^^^^^
 
@@ -1100,13 +1455,250 @@ PRG_AT1K4_SOLID
 
     PROGRAM PRG_AT1K4_SOLID
     VAR
+        (* TODO: use FALSE for simulation and production *)
+        (* TODO: use TRUE when relying on visualization + actual hardware *)
+        bDebug : BOOL := FALSE;
+
+        nEnableMode : ENUM_StageEnableMode;
+
+        {attribute 'pytmc' := 'pv: AT1K4:L2SI:MMS:01'}
+        {attribute 'TcLinkTo' := '
+
+            .fbRTD_1.iRaw := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 1^Value;
+            .fbRTD_1.bError := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 1^Status^Error;
+            .fbRTD_1.bUnderrange := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 1^Status^Underrange;
+            .fbRTD_1.bOverrange := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 1^Status^Overrange;
+
+            .fbRTD_2.iRaw := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 2^Value;
+            .fbRTD_2.bError := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 2^Status^Error;
+            .fbRTD_2.bUnderrange := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 2^Status^Underrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 2^Status^Overrange;
+
+        '}
+        fbStage1: FB_SXR_SATT_Stage;
+
+        {attribute 'pytmc' := 'pv: AT1K4:L2SI:MMS:02'}
+        {attribute 'TcLinkTo' := '
+
+            .fbRTD_1.iRaw := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 1^Value;
+            .fbRTD_1.bError := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 1^Status^Error;
+            .fbRTD_1.bUnderrange := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 1^Status^Underrange;
+            .fbRTD_1.bOverrange := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 1^Status^Overrange;
+
+            .fbRTD_2.iRaw := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 2^Value;
+            .fbRTD_2.bError := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 2^Status^Error;
+            .fbRTD_2.bUnderrange := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 2^Status^Underrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 2^Status^Overrange;
+
+        '}
+        fbStage2: FB_SXR_SATT_Stage;
+
+        {attribute 'pytmc' := 'pv: AT1K4:L2SI:MMS:03'}
+        {attribute 'TcLinkTo' := '
+
+            .fbRTD_1.iRaw := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 1^Value;
+            .fbRTD_1.bError := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 1^Status^Error;
+            .fbRTD_1.bUnderrange := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 1^Status^Underrange;
+            .fbRTD_1.bOverrange := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 1^Status^Overrange;
+
+            .fbRTD_2.iRaw := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 2^Value;
+            .fbRTD_2.bError := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 2^Status^Error;
+            .fbRTD_2.bUnderrange := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 2^Status^Overrange;
+        '}
+        fbStage3: FB_SXR_SATT_Stage;
+
+        {attribute 'pytmc' := 'pv: AT1K4:L2SI:MMS:04'}
+        {attribute 'TcLinkTo' := '
+
+            .fbRTD_1.iRaw := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 1^Value;
+            .fbRTD_1.bError := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 1^Status^Error;
+            .fbRTD_1.bUnderrange := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 1^Status^Underrange;
+            .fbRTD_1.bOverrange := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 1^Status^Overrange;
+
+            .fbRTD_2.iRaw := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 2^Value;
+            .fbRTD_2.bError := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 2^Status^Error;
+            .fbRTD_2.bUnderrange := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 2^Status^Underrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 2^Status^Overrange;
+        '}
+        fbStage4: FB_SXR_SATT_Stage;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefaultGood: ST_PositionState := (
+            fDelta := 0.2,
+            fVelocity := 10,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
+        fbBadStateSetup: FB_StateSetupHelper;
+        stDefaultBad: ST_PositionState := (
+            fPosition := 500,
+            fDelta := 0.2,
+            fVelocity := 10,
+            bMoveOk := FALSE,
+            bValid := FALSE
+
+        );
     END_VAR
     // M26, Axis 26
     // M27, Axis 27
     // M28, Axis 28
     // M29, Axis 29
 
+    IF bDebug THEN
+        // NEVER: checkouts with the TwinCAT NC GUI.
+        nEnableMode := ENUM_StageEnableMode.NEVER;
+    ELSE
+        // ALWAYS: want active position correction at all times
+        nEnableMode := ENUM_StageEnableMode.ALWAYS;
+    END_IF
+
+    (*
+        Important note
+
+        Traveler	EPICS	Stage		NC	Location
+        Axis 4		MMS:01	fbStage1	26	Downstream
+        Axis 3		MMS:02	fbStage2	27
+        Axis 2		MMS:03	fbStage3	28
+        Axis 1		MMS:04	fbStage4	29	Upstream
+    *)
+
+    fbStateSetup(stPositionState:=stDefaultGood, bSetDefault:=TRUE);
+    fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
+
+    (* State setup - stage 1 *)
+    (* Downstream-most MMS:01 - TRAVELER AXIS 4 *)
+    fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=22.70);
+    fbStateSetup(stPositionState:=fbStage1.stFilter1, sName:='(1) 25 um C', fPosition:=40.5);
+    fbStage1.arrFilters[1].fFilterThickness_um := 25;
+    fbStage1.arrFilters[1].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage1.stFilter2, sName:='(2) 50 um C', fPosition:=56.0);
+    fbStage1.arrFilters[2].fFilterThickness_um := 50;
+    fbStage1.arrFilters[2].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage1.stFilter3, sName:='(3) 100 um C', fPosition:=72.0);
+    fbStage1.arrFilters[3].fFilterThickness_um := 100;
+    fbStage1.arrFilters[3].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage1.stFilter4, sName:='(4) 320 um Si', fPosition:=87.5);
+    fbStage1.arrFilters[4].fFilterThickness_um := 320;
+    fbStage1.arrFilters[4].sFilterMaterial     := 'Si';
+    fbStateSetup(stPositionState:=fbStage1.stFilter5, sName:='(5) 160 um Si', fPosition:=102.5);
+    fbStage1.arrFilters[5].fFilterThickness_um := 160;
+    fbStage1.arrFilters[5].sFilterMaterial     := 'Si';
+    fbStateSetup(stPositionState:=fbStage1.stFilter6, sName:='(6) 80 um Si', fPosition:=117.5);
+    fbStage1.arrFilters[6].fFilterThickness_um := 80;
+    fbStage1.arrFilters[6].sFilterMaterial     := 'Si';
+    fbStateSetup(stPositionState:=fbStage1.stFilter7, sName:='(7) 40 um Si', fPosition:=135.5);
+    fbStage1.arrFilters[7].fFilterThickness_um := 40;
+    fbStage1.arrFilters[7].sFilterMaterial     := 'Si';
+    fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='(8) 20 um Si', fPosition:=150.5);
+    fbStage1.arrFilters[8].fFilterThickness_um := 20;
+    fbStage1.arrFilters[8].sFilterMaterial     := 'Si';
+
+    fbStage1(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+
+    (* State setup - stage 2 *)
+    (* MMS:02 - 2nd downstream-most - TRAVELER AXIS 3 *)
+    fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=24.00);
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
+    fbStage2.arrFilters[1].fFilterThickness_um := 0;
+    fbStage2.arrFilters[1].sFilterMaterial     := '';
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter2, sName:='Filter 2');
+    fbStage2.arrFilters[2].fFilterThickness_um := 0;
+    fbStage2.arrFilters[2].sFilterMaterial     := '';
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter3, sName:='Filter 3');
+    fbStage2.arrFilters[3].fFilterThickness_um := 0;
+    fbStage2.arrFilters[3].sFilterMaterial     := '';
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter4, sName:='Filter 4');
+    fbStage2.arrFilters[4].fFilterThickness_um := 0;
+    fbStage2.arrFilters[4].sFilterMaterial     := '';
+    fbStateSetup(stPositionState:=fbStage2.stFilter5, sName:='(5) 50 um C', fPosition:=103.0);
+    fbStage2.arrFilters[5].fFilterThickness_um := 50;
+    fbStage2.arrFilters[5].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage2.stFilter6, sName:='(6) 25 um C', fPosition:=118.75);
+    fbStage2.arrFilters[6].fFilterThickness_um := 25;
+    fbStage2.arrFilters[6].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:='(7) 12 um C', fPosition:=133.0);
+    fbStage2.arrFilters[7].fFilterThickness_um := 12;
+    fbStage2.arrFilters[7].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 10 um Si', fPosition:=147.0);
+    fbStage2.arrFilters[8].fFilterThickness_um := 10;
+    fbStage2.arrFilters[8].sFilterMaterial     := 'Si';
+
+    fbStage2(stAxis:=Main.M27, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+
+    (* State setup - stage 3 *)
+    (* MMS:03 - 2nd upstream-most - TRAVELER AXIS 2 *)
+    fbStateSetup(stPositionState:=fbStage3.stOut, sName:='Out', fPosition:=23.24);
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1');
+    fbStage3.arrFilters[1].fFilterThickness_um := 0;
+    fbStage3.arrFilters[1].sFilterMaterial     := '';
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter2, sName:='Filter 2');
+    fbStage3.arrFilters[2].fFilterThickness_um := 0;
+    fbStage3.arrFilters[2].sFilterMaterial     := '';
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter3, sName:='Filter 3');
+    fbStage3.arrFilters[3].fFilterThickness_um := 0;
+    fbStage3.arrFilters[3].sFilterMaterial     := '';
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter4, sName:='Filter 4');
+    fbStage3.arrFilters[4].fFilterThickness_um := 0;
+    fbStage3.arrFilters[4].sFilterMaterial     := '';
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter5, sName:='Filter 5');
+    fbStage3.arrFilters[5].fFilterThickness_um := 0;
+    fbStage3.arrFilters[5].sFilterMaterial     := '';
+    fbStateSetup(stPositionState:=fbStage3.stFilter6, sName:='(6) 25 um C', fPosition:=119.5);
+    fbStage3.arrFilters[6].fFilterThickness_um := 25;
+    fbStage3.arrFilters[6].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage3.stFilter7, sName:='(7) 12 um C', fPosition:=135.0);
+    fbStage3.arrFilters[7].fFilterThickness_um := 12;
+    fbStage3.arrFilters[7].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage3.stFilter8, sName:='(8) 6 um C', fPosition:=147.5);
+    fbStage3.arrFilters[8].fFilterThickness_um := 6;
+    fbStage3.arrFilters[8].sFilterMaterial     := 'C';
+
+    fbStage3(stAxis:=Main.M28, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+
+    (* State setup - stage 4 *)
+    (* MMS:04 - upstream-most - TRAVELER AXIS 1 *)
+    fbStateSetup(stPositionState:=fbStage4.stOut, sName:='Out', fPosition:=23.44);
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1');
+    fbStage4.arrFilters[1].fFilterThickness_um := 0;
+    fbStage4.arrFilters[1].sFilterMaterial     := '';
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter2, sName:='Filter 2');
+    fbStage4.arrFilters[2].fFilterThickness_um := 0;
+    fbStage4.arrFilters[2].sFilterMaterial     := '';
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter3, sName:='Filter 3');
+    fbStage4.arrFilters[3].fFilterThickness_um := 0;
+    fbStage4.arrFilters[3].sFilterMaterial     := '';
+    fbStateSetup(stPositionState:=fbStage4.stFilter4, sName:='(4) 12 um C', fPosition:=85.5);
+    fbStage4.arrFilters[4].fFilterThickness_um := 12;
+    fbStage4.arrFilters[4].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage4.stFilter5, sName:='(5) 6 um C', fPosition:=100.5);
+    fbStage4.arrFilters[5].fFilterThickness_um := 6;
+    fbStage4.arrFilters[5].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage4.stFilter6, sName:='(6) 3 um C', fPosition:=116.0);
+    fbStage4.arrFilters[6].fFilterThickness_um := 3;
+    fbStage4.arrFilters[6].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage4.stFilter7, sName:='(7) 3 um C', fPosition:=132.0);
+    fbStage4.arrFilters[7].fFilterThickness_um := 3;
+    fbStage4.arrFilters[7].sFilterMaterial     := 'C';
+    fbStateSetup(stPositionState:=fbStage4.stFilter8, sName:='(8) 0.2 um Al', fPosition:=147.0);
+    fbStage4.arrFilters[8].fFilterThickness_um := 0.2;
+    fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
+
+    fbStage4(stAxis:=Main.M29, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+
+    GVL.rCurTrans[PMPS.K_Attenuators.AT1K4].nTran := LREAL_TO_REAL(
+        fbStage1.fTransmission *
+        fbStage2.fTransmission *
+        fbStage3.fTransmission *
+        fbStage4.fTransmission
+    );
+
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_IM1K0_XTES
@@ -1116,10 +1708,7 @@ PRG_IM1K0_XTES
 
     PROGRAM PRG_IM1K0_XTES
     VAR
-        {attribute 'pytmc' := '
-            pv: IM1K0:XTES
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM1K0:XTES'}
         {attribute 'TcLinkTo' := '.bZoomEndFwd := TIIB[IM1K0-EL1088]^Channel 1^Input;
                                   .bZoomEndBwd := TIIB[IM1K0-EL1088]^Channel 2^Input;
                                   .bFocusEndFwd := TIIB[IM1K0-EL1088]^Channel 3^Input;
@@ -1127,6 +1716,12 @@ PRG_IM1K0_XTES
                                   .fbOpal.bOpalPower := TIIB[IM1K0-EL2004]^Channel 2^Output;
                                   .fbLED.bLedPower := TIIB[IM1K0-EL2004]^Channel 3^Output'}
         fbIM1K0: FB_XPIM;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
         {attribute 'TcLinkTo' := '.Status := TIIB[IM1K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Status;
                                   .D[0] := TIIB[IM1K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
                                   .D[1] := TIIB[IM1K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
@@ -1176,43 +1771,34 @@ PRG_IM1K0_XTES
                                   .D[21] := TIIB[IM1K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 21'}
         stEL6Out AT %Q*: EL6OutData22b;
     END_VAR
-    fbIM1K0.nTransitionAssertionID := 16#2100;
-    fbIM1K0.nUnknownAssertionID := 16#2109;
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM1K0.stOut.fPosition := 0;
-    fbIM1K0.stOut.bUseRawCounts := FALSE;
-    fbIM1K0.stOut.nRequestAssertionID := 16#2101;
-    fbIM1K0.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K0.stOut.bValid := TRUE;
-
-    fbIM1K0.stYag.fPosition := -27.65;
-    fbIM1K0.stYag.bUseRawCounts := FALSE;
-    fbIM1K0.stYag.nRequestAssertionID := 16#2102;
-    fbIM1K0.stYag.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K0.stYag.bValid := TRUE;
-
-    fbIM1K0.stDiamond.fPosition := -57.65;
-    fbIM1K0.stDiamond.bUseRawCounts := FALSE;
-    fbIM1K0.stDiamond.nRequestAssertionID := 16#2103;
-    fbIM1K0.stDiamond.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K0.stDiamond.bValid := TRUE;
-
-    fbIM1K0.stReticle.fPosition := -87.65;
-    fbIM1K0.stReticle.bUseRawCounts := FALSE;
-    fbIM1K0.stReticle.nRequestAssertionID := 16#2104;
-    fbIM1K0.stReticle.stBeamParams := PMPS_GVL.cst0RateBeam;
-    fbIM1K0.stReticle.bValid := TRUE;
+    fbStateSetup(stPositionState:=fbIM1K0.stOut, fPosition:=0, sPmpsState:='IM1K0:XTES-OUT');
+    fbStateSetup(stPositionState:=fbIM1K0.stYag, fPosition:=-27.65, sPmpsState:='IM1K0:XTES-YAG');
+    fbStateSetup(stPositionState:=fbIM1K0.stDiamond, fPosition:=-57.65, sPmpsState:='IM1K0:XTES-DIAMOND');
+    fbStateSetup(stPositionState:=fbIM1K0.stReticle, fPosition:=-87.65, sPmpsState:='IM1K0:XTES-RETICLE');
 
     fbIM1K0(
-        fbArbiter := GVL.fbArbiter,
         fbFFHWO := GVL.fbFastFaultOutput1,
+        fbArbiter := GVL.fbArbiter,
         stYStage := Main.M1,
         stZoomStage := Main.M2,
         stFocusStage := Main.M3,
         stEl6In := stEL6In,
-        stEl6Out := stEl6Out);
+        stEl6Out := stEl6Out,
+        sDeviceName := 'IM1K0:XTES',
+        sTransitionKey := 'IM1K0:XTES-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+    );
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_IM1K3_PPM
@@ -1222,10 +1808,7 @@ PRG_IM1K3_PPM
 
     PROGRAM PRG_IM1K3_PPM
     VAR
-        {attribute 'pytmc' := '
-            pv: IM1K3:PPM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM1K3:PPM'}
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K3-EL4004]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM1K3-EL2004]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM1K3-EL3062]^AI Standard Channel 1^Value;
@@ -1238,40 +1821,37 @@ PRG_IM1K3_PPM
                                   .fbYagThermoCouple.bOverrange := TIIB[IM1K3-EL3314]^TC Inputs Channel 2^Status^Overrange;
                                   .fbYagThermoCouple.iRaw := TIIB[IM1K3-EL3314]^TC Inputs Channel 2^Value'}
         fbIM1K3: FB_PPM;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 15,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbIM1K3.nTransitionAssertionID := 16#2130;
-    fbIM1K3.nUnknownAssertionID := 16#2139;
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM1K3.stOut.fPosition := -9.1;
-    fbIM1K3.stOut.bUseRawCounts := FALSE;
-    fbIM1K3.stOut.nRequestAssertionID := 16#2131;
-    fbIM1K3.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K3.stOut.bValid := TRUE;
-
-    fbIM1K3.stPower.fPosition := -48.2;
-    fbIM1K3.stPower.bUseRawCounts := FALSE;
-    fbIM1K3.stPower.nRequestAssertionID := 16#2132;
-    fbIM1K3.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K3.stPower.bValid := TRUE;
-
-    fbIM1K3.stYag1.fPosition := -72.2;
-    fbIM1K3.stYag1.bUseRawCounts := FALSE;
-    fbIM1K3.stYag1.nRequestAssertionID := 16#2133;
-    fbIM1K3.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K3.stYag1.bValid := TRUE;
-
-    fbIM1K3.stYag2.fPosition := -98.21;
-    fbIM1K3.stYag2.bUseRawCounts := FALSE;
-    fbIM1K3.stYag2.nRequestAssertionID := 16#2134;
-    fbIM1K3.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K3.stYag2.bValid := TRUE;
+    fbStateSetup(stPositionState:=fbIM1K3.stOut, fPosition:=-9.1, sPmpsState:='IM1K3:PPM-OUT');
+    fbStateSetup(stPositionState:=fbIM1K3.stPower, fPosition:=-48.2, sPmpsState:='IM1K3:PPM-POWERMETER');
+    fbStateSetup(stPositionState:=fbIM1K3.stYag1, fPosition:=-72.2, sPmpsState:='IM1K3:PPM-YAG1');
+    fbStateSetup(stPositionState:=fbIM1K3.stYag2, fPosition:=-98.21, sPmpsState:='IM1K3:PPM-YAG2');
 
     fbIM1K3(
-        fbArbiter := GVL.fbArbiter,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M4);
+        fbArbiter := GVL.fbArbiter2,
+        stYStage := Main.M4,
+        sDeviceName := 'IM1K3:PPM',
+        sTransitionKey := 'IM1K3:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+    );
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_IM1K4_XTES
@@ -1281,10 +1861,7 @@ PRG_IM1K4_XTES
 
     PROGRAM PRG_IM1K4_XTES
     VAR
-        {attribute 'pytmc' := '
-            pv: IM1K4:XTES
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM1K4:XTES'}
         {attribute 'TcLinkTo' := '.bZoomEndFwd := TIIB[IM1K4-EL1088-E5]^Channel 1^Input;
                                   .bZoomEndBwd := TIIB[IM1K4-EL1088-E5]^Channel 2^Input;
                                   .bFocusEndFwd := TIIB[IM1K4-EL1088-E5]^Channel 3^Input;
@@ -1292,6 +1869,12 @@ PRG_IM1K4_XTES
                                   .fbOpal.bOpalPower := TIIB[IM1K4-EL2004-E2]^Channel 2^Output;
                                   .fbLED.bLedPower := TIIB[IM1K4-EL2004-E2]^Channel 3^Output'}
         fbIM1K4: FB_XPIM;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
         {attribute 'TcLinkTo' := '.Status := TIIB[IM1K4-EL6002-E6]^COM TxPDO-Map Inputs Channel 1^Status;
                                   .D[0] := TIIB[IM1K4-EL6002-E6]^COM TxPDO-Map Inputs Channel 1^Data In 0;
                                   .D[1] := TIIB[IM1K4-EL6002-E6]^COM TxPDO-Map Inputs Channel 1^Data In 1;
@@ -1340,44 +1923,44 @@ PRG_IM1K4_XTES
                                   .D[20] := TIIB[IM1K4-EL6002-E6]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
                                   .D[21] := TIIB[IM1K4-EL6002-E6]^COM RxPDO-Map Outputs Channel 1^Data Out 21'}
         stEL6Out AT %Q*: EL6OutData22b;
+
+        {attribute 'pytmc' := '
+            pv: IM1K4:SCRP:LED:01:PWR
+            io: io
+            field: ZNAM OFF
+            field: ONAM ON
+        '}
+        {attribute 'TcLinkTo' := 'TIIB[IM1K4-EL2004-E2]^Channel 4^Output'}
+        bIM1K4_SCRP_LED_01 AT %Q*: BOOL;
     END_VAR
-    fbIM1K4.nTransitionAssertionID := 16#2140;
-    fbIM1K4.nUnknownAssertionID := 16#2149;
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM1K4.stOut.fPosition := 0;
-    fbIM1K4.stOut.bUseRawCounts := FALSE;
-    fbIM1K4.stOut.nRequestAssertionID := 16#2141;
-    fbIM1K4.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K4.stOut.bValid := TRUE;
-
-    fbIM1K4.stYag.fPosition := -88.87;
-    fbIM1K4.stYag.bUseRawCounts := FALSE;
-    fbIM1K4.stYag.nRequestAssertionID := 16#2142;
-    fbIM1K4.stYag.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K4.stYag.bValid := TRUE;
-
-    fbIM1K4.stDiamond.fPosition := -58.87;
-    fbIM1K4.stDiamond.bUseRawCounts := FALSE;
-    fbIM1K4.stDiamond.nRequestAssertionID := 16#2143;
-    fbIM1K4.stDiamond.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM1K4.stDiamond.bValid := TRUE;
-
-    fbIM1K4.stReticle.fPosition := -28.87;
-    fbIM1K4.stReticle.bUseRawCounts := FALSE;
-    fbIM1K4.stReticle.nRequestAssertionID := 16#2144;
-    fbIM1K4.stReticle.stBeamParams := PMPS_GVL.cst0RateBeam;
-    fbIM1K4.stReticle.bValid := TRUE;
+    fbStateSetup(stPositionState:=fbIM1K4.stOut, fPosition:=0, sPmpsState:='IM1K4:XTES-OUT');
+    fbStateSetup(stPositionState:=fbIM1K4.stYag, fPosition:=-88.87, sPmpsState:='IM1K4:XTES-YAG');
+    fbStateSetup(stPositionState:=fbIM1K4.stDiamond, fPosition:=-58.87, sPmpsState:='IM1K4:XTES-DIAMOND');
+    fbStateSetup(stPositionState:=fbIM1K4.stReticle, fPosition:=-28.87, sPmpsState:='IM1K4:XTES-RETICLE');
 
     fbIM1K4(
-        fbArbiter := GVL.fbArbiter,
-        fbFFHWO := GVL.fbFastFaultOutput1,
+        fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M30,
         stZoomStage := Main.M31,
         stFocusStage := Main.M32,
         stEl6In := stEL6In,
-        stEl6Out := stEl6Out);
+        stEl6Out := stEl6Out,
+        sDeviceName := 'IM1K4:XTES',
+        sTransitionKey := 'IM1K4:XTES-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+    );
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_IM2K0_XTES
@@ -1387,103 +1970,56 @@ PRG_IM2K0_XTES
 
     PROGRAM PRG_IM2K0_XTES
     VAR
-        {attribute 'pytmc' := '
-            pv: IM2K0:XTES
-            io: io
-        '}
-        {attribute 'TcLinkTo' := '.bZoomEndFwd := TIIB[IM2K0-EL1088]^Channel 1^Input;
-                                  .bZoomEndBwd := TIIB[IM2K0-EL1088]^Channel 2^Input;
-                                  .bFocusEndFwd := TIIB[IM2K0-EL1088]^Channel 3^Input;
-                                  .bFocusEndBwd := TIIB[IM2K0-EL1088]^Channel 4^Input;
-                                  .fbOpal.bOpalPower := TIIB[IM2K0-EL2004]^Channel 2^Output;
-                                  .fbLED.bLedPower := TIIB[IM2K0-EL2004]^Channel 3^Output'}
-        fbIM2K0: FB_XPIM;
-        {attribute 'TcLinkTo' := '.Status := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Status;
-                                  .D[0] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
-                                  .D[1] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
-                                  .D[2] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
-                                  .D[3] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
-                                  .D[4] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
-                                  .D[5] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
-                                  .D[6] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
-                                  .D[7] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
-                                  .D[8] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
-                                  .D[9] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
-                                  .D[10] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
-                                  .D[11] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
-                                  .D[12] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
-                                  .D[13] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
-                                  .D[14] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
-                                  .D[15] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
-                                  .D[16] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
-                                  .D[17] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
-                                  .D[18] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
-                                  .D[19] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
-                                  .D[20] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
-                                  .D[21] := TIIB[IM2K0-EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 21'}
-        stEL6In AT %I*: EL6InData22b;
-        {attribute 'TcLinkTo' := '.Ctrl := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
-                                  .D[0] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
-                                  .D[1] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
-                                  .D[2] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
-                                  .D[3] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
-                                  .D[4] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
-                                  .D[5] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
-                                  .D[6] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
-                                  .D[7] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
-                                  .D[8] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
-                                  .D[9] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
-                                  .D[10] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
-                                  .D[11] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
-                                  .D[12] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
-                                  .D[13] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
-                                  .D[14] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
-                                  .D[15] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
-                                  .D[16] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
-                                  .D[17] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
-                                  .D[18] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
-                                  .D[19] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
-                                  .D[20] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
-                                  .D[21] := TIIB[IM2K0-EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 21'}
-        stEL6Out AT %Q*: EL6OutData22b;
+        {attribute 'pytmc' := 'pv: IM2K0:XTES'}
+        {attribute 'TcLinkTo' := '.fbLED.bLedPower := TIIB[IM2K0-EL2004]^Channel 3^Output;
+                                  .fbGige.bGigePower := TIIB[IM2K0-EL2004]^Channel 4^Output'}
+        fbIM2K0: FB_XPIM_IM2K0;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
+
+        {attribute 'TcLinkTo' := 'TIIB[IM2K0-EL7041]^STM Status^Status^Digital input 1'}
+        bDefectiveLimitSwitch AT %I*: BOOL;
     END_VAR
-    fbIM2K0.nTransitionAssertionID := 16#2200;
-    fbIM2K0.nUnknownAssertionID := 16#2209;
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM2K0.stOut.fPosition := 0;
-    fbIM2K0.stOut.bUseRawCounts := FALSE;
-    fbIM2K0.stOut.nRequestAssertionID := 16#2201;
-    fbIM2K0.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM2K0.stOut.bValid := TRUE;
+    fbStateSetup(stPositionState:=fbIM2K0.stOut, fPosition:=0, sPmpsState:='IM2K0:XTES-OUT');
+    fbStateSetup(stPositionState:=fbIM2K0.stYag, fPosition:=-87.65);
+    fbStateSetup(stPositionState:=fbIM2K0.stDiamond, fPosition:=-57.65, sPmpsState:='IM2K0:XTES-DIAMOND');
+    fbStateSetup(stPositionState:=fbIM2K0.stReticle, fPosition:=-27.65, sPmpsState:='IM2K0:XTES-RETICLE');
 
-    fbIM2K0.stYag.fPosition := -87.65;
-    fbIM2K0.stYag.bUseRawCounts := FALSE;
-    fbIM2K0.stYag.nRequestAssertionID := 16#2202;
-    fbIM2K0.stYag.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM2K0.stYag.bValid := TRUE;
-
-    fbIM2K0.stDiamond.fPosition := -57.65;
-    fbIM2K0.stDiamond.bUseRawCounts := FALSE;
-    fbIM2K0.stDiamond.nRequestAssertionID := 16#2203;
-    fbIM2K0.stDiamond.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbIM2K0.stDiamond.bValid := TRUE;
-
-    fbIM2K0.stReticle.fPosition := -27.65;
-    fbIM2K0.stReticle.bUseRawCounts := FALSE;
-    fbIM2K0.stReticle.nRequestAssertionID := 16#2204;
-    fbIM2K0.stReticle.stBeamParams := PMPS_GVL.cst0RateBeam;
-    fbIM2K0.stReticle.bValid := TRUE;
+    CASE GVL.ePF1K0State OF
+        E_WFS_STATES.TARGET1, E_WFS_STATES.TARGET2, E_WFS_STATES.TARGET3, E_WFS_STATES.TARGET4, E_WFS_STATES.TARGET5 :
+            // Known state targets: allow less strict pmps
+            fbIM2K0.stYag.stPMPS.sPmpsState := 'IM2K0:XTES-YAG_WFS_IN';
+    ELSE
+        // Out, Unknown, or an unexpected state: full pmps
+        fbIM2K0.stYag.stPMPS.sPmpsState := 'IM2K0:XTES-YAG';
+    END_CASE
 
     fbIM2K0(
-        fbArbiter := GVL.fbArbiter,
         fbFFHWO := GVL.fbFastFaultOutput1,
+        fbArbiter := GVL.fbArbiter,
         stYStage := Main.M5,
-        stZoomStage := Main.M6,
-        stFocusStage := Main.M7,
-        stEl6In := stEL6In,
-        stEl6Out := stEl6Out);
+        sDeviceName := 'IM2K0:XTES',
+        sTransitionKey := 'IM2K0:XTES-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+    );
+
+    Main.M5.bLimitForwardEnable := bDefectiveLimitSwitch OR (Main.M5.stAxisStatus.fActPosition < 0);
 
     END_PROGRAM
+
+
+Related:
+    * `FB_XPIM_IM2K0`_
+    * `GVL`_
+    * `Main`_
 
 
 PRG_PF1K0_WFS
@@ -1493,10 +2029,7 @@ PRG_PF1K0_WFS
 
     PROGRAM PRG_PF1K0_WFS
     VAR
-        {attribute 'pytmc' := '
-            pv: PF1K0:WFS
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: PF1K0:WFS'}
         {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Error;
                                   .fbThermoCouple1.bUnderrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Underrange;
                                   .fbThermoCouple1.bOverrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Overrange;
@@ -1506,71 +2039,41 @@ PRG_PF1K0_WFS
                                   .fbThermoCouple2.bOverrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Status^Overrange;
                                   .fbThermoCouple2.iRaw := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Value'}
         fbPF1K0: FB_WFS;
-
-        stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
-        stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    (*
-       Avoid damage peak between 3.2 keV and 1.6 keV
-       Boundaries are upper boundary of eV range
-       7.1E3,  5.0E3,  3.2E3,  2.0E3, 1.82E3, 1.75E3, 1.65E3, 1.55E3,
-       1.45E3, 1.25E3, 1.15E3, 850,   540,    400,    270,   250,
-       1       1       0       0      0       0       0       1
-       1       1       1       1      1       1       1       1
-    *)
-    stSiBP.neVRange := 2#1100_0001_1111_1111;
-    // Drop transmission to 20%
-    stSiBP.nTran := 20;
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    // Drop transmission to 10%
-    stFoilBP.nTran := 10;
-
-    fbPF1K0.nTransitionAssertionID := 16#3100;
-    fbPF1K0.nUnknownAssertionID := 16#3109;
-
-    fbPF1K0.stOut.fPosition := -15;
-    fbPF1K0.stOut.bUseRawCounts := FALSE;
-    fbPF1K0.stOut.nRequestAssertionID := 16#3101;
-    fbPF1K0.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
-    fbPF1K0.stOut.bValid := TRUE;
-
-    fbPF1K0.stTarget1.fPosition := -96.623;
-    fbPF1K0.stTarget1.bUseRawCounts := FALSE;
-    fbPF1K0.stTarget1.nRequestAssertionID := 16#3102;
-    fbPF1K0.stTarget1.stBeamParams := stSiBP;
-    fbPF1K0.stTarget1.bValid := TRUE;
-
-    fbPF1K0.stTarget2.fPosition := -82.25;
-    fbPF1K0.stTarget2.bUseRawCounts := FALSE;
-    fbPF1K0.stTarget2.nRequestAssertionID := 16#3103;
-    fbPF1K0.stTarget2.stBeamParams := stSiBP;
-    fbPF1K0.stTarget2.bValid := TRUE;
-
-    fbPF1K0.stTarget3.fPosition := -67.874;
-    fbPF1K0.stTarget3.bUseRawCounts := FALSE;
-    fbPF1K0.stTarget3.nRequestAssertionID := 16#3104;
-    fbPF1K0.stTarget3.stBeamParams := stFoilBP;
-    fbPF1K0.stTarget3.bValid := TRUE;
-
-    fbPF1K0.stTarget4.fPosition := -53.5;
-    fbPF1K0.stTarget4.bUseRawCounts := FALSE;
-    fbPF1K0.stTarget4.nRequestAssertionID := 16#3105;
-    fbPF1K0.stTarget4.stBeamParams := stFoilBP;
-    fbPF1K0.stTarget4.bValid := TRUE;
-
-    fbPF1K0.stTarget5.fPosition := -39.124;
-    fbPF1K0.stTarget5.bUseRawCounts := FALSE;
-    fbPF1K0.stTarget5.nRequestAssertionID := 16#3106;
-    fbPF1K0.stTarget5.stBeamParams := stFoilBP;
-    fbPF1K0.stTarget5.bValid := TRUE;
+    fbStateSetup(stPositionState:=fbPF1K0.stOut, fPosition:=-15, sPmpsState:='PF1K0:WFS-OUT');
+    fbStateSetup(stPositionState:=fbPF1K0.stTarget1, fPosition:=-96.623, sPmpsState:='PF1K0:WFS-TARGET1');
+    fbStateSetup(stPositionState:=fbPF1K0.stTarget2, fPosition:=-82.25, sPmpsState:='PF1K0:WFS-TARGET2');
+    fbStateSetup(stPositionState:=fbPF1K0.stTarget3, fPosition:=-67.874, sPmpsState:='PF1K0:WFS-TARGET3');
+    fbStateSetup(stPositionState:=fbPF1K0.stTarget4, fPosition:=-53.5, sPmpsState:='PF1K0:WFS-TARGET4');
+    fbStateSetup(stPositionState:=fbPF1K0.stTarget5, fPosition:=-39.124, sPmpsState:='PF1K0:WFS-TARGET5');
 
     fbPF1K0(
-        fbArbiter := GVL.fbArbiter,
         fbFFHWO := GVL.fbFastFaultOutput1,
+        fbArbiter := GVL.fbArbiter,
         stYStage := Main.M8,
-        stZStage := Main.M9);
+        stZStage := Main.M9,
+        sDeviceName := 'PF1K0:WFS',
+        sTransitionKey := 'PF1K0:WFS-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+        eEnumGet => GVL.ePF1K0State,
+    );
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_RTDSK0
@@ -1616,6 +2119,22 @@ PRG_RTDSK0
         '}
         {attribute 'pytmc' :=' pv: RTDSK0:MPA:04 '}
         RTDSK0_MPA_04: FB_MPA := (sName := 'RTDSK0:MPA:04');
+
+        fbRTDSK0_SCRP_MMS_Z: FB_MotionStage;
+        fbRTDSK0_SCRP_MMS_X: FB_MotionStage;
+        fbRTDSK0_SCRP_MMS_Y: FB_MotionStage;
+
+         {attribute 'pytmc' := 'pv: RTDSK0:SCRP:LED:01:PWR
+          io: io
+            field: ZNAM OFF
+            field: ONAM ON
+    '}
+
+         {attribute 'TcLinkTo' := 'TIIB[RTDSK0-EL2004]^Channel 3^Output'}
+        bRTDSK0_SCRP_LED_01 AT %Q*: BOOL;
+
+        FFO : FB_FastFault :=( i_Desc := 'fault occurs when Y motor is not activating upper limit switch', i_TypeCode := 16#FAF, i_DevName := 'RTDSK0:SCRP:MMS:Y');
+        bInit: BOOL := TRUE;
 
 
 
@@ -1674,7 +2193,45 @@ PRG_RTDSK0
     );
     *)
 
+    //initialize RTDSK0 stages
+    IF bInit THEN
+        Main.M11.bHardwareEnable := TRUE;
+        Main.M11.bPowerSelf :=TRUE;
+        Main.M11.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+        Main.M11.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+        Main.M11.fHomePosition := 0;
+
+        Main.M12.bHardwareEnable := TRUE;
+        Main.M12.bPowerSelf :=TRUE;
+        Main.M12.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+        Main.M12.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+        Main.M12.fHomePosition := 0;
+
+        Main.M13.bHardwareEnable := TRUE;
+        Main.M13.bPowerSelf :=TRUE;
+        Main.M13.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+        Main.M13.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+        Main.M13.fHomePosition := 0;
+
+        Main.M11.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+        Main.M12.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+        Main.M13.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+
+        bInit := FALSE;
+    END_IF
+
+        fbRTDSK0_SCRP_MMS_Z (stMotionStage := Main.M11);
+        fbRTDSK0_SCRP_MMS_X (stMotionStage := Main.M12);
+        fbRTDSK0_SCRP_MMS_Y (stMotionStage := Main.M13);
+        FFO(i_xOK := NOT(Main.M13.bLimitForwardEnable) AND Main.M13.bLimitBackwardEnable, io_fbFFHWO := GVL.fbFastFaultOutput1);
+
     END_PROGRAM
+
+
+Related:
+    * `FB_MPA`_
+    * `GVL`_
+    * `Main`_
 
 
 PRG_SL1K0_POWER
@@ -1743,11 +2300,11 @@ PRG_SL1K0_POWER
         (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
         rEncoderOffsetTop: REAL := -11.2; (* 0+(-15)*)
         rEncoderOffsetBottom: REAL := -11.9; (* 0+(-15)*)
-        rEncoderOffsetNorth: REAL := -4.6;(* 0+(-15)*)
+        rEncoderOffsetNorth: REAL := -11.4;//-4.6;(* 0+(-15)*)
         rEncoderOffsetSouth: REAL := -13;(* 0+(-15)*)
     END_VAR
     fbSL1K0.bMoveOk := bMoveOk;
-
+    Main.M18.bLimitBackwardEnable := True;
 
 
 
@@ -1760,6 +2317,8 @@ PRG_SL1K0_POWER
 
     else
 
+    //force that inner limit switch on south motor is not depressed. need to debug further in winter down.
+    //Main.M18.bLimitForwardEnable := TRUE;
     fbSL1K0.rEncoderOffsetTop := rEncoderOffsetTop;
     fbSL1K0.rEncoderOffsetBottom := rEncoderOffsetBottom;
     fbSL1K0.rEncoderOffsetNorth := rEncoderOffsetNorth;
@@ -1778,6 +2337,12 @@ PRG_SL1K0_POWER
     END_IF
 
     END_PROGRAM
+
+
+Related:
+    * `FB_SLITS_POWER`_
+    * `GVL`_
+    * `Main`_
 
 
 PRG_SL2K0_POWER
@@ -1872,6 +2437,12 @@ PRG_SL2K0_POWER
     END_PROGRAM
 
 
+Related:
+    * `FB_SLITS_POWER`_
+    * `GVL`_
+    * `Main`_
+
+
 PRG_ST1K4_TEST
 ^^^^^^^^^^^^^^
 
@@ -1879,14 +2450,76 @@ PRG_ST1K4_TEST
 
     PROGRAM PRG_ST1K4_TEST
     VAR
-        fbMotion1: FB_MotionStage;
+        fbMotion: FB_MotionStage;
+
+        {attribute 'pytmc' := '
+            pv: ST1K4:TEST:MMS
+            astPositionState.array: 1..2
+        '}
+        fbStates: FB_PositionState1D;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fDelta := 1,
+            fVelocity := 5,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
+        astPositionState: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+
+        {attribute 'pytmc' := '
+            pv: ST1K4:TEST:MMS:STATE:GET
+            io: i
+        '}
+        eEnumGet: E_EpicsInOut;
+        {attribute 'pytmc' := '
+            pv: ST1K4:TEST:MMS:STATE:SET
+            io: io
+        '}
+        eEnumSet: E_EpicsInOut;
+
+        bST3K4_in: BOOL;
+
+        {attribute 'pytmc' := '
+            pv: ST1K4:TEST:MMS:STATE:ST3K4_AUTO
+            io: io
+        '}
+        bST3K4_auto: BOOL := TRUE;
     END_VAR
     // M33, Axis 33
-    Main.M33.nEnableMode	:= ENUM_StageEnableMode.DURING_MOTION;
+    Main.M33.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
     Main.M33.bHardwareEnable:= TRUE;
     Main.M33.bPowerSelf := TRUE;
     Main.M33.nBrakeMode := ENUM_StageBrakeMode.IF_ENABLED;
-    fbMotion1(stMotionStage:=Main.M14);
+    fbMotion(stMotionStage:=Main.M33);
+
+    // States
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
+
+    fbStateSetup(stPositionState:=astPositionState[E_EpicsInOut.IN], sName:='IN', fPosition:=2);
+    fbStateSetup(stPositionState:=astPositionState[E_EpicsInOut.OUT], sName:='OUT', fPosition:=40);
+
+    fbStates(
+        stMotionStage:=Main.M33,
+        astPositionState:=astPositionState,
+        eEnumSet:=eEnumSet,
+        eEnumGet:=eEnumGet,
+        bEnable:=TRUE,
+    );
+
+    bST3K4_in := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4];
+
+    IF bST3K4_auto THEN
+        IF bST3K4_in AND eEnumGet <> E_EpicsInOut.IN THEN
+            eEnumSet := ENUM_EpicsInOut.IN;
+        ELSIF NOT bST3K4_in AND eEnumGet <> E_EpicsInOut.OUT THEN
+            eEnumSet := ENUM_EpicsInOut.OUT;
+        END_IF
+    END_IF
 
     END_PROGRAM
+
+
+Related:
+    * `Main`_
 

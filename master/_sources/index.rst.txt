@@ -7,6 +7,7 @@ lcls-plc-kfe-motion
 
     plc-kfe-motion_pragmas
     plc-kfe-motion_nc
+    plc-kfe-motion_ethercat
     plc-kfe-motion_boxes
     plc-kfe-motion_links
 
