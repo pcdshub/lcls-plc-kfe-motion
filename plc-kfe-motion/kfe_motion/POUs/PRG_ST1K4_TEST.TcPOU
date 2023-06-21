@@ -4,13 +4,15 @@
     <Declaration><![CDATA[PROGRAM PRG_ST1K4_TEST
 VAR
     fbMotion1: FB_MotionStage;
-	
+
 	
 	{attribute 'pytmc' := '
         pv: ST1K4:MMS:STATE
         io: i
         arrStates.array: 1..3
     '}
+	
+	
  {*    fbST1K4_InOut_States:FB_PositionStateInOut;
 	 
 	 ST1K4_In:DUT_PositionState:= (
@@ -31,6 +33,7 @@ VAR
 		 fDelta := 1,
 		 fVelocity := 6);
 *}
+
 END_VAR
 
 ]]></Declaration>
