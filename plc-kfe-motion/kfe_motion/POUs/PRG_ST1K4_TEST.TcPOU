@@ -4,7 +4,35 @@
     <Declaration><![CDATA[PROGRAM PRG_ST1K4_TEST
 VAR
     fbMotion1: FB_MotionStage;
+	
+	
+	{attribute 'pytmc' := '
+        pv: ST1K4:MMS:STATE
+        io: i
+        arrStates.array: 1..3
+    '}
+ {*    fbST1K4_InOut_States:FB_PositionStateInOut;
+	 
+	 ST1K4_In:DUT_PositionState:= (
+		 bUseRawCounts := FALSE,
+		 bMoveOK := TRUE,
+		 bValid := TRUE,
+		 sName := 'IN',
+		 fPosition := -30.997,
+		 fDelta := 1,
+		 fVelocity := 6);
+	
+     ST1K4_Out:DUT_PositionState:= (
+		 bUseRawCounts := FALSE,
+		 bMoveOK := TRUE,
+		 bValid := TRUE,
+		 sName := 'OUT',
+		 fPosition := 8.080,
+		 fDelta := 1,
+		 fVelocity := 6);
+*}
 END_VAR
+
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M33, Axis 33
@@ -12,7 +40,18 @@ Main.M33.nEnableMode	:= ENUM_StageEnableMode.DURING_MOTION;
 Main.M33.bHardwareEnable:= TRUE;
 Main.M33.bPowerSelf := TRUE;
 Main.M33.nBrakeMode := ENUM_StageBrakeMode.IF_ENABLED;
-fbMotion1(stMotionStage:=Main.M33);]]></ST>
+fbMotion1(stMotionStage:=Main.M33);
+// in and out position 
+ 
+{*    fbST1K4_InOut_States(
+          bEnable := TRUE,
+          stIn := ST1K4_In,
+          stOut := ST1K4_OUT,
+          stMotionStage := Main.M33); 		  
+ 
+*}
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
