@@ -194,7 +194,7 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[ST1K4-EL7041-E4]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[ST1K4-EL7041-E4]^STM Status^Status^Digital input 2;
                               .bBrakeRelease        := TIIB[ST1K4-EL2202-E3]^Channel 1^Output;
-                              .nRawEncoderUINT      := TIIB[ST1K4-EL7041-E4]^ENC Status compact^Counter value'}
+                              .nRawEncoderULINT      := TIIB[ST1K4-EL5042-E5A]^FB Inputs Channel 1^Position'}
     M33: DUT_MotionStage := (sName := 'ST1K4:TEST:MMS:01');
 END_VAR]]></Declaration>
   </GVL>
