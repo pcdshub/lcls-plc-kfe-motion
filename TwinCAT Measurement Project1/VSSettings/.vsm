@@ -6,13 +6,19 @@
     <Node>
       <Title>Scope YT NC Project</Title>
       <Expanded>True</Expanded>
-      <FileName>C:\Users\tongju\github-repo\fee\lcls-plc-kfe-motion\TwinCAT Measurement Project1\Scope YT NC Project.tcscopex</FileName>
+      <FileName>C:\Users\zlentz\Documents\TcXaeShell\lcls-plc-kfe-motion\TwinCAT Measurement Project1\Scope YT NC Project.tcscopex</FileName>
       <Children>
         <Node>
           <Title>DataPool</Title>
           <Expanded>True</Expanded>
           <FileName></FileName>
           <Children>
+            <Node>
+              <Title>ActPos</Title>
+              <Expanded>False</Expanded>
+              <FileName></FileName>
+              <Children />
+            </Node>
             <Node>
               <Title>AT1K4 MMS:01 ActPos</Title>
               <Expanded>False</Expanded>
@@ -61,11 +67,23 @@
               <FileName></FileName>
               <Children />
             </Node>
+            <Node>
+              <Title>PosDiff</Title>
+              <Expanded>False</Expanded>
+              <FileName></FileName>
+              <Children />
+            </Node>
+            <Node>
+              <Title>SetPos</Title>
+              <Expanded>False</Expanded>
+              <FileName></FileName>
+              <Children />
+            </Node>
           </Children>
         </Node>
         <Node>
           <Title>AT1K4-SOLID</Title>
-          <Expanded>True</Expanded>
+          <Expanded>False</Expanded>
           <FileName></FileName>
           <Children>
             <Node>
@@ -138,6 +156,45 @@
                 </Node>
                 <Node>
                   <Title>AT1K4:MMS:04 ActPos</Title>
+                  <Expanded>False</Expanded>
+                  <FileName></FileName>
+                  <Children />
+                </Node>
+              </Children>
+            </Node>
+          </Children>
+        </Node>
+        <Node>
+          <Title>ST1K4</Title>
+          <Expanded>True</Expanded>
+          <FileName></FileName>
+          <Children>
+            <Node>
+              <Title>Position</Title>
+              <Expanded>True</Expanded>
+              <FileName></FileName>
+              <Children>
+                <Node>
+                  <Title>ActPos</Title>
+                  <Expanded>False</Expanded>
+                  <FileName></FileName>
+                  <Children />
+                </Node>
+                <Node>
+                  <Title>SetPos</Title>
+                  <Expanded>False</Expanded>
+                  <FileName></FileName>
+                  <Children />
+                </Node>
+              </Children>
+            </Node>
+            <Node>
+              <Title>Position Lag</Title>
+              <Expanded>True</Expanded>
+              <FileName></FileName>
+              <Children>
+                <Node>
+                  <Title>PosDiff</Title>
                   <Expanded>False</Expanded>
                   <FileName></FileName>
                   <Children />
