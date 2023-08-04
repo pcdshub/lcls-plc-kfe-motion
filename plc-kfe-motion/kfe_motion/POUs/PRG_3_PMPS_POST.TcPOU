@@ -6,8 +6,7 @@ VAR
     fbArbiterIO: FB_SubSysToArbiter_IO;
     fb_vetoArbiter: FB_VetoArbiter;
     bM1K1_Veto_IN: BOOL;
-{*	bST1K4_Ok: BOOL;
-*}
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -15,9 +14,7 @@ END_VAR
 bM1K1_Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
                 AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
 
-{* bST1K4_Ok := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4] 
-			 OR ST1K4_In; 
-			 *}
+
 				
 				
 //create a preemptive request from Arbiter 2 in Arbiter 1
