@@ -13,26 +13,26 @@ VAR
     '}
 	
 	
- {*    fbST1K4_InOut_States:FB_PositionStateInOut;
+     fbST1K4_InOut_States:FB_PositionStateInOut;
 	 
 	 ST1K4_In:DUT_PositionState:= (
 		 bUseRawCounts := FALSE,
 		 bMoveOK := TRUE,
 		 bValid := TRUE,
 		 sName := 'IN',
-		 fPosition := -30.997,
+		 fPosition := 0,
 		 fDelta := 1,
-		 fVelocity := 6);
+		 fVelocity := 12);
 	
      ST1K4_Out:DUT_PositionState:= (
 		 bUseRawCounts := FALSE,
 		 bMoveOK := TRUE,
 		 bValid := TRUE,
 		 sName := 'OUT',
-		 fPosition := 8.080,
+		 fPosition := 40,
 		 fDelta := 1,
-		 fVelocity := 6);
-*}
+		 fVelocity := 12);
+
 
 END_VAR
 
@@ -46,12 +46,20 @@ Main.M33.nBrakeMode := ENUM_StageBrakeMode.IF_ENABLED;
 fbMotion1(stMotionStage:=Main.M33);
 // in and out position 
  
-{*    fbST1K4_InOut_States(
+    fbST1K4_InOut_States(
           bEnable := TRUE,
           stIn := ST1K4_In,
           stOut := ST1K4_OUT,
           stMotionStage := Main.M33); 		  
- 
+     
+
+
+ {*     bIn := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4];
+	    IF bIn
+		 fbST1K4_InOut_States.enumSet:= ENUM_EpicsInOut.IN;
+		fbST1K4_Out_States;
+		
+
 *}
 
 ]]></ST>
