@@ -20,9 +20,9 @@ VAR
 		 bMoveOK := TRUE,
 		 bValid := TRUE,
 		 sName := 'IN',
-		 fPosition := 0,
+		 fPosition := 1,
 		 fDelta := 1,
-		 fVelocity := 12);
+		 fVelocity := 9);
 	
      ST1K4_Out:DUT_PositionState:= (
 		 bUseRawCounts := FALSE,
@@ -31,7 +31,7 @@ VAR
 		 sName := 'OUT',
 		 fPosition := 40,
 		 fDelta := 1,
-		 fVelocity := 12);
+		 fVelocity := 9);
 
 
 END_VAR
@@ -49,7 +49,7 @@ fbMotion1(stMotionStage:=Main.M33);
     fbST1K4_InOut_States(
           bEnable := TRUE,
           stIn := ST1K4_In,
-          stOut := ST1K4_OUT,
+          stOut := ST1K4_Out,
           stMotionStage := Main.M33); 		  
      
 
