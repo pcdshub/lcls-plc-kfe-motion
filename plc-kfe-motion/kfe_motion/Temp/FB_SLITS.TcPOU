@@ -3,10 +3,10 @@
   <POU Name="FB_SLITS" Id="{b20ac175-27c9-0d05-3c79-6a95fe08ff7d}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SLITS
 VAR_IN_OUT
-    stTopBlade: DUT_MotionStage;
-    stBottomBlade: DUT_MotionStage;
-    stNorthBlade: DUT_MotionStage;
-    stSouthBlade: DUT_MotionStage;
+    stTopBlade: ST_MotionStage;
+    stBottomBlade: ST_MotionStage;
+    stNorthBlade: ST_MotionStage;
+    stSouthBlade: ST_MotionStage;
     bExecuteMotion:BOOL ;
     io_fbFFHWO    :    FB_HardwareFFOutput;
     fbArbiter: FB_Arbiter();

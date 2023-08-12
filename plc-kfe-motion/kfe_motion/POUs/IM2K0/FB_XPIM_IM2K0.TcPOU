@@ -6,7 +6,7 @@
     IM2K0 has been modified to replace the lens, illuminator, and camera with the PPM versions
 *)
 VAR_IN_OUT
-    stYStage: DUT_MotionStage;
+    stYStage: ST_MotionStage;
     fbArbiter: FB_Arbiter;
     fbFFHWO: FB_HardwareFFOutput;
 END_VAR

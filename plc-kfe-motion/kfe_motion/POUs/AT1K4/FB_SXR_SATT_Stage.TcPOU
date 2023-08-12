@@ -3,7 +3,7 @@
   <POU Name="FB_SXR_SATT_Stage" Id="{7fb611c7-2215-4e8f-8a28-e51a98acae9a}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SXR_SATT_Stage
 VAR_IN_OUT
-    stAxis : DUT_MotionStage;
+    stAxis : ST_MotionStage;
     fbFFHWO: FB_HardwareFFOutput;
 END_VAR
 VAR_INPUT
@@ -24,7 +24,7 @@ VAR_INPUT
 
 END_VAR
 VAR_OUTPUT
-    // stExtra : DUT_MotionStage_Extras;
+    // stExtra : ST_MotionStage_Extras;
     fTemp1 : LREAL;
     fTemp2 : LREAL;
     bIsStationary : BOOL;
@@ -85,7 +85,7 @@ END_VAR
 IF NOT bInitialized THEN
     bInitialized := TRUE;
 
-    (* Defaults for DUT_MotionStage *)
+    (* Defaults for ST_MotionStage *)
     stAxis.bHardwareEnable      := TRUE;
     stAxis.bLimitBackwardEnable := TRUE;
     stAxis.bLimitForwardEnable  := TRUE;
