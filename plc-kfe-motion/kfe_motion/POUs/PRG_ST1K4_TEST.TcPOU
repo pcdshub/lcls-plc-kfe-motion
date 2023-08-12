@@ -5,45 +5,45 @@
 VAR
     fbMotion1: FB_MotionStage;
 
-	
-	{attribute 'pytmc' := '
+
+    {attribute 'pytmc' := '
         pv: ST1K4:TEST:MMS:STATE
         io: i
         arrStates.array: 1..2
     '}
-	
-	
+
+
      fbST1K4_InOut_States:FB_PositionStateInOut;
 
-	  
-	 ST1K4_In:DUT_PositionState:= (
-		 bUseRawCounts := FALSE,
-		 bMoveOK := TRUE,
-		 bValid := TRUE,
-		 sName := 'IN',
-		 fPosition := 1,
-		 fDelta := 1,
-		 fVelocity := 9);
-	
+
+     ST1K4_In:DUT_PositionState:= (
+         bUseRawCounts := FALSE,
+         bMoveOK := TRUE,
+         bValid := TRUE,
+         sName := 'IN',
+         fPosition := 1,
+         fDelta := 1,
+         fVelocity := 9);
+
      ST1K4_Out:DUT_PositionState:= (
-		 bUseRawCounts := FALSE,
-		 bMoveOK := TRUE,
-		 bValid := TRUE,
-		 sName := 'OUT',
-		 fPosition := 40,
-		 fDelta := 1,
-		 fVelocity := 9);
-		 
+         bUseRawCounts := FALSE,
+         bMoveOK := TRUE,
+         bValid := TRUE,
+         sName := 'OUT',
+         fPosition := 40,
+         fDelta := 1,
+         fVelocity := 9);
+
      ST3K4_In: bool;
-	 
-	 {attribute 'pytmc' := '
+
+     {attribute 'pytmc' := '
         pv: ST1K4:TEST:MMS:STATE:ST3K4_AUTO
         io: io
-      
+
     '}
      bST3K4_auto:bool:= TRUE ;
-   
-	
+
+
 END_VAR
 
 ]]></Declaration>
@@ -54,23 +54,23 @@ Main.M33.bHardwareEnable:= TRUE;
 Main.M33.bPowerSelf := TRUE;
 Main.M33.nBrakeMode := ENUM_StageBrakeMode.IF_ENABLED;
 fbMotion1(stMotionStage:=Main.M33);
-// in and out position 
- 
+// in and out position
+
     fbST1K4_InOut_States(
           bEnable := TRUE,
           stIn := ST1K4_In,
           stOut := ST1K4_Out,
-          stMotionStage := Main.M33); 		  
-     
+          stMotionStage := Main.M33);
+
 
         ST3K4_In:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4];
-		
+
         IF bST3K4_auto THEN
-			IF ST3K4_In AND fbST1K4_InOut_States.enumGet <> ENUM_EpicsInOut.IN THEN
-				fbST1K4_InOut_States.enumSet:= ENUM_EpicsInOut.IN;
-			ELSIF NOT ST3K4_In AND fbST1K4_InOut_States.enumGet <> ENUM_EpicsInOut.OUT THEN
-				fbST1K4_InOut_States.enumSet:= ENUM_EpicsInOut.OUT;
-			END_IF        
+            IF ST3K4_In AND fbST1K4_InOut_States.enumGet <> ENUM_EpicsInOut.IN THEN
+                fbST1K4_InOut_States.enumSet:= ENUM_EpicsInOut.IN;
+            ELSIF NOT ST3K4_In AND fbST1K4_InOut_States.enumGet <> ENUM_EpicsInOut.OUT THEN
+                fbST1K4_InOut_States.enumSet:= ENUM_EpicsInOut.OUT;
+            END_IF
         END_IF
 
 

@@ -15,8 +15,8 @@ bM1K1_Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stoppe
                 AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
 
 
-				
-				
+
+
 //create a preemptive request from Arbiter 2 in Arbiter 1
 fb_vetoArbiter(bVeto:=bM1K1_Veto_IN,
                 HigherAuthority := GVL.fbArbiter,
