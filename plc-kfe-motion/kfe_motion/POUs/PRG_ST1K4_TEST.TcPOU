@@ -15,15 +15,14 @@ VAR
 
      fbST1K4_InOut_States:FB_PositionStateInOut;
 
-
      ST1K4_In:DUT_PositionState:= (
          bUseRawCounts := FALSE,
          bMoveOK := TRUE,
          bValid := TRUE,
          sName := 'IN',
-         fPosition := 1,
+         fPosition := 2,
          fDelta := 1,
-         fVelocity := 9);
+         fVelocity := 5);
 
      ST1K4_Out:DUT_PositionState:= (
          bUseRawCounts := FALSE,
@@ -32,7 +31,7 @@ VAR
          sName := 'OUT',
          fPosition := 40,
          fDelta := 1,
-         fVelocity := 9);
+         fVelocity := 5);
 
      ST3K4_In: bool;
 
