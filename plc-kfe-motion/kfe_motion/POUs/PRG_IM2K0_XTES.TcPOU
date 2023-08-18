@@ -23,9 +23,18 @@ END_VAR
 fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
 fbStateSetup(stPositionState:=fbIM2K0.stOut, fPosition:=0, sPmpsState:='IM2K0:XTES-OUT');
-fbStateSetup(stPositionState:=fbIM2K0.stYag, fPosition:=-87.65, sPmpsState:='IM2K0:XTES-YAG');
+fbStateSetup(stPositionState:=fbIM2K0.stYag, fPosition:=-87.65);
 fbStateSetup(stPositionState:=fbIM2K0.stDiamond, fPosition:=-57.65, sPmpsState:='IM2K0:XTES-DIAMOND');
 fbStateSetup(stPositionState:=fbIM2K0.stReticle, fPosition:=-27.65, sPmpsState:='IM2K0:XTES-RETICLE');
+
+CASE GVL.ePF1K0State OF
+    E_WFS_STATES.TARGET1, E_WFS_STATES.TARGET2, E_WFS_STATES.TARGET3, E_WFS_STATES.TARGET4, E_WFS_STATES.TARGET5 :
+        // Known state targets: allow less strict pmps
+        fbIM2K0.stYag.stPMPS.sPmpsState := 'IM2K0:XTES-YAG_WFS_IN';
+ELSE
+    // Out, Unknown, or an unexpected state: full pmps
+    fbIM2K0.stYag.stPMPS.sPmpsState := 'IM2K0:XTES-YAG';
+END_CASE
 
 fbIM2K0(
     fbFFHWO := GVL.fbFastFaultOutput1,

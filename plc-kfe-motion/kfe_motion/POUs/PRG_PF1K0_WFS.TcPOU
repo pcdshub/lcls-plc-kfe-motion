@@ -42,6 +42,7 @@ fbPF1K0(
     bEnableMotion := TRUE,
     bEnableBeamParams := TRUE,
     bEnablePositionLimits := TRUE,
+    eEnumGet => GVL.ePF1K0State,
 );
 ]]></ST>
     </Implementation>
