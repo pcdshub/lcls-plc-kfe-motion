@@ -78,7 +78,6 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-
 fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
 fbStateSetup(stPositionState:=fbIM1K4.stOut, fPosition:=0, sPmpsState:='IM1K4:XTES-OUT');
@@ -87,8 +86,8 @@ fbStateSetup(stPositionState:=fbIM1K4.stDiamond, fPosition:=-58.87, sPmpsState:=
 fbStateSetup(stPositionState:=fbIM1K4.stReticle, fPosition:=-28.87, sPmpsState:='IM1K4:XTES-RETICLE');
 
 fbIM1K4(
-    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
+    fbArbiter := GVL.fbArbiter2,
     stYStage := Main.M30,
     stZoomStage := Main.M31,
     stFocusStage := Main.M32,
@@ -99,7 +98,8 @@ fbIM1K4(
     bEnableMotion := TRUE,
     bEnableBeamParams := TRUE,
     bEnablePositionLimits := TRUE,
-);]]></ST>
+);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

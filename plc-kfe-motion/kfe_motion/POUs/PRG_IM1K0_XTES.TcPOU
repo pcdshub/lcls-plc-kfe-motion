@@ -77,8 +77,8 @@ fbStateSetup(stPositionState:=fbIM1K0.stDiamond, fPosition:=-57.65, sPmpsState:=
 fbStateSetup(stPositionState:=fbIM1K0.stReticle, fPosition:=-87.65, sPmpsState:='IM1K0:XTES-RETICLE');
 
 fbIM1K0(
-    fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput1,
+    fbArbiter := GVL.fbArbiter,
     stYStage := Main.M1,
     stZoomStage := Main.M2,
     stFocusStage := Main.M3,
