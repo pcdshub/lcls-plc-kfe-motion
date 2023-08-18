@@ -3,77 +3,76 @@
   <POU Name="PRG_ST1K4_TEST" Id="{75fb9ec1-c09f-44b1-93e4-582e1bc13e2e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_ST1K4_TEST
 VAR
-    fbMotion1: FB_MotionStage;
-
+    fbMotion: FB_MotionStage;
 
     {attribute 'pytmc' := '
-        pv: ST1K4:TEST:MMS:STATE
-        io: i
-        arrStates.array: 1..2
+        pv: ST1K4:TEST:MMS
+        astPositionState.array: 1..2
     '}
+    fbStates: FB_PositionState1D;
 
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fDelta := 1,
+        fVelocity := 5,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
+    astPositionState: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
 
-     fbST1K4_InOut_States:FB_PositionStateInOut;
+    {attribute 'pytmc' := '
+        pv: ST1K4:TEST:MMS:STATE:GET
+        io: i
+    '}
+    eEnumGet: E_EpicsInOut;
+    {attribute 'pytmc' := '
+        pv: ST1K4:TEST:MMS:STATE:SET
+        io: i0
+    '}
+    eEnumSet: E_EpicsInOut;
 
-     ST1K4_In:DUT_PositionState:= (
-         bUseRawCounts := FALSE,
-         bMoveOK := TRUE,
-         bValid := TRUE,
-         sName := 'IN',
-         fPosition := 2,
-         fDelta := 1,
-         fVelocity := 5);
+    bST3K4_in: BOOL;
 
-     ST1K4_Out:DUT_PositionState:= (
-         bUseRawCounts := FALSE,
-         bMoveOK := TRUE,
-         bValid := TRUE,
-         sName := 'OUT',
-         fPosition := 40,
-         fDelta := 1,
-         fVelocity := 5);
-
-     ST3K4_In: bool;
-
-     {attribute 'pytmc' := '
+    {attribute 'pytmc' := '
         pv: ST1K4:TEST:MMS:STATE:ST3K4_AUTO
         io: io
-
     '}
-     bST3K4_auto:bool:= TRUE ;
-
-
+    bST3K4_auto: BOOL := TRUE;
 END_VAR
 
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// M33, Axis 33
-Main.M33.nEnableMode	:= ENUM_StageEnableMode.DURING_MOTION;
+      <ST><![CDATA[
+// M33, Axis 33
+Main.M33.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 Main.M33.bHardwareEnable:= TRUE;
 Main.M33.bPowerSelf := TRUE;
 Main.M33.nBrakeMode := ENUM_StageBrakeMode.IF_ENABLED;
-fbMotion1(stMotionStage:=Main.M33);
-// in and out position
+fbMotion(stMotionStage:=Main.M33);
 
-    fbST1K4_InOut_States(
-          bEnable := TRUE,
-          stIn := ST1K4_In,
-          stOut := ST1K4_Out,
-          stMotionStage := Main.M33);
+// States
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
+fbStateSetup(stPositionState:=astPositionState[E_EpicsInOut.IN], sName:='IN', fPosition:=2);
+fbStateSetup(stPositionState:=astPositionState[E_EpicsInOut.OUT], sName:='OUT', fPosition:=40);
 
-        ST3K4_In:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4];
+fbStates(
+    stMotionStage:=Main.M33,
+    astPositionState:=astPositionState,
+    eEnumSet:=eEnumSet,
+    eEnumGet:=eEnumGet,
+    bEnable:=TRUE,
+);
 
-        IF bST3K4_auto THEN
-            IF ST3K4_In AND fbST1K4_InOut_States.enumGet <> ENUM_EpicsInOut.IN THEN
-                fbST1K4_InOut_States.enumSet:= ENUM_EpicsInOut.IN;
-            ELSIF NOT ST3K4_In AND fbST1K4_InOut_States.enumGet <> ENUM_EpicsInOut.OUT THEN
-                fbST1K4_InOut_States.enumSet:= ENUM_EpicsInOut.OUT;
-            END_IF
-        END_IF
+bST3K4_in := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4];
 
-
-
+IF bST3K4_auto THEN
+    IF bST3K4_in AND eEnumGet <> E_EpicsInOut.IN THEN
+        eEnumSet := ENUM_EpicsInOut.IN;
+    ELSIF NOT bST3K4_in AND eEnumGet <> E_EpicsInOut.OUT THEN
+        eEnumSet := ENUM_EpicsInOut.OUT;
+    END_IF
+END_IF
 ]]></ST>
     </Implementation>
   </POU>
