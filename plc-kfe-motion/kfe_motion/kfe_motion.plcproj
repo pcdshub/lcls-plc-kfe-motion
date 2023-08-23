@@ -37,18 +37,6 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\AT1K4\ST_SATT_Filter.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\AT1K4\E_SXR_SATT_Position.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\AT1K4\FB_AttenuatorElementDensity.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\AT1K4\FB_SXR_SATT_Stage.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\IM2K0\FB_XPIM_IM2K0.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -107,7 +95,6 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="POUs\AT1K4" />
     <Folder Include="POUs\IM2K0" />
     <Folder Include="Temp" />
     <Folder Include="VISUs" />
@@ -157,7 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, 2.7.0 (SLAC)</Resolution>
+      <Resolution>LCLS General, 2.9.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-common-components">
       <Resolution>lcls-twincat-common-components, 0.0.0 (SLAC)</Resolution>
