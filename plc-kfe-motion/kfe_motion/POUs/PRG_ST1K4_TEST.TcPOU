@@ -27,7 +27,7 @@ VAR
     eEnumGet: E_EpicsInOut;
     {attribute 'pytmc' := '
         pv: ST1K4:TEST:MMS:STATE:SET
-        io: i0
+        io: io
     '}
     eEnumSet: E_EpicsInOut;
 
