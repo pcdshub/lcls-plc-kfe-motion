@@ -20,9 +20,6 @@
     <Title>kfe_motion</Title>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\ENUM_SXR_SATT_Position.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\E_PositionState.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -41,6 +38,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\AT1K4\DUT_SATT_Filter.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\AT1K4\ENUM_SXR_SATT_Position.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\AT1K4\FB_AttenuatorElementDensity.TcPOU">
