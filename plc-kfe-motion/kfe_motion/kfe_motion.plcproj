@@ -46,9 +46,6 @@
     <Compile Include="POUs\AT1K4\FB_AttenuatorElementDensity.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\AT1K4\FB_SXR_SATT_PositionState.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\AT1K4\FB_SXR_SATT_Stage.TcPOU">
       <SubType>Code</SubType>
     </Compile>

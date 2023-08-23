@@ -14,7 +14,7 @@ TYPE E_SXR_SATT_Position :
     FILTER6 := 7,
     FILTER7 := 8,
     FILTER8 := 9
-);
+) UINT;
 END_TYPE
 ]]></Declaration>
   </DUT>
