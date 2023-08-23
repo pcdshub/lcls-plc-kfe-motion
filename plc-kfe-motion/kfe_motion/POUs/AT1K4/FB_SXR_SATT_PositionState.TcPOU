@@ -8,7 +8,7 @@ VAR_INPUT
          pv: SET
          io: io
      '}
-     enumSet: ENUM_SXR_SATT_Position;
+     enumSet: E_SXR_SATT_Position;
 
     // NOTE: Do not pragma these, let it happen in the manager.
      // Information about the OUT position
@@ -29,7 +29,7 @@ VAR_OUTPUT
         pv: GET
         io: i
     '}
-    enumGet: ENUM_SXR_SATT_Position;
+    enumGet: E_SXR_SATT_Position;
 END_VAR
 VAR
     bInitialized: BOOL := FALSE;

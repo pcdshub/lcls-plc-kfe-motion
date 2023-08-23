@@ -42,7 +42,7 @@ VAR_INPUT
 
     // Filter configuration information
     {attribute 'pytmc' := 'pv: FILTERS'}
-    arrFilters: ARRAY[1..8] OF DUT_SATT_Filter;
+    arrFilters: ARRAY[1..8] OF ST_SATT_Filter;
 
     // Debug helper for setting the stage's nEnableMode
     nEnableMode : E_StageEnableMode;
@@ -177,7 +177,7 @@ END_IF
 bIsStationary := NOT stAxis.Axis.Status.Moving;
 fbFF(
     i_DevName:=stAxis.sName,
-    i_xOK:=bIsStationary AND fbState.enumGet <> ENUM_SXR_SATT_Position.UNKNOWN,
+    i_xOK:=bIsStationary AND fbState.enumGet <> E_SXR_SATT_Position.UNKNOWN,
     io_fbFFHWO := fbFFHWO
 );
 

@@ -37,10 +37,10 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\AT1K4\DUT_SATT_Filter.TcDUT">
+    <Compile Include="POUs\AT1K4\ST_SATT_Filter.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\AT1K4\ENUM_SXR_SATT_Position.TcDUT">
+    <Compile Include="POUs\AT1K4\E_SXR_SATT_Position.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\AT1K4\FB_AttenuatorElementDensity.TcPOU">
