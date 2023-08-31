@@ -88,7 +88,7 @@ VAR_GLOBAL
     M18: DUT_MotionStage := (sName := 'SL1K0:POWER:MMS:SOUTH');
     {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:TOP'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K0-EL7041-E2]^STM Status^Status^Digital input 2;
-   
+                              .bLimitBackwardEnable := TIIB[SL1K0-EL7041-E2]^STM Status^Status^Digital input 1;
                               .nRawEncoderINT       := TIIB[SL1K0-EL3054-E12]^AI Standard Channel 2^Value'}
     M19: DUT_MotionStage := (sName := 'SL1K0:POWER:MMS:TOP');
     {attribute 'pytmc' := 'pv: SL1K0:POWER:MMS:NORTH'}
