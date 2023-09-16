@@ -186,7 +186,7 @@ VAR_GLOBAL
     M31: ST_MotionStage := (sName := 'IM1K4:XTES:CLZ');
     {attribute 'pytmc' := 'pv: IM1K4:XTES:CLF'}
     {attribute 'TcLinkTo' := '.bHome := TIIB[IM1K4-EL1088-E5]^Channel 4^Input;
-                              .nRawEncoderUINT     := TIIB[IM1K4-EL5042-E3]^ENC Status compact Channel 2^Counter value'}
+                              .nRawEncoderUINT     := TIIB[IM1K4-EL7342-E4]^ENC Status compact Channel 2^Counter value'}
     M32: ST_MotionStage := (sName := 'IM1K4:XTES:CLF');
 
     // ST1K4-TEST: 1 Axis
