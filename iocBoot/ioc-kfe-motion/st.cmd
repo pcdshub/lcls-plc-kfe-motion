@@ -3,20 +3,20 @@
 #
 #         Project: plc-kfe-motion.tsproj
 #        PLC name: kfe_motion (kfe_motion Instance)
-# Generated using: pytmc 2.15.1
-# Project version: v3.0.2-78-g6dceb80
-#    Project hash: 6dceb80fcc8ff5c45e87f19805ff4cd45992d150
-#     PLC IP/host: 
-#      PLC Net ID: 
+# Generated using: pytmc 2.15.1.dev27+g6970aee
+# Project version: v3.0.2-80-g7916e45
+#    Project hash: 7916e45f497dfdd037763a25ff3091f09558ba0a
+#     PLC IP/host: 172.21.92.58
+#      PLC Net ID: 172.21.92.58.1.1
 #  ** Production mode IOC **
 #  Using /cds/data/iocData for autosave and archiver settings.
 #
 # Libraries:
 #
-#   LCLS General: * -> 2.9.0 (SLAC)
-#   lcls-twincat-common-components: * -> 0.0.0 (SLAC)
-#   lcls-twincat-motion: * -> 3.0.1 (SLAC)
-#   lcls-twincat-physics: * -> 0.0.0 (SLAC)
+#   LCLS General: * -> 2.9.1 (SLAC)
+#   lcls-twincat-common-components: * -> 3.0.1 (SLAC)
+#   lcls-twincat-motion: * -> 4.0.2 (SLAC)
+#   lcls-twincat-physics: * -> 0.1.0 (SLAC)
 #   PMPS: * -> 3.0.14 (SLAC - LCLS)
 #   Tc2_MC2: * -> 3.3.42.0 (Beckhoff Automation GmbH)
 #   Tc2_SerialCom: * -> 3.3.7.0 (Beckhoff Automation GmbH)
@@ -42,17 +42,17 @@ dbLoadDatabase("$(ADS_IOC_TOP)/dbd/adsIoc.dbd")
 adsIoc_registerRecordDeviceDriver(pdbbase)
 
 epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
-epicsEnvSet("IPADDR",           "")
-epicsEnvSet("AMSID",            "")
+epicsEnvSet("IPADDR",           "172.21.92.58")
+epicsEnvSet("AMSID",            "172.21.92.58.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "9649")
+epicsEnvSet("ADS_MAX_PARAMS",   "6397")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
 
 # Add a route to the PLC automatically:
-system("${ADS_IOC_TOP}/scripts/add_route.sh  ^172.*")
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.92.58 ^172.*")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -544,16 +544,16 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:KFE:MOTION,IDX=1")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:KFE:MOTION")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:KFE:MOTION,PROJECT=plc-kfe-motion.tsproj,HASH=6dceb80,VERSION=v3.0.2-78-g6dceb80,PYTMC=2.15.1,PLC_HOST=")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:KFE:MOTION,PROJECT=plc-kfe-motion.tsproj,HASH=7916e45,VERSION=v3.0.2-80-g7916e45,PYTMC=2.15.1.dev27+g6970aee,PLC_HOST=172.21.92.58")
 
-#   LCLS General: * -> 2.9.0 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=LCLS_General,VERSION=2.9.0,VENDOR=SLAC")
-#   lcls-twincat-common-components: * -> 0.0.0 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-common-components,VERSION=0.0.0,VENDOR=SLAC")
-#   lcls-twincat-motion: * -> 3.0.1 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=3.0.1,VENDOR=SLAC")
-#   lcls-twincat-physics: * -> 0.0.0 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-physics,VERSION=0.0.0,VENDOR=SLAC")
+#   LCLS General: * -> 2.9.1 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=LCLS_General,VERSION=2.9.1,VENDOR=SLAC")
+#   lcls-twincat-common-components: * -> 3.0.1 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-common-components,VERSION=3.0.1,VENDOR=SLAC")
+#   lcls-twincat-motion: * -> 4.0.2 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=4.0.2,VENDOR=SLAC")
+#   lcls-twincat-physics: * -> 0.1.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-physics,VERSION=0.1.0,VENDOR=SLAC")
 #   PMPS: * -> 3.0.14 (SLAC - LCLS)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=PMPS,VERSION=3.0.14,VENDOR=SLAC - LCLS")
 #   Tc2_MC2: * -> 3.3.42.0 (Beckhoff Automation GmbH)
@@ -572,8 +572,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("kfe_motion.db", "PORT=$(ASYN_PORT),PREFIX=PLC:KFE:MOTION:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 8649
-callbackSetQueueSize(19298)
+# Total records: 5397
+callbackSetQueueSize(12794)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:KFE:MOTION:")
