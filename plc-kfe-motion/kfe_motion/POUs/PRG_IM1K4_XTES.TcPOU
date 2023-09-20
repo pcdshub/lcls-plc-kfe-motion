@@ -3,10 +3,7 @@
   <POU Name="PRG_IM1K4_XTES" Id="{7c144f06-c35b-43dd-8fb5-524985d03342}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM1K4_XTES
 VAR
-    {attribute 'pytmc' := '
-        pv: IM1K4:XTES
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: IM1K4:XTES'}
     {attribute 'TcLinkTo' := '.bZoomEndFwd := TIIB[IM1K4-EL1088-E5]^Channel 1^Input;
                               .bZoomEndBwd := TIIB[IM1K4-EL1088-E5]^Channel 2^Input;
                               .bFocusEndFwd := TIIB[IM1K4-EL1088-E5]^Channel 3^Input;
@@ -14,6 +11,12 @@ VAR
                               .fbOpal.bOpalPower := TIIB[IM1K4-EL2004-E2]^Channel 2^Output;
                               .fbLED.bLedPower := TIIB[IM1K4-EL2004-E2]^Channel 3^Output'}
     fbIM1K4: FB_XPIM;
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
     {attribute 'TcLinkTo' := '.Status := TIIB[IM1K4-EL6002-E6]^COM TxPDO-Map Inputs Channel 1^Status;
                               .D[0] := TIIB[IM1K4-EL6002-E6]^COM TxPDO-Map Inputs Channel 1^Data In 0;
                               .D[1] := TIIB[IM1K4-EL6002-E6]^COM TxPDO-Map Inputs Channel 1^Data In 1;
@@ -63,48 +66,40 @@ VAR
                               .D[21] := TIIB[IM1K4-EL6002-E6]^COM RxPDO-Map Outputs Channel 1^Data Out 21'}
     stEL6Out AT %Q*: EL6OutData22b;
 
-         {attribute 'pytmc' := 'pv: IM1K4:SCRP:LED:01:PWR
-      io: io
+    {attribute 'pytmc' := '
+        pv: IM1K4:SCRP:LED:01:PWR
+        io: io
         field: ZNAM OFF
         field: ONAM ON
-'}
-
-     {attribute 'TcLinkTo' := 'TIIB[IM1K4-EL2004-E2]^Channel 4^Output'}
+    '}
+    {attribute 'TcLinkTo' := 'TIIB[IM1K4-EL2004-E2]^Channel 4^Output'}
     bIM1K4_SCRP_LED_01 AT %Q*: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbIM1K4.stOut.fPosition := 0;
-fbIM1K4.stOut.bUseRawCounts := FALSE;
-fbIM1K4.stOut.bValid := TRUE;
-fbIM1K4.stOut.stPMPS.sPmpsState := 'IM1K4:XTES-OUT';
+      <ST><![CDATA[
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbIM1K4.stYag.fPosition := -88.87;
-fbIM1K4.stYag.bUseRawCounts := FALSE;
-fbIM1K4.stYag.bValid := TRUE;
-fbIM1K4.stYag.stPMPS.sPmpsState := 'IM1K4:XTES-YAG';
-
-fbIM1K4.stDiamond.fPosition := -58.87;
-fbIM1K4.stDiamond.bUseRawCounts := FALSE;
-fbIM1K4.stDiamond.bValid := TRUE;
-fbIM1K4.stDiamond.stPMPS.sPmpsState := 'IM1K4:XTES-DIAMOND';
-
-fbIM1K4.stReticle.fPosition := -28.87;
-fbIM1K4.stReticle.bUseRawCounts := FALSE;
-fbIM1K4.stReticle.bValid := TRUE;
-fbIM1K4.stReticle.stPMPS.sPmpsState := 'IM1K4:XTES-RETICLE';
+fbStateSetup(stPositionState:=fbIM1K4.stOut, fPosition:=0, sPmpsState:='IM1K4:XTES-OUT');
+fbStateSetup(stPositionState:=fbIM1K4.stYag, fPosition:=-88.87, sPmpsState:='IM1K4:XTES-YAG');
+fbStateSetup(stPositionState:=fbIM1K4.stDiamond, fPosition:=-58.87, sPmpsState:='IM1K4:XTES-DIAMOND');
+fbStateSetup(stPositionState:=fbIM1K4.stReticle, fPosition:=-28.87, sPmpsState:='IM1K4:XTES-RETICLE');
 
 fbIM1K4(
-    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
+    fbArbiter := GVL.fbArbiter2,
     stYStage := Main.M30,
     stZoomStage := Main.M31,
     stFocusStage := Main.M32,
     stEl6In := stEL6In,
     stEl6Out := stEl6Out,
-    sPmpsDeviceName := 'IM1K4:XTES',
+    sDeviceName := 'IM1K4:XTES',
     sTransitionKey := 'IM1K4:XTES-TRANSITION',
-);]]></ST>
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
+);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

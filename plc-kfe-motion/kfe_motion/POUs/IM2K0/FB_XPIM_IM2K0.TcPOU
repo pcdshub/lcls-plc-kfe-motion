@@ -3,30 +3,76 @@
   <POU Name="FB_XPIM_IM2K0" Id="{aa9f645d-c463-4c9e-8962-8aa3b3b2b9c3}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_XPIM_IM2K0
 (*
-    IM2K0 has been modified to replace the lens, illuminator, and camera with the PPM versions
+    Function block for the IM2K0 imager. This used to be a standard XPIM, but
+    IM2K0 has been modified to replace the lens, illuminator, and camera with the PPM versions.
+
+    This function block therefore controls:
+    - Y motion (XPIM style)
+    - Y scintillator states (XPIM style)
+    - camera power (PPM style)
+    - camera illuminator (PPM style but with XPIM style on/off only)
+    - flowswitch (XPIM style, not fully implemented)
 *)
 VAR_IN_OUT
-    stYStage: DUT_MotionStage;
-    fbArbiter: FB_Arbiter;
+    // Y motor (state select).
+    stYStage: ST_MotionStage;
+    // The fast fault output to fault to.
     fbFFHWO: FB_HardwareFFOutput;
+    // The arbiter to request beam conditions from.
+    fbArbiter: FB_Arbiter;
 END_VAR
 VAR_INPUT
+    // Settings for the OUT state.
     stOut: DUT_PositionState;
+    // Settings for the YAG state.
     stYag: DUT_PositionState;
+    // Settings for the DIAMOND state.
     stDiamond: DUT_PositionState;
+    // Settings for the RETICLE state.
     stReticle: DUT_PositionState;
-    sPmpsDeviceName: STRING;
+    // Set this to a non-unknown value to request a new move.
+    {attribute 'pytmc' := '
+        pv: MMS:STATE:SET
+        io: io
+    '}
+    eEnumSet: E_XPIM_States;
+    // Set this to TRUE to enable input state moves, or FALSE to disable them.
+    bEnableMotion: BOOL;
+    // Set this to TRUE to enable beam parameter checks, or FALSE to disable them.
+    bEnableBeamParams: BOOL;
+    // Set this to TRUE to enable position limit checks, or FALSE to disable them.
+    bEnablePositionLimits: BOOL;
+    // The name of the device for use in the PMPS DB lookup and diagnostic screens.
+    sDeviceName: STRING;
+    // The name of the transition state in the PMPS database.
     sTransitionKey: STRING;
+    // Set this to TRUE to re-read the loaded database immediately (useful for debug).
+    bReadDBNow: BOOL;
+END_VAR
+VAR_OUTPUT
+    // The current position state as an enum.
+    {attribute 'pytmc' := '
+        pv: MMS:STATE:GET
+        io: i
+    '}
+    eEnumGet: E_XPIM_States;
+    // The PMPS database lookup associated with the current position state.
+    stDbStateParams: ST_DbStateParams;
 END_VAR
 VAR
+    bInit: BOOL;
+
     fbYStage: FB_MotionStage;
 
+    fbStateDefaults: FB_PositionState_Defaults;
+
     {attribute 'pytmc' := '
-        pv: MMS:STATE
-        io: io
-        arrStates.array: 1..4
+        pv: MMS
+        astPositionState.array: 1..4
     '}
-    fbStates: FB_XPIM_States;
+    fbStates: FB_PositionStatePMPS1D;
+    astPositionState: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+    fbArrCheckWrite: FB_CheckPositionStateWrite;
 
     {attribute 'pytmc' := '
         pv: CAM
@@ -43,30 +89,75 @@ VAR
     '}
     fbFlowSwitch: FB_XTES_Flowswitch;
 END_VAR
-]]></Declaration>
+VAR CONSTANT
+    // State defaults if not provided
+    fDelta: LREAL := 2;
+    fAccel: LREAL := 200;
+    fOutDecel: LREAL := 25;
+END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbYStage(stMotionStage:=stYStage);
-stYStage.bHardwareEnable := TRUE;
-stYStage.bPowerSelf := FALSE;
-// No limit switch at the bottom
-stYStage.bLimitBackwardEnable := TRUE;
+      <ST><![CDATA[
+IF NOT bInit THEN
+    bInit := TRUE;
+
+    stYStage.bHardwareEnable := TRUE;
+    stYStage.bPowerSelf := FALSE;
+    // No limit switch at the bottom
+    stYStage.bLimitBackwardEnable := TRUE;
+
+    // Partial backcompat, this used to set fVelocity too but this should be set per install
+    fbStateDefaults(stPositionState:=stOut, sNameDefault:='OUT', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fOutDecel);
+    fbStateDefaults(stPositionState:=stYag, sNameDefault:='YAG', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stDiamond, sNameDefault:='DIAMOND', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stReticle, sNameDefault:='RETICLE', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+END_IF
+
+fbYStage(stMotionStage:=stYStage);
+
+// We need to update from PLC or from EPICS, but not both
+fbArrCheckWrite(
+    astPositionState:=astPositionState,
+    bCheck:=TRUE,
+    bSave:=FALSE,
+);
+IF NOT fbArrCheckWrite.bHadWrite THEN
+    astPositionState[E_XPIM_States.OUT] := stOut;
+    astPositionState[E_XPIM_States.YAG] := stYag;
+    astPositionState[E_XPIM_States.DIAMOND] := stDiamond;
+    astPositionState[E_XPIM_States.RETICLE] := stReticle;
+END_IF
 
 fbStates(
-    fbArbiter:=fbArbiter,
-    fbFFHWO:=fbFFHWO,
     stMotionStage:=stYStage,
-    bEnable:=TRUE,
-    stOut:=stOut,
-    stYag:=stYag,
-    stDiamond:=stDiamond,
-    stReticle:=stReticle,
-    sPmpsDeviceName:=sPmpsDeviceName,
+    astPositionState:=astPositionState,
+    eEnumSet:=eEnumSet,
+    eEnumGet:=eEnumGet,
+    fbFFHWO:=fbFFHWO,
+    fbArbiter:=fbArbiter,
+    bEnableMotion:=bEnableMotion,
+    bEnableBeamParams:=bEnableBeamParams,
+    bEnablePositionLimits:=bEnablePositionLimits,
+    sDeviceName:=sDeviceName,
     sTransitionKey:=sTransitionKey,
+    bReadDBNow:=bReadDBNow,
+    stDbStateParams=>stDbStateParams,
 );
 
+fbArrCheckWrite(
+    astPositionState:=astPositionState,
+    bCheck:=FALSE,
+    bSave:=TRUE,
+);
+
+stOut := astPositionState[E_XPIM_States.OUT];
+stYag := astPositionState[E_XPIM_States.YAG];
+stDiamond := astPositionState[E_XPIM_States.DIAMOND];
+stReticle := astPositionState[E_XPIM_States.RETICLE];
+
 fbGige();
-fbLED(enumXPIM:=fbStates.enumGet);
-fbFlowSwitch();]]></ST>
+fbLED(enumXPIM:=eEnumGet);
+fbFlowSwitch();
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

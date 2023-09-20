@@ -69,7 +69,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 fbSL1K0.bMoveOk := bMoveOk;
-
+Main.M18.bLimitBackwardEnable := True;
 
 
 

@@ -3,48 +3,52 @@
   <POU Name="PRG_IM2K0_XTES" Id="{424da978-a5ca-4969-834d-244f71fa24fe}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM2K0_XTES
 VAR
-    {attribute 'pytmc' := '
-        pv: IM2K0:XTES
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: IM2K0:XTES'}
     {attribute 'TcLinkTo' := '.fbLED.bLedPower := TIIB[IM2K0-EL2004]^Channel 3^Output;
                               .fbGige.bGigePower := TIIB[IM2K0-EL2004]^Channel 4^Output'}
     fbIM2K0: FB_XPIM_IM2K0;
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
 
     {attribute 'TcLinkTo' := 'TIIB[IM2K0-EL7041]^STM Status^Status^Digital input 1'}
     bDefectiveLimitSwitch AT %I*: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbIM2K0.stOut.fPosition := 0;
-fbIM2K0.stOut.bUseRawCounts := FALSE;
-fbIM2K0.stOut.bValid := TRUE;
-fbIM2K0.stOut.stPMPS.sPmpsState := 'IM2K0:XTES-OUT';
+      <ST><![CDATA[
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbIM2K0.stYag.fPosition := -87.65;
-fbIM2K0.stYag.bUseRawCounts := FALSE;
-fbIM2K0.stYag.bValid := TRUE;
-fbIM2K0.stYag.stPMPS.sPmpsState := 'IM2K0:XTES-YAG';
+fbStateSetup(stPositionState:=fbIM2K0.stOut, fPosition:=0, sPmpsState:='IM2K0:XTES-OUT');
+fbStateSetup(stPositionState:=fbIM2K0.stYag, fPosition:=-87.65);
+fbStateSetup(stPositionState:=fbIM2K0.stDiamond, fPosition:=-57.65, sPmpsState:='IM2K0:XTES-DIAMOND');
+fbStateSetup(stPositionState:=fbIM2K0.stReticle, fPosition:=-27.65, sPmpsState:='IM2K0:XTES-RETICLE');
 
-fbIM2K0.stDiamond.fPosition := -57.65;
-fbIM2K0.stDiamond.bUseRawCounts := FALSE;
-fbIM2K0.stDiamond.bValid := TRUE;
-fbIM2K0.stDiamond.stPMPS.sPmpsState := 'IM2K0:XTES-DIAMOND';
-
-fbIM2K0.stReticle.fPosition := -27.65;
-fbIM2K0.stReticle.bUseRawCounts := FALSE;
-fbIM2K0.stReticle.bValid := TRUE;
-fbIM2K0.stReticle.stPMPS.sPmpsState := 'IM2K0:XTES-RETICLE';
-
-Main.M5.bLimitForwardEnable := bDefectiveLimitSwitch OR (Main.M5.stAxisStatus.fActPosition < 0);
+CASE GVL.ePF1K0State OF
+    E_WFS_STATES.TARGET1, E_WFS_STATES.TARGET2, E_WFS_STATES.TARGET3, E_WFS_STATES.TARGET4, E_WFS_STATES.TARGET5 :
+        // Known state targets: allow less strict pmps
+        fbIM2K0.stYag.stPMPS.sPmpsState := 'IM2K0:XTES-YAG_WFS_IN';
+ELSE
+    // Out, Unknown, or an unexpected state: full pmps
+    fbIM2K0.stYag.stPMPS.sPmpsState := 'IM2K0:XTES-YAG';
+END_CASE
 
 fbIM2K0(
-    fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput1,
+    fbArbiter := GVL.fbArbiter,
     stYStage := Main.M5,
-    sPmpsDeviceName := 'IM2K0:XTES',
+    sDeviceName := 'IM2K0:XTES',
     sTransitionKey := 'IM2K0:XTES-TRANSITION',
-);]]></ST>
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
+);
+
+Main.M5.bLimitForwardEnable := bDefectiveLimitSwitch OR (Main.M5.stAxisStatus.fActPosition < 0);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

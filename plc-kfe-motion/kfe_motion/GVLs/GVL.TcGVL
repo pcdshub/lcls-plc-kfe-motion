@@ -19,6 +19,7 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:PMPS:CurTrans'}
     rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
 
+    ePF1K0State: E_WFS_States;
 END_VAR
 
 VAR_GLOBAL CONSTANT

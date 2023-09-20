@@ -20,9 +20,6 @@
     <Title>kfe_motion</Title>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\ENUM_SXR_SATT_Position.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\E_PositionState.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -38,18 +35,6 @@
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\AT1K4\DUT_SATT_Filter.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\AT1K4\FB_AttenuatorElementDensity.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\AT1K4\FB_SXR_SATT_PositionState.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\AT1K4\FB_SXR_SATT_Stage.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\IM2K0\FB_XPIM_IM2K0.TcPOU">
@@ -110,7 +95,6 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="POUs\AT1K4" />
     <Folder Include="POUs\IM2K0" />
     <Folder Include="Temp" />
     <Folder Include="VISUs" />
@@ -120,18 +104,30 @@
     <PlaceholderReference Include="LCLS General">
       <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
       <Namespace>LCLS_General</Namespace>
+      <Parameters>
+        <Parameter xmlns="">
+          <Key>MAX_STATES</Key>
+          <Value>9</Value>
+        </Parameter>
+      </Parameters>
+    </PlaceholderReference>
+    <PlaceholderReference Include="lcls-twincat-common-components">
+      <DefaultResolution>lcls-twincat-common-components, * (SLAC)</DefaultResolution>
+      <Namespace>lcls_twincat_common_components</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="lcls-twincat-motion">
       <DefaultResolution>lcls-twincat-motion, * (SLAC)</DefaultResolution>
       <Namespace>lcls_twincat_motion</Namespace>
+      <Parameters>
+        <Parameter xmlns="">
+          <Key>MAX_STATE_MOTORS</Key>
+          <Value>1</Value>
+        </Parameter>
+      </Parameters>
     </PlaceholderReference>
     <PlaceholderReference Include="lcls-twincat-physics">
       <DefaultResolution>lcls-twincat-physics, * (SLAC)</DefaultResolution>
       <Namespace>lcls_twincat_physics</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="lcls2-cc-lib">
-      <DefaultResolution>lcls2-cc-lib, * (SLAC)</DefaultResolution>
-      <Namespace>lcls2_cc_lib</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="PMPS">
       <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
@@ -160,16 +156,16 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, 2.7.0 (SLAC)</Resolution>
+      <Resolution>LCLS General, 2.9.1 (SLAC)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="lcls-twincat-common-components">
+      <Resolution>lcls-twincat-common-components, 3.0.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 2.0.1 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 4.0.3 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-physics">
-      <Resolution>lcls-twincat-physics, 0.0.0 (SLAC)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="lcls2-cc-lib">
-      <Resolution>lcls2-cc-lib, 2.0.0 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-physics, 0.1.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 3.0.14 (SLAC - LCLS)</Resolution>

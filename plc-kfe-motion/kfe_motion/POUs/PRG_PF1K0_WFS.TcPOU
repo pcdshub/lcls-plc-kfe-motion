@@ -3,10 +3,7 @@
   <POU Name="PRG_PF1K0_WFS" Id="{55cdfddd-07ab-43e7-a2b9-23f598a27404}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PF1K0_WFS
 VAR
-    {attribute 'pytmc' := '
-        pv: PF1K0:WFS
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: PF1K0:WFS'}
     {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Error;
                               .fbThermoCouple1.bUnderrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Underrange;
                               .fbThermoCouple1.bOverrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Overrange;
@@ -16,47 +13,38 @@ VAR
                               .fbThermoCouple2.bOverrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Status^Overrange;
                               .fbThermoCouple2.iRaw := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Value'}
     fbPF1K0: FB_WFS;
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbPF1K0.stOut.fPosition := -15;
-fbPF1K0.stOut.bUseRawCounts := FALSE;
-fbPF1K0.stOut.bValid := TRUE;
-fbPF1K0.stOut.stPMPS.sPmpsState := 'PF1K0:WFS-OUT';
+      <ST><![CDATA[
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbPF1K0.stTarget1.fPosition := -96.623;
-fbPF1K0.stTarget1.bUseRawCounts := FALSE;
-fbPF1K0.stTarget1.bValid := TRUE;
-fbPF1K0.stTarget1.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET1';
-
-fbPF1K0.stTarget2.fPosition := -82.25;
-fbPF1K0.stTarget2.bUseRawCounts := FALSE;
-fbPF1K0.stTarget2.bValid := TRUE;
-fbPF1K0.stTarget2.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET2';
-
-fbPF1K0.stTarget3.fPosition := -67.874;
-fbPF1K0.stTarget3.bUseRawCounts := FALSE;
-fbPF1K0.stTarget3.bValid := TRUE;
-fbPF1K0.stTarget3.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET3';
-
-fbPF1K0.stTarget4.fPosition := -53.5;
-fbPF1K0.stTarget4.bUseRawCounts := FALSE;
-fbPF1K0.stTarget4.bValid := TRUE;
-fbPF1K0.stTarget4.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET4';
-
-fbPF1K0.stTarget5.fPosition := -39.124;
-fbPF1K0.stTarget5.bUseRawCounts := FALSE;
-fbPF1K0.stTarget5.bValid := TRUE;
-fbPF1K0.stTarget5.stPMPS.sPmpsState := 'PF1K0:WFS-TARGET5';
+fbStateSetup(stPositionState:=fbPF1K0.stOut, fPosition:=-15, sPmpsState:='PF1K0:WFS-OUT');
+fbStateSetup(stPositionState:=fbPF1K0.stTarget1, fPosition:=-96.623, sPmpsState:='PF1K0:WFS-TARGET1');
+fbStateSetup(stPositionState:=fbPF1K0.stTarget2, fPosition:=-82.25, sPmpsState:='PF1K0:WFS-TARGET2');
+fbStateSetup(stPositionState:=fbPF1K0.stTarget3, fPosition:=-67.874, sPmpsState:='PF1K0:WFS-TARGET3');
+fbStateSetup(stPositionState:=fbPF1K0.stTarget4, fPosition:=-53.5, sPmpsState:='PF1K0:WFS-TARGET4');
+fbStateSetup(stPositionState:=fbPF1K0.stTarget5, fPosition:=-39.124, sPmpsState:='PF1K0:WFS-TARGET5');
 
 fbPF1K0(
-    fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput1,
+    fbArbiter := GVL.fbArbiter,
     stYStage := Main.M8,
     stZStage := Main.M9,
-    sPmpsDeviceName := 'PF1K0:WFS',
+    sDeviceName := 'PF1K0:WFS',
     sTransitionKey := 'PF1K0:WFS-TRANSITION',
-);]]></ST>
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
+    eEnumGet => GVL.ePF1K0State,
+);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
