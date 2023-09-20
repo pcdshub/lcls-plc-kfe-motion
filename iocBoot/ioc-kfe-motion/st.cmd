@@ -4,8 +4,8 @@
 #         Project: plc-kfe-motion.tsproj
 #        PLC name: kfe_motion (kfe_motion Instance)
 # Generated using: pytmc 2.15.1.dev27+g6970aee
-# Project version: v3.0.2-84-g0020c5a
-#    Project hash: 0020c5af7ff44e282fda1550a7b0306fdbc99c05
+# Project version: v3.0.2-88-g612ff78
+#    Project hash: 612ff78be40b56167a8ad474cadf549e021470ee
 #     PLC IP/host: 172.21.92.58
 #      PLC Net ID: 172.21.92.58.1.1
 #  ** Production mode IOC **
@@ -15,7 +15,7 @@
 #
 #   LCLS General: * -> 2.9.1 (SLAC)
 #   lcls-twincat-common-components: * -> 3.0.1 (SLAC)
-#   lcls-twincat-motion: * -> 4.0.3 (SLAC)
+#   lcls-twincat-motion: * -> 4.0.4 (SLAC)
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
 #   PMPS: * -> 3.0.14 (SLAC - LCLS)
 #   Tc2_MC2: * -> 3.3.42.0 (Beckhoff Automation GmbH)
@@ -544,14 +544,14 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:KFE:MOTION,IDX=1")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:KFE:MOTION")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:KFE:MOTION,PROJECT=plc-kfe-motion.tsproj,HASH=0020c5a,VERSION=v3.0.2-84-g0020c5a,PYTMC=2.15.1.dev27+g6970aee,PLC_HOST=172.21.92.58")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:KFE:MOTION,PROJECT=plc-kfe-motion.tsproj,HASH=612ff78,VERSION=v3.0.2-88-g612ff78,PYTMC=2.15.1.dev27+g6970aee,PLC_HOST=172.21.92.58")
 
 #   LCLS General: * -> 2.9.1 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=LCLS_General,VERSION=2.9.1,VENDOR=SLAC")
 #   lcls-twincat-common-components: * -> 3.0.1 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-common-components,VERSION=3.0.1,VENDOR=SLAC")
-#   lcls-twincat-motion: * -> 4.0.3 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=4.0.3,VENDOR=SLAC")
+#   lcls-twincat-motion: * -> 4.0.4 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=4.0.4,VENDOR=SLAC")
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:KFE:MOTION,DEPENDENCY=lcls-twincat-physics,VERSION=0.1.0,VENDOR=SLAC")
 #   PMPS: * -> 3.0.14 (SLAC - LCLS)
