@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-kfe-motion  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,7 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_nc.html">NC Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_links.html">Links</a></li>
 </ul>
@@ -82,6 +86,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#prg-im1k3-ppm">PRG_IM1K3_PPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im1k4-xtes">PRG_IM1K4_XTES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im2k0-xtes">PRG_IM2K0_XTES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-other">PRG_OTHER</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-pf1k0-wfs">PRG_PF1K0_WFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-rtdsk0">PRG_RTDSK0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-sl1k0-power">PRG_SL1K0_POWER</a></li>
@@ -455,7 +460,7 @@
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[ST1K4-EL7041-E4]^STM Status^Status^Digital input 1;</span>
                               <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">ST1K4</span><span class="o">-</span><span class="n">EL7041</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">bBrakeRelease</span>        <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">ST1K4</span><span class="o">-</span><span class="n">EL2202</span><span class="o">-</span><span class="n">E3</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>      <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">ST1K4</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E5A</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>      <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">ST1K4</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E6</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="n">M33</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;ST1K4:TEST:MMS:01&#39;</span><span class="p">);</span>
 <span class="n">END_VAR</span>
 </pre></div>
@@ -1350,7 +1355,7 @@
     <span class="n">fbLED</span><span class="p">:</span> <span class="n">FB_XPIM_LED</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">SFW</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">FSW</span>
     <span class="s1">&#39;}</span>
     <span class="n">fbFlowSwitch</span><span class="p">:</span> <span class="n">FB_XTES_Flowswitch</span><span class="p">;</span>
 <span class="n">END_VAR</span>
@@ -1443,6 +1448,7 @@
 <span class="n">PRG_AT1K4_SOLID</span><span class="p">();</span>
 <span class="n">PRG_IM1K4_XTES</span><span class="p">();</span>
 <span class="n">PRG_ST1K4_TEST</span><span class="p">();</span>
+<span class="n">PRG_OTHER</span><span class="p">();</span>
 
 <span class="n">PRG_3_PMPS_POST</span><span class="p">();</span>
 <span class="n">PRG_4_LOG</span><span class="p">();</span>
@@ -1460,6 +1466,7 @@
 <li><p><a class="reference internal" href="#prg-im1k3-ppm">PRG_IM1K3_PPM</a></p></li>
 <li><p><a class="reference internal" href="#prg-im1k4-xtes">PRG_IM1K4_XTES</a></p></li>
 <li><p><a class="reference internal" href="#prg-im2k0-xtes">PRG_IM2K0_XTES</a></p></li>
+<li><p><a class="reference internal" href="#prg-other">PRG_OTHER</a></p></li>
 <li><p><a class="reference internal" href="#prg-pf1k0-wfs">PRG_PF1K0_WFS</a></p></li>
 <li><p><a class="reference internal" href="#prg-rtdsk0">PRG_RTDSK0</a></p></li>
 <li><p><a class="reference internal" href="#prg-sl1k0-power">PRG_SL1K0_POWER</a></p></li>
@@ -1806,7 +1813,9 @@
                               <span class="o">.</span><span class="n">bFocusEndFwd</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K0</span><span class="o">-</span><span class="n">EL1088</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">bFocusEndBwd</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K0</span><span class="o">-</span><span class="n">EL1088</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbOpal</span><span class="o">.</span><span class="n">bOpalPower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K0</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbLED</span><span class="o">.</span><span class="n">bLedPower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K0</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">fbLED</span><span class="o">.</span><span class="n">bLedPower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K0</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K0</span><span class="o">-</span><span class="n">EL1004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span>
+<span class="s1">&#39;}</span>
     <span class="n">fbIM1K0</span><span class="p">:</span> <span class="n">FB_XPIM</span><span class="p">;</span>
     <span class="n">fbStateSetup</span><span class="p">:</span> <span class="n">FB_StateSetupHelper</span><span class="p">;</span>
     <span class="n">stDefault</span><span class="p">:</span> <span class="n">ST_PositionState</span> <span class="o">:=</span> <span class="p">(</span>
@@ -1911,7 +1920,8 @@
                               <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K3</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K3</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K3</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K3</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K3</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">ST1K4</span><span class="o">-</span><span class="n">EL1004</span><span class="o">-</span><span class="n">E5</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="s1">&#39;}</span>
     <span class="n">fbIM1K3</span><span class="p">:</span> <span class="n">FB_PPM</span><span class="p">;</span>
     <span class="n">fbStateSetup</span><span class="p">:</span> <span class="n">FB_StateSetupHelper</span><span class="p">;</span>
     <span class="n">stDefault</span><span class="p">:</span> <span class="n">ST_PositionState</span> <span class="o">:=</span> <span class="p">(</span>
@@ -1959,7 +1969,8 @@
                               <span class="o">.</span><span class="n">bFocusEndFwd</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K4</span><span class="o">-</span><span class="n">EL1088</span><span class="o">-</span><span class="n">E5</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">bFocusEndBwd</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K4</span><span class="o">-</span><span class="n">EL1088</span><span class="o">-</span><span class="n">E5</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbOpal</span><span class="o">.</span><span class="n">bOpalPower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K4</span><span class="o">-</span><span class="n">EL2004</span><span class="o">-</span><span class="n">E2</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbLED</span><span class="o">.</span><span class="n">bLedPower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K4</span><span class="o">-</span><span class="n">EL2004</span><span class="o">-</span><span class="n">E2</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">fbLED</span><span class="o">.</span><span class="n">bLedPower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K4</span><span class="o">-</span><span class="n">EL2004</span><span class="o">-</span><span class="n">E2</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">ST1K4</span><span class="o">-</span><span class="n">EL1004</span><span class="o">-</span><span class="n">E5</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="s1">&#39;} // same as PC1K4</span>
     <span class="n">fbIM1K4</span><span class="p">:</span> <span class="n">FB_XPIM</span><span class="p">;</span>
     <span class="n">fbStateSetup</span><span class="p">:</span> <span class="n">FB_StateSetupHelper</span><span class="p">;</span>
     <span class="n">stDefault</span><span class="p">:</span> <span class="n">ST_PositionState</span> <span class="o">:=</span> <span class="p">(</span>
@@ -2064,7 +2075,8 @@
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: IM2K0:XTES&#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.fbLED.bLedPower := TIIB[IM2K0-EL2004]^Channel 3^Output;</span>
-                              <span class="o">.</span><span class="n">fbGige</span><span class="o">.</span><span class="n">bGigePower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM2K0</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">fbGige</span><span class="o">.</span><span class="n">bGigePower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM2K0</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">SL2K0</span><span class="o">-</span><span class="n">EL1004</span><span class="o">-</span><span class="n">E12</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="s1">&#39;} // same cooling loop as SL2K0</span>
     <span class="n">fbIM2K0</span><span class="p">:</span> <span class="n">FB_XPIM_IM2K0</span><span class="p">;</span>
     <span class="n">fbStateSetup</span><span class="p">:</span> <span class="n">FB_StateSetupHelper</span><span class="p">;</span>
     <span class="n">stDefault</span><span class="p">:</span> <span class="n">ST_PositionState</span> <span class="o">:=</span> <span class="p">(</span>
@@ -2117,6 +2129,26 @@
 </dd>
 </dl>
 </section>
+<section id="prg-other">
+<h2>PRG_OTHER<a class="headerlink" href="#prg-other" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_OTHER</span>
+<span class="o">//</span> <span class="n">A</span> <span class="n">Program</span> <span class="k">for</span> <span class="n">implementing</span> <span class="n">devices</span> <span class="k">with</span> <span class="n">minimal</span> <span class="n">interaction</span><span class="o">.</span>
+<span class="n">VAR</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PC1K0:XTES:FSW&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bFlowOk := TIIB[IM1K0-EL1004]^Channel 1^Input&#39;</span><span class="p">}</span>
+    <span class="n">fbPC1K0FlowSwitch</span> <span class="p">:</span> <span class="n">FB_XTES_Flowswitch</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PC1K4:XTES:FSW&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 2^Input&#39;</span><span class="p">}</span>
+    <span class="n">fbPC1K4FlowSwitch</span> <span class="p">:</span> <span class="n">FB_XTES_Flowswitch</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">fbPC1K0FlowSwitch</span><span class="p">();</span>
+<span class="n">fbPC1K4FlowSwitch</span><span class="p">();</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</section>
 <section id="prg-pf1k0-wfs">
 <h2>PRG_PF1K0_WFS<a class="headerlink" href="#prg-pf1k0-wfs" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_PF1K0_WFS</span>
@@ -2129,7 +2161,8 @@
                               <span class="o">.</span><span class="n">fbThermoCouple2</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbThermoCouple2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbThermoCouple2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbThermoCouple2</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">fbThermoCouple2</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">SL2K0</span><span class="o">-</span><span class="n">EL1004</span><span class="o">-</span><span class="n">E12</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="s1">&#39;} // shares same cooling loop as SL2K0</span>
     <span class="n">fbPF1K0</span><span class="p">:</span> <span class="n">FB_WFS</span><span class="p">;</span>
     <span class="n">fbStateSetup</span><span class="p">:</span> <span class="n">FB_StateSetupHelper</span><span class="p">;</span>
     <span class="n">stDefault</span><span class="p">:</span> <span class="n">ST_PositionState</span> <span class="o">:=</span> <span class="p">(</span>
@@ -2369,8 +2402,9 @@
                               <span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">SL1K0</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="n">E9</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">SL1K0</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="n">E9</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">SL1K0</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="n">E9</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">AptArrayStatus</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus^AptArrayStatus[1];</span>
-                              <span class="o">.</span><span class="n">AptArrayReq</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Inputs^AptArrayReq^AptArrayReq[1]&#39;</span><span class="p">}</span>
+                              <span class="o">.</span><span class="n">AptArrayStatus</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PMPS_PRE</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Outputs</span><span class="o">^</span><span class="n">AptArrayStatus</span><span class="o">^</span><span class="n">AptArrayStatus</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+                              <span class="o">.</span><span class="n">AptArrayReq</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PMPS_PRE</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">AptArrayReq</span><span class="o">^</span><span class="n">AptArrayReq</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+                              <span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K0</span><span class="o">-</span><span class="n">EL1004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="s1">&#39;}</span>
     <span class="n">fbSL1K0</span><span class="p">:</span> <span class="n">FB_SLITS_POWER</span><span class="p">;</span>
 <span class="o">//</span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus&#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2480,8 +2514,9 @@
                               <span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">SL2K0</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="n">E11</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">SL2K0</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="n">E11</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">RTD_Bottom_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">SL2K0</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="n">E11</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">AptArrayStatus</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus^AptArrayStatus[2];</span>
-                              <span class="o">.</span><span class="n">AptArrayReq</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Inputs^AptArrayReq^AptArrayReq[2]&#39;</span><span class="p">}</span>
+                              <span class="o">.</span><span class="n">AptArrayStatus</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PMPS_PRE</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Outputs</span><span class="o">^</span><span class="n">AptArrayStatus</span><span class="o">^</span><span class="n">AptArrayStatus</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+                              <span class="o">.</span><span class="n">AptArrayReq</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PMPS_PRE</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">AptArrayReq</span><span class="o">^</span><span class="n">AptArrayReq</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+                              <span class="o">.</span><span class="n">fbFlowSwitch</span><span class="o">.</span><span class="n">bFlowOk</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">SL2K0</span><span class="o">-</span><span class="n">EL1004</span><span class="o">-</span><span class="n">E12</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="s1">&#39;}</span>
     <span class="n">fbSL2K0</span><span class="p">:</span> <span class="n">FB_SLITS_POWER</span><span class="p">;</span>
 <span class="o">//</span><span class="n">GET</span> <span class="n">PMP</span> <span class="n">Move</span> <span class="n">Ok</span> <span class="n">bit</span>
 <span class="o">//</span> <span class="n">Default</span> <span class="kc">True</span> <span class="n">until</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">properly</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">PMPS</span> <span class="n">bit</span>
@@ -2577,6 +2612,13 @@
         <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
     <span class="s1">&#39;}</span>
     <span class="n">bST3K4_auto</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">ST1K4</span><span class="p">:</span><span class="n">TEST</span><span class="p">:</span><span class="n">FSW</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input&#39;</span><span class="p">}</span>
+    <span class="n">fbFlowSwitch</span><span class="p">:</span> <span class="n">FB_XTES_Flowswitch</span><span class="p">;</span>
+
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">M33</span><span class="p">,</span> <span class="n">Axis</span> <span class="mi">33</span>
 <span class="n">Main</span><span class="o">.</span><span class="n">M33</span><span class="o">.</span><span class="n">nEnableMode</span> <span class="o">:=</span> <span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">DURING_MOTION</span><span class="p">;</span>
@@ -2608,6 +2650,8 @@
         <span class="n">eEnumSet</span> <span class="o">:=</span> <span class="n">ENUM_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span><span class="p">;</span>
     <span class="n">END_IF</span>
 <span class="n">END_IF</span>
+
+<span class="n">fbFlowSwitch</span><span class="p">();</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>

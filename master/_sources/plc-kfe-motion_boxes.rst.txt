@@ -13453,7 +13453,7 @@ PDO POS Control 2 (Index #x1607, Flags #x0010, SyncMan )
    </details>
 
 
-ST1K4-EL9505-E5
+ST1K4-EL9505-E7
 ^^^^^^^^^^^^^^^
 
 
@@ -13466,7 +13466,7 @@ ST1K4-EL9505-E5
     :header: Name, Data
     :align: center
 
-    Name, ST1K4-EL9505-E5
+    Name, ST1K4-EL9505-E7
     ID, 117
         SyncMan, 001001000000010004000000000000000000001000000000
         Fmmu, 0000000000000000001000010100000002000000000000000000000000000000
@@ -16239,8 +16239,8 @@ PDO POS Control 2 (Index #x1607, Flags #x0010, SyncMan )
    </details>
 
 
-EBD-PCW-FSW-EL1004
-^^^^^^^^^^^^^^^^^^
+IM1K0-EL1004
+^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -16252,7 +16252,7 @@ EBD-PCW-FSW-EL1004
     :header: Name, Data
     :align: center
 
-    Name, EBD-PCW-FSW-EL1004
+    Name, IM1K0-EL1004
     ID, 168
         SyncMan, 001001000000010004000000000000000100001000010000
         Fmmu, 0000000000000000001000010100000002000000000000000000000000000000
@@ -17299,8 +17299,8 @@ PDO POS Control Channel 2 (Index #x160d, Flags #x0010, SyncMan )
    </details>
 
 
-FEE-K-PCW-FSW-EL1004
-^^^^^^^^^^^^^^^^^^^^
+ST1K4-EL1004-E5
+^^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -17312,7 +17312,7 @@ FEE-K-PCW-FSW-EL1004
     :header: Name, Data
     :align: center
 
-    Name, FEE-K-PCW-FSW-EL1004
+    Name, ST1K4-EL1004-E5
     ID, 240
         SyncMan, 001001000000010004000000000000000100001000010000
         Fmmu, 0000000000000000001000010100000002000000000000000000000000000000
@@ -17363,8 +17363,8 @@ PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)
    </details>
 
 
-ST1K4-EL5042-E5A
-^^^^^^^^^^^^^^^^
+ST1K4-EL5042-E6
+^^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -17376,7 +17376,7 @@ ST1K4-EL5042-E5A
     :header: Name, Data
     :align: center
 
-    Name, ST1K4-EL5042-E5A
+    Name, ST1K4-EL5042-E6
     ID, 241
         BootStrapData, 0010f400f410f400
         SyncMan, 001080002600010001000000400080008000001026010000

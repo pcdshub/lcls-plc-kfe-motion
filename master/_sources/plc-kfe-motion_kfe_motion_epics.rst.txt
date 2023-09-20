@@ -1006,7 +1006,7 @@ FB_SLITS_POWER
         | io: output
 
 
-    * - $(PREFIX):FSW:FLOW
+    * - $(PREFIX):FSW:FLOW_OK
       - bo
       - $(SYMBOL).fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -1014,7 +1014,7 @@ FB_SLITS_POWER
         | io: output
 
 
-    * - $(PREFIX):FSW:FLOW_RBV
+    * - $(PREFIX):FSW:FLOW_OK_RBV
       - bi
       - $(SYMBOL).fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -1718,6 +1718,22 @@ FB_XPIM_IM2K0
         | io: output
 
 
+    * - $(PREFIX):FSW:FLOW_OK
+      - bo
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - $(PREFIX):FSW:FLOW_OK_RBV
+      - bi
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
     * - $(PREFIX):MMS:STATE:01:ENCODER_RBV
       - longin
       - Encoder count associated with this state
@@ -2270,22 +2286,6 @@ FB_XPIM_IM2K0
       - mbbi
       - $(SYMBOL).eEnumSet
       - | io: output
-
-
-    * - $(PREFIX):SFW:FLOW
-      - bo
-      - $(SYMBOL).fbFlowSwitch.bFlowOk
-      - | field: ONAM OK
-        | field: ZNAM LOW
-        | io: output
-
-
-    * - $(PREFIX):SFW:FLOW_RBV
-      - bi
-      - $(SYMBOL).fbFlowSwitch.bFlowOk
-      - | field: ONAM OK
-        | field: ZNAM LOW
-        | io: output
 
 
   
@@ -3453,6 +3453,22 @@ lcls_twincat_common_components.FB_PPM
       - $(SYMBOL).fbGige.bGigePower
       - | field: ONAM ON
         | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):FSW:FLOW_OK
+      - bo
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - $(PREFIX):FSW:FLOW_OK_RBV
+      - bi
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
         | io: output
 
 
@@ -5163,6 +5179,22 @@ lcls_twincat_common_components.FB_WFS
       - Type
       - Description
       - Pragma
+    * - $(PREFIX):FSW:FLOW_OK
+      - bo
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - $(PREFIX):FSW:FLOW_OK_RBV
+      - bi
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
     * - $(PREFIX):MMS:STATE:01:ENCODER_RBV
       - longin
       - Encoder count associated with this state
@@ -6011,6 +6043,22 @@ lcls_twincat_common_components.FB_XPIM
         | io: output
 
 
+    * - $(PREFIX):FSW:FLOW_OK
+      - bo
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - $(PREFIX):FSW:FLOW_OK_RBV
+      - bi
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
     * - $(PREFIX):MFW:ERR:MSG_RBV
       - waveform
       - $(SYMBOL).fbFilterWheel.sLastError
@@ -6655,22 +6703,6 @@ lcls_twincat_common_components.FB_XPIM
       - | io: output
 
 
-    * - $(PREFIX):SFW:FLOW
-      - bo
-      - $(SYMBOL).fbFlowSwitch.bFlowOk
-      - | field: ONAM OK
-        | field: ZNAM LOW
-        | io: output
-
-
-    * - $(PREFIX):SFW:FLOW_RBV
-      - bi
-      - $(SYMBOL).fbFlowSwitch.bFlowOk
-      - | field: ONAM OK
-        | field: ZNAM LOW
-        | io: output
-
-
  
 lcls_twincat_common_components.FB_XPIM_FilterWheel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6881,7 +6913,7 @@ lcls_twincat_common_components.FB_XTES_Flowswitch
       - Type
       - Description
       - Pragma
-    * - $(PREFIX):FLOW
+    * - $(PREFIX):FLOW_OK
       - bo
       - $(SYMBOL).bFlowOk
       - | field: ONAM OK
@@ -6889,7 +6921,7 @@ lcls_twincat_common_components.FB_XTES_Flowswitch
         | io: output
 
 
-    * - $(PREFIX):FLOW_RBV
+    * - $(PREFIX):FLOW_OK_RBV
       - bi
       - $(SYMBOL).bFlowOk
       - | field: ONAM OK
@@ -53656,7 +53688,7 @@ Database Records
       - | io: input
 
 
-    * - IM1K0:XTES:SFW:FLOW_RBV
+    * - IM1K0:XTES:FSW:FLOW_OK_RBV
       - bi
       - PRG_IM1K0_XTES.fbIM1K0.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -53664,7 +53696,7 @@ Database Records
         | io: output
 
 
-    * - IM1K0:XTES:SFW:FLOW
+    * - IM1K0:XTES:FSW:FLOW_OK
       - bo
       - PRG_IM1K0_XTES.fbIM1K0.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -54326,6 +54358,22 @@ Database Records
       - ao
       - PRG_IM1K3_PPM.fbIM1K3.fbFlowMeter.fResolution
       - | io: output
+
+
+    * - IM1K3:PPM:FSW:FLOW_OK_RBV
+      - bi
+      - PRG_IM1K3_PPM.fbIM1K3.fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - IM1K3:PPM:FSW:FLOW_OK
+      - bo
+      - PRG_IM1K3_PPM.fbIM1K3.fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
 
 
     * - IM1K3:PPM:CAM:PWR_RBV
@@ -55166,7 +55214,7 @@ Database Records
       - | io: input
 
 
-    * - IM1K4:XTES:SFW:FLOW_RBV
+    * - IM1K4:XTES:FSW:FLOW_OK_RBV
       - bi
       - PRG_IM1K4_XTES.fbIM1K4.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -55174,7 +55222,7 @@ Database Records
         | io: output
 
 
-    * - IM1K4:XTES:SFW:FLOW
+    * - IM1K4:XTES:FSW:FLOW_OK
       - bo
       - PRG_IM1K4_XTES.fbIM1K4.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -55808,7 +55856,7 @@ Database Records
       - | io: output
 
 
-    * - IM2K0:XTES:SFW:FLOW_RBV
+    * - IM2K0:XTES:FSW:FLOW_OK_RBV
       - bi
       - PRG_IM2K0_XTES.fbIM2K0.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -55816,7 +55864,7 @@ Database Records
         | io: output
 
 
-    * - IM2K0:XTES:SFW:FLOW
+    * - IM2K0:XTES:FSW:FLOW_OK
       - bo
       - PRG_IM2K0_XTES.fbIM2K0.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -56446,6 +56494,38 @@ Database Records
         | io: input
 
 
+    * - PC1K0:XTES:FSW:FLOW_OK_RBV
+      - bi
+      - PRG_OTHER.fbPC1K0FlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - PC1K0:XTES:FSW:FLOW_OK
+      - bo
+      - PRG_OTHER.fbPC1K0FlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - PC1K4:XTES:FSW:FLOW_OK_RBV
+      - bi
+      - PRG_OTHER.fbPC1K4FlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - PC1K4:XTES:FSW:FLOW_OK
+      - bo
+      - PRG_OTHER.fbPC1K4FlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
     * - PF1K0:WFS:MMS:STATE:GET_RBV
       - mbbi
       - PRG_PF1K0_WFS.fbPF1K0.eEnumGet
@@ -56462,6 +56542,22 @@ Database Records
       - mbbo
       - PRG_PF1K0_WFS.fbPF1K0.eEnumSet
       - | io: output
+
+
+    * - PF1K0:WFS:FSW:FLOW_OK_RBV
+      - bi
+      - PRG_PF1K0_WFS.fbPF1K0.fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - PF1K0:WFS:FSW:FLOW_OK
+      - bo
+      - PRG_PF1K0_WFS.fbPF1K0.fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
 
 
     * - PF1K0:WFS:MMS:STATE:01:MOVE_OK_RBV
@@ -58056,7 +58152,7 @@ Database Records
       - | io: input
 
 
-    * - SL1K0:POWER:FSW:FLOW_RBV
+    * - SL1K0:POWER:FSW:FLOW_OK_RBV
       - bi
       - PRG_SL1K0_POWER.fbSL1K0.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -58064,7 +58160,7 @@ Database Records
         | io: output
 
 
-    * - SL1K0:POWER:FSW:FLOW
+    * - SL1K0:POWER:FSW:FLOW_OK
       - bo
       - PRG_SL1K0_POWER.fbSL1K0.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -58912,7 +59008,7 @@ Database Records
       - | io: input
 
 
-    * - SL2K0:POWER:FSW:FLOW_RBV
+    * - SL2K0:POWER:FSW:FLOW_OK_RBV
       - bi
       - PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -58920,7 +59016,7 @@ Database Records
         | io: output
 
 
-    * - SL2K0:POWER:FSW:FLOW
+    * - SL2K0:POWER:FSW:FLOW_OK
       - bo
       - PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk
       - | field: ONAM OK
@@ -59434,6 +59530,22 @@ Database Records
       - mbbo
       - PRG_ST1K4_TEST.eEnumSet
       - | io: output
+
+
+    * - ST1K4:TEST:FSW:FLOW_OK_RBV
+      - bi
+      - PRG_ST1K4_TEST.fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - ST1K4:TEST:FSW:FLOW_OK
+      - bo
+      - PRG_ST1K4_TEST.fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
 
 
     * - ST1K4:TEST:MMS:STATE:01:MOVE_OK_RBV

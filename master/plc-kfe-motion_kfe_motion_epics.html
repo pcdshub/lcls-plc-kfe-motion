@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Types &mdash; pcdshub/lcls-plc-kfe-motion  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -47,7 +51,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_nc.html">NC Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-motion_links.html">Links</a></li>
 </ul>
@@ -1436,7 +1440,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>$(PREFIX):FSW:FLOW</p></td>
+<tr class="row-even"><td><p>$(PREFIX):FSW:FLOW_OK</p></td>
 <td><p>bo</p></td>
 <td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -1446,7 +1450,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>$(PREFIX):FSW:FLOW_RBV</p></td>
+<tr class="row-odd"><td><p>$(PREFIX):FSW:FLOW_OK_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -2348,6 +2352,26 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>$(PREFIX):FSW:FLOW_OK</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):FSW:FLOW_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:ENCODER_RBV</p></td>
 <td><p>longin</p></td>
 <td><p>Encoder count associated with this state</p></td>
@@ -3032,26 +3056,6 @@
 <td><p>mbbi</p></td>
 <td><p>$(SYMBOL).eEnumSet</p></td>
 <td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):SFW:FLOW</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM OK</div>
-<div class="line">field: ZNAM LOW</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):SFW:FLOW_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM OK</div>
-<div class="line">field: ZNAM LOW</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -4574,6 +4578,26 @@
 <td><div class="line-block">
 <div class="line">field: ONAM ON</div>
 <div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):FSW:FLOW_OK</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):FSW:FLOW_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -6707,6 +6731,26 @@
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p>$(PREFIX):FSW:FLOW_OK</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):FSW:FLOW_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:ENCODER_RBV</p></td>
 <td><p>longin</p></td>
 <td><p>Encoder count associated with this state</p></td>
@@ -7759,6 +7803,26 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>$(PREFIX):FSW:FLOW_OK</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):FSW:FLOW_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>$(PREFIX):MFW:ERR:MSG_RBV</p></td>
 <td><p>waveform</p></td>
 <td><p>$(SYMBOL).fbFilterWheel.sLastError</p></td>
@@ -8567,26 +8631,6 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>$(PREFIX):SFW:FLOW</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM OK</div>
-<div class="line">field: ZNAM LOW</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):SFW:FLOW_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).fbFlowSwitch.bFlowOk</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM OK</div>
-<div class="line">field: ZNAM LOW</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
 </tbody>
 </table>
 </section>
@@ -8855,7 +8899,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>$(PREFIX):FLOW</p></td>
+<tr class="row-even"><td><p>$(PREFIX):FLOW_OK</p></td>
 <td><p>bo</p></td>
 <td><p>$(SYMBOL).bFlowOk</p></td>
 <td><div class="line-block">
@@ -8865,7 +8909,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>$(PREFIX):FLOW_RBV</p></td>
+<tr class="row-odd"><td><p>$(PREFIX):FLOW_OK_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>$(SYMBOL).bFlowOk</p></td>
 <td><div class="line-block">
@@ -70145,7 +70189,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>IM1K0:XTES:SFW:FLOW_RBV</p></td>
+<tr class="row-odd"><td><p>IM1K0:XTES:FSW:FLOW_OK_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>PRG_IM1K0_XTES.fbIM1K0.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -70155,7 +70199,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>IM1K0:XTES:SFW:FLOW</p></td>
+<tr class="row-even"><td><p>IM1K0:XTES:FSW:FLOW_OK</p></td>
 <td><p>bo</p></td>
 <td><p>PRG_IM1K0_XTES.fbIM1K0.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -70981,6 +71025,26 @@
 <td><p>ao</p></td>
 <td><p>PRG_IM1K3_PPM.fbIM1K3.fbFlowMeter.fResolution</p></td>
 <td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM1K3:PPM:FSW:FLOW_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>PRG_IM1K3_PPM.fbIM1K3.fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM1K3:PPM:FSW:FLOW_OK</p></td>
+<td><p>bo</p></td>
+<td><p>PRG_IM1K3_PPM.fbIM1K3.fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -72043,7 +72107,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>IM1K4:XTES:SFW:FLOW_RBV</p></td>
+<tr class="row-odd"><td><p>IM1K4:XTES:FSW:FLOW_OK_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>PRG_IM1K4_XTES.fbIM1K4.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -72053,7 +72117,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>IM1K4:XTES:SFW:FLOW</p></td>
+<tr class="row-even"><td><p>IM1K4:XTES:FSW:FLOW_OK</p></td>
 <td><p>bo</p></td>
 <td><p>PRG_IM1K4_XTES.fbIM1K4.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -72843,7 +72907,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>IM2K0:XTES:SFW:FLOW_RBV</p></td>
+<tr class="row-even"><td><p>IM2K0:XTES:FSW:FLOW_OK_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>PRG_IM2K0_XTES.fbIM2K0.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -72853,7 +72917,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>IM2K0:XTES:SFW:FLOW</p></td>
+<tr class="row-odd"><td><p>IM2K0:XTES:FSW:FLOW_OK</p></td>
 <td><p>bo</p></td>
 <td><p>PRG_IM2K0_XTES.fbIM2K0.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -73637,6 +73701,46 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>PC1K0:XTES:FSW:FLOW_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>PRG_OTHER.fbPC1K0FlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC1K0:XTES:FSW:FLOW_OK</p></td>
+<td><p>bo</p></td>
+<td><p>PRG_OTHER.fbPC1K0FlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC1K4:XTES:FSW:FLOW_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>PRG_OTHER.fbPC1K4FlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC1K4:XTES:FSW:FLOW_OK</p></td>
+<td><p>bo</p></td>
+<td><p>PRG_OTHER.fbPC1K4FlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>PF1K0:WFS:MMS:STATE:GET_RBV</p></td>
 <td><p>mbbi</p></td>
 <td><p>PRG_PF1K0_WFS.fbPF1K0.eEnumGet</p></td>
@@ -73657,6 +73761,26 @@
 <td><p>mbbo</p></td>
 <td><p>PRG_PF1K0_WFS.fbPF1K0.eEnumSet</p></td>
 <td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PF1K0:WFS:FSW:FLOW_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>PRG_PF1K0_WFS.fbPF1K0.fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PF1K0:WFS:FSW:FLOW_OK</p></td>
+<td><p>bo</p></td>
+<td><p>PRG_PF1K0_WFS.fbPF1K0.fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -75679,7 +75803,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>SL1K0:POWER:FSW:FLOW_RBV</p></td>
+<tr class="row-even"><td><p>SL1K0:POWER:FSW:FLOW_OK_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>PRG_SL1K0_POWER.fbSL1K0.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -75689,7 +75813,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>SL1K0:POWER:FSW:FLOW</p></td>
+<tr class="row-odd"><td><p>SL1K0:POWER:FSW:FLOW_OK</p></td>
 <td><p>bo</p></td>
 <td><p>PRG_SL1K0_POWER.fbSL1K0.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -76777,7 +76901,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>SL2K0:POWER:FSW:FLOW_RBV</p></td>
+<tr class="row-odd"><td><p>SL2K0:POWER:FSW:FLOW_OK_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -76787,7 +76911,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>SL2K0:POWER:FSW:FLOW</p></td>
+<tr class="row-even"><td><p>SL2K0:POWER:FSW:FLOW_OK</p></td>
 <td><p>bo</p></td>
 <td><p>PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk</p></td>
 <td><div class="line-block">
@@ -77455,6 +77579,26 @@
 <td><p>mbbo</p></td>
 <td><p>PRG_ST1K4_TEST.eEnumSet</p></td>
 <td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>ST1K4:TEST:FSW:FLOW_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>PRG_ST1K4_TEST.fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>ST1K4:TEST:FSW:FLOW_OK</p></td>
+<td><p>bo</p></td>
+<td><p>PRG_ST1K4_TEST.fbFlowSwitch.bFlowOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM LOW</div>
 <div class="line">io: output</div>
 </div>
 </td>
