@@ -11,7 +11,8 @@ VAR
                               .fbThermoCouple2.bError := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Status^Error;
                               .fbThermoCouple2.bUnderrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Status^Underrange;
                               .fbThermoCouple2.bOverrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Status^Overrange;
-                              .fbThermoCouple2.iRaw := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Value'}
+                              .fbThermoCouple2.iRaw := TIIB[PF1K0-EL3314]^TC Inputs Channel 2^Value;
+                              .fbFlowSwitch.bFlowOk := TIIB[SL2K0-EL1004-E12]^Channel 1^Input'} // shares same cooling loop as SL2K0
     fbPF1K0: FB_WFS;
     fbStateSetup: FB_StateSetupHelper;
     stDefault: ST_PositionState := (

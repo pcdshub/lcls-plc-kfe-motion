@@ -40,7 +40,8 @@ VAR
                               .RTD_Bottom_2.bUnderrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Underrange;
                               .RTD_Bottom_2.bOverrange := TIIB[SL2K0-EL3202-E11]^RTD Inputs Channel 2^Status^Overrange;
                               .AptArrayStatus := 'TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus^AptArrayStatus[2];
-                              .AptArrayReq := 'TIIB[PMPS_PRE]^IO Inputs^AptArrayReq^AptArrayReq[2]'}
+                              .AptArrayReq := 'TIIB[PMPS_PRE]^IO Inputs^AptArrayReq^AptArrayReq[2];
+                              .fbFlowSwitch.bFlowOk := TIIB[SL2K0-EL1004-E12]^Channel 1^Input'}
     fbSL2K0: FB_SLITS_POWER;
 //GET PMP Move Ok bit
 // Default True until it is properly linked to PMPS bit
