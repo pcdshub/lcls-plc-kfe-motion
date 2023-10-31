@@ -85,7 +85,7 @@ VAR
     fbLED: FB_XPIM_LED;
 
     {attribute 'pytmc' := '
-        pv: SFW
+        pv: FSW
     '}
     fbFlowSwitch: FB_XTES_Flowswitch;
 END_VAR

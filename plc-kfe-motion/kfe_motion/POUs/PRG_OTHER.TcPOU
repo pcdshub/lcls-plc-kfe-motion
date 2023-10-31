@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_OTHER" Id="{404f3e80-89c9-4363-9ece-c8d5a2e49981}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_OTHER
+// A Program for implementing devices with minimal interaction.
+VAR_OUTPUT
+    {attribute 'pytmc' := 'pv: PC1K0:XTES:FSW:FLOW_OK
+                           field: ZNAM LOW
+                           field: ONAM OK
+                           io: i
+    '}
+    {attribute 'TcLinkTo' := TIIB[EBD-PCW-FSW-EL1004]^Channel 1^Input'}
+    bPC1K0FlowOk AT %I*: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
