@@ -38,6 +38,7 @@ VAR
         io: io
     '}
     bST3K4_auto: BOOL := TRUE;
+ 
 END_VAR
 
 ]]></Declaration>
