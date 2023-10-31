@@ -3,7 +3,7 @@
   <POU Name="PRG_OTHER" Id="{404f3e80-89c9-4363-9ece-c8d5a2e49981}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_OTHER
 // A Program for implementing devices with minimal interaction.
-VAR_OUTPUT
+VAR
     {attribute 'pytmc' := 'pv: PC1K0:XTES:FSW'}
     {attribute 'TcLinkTo' := .bFlowOk := TIIB[EBD-PCW-FSW-EL1004]^Channel 1^Input'}
     fbPC1K0FlowSwitch : FB_XTES_Flowswitch;   
