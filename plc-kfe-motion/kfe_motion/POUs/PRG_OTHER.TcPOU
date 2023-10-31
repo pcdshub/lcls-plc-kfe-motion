@@ -4,13 +4,13 @@
     <Declaration><![CDATA[PROGRAM PRG_OTHER
 // A Program for implementing devices with minimal interaction.
 VAR_OUTPUT
-    {attribute 'pytmc' := 'pv: PC1K0:XTES:FSW:FLOW_OK
-                           field: ZNAM LOW
-                           field: ONAM OK
-                           io: i
-    '}
-    {attribute 'TcLinkTo' := TIIB[EBD-PCW-FSW-EL1004]^Channel 1^Input'}
-    bPC1K0FlowOk AT %I*: BOOL;
+    {attribute 'pytmc' := 'pv: PC1K0:XTES:FSW'}
+    {attribute 'TcLinkTo' := .bFlowOk := TIIB[EBD-PCW-FSW-EL1004]^Channel 1^Input'}
+    fbPC1K0FlowSwitch : FB_XTES_Flowswitch;   
+
+    {attribute 'pytmc' := 'pv: PC1K4:XTES:FSW'}
+    {attribute 'TcLinkTo' := .bFlowOk := TIIB[FEE-K-PCW-FSW-EL1004]^Channel 2^Input'}
+    fbPC1K4FlowSwitch : FB_XTES_Flowswitch;
 END_VAR
 ]]></Declaration>
     <Implementation>
