@@ -5,7 +5,7 @@
 // A Program for implementing devices with minimal interaction.
 VAR
     {attribute 'pytmc' := 'pv: PC1K0:XTES:FSW'}
-    {attribute 'TcLinkTo' := .bFlowOk := TIIB[EBD-PCW-FSW-EL1004]^Channel 1^Input'}
+    {attribute 'TcLinkTo' := .bFlowOk := TIIB[IM1K0-EL1004]^Channel 1^Input'}
     fbPC1K0FlowSwitch : FB_XTES_Flowswitch;
 
     {attribute 'pytmc' := 'pv: PC1K4:XTES:FSW'}
