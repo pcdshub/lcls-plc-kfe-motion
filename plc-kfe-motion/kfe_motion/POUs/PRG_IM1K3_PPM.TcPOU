@@ -15,7 +15,7 @@ VAR
                               .fbYagThermoCouple.bUnderrange := TIIB[IM1K3-EL3314]^TC Inputs Channel 2^Status^Underrange;
                               .fbYagThermoCouple.bOverrange := TIIB[IM1K3-EL3314]^TC Inputs Channel 2^Status^Overrange;
                               .fbYagThermoCouple.iRaw := TIIB[IM1K3-EL3314]^TC Inputs Channel 2^Value;
-                              .bFlowOk := TIIB[FEE-K-PCW-FSW-EL1004]^Channel 3^Input'}
+                              .fbFlowSwitch.bFlowOk := TIIB[FEE-K-PCW-FSW-EL1004]^Channel 3^Input'}
     fbIM1K3: FB_PPM;
     fbStateSetup: FB_StateSetupHelper;
     stDefault: ST_PositionState := (
