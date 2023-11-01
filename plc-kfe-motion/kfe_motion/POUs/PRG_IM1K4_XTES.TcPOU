@@ -10,7 +10,7 @@ VAR
                               .bFocusEndBwd := TIIB[IM1K4-EL1088-E5]^Channel 4^Input;
                               .fbOpal.bOpalPower := TIIB[IM1K4-EL2004-E2]^Channel 2^Output;
                               .fbLED.bLedPower := TIIB[IM1K4-EL2004-E2]^Channel 3^Output;
-                              .fbFlowSwitch.bFlowOk := TIIB[FEE-K-PCW-FSW-EL1004]^Channel 2^Input'}
+                              .fbFlowSwitch.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 2^Input'} // same as PC1K4
     fbIM1K4: FB_XPIM;
     fbStateSetup: FB_StateSetupHelper;
     stDefault: ST_PositionState := (

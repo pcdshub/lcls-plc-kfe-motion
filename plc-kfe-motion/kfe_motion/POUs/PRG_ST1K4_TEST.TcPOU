@@ -42,7 +42,7 @@ VAR
     {attribute 'pytmc' := '
         pv: FSW
     '}
-    {attribute 'TcLinkTo' := .bFlowOk := TIIB[FEE-K-PCW-FSW-EL1004]^Channel 1^Input'}
+    {attribute 'TcLinkTo' := .bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input'}
     fbFlowSwitch: FB_XTES_Flowswitch;
 
 END_VAR
