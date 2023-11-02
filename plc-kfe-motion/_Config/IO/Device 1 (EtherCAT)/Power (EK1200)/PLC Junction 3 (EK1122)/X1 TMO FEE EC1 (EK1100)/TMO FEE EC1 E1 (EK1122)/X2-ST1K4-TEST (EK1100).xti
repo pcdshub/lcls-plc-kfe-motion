@@ -22,10 +22,10 @@
 		<Box File="ST1K4-EL1004-E5.xti" Id="240">
 			<EtherCAT PortABoxInfo="#x01000074"/>
 		</Box>
-		<Box File="ST1K4-EL5042-E5A.xti" Id="241">
+		<Box File="ST1K4-EL5042-E6.xti" Id="241">
 			<EtherCAT PortABoxInfo="#x010000f0"/>
 		</Box>
-		<Box File="ST1K4-EL9505-E5.xti" Id="117">
+		<Box File="ST1K4-EL9505-E7.xti" Id="117">
 			<EtherCAT PortABoxInfo="#x010000f1"/>
 		</Box>
 		<Box File="ST1K4-EL9011.xti" Id="118">
