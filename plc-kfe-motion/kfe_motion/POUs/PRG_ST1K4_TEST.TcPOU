@@ -40,9 +40,9 @@ VAR
     bST3K4_auto: BOOL := TRUE;
 
     {attribute 'pytmc' := '
-        pv: FSW
+        pv: ST1K4:TEST:FSW
     '}
-    {attribute 'TcLinkTo' := .bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input'}
+    {attribute 'TcLinkTo' := '.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input'}
     fbFlowSwitch: FB_XTES_Flowswitch;
 
 END_VAR
