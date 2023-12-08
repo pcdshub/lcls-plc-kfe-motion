@@ -5,7 +5,8 @@
 VAR
     {attribute 'pytmc' := 'pv: IM2K0:XTES'}
     {attribute 'TcLinkTo' := '.fbLED.bLedPower := TIIB[IM2K0-EL2004]^Channel 3^Output;
-                              .fbGige.bGigePower := TIIB[IM2K0-EL2004]^Channel 4^Output'}
+                              .fbGige.bGigePower := TIIB[IM2K0-EL2004]^Channel 4^Output;
+                              .fbFlowSwitch.bFlowOk := TIIB[SL2K0-EL1004-E12]^Channel 1^Input'} // same cooling loop as SL2K0
     fbIM2K0: FB_XPIM_IM2K0;
     fbStateSetup: FB_StateSetupHelper;
     stDefault: ST_PositionState := (

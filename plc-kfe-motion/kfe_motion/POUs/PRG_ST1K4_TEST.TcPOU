@@ -38,6 +38,13 @@ VAR
         io: io
     '}
     bST3K4_auto: BOOL := TRUE;
+
+    {attribute 'pytmc' := '
+        pv: ST1K4:TEST:FSW
+    '}
+    {attribute 'TcLinkTo' := '.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input'}
+    fbFlowSwitch: FB_XTES_Flowswitch;
+
 END_VAR
 
 ]]></Declaration>
@@ -73,6 +80,8 @@ IF bST3K4_auto THEN
         eEnumSet := ENUM_EpicsInOut.OUT;
     END_IF
 END_IF
+
+fbFlowSwitch();
 ]]></ST>
     </Implementation>
   </POU>

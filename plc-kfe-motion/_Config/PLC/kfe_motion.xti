@@ -1744,6 +1744,10 @@ External Setpoint Generation:
 					<Type>INT</Type>
 				</Var>
 				<Var>
+					<Name>PRG_IM1K3_PPM.fbIM1K3.fbFlowSwitch.bFlowOk</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
@@ -2128,6 +2132,10 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_PF1K0_WFS.fbPF1K0.fbThermoCouple2.iRaw</Name>
 					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_WFS.fbPF1K0.fbFlowSwitch.bFlowOk</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_RTDSK0.RTDSK0_MPA_01.i_xInsertedLS</Name>
@@ -4163,6 +4171,10 @@ External Setpoint Generation:
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_ST1K4_TEST.fbFlowSwitch.bFlowOk</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP</Name>
@@ -7540,6 +7552,14 @@ External Setpoint Generation:
 					<Name>GVL.rReqTrans</Name>
 					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
 				</Var>
+				<Var>
+					<Name>PRG_OTHER.fbPC1K0FlowSwitch.bFlowOk</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_OTHER.fbPC1K4FlowSwitch.bFlowOk</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -8478,6 +8498,11 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^PRG_RTDSK0.RTDSK0_MPA_04.q_xInsert_DO" VarB="Channel 7^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_RTDSK0.RTDSK0_MPA_04.q_xRetract_DO" VarB="Channel 8^Output" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X2 IM1K0-XTES (EK1100)^IM1K0-EL1004">
+				<Link VarA="PlcTask Inputs^PRG_IM1K0_XTES.fbIM1K0.fbFlowSwitch.bFlowOk" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_OTHER.fbPC1K0FlowSwitch.bFlowOk" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_SL1K0_POWER.fbSL1K0.fbFlowSwitch.bFlowOk" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X2 IM1K0-XTES (EK1100)^IM1K0-EL1088">
 				<Link VarA="PlcTask Inputs^Main.M2.bHome" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M3.bHome" VarB="Channel 4^Input" AutoLink="true"/>
@@ -8629,6 +8654,11 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X1 IM2K0-XTES (EK1100)^IM2K0-EL7342">
 				<Link VarA="PlcTask Inputs^Main.M6.nRawEncoderUINT" VarB="ENC Status compact Channel 1^Counter value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M7.nRawEncoderUINT" VarB="ENC Status compact Channel 2^Counter value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL1004-E12">
+				<Link VarA="PlcTask Inputs^PRG_IM2K0_XTES.fbIM2K0.fbFlowSwitch.bFlowOk" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_WFS.fbPF1K0.fbFlowSwitch.bFlowOk" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E10">
 				<Link VarA="PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_Bottom_1.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true"/>
@@ -8814,10 +8844,16 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M31.nRawEncoderUINT" VarB="ENC Status compact Channel 1^Counter value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M32.nRawEncoderUINT" VarB="ENC Status compact Channel 2^Counter value" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL1004-E5">
+				<Link VarA="PlcTask Inputs^PRG_IM1K3_PPM.fbIM1K3.fbFlowSwitch.bFlowOk" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K4_XTES.fbIM1K4.fbFlowSwitch.bFlowOk" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_OTHER.fbPC1K4FlowSwitch.bFlowOk" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_ST1K4_TEST.fbFlowSwitch.bFlowOk" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL2202-E3">
 				<Link VarA="PlcTask Outputs^Main.M33.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL5042-E5A">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL5042-E6">
 				<Link VarA="PlcTask Inputs^Main.M33.nRawEncoderULINT" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL7041-E4">

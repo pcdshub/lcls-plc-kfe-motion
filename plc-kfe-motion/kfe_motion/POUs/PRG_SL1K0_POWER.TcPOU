@@ -39,8 +39,9 @@ VAR
                               .RTD_Bottom_2.bError := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Error;
                               .RTD_Bottom_2.bUnderrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Underrange;
                               .RTD_Bottom_2.bOverrange := TIIB[SL1K0-EL3202-E9]^RTD Inputs Channel 2^Status^Overrange;
-                              .AptArrayStatus := 'TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus^AptArrayStatus[1];
-                              .AptArrayReq := 'TIIB[PMPS_PRE]^IO Inputs^AptArrayReq^AptArrayReq[1]'}
+                              .AptArrayStatus := TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus^AptArrayStatus[1];
+                              .AptArrayReq := TIIB[PMPS_PRE]^IO Inputs^AptArrayReq^AptArrayReq[1];
+                              .fbFlowSwitch.bFlowOk := TIIB[IM1K0-EL1004]^Channel 3^Input'}
     fbSL1K0: FB_SLITS_POWER;
 //{attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^AptArrayStatus'}
     {attribute 'pytmc' := '

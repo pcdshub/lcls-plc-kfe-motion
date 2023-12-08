@@ -31,7 +31,7 @@
 		<Box File="IM1K0-EL6021.xti" Id="33">
 			<EtherCAT PortABoxInfo="#x01000020"/>
 		</Box>
-		<Box File="EBD-PCW-FSW-EL1004.xti" Id="168">
+		<Box File="IM1K0-EL1004.xti" Id="168">
 			<EtherCAT PortABoxInfo="#x01000021"/>
 		</Box>
 		<Box File="IM1K0-EL6002.xti" Id="34">

@@ -1530,7 +1530,7 @@ External Setpoint Generation:
 	</Axis>
 	<Mappings>
 		<OwnerA>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL5042-E5A">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL5042-E6">
 				<Link VarA="Enc^Inputs^In^nComState" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
 				<Link VarA="Enc^Inputs^In^nComState" VarB="WcState^WcState"/>
 				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="FB Inputs Channel 1^Position"/>
