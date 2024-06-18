@@ -2331,8 +2331,8 @@ PRG_SL1K0_POWER
 
         (*Offsets*)
         (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-        rEncoderOffsetTop: REAL := -11.2; (* 0+(-15)*)
-        rEncoderOffsetBottom: REAL := -11.9; (* 0+(-15)*)
+        rEncoderOffsetTop: REAL := -11.810; (* 0+(-15)*)
+        rEncoderOffsetBottom: REAL := -12.499; (* 0+(-15)*)
         rEncoderOffsetNorth: REAL := -11.4;//-4.6;(* 0+(-15)*)
         rEncoderOffsetSouth: REAL := -13;(* 0+(-15)*)
     END_VAR
@@ -2526,6 +2526,7 @@ PRG_ST1K4_TEST
         {attribute 'TcLinkTo' := '.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input'}
         fbFlowSwitch: FB_XTES_Flowswitch;
 
+
     END_VAR
     // M33, Axis 33
     Main.M33.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
@@ -2550,12 +2551,13 @@ PRG_ST1K4_TEST
 
     bST3K4_in := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4];
 
+
     IF bST3K4_auto THEN
         IF bST3K4_in AND eEnumGet <> E_EpicsInOut.IN THEN
             eEnumSet := ENUM_EpicsInOut.IN;
-        ELSIF NOT bST3K4_in AND eEnumGet <> E_EpicsInOut.OUT THEN
+    {*    ELSIF NOT bST3K4_in AND eEnumGet <> E_EpicsInOut.OUT THEN
             eEnumSet := ENUM_EpicsInOut.OUT;
-        END_IF
+     *}   END_IF
     END_IF
 
     fbFlowSwitch();

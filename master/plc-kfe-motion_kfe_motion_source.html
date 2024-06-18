@@ -18,7 +18,7 @@
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
@@ -2424,8 +2424,8 @@
 
     <span class="p">(</span><span class="o">*</span><span class="n">Offsets</span><span class="o">*</span><span class="p">)</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">Absolute</span> <span class="n">encoder</span> <span class="n">value</span> <span class="n">at</span> <span class="n">the</span> <span class="n">HLS</span> <span class="o">+</span> <span class="n">Absolure</span> <span class="n">eoncoder</span> <span class="n">value</span> <span class="n">at</span> <span class="n">the</span> <span class="n">centered</span> <span class="n">beam</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.2</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
-    <span class="n">rEncoderOffsetBottom</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.9</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.810</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetBottom</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">12.499</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
     <span class="n">rEncoderOffsetNorth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.4</span><span class="p">;</span><span class="o">//-</span><span class="mf">4.6</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
     <span class="n">rEncoderOffsetSouth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">13</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
 <span class="n">END_VAR</span>
@@ -2619,6 +2619,7 @@
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input&#39;</span><span class="p">}</span>
     <span class="n">fbFlowSwitch</span><span class="p">:</span> <span class="n">FB_XTES_Flowswitch</span><span class="p">;</span>
 
+
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">M33</span><span class="p">,</span> <span class="n">Axis</span> <span class="mi">33</span>
 <span class="n">Main</span><span class="o">.</span><span class="n">M33</span><span class="o">.</span><span class="n">nEnableMode</span> <span class="o">:=</span> <span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">DURING_MOTION</span><span class="p">;</span>
@@ -2643,12 +2644,13 @@
 
 <span class="n">bST3K4_in</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST3K4</span><span class="p">];</span>
 
+
 <span class="n">IF</span> <span class="n">bST3K4_auto</span> <span class="n">THEN</span>
     <span class="n">IF</span> <span class="n">bST3K4_in</span> <span class="n">AND</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">IN</span> <span class="n">THEN</span>
         <span class="n">eEnumSet</span> <span class="o">:=</span> <span class="n">ENUM_EpicsInOut</span><span class="o">.</span><span class="n">IN</span><span class="p">;</span>
-    <span class="n">ELSIF</span> <span class="n">NOT</span> <span class="n">bST3K4_in</span> <span class="n">AND</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span> <span class="n">THEN</span>
+<span class="p">{</span><span class="o">*</span>    <span class="n">ELSIF</span> <span class="n">NOT</span> <span class="n">bST3K4_in</span> <span class="n">AND</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span> <span class="n">THEN</span>
         <span class="n">eEnumSet</span> <span class="o">:=</span> <span class="n">ENUM_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span><span class="p">;</span>
-    <span class="n">END_IF</span>
+ <span class="o">*</span><span class="p">}</span>   <span class="n">END_IF</span>
 <span class="n">END_IF</span>
 
 <span class="n">fbFlowSwitch</span><span class="p">();</span>
@@ -2675,7 +2677,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
