@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -6,21 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-kfe-motion  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
       <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -257,6 +255,9 @@
     <span class="n">rCurTrans</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span>                <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">AUX_ATTENUATORS</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PMPS_Attenuator_IO</span><span class="p">;</span>
 
     <span class="n">ePF1K0State</span><span class="p">:</span> <span class="n">E_WFS_States</span><span class="p">;</span>
+
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Outputs^ST1K4_Y_ENC&#39;</span><span class="p">}</span>
+    <span class="n">PMPS_ST1K4_Y_ENC</span> <span class="n">AT</span><span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
@@ -2424,8 +2425,8 @@
 
     <span class="p">(</span><span class="o">*</span><span class="n">Offsets</span><span class="o">*</span><span class="p">)</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">Absolute</span> <span class="n">encoder</span> <span class="n">value</span> <span class="n">at</span> <span class="n">the</span> <span class="n">HLS</span> <span class="o">+</span> <span class="n">Absolure</span> <span class="n">eoncoder</span> <span class="n">value</span> <span class="n">at</span> <span class="n">the</span> <span class="n">centered</span> <span class="n">beam</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.2</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
-    <span class="n">rEncoderOffsetBottom</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.9</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.810</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetBottom</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">12.499</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
     <span class="n">rEncoderOffsetNorth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.4</span><span class="p">;</span><span class="o">//-</span><span class="mf">4.6</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
     <span class="n">rEncoderOffsetSouth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">13</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
 <span class="n">END_VAR</span>
@@ -2619,6 +2620,10 @@
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input&#39;</span><span class="p">}</span>
     <span class="n">fbFlowSwitch</span><span class="p">:</span> <span class="n">FB_XTES_Flowswitch</span><span class="p">;</span>
 
+
+    <span class="o">//</span> <span class="n">Raw</span> <span class="n">encoder</span> <span class="n">PMPS</span> <span class="n">VETO</span>
+      <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[ST1K4-EL5042-E6]^FB Inputs Channel 1^Position&#39;</span><span class="p">}</span>
+    <span class="n">nRawEncoderULINT</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span> <span class="n">ULINT</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">M33</span><span class="p">,</span> <span class="n">Axis</span> <span class="mi">33</span>
 <span class="n">Main</span><span class="o">.</span><span class="n">M33</span><span class="o">.</span><span class="n">nEnableMode</span> <span class="o">:=</span> <span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">DURING_MOTION</span><span class="p">;</span>
@@ -2631,7 +2636,7 @@
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stDefault</span><span class="p">,</span> <span class="n">bSetDefault</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">[</span><span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">IN</span><span class="p">],</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;IN&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">[</span><span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span><span class="p">],</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;OUT&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">[</span><span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span><span class="p">],</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;OUT&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">40.9</span><span class="p">);</span>
 
 <span class="n">fbStates</span><span class="p">(</span>
     <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M33</span><span class="p">,</span>
@@ -2643,21 +2648,26 @@
 
 <span class="n">bST3K4_in</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST3K4</span><span class="p">];</span>
 
+
 <span class="n">IF</span> <span class="n">bST3K4_auto</span> <span class="n">THEN</span>
     <span class="n">IF</span> <span class="n">bST3K4_in</span> <span class="n">AND</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">IN</span> <span class="n">THEN</span>
         <span class="n">eEnumSet</span> <span class="o">:=</span> <span class="n">ENUM_EpicsInOut</span><span class="o">.</span><span class="n">IN</span><span class="p">;</span>
-    <span class="n">ELSIF</span> <span class="n">NOT</span> <span class="n">bST3K4_in</span> <span class="n">AND</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span> <span class="n">THEN</span>
+<span class="p">{</span><span class="o">*</span>    <span class="n">ELSIF</span> <span class="n">NOT</span> <span class="n">bST3K4_in</span> <span class="n">AND</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span> <span class="n">THEN</span>
         <span class="n">eEnumSet</span> <span class="o">:=</span> <span class="n">ENUM_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span><span class="p">;</span>
-    <span class="n">END_IF</span>
+ <span class="o">*</span><span class="p">}</span>   <span class="n">END_IF</span>
 <span class="n">END_IF</span>
 
 <span class="n">fbFlowSwitch</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">For</span> <span class="n">PMPS</span> <span class="n">Veto</span>
+    <span class="n">GVL</span><span class="o">.</span><span class="n">PMPS_ST1K4_Y_ENC</span> <span class="o">:=</span> <span class="n">TO_UDINT</span><span class="p">(</span><span class="n">nRawEncoderULINT</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
 </div>
 <dl class="simple">
 <dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
 <li><p><a class="reference internal" href="#main">Main</a></p></li>
 </ul>
 </dd>
@@ -2675,7 +2685,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
