@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -5,22 +7,18 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-kfe-motion  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
       <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -244,12 +242,16 @@
     <span class="n">fbArbiter</span><span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:KFE:MOTION:ARB:02&#39;</span><span class="p">}</span>
     <span class="n">fbArbiter2</span><span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:KFE:MOTION:ARB:03&#39;</span><span class="p">}</span>
+    <span class="n">fbArbiter3</span><span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:KFE:MOTION:FFO:01&#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output&#39;</span><span class="p">}</span>
     <span class="n">fbFastFaultOutput1</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_sNetID</span><span class="o">:=</span><span class="s1">&#39;172.21.92.73.1.1&#39;</span><span class="p">);</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:KFE:MOTION:FFO:02&#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output&#39;</span><span class="p">}</span>
     <span class="n">fbFastFaultOutput2</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_sNetID</span><span class="o">:=</span><span class="s1">&#39;172.21.92.73.1.1&#39;</span><span class="p">);</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:KFE:MOTION:FFO:03&#39;</span><span class="p">}</span>
+    <span class="n">fbFastFaultOutput3</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_sNetID</span><span class="o">:=</span><span class="s1">&#39;172.21.92.73.1.1&#39;</span><span class="p">);</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:KFE:MOTION:PMPS:ReqTrans&#39;</span><span class="p">}</span>
     <span class="n">rReqTrans</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span>                <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">AUX_ATTENUATORS</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PMPS_Attenuator_IO</span><span class="p">;</span>
@@ -257,6 +259,9 @@
     <span class="n">rCurTrans</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span>                <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">AUX_ATTENUATORS</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PMPS_Attenuator_IO</span><span class="p">;</span>
 
     <span class="n">ePF1K0State</span><span class="p">:</span> <span class="n">E_WFS_States</span><span class="p">;</span>
+
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Outputs^ST1K4_Y_ENC&#39;</span><span class="p">}</span>
+    <span class="n">PMPS_ST1K4_Y_ENC</span> <span class="n">AT</span><span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
@@ -930,7 +935,7 @@
 <span class="n">END_IF</span>
 
 
-<span class="o">//</span><span class="n">Calculate</span> <span class="n">requested</span> <span class="n">target</span> <span class="n">positions</span> <span class="kn">from</span> <span class="nn">requested</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span>
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">requested</span> <span class="n">target</span> <span class="n">positions</span> <span class="kn">from</span><span class="w"> </span><span class="nn">requested</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span>
 <span class="n">fPosTopBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span> <span class="o">+</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="p">;</span>
 <span class="n">fPosBottomBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span><span class="o">+</span><span class="n">rEncoderOffsetBottom</span><span class="p">);</span>
 
@@ -938,7 +943,7 @@
 <span class="n">fPosSouthBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeX</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterX</span> <span class="o">+</span> <span class="n">rEncoderOffsetSouth</span><span class="p">);</span>
 
 
-<span class="o">//</span><span class="n">Calculate</span> <span class="n">actual</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span> <span class="kn">from</span> <span class="nn">actual</span> <span class="n">stages</span> <span class="n">positions</span>
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">actual</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span> <span class="kn">from</span><span class="w"> </span><span class="nn">actual</span> <span class="n">stages</span> <span class="n">positions</span>
 <span class="n">rActApertureSizeX</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetNorth</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stSouthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span><span class="o">-</span> <span class="n">rEncoderOffsetSouth</span><span class="p">));</span>
 
 <span class="n">rActApertureSizeY</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stTopBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stBottomBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetBottom</span><span class="p">));</span>
@@ -1227,7 +1232,7 @@
                                  <span class="n">AND</span> <span class="n">NOT</span> <span class="p">(</span><span class="n">This</span><span class="o">^.</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">bError</span><span class="p">)</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="p">(</span><span class="n">This</span><span class="o">^.</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">bError</span><span class="p">);</span>
 
 <span class="o">//</span><span class="n">Evaluate</span> <span class="n">that</span> <span class="n">the</span> <span class="n">current</span> <span class="n">center</span> <span class="n">on</span> <span class="n">the</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">y</span> <span class="n">direction</span> <span class="n">didn</span><span class="s1">&#39;t exceed limits,</span>
-<span class="o">//</span> <span class="n">Gap</span> <span class="n">should</span> <span class="n">be</span> <span class="n">reduced</span> <span class="n">when</span> <span class="n">center</span> <span class="ow">is</span> <span class="n">moved</span><span class="p">,</span> <span class="n">gap</span> <span class="o">&lt;</span> <span class="n">Maximum</span> <span class="n">permessible</span> <span class="n">gap</span> <span class="o">-</span> <span class="mi">2</span><span class="o">|</span><span class="n">Center</span> <span class="n">deviation</span> <span class="kn">from</span> <span class="nn">nominal</span><span class="o">|</span>
+<span class="o">//</span> <span class="n">Gap</span> <span class="n">should</span> <span class="n">be</span> <span class="n">reduced</span> <span class="n">when</span> <span class="n">center</span> <span class="ow">is</span> <span class="n">moved</span><span class="p">,</span> <span class="n">gap</span> <span class="o">&lt;</span> <span class="n">Maximum</span> <span class="n">permessible</span> <span class="n">gap</span> <span class="o">-</span> <span class="mi">2</span><span class="o">|</span><span class="n">Center</span> <span class="n">deviation</span> <span class="kn">from</span><span class="w"> </span><span class="nn">nominal</span><span class="o">|</span>
 <span class="o">//</span><span class="n">Fast</span> <span class="n">fault</span> <span class="n">when</span> <span class="n">it</span> <span class="n">does</span><span class="o">.</span>
 <span class="n">IF</span><span class="p">(</span><span class="n">This</span><span class="o">^.</span><span class="n">rActApertureSizeX</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">AptArrayReq</span><span class="o">.</span><span class="n">Width</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ABS</span><span class="p">(</span><span class="n">rActCenterX</span><span class="p">)))</span>
 <span class="o">//</span><span class="p">(</span><span class="n">rActCenterX</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">astApertures</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">Width</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
@@ -1382,7 +1387,7 @@
 
 <span class="n">fbYStage</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stYStage</span><span class="p">);</span>
 
-<span class="o">//</span> <span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="kn">from</span> <span class="nn">PLC</span> <span class="ow">or</span> <span class="kn">from</span> <span class="nn">EPICS</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">both</span>
+<span class="o">//</span> <span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PLC</span> <span class="ow">or</span> <span class="kn">from</span><span class="w"> </span><span class="nn">EPICS</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">both</span>
 <span class="n">fbArrCheckWrite</span><span class="p">(</span>
     <span class="n">astPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">,</span>
     <span class="n">bCheck</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
@@ -1503,30 +1508,45 @@
 <span class="n">VAR</span>
     <span class="n">fbArbiterIO</span><span class="p">:</span> <span class="n">FB_SubSysToArbiter_IO</span><span class="p">;</span>
     <span class="n">fb_vetoArbiter</span><span class="p">:</span> <span class="n">FB_VetoArbiter</span><span class="p">;</span>
-    <span class="n">bM1K1_Veto_IN</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    <span class="n">ff3_ff2_link</span><span class="p">:</span> <span class="n">FB_FastFault</span> <span class="o">:=</span> <span class="p">(</span><span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_DevName</span> <span class="o">:=</span> <span class="s1">&#39;FF3 to FF2 Link&#39;</span><span class="p">,</span> <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;This is virtual FF3 fault, Please check the Group 3 faulting device &#39;</span><span class="p">,</span> <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#9999);</span>
 
+    <span class="n">bM1K1_Veto_IN</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    <span class="n">bM1K3_Veto_OUT</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">create</span> <span class="n">MR1K1</span> <span class="k">as</span> <span class="n">veto</span> <span class="k">for</span> <span class="n">K4</span> <span class="n">lines</span>
 <span class="n">bM1K1_Veto_IN</span> <span class="o">:=</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">]</span>
                 <span class="n">AND</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">];</span>
+<span class="o">//</span> <span class="n">create</span> <span class="n">MR1K3</span> <span class="k">as</span> <span class="n">veto</span> <span class="k">for</span> <span class="n">IM1K3</span>
+<span class="n">bM1K3_Veto_OUT</span> <span class="o">:=</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_IN</span><span class="p">]</span>
+                 <span class="n">AND</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_OUT</span><span class="p">];</span>
 
 
 
 
-<span class="o">//</span><span class="n">create</span> <span class="n">a</span> <span class="n">preemptive</span> <span class="n">request</span> <span class="kn">from</span> <span class="nn">Arbiter</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">Arbiter</span> <span class="mi">1</span>
+<span class="o">//</span><span class="n">create</span> <span class="n">a</span> <span class="n">preemptive</span> <span class="n">request</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Arbiter</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">Arbiter</span> <span class="mi">1</span>
 <span class="n">fb_vetoArbiter</span><span class="p">(</span><span class="n">bVeto</span><span class="o">:=</span><span class="n">bM1K1_Veto_IN</span><span class="p">,</span>
                 <span class="n">HigherAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter</span><span class="p">,</span>
                 <span class="n">LowerAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
                 <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
-
+<span class="n">fb_vetoArbiter</span><span class="p">(</span><span class="n">bVeto</span><span class="o">:=</span><span class="p">(</span><span class="n">bM1K1_Veto_IN</span> <span class="n">OR</span> <span class="n">bM1K3_VETO_OUT</span><span class="p">),</span>
+                <span class="n">HigherAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter</span><span class="p">,</span>
+                <span class="n">LowerAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter3</span><span class="p">,</span>
+                <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
 
 
 <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">();</span>
 
 <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="n">bM1K1_Veto_IN</span><span class="p">);</span>
+
+<span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput3</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="p">(</span><span class="n">bM1K1_Veto_IN</span> <span class="n">OR</span> <span class="n">bM1K3_Veto_OUT</span><span class="p">));</span>
+
 <span class="n">fbArbiterIO</span><span class="p">(</span>
     <span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter</span><span class="p">,</span>
     <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+
+<span class="n">ff3_ff2_link</span><span class="p">(</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
+    <span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput3</span><span class="o">.</span><span class="n">q_xFastFaultOut</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
@@ -1929,6 +1949,7 @@
         <span class="n">bMoveOk</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
         <span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span>
     <span class="p">);</span>
+
 <span class="n">END_VAR</span>
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stDefault</span><span class="p">,</span> <span class="n">bSetDefault</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
@@ -1938,8 +1959,8 @@
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbIM1K3</span><span class="o">.</span><span class="n">stYag2</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=-</span><span class="mf">98.21</span><span class="p">,</span> <span class="n">sPmpsState</span><span class="o">:=</span><span class="s1">&#39;IM1K3:PPM-YAG2&#39;</span><span class="p">);</span>
 
 <span class="n">fbIM1K3</span><span class="p">(</span>
-    <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput3</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter3</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M4</span><span class="p">,</span>
     <span class="n">sDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;IM1K3:PPM&#39;</span><span class="p">,</span>
     <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;IM1K3:PPM-TRANSITION&#39;</span><span class="p">,</span>
@@ -2424,8 +2445,8 @@
 
     <span class="p">(</span><span class="o">*</span><span class="n">Offsets</span><span class="o">*</span><span class="p">)</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">Absolute</span> <span class="n">encoder</span> <span class="n">value</span> <span class="n">at</span> <span class="n">the</span> <span class="n">HLS</span> <span class="o">+</span> <span class="n">Absolure</span> <span class="n">eoncoder</span> <span class="n">value</span> <span class="n">at</span> <span class="n">the</span> <span class="n">centered</span> <span class="n">beam</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.2</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
-    <span class="n">rEncoderOffsetBottom</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.9</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.810</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetBottom</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">12.499</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
     <span class="n">rEncoderOffsetNorth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">11.4</span><span class="p">;</span><span class="o">//-</span><span class="mf">4.6</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
     <span class="n">rEncoderOffsetSouth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">13</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
 <span class="n">END_VAR</span>
@@ -2619,6 +2640,10 @@
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input&#39;</span><span class="p">}</span>
     <span class="n">fbFlowSwitch</span><span class="p">:</span> <span class="n">FB_XTES_Flowswitch</span><span class="p">;</span>
 
+
+    <span class="o">//</span> <span class="n">Raw</span> <span class="n">encoder</span> <span class="n">PMPS</span> <span class="n">VETO</span>
+      <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[ST1K4-EL5042-E6]^FB Inputs Channel 1^Position&#39;</span><span class="p">}</span>
+    <span class="n">nRawEncoderULINT</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span> <span class="n">ULINT</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">M33</span><span class="p">,</span> <span class="n">Axis</span> <span class="mi">33</span>
 <span class="n">Main</span><span class="o">.</span><span class="n">M33</span><span class="o">.</span><span class="n">nEnableMode</span> <span class="o">:=</span> <span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">DURING_MOTION</span><span class="p">;</span>
@@ -2631,7 +2656,7 @@
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stDefault</span><span class="p">,</span> <span class="n">bSetDefault</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">[</span><span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">IN</span><span class="p">],</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;IN&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">[</span><span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span><span class="p">],</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;OUT&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">[</span><span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span><span class="p">],</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;OUT&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">40.9</span><span class="p">);</span>
 
 <span class="n">fbStates</span><span class="p">(</span>
     <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M33</span><span class="p">,</span>
@@ -2643,21 +2668,26 @@
 
 <span class="n">bST3K4_in</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST3K4</span><span class="p">];</span>
 
+
 <span class="n">IF</span> <span class="n">bST3K4_auto</span> <span class="n">THEN</span>
     <span class="n">IF</span> <span class="n">bST3K4_in</span> <span class="n">AND</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">IN</span> <span class="n">THEN</span>
         <span class="n">eEnumSet</span> <span class="o">:=</span> <span class="n">ENUM_EpicsInOut</span><span class="o">.</span><span class="n">IN</span><span class="p">;</span>
-    <span class="n">ELSIF</span> <span class="n">NOT</span> <span class="n">bST3K4_in</span> <span class="n">AND</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span> <span class="n">THEN</span>
+<span class="p">{</span><span class="o">*</span>    <span class="n">ELSIF</span> <span class="n">NOT</span> <span class="n">bST3K4_in</span> <span class="n">AND</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span> <span class="n">THEN</span>
         <span class="n">eEnumSet</span> <span class="o">:=</span> <span class="n">ENUM_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span><span class="p">;</span>
-    <span class="n">END_IF</span>
+ <span class="o">*</span><span class="p">}</span>   <span class="n">END_IF</span>
 <span class="n">END_IF</span>
 
 <span class="n">fbFlowSwitch</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">For</span> <span class="n">PMPS</span> <span class="n">Veto</span>
+    <span class="n">GVL</span><span class="o">.</span><span class="n">PMPS_ST1K4_Y_ENC</span> <span class="o">:=</span> <span class="n">TO_UDINT</span><span class="p">(</span><span class="n">nRawEncoderULINT</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
 </div>
 <dl class="simple">
 <dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
 <li><p><a class="reference internal" href="#main">Main</a></p></li>
 </ul>
 </dd>
@@ -2675,7 +2705,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

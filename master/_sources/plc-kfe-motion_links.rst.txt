@@ -1262,6 +1262,8 @@ Links
         kfe_motion Instance, PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.RTD_TOP_2.iRaw, TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL3202-E9, RTD Inputs Channel 2^Value
         kfe_motion Instance, PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.fbFlowSwitch.bFlowOk, TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E1 (EK1122)^X2 SL2K0-POWER (EK1100)^SL2K0-EL1004-E12, Channel 1^Input
         kfe_motion Instance, PlcTask Inputs^PRG_ST1K4_TEST.fbFlowSwitch.bFlowOk, TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL1004-E5, Channel 1^Input
+        kfe_motion Instance, PlcTask Inputs^PRG_ST1K4_TEST.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL5042-E6, FB Inputs Channel 1^Position
+        kfe_motion Instance, PlcTask Outputs^GVL.PMPS_ST1K4_Y_ENC, TIID^Device 1 (EtherCAT)^Power (EK1200)^PMPS_PRE, IO Outputs^ST1K4_Y_ENC
         kfe_motion Instance, PlcTask Outputs^GVL.fbFastFaultOutput1.q_xFastFaultOut, TIID^Device 1 (EtherCAT)^Power (EK1200)^PMPS_FFO, Channel 1^Output
         kfe_motion Instance, PlcTask Outputs^GVL.fbFastFaultOutput2.q_xFastFaultOut, TIID^Device 1 (EtherCAT)^Power (EK1200)^PMPS_FFO, Channel 2^Output
         kfe_motion Instance, PlcTask Outputs^Main.M1.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 1 IM1K0-XTES-MMS, Inputs^FromPlc
