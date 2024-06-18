@@ -45,6 +45,7 @@ VAR
     {attribute 'TcLinkTo' := '.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input'}
     fbFlowSwitch: FB_XTES_Flowswitch;
 
+
 END_VAR
 
 ]]></Declaration>
@@ -73,12 +74,13 @@ fbStates(
 
 bST3K4_in := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4];
 
+
 IF bST3K4_auto THEN
     IF bST3K4_in AND eEnumGet <> E_EpicsInOut.IN THEN
         eEnumSet := ENUM_EpicsInOut.IN;
-    ELSIF NOT bST3K4_in AND eEnumGet <> E_EpicsInOut.OUT THEN
+{*    ELSIF NOT bST3K4_in AND eEnumGet <> E_EpicsInOut.OUT THEN
         eEnumSet := ENUM_EpicsInOut.OUT;
-    END_IF
+ *}   END_IF
 END_IF
 
 fbFlowSwitch();

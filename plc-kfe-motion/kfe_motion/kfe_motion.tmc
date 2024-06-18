@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{3E446F85-91F1-BB5A-1B0F-7191F4E948DC}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{4B6BB47D-1660-3938-A945-DC2CADCC2E6E}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -180,31 +180,31 @@
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>161412264</GetCodeOffs>
+        <GetCodeOffs>161412284</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>161412296</GetCodeOffs>
+        <GetCodeOffs>161412316</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>161412304</GetCodeOffs>
+        <GetCodeOffs>161412324</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>161412288</GetCodeOffs>
+        <GetCodeOffs>161412308</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sResult</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>161412300</GetCodeOffs>
+        <GetCodeOffs>161412320</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -1413,15 +1413,15 @@
         <Name>nId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>161412208</GetCodeOffs>
-        <SetCodeOffs>161412232</SetCodeOffs>
+        <GetCodeOffs>161412228</GetCodeOffs>
+        <SetCodeOffs>161412252</SetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>161412244</GetCodeOffs>
-        <SetCodeOffs>161412256</SetCodeOffs>
+        <GetCodeOffs>161412264</GetCodeOffs>
+        <SetCodeOffs>161412276</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="9">__setbCutInstancePathByLastInst</Name>
@@ -1689,31 +1689,31 @@
         <Name>eSeverity</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <GetCodeOffs>161412352</GetCodeOffs>
+        <GetCodeOffs>161412372</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>ipSourceInfo</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>161412332</GetCodeOffs>
+        <GetCodeOffs>161412352</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nEventId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>161412420</GetCodeOffs>
+        <GetCodeOffs>161412440</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventClassName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>161412380</GetCodeOffs>
+        <GetCodeOffs>161412400</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>161412424</GetCodeOffs>
+        <GetCodeOffs>161412444</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>EqualsToEventClass</Name>
@@ -2286,7 +2286,7 @@
         <Name>nTimeSent</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>161412448</GetCodeOffs>
+        <GetCodeOffs>161412468</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>SetJsonAttribute</Name>
@@ -7323,6 +7323,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_BOOL</Name>
@@ -7455,6 +7460,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -7614,6 +7624,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>CalculateAndSetNumberOfAssertsForTest</Name>
@@ -7748,6 +7763,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -7906,6 +7926,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8411,6 +8436,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9186,6 +9216,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_TIME</Name>
@@ -9564,6 +9599,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_INT</Name>
@@ -9655,6 +9695,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9782,6 +9827,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LWORD</Name>
@@ -9883,6 +9933,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10197,6 +10252,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AreAllTestsFinished</Name>
@@ -10366,6 +10426,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10550,6 +10615,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LREAL</Name>
@@ -10647,6 +10717,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -21792,6 +21867,11 @@ contributing fast faults, unless the FFO is currently vetoed.
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>FindTestSuiteInstancePath</Name>
@@ -22050,6 +22130,11 @@ contributing fast faults, unless the FFO is currently vetoed.
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_BYTE</Name>
@@ -22151,6 +22236,11 @@ contributing fast faults, unless the FFO is currently vetoed.
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -22310,6 +22400,11 @@ contributing fast faults, unless the FFO is currently vetoed.
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_LTIME</Name>
@@ -22432,6 +22527,11 @@ contributing fast faults, unless the FFO is currently vetoed.
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -22573,6 +22673,11 @@ contributing fast faults, unless the FFO is currently vetoed.
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -23334,6 +23439,11 @@ contributing fast faults, unless the FFO is currently vetoed.
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>SetHasStartedRunning</Name>
@@ -23494,6 +23604,11 @@ contributing fast faults, unless the FFO is currently vetoed.
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>GetHasStartedRunning</Name>
@@ -23596,6 +23711,11 @@ contributing fast faults, unless the FFO is currently vetoed.
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -23750,6 +23870,11 @@ contributing fast faults, unless the FFO is currently vetoed.
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_DINT</Name>
@@ -23872,6 +23997,11 @@ contributing fast faults, unless the FFO is currently vetoed.
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -24047,6 +24177,11 @@ contributing fast faults, unless the FFO is currently vetoed.
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -24329,6 +24464,11 @@ contributing fast faults, unless the FFO is currently vetoed.
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -25125,6 +25265,11 @@ contributing fast faults, unless the FFO is currently vetoed.
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_UDINT</Name>
@@ -25216,6 +25361,11 @@ contributing fast faults, unless the FFO is currently vetoed.
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -54405,8 +54555,8 @@ Readbacks</Comment>
         <Name>nTimestamp</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>161419272</GetCodeOffs>
-        <SetCodeOffs>161419280</SetCodeOffs>
+        <GetCodeOffs>161419292</GetCodeOffs>
+        <SetCodeOffs>161419300</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="44">__getnTimestamp</Name>
@@ -55700,31 +55850,31 @@ Readbacks</Comment>
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>161418840</GetCodeOffs>
+        <GetCodeOffs>161418860</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>161418872</GetCodeOffs>
+        <GetCodeOffs>161418892</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>161418876</GetCodeOffs>
+        <GetCodeOffs>161418896</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>161418864</GetCodeOffs>
+        <GetCodeOffs>161418884</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>161418884</GetCodeOffs>
+        <GetCodeOffs>161418904</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -59016,44 +59166,6 @@ Readbacks</Comment>
       </Properties>
     </DataType>
     <DataType>
-      <Name GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Name>
-      <DisplayName TxtId="">Log event</DisplayName>
-      <EventId>
-        <Name Id="0">Critical</Name>
-        <DisplayName TxtId="">Critical</DisplayName>
-        <Severity>Critical</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="1">Error</Name>
-        <DisplayName TxtId="">Error</DisplayName>
-        <Severity>Error</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="2">Warning</Name>
-        <DisplayName TxtId="">Warning</DisplayName>
-        <Severity>Warning</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="3">Info</Name>
-        <DisplayName TxtId="">Info</DisplayName>
-        <Severity>Info</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="4">Verbose</Name>
-        <DisplayName TxtId="">Verbose</DisplayName>
-        <Severity>Verbose</Severity>
-      </EventId>
-      <Hides>
-        <Hide GUID="{E50B8F82-4C54-4F5A-855E-90970D01354A}"/>
-        <Hide GUID="{772B0B6F-412E-46FD-9006-6E00BFFE1C3D}"/>
-        <Hide GUID="{8FAD87A4-C885-4A4F-85AF-8AB324945AE2}"/>
-        <Hide GUID="{16BEE339-E307-4BC2-8E77-D5FB1794DF5A}"/>
-        <Hide GUID="{B7E60A74-CB5C-4A02-B59C-74B86A888DE9}"/>
-        <Hide GUID="{6B58EF80-AB34-4F6C-81D0-B0589F4FC534}"/>
-        <Hide GUID="{9E76D1D7-D744-4E3D-B111-F6F94B60E6AB}"/>
-      </Hides>
-    </DataType>
-    <DataType>
       <Name GUID="{11F7FC20-DBF4-4DAF-96C7-1FD6B6156B31}" TcBaseType="true" CName="TcSystemEventClass">TcSystemEventClass</Name>
       <DisplayName TxtId="">TcSystemEventClass</DisplayName>
       <EventId>
@@ -59859,6 +59971,44 @@ Readbacks</Comment>
         <Hide GUID="{3FEAA938-D042-4B1E-8ADD-BB2F7BE872B0}"/>
       </Hides>
     </DataType>
+    <DataType>
+      <Name GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Name>
+      <DisplayName TxtId="">Log event</DisplayName>
+      <EventId>
+        <Name Id="0">Critical</Name>
+        <DisplayName TxtId="">Critical</DisplayName>
+        <Severity>Critical</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="1">Error</Name>
+        <DisplayName TxtId="">Error</DisplayName>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="2">Warning</Name>
+        <DisplayName TxtId="">Warning</DisplayName>
+        <Severity>Warning</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="3">Info</Name>
+        <DisplayName TxtId="">Info</DisplayName>
+        <Severity>Info</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="4">Verbose</Name>
+        <DisplayName TxtId="">Verbose</DisplayName>
+        <Severity>Verbose</Severity>
+      </EventId>
+      <Hides>
+        <Hide GUID="{E50B8F82-4C54-4F5A-855E-90970D01354A}"/>
+        <Hide GUID="{772B0B6F-412E-46FD-9006-6E00BFFE1C3D}"/>
+        <Hide GUID="{8FAD87A4-C885-4A4F-85AF-8AB324945AE2}"/>
+        <Hide GUID="{16BEE339-E307-4BC2-8E77-D5FB1794DF5A}"/>
+        <Hide GUID="{B7E60A74-CB5C-4A02-B59C-74B86A888DE9}"/>
+        <Hide GUID="{6B58EF80-AB34-4F6C-81D0-B0589F4FC534}"/>
+        <Hide GUID="{9E76D1D7-D744-4E3D-B111-F6F94B60E6AB}"/>
+      </Hides>
+    </DataType>
   </DataTypes>
   <Modules>
     <Module GUID="{18C132E7-6A13-4953-9F10-8C47DDD85A35}" TcSmClass="TComPlcObjDef">
@@ -59929,7 +60079,7 @@ Readbacks</Comment>
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>162725888</ByteSize>
+          <ByteSize>162594816</ByteSize>
           <Symbol>
             <Name>PRG_IM2K0_XTES.bDefectiveLimitSwitch</Name>
             <BitSize>8</BitSize>
@@ -63587,6 +63737,46 @@ Readbacks</Comment>
             <BitOffs>1282401504</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PRG_OTHER.fbPC1K0FlowSwitch.bFlowOk</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: FLOW_OK
+        field: ZNAM LOW
+        field: ONAM OK
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>1282401568</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_OTHER.fbPC1K4FlowSwitch.bFlowOk</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: FLOW_OK
+        field: ZNAM LOW
+        field: ONAM OK
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>1282401632</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP</Name>
             <BitSize>1760</BitSize>
             <BaseType GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</BaseType>
@@ -63600,7 +63790,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1282402976</BitOffs>
+            <BitOffs>1282403104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_toggle</Name>
@@ -63621,7 +63811,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1282406496</BitOffs>
+            <BitOffs>1282406624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_state</Name>
@@ -63642,7 +63832,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1282406497</BitOffs>
+            <BitOffs>1282406625</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.Axis.NcToPlc</Name>
@@ -63654,7 +63844,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288364096</BitOffs>
+            <BitOffs>1288364224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitForwardEnable</Name>
@@ -63667,7 +63857,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288372032</BitOffs>
+            <BitOffs>1288372160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitBackwardEnable</Name>
@@ -63680,7 +63870,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288372040</BitOffs>
+            <BitOffs>1288372168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHome</Name>
@@ -63693,7 +63883,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288372048</BitOffs>
+            <BitOffs>1288372176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHardwareEnable</Name>
@@ -63716,7 +63906,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288372064</BitOffs>
+            <BitOffs>1288372192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.nRawEncoderULINT</Name>
@@ -63729,7 +63919,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288372096</BitOffs>
+            <BitOffs>1288372224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.nRawEncoderUINT</Name>
@@ -63742,7 +63932,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288372160</BitOffs>
+            <BitOffs>1288372288</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.nRawEncoderINT</Name>
@@ -63755,7 +63945,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288372176</BitOffs>
+            <BitOffs>1288372304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.NcToPlc</Name>
@@ -63767,7 +63957,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288389312</BitOffs>
+            <BitOffs>1288389440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitForwardEnable</Name>
@@ -63780,7 +63970,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288397248</BitOffs>
+            <BitOffs>1288397376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitBackwardEnable</Name>
@@ -63793,7 +63983,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288397256</BitOffs>
+            <BitOffs>1288397384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHome</Name>
@@ -63806,7 +63996,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288397264</BitOffs>
+            <BitOffs>1288397392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHardwareEnable</Name>
@@ -63829,7 +64019,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288397280</BitOffs>
+            <BitOffs>1288397408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.nRawEncoderULINT</Name>
@@ -63842,7 +64032,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288397312</BitOffs>
+            <BitOffs>1288397440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.nRawEncoderUINT</Name>
@@ -63855,7 +64045,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288397376</BitOffs>
+            <BitOffs>1288397504</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.nRawEncoderINT</Name>
@@ -63868,7 +64058,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288397392</BitOffs>
+            <BitOffs>1288397520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.NcToPlc</Name>
@@ -63880,7 +64070,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288414528</BitOffs>
+            <BitOffs>1288414656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitForwardEnable</Name>
@@ -63893,7 +64083,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288422464</BitOffs>
+            <BitOffs>1288422592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitBackwardEnable</Name>
@@ -63906,7 +64096,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288422472</BitOffs>
+            <BitOffs>1288422600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHome</Name>
@@ -63919,7 +64109,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288422480</BitOffs>
+            <BitOffs>1288422608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHardwareEnable</Name>
@@ -63942,7 +64132,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288422496</BitOffs>
+            <BitOffs>1288422624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.nRawEncoderULINT</Name>
@@ -63955,7 +64145,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288422528</BitOffs>
+            <BitOffs>1288422656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.nRawEncoderUINT</Name>
@@ -63968,7 +64158,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288422592</BitOffs>
+            <BitOffs>1288422720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.nRawEncoderINT</Name>
@@ -63981,7 +64171,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288422608</BitOffs>
+            <BitOffs>1288422736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.Axis.NcToPlc</Name>
@@ -63993,7 +64183,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288439744</BitOffs>
+            <BitOffs>1288439872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bLimitForwardEnable</Name>
@@ -64006,7 +64196,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288447680</BitOffs>
+            <BitOffs>1288447808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bLimitBackwardEnable</Name>
@@ -64019,7 +64209,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288447688</BitOffs>
+            <BitOffs>1288447816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bHome</Name>
@@ -64032,7 +64222,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288447696</BitOffs>
+            <BitOffs>1288447824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bHardwareEnable</Name>
@@ -64055,7 +64245,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288447712</BitOffs>
+            <BitOffs>1288447840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.nRawEncoderULINT</Name>
@@ -64068,7 +64258,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288447744</BitOffs>
+            <BitOffs>1288447872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.nRawEncoderUINT</Name>
@@ -64081,7 +64271,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288447808</BitOffs>
+            <BitOffs>1288447936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.nRawEncoderINT</Name>
@@ -64094,7 +64284,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288447824</BitOffs>
+            <BitOffs>1288447952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.Axis.NcToPlc</Name>
@@ -64106,7 +64296,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288464960</BitOffs>
+            <BitOffs>1288465088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bLimitForwardEnable</Name>
@@ -64119,7 +64309,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288472896</BitOffs>
+            <BitOffs>1288473024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bLimitBackwardEnable</Name>
@@ -64132,7 +64322,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288472904</BitOffs>
+            <BitOffs>1288473032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bHome</Name>
@@ -64145,7 +64335,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288472912</BitOffs>
+            <BitOffs>1288473040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bHardwareEnable</Name>
@@ -64168,7 +64358,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288472928</BitOffs>
+            <BitOffs>1288473056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.nRawEncoderULINT</Name>
@@ -64181,7 +64371,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288472960</BitOffs>
+            <BitOffs>1288473088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.nRawEncoderUINT</Name>
@@ -64194,7 +64384,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288473024</BitOffs>
+            <BitOffs>1288473152</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.nRawEncoderINT</Name>
@@ -64207,7 +64397,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288473040</BitOffs>
+            <BitOffs>1288473168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.Axis.NcToPlc</Name>
@@ -64219,7 +64409,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288490176</BitOffs>
+            <BitOffs>1288490304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bLimitForwardEnable</Name>
@@ -64232,7 +64422,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288498112</BitOffs>
+            <BitOffs>1288498240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bLimitBackwardEnable</Name>
@@ -64245,7 +64435,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288498120</BitOffs>
+            <BitOffs>1288498248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bHome</Name>
@@ -64258,7 +64448,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288498128</BitOffs>
+            <BitOffs>1288498256</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bHardwareEnable</Name>
@@ -64281,7 +64471,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288498144</BitOffs>
+            <BitOffs>1288498272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.nRawEncoderULINT</Name>
@@ -64294,7 +64484,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288498176</BitOffs>
+            <BitOffs>1288498304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.nRawEncoderUINT</Name>
@@ -64307,7 +64497,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288498240</BitOffs>
+            <BitOffs>1288498368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.nRawEncoderINT</Name>
@@ -64320,7 +64510,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288498256</BitOffs>
+            <BitOffs>1288498384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.Axis.NcToPlc</Name>
@@ -64332,7 +64522,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288515392</BitOffs>
+            <BitOffs>1288515520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bLimitForwardEnable</Name>
@@ -64345,7 +64535,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288523328</BitOffs>
+            <BitOffs>1288523456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bLimitBackwardEnable</Name>
@@ -64358,7 +64548,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288523336</BitOffs>
+            <BitOffs>1288523464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bHome</Name>
@@ -64371,7 +64561,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288523344</BitOffs>
+            <BitOffs>1288523472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bHardwareEnable</Name>
@@ -64394,7 +64584,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288523360</BitOffs>
+            <BitOffs>1288523488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.nRawEncoderULINT</Name>
@@ -64407,7 +64597,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288523392</BitOffs>
+            <BitOffs>1288523520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.nRawEncoderUINT</Name>
@@ -64420,7 +64610,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288523456</BitOffs>
+            <BitOffs>1288523584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.nRawEncoderINT</Name>
@@ -64433,7 +64623,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288523472</BitOffs>
+            <BitOffs>1288523600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.Axis.NcToPlc</Name>
@@ -64445,7 +64635,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288540608</BitOffs>
+            <BitOffs>1288540736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bLimitForwardEnable</Name>
@@ -64458,7 +64648,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288548544</BitOffs>
+            <BitOffs>1288548672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bLimitBackwardEnable</Name>
@@ -64471,7 +64661,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288548552</BitOffs>
+            <BitOffs>1288548680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bHome</Name>
@@ -64484,7 +64674,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288548560</BitOffs>
+            <BitOffs>1288548688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bHardwareEnable</Name>
@@ -64507,7 +64697,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288548576</BitOffs>
+            <BitOffs>1288548704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.nRawEncoderULINT</Name>
@@ -64520,7 +64710,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288548608</BitOffs>
+            <BitOffs>1288548736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.nRawEncoderUINT</Name>
@@ -64533,7 +64723,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288548672</BitOffs>
+            <BitOffs>1288548800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.nRawEncoderINT</Name>
@@ -64546,7 +64736,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288548688</BitOffs>
+            <BitOffs>1288548816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.Axis.NcToPlc</Name>
@@ -64558,7 +64748,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288565824</BitOffs>
+            <BitOffs>1288565952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bLimitForwardEnable</Name>
@@ -64571,7 +64761,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288573760</BitOffs>
+            <BitOffs>1288573888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bLimitBackwardEnable</Name>
@@ -64584,7 +64774,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288573768</BitOffs>
+            <BitOffs>1288573896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bHome</Name>
@@ -64597,7 +64787,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288573776</BitOffs>
+            <BitOffs>1288573904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bHardwareEnable</Name>
@@ -64620,7 +64810,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288573792</BitOffs>
+            <BitOffs>1288573920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.nRawEncoderULINT</Name>
@@ -64633,7 +64823,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288573824</BitOffs>
+            <BitOffs>1288573952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.nRawEncoderUINT</Name>
@@ -64646,7 +64836,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288573888</BitOffs>
+            <BitOffs>1288574016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.nRawEncoderINT</Name>
@@ -64659,7 +64849,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288573904</BitOffs>
+            <BitOffs>1288574032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.Axis.NcToPlc</Name>
@@ -64671,7 +64861,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288591040</BitOffs>
+            <BitOffs>1288591168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bLimitForwardEnable</Name>
@@ -64684,7 +64874,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288598976</BitOffs>
+            <BitOffs>1288599104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bLimitBackwardEnable</Name>
@@ -64697,7 +64887,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288598984</BitOffs>
+            <BitOffs>1288599112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bHome</Name>
@@ -64710,7 +64900,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288598992</BitOffs>
+            <BitOffs>1288599120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bHardwareEnable</Name>
@@ -64733,7 +64923,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288599008</BitOffs>
+            <BitOffs>1288599136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.nRawEncoderULINT</Name>
@@ -64746,7 +64936,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288599040</BitOffs>
+            <BitOffs>1288599168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.nRawEncoderUINT</Name>
@@ -64759,7 +64949,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288599104</BitOffs>
+            <BitOffs>1288599232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.nRawEncoderINT</Name>
@@ -64772,7 +64962,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288599120</BitOffs>
+            <BitOffs>1288599248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.Axis.NcToPlc</Name>
@@ -64784,7 +64974,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288616256</BitOffs>
+            <BitOffs>1288616384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bLimitForwardEnable</Name>
@@ -64797,7 +64987,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288624192</BitOffs>
+            <BitOffs>1288624320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bLimitBackwardEnable</Name>
@@ -64810,7 +65000,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288624200</BitOffs>
+            <BitOffs>1288624328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bHome</Name>
@@ -64823,7 +65013,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288624208</BitOffs>
+            <BitOffs>1288624336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bHardwareEnable</Name>
@@ -64846,7 +65036,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288624224</BitOffs>
+            <BitOffs>1288624352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.nRawEncoderULINT</Name>
@@ -64859,7 +65049,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288624256</BitOffs>
+            <BitOffs>1288624384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.nRawEncoderUINT</Name>
@@ -64872,7 +65062,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288624320</BitOffs>
+            <BitOffs>1288624448</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.nRawEncoderINT</Name>
@@ -64885,7 +65075,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288624336</BitOffs>
+            <BitOffs>1288624464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.Axis.NcToPlc</Name>
@@ -64897,7 +65087,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288641472</BitOffs>
+            <BitOffs>1288641600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bLimitForwardEnable</Name>
@@ -64910,7 +65100,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288649408</BitOffs>
+            <BitOffs>1288649536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bLimitBackwardEnable</Name>
@@ -64923,7 +65113,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288649416</BitOffs>
+            <BitOffs>1288649544</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bHome</Name>
@@ -64936,7 +65126,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288649424</BitOffs>
+            <BitOffs>1288649552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bHardwareEnable</Name>
@@ -64959,7 +65149,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288649440</BitOffs>
+            <BitOffs>1288649568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.nRawEncoderULINT</Name>
@@ -64972,7 +65162,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288649472</BitOffs>
+            <BitOffs>1288649600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.nRawEncoderUINT</Name>
@@ -64985,7 +65175,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288649536</BitOffs>
+            <BitOffs>1288649664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.nRawEncoderINT</Name>
@@ -64998,7 +65188,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288649552</BitOffs>
+            <BitOffs>1288649680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.Axis.NcToPlc</Name>
@@ -65010,7 +65200,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288666688</BitOffs>
+            <BitOffs>1288666816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bLimitForwardEnable</Name>
@@ -65023,7 +65213,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288674624</BitOffs>
+            <BitOffs>1288674752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bLimitBackwardEnable</Name>
@@ -65036,7 +65226,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288674632</BitOffs>
+            <BitOffs>1288674760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bHome</Name>
@@ -65049,7 +65239,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288674640</BitOffs>
+            <BitOffs>1288674768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bHardwareEnable</Name>
@@ -65072,7 +65262,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288674656</BitOffs>
+            <BitOffs>1288674784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.nRawEncoderULINT</Name>
@@ -65085,7 +65275,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288674688</BitOffs>
+            <BitOffs>1288674816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.nRawEncoderUINT</Name>
@@ -65098,7 +65288,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288674752</BitOffs>
+            <BitOffs>1288674880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.nRawEncoderINT</Name>
@@ -65111,7 +65301,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288674768</BitOffs>
+            <BitOffs>1288674896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.Axis.NcToPlc</Name>
@@ -65123,7 +65313,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288691904</BitOffs>
+            <BitOffs>1288692032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bLimitForwardEnable</Name>
@@ -65136,7 +65326,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288699840</BitOffs>
+            <BitOffs>1288699968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bLimitBackwardEnable</Name>
@@ -65149,7 +65339,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288699848</BitOffs>
+            <BitOffs>1288699976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bHome</Name>
@@ -65162,7 +65352,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288699856</BitOffs>
+            <BitOffs>1288699984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bHardwareEnable</Name>
@@ -65185,7 +65375,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288699872</BitOffs>
+            <BitOffs>1288700000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.nRawEncoderULINT</Name>
@@ -65198,7 +65388,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288699904</BitOffs>
+            <BitOffs>1288700032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.nRawEncoderUINT</Name>
@@ -65211,7 +65401,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288699968</BitOffs>
+            <BitOffs>1288700096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.nRawEncoderINT</Name>
@@ -65224,7 +65414,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288699984</BitOffs>
+            <BitOffs>1288700112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.Axis.NcToPlc</Name>
@@ -65236,7 +65426,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288717120</BitOffs>
+            <BitOffs>1288717248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bLimitForwardEnable</Name>
@@ -65249,7 +65439,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288725056</BitOffs>
+            <BitOffs>1288725184</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bLimitBackwardEnable</Name>
@@ -65262,7 +65452,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288725064</BitOffs>
+            <BitOffs>1288725192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bHome</Name>
@@ -65275,7 +65465,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288725072</BitOffs>
+            <BitOffs>1288725200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bHardwareEnable</Name>
@@ -65298,7 +65488,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288725088</BitOffs>
+            <BitOffs>1288725216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.nRawEncoderULINT</Name>
@@ -65311,7 +65501,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288725120</BitOffs>
+            <BitOffs>1288725248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.nRawEncoderUINT</Name>
@@ -65324,7 +65514,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288725184</BitOffs>
+            <BitOffs>1288725312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.nRawEncoderINT</Name>
@@ -65337,7 +65527,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288725200</BitOffs>
+            <BitOffs>1288725328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.Axis.NcToPlc</Name>
@@ -65349,7 +65539,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288742336</BitOffs>
+            <BitOffs>1288742464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bLimitForwardEnable</Name>
@@ -65362,7 +65552,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288750272</BitOffs>
+            <BitOffs>1288750400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bLimitBackwardEnable</Name>
@@ -65375,7 +65565,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288750280</BitOffs>
+            <BitOffs>1288750408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bHome</Name>
@@ -65388,7 +65578,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288750288</BitOffs>
+            <BitOffs>1288750416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bHardwareEnable</Name>
@@ -65411,7 +65601,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288750304</BitOffs>
+            <BitOffs>1288750432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.nRawEncoderULINT</Name>
@@ -65424,7 +65614,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288750336</BitOffs>
+            <BitOffs>1288750464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.nRawEncoderUINT</Name>
@@ -65437,7 +65627,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288750400</BitOffs>
+            <BitOffs>1288750528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.nRawEncoderINT</Name>
@@ -65450,7 +65640,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288750416</BitOffs>
+            <BitOffs>1288750544</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.Axis.NcToPlc</Name>
@@ -65462,7 +65652,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288767552</BitOffs>
+            <BitOffs>1288767680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bLimitForwardEnable</Name>
@@ -65475,7 +65665,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288775488</BitOffs>
+            <BitOffs>1288775616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bLimitBackwardEnable</Name>
@@ -65488,7 +65678,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288775496</BitOffs>
+            <BitOffs>1288775624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bHome</Name>
@@ -65501,7 +65691,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288775504</BitOffs>
+            <BitOffs>1288775632</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bHardwareEnable</Name>
@@ -65524,7 +65714,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288775520</BitOffs>
+            <BitOffs>1288775648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.nRawEncoderULINT</Name>
@@ -65537,7 +65727,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288775552</BitOffs>
+            <BitOffs>1288775680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.nRawEncoderUINT</Name>
@@ -65550,7 +65740,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288775616</BitOffs>
+            <BitOffs>1288775744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.nRawEncoderINT</Name>
@@ -65563,7 +65753,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288775632</BitOffs>
+            <BitOffs>1288775760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.Axis.NcToPlc</Name>
@@ -65575,7 +65765,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288792768</BitOffs>
+            <BitOffs>1288792896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bLimitForwardEnable</Name>
@@ -65588,7 +65778,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288800704</BitOffs>
+            <BitOffs>1288800832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bLimitBackwardEnable</Name>
@@ -65601,7 +65791,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288800712</BitOffs>
+            <BitOffs>1288800840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bHome</Name>
@@ -65614,7 +65804,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288800720</BitOffs>
+            <BitOffs>1288800848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bHardwareEnable</Name>
@@ -65637,7 +65827,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288800736</BitOffs>
+            <BitOffs>1288800864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.nRawEncoderULINT</Name>
@@ -65650,7 +65840,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288800768</BitOffs>
+            <BitOffs>1288800896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.nRawEncoderUINT</Name>
@@ -65663,7 +65853,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288800832</BitOffs>
+            <BitOffs>1288800960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.nRawEncoderINT</Name>
@@ -65676,7 +65866,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288800848</BitOffs>
+            <BitOffs>1288800976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.Axis.NcToPlc</Name>
@@ -65688,7 +65878,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288817984</BitOffs>
+            <BitOffs>1288818112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bLimitForwardEnable</Name>
@@ -65701,7 +65891,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288825920</BitOffs>
+            <BitOffs>1288826048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bLimitBackwardEnable</Name>
@@ -65714,7 +65904,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288825928</BitOffs>
+            <BitOffs>1288826056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bHome</Name>
@@ -65727,7 +65917,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288825936</BitOffs>
+            <BitOffs>1288826064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bHardwareEnable</Name>
@@ -65750,7 +65940,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288825952</BitOffs>
+            <BitOffs>1288826080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.nRawEncoderULINT</Name>
@@ -65763,7 +65953,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288825984</BitOffs>
+            <BitOffs>1288826112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.nRawEncoderUINT</Name>
@@ -65776,7 +65966,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288826048</BitOffs>
+            <BitOffs>1288826176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.nRawEncoderINT</Name>
@@ -65789,7 +65979,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288826064</BitOffs>
+            <BitOffs>1288826192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.Axis.NcToPlc</Name>
@@ -65801,7 +65991,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288843200</BitOffs>
+            <BitOffs>1288843328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bLimitForwardEnable</Name>
@@ -65814,7 +66004,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288851136</BitOffs>
+            <BitOffs>1288851264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bLimitBackwardEnable</Name>
@@ -65827,7 +66017,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288851144</BitOffs>
+            <BitOffs>1288851272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bHome</Name>
@@ -65840,7 +66030,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288851152</BitOffs>
+            <BitOffs>1288851280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bHardwareEnable</Name>
@@ -65863,7 +66053,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288851168</BitOffs>
+            <BitOffs>1288851296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.nRawEncoderULINT</Name>
@@ -65876,7 +66066,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288851200</BitOffs>
+            <BitOffs>1288851328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.nRawEncoderUINT</Name>
@@ -65889,7 +66079,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288851264</BitOffs>
+            <BitOffs>1288851392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.nRawEncoderINT</Name>
@@ -65902,7 +66092,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288851280</BitOffs>
+            <BitOffs>1288851408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.Axis.NcToPlc</Name>
@@ -65914,7 +66104,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288868416</BitOffs>
+            <BitOffs>1288868544</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bLimitForwardEnable</Name>
@@ -65927,7 +66117,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288876352</BitOffs>
+            <BitOffs>1288876480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bLimitBackwardEnable</Name>
@@ -65940,7 +66130,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288876360</BitOffs>
+            <BitOffs>1288876488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bHome</Name>
@@ -65953,7 +66143,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288876368</BitOffs>
+            <BitOffs>1288876496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bHardwareEnable</Name>
@@ -65976,7 +66166,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288876384</BitOffs>
+            <BitOffs>1288876512</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.nRawEncoderULINT</Name>
@@ -65989,7 +66179,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288876416</BitOffs>
+            <BitOffs>1288876544</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.nRawEncoderUINT</Name>
@@ -66002,7 +66192,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288876480</BitOffs>
+            <BitOffs>1288876608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.nRawEncoderINT</Name>
@@ -66015,7 +66205,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288876496</BitOffs>
+            <BitOffs>1288876624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.Axis.NcToPlc</Name>
@@ -66027,7 +66217,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288893632</BitOffs>
+            <BitOffs>1288893760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bLimitForwardEnable</Name>
@@ -66040,7 +66230,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288901568</BitOffs>
+            <BitOffs>1288901696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bLimitBackwardEnable</Name>
@@ -66053,7 +66243,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288901576</BitOffs>
+            <BitOffs>1288901704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bHome</Name>
@@ -66066,7 +66256,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288901584</BitOffs>
+            <BitOffs>1288901712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bHardwareEnable</Name>
@@ -66089,7 +66279,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288901600</BitOffs>
+            <BitOffs>1288901728</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.nRawEncoderULINT</Name>
@@ -66102,7 +66292,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288901632</BitOffs>
+            <BitOffs>1288901760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.nRawEncoderUINT</Name>
@@ -66115,7 +66305,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288901696</BitOffs>
+            <BitOffs>1288901824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.nRawEncoderINT</Name>
@@ -66128,7 +66318,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288901712</BitOffs>
+            <BitOffs>1288901840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.Axis.NcToPlc</Name>
@@ -66140,7 +66330,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288918848</BitOffs>
+            <BitOffs>1288918976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bLimitForwardEnable</Name>
@@ -66153,7 +66343,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288926784</BitOffs>
+            <BitOffs>1288926912</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bLimitBackwardEnable</Name>
@@ -66166,7 +66356,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288926792</BitOffs>
+            <BitOffs>1288926920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bHome</Name>
@@ -66179,7 +66369,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288926800</BitOffs>
+            <BitOffs>1288926928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bHardwareEnable</Name>
@@ -66202,7 +66392,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288926816</BitOffs>
+            <BitOffs>1288926944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.nRawEncoderULINT</Name>
@@ -66215,7 +66405,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288926848</BitOffs>
+            <BitOffs>1288926976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.nRawEncoderUINT</Name>
@@ -66228,7 +66418,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288926912</BitOffs>
+            <BitOffs>1288927040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.nRawEncoderINT</Name>
@@ -66241,7 +66431,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288926928</BitOffs>
+            <BitOffs>1288927056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.Axis.NcToPlc</Name>
@@ -66253,7 +66443,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288944064</BitOffs>
+            <BitOffs>1288944192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bLimitForwardEnable</Name>
@@ -66266,7 +66456,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288952000</BitOffs>
+            <BitOffs>1288952128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bLimitBackwardEnable</Name>
@@ -66279,7 +66469,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288952008</BitOffs>
+            <BitOffs>1288952136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bHome</Name>
@@ -66292,7 +66482,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288952016</BitOffs>
+            <BitOffs>1288952144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bHardwareEnable</Name>
@@ -66315,7 +66505,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288952032</BitOffs>
+            <BitOffs>1288952160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.nRawEncoderULINT</Name>
@@ -66328,7 +66518,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288952064</BitOffs>
+            <BitOffs>1288952192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.nRawEncoderUINT</Name>
@@ -66341,7 +66531,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288952128</BitOffs>
+            <BitOffs>1288952256</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.nRawEncoderINT</Name>
@@ -66354,7 +66544,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288952144</BitOffs>
+            <BitOffs>1288952272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.Axis.NcToPlc</Name>
@@ -66366,7 +66556,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288969280</BitOffs>
+            <BitOffs>1288969408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.bLimitForwardEnable</Name>
@@ -66379,7 +66569,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288977216</BitOffs>
+            <BitOffs>1288977344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.bLimitBackwardEnable</Name>
@@ -66392,7 +66582,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288977224</BitOffs>
+            <BitOffs>1288977352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.bHome</Name>
@@ -66405,7 +66595,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288977232</BitOffs>
+            <BitOffs>1288977360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.bHardwareEnable</Name>
@@ -66428,7 +66618,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288977248</BitOffs>
+            <BitOffs>1288977376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.nRawEncoderULINT</Name>
@@ -66441,7 +66631,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288977280</BitOffs>
+            <BitOffs>1288977408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.nRawEncoderUINT</Name>
@@ -66454,7 +66644,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288977344</BitOffs>
+            <BitOffs>1288977472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.nRawEncoderINT</Name>
@@ -66467,7 +66657,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288977360</BitOffs>
+            <BitOffs>1288977488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.Axis.NcToPlc</Name>
@@ -66479,7 +66669,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1288994496</BitOffs>
+            <BitOffs>1288994624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.bLimitForwardEnable</Name>
@@ -66492,7 +66682,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289002432</BitOffs>
+            <BitOffs>1289002560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.bLimitBackwardEnable</Name>
@@ -66505,7 +66695,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289002440</BitOffs>
+            <BitOffs>1289002568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.bHome</Name>
@@ -66518,7 +66708,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289002448</BitOffs>
+            <BitOffs>1289002576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.bHardwareEnable</Name>
@@ -66541,7 +66731,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289002464</BitOffs>
+            <BitOffs>1289002592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.nRawEncoderULINT</Name>
@@ -66554,7 +66744,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289002496</BitOffs>
+            <BitOffs>1289002624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.nRawEncoderUINT</Name>
@@ -66567,7 +66757,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289002560</BitOffs>
+            <BitOffs>1289002688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.nRawEncoderINT</Name>
@@ -66580,7 +66770,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289002576</BitOffs>
+            <BitOffs>1289002704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.Axis.NcToPlc</Name>
@@ -66592,7 +66782,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289019712</BitOffs>
+            <BitOffs>1289019840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.bLimitForwardEnable</Name>
@@ -66605,7 +66795,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289027648</BitOffs>
+            <BitOffs>1289027776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.bLimitBackwardEnable</Name>
@@ -66618,7 +66808,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289027656</BitOffs>
+            <BitOffs>1289027784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.bHome</Name>
@@ -66631,7 +66821,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289027664</BitOffs>
+            <BitOffs>1289027792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.bHardwareEnable</Name>
@@ -66654,7 +66844,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289027680</BitOffs>
+            <BitOffs>1289027808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.nRawEncoderULINT</Name>
@@ -66667,7 +66857,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289027712</BitOffs>
+            <BitOffs>1289027840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.nRawEncoderUINT</Name>
@@ -66680,7 +66870,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289027776</BitOffs>
+            <BitOffs>1289027904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.nRawEncoderINT</Name>
@@ -66693,7 +66883,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289027792</BitOffs>
+            <BitOffs>1289027920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.Axis.NcToPlc</Name>
@@ -66705,7 +66895,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289044928</BitOffs>
+            <BitOffs>1289045056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.bLimitForwardEnable</Name>
@@ -66718,7 +66908,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289052864</BitOffs>
+            <BitOffs>1289052992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.bLimitBackwardEnable</Name>
@@ -66731,7 +66921,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289052872</BitOffs>
+            <BitOffs>1289053000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.bHome</Name>
@@ -66744,7 +66934,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289052880</BitOffs>
+            <BitOffs>1289053008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.bHardwareEnable</Name>
@@ -66767,7 +66957,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289052896</BitOffs>
+            <BitOffs>1289053024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.nRawEncoderULINT</Name>
@@ -66780,7 +66970,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289052928</BitOffs>
+            <BitOffs>1289053056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.nRawEncoderUINT</Name>
@@ -66793,7 +66983,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289052992</BitOffs>
+            <BitOffs>1289053120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.nRawEncoderINT</Name>
@@ -66806,7 +66996,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289053008</BitOffs>
+            <BitOffs>1289053136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.Axis.NcToPlc</Name>
@@ -66818,7 +67008,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289070144</BitOffs>
+            <BitOffs>1289070272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.bLimitForwardEnable</Name>
@@ -66831,7 +67021,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289078080</BitOffs>
+            <BitOffs>1289078208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.bLimitBackwardEnable</Name>
@@ -66844,7 +67034,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289078088</BitOffs>
+            <BitOffs>1289078216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.bHome</Name>
@@ -66857,7 +67047,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289078096</BitOffs>
+            <BitOffs>1289078224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.bHardwareEnable</Name>
@@ -66880,7 +67070,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289078112</BitOffs>
+            <BitOffs>1289078240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.nRawEncoderULINT</Name>
@@ -66893,7 +67083,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289078144</BitOffs>
+            <BitOffs>1289078272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.nRawEncoderUINT</Name>
@@ -66906,7 +67096,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289078208</BitOffs>
+            <BitOffs>1289078336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.nRawEncoderINT</Name>
@@ -66919,7 +67109,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289078224</BitOffs>
+            <BitOffs>1289078352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.Axis.NcToPlc</Name>
@@ -66931,7 +67121,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289095360</BitOffs>
+            <BitOffs>1289095488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.bLimitForwardEnable</Name>
@@ -66944,7 +67134,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289103296</BitOffs>
+            <BitOffs>1289103424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.bLimitBackwardEnable</Name>
@@ -66957,7 +67147,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289103304</BitOffs>
+            <BitOffs>1289103432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.bHome</Name>
@@ -66970,7 +67160,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289103312</BitOffs>
+            <BitOffs>1289103440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.bHardwareEnable</Name>
@@ -66993,7 +67183,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289103328</BitOffs>
+            <BitOffs>1289103456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.nRawEncoderULINT</Name>
@@ -67006,7 +67196,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289103360</BitOffs>
+            <BitOffs>1289103488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.nRawEncoderUINT</Name>
@@ -67019,7 +67209,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289103424</BitOffs>
+            <BitOffs>1289103552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.nRawEncoderINT</Name>
@@ -67032,7 +67222,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289103440</BitOffs>
+            <BitOffs>1289103568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.Axis.NcToPlc</Name>
@@ -67044,7 +67234,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289120576</BitOffs>
+            <BitOffs>1289120704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.bLimitForwardEnable</Name>
@@ -67057,7 +67247,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289128512</BitOffs>
+            <BitOffs>1289128640</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.bLimitBackwardEnable</Name>
@@ -67070,7 +67260,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289128520</BitOffs>
+            <BitOffs>1289128648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.bHome</Name>
@@ -67083,7 +67273,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289128528</BitOffs>
+            <BitOffs>1289128656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.bHardwareEnable</Name>
@@ -67106,7 +67296,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289128544</BitOffs>
+            <BitOffs>1289128672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.nRawEncoderULINT</Name>
@@ -67119,7 +67309,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289128576</BitOffs>
+            <BitOffs>1289128704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.nRawEncoderUINT</Name>
@@ -67132,7 +67322,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289128640</BitOffs>
+            <BitOffs>1289128768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.nRawEncoderINT</Name>
@@ -67145,7 +67335,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289128656</BitOffs>
+            <BitOffs>1289128784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.Axis.NcToPlc</Name>
@@ -67157,7 +67347,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289145792</BitOffs>
+            <BitOffs>1289145920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.bLimitForwardEnable</Name>
@@ -67170,7 +67360,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289153728</BitOffs>
+            <BitOffs>1289153856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.bLimitBackwardEnable</Name>
@@ -67183,7 +67373,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289153736</BitOffs>
+            <BitOffs>1289153864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.bHome</Name>
@@ -67196,7 +67386,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289153744</BitOffs>
+            <BitOffs>1289153872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.bHardwareEnable</Name>
@@ -67219,7 +67409,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289153760</BitOffs>
+            <BitOffs>1289153888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.nRawEncoderULINT</Name>
@@ -67232,7 +67422,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289153792</BitOffs>
+            <BitOffs>1289153920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.nRawEncoderUINT</Name>
@@ -67245,7 +67435,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289153856</BitOffs>
+            <BitOffs>1289153984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.nRawEncoderINT</Name>
@@ -67258,7 +67448,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289153872</BitOffs>
+            <BitOffs>1289154000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.Axis.NcToPlc</Name>
@@ -67270,7 +67460,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289171008</BitOffs>
+            <BitOffs>1289171136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.bLimitForwardEnable</Name>
@@ -67283,7 +67473,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289178944</BitOffs>
+            <BitOffs>1289179072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.bLimitBackwardEnable</Name>
@@ -67296,7 +67486,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289178952</BitOffs>
+            <BitOffs>1289179080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.bHome</Name>
@@ -67309,7 +67499,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289178960</BitOffs>
+            <BitOffs>1289179088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.bHardwareEnable</Name>
@@ -67332,7 +67522,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289178976</BitOffs>
+            <BitOffs>1289179104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.nRawEncoderULINT</Name>
@@ -67345,7 +67535,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289179008</BitOffs>
+            <BitOffs>1289179136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.nRawEncoderUINT</Name>
@@ -67358,7 +67548,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289179072</BitOffs>
+            <BitOffs>1289179200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.nRawEncoderINT</Name>
@@ -67371,7 +67561,7 @@ Readbacks</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1289179088</BitOffs>
+            <BitOffs>1289179216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.rReqTrans</Name>
@@ -67394,54 +67584,14 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291131904</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_OTHER.fbPC1K0FlowSwitch.bFlowOk</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: FLOW_OK
-        field: ZNAM LOW
-        field: ONAM OK
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>1291547616</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_OTHER.fbPC1K4FlowSwitch.bFlowOk</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: FLOW_OK
-        field: ZNAM LOW
-        field: ONAM OK
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>1291547680</BitOffs>
+            <BitOffs>1291132032</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>162725888</ByteSize>
+          <ByteSize>162594816</ByteSize>
           <Symbol>
             <Name>PRG_RTDSK0.bRTDSK0_SCRP_LED_01</Name>
             <BitSize>8</BitSize>
@@ -68458,7 +68608,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1282404736</BitOffs>
+            <BitOffs>1282404864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.Axis.PlcToNc</Name>
@@ -68470,7 +68620,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288363072</BitOffs>
+            <BitOffs>1288363200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bBrakeRelease</Name>
@@ -68483,7 +68633,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288372056</BitOffs>
+            <BitOffs>1288372184</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.PlcToNc</Name>
@@ -68495,7 +68645,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288388288</BitOffs>
+            <BitOffs>1288388416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bBrakeRelease</Name>
@@ -68508,7 +68658,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288397272</BitOffs>
+            <BitOffs>1288397400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.PlcToNc</Name>
@@ -68520,7 +68670,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288413504</BitOffs>
+            <BitOffs>1288413632</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bBrakeRelease</Name>
@@ -68533,7 +68683,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288422488</BitOffs>
+            <BitOffs>1288422616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.Axis.PlcToNc</Name>
@@ -68545,7 +68695,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288438720</BitOffs>
+            <BitOffs>1288438848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bBrakeRelease</Name>
@@ -68558,7 +68708,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288447704</BitOffs>
+            <BitOffs>1288447832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.Axis.PlcToNc</Name>
@@ -68570,7 +68720,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288463936</BitOffs>
+            <BitOffs>1288464064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bBrakeRelease</Name>
@@ -68583,7 +68733,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288472920</BitOffs>
+            <BitOffs>1288473048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.Axis.PlcToNc</Name>
@@ -68595,7 +68745,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288489152</BitOffs>
+            <BitOffs>1288489280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bBrakeRelease</Name>
@@ -68608,7 +68758,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288498136</BitOffs>
+            <BitOffs>1288498264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.Axis.PlcToNc</Name>
@@ -68620,7 +68770,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288514368</BitOffs>
+            <BitOffs>1288514496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bBrakeRelease</Name>
@@ -68633,7 +68783,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288523352</BitOffs>
+            <BitOffs>1288523480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.Axis.PlcToNc</Name>
@@ -68645,7 +68795,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288539584</BitOffs>
+            <BitOffs>1288539712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bBrakeRelease</Name>
@@ -68658,7 +68808,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288548568</BitOffs>
+            <BitOffs>1288548696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.Axis.PlcToNc</Name>
@@ -68670,7 +68820,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288564800</BitOffs>
+            <BitOffs>1288564928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bBrakeRelease</Name>
@@ -68683,7 +68833,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288573784</BitOffs>
+            <BitOffs>1288573912</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.Axis.PlcToNc</Name>
@@ -68695,7 +68845,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288590016</BitOffs>
+            <BitOffs>1288590144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bBrakeRelease</Name>
@@ -68708,7 +68858,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288599000</BitOffs>
+            <BitOffs>1288599128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.Axis.PlcToNc</Name>
@@ -68720,7 +68870,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288615232</BitOffs>
+            <BitOffs>1288615360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bBrakeRelease</Name>
@@ -68733,7 +68883,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288624216</BitOffs>
+            <BitOffs>1288624344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.Axis.PlcToNc</Name>
@@ -68745,7 +68895,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288640448</BitOffs>
+            <BitOffs>1288640576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bBrakeRelease</Name>
@@ -68758,7 +68908,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288649432</BitOffs>
+            <BitOffs>1288649560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.Axis.PlcToNc</Name>
@@ -68770,7 +68920,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288665664</BitOffs>
+            <BitOffs>1288665792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bBrakeRelease</Name>
@@ -68783,7 +68933,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288674648</BitOffs>
+            <BitOffs>1288674776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.Axis.PlcToNc</Name>
@@ -68795,7 +68945,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288690880</BitOffs>
+            <BitOffs>1288691008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bBrakeRelease</Name>
@@ -68808,7 +68958,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288699864</BitOffs>
+            <BitOffs>1288699992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.Axis.PlcToNc</Name>
@@ -68820,7 +68970,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288716096</BitOffs>
+            <BitOffs>1288716224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bBrakeRelease</Name>
@@ -68833,7 +68983,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288725080</BitOffs>
+            <BitOffs>1288725208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.Axis.PlcToNc</Name>
@@ -68845,7 +68995,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288741312</BitOffs>
+            <BitOffs>1288741440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bBrakeRelease</Name>
@@ -68858,7 +69008,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288750296</BitOffs>
+            <BitOffs>1288750424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.Axis.PlcToNc</Name>
@@ -68870,7 +69020,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288766528</BitOffs>
+            <BitOffs>1288766656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bBrakeRelease</Name>
@@ -68883,7 +69033,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288775512</BitOffs>
+            <BitOffs>1288775640</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.Axis.PlcToNc</Name>
@@ -68895,7 +69045,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288791744</BitOffs>
+            <BitOffs>1288791872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bBrakeRelease</Name>
@@ -68908,7 +69058,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288800728</BitOffs>
+            <BitOffs>1288800856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.Axis.PlcToNc</Name>
@@ -68920,7 +69070,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288816960</BitOffs>
+            <BitOffs>1288817088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bBrakeRelease</Name>
@@ -68933,7 +69083,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288825944</BitOffs>
+            <BitOffs>1288826072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.Axis.PlcToNc</Name>
@@ -68945,7 +69095,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288842176</BitOffs>
+            <BitOffs>1288842304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bBrakeRelease</Name>
@@ -68958,7 +69108,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288851160</BitOffs>
+            <BitOffs>1288851288</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.Axis.PlcToNc</Name>
@@ -68970,7 +69120,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288867392</BitOffs>
+            <BitOffs>1288867520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bBrakeRelease</Name>
@@ -68983,7 +69133,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288876376</BitOffs>
+            <BitOffs>1288876504</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.Axis.PlcToNc</Name>
@@ -68995,7 +69145,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288892608</BitOffs>
+            <BitOffs>1288892736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bBrakeRelease</Name>
@@ -69008,7 +69158,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288901592</BitOffs>
+            <BitOffs>1288901720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.Axis.PlcToNc</Name>
@@ -69020,7 +69170,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288917824</BitOffs>
+            <BitOffs>1288917952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bBrakeRelease</Name>
@@ -69033,7 +69183,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288926808</BitOffs>
+            <BitOffs>1288926936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.Axis.PlcToNc</Name>
@@ -69045,7 +69195,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288943040</BitOffs>
+            <BitOffs>1288943168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bBrakeRelease</Name>
@@ -69058,7 +69208,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288952024</BitOffs>
+            <BitOffs>1288952152</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.Axis.PlcToNc</Name>
@@ -69070,7 +69220,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288968256</BitOffs>
+            <BitOffs>1288968384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25.bBrakeRelease</Name>
@@ -69083,7 +69233,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288977240</BitOffs>
+            <BitOffs>1288977368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.Axis.PlcToNc</Name>
@@ -69095,7 +69245,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1288993472</BitOffs>
+            <BitOffs>1288993600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26.bBrakeRelease</Name>
@@ -69108,7 +69258,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289002456</BitOffs>
+            <BitOffs>1289002584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.Axis.PlcToNc</Name>
@@ -69120,7 +69270,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289018688</BitOffs>
+            <BitOffs>1289018816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27.bBrakeRelease</Name>
@@ -69133,7 +69283,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289027672</BitOffs>
+            <BitOffs>1289027800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.Axis.PlcToNc</Name>
@@ -69145,7 +69295,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289043904</BitOffs>
+            <BitOffs>1289044032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28.bBrakeRelease</Name>
@@ -69158,7 +69308,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289052888</BitOffs>
+            <BitOffs>1289053016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.Axis.PlcToNc</Name>
@@ -69170,7 +69320,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289069120</BitOffs>
+            <BitOffs>1289069248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29.bBrakeRelease</Name>
@@ -69183,7 +69333,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289078104</BitOffs>
+            <BitOffs>1289078232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.Axis.PlcToNc</Name>
@@ -69195,7 +69345,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289094336</BitOffs>
+            <BitOffs>1289094464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30.bBrakeRelease</Name>
@@ -69208,7 +69358,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289103320</BitOffs>
+            <BitOffs>1289103448</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.Axis.PlcToNc</Name>
@@ -69220,7 +69370,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289119552</BitOffs>
+            <BitOffs>1289119680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31.bBrakeRelease</Name>
@@ -69233,7 +69383,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289128536</BitOffs>
+            <BitOffs>1289128664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.Axis.PlcToNc</Name>
@@ -69245,7 +69395,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289144768</BitOffs>
+            <BitOffs>1289144896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32.bBrakeRelease</Name>
@@ -69258,7 +69408,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289153752</BitOffs>
+            <BitOffs>1289153880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.Axis.PlcToNc</Name>
@@ -69270,7 +69420,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289169984</BitOffs>
+            <BitOffs>1289170112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33.bBrakeRelease</Name>
@@ -69283,7 +69433,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1289178968</BitOffs>
+            <BitOffs>1289179096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.fbFastFaultOutput1.q_xFastFaultOut</Name>
@@ -69303,7 +69453,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1290142344</BitOffs>
+            <BitOffs>1290142472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.fbFastFaultOutput2.q_xFastFaultOut</Name>
@@ -69323,7 +69473,7 @@ Readbacks</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1290637256</BitOffs>
+            <BitOffs>1290637384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.rCurTrans</Name>
@@ -69346,14 +69496,14 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291132928</BitOffs>
+            <BitOffs>1291133056</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>162725888</ByteSize>
+          <ByteSize>162594816</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -94044,22 +94194,54 @@ Readbacks</Comment>
             <BitOffs>1282401472</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PRG_OTHER.fbPC1K0FlowSwitch</Name>
+            <BitSize>64</BitSize>
+            <BaseType Namespace="lcls_twincat_common_components">FB_XTES_Flowswitch</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: PC1K0:XTES:FSW</Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.bFlowOk := TIIB[IM1K0-EL1004]^Channel 1^Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>1282401536</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_OTHER.fbPC1K4FlowSwitch</Name>
+            <BitSize>64</BitSize>
+            <BaseType Namespace="lcls_twincat_common_components">FB_XTES_Flowswitch</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: PC1K4:XTES:FSW</Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 2^Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>1282401600</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>PRG_3_PMPS_POST.fbArbiterIO</Name>
             <BitSize>138368</BitSize>
             <BaseType Namespace="PMPS">FB_SubSysToArbiter_IO</BaseType>
-            <BitOffs>1282402176</BitOffs>
+            <BitOffs>1282402304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_3_PMPS_POST.fb_vetoArbiter</Name>
             <BitSize>27168</BitSize>
             <BaseType Namespace="PMPS">FB_VetoArbiter</BaseType>
-            <BitOffs>1282540544</BitOffs>
+            <BitOffs>1282540672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_4_LOG.fbLogHandler</Name>
             <BitSize>5788736</BitSize>
             <BaseType Namespace="LCLS_General">FB_LogHandler</BaseType>
-            <BitOffs>1282571392</BitOffs>
+            <BitOffs>1282571520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1</Name>
@@ -94096,7 +94278,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288363008</BitOffs>
+            <BitOffs>1288363136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2</Name>
@@ -94122,7 +94304,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288388224</BitOffs>
+            <BitOffs>1288388352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3</Name>
@@ -94148,7 +94330,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288413440</BitOffs>
+            <BitOffs>1288413568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4</Name>
@@ -94177,7 +94359,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288438656</BitOffs>
+            <BitOffs>1288438784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5</Name>
@@ -94204,7 +94386,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288463872</BitOffs>
+            <BitOffs>1288464000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6</Name>
@@ -94230,7 +94412,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288489088</BitOffs>
+            <BitOffs>1288489216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7</Name>
@@ -94256,7 +94438,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288514304</BitOffs>
+            <BitOffs>1288514432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8</Name>
@@ -94285,7 +94467,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288539520</BitOffs>
+            <BitOffs>1288539648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9</Name>
@@ -94310,7 +94492,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288564736</BitOffs>
+            <BitOffs>1288564864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10</Name>
@@ -94322,7 +94504,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288589952</BitOffs>
+            <BitOffs>1288590080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11</Name>
@@ -94348,7 +94530,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288615168</BitOffs>
+            <BitOffs>1288615296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12</Name>
@@ -94374,7 +94556,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288640384</BitOffs>
+            <BitOffs>1288640512</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13</Name>
@@ -94400,7 +94582,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288665600</BitOffs>
+            <BitOffs>1288665728</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14</Name>
@@ -94411,7 +94593,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288690816</BitOffs>
+            <BitOffs>1288690944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15</Name>
@@ -94422,7 +94604,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288716032</BitOffs>
+            <BitOffs>1288716160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16</Name>
@@ -94433,7 +94615,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288741248</BitOffs>
+            <BitOffs>1288741376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17</Name>
@@ -94444,7 +94626,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288766464</BitOffs>
+            <BitOffs>1288766592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18</Name>
@@ -94472,7 +94654,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288791680</BitOffs>
+            <BitOffs>1288791808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19</Name>
@@ -94499,7 +94681,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288816896</BitOffs>
+            <BitOffs>1288817024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20</Name>
@@ -94526,7 +94708,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288842112</BitOffs>
+            <BitOffs>1288842240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21</Name>
@@ -94553,7 +94735,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288867328</BitOffs>
+            <BitOffs>1288867456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22</Name>
@@ -94581,7 +94763,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288892544</BitOffs>
+            <BitOffs>1288892672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23</Name>
@@ -94608,7 +94790,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288917760</BitOffs>
+            <BitOffs>1288917888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24</Name>
@@ -94635,7 +94817,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288942976</BitOffs>
+            <BitOffs>1288943104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M25</Name>
@@ -94662,7 +94844,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288968192</BitOffs>
+            <BitOffs>1288968320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M26</Name>
@@ -94709,7 +94891,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1288993408</BitOffs>
+            <BitOffs>1288993536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M27</Name>
@@ -94738,7 +94920,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1289018624</BitOffs>
+            <BitOffs>1289018752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M28</Name>
@@ -94767,7 +94949,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1289043840</BitOffs>
+            <BitOffs>1289043968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M29</Name>
@@ -94796,7 +94978,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1289069056</BitOffs>
+            <BitOffs>1289069184</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M30</Name>
@@ -94824,7 +95006,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1289094272</BitOffs>
+            <BitOffs>1289094400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M31</Name>
@@ -94850,7 +95032,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1289119488</BitOffs>
+            <BitOffs>1289119616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M32</Name>
@@ -94876,7 +95058,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1289144704</BitOffs>
+            <BitOffs>1289144832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M33</Name>
@@ -94905,7 +95087,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1289169920</BitOffs>
+            <BitOffs>1289170048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.fbArbiter</Name>
@@ -94923,7 +95105,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1289195136</BitOffs>
+            <BitOffs>1289195264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.fbArbiter2</Name>
@@ -94941,7 +95123,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1289668608</BitOffs>
+            <BitOffs>1289668736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.fbFastFaultOutput1</Name>
@@ -94970,7 +95152,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1290142080</BitOffs>
+            <BitOffs>1290142208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.fbFastFaultOutput2</Name>
@@ -94999,7 +95181,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1290636992</BitOffs>
+            <BitOffs>1290637120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersion</Name>
@@ -95029,7 +95211,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291133952</BitOffs>
+            <BitOffs>1291134080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersion</Name>
@@ -95059,7 +95241,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291134016</BitOffs>
+            <BitOffs>1291134144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_LicenseInfoVarList._LicenseInfo</Name>
@@ -95128,7 +95310,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291134080</BitOffs>
+            <BitOffs>1291134208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._AppInfo</Name>
@@ -95142,7 +95324,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291135104</BitOffs>
+            <BitOffs>1291135232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskInfo</Name>
@@ -95160,7 +95342,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291137152</BitOffs>
+            <BitOffs>1291137280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList.__PlcTask</Name>
@@ -95181,30 +95363,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291138176</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
-            <Comment> ST_LCLSGeneralEventClass</Comment>
-            <BitSize>960</BitSize>
-            <BaseType GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">ST_LCLSGeneralEventClass</BaseType>
-            <Properties>
-              <Property>
-                <Name>tc_no_symbol</Name>
-                <Value>unused</Value>
-              </Property>
-              <Property>
-                <Name>const_non_replaced</Name>
-              </Property>
-              <Property>
-                <Name>suppress_warning_0</Name>
-                <Value>C0228</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>1291181504</BitOffs>
+            <BitOffs>1291138304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcSystemEventClass</Name>
@@ -95273,7 +95432,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291190528</BitOffs>
+            <BitOffs>1291151680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcGeneralAdsEventClass</Name>
@@ -95342,7 +95501,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291190656</BitOffs>
+            <BitOffs>1291151808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRouterEventClass</Name>
@@ -95411,7 +95570,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291190784</BitOffs>
+            <BitOffs>1291151936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRTimeEventClass</Name>
@@ -95480,7 +95639,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291190912</BitOffs>
+            <BitOffs>1291152064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.Win32EventClass</Name>
@@ -95549,7 +95708,7 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291191040</BitOffs>
+            <BitOffs>1291152192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.LCLSGeneralEventClass</Name>
@@ -95618,46 +95777,37 @@ Readbacks</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291191168</BitOffs>
+            <BitOffs>1291152320</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>PRG_OTHER.fbPC1K0FlowSwitch</Name>
-            <BitSize>64</BitSize>
-            <BaseType Namespace="lcls_twincat_common_components">FB_XTES_Flowswitch</BaseType>
+            <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
+            <Comment> ST_LCLSGeneralEventClass</Comment>
+            <BitSize>960</BitSize>
+            <BaseType GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">ST_LCLSGeneralEventClass</BaseType>
             <Properties>
               <Property>
-                <Name>pytmc</Name>
-                <Value>pv: PC1K0:XTES:FSW</Value>
+                <Name>tc_no_symbol</Name>
+                <Value>unused</Value>
               </Property>
               <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.bFlowOk := TIIB[IM1K0-EL1004]^Channel 1^Input</Value>
+                <Name>const_non_replaced</Name>
+              </Property>
+              <Property>
+                <Name>suppress_warning_0</Name>
+                <Value>C0228</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1291547584</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_OTHER.fbPC1K4FlowSwitch</Name>
-            <BitSize>64</BitSize>
-            <BaseType Namespace="lcls_twincat_common_components">FB_XTES_Flowswitch</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: PC1K4:XTES:FSW</Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 2^Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>1291547648</BitOffs>
+            <BitOffs>1291182656</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>162725888</ByteSize>
+          <ByteSize>162594816</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -95712,9 +95862,6 @@ Readbacks</Comment>
       <Deployment/>
       <EventClasses>
         <EventClass>
-          <Type GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Type>
-        </EventClass>
-        <EventClass>
           <Type GUID="{11F7FC20-DBF4-4DAF-96C7-1FD6B6156B31}">TcSystemEventClass</Type>
         </EventClass>
         <EventClass>
@@ -95729,6 +95876,9 @@ Readbacks</Comment>
         <EventClass>
           <Type GUID="{1D0C4BAC-ECF3-4F33-8F20-A12E77AB6387}">Win32EventClass</Type>
         </EventClass>
+        <EventClass>
+          <Type GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Type>
+        </EventClass>
       </EventClasses>
       <Properties>
         <Property>
@@ -95737,7 +95887,7 @@ Readbacks</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2023-12-08T10:33:28</Value>
+          <Value>2024-06-18T13:19:03</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
