@@ -23,13 +23,13 @@ VAR_IN_OUT
 END_VAR
 VAR_INPUT
     // Settings for the OUT state.
-    stOut: DUT_PositionState;
+    stOut: ST_PositionState;
     // Settings for the YAG state.
-    stYag: DUT_PositionState;
+    stYag: ST_PositionState;
     // Settings for the DIAMOND state.
-    stDiamond: DUT_PositionState;
+    stDiamond: ST_PositionState;
     // Settings for the RETICLE state.
-    stReticle: DUT_PositionState;
+    stReticle: ST_PositionState;
     // Set this to a non-unknown value to request a new move.
     {attribute 'pytmc' := '
         pv: MMS:STATE:SET

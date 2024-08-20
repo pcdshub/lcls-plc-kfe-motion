@@ -20,7 +20,7 @@ VAR
         .fbRTD_2.iRaw := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 2^Value;
         .fbRTD_2.bError := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 2^Status^Underrange;
-        .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 2^Status^Overrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-04]^RTD Inputs Channel 2^Status^Overrange
 
     '}
     fbStage1: FB_SXR_SATT_Stage;
@@ -36,7 +36,7 @@ VAR
         .fbRTD_2.iRaw := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 2^Value;
         .fbRTD_2.bError := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 2^Status^Underrange;
-        .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 2^Status^Overrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-03]^RTD Inputs Channel 2^Status^Overrange
 
     '}
     fbStage2: FB_SXR_SATT_Stage;
@@ -52,7 +52,7 @@ VAR
         .fbRTD_2.iRaw := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 2^Value;
         .fbRTD_2.bError := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
-        .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 2^Status^Overrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-02]^RTD Inputs Channel 2^Status^Overrange
     '}
     fbStage3: FB_SXR_SATT_Stage;
 
@@ -67,7 +67,7 @@ VAR
         .fbRTD_2.iRaw := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 2^Value;
         .fbRTD_2.bError := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 2^Status^Underrange;
-        .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 2^Status^Overrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K4-EL3202-01]^RTD Inputs Channel 2^Status^Overrange
     '}
     fbStage4: FB_SXR_SATT_Stage;
 
@@ -118,7 +118,7 @@ fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
 (* State setup - stage 1 *)
 (* Downstream-most MMS:01 - TRAVELER AXIS 4 *)
 fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=22.70);
-fbStateSetup(stPositionState:=fbStage1.stFilter1, sName:='(1) 25 um C', fPosition:=40.5);
+fbStateSetup(stPositionState:=fbStage1.stFilter1, sName:='(1) 25 um C', fPosition:=40.5, sPmpsState:='AT1K4:L2SI-RTD');
 fbStage1.arrFilters[1].fFilterThickness_um := 25;
 fbStage1.arrFilters[1].sFilterMaterial     := 'C';
 fbStateSetup(stPositionState:=fbStage1.stFilter2, sName:='(2) 50 um C', fPosition:=56.0);
@@ -143,12 +143,12 @@ fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='(8) 20 um Si', fPositi
 fbStage1.arrFilters[8].fFilterThickness_um := 20;
 fbStage1.arrFilters[8].sFilterMaterial     := 'Si';
 
-fbStage1(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage1(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE, sDeviceName:='AT1K4:L2SI');
 
 (* State setup - stage 2 *)
 (* MMS:02 - 2nd downstream-most - TRAVELER AXIS 3 *)
 fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=24.00);
-fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1', sPmpsState:='AT1K4:L2SI-RTD');
 fbStage2.arrFilters[1].fFilterThickness_um := 0;
 fbStage2.arrFilters[1].sFilterMaterial     := '';
 fbBadStateSetup(stPositionState:=fbStage2.stFilter2, sName:='Filter 2');
@@ -173,12 +173,12 @@ fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 10 um Si', fPositi
 fbStage2.arrFilters[8].fFilterThickness_um := 10;
 fbStage2.arrFilters[8].sFilterMaterial     := 'Si';
 
-fbStage2(stAxis:=Main.M27, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage2(stAxis:=Main.M27, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE, sDeviceName:='AT1K4:L2SI');
 
 (* State setup - stage 3 *)
 (* MMS:03 - 2nd upstream-most - TRAVELER AXIS 2 *)
 fbStateSetup(stPositionState:=fbStage3.stOut, sName:='Out', fPosition:=23.24);
-fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1', sPmpsState:='AT1K4:L2SI-RTD');
 fbStage3.arrFilters[1].fFilterThickness_um := 0;
 fbStage3.arrFilters[1].sFilterMaterial     := '';
 fbBadStateSetup(stPositionState:=fbStage3.stFilter2, sName:='Filter 2');
@@ -203,12 +203,12 @@ fbStateSetup(stPositionState:=fbStage3.stFilter8, sName:='(8) 6 um C', fPosition
 fbStage3.arrFilters[8].fFilterThickness_um := 6;
 fbStage3.arrFilters[8].sFilterMaterial     := 'C';
 
-fbStage3(stAxis:=Main.M28, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage3(stAxis:=Main.M28, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE, sDeviceName:='AT1K4:L2SI');
 
 (* State setup - stage 4 *)
 (* MMS:04 - upstream-most - TRAVELER AXIS 1 *)
 fbStateSetup(stPositionState:=fbStage4.stOut, sName:='Out', fPosition:=23.44);
-fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1', sPmpsState:='AT1K4:L2SI-RTD');
 fbStage4.arrFilters[1].fFilterThickness_um := 0;
 fbStage4.arrFilters[1].sFilterMaterial     := '';
 fbBadStateSetup(stPositionState:=fbStage4.stFilter2, sName:='Filter 2');
@@ -233,7 +233,7 @@ fbStateSetup(stPositionState:=fbStage4.stFilter8, sName:='(8) 0.2 um Al', fPosit
 fbStage4.arrFilters[8].fFilterThickness_um := 0.2;
 fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage4(stAxis:=Main.M29, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage4(stAxis:=Main.M29, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE, sDeviceName:='AT1K4:L2SI');
 
 GVL.rCurTrans[PMPS.K_Attenuators.AT1K4].nTran := LREAL_TO_REAL(
     fbStage1.fTransmission *
