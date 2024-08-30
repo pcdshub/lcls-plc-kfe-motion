@@ -4177,6 +4177,13 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>PRG_ST1K4_TEST.nRawEncoderULINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder PMPS VETO]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
 					<Name>PRG_OTHER.fbPC1K0FlowSwitch.bFlowOk</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -7572,6 +7579,10 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL.PMPS_ST1K4_Y_ENC</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -8855,6 +8866,7 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL5042-E6">
 				<Link VarA="PlcTask Inputs^Main.M33.nRawEncoderULINT" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_ST1K4_TEST.nRawEncoderULINT" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL7041-E4">
 				<Link VarA="PlcTask Inputs^Main.M33.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
@@ -8934,6 +8946,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_SL1K0_POWER.fbSL1K0.AptArrayReq" VarB="IO Inputs^AptArrayReq[1]"/>
 				<Link VarA="PlcTask Inputs^PRG_SL2K0_POWER.fbSL2K0.AptArrayReq" VarB="IO Inputs^AptArrayReq[2]"/>
+				<Link VarA="PlcTask Outputs^GVL.PMPS_ST1K4_Y_ENC" VarB="IO Outputs^ST1K4_Y_ENC" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_3_PMPS_POST.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_SL1K0_POWER.fbSL1K0.AptArrayStatus" VarB="IO Outputs^AptArrayStatus[1]"/>
 				<Link VarA="PlcTask Outputs^PRG_SL2K0_POWER.fbSL2K0.AptArrayStatus" VarB="IO Outputs^AptArrayStatus[2]"/>
