@@ -20,8 +20,8 @@ VAR_GLOBAL
     rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
 
     ePF1K0State: E_WFS_States;
-	
-	 {attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^ST1K4_Y_ENC'}
+
+     {attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^ST1K4_Y_ENC'}
     PMPS_ST1K4_Y_ENC AT%Q* : UDINT;
 END_VAR
 

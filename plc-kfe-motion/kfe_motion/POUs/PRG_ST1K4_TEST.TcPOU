@@ -44,10 +44,10 @@ VAR
     '}
     {attribute 'TcLinkTo' := '.bFlowOk := TIIB[ST1K4-EL1004-E5]^Channel 1^Input'}
     fbFlowSwitch: FB_XTES_Flowswitch;
-	
 
-	// Raw encoder PMPS VETO
-	  {attribute 'TcLinkTo' := 'TIIB[ST1K4-EL5042-E6]^FB Inputs Channel 1^Position'}
+
+    // Raw encoder PMPS VETO
+      {attribute 'TcLinkTo' := 'TIIB[ST1K4-EL5042-E6]^FB Inputs Channel 1^Position'}
     nRawEncoderULINT AT %I*: ULINT;
 END_VAR
 
@@ -89,7 +89,7 @@ END_IF
 fbFlowSwitch();
 
 // For PMPS Veto
-	GVL.PMPS_ST1K4_Y_ENC := TO_UDINT(nRawEncoderULINT);
+    GVL.PMPS_ST1K4_Y_ENC := TO_UDINT(nRawEncoderULINT);
 
 ]]></ST>
     </Implementation>
