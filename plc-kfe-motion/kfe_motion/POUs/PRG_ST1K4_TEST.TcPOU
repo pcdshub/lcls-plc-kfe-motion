@@ -46,6 +46,9 @@ VAR
     fbFlowSwitch: FB_XTES_Flowswitch;
 
 
+    // Raw encoder PMPS VETO
+      {attribute 'TcLinkTo' := 'TIIB[ST1K4-EL5042-E6]^FB Inputs Channel 1^Position'}
+    nRawEncoderULINT AT %I*: ULINT;
 END_VAR
 
 ]]></Declaration>
@@ -62,7 +65,7 @@ fbMotion(stMotionStage:=Main.M33);
 fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
 fbStateSetup(stPositionState:=astPositionState[E_EpicsInOut.IN], sName:='IN', fPosition:=2);
-fbStateSetup(stPositionState:=astPositionState[E_EpicsInOut.OUT], sName:='OUT', fPosition:=40);
+fbStateSetup(stPositionState:=astPositionState[E_EpicsInOut.OUT], sName:='OUT', fPosition:=40.9);
 
 fbStates(
     stMotionStage:=Main.M33,
@@ -84,6 +87,10 @@ IF bST3K4_auto THEN
 END_IF
 
 fbFlowSwitch();
+
+// For PMPS Veto
+    GVL.PMPS_ST1K4_Y_ENC := TO_UDINT(nRawEncoderULINT);
+
 ]]></ST>
     </Implementation>
   </POU>
