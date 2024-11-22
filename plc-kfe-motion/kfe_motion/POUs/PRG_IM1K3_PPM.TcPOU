@@ -23,6 +23,10 @@ VAR
         bMoveOk := TRUE,
         bValid := TRUE
     );
+
+    fbFakeFastFaultOutput: FB_HardwareFFOutput := (i_xVeto:=True);
+    fbFakeArbiter3: FB_Arbiter(3);
+    bM1K3_IN: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -34,16 +38,32 @@ fbStateSetup(stPositionState:=fbIM1K3.stPower, fPosition:=-48.2, sPmpsState:='IM
 fbStateSetup(stPositionState:=fbIM1K3.stYag1, fPosition:=-72.2, sPmpsState:='IM1K3:PPM-YAG1');
 fbStateSetup(stPositionState:=fbIM1K3.stYag2, fPosition:=-98.21, sPmpsState:='IM1K3:PPM-YAG2');
 
-fbIM1K3(
-    fbFFHWO := GVL.fbFastFaultOutput2,
-    fbArbiter := GVL.fbArbiter2,
-    stYStage := Main.M4,
-    sDeviceName := 'IM1K3:PPM',
-    sTransitionKey := 'IM1K3:PPM-TRANSITION',
-    bEnableMotion := TRUE,
-    bEnableBeamParams := TRUE,
-    bEnablePositionLimits := TRUE,
-);
+bM1K3_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT]
+            AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN];
+
+IF bM1K3_IN THEN
+    fbIM1K3(
+        fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
+        stYStage := Main.M4,
+        sDeviceName := 'IM1K3:PPM',
+        sTransitionKey := 'IM1K3:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+    );
+ELSE
+    fbIM1K3(
+        fbFFHWO := fbFakeFastFaultOutput,
+        fbArbiter := fbFakeArbiter3,
+        stYStage := Main.M4,
+        sDeviceName := 'IM1K3:PPM',
+        sTransitionKey := 'IM1K3:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+    );
+END_IF;
 ]]></ST>
     </Implementation>
   </POU>
