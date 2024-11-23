@@ -7,12 +7,16 @@ VAR_GLOBAL
     fbArbiter: FB_Arbiter(1);
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:ARB:02'}
     fbArbiter2: FB_Arbiter(2);
+    {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:ARB:03'}
+    fbArbiter3: FB_Arbiter(3);
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:FFO:01'}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
     fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:FFO:02'}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
     fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
+    {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:FFO:03'}
+    fbFastFaultOutput3: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
 
     {attribute 'pytmc' := 'pv: PLC:KFE:MOTION:PMPS:ReqTrans'}
     rReqTrans AT %I*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
