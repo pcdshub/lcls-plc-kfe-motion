@@ -6,7 +6,7 @@
     <ProjectGuid>{4b72bb13-08b4-4ab1-86b6-277d50d421ad}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <Name>kfe_motion</Name>
-    <ProgramVersion>3.1.4022.3</ProgramVersion>
+    <ProgramVersion>3.1.4022.7</ProgramVersion>
     <Application>{18c132e7-6a13-4953-9f10-8c47ddd85a35}</Application>
     <TypeSystem>{96fd1a01-55e4-47aa-a72d-1f4c14f26980}</TypeSystem>
     <Implicit_Task_Info>{85331d72-6df2-40d7-9bc0-d8bfcf3a3f03}</Implicit_Task_Info>
