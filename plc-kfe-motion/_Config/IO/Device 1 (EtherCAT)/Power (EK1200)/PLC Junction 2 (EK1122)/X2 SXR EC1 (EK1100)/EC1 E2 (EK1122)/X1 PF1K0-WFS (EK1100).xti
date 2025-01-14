@@ -25,10 +25,10 @@
 		<Box File="PF1K0-EL3062.xti" Id="216">
 			<EtherCAT PortABoxInfo="#x01000046"/>
 		</Box>
-		<Box File="PF1K0-EL1004.xti" Id="218">
+		<Box File="PF1K0-MPA-EL1004.xti" Id="218">
 			<EtherCAT PortABoxInfo="#x010000d8"/>
 		</Box>
-		<Box File="PF1K0-EL2004-01.xti" Id="219">
+		<Box File="PF1K0-MPA-EL2004.xti" Id="219">
 			<EtherCAT PortABoxInfo="#x010000da"/>
 		</Box>
 		<Box File="PF1K0-EL9011.xti" Id="71">

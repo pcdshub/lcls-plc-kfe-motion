@@ -34,7 +34,7 @@ VAR_GLOBAL
                               .bBrakeRelease        := TIIB[IM1K3-EL2004]^Channel 1^Output;
                               .nRawEncoderULINT     := TIIB[IM1K3-EL5042]^FB Inputs Channel 1^Position'}
     M4: ST_MotionStage := (sName := 'IM1K3:PPM:MMS');
-
+	
     // IM2K0-XTES: 1 Axis, previously 3 but the zoom/focus have been removed
     {attribute 'pytmc' := 'pv: IM2K0:XTES:MMS'}
     {attribute 'TcLinkTo' := '.bBrakeRelease        := TIIB[IM2K0-EL2004]^Channel 1^Output;

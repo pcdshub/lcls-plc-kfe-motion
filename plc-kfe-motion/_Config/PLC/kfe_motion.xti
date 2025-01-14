@@ -1255,34 +1255,351 @@ External Setpoint Generation:
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_01.i_xInsertedLS</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_01.i_xRetractedLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.Axis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.bLimitForwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.bLimitBackwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.bHome</Name>
+					<Comment>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.nRawEncoderULINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.nRawEncoderUINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.nRawEncoderINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].Axis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].bHome</Name>
+					<Comment>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.iVoltageINT</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.fbThermoCouple.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.fbThermoCouple.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.fbThermoCouple.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.fbThermoCouple.iRaw</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.fbGetPMVoltage.iRaw</Name>
+					<Comment>
+						<![CDATA[ Connect this input to the terminal]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbGige.fbGetIllPercent.iRaw</Name>
+					<Comment>
+						<![CDATA[ Connect this input to the terminal]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbFlowMeter.iRaw</Name>
+					<Comment>
+						<![CDATA[ Connect this input to the terminal]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbYagThermoCouple.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbYagThermoCouple.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbYagThermoCouple.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbYagThermoCouple.iRaw</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbFlowSwitch.bFlowOk</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_IM2K0_XTES.bDefectiveLimitSwitch</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.bZoomEndFwd</Name>
 					<Comment>
-						<![CDATA[Forward limit disable for zoom]]>
+						<![CDATA[ Forward limit disable for zoom]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.bZoomEndBwd</Name>
 					<Comment>
-						<![CDATA[Backward limit disable for zoom]]>
+						<![CDATA[ Backward limit disable for zoom]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.bFocusEndFwd</Name>
 					<Comment>
-						<![CDATA[Forward limit disable for focus]]>
+						<![CDATA[ Forward limit disable for focus]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.bFocusEndBwd</Name>
 					<Comment>
-						<![CDATA[Backward limit disable for focus]]>
+						<![CDATA[ Backward limit disable for focus]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1485,49 +1802,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1640,49 +1957,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1709,21 +2026,21 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbPowerMeter.fbGetPMVoltage.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this input to the terminal]]>
+						<![CDATA[ Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbGige.fbGetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this input to the terminal]]>
+						<![CDATA[ Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbFlowMeter.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this input to the terminal]]>
+						<![CDATA[ Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1848,56 +2165,56 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbGige.fbGetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this input to the terminal]]>
+						<![CDATA[ Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -2055,49 +2372,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_PF1K0_WFS.fbPF1K0.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_PF1K0_WFS.fbPF1K0.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_PF1K0_WFS.fbPF1K0.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_PF1K0_WFS.fbPF1K0.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_PF1K0_WFS.fbPF1K0.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_PF1K0_WFS.fbPF1K0.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_PF1K0_WFS.fbPF1K0.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -3129,49 +3446,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage1.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage1.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage1.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage1.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage1.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage1.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage1.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -3308,49 +3625,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage2.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage2.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage2.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage2.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage2.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage2.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage2.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -3487,49 +3804,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage3.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage3.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage3.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage3.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage3.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage3.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage3.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -3666,49 +3983,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage4.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage4.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage4.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage4.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage4.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage4.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage4.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -3747,28 +4064,28 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.bZoomEndFwd</Name>
 					<Comment>
-						<![CDATA[Forward limit disable for zoom]]>
+						<![CDATA[ Forward limit disable for zoom]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.bZoomEndBwd</Name>
 					<Comment>
-						<![CDATA[Backward limit disable for zoom]]>
+						<![CDATA[ Backward limit disable for zoom]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.bFocusEndFwd</Name>
 					<Comment>
-						<![CDATA[Forward limit disable for focus]]>
+						<![CDATA[ Forward limit disable for focus]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.bFocusEndBwd</Name>
 					<Comment>
-						<![CDATA[Backward limit disable for focus]]>
+						<![CDATA[ Backward limit disable for focus]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -3971,49 +4288,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -4126,49 +4443,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_ST1K4_TEST.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_ST1K4_TEST.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_ST1K4_TEST.fbStates.astMotionStageMax[1].bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_ST1K4_TEST.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_ST1K4_TEST.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_ST1K4_TEST.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_ST1K4_TEST.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -4179,7 +4496,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_ST1K4_TEST.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder PMPS VETO]]>
+						<![CDATA[ Raw encoder PMPS VETO]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
@@ -4381,49 +4698,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M1.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -4479,49 +4796,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M2.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -4577,49 +4894,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M3.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -4675,49 +4992,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M4.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M4.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M4.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M4.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M4.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M4.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M4.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -4773,49 +5090,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M5.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M5.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M5.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M5.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M5.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M5.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M5.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -4871,49 +5188,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M6.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -4969,49 +5286,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M7.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M7.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M7.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M7.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M7.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M7.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M7.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5067,49 +5384,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M8.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M8.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M8.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M8.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M8.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M8.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M8.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5165,49 +5482,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M9.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M9.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M9.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M9.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M9.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M9.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M9.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5263,49 +5580,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M10.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M10.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M10.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M10.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M10.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M10.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M10.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5361,49 +5678,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M11.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M11.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M11.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M11.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M11.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M11.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M11.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5459,49 +5776,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M12.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M12.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M12.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M12.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M12.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M12.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M12.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5557,49 +5874,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M13.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M13.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M13.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M13.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M13.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M13.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M13.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5655,49 +5972,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M14.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M14.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M14.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M14.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M14.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M14.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M14.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5753,49 +6070,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M15.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M15.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M15.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M15.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M15.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M15.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M15.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5851,49 +6168,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M16.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M16.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M16.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M16.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M16.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M16.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M16.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -5949,49 +6266,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M17.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M17.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M17.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M17.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M17.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M17.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M17.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6047,49 +6364,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M18.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M18.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M18.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M18.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M18.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M18.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M18.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6145,49 +6462,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M19.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M19.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M19.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M19.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M19.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M19.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M19.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6243,49 +6560,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M20.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M20.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M20.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M20.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M20.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M20.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M20.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6341,49 +6658,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M21.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M21.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M21.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M21.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M21.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M21.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M21.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6439,49 +6756,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M22.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M22.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M22.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M22.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M22.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M22.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M22.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6537,49 +6854,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M23.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M23.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M23.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M23.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M23.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M23.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M23.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6635,49 +6952,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M24.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M24.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M24.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M24.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M24.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M24.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M24.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6733,49 +7050,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M25.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M25.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M25.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M25.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M25.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M25.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M25.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6831,49 +7148,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M26.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M26.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M26.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M26.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M26.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M26.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M26.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -6929,49 +7246,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M27.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M27.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M27.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M27.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M27.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M27.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M27.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -7027,49 +7344,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M28.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M28.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M28.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M28.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M28.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M28.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M28.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -7125,49 +7442,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M29.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M29.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M29.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M29.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M29.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M29.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M29.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -7223,49 +7540,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M30.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M30.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M30.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M30.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M30.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M30.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M30.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -7321,49 +7638,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M31.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M31.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M31.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M31.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M31.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M31.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M31.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -7419,49 +7736,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M32.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M32.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M32.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M32.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M32.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M32.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M32.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -7517,49 +7834,49 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M33.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M33.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M33.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M33.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M33.nRawEncoderULINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for ULINT (Biss-C)]]>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M33.nRawEncoderUINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for UINT (Relative Encoders)]]>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>Main.M33.nRawEncoderINT</Name>
 					<Comment>
-						<![CDATA[Raw encoder IO for INT (LVDT)]]>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -7570,6 +7887,55 @@ External Setpoint Generation:
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_01.q_xInsert_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_01.q_xRetract_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.bBrakeRelease</Name>
+					<Comment>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
+					<Comment>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbGige.iIlluminatorINT</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbGige.bGigePower</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PF1K0_PPM.fbPF1K0PPM.fbGige.fbSetIllPercent.iRaw</Name>
+					<Comment>
+						<![CDATA[ Connect this output to the terminal]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
 				<Var>
 					<Name>PRG_RTDSK0.bRTDSK0_SCRP_LED_01</Name>
 					<Type>BOOL</Type>
@@ -7601,7 +7967,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K0_XTES.fbIM1K0.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -7628,7 +7994,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -7643,7 +8009,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K3_PPM.fbIM1K3.fbGige.fbSetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this output to the terminal]]>
+						<![CDATA[ Connect this output to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -7658,7 +8024,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -7673,7 +8039,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM2K0_XTES.fbIM2K0.fbGige.fbSetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this output to the terminal]]>
+						<![CDATA[ Connect this output to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -7696,7 +8062,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_PF1K0_WFS.fbPF1K0.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -7831,7 +8197,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage1.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -7846,7 +8212,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage2.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -7861,7 +8227,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage3.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -7876,7 +8242,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_AT1K4_SOLID.fbStage4.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -7899,7 +8265,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K4_XTES.fbIM1K4.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -7926,7 +8292,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_ST1K4_TEST.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8067,7 +8433,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M1.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8078,7 +8444,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M2.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8089,7 +8455,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M3.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8100,7 +8466,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M4.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8111,7 +8477,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M5.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8122,7 +8488,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M6.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8133,7 +8499,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M7.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8144,7 +8510,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M8.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8155,7 +8521,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M9.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8166,7 +8532,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M10.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8177,7 +8543,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M11.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8188,7 +8554,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M12.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8199,7 +8565,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M13.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8210,7 +8576,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M14.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8221,7 +8587,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M15.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8232,7 +8598,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M16.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8243,7 +8609,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M17.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8254,7 +8620,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M18.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8265,7 +8631,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M19.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8276,7 +8642,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M20.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8287,7 +8653,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M21.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8298,7 +8664,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M22.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8309,7 +8675,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M23.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8320,7 +8686,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M24.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8331,7 +8697,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M25.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8342,7 +8708,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M26.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8353,7 +8719,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M27.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8364,7 +8730,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M28.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8375,7 +8741,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M29.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8386,7 +8752,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M30.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8397,7 +8763,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M31.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8408,7 +8774,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M32.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8419,7 +8785,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M33.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -8441,7 +8807,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PMPS_GVL.SuccessfulPreemption</Name>
 					<Comment>
-						<![CDATA[Any time BPTM applies a new BP request which is confirmed]]>
+						<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
 					</Comment>
 					<Type>UDINT</Type>
 					<InOut>7</InOut>
@@ -8449,7 +8815,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PMPS_GVL.AccumulatedFF</Name>
 					<Comment>
-						<![CDATA[Any time a FF occurs]]>
+						<![CDATA[ Any time a FF occurs]]>
 					</Comment>
 					<Type>UDINT</Type>
 					<InOut>7</InOut>
@@ -8738,7 +9104,14 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E2 (EK1122)^X1 PF1K0-WFS (EK1100)^PF1K0-EL2004">
 				<Link VarA="PlcTask Outputs^Main.M8.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E2 (EK1122)^X1 PF1K0-WFS (EK1100)^PF1K0-EL3062">
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.iVoltageINT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E2 (EK1122)^X1 PF1K0-WFS (EK1100)^PF1K0-EL3314">
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.fbThermoCouple.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.fbThermoCouple.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.fbThermoCouple.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.fbPF1K0PPM.fbPowerMeter.fbThermoCouple.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_PF1K0_WFS.fbPF1K0.fbThermoCouple1.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_PF1K0_WFS.fbPF1K0.fbThermoCouple1.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_PF1K0_WFS.fbPF1K0.fbThermoCouple1.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true"/>
@@ -8755,6 +9128,16 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E2 (EK1122)^X1 PF1K0-WFS (EK1100)^PF1K0-EL7041-01">
 				<Link VarA="PlcTask Inputs^Main.M8.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M8.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E2 (EK1122)^X1 PF1K0-WFS (EK1100)^PF1K0-MPA-EL1004">
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.PF1K0_MPA_01.i_xInsertedLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.PF1K0_MPA_01.i_xRetractedLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.bLimitBackwardEnable" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.PF1K0_MPA_MOTION_INTERFACE.bLimitForwardEnable" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E2 (EK1122)^X1 PF1K0-WFS (EK1100)^PF1K0-MPA-EL2004">
+				<Link VarA="PlcTask Outputs^PRG_PF1K0_PPM.PF1K0_MPA_01.q_xInsert_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PRG_PF1K0_PPM.PF1K0_MPA_01.q_xRetract_DO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E2 (EK1122)^X2 IM1K3-PPM (EK1100)^IM1K3-EL2004">
 				<Link VarA="PlcTask Outputs^Main.M4.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
@@ -8859,6 +9242,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^PRG_IM1K3_PPM.fbIM1K3.fbFlowSwitch.bFlowOk" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_IM1K4_XTES.fbIM1K4.fbFlowSwitch.bFlowOk" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_OTHER.fbPC1K4FlowSwitch.bFlowOk" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PPM.fbPF1K0PPM.fbFlowSwitch.bFlowOk" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_ST1K4_TEST.fbFlowSwitch.bFlowOk" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 3 (EK1122)^X1 TMO FEE EC1 (EK1100)^TMO FEE EC1 E1 (EK1122)^X2-ST1K4-TEST (EK1100)^ST1K4-EL2202-E3">
