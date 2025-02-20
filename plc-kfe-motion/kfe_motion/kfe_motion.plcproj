@@ -70,7 +70,7 @@
     <Compile Include="POUs\PRG_OTHER.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_PF1K0_PPM.TcPOU">
+    <Compile Include="POUs\PRG_PF1K0_PM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_PF1K0_WFS.TcPOU">
