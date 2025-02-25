@@ -85,6 +85,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#prg-im1k4-xtes">PRG_IM1K4_XTES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im2k0-xtes">PRG_IM2K0_XTES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-other">PRG_OTHER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-pf1k0-pm">PRG_PF1K0_PM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-pf1k0-wfs">PRG_PF1K0_WFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-rtdsk0">PRG_RTDSK0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-sl1k0-power">PRG_SL1K0_POWER</a></li>
@@ -1446,6 +1447,7 @@
 <span class="n">PRG_IM1K3_PPM</span><span class="p">();</span>
 <span class="n">PRG_IM2K0_XTES</span><span class="p">();</span>
 <span class="n">PRG_PF1K0_WFS</span><span class="p">();</span>
+<span class="n">PRG_PF1K0_PM</span><span class="p">();</span>
 <span class="n">PRG_RTDSK0</span><span class="p">();</span>
 <span class="n">PRG_SL1K0_POWER</span><span class="p">();</span>
 <span class="n">PRG_SL2K0_POWER</span><span class="p">();</span>
@@ -1472,6 +1474,7 @@
 <li><p><a class="reference internal" href="#prg-im1k4-xtes">PRG_IM1K4_XTES</a></p></li>
 <li><p><a class="reference internal" href="#prg-im2k0-xtes">PRG_IM2K0_XTES</a></p></li>
 <li><p><a class="reference internal" href="#prg-other">PRG_OTHER</a></p></li>
+<li><p><a class="reference internal" href="#prg-pf1k0-pm">PRG_PF1K0_PM</a></p></li>
 <li><p><a class="reference internal" href="#prg-pf1k0-wfs">PRG_PF1K0_WFS</a></p></li>
 <li><p><a class="reference internal" href="#prg-rtdsk0">PRG_RTDSK0</a></p></li>
 <li><p><a class="reference internal" href="#prg-sl1k0-power">PRG_SL1K0_POWER</a></p></li>
@@ -2169,6 +2172,54 @@
 <span class="n">END_PROGRAM</span>
 </pre></div>
 </div>
+</section>
+<section id="prg-pf1k0-pm">
+<h2>PRG_PF1K0_PM<a class="headerlink" href="#prg-pf1k0-pm" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_PF1K0_PM</span>
+<span class="n">VAR</span>
+   <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.i_xInsertedLS := TIIB[PF1K0-MPA-EL1004]^Channel 1^Input;</span>
+                             <span class="o">.</span><span class="n">i_xRetractedLS</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">MPA</span><span class="o">-</span><span class="n">EL1004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                             <span class="o">.</span><span class="n">q_xInsert_DO</span> <span class="o">:=</span>  <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">MPA</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
+                             <span class="o">.</span><span class="n">q_xRetract_DO</span> <span class="o">:=</span>  <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">MPA</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span>
+    <span class="s1">&#39;}</span>
+
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span><span class="s1">&#39; pv: PF1K0:MPA:01 &#39;</span><span class="p">}</span>
+    <span class="n">PF1K0_MPA_01</span><span class="p">:</span> <span class="n">FB_MPA</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;PF1K0:PPM:MPA:01&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PF1K0:PM&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iVoltageINT := TIIB[PF1K0-EL3062]^AI Standard Channel 1^Value;</span>
+                              <span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PF1K0</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span><span class="s1">&#39;}</span>
+    <span class="n">fbPowerMeter</span><span class="p">:</span> <span class="n">FB_PPM_PowerMeter</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="o">//</span> <span class="n">Check</span> <span class="n">Power</span> <span class="n">Meter</span>
+<span class="n">fbPowerMeter</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">Act</span> <span class="n">on</span> <span class="n">MPA</span>
+<span class="n">PF1K0_MPA_01</span><span class="p">(</span>
+    <span class="n">ibInsertOK</span><span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">ibRetractOK</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span>
+    <span class="n">ibPMPS_OK</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span>
+    <span class="n">ibOverrideInterlock</span><span class="o">:=</span> <span class="p">,</span>
+    <span class="n">q_stAct</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">xMPS_OK</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">xDone</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">i_xReset</span> <span class="o">:=</span> <span class="p">,</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#fb-mpa">FB_MPA</a></p></li>
+<li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
+</ul>
+</dd>
+</dl>
 </section>
 <section id="prg-pf1k0-wfs">
 <h2>PRG_PF1K0_WFS<a class="headerlink" href="#prg-pf1k0-wfs" title="Link to this heading"></a></h2>

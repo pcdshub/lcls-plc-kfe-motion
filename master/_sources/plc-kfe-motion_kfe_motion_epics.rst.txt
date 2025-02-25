@@ -3414,7 +3414,7 @@ LCLS_General.ST_PendingEvent
       - | io: input
 
 
-                                                                                 
+                                                       
 lcls_twincat_common_components.FB_PPM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6929,7 +6929,7 @@ lcls_twincat_common_components.FB_XTES_Flowswitch
         | io: output
 
 
-                           
+ 
 lcls_twincat_common_components.ST_SATT_Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -9043,7 +9043,7 @@ lcls_twincat_motion.ST_StatePMPSPlcToEpics
       - | io: input
 
 
-                   
+                 
 PMPS.FB_Arbiter
 ^^^^^^^^^^^^^^^
 
@@ -23665,7 +23665,7 @@ ST_BeamParams_IO
       - | io: input
 
 
-   
+  
 ST_LoggingEventInfo
 ^^^^^^^^^^^^^^^^^^^
 
@@ -23874,7 +23874,7 @@ ST_PMPS_Aperture_IO
         | io: input
 
 
-                                                                                              
+                                                                                                                   
 Database Records
 ----------------
 
@@ -66910,6 +66910,227 @@ Database Records
       - | field: ONAM OK
         | field: ZNAM LOW
         | io: output
+
+
+    * - PF1K0:MPA:01:FF_Reset_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.i_xReset
+      - | io: output
+
+
+    * - PF1K0:MPA:01:FF_Reset
+      - bo
+      - PRG_PF1K0_PM.PF1K0_MPA_01.i_xReset
+      - | io: output
+
+
+    * - PF1K0:MPA:01:ERROR_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bErrorPresent
+      - | io: output
+
+
+    * - PF1K0:MPA:01:ERROR
+      - bo
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bErrorPresent
+      - | io: output
+
+
+    * - PF1K0:MPA:01:ILKOK_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bILK_OK
+      - | io: input
+
+
+    * - PF1K0:MPA:01:INSERT_OK_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bInsertOK
+      - | io: input
+
+
+    * - PF1K0:MPA:01:IN_CMD_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bInsert_SW
+      - | io: output
+
+
+    * - PF1K0:MPA:01:IN_CMD
+      - bo
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bInsert_SW
+      - | io: output
+
+
+    * - PF1K0:MPA:01:RETRACT_OK_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bRetractOK
+      - | io: input
+
+
+    * - PF1K0:MPA:01:OUT_CMD_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bRetract_SW
+      - | io: output
+
+
+    * - PF1K0:MPA:01:OUT_CMD
+      - bo
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bRetract_SW
+      - | io: output
+
+
+    * - PF1K0:MPA:01:POS_STATE_RBV
+      - mbbi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.eState
+      - | field: ONST INSERTED
+        | field: THST INVALID
+        | field: TWST MOVING
+        | field: ZRST RETRACTED
+        | io: input
+        | type: mbbi
+
+
+    * - PF1K0:MPA:01:IN_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.i_bInLS
+      - | io: input
+
+
+    * - PF1K0:MPA:01:OUT_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.i_bOutLS
+      - | io: input
+
+
+    * - PF1K0:MPA:01:RETRACT_DO_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.q_bInsert
+      - | io: input
+
+
+    * - PF1K0:MPA:01:INSERT_DO_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.q_bRetract
+      - | io: input
+
+
+    * - PF1K0:MPA:01:MOT_DONE_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.xDone
+      - | io: output
+
+
+    * - PF1K0:MPA:01:MOT_DONE
+      - bo
+      - PRG_PF1K0_PM.PF1K0_MPA_01.xDone
+      - | io: output
+
+
+    * - PF1K0:MPA:01:MPS_FAULT_RBV
+      - bi
+      - PRG_PF1K0_PM.PF1K0_MPA_01.xMPS_OK
+      - | io: output
+
+
+    * - PF1K0:MPA:01:MPS_FAULT
+      - bo
+      - PRG_PF1K0_PM.PF1K0_MPA_01.xMPS_OK
+      - | io: output
+
+
+    * - PF1K0:PM:CALIB_RBV
+      - ai
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibBase
+      - | io: input
+
+
+    * - PF1K0:PM:CALIB_BUFFER_RBV
+      - waveform
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibBaseBuffer
+      - | io: input
+
+
+    * - PF1K0:PM:MJ_RBV
+      - ai
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibMJ
+      - | field: EGU mJ
+        | io: input
+
+
+    * - PF1K0:PM:MJ_BUFFER_RBV
+      - waveform
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibMJBuffer
+      - | field: EGU mJ
+        | io: input
+
+
+    * - PF1K0:PM:CALIB:MJ_RATIO_RBV
+      - ai
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibMJRatio
+      - | io: output
+
+
+    * - PF1K0:PM:CALIB:MJ_RATIO
+      - ao
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibMJRatio
+      - | io: output
+
+
+    * - PF1K0:PM:CALIB:OFFSET_RBV
+      - ai
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibRelOffset
+      - | io: output
+
+
+    * - PF1K0:PM:CALIB:OFFSET
+      - ao
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibRelOffset
+      - | io: output
+
+
+    * - PF1K0:PM:CALIB:RATIO_RBV
+      - ai
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibRelRatio
+      - | io: output
+
+
+    * - PF1K0:PM:CALIB:RATIO
+      - ao
+      - PRG_PF1K0_PM.fbPowerMeter.fCalibRelRatio
+      - | io: output
+
+
+    * - PF1K0:PM:VOLT_RBV
+      - ai
+      - PRG_PF1K0_PM.fbPowerMeter.fVoltage
+      - | field: EGU mV
+        | io: input
+
+
+    * - PF1K0:PM:VOLT_BUFFER_RBV
+      - waveform
+      - PRG_PF1K0_PM.fbPowerMeter.fVoltageBuffer
+      - | field: EGU mV
+        | io: input
+
+
+    * - PF1K0:PM:STC:CONN_RBV
+      - bi
+      - PRG_PF1K0_PM.fbPowerMeter.fbThermoCouple.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - PF1K0:PM:STC:ERR_RBV
+      - bi
+      - PRG_PF1K0_PM.fbPowerMeter.fbThermoCouple.bError
+      - | io: input
+
+
+    * - PF1K0:PM:STC:TEMP_RBV
+      - ai
+      - PRG_PF1K0_PM.fbPowerMeter.fbThermoCouple.fTemp
+      - | io: input
 
 
     * - PF1K0:WFS:MMS:STATE:GET_RBV

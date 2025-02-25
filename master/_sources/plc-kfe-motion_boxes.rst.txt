@@ -17389,6 +17389,134 @@ PDO AI Compact Channel 2 (Index #x1a03, Flags #x0010, SyncMan )
    </details>
 
 
+PF1K0-MPA-EL1004
+^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT (4 PDOs)</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, PF1K0-MPA-EL1004
+    ID, 218
+        SyncMan, 001001000000010004000000000000000100001000010000
+        Fmmu, 0000000000000000001000010100000002000000000000000000000000000000
+
+
+
+PDO Channel 1 (Index #x1a00, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6000", "BIT"
+
+
+
+PDO Channel 2 (Index #x1a01, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6010", "BIT"
+
+
+
+PDO Channel 3 (Index #x1a02, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6020", "BIT"
+
+
+
+PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6030", "BIT"
+
+
+.. raw:: html
+
+   </details>
+
+
+PF1K0-MPA-EL2004
+^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT (4 PDOs)</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, PF1K0-MPA-EL2004
+    ID, 219
+        SyncMan, 000f01004400010003000000000000000000000f44090000
+        Fmmu, 0000000000000000000f00020100000001000000000000000000000000000000
+
+
+
+PDO Channel 1 (Index #x1600, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Output", "", , "#x7000", "BIT"
+
+
+
+PDO Channel 2 (Index #x1601, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Output", "", , "#x7010", "BIT"
+
+
+
+PDO Channel 3 (Index #x1602, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Output", "", , "#x7020", "BIT"
+
+
+
+PDO Channel 4 (Index #x1603, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Output", "", , "#x7030", "BIT"
+
+
+.. raw:: html
+
+   </details>
+
+
 ST1K4-EL1004-E5
 ^^^^^^^^^^^^^^^
 

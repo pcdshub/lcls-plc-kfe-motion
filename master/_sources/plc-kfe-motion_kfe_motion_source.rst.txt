@@ -1347,6 +1347,7 @@ PRG_1_PlcTask
     PRG_IM1K3_PPM();
     PRG_IM2K0_XTES();
     PRG_PF1K0_WFS();
+    PRG_PF1K0_PM();
     PRG_RTDSK0();
     PRG_SL1K0_POWER();
     PRG_SL2K0_POWER();
@@ -1372,6 +1373,7 @@ Related:
     * `PRG_IM1K4_XTES`_
     * `PRG_IM2K0_XTES`_
     * `PRG_OTHER`_
+    * `PRG_PF1K0_PM`_
     * `PRG_PF1K0_WFS`_
     * `PRG_RTDSK0`_
     * `PRG_SL1K0_POWER`_
@@ -2074,6 +2076,54 @@ PRG_OTHER
     END_PROGRAM
 
 
+
+
+PRG_PF1K0_PM
+^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_PF1K0_PM
+    VAR
+       {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[PF1K0-MPA-EL1004]^Channel 1^Input;
+                                 .i_xRetractedLS := TIIB[PF1K0-MPA-EL1004]^Channel 2^Input;
+                                 .q_xInsert_DO :=  TIIB[PF1K0-MPA-EL2004]^Channel 1^Output;
+                                 .q_xRetract_DO :=  TIIB[PF1K0-MPA-EL2004]^Channel 2^Output
+        '}
+
+         {attribute 'pytmc' :=' pv: PF1K0:MPA:01 '}
+        PF1K0_MPA_01: FB_MPA := (sName := 'PF1K0:PPM:MPA:01');
+
+        {attribute 'pytmc' := 'pv: PF1K0:PM'}
+        {attribute 'TcLinkTo' := '.iVoltageINT := TIIB[PF1K0-EL3062]^AI Standard Channel 1^Value;
+                                  .fbThermoCouple.bError := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Error;
+                                  .fbThermoCouple.bUnderrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbThermoCouple.bOverrange := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbThermoCouple.iRaw := TIIB[PF1K0-EL3314]^TC Inputs Channel 1^Value;'}
+        fbPowerMeter: FB_PPM_PowerMeter;
+    END_VAR
+    // Check Power Meter
+    fbPowerMeter();
+
+    // Act on MPA
+    PF1K0_MPA_01(
+        ibInsertOK:= TRUE,
+        ibRetractOK:= TRUE ,
+        ibPMPS_OK:= TRUE ,
+        ibOverrideInterlock:= ,
+        q_stAct=> ,
+        xMPS_OK=> ,
+        xDone=> ,
+        i_xReset := ,
+        io_fbFFHWO := GVL.fbFastFaultOutput1,
+    );
+
+    END_PROGRAM
+
+
+Related:
+    * `FB_MPA`_
+    * `GVL`_
 
 
 PRG_PF1K0_WFS
