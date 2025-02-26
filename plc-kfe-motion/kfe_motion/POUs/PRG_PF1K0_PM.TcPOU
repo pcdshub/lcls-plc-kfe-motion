@@ -3,14 +3,14 @@
   <POU Name="PRG_PF1K0_PM" Id="{0ae23a26-4e57-4314-9f23-b11f6f968805}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PF1K0_PM
 VAR
-   {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[PF1K0-MPA-EL1004]^Channel 1^Input;
-                             .i_xRetractedLS := TIIB[PF1K0-MPA-EL1004]^Channel 2^Input;
+   {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[PF1K0-MPA-EL1004]^Channel 2^Input;
+                             .i_xRetractedLS := TIIB[PF1K0-MPA-EL1004]^Channel 1^Input;
                              .q_xInsert_DO :=  TIIB[PF1K0-MPA-EL2004]^Channel 1^Output;
                              .q_xRetract_DO :=  TIIB[PF1K0-MPA-EL2004]^Channel 2^Output
     '}
 
-     {attribute 'pytmc' :=' pv: PF1K0:MPA:01 '}
-    PF1K0_MPA_01: FB_MPA := (sName := 'PF1K0:PPM:MPA:01');
+     {attribute 'pytmc' :=' pv: PF1K0:PM:MPA:01 '}
+    PF1K0_MPA_01: FB_MPA := (sName := 'PF1K0:PM:MPA:01');
 
     {attribute 'pytmc' := 'pv: PF1K0:PM'}
     {attribute 'TcLinkTo' := '.iVoltageINT := TIIB[PF1K0-EL3062]^AI Standard Channel 1^Value;
