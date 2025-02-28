@@ -57,10 +57,10 @@ VAR
     mcPower : ARRAY [1..4] OF MC_POWER;
         (*Offsets*)
     (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-    rEncoderOffsetTop: REAL := 15.1;
-    rEncoderOffsetBottom: REAL := -12.2;
-    rEncoderOffsetNorth: REAL := 15.4;
-    rEncoderOffsetSouth: REAL := -13.4;
+    rEncoderOffsetTop: REAL := 14.65; //15.1;
+    rEncoderOffsetBottom: REAL := -12.55; //-12.2;
+    rEncoderOffsetNorth: REAL :=  16.3; //15.4;
+    rEncoderOffsetSouth: REAL := -12.94; //-13.4;
 END_VAR
 ]]></Declaration>
     <Implementation>
