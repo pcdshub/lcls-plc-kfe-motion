@@ -8862,8 +8862,8 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M8.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E2 (EK1122)^X1 PF1K0-WFS (EK1100)^PF1K0-MPA-EL1004">
-				<Link VarA="PlcTask Inputs^PRG_PF1K0_PM.PF1K0_MPA_01.i_xInsertedLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_PF1K0_PM.PF1K0_MPA_01.i_xRetractedLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PM.PF1K0_MPA_01.i_xInsertedLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PF1K0_PM.PF1K0_MPA_01.i_xRetractedLS" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Power (EK1200)^PLC Junction 2 (EK1122)^X2 SXR EC1 (EK1100)^EC1 E2 (EK1122)^X1 PF1K0-WFS (EK1100)^PF1K0-MPA-EL2004">
 				<Link VarA="PlcTask Outputs^PRG_PF1K0_PM.PF1K0_MPA_01.q_xInsert_DO" VarB="Channel 1^Output" AutoLink="true"/>
