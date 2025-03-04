@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{6EFE1DF4-EA61-5604-609B-8A3F44E9A5D8}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{32EFA6F7-FE91-9A8C-F03E-7C5B32401CAB}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -3954,7 +3954,7 @@
       </Method>
     </DataType>
     <DataType>
-      <Name>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Name>
+      <Name>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Name>
       <BitSize>16</BitSize>
       <BaseType>UINT</BaseType>
       <Properties>
@@ -3965,6 +3965,21 @@
         <Property>
           <Name>UpperBorder</Name>
           <Value>100</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Name>
+      <BitSize>16</BitSize>
+      <BaseType>UINT</BaseType>
+      <Properties>
+        <Property>
+          <Name>LowerBorder</Name>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Name>UpperBorder</Name>
+          <Value>1000</Value>
         </Property>
       </Properties>
     </DataType>
@@ -3985,7 +4000,7 @@
       </SubItem>
       <SubItem>
         <Name>PrintingTestSuiteResultNumber</Name>
-        <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+        <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
         <BitSize>16</BitSize>
         <BitOffs>96</BitOffs>
       </SubItem>
@@ -4023,12 +4038,12 @@
         </Local>
         <Local>
           <Name>TestsInTestSuiteCounter</Name>
-          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
+          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
           <BitSize>16</BitSize>
         </Local>
         <Local>
           <Name>MaxNumberOfTestsToPrint</Name>
-          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
+          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
           <BitSize>16</BitSize>
         </Local>
         <Local>
@@ -4859,7 +4874,7 @@
       </SubItem>
       <SubItem>
         <Name>WritingTestSuiteResultNumber</Name>
-        <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+        <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
         <BitSize>16</BitSize>
         <BitOffs>530208</BitOffs>
       </SubItem>
@@ -5239,21 +5254,6 @@
         <Property>
           <Name>PouType</Name>
           <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Name>
-      <BitSize>16</BitSize>
-      <BaseType>UINT</BaseType>
-      <Properties>
-        <Property>
-          <Name>LowerBorder</Name>
-          <Value>1</Value>
-        </Property>
-        <Property>
-          <Name>UpperBorder</Name>
-          <Value>100</Value>
         </Property>
       </Properties>
     </DataType>
@@ -7704,7 +7704,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
         <Local>
@@ -9179,7 +9179,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
       </Method>
@@ -9740,7 +9740,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
       </Method>
@@ -10179,7 +10179,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
       </Method>
@@ -10538,7 +10538,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
       </Method>
@@ -53567,7 +53567,7 @@ Readbacks</Comment>
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>83951616</ByteSize>
+          <ByteSize>83886080</ByteSize>
           <Symbol>
             <Name>PRG_IM2K0_XTES.bDefectiveLimitSwitch</Name>
             <BitSize>8</BitSize>
@@ -61201,7 +61201,7 @@ Readbacks</Comment>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>83951616</ByteSize>
+          <ByteSize>83886080</ByteSize>
           <Symbol>
             <Name>PRG_RTDSK0.bRTDSK0_SCRP_LED_01</Name>
             <BitSize>8</BitSize>
@@ -63176,7 +63176,7 @@ Readbacks</Comment>
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>83951616</ByteSize>
+          <ByteSize>83886080</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -70915,6 +70915,12 @@ Readbacks</Comment>
               </Property>
             </Properties>
             <BitOffs>636152832</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_3_PMPS_POST.bM1K3_Veto_IN</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <BitOffs>636153480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersionNumeric</Name>
@@ -87673,12 +87679,6 @@ Readbacks</Comment>
             <BitOffs>652817024</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>PRG_3_PMPS_POST.fb_vetoArbiter</Name>
-            <BitSize>27168</BitSize>
-            <BaseType Namespace="PMPS">FB_VetoArbiter</BaseType>
-            <BitOffs>652955392</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>PRG_3_PMPS_POST.ff3_ff2_link</Name>
             <BitSize>25088</BitSize>
             <BaseType Namespace="PMPS">FB_FastFault</BaseType>
@@ -89310,12 +89310,24 @@ Readbacks</Comment>
             </Properties>
             <BitOffs>662599488</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>PRG_3_PMPS_POST.fb_vetoArbiter_K4</Name>
+            <BitSize>27168</BitSize>
+            <BaseType Namespace="PMPS">FB_VetoArbiter</BaseType>
+            <BitOffs>669926528</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_3_PMPS_POST.fb_vetoArbiter_K3</Name>
+            <BitSize>27168</BitSize>
+            <BaseType Namespace="PMPS">FB_VetoArbiter</BaseType>
+            <BitOffs>669953696</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>83951616</ByteSize>
+          <ByteSize>83886080</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -89395,15 +89407,15 @@ Readbacks</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2025-02-25T15:11:21</Value>
+          <Value>2025-02-25T15:27:17</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
-          <Value>974848</Value>
+          <Value>909312</Value>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
-          <Value>82399232</Value>
+          <Value>82350080</Value>
         </Property>
       </Properties>
     </Module>
