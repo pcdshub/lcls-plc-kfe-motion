@@ -1410,15 +1410,20 @@ PRG_3_PMPS_POST
     PROGRAM PRG_3_PMPS_POST
     VAR
         fbArbiterIO: FB_SubSysToArbiter_IO;
-        fb_vetoArbiter: FB_VetoArbiter;
+        fb_vetoArbiter_K4: FB_VetoArbiter;
+        fb_vetoArbiter_K3: FB_VetoArbiter;
         ff3_ff2_link: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF3 to FF2 Link', i_Desc := 'This is virtual FF3 fault, Please check the Group 3 faulting device ', i_TypeCode := 16#9999);
 
         bM1K1_Veto_IN: BOOL;
+        bM1K3_Veto_IN: BOOL;
         bM1K3_Veto_OUT: BOOL;
     END_VAR
     // create MR1K1 as veto for K4 lines
     bM1K1_Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
                     AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
+    // create MR1K3 as veto for K4 lines
+    bM1K3_Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT]
+                    AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN];
     // create MR1K3 as veto for IM1K3
     bM1K3_Veto_OUT := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN]
                      AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT];
@@ -1427,19 +1432,19 @@ PRG_3_PMPS_POST
 
 
     //create a preemptive request from Arbiter 2 in Arbiter 1
-    fb_vetoArbiter(bVeto:=bM1K1_Veto_IN,
+    fb_vetoArbiter_K4(bVeto:=bM1K1_Veto_IN OR bM1K3_Veto_IN,
                     HigherAuthority := GVL.fbArbiter,
                     LowerAuthority := GVL.fbArbiter2,
                     FFO := GVL.fbFastFaultOutput2);
-    fb_vetoArbiter(bVeto:=(bM1K1_Veto_IN OR bM1K3_VETO_OUT),
+    fb_vetoArbiter_K3(bVeto:=(bM1K1_Veto_IN OR bM1K3_VETO_OUT),
                     HigherAuthority := GVL.fbArbiter,
                     LowerAuthority := GVL.fbArbiter3,
-                    FFO := GVL.fbFastFaultOutput2);
+                    FFO := GVL.fbFastFaultOutput3);
 
 
     GVL.fbFastFaultOutput1.Execute();
 
-    GVL.fbFastFaultOutput2.Execute(i_xVeto:=bM1K1_Veto_IN);
+    GVL.fbFastFaultOutput2.Execute(i_xVeto:=bM1K1_Veto_IN OR bM1K3_Veto_IN);
 
     GVL.fbFastFaultOutput3.Execute(i_xVeto:=(bM1K1_Veto_IN OR bM1K3_Veto_OUT));
 
@@ -2085,14 +2090,14 @@ PRG_PF1K0_PM
 
     PROGRAM PRG_PF1K0_PM
     VAR
-       {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[PF1K0-MPA-EL1004]^Channel 1^Input;
-                                 .i_xRetractedLS := TIIB[PF1K0-MPA-EL1004]^Channel 2^Input;
+       {attribute 'TcLinkTo' := '.i_xInsertedLS := TIIB[PF1K0-MPA-EL1004]^Channel 2^Input;
+                                 .i_xRetractedLS := TIIB[PF1K0-MPA-EL1004]^Channel 1^Input;
                                  .q_xInsert_DO :=  TIIB[PF1K0-MPA-EL2004]^Channel 1^Output;
                                  .q_xRetract_DO :=  TIIB[PF1K0-MPA-EL2004]^Channel 2^Output
         '}
 
-         {attribute 'pytmc' :=' pv: PF1K0:MPA:01 '}
-        PF1K0_MPA_01: FB_MPA := (sName := 'PF1K0:PPM:MPA:01');
+         {attribute 'pytmc' :=' pv: PF1K0:PM:MPA:01 '}
+        PF1K0_MPA_01: FB_MPA := (sName := 'PF1K0:PM:MPA:01');
 
         {attribute 'pytmc' := 'pv: PF1K0:PM'}
         {attribute 'TcLinkTo' := '.iVoltageINT := TIIB[PF1K0-EL3062]^AI Standard Channel 1^Value;
@@ -2404,10 +2409,10 @@ PRG_SL1K0_POWER
 
         (*Offsets*)
         (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-        rEncoderOffsetTop: REAL := -11.810; (* 0+(-15)*)
-        rEncoderOffsetBottom: REAL := -12.499; (* 0+(-15)*)
-        rEncoderOffsetNorth: REAL := -11.4;//-4.6;(* 0+(-15)*)
-        rEncoderOffsetSouth: REAL := -13;(* 0+(-15)*)
+        rEncoderOffsetTop: REAL :=  -11.2; // -11.810; (* 0+(-15)*)
+        rEncoderOffsetBottom: REAL := -12.02; //-12.499; (* 0+(-15)*)
+        rEncoderOffsetNorth: REAL := -10.88; // -11.4;//-4.6;(* 0+(-15)*)
+        rEncoderOffsetSouth: REAL := -12.475; //-13;(* 0+(-15)*)
     END_VAR
     fbSL1K0.bMoveOk := bMoveOk;
     Main.M18.bLimitBackwardEnable := True;
@@ -2512,10 +2517,10 @@ PRG_SL2K0_POWER
         mcPower : ARRAY [1..4] OF MC_POWER;
             (*Offsets*)
         (* Absolute encoder value at the HLS + Absolure eoncoder value at the centered beam *)
-        rEncoderOffsetTop: REAL := 15.1;
-        rEncoderOffsetBottom: REAL := -12.2;
-        rEncoderOffsetNorth: REAL := 15.4;
-        rEncoderOffsetSouth: REAL := -13.4;
+        rEncoderOffsetTop: REAL := 14.65; //15.1;
+        rEncoderOffsetBottom: REAL := -12.55; //-12.2;
+        rEncoderOffsetNorth: REAL :=  16.3; //15.4;
+        rEncoderOffsetSouth: REAL := -12.94; //-13.4;
     END_VAR
     fbSL2K0.bMoveOk := bMoveOk;
 
