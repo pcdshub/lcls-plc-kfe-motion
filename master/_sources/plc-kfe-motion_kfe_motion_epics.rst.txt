@@ -66912,73 +66912,73 @@ Database Records
         | io: output
 
 
-    * - PF1K0:MPA:01:FF_Reset_RBV
+    * - PF1K0:PM:MPA:01:FF_Reset_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.i_xReset
       - | io: output
 
 
-    * - PF1K0:MPA:01:FF_Reset
+    * - PF1K0:PM:MPA:01:FF_Reset
       - bo
       - PRG_PF1K0_PM.PF1K0_MPA_01.i_xReset
       - | io: output
 
 
-    * - PF1K0:MPA:01:ERROR_RBV
+    * - PF1K0:PM:MPA:01:ERROR_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bErrorPresent
       - | io: output
 
 
-    * - PF1K0:MPA:01:ERROR
+    * - PF1K0:PM:MPA:01:ERROR
       - bo
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bErrorPresent
       - | io: output
 
 
-    * - PF1K0:MPA:01:ILKOK_RBV
+    * - PF1K0:PM:MPA:01:ILKOK_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bILK_OK
       - | io: input
 
 
-    * - PF1K0:MPA:01:INSERT_OK_RBV
+    * - PF1K0:PM:MPA:01:INSERT_OK_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bInsertOK
       - | io: input
 
 
-    * - PF1K0:MPA:01:IN_CMD_RBV
+    * - PF1K0:PM:MPA:01:IN_CMD_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bInsert_SW
       - | io: output
 
 
-    * - PF1K0:MPA:01:IN_CMD
+    * - PF1K0:PM:MPA:01:IN_CMD
       - bo
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bInsert_SW
       - | io: output
 
 
-    * - PF1K0:MPA:01:RETRACT_OK_RBV
+    * - PF1K0:PM:MPA:01:RETRACT_OK_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bRetractOK
       - | io: input
 
 
-    * - PF1K0:MPA:01:OUT_CMD_RBV
+    * - PF1K0:PM:MPA:01:OUT_CMD_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bRetract_SW
       - | io: output
 
 
-    * - PF1K0:MPA:01:OUT_CMD
+    * - PF1K0:PM:MPA:01:OUT_CMD
       - bo
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.bRetract_SW
       - | io: output
 
 
-    * - PF1K0:MPA:01:POS_STATE_RBV
+    * - PF1K0:PM:MPA:01:POS_STATE_RBV
       - mbbi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.eState
       - | field: ONST INSERTED
@@ -66989,49 +66989,49 @@ Database Records
         | type: mbbi
 
 
-    * - PF1K0:MPA:01:IN_RBV
+    * - PF1K0:PM:MPA:01:IN_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.i_bInLS
       - | io: input
 
 
-    * - PF1K0:MPA:01:OUT_RBV
+    * - PF1K0:PM:MPA:01:OUT_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.i_bOutLS
       - | io: input
 
 
-    * - PF1K0:MPA:01:RETRACT_DO_RBV
+    * - PF1K0:PM:MPA:01:RETRACT_DO_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.q_bInsert
       - | io: input
 
 
-    * - PF1K0:MPA:01:INSERT_DO_RBV
+    * - PF1K0:PM:MPA:01:INSERT_DO_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.q_stAct.q_bRetract
       - | io: input
 
 
-    * - PF1K0:MPA:01:MOT_DONE_RBV
+    * - PF1K0:PM:MPA:01:MOT_DONE_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.xDone
       - | io: output
 
 
-    * - PF1K0:MPA:01:MOT_DONE
+    * - PF1K0:PM:MPA:01:MOT_DONE
       - bo
       - PRG_PF1K0_PM.PF1K0_MPA_01.xDone
       - | io: output
 
 
-    * - PF1K0:MPA:01:MPS_FAULT_RBV
+    * - PF1K0:PM:MPA:01:MPS_FAULT_RBV
       - bi
       - PRG_PF1K0_PM.PF1K0_MPA_01.xMPS_OK
       - | io: output
 
 
-    * - PF1K0:MPA:01:MPS_FAULT
+    * - PF1K0:PM:MPA:01:MPS_FAULT
       - bo
       - PRG_PF1K0_PM.PF1K0_MPA_01.xMPS_OK
       - | io: output
